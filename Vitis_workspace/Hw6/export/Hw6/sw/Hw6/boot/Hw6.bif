@@ -1,0 +1,7 @@
+/*Hw6*/
+the_ROM_image:
+{
+  [bootloader]<Hw6/boot/fsbl.elf>
+   <bitstream> 
+  <elf,ps7_cortexa9_0>
+}

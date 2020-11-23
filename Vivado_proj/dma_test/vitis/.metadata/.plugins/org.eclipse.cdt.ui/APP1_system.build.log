@@ -1,0 +1,10 @@
+19:03:22 **** Incremental Build of configuration Debug for project App1_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 57893 D:/Vivado_Project/dma_test/vitis/HwWithAcc1/export/HwWithAcc1/HwWithAcc1.xpfm standalone_domain D:/Vivado_Project/dma_test/vitis/App1_system/Debug/system.bif
+sdcard_gen --xpfm D:/Vivado_Project/dma_test/vitis/HwWithAcc1/export/HwWithAcc1/HwWithAcc1.xpfm --sys_config HwWithAcc1 --bif D:/Vivado_Project/dma_test/vitis/App1_system/Debug/system.bif --bitstream D:/Vivado_Project/dma_test/vitis/App1/_ide/bitstream/design_1_wrapper.bit --elf D:/Vivado_Project/dma_test/vitis/App1/Debug/App1.elf,ps7_cortexa9_0
+creating BOOT.BIN using D:/Vivado_Project/dma_test/vitis/App1/_ide/bitstream/design_1_wrapper.bit
+Running D:/Vivado/Vitis/2020.1/bin/bootgen  -image D:/Vivado_Project/dma_test/vitis/App1_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+
+19:03:28 Build Finished (took 5s.729ms)
+

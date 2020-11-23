@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="XAxiDma_SimplePollExample" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="XAxiDma_SimplePollExample"/>
+			<item value="XAxiDma_SimpleTransfer"/>
+			<item value="ReadReg"/>
+			<item value="Read"/>
+			<item value="read"/>
+			<item value="init_platform()"/>
+			<item value="ddr"/>
+			<item value="memset"/>
+			<item value="mem_set"/>
+			<item value="AXI DMA SG Polling Example Failed"/>
+			<item value="to hw"/>
+			<item value="to hjw"/>
+			<item value="NUM_BD"/>
+			<item value="NUM_PKT"/>
+		</list>
+		<list key="replacehistory">
+			<item value="NUM_BD"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="284" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="391" key="DIALOG_HEIGHT"/>
+		<item value="1177" key="DIALOG_X_ORIGIN"/>
+		<item value="16" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

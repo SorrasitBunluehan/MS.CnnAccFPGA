@@ -1,0 +1,10 @@
+12:31:44 **** Build of configuration Debug for project dma_sw_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 63269 D:/Vivado_Project/dma_test/vitis/dma_1/export/dma_1/dma_1.xpfm standalone_domain D:/Vivado_Project/dma_test/vitis/dma_sw_system/Debug/system.bif
+sdcard_gen --xpfm D:/Vivado_Project/dma_test/vitis/dma_1/export/dma_1/dma_1.xpfm --sys_config dma_1 --bif D:/Vivado_Project/dma_test/vitis/dma_sw_system/Debug/system.bif --bitstream D:/Vivado_Project/dma_test/vitis/dma_sw/_ide/bitstream/design_1_wrapper.bit --elf D:/Vivado_Project/dma_test/vitis/dma_sw/Debug/dma_sw.elf,ps7_cortexa9_0
+creating BOOT.BIN using D:/Vivado_Project/dma_test/vitis/dma_sw/_ide/bitstream/design_1_wrapper.bit
+Running D:/Vivado/Vitis/2019.2/bin/bootgen  -image D:/Vivado_Project/dma_test/vitis/dma_sw_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+
+12:31:50 Build Finished (took 5s.279ms)
+

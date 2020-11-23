@@ -1,0 +1,19 @@
+vhdl xil_defaultlib  \
+"../../../bd/design_1/ip/design_1_axi_dma_0_0/sim/design_1_axi_dma_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_rst_ps7_0_100M_0/sim/design_1_rst_ps7_0_100M_0.vhd" \
+"../../../bd/design_1/ip/design_1_system_ila_0_0/bd_0/sim/bd_f60c.vhd" \
+"../../../bd/design_1/ip/design_1_system_ila_0_0/bd_0/ip/ip_0/sim/bd_f60c_ila_lib_0.vhd" \
+"../../../bd/design_1/ip/design_1_system_ila_0_0/sim/design_1_system_ila_0_0.vhd" \
+"../../../bd/design_1/ipshared/6673/srcs/main_fsm.vhd" \
+"../../../bd/design_1/ipshared/6673/srcs/dff.vhd" \
+"../../../bd/design_1/ipshared/6673/srcs/AGU.vhd" \
+"../../../bd/design_1/ipshared/6673/srcs/dlau_pkg.vhd" \
+"../../../bd/design_1/ipshared/6673/srcs/SPM.vhd" \
+"../../../bd/design_1/ipshared/6673/srcs/jk_ff.vhd" \
+"../../../bd/design_1/ipshared/6673/srcs/w_sticker.vhd" \
+"../../../bd/design_1/ipshared/6673/srcs/wgu.vhd" \
+"../../../bd/design_1/ipshared/6673/srcs/acc_wrapper.vhd" \
+"../../../bd/design_1/ip/design_1_MyConvAcc_0_0/sim/design_1_MyConvAcc_0_0.vhd" \
+"../../../bd/design_1/sim/design_1.vhd" \
+
+nosort

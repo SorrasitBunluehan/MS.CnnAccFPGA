@@ -1,0 +1,7 @@
+/*Hw2WithAcc*/
+the_ROM_image:
+{
+ [bootloader] <Hw2WithAcc/boot/fsbl.elf>
+ <bitstream>
+ <elf,ps7_cortexa9_0>
+}

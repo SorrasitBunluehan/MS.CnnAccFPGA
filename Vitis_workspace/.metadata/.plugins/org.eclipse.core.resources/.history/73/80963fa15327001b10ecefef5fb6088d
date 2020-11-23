@@ -1,0 +1,21 @@
+/***************************** Include Files *********************************/
+#include "Zynq7000.h"
+#include "xil_io.h"
+
+/************************** Constant Definitions *****************************/
+
+
+/**************************** Type Definitions *******************************/
+
+
+/**************************** Function Definitions *******************************/
+void set_pl_reset(char status){
+	if (status == ENABLE) {
+		UNLOCK_SLCR();
+		Xil_Out32(SLCR_UNLOCK_ADDR, UNLOCK_CODE)
+	}
+
+
+
+
+}

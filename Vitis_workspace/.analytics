@@ -1,0 +1,328 @@
+timestamp=[2020-11-05 12:28:33], mode=WORKBENCH_START, duration=0:00:04.770, duration_ms=4770, data={}
+timestamp=[2020-11-05 12:28:33], mode=WORKBENCH_UI_INIT, duration=0:00:00.410, duration_ms=410, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2020-11-05 12:29:40], mode=PLATFORM_CREATION, duration=0:00:20.378, duration_ms=20378, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2020-11-05 12:30:30], mode=PLATFORM_GENERATION, duration=0:00:44.651, duration_ms=44651, data={name=dma_1}
+timestamp=[2020-11-05 12:31:28], mode=APP_CREATION, duration=0:00:08.072, duration_ms=8072, data={name=dma_sw, project_type=sdk, os=standalone, processor=cortex-a9, runtime=C/C++, platform=dma_1, application_type=application}
+timestamp=[2020-11-06 12:53:22], mode=WORKBENCH_START, duration=0:00:09.320, duration_ms=9320, data={}
+timestamp=[2020-11-06 12:53:23], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.052, duration_ms=52, data={}
+timestamp=[2020-11-06 12:53:24], mode=WORKBENCH_UI_INIT, duration=0:00:01.336, duration_ms=1336, data={editors_count=4, platform_editors_count=1, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,dma_1,dma_sw,dma_sw_system}
+timestamp=[2020-11-06 12:55:19], mode=PLATFORM_CREATION, duration=0:00:21.020, duration_ms=21020, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2020-11-06 12:56:00], mode=PLATFORM_GENERATION, duration=0:00:32.852, duration_ms=32852, data={name=HW1}
+timestamp=[2020-11-06 12:56:42], mode=APP_CREATION, duration=0:00:06.508, duration_ms=6508, data={name=APP1, project_type=sdk, os=standalone, processor=cortex-a9, runtime=C/C++, platform=HW1, application_type=application}
+timestamp=[2020-11-06 13:12:03], mode=BUILD, duration=0:00:00.861, duration_ms=861, data={name=APP1, configuration=Debug, clean_build=false}
+timestamp=[2020-11-06 13:12:10], mode=BUILD, duration=0:00:00.213, duration_ms=213, data={name=APP1, configuration=Debug, clean_build=false}
+timestamp=[2020-11-06 13:13:36], mode=BUILD, duration=0:00:00.617, duration_ms=617, data={name=APP1, configuration=Debug, clean_build=false}
+timestamp=[2020-11-06 13:13:44], mode=BUILD, duration=0:00:00.209, duration_ms=209, data={name=APP1, configuration=Debug, clean_build=false}
+timestamp=[2020-11-06 13:37:15], mode=BUILD, duration=0:00:00.613, duration_ms=613, data={name=APP1, configuration=Debug, clean_build=false}
+timestamp=[2020-11-07 11:03:18], mode=WORKBENCH_START, duration=0:00:10.271, duration_ms=10271, data={}
+timestamp=[2020-11-07 11:03:19], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.063, duration_ms=63, data={}
+timestamp=[2020-11-07 11:03:19], mode=WORKBENCH_UI_INIT, duration=0:00:01.139, duration_ms=1139, data={editors_count=4, platform_editors_count=3, projects_count=4, platform_projects_count=1, active_platform_editor=true, projects=APP1,APP1_system,HW1,RemoteSystemsTempFiles}
+timestamp=[2020-11-07 11:26:02], mode=BUILD, duration=0:00:01.564, duration_ms=1564, data={name=APP1, configuration=Debug, clean_build=false}
+timestamp=[2020-11-07 11:57:17], mode=PLATFORM_GENERATION, duration=0:00:02.539, duration_ms=2539, data={name=HW1}
+timestamp=[2020-11-07 11:57:23], mode=BUILD, duration=0:00:00.287, duration_ms=287, data={name=APP1, configuration=Debug, clean_build=false}
+timestamp=[2020-11-07 11:57:33], mode=BUILD, duration=0:00:05.265, duration_ms=5265, data={name=APP1_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-07 11:58:04], mode=BUILD, duration=0:00:00.159, duration_ms=159, data={name=APP1, configuration=Debug, clean_build=true}
+timestamp=[2020-11-07 11:58:05], mode=BUILD, duration=0:00:00.811, duration_ms=811, data={name=APP1, configuration=Debug, clean_build=false}
+timestamp=[2020-11-07 11:58:10], mode=BUILD, duration=0:00:04.701, duration_ms=4701, data={name=APP1_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-07 12:01:37], mode=APP_CREATION, duration=0:00:07.247, duration_ms=7247, data={name=APP2, project_type=sdk, os=standalone, processor=cortex-a9, runtime=C/C++, platform=HW1, application_type=application}
+timestamp=[2020-11-07 12:02:03], mode=BUILD, duration=0:00:00.717, duration_ms=717, data={name=APP2, configuration=Debug, clean_build=false}
+timestamp=[2020-11-07 12:02:08], mode=BUILD, duration=0:00:04.701, duration_ms=4701, data={name=APP2_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-09 10:06:10], mode=WORKBENCH_START, duration=0:00:08.679, duration_ms=8679, data={}
+timestamp=[2020-11-09 10:06:10], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.059, duration_ms=59, data={}
+timestamp=[2020-11-09 10:06:11], mode=WORKBENCH_UI_INIT, duration=0:00:00.782, duration_ms=782, data={editors_count=6, platform_editors_count=1, projects_count=6, platform_projects_count=1, active_platform_editor=false, projects=APP1,APP1_system,APP2,APP2_system,HW1,RemoteSystemsTempFiles}
+timestamp=[2020-11-12 11:38:06], mode=WORKBENCH_START, duration=0:00:09.456, duration_ms=9456, data={}
+timestamp=[2020-11-12 11:38:07], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.054, duration_ms=54, data={}
+timestamp=[2020-11-12 11:38:08], mode=WORKBENCH_UI_INIT, duration=0:00:01.308, duration_ms=1308, data={editors_count=6, platform_editors_count=1, projects_count=6, platform_projects_count=1, active_platform_editor=false, projects=APP1,APP1_system,APP2,APP2_system,HW1,RemoteSystemsTempFiles}
+timestamp=[2020-11-12 11:53:30], mode=PLATFORM_CREATION, duration=0:00:19.753, duration_ms=19753, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2020-11-12 11:58:51], mode=PLATFORM_GENERATION, duration=0:00:32.643, duration_ms=32643, data={name=Hw2WithAcc}
+timestamp=[2020-11-12 12:10:28], mode=PLATFORM_GENERATION, duration=0:00:19.390, duration_ms=19390, data={name=Hw2WithAcc}
+timestamp=[2020-11-12 12:12:12], mode=APP_CREATION, duration=0:00:06.553, duration_ms=6553, data={name=App0, project_type=sdk, os=standalone, processor=cortex-a9, runtime=C/C++, platform=Hw2WithAcc, application_type=application}
+timestamp=[2020-11-12 13:20:25], mode=PLATFORM_GENERATION, duration=0:00:16.182, duration_ms=16182, data={name=Hw2WithAcc}
+timestamp=[2020-11-12 13:20:25], mode=BUILD, duration=0:00:00.833, duration_ms=833, data={name=App0, configuration=Debug, clean_build=false}
+timestamp=[2020-11-12 13:20:29], mode=BUILD, duration=0:00:02.877, duration_ms=2877, data={name=App0_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-12 13:20:43], mode=BUILD, duration=0:00:00.524, duration_ms=524, data={name=App0, configuration=Debug, clean_build=false}
+timestamp=[2020-11-12 13:25:28], mode=BUILD, duration=0:00:00.528, duration_ms=528, data={name=App0, configuration=Debug, clean_build=false}
+timestamp=[2020-11-12 13:26:09], mode=BUILD, duration=0:00:00.629, duration_ms=629, data={name=App0, configuration=Debug, clean_build=false}
+timestamp=[2020-11-12 13:26:14], mode=BUILD, duration=0:00:00.222, duration_ms=222, data={name=App0, configuration=Debug, clean_build=false}
+timestamp=[2020-11-12 13:26:19], mode=BUILD, duration=0:00:05.466, duration_ms=5466, data={name=App0_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-12 13:27:01], mode=PLATFORM_GENERATION, duration=0:00:02.964, duration_ms=2964, data={name=Hw2WithAcc}
+timestamp=[2020-11-12 13:27:37], mode=PLATFORM_GENERATION, duration=0:00:31.067, duration_ms=31067, data={name=Hw2WithAcc}
+timestamp=[2020-11-12 13:29:55], mode=BUILD, duration=0:00:00.792, duration_ms=792, data={name=App0, configuration=Debug, clean_build=false}
+timestamp=[2020-11-12 13:30:01], mode=BUILD, duration=0:00:05.403, duration_ms=5403, data={name=App0_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-12 13:34:39], mode=BUILD, duration=0:00:00.632, duration_ms=632, data={name=App0, configuration=Debug, clean_build=false}
+timestamp=[2020-11-12 13:34:44], mode=BUILD, duration=0:00:05.353, duration_ms=5353, data={name=App0_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-12 13:43:49], mode=BUILD, duration=0:00:00.630, duration_ms=630, data={name=App0, configuration=Debug, clean_build=false}
+timestamp=[2020-11-12 13:47:18], mode=BUILD, duration=0:00:00.632, duration_ms=632, data={name=App0, configuration=Debug, clean_build=false}
+timestamp=[2020-11-12 13:53:30], mode=BUILD, duration=0:00:00.231, duration_ms=231, data={name=App0, configuration=Debug, clean_build=false}
+timestamp=[2020-11-12 13:53:35], mode=BUILD, duration=0:00:05.452, duration_ms=5452, data={name=App0_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-12 14:01:28], mode=BUILD, duration=0:00:00.631, duration_ms=631, data={name=App0, configuration=Debug, clean_build=false}
+timestamp=[2020-11-12 14:01:34], mode=BUILD, duration=0:00:05.506, duration_ms=5506, data={name=App0_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-12 14:06:52], mode=BUILD, duration=0:00:00.639, duration_ms=639, data={name=App0, configuration=Debug, clean_build=false}
+timestamp=[2020-11-12 14:06:58], mode=BUILD, duration=0:00:05.350, duration_ms=5350, data={name=App0_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-12 14:23:20], mode=PLATFORM_CREATION, duration=0:00:16.494, duration_ms=16494, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2020-11-12 18:20:21], mode=APP_CREATION, duration=0:00:07.211, duration_ms=7211, data={name=App1, project_type=sdk, os=standalone, processor=cortex-a9, runtime=C/C++, platform=HwWithAcc, application_type=application}
+timestamp=[2020-11-12 18:22:23], mode=PLATFORM_GENERATION, duration=0:00:33.374, duration_ms=33374, data={name=HwWithAcc}
+timestamp=[2020-11-12 18:25:01], mode=BUILD, duration=0:00:00.839, duration_ms=839, data={name=App1, configuration=Debug, clean_build=false}
+timestamp=[2020-11-12 18:25:07], mode=BUILD, duration=0:00:05.656, duration_ms=5656, data={name=App1_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-12 18:30:31], mode=BUILD, duration=0:00:00.636, duration_ms=636, data={name=App1, configuration=Debug, clean_build=false}
+timestamp=[2020-11-12 18:43:13], mode=PLATFORM_CREATION, duration=0:00:16.938, duration_ms=16938, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2020-11-12 18:44:27], mode=PLATFORM_GENERATION, duration=0:00:32.618, duration_ms=32618, data={name=HwWithAcc1}
+timestamp=[2020-11-12 18:44:36], mode=BUILD, duration=0:00:00.224, duration_ms=224, data={name=App1, configuration=Debug, clean_build=false}
+timestamp=[2020-11-12 18:44:42], mode=BUILD, duration=0:00:05.606, duration_ms=5606, data={name=App1_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-12 18:57:08], mode=PLATFORM_GENERATION, duration=0:00:03.125, duration_ms=3125, data={name=HwWithAcc1}
+timestamp=[2020-11-12 18:57:46], mode=PLATFORM_GENERATION, duration=0:00:33.784, duration_ms=33784, data={name=HwWithAcc1}
+timestamp=[2020-11-12 18:58:06], mode=BUILD, duration=0:00:00.222, duration_ms=222, data={name=App1, configuration=Debug, clean_build=false}
+timestamp=[2020-11-12 18:58:18], mode=BUILD, duration=0:00:05.455, duration_ms=5455, data={name=App1_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 16:58:22], mode=WORKBENCH_START, duration=0:00:09.142, duration_ms=9142, data={}
+timestamp=[2020-11-13 16:58:23], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.098, duration_ms=98, data={}
+timestamp=[2020-11-13 16:58:23], mode=WORKBENCH_UI_INIT, duration=0:00:01.261, duration_ms=1261, data={editors_count=4, platform_editors_count=1, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=App1,App1_system,HwWithAcc1,RemoteSystemsTempFiles}
+timestamp=[2020-11-13 17:30:08], mode=PLATFORM_CREATION, duration=0:00:18.981, duration_ms=18981, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2020-11-13 17:31:10], mode=PLATFORM_GENERATION, duration=0:00:32.522, duration_ms=32522, data={name=HwWithAcc2}
+timestamp=[2020-11-13 17:31:40], mode=APP_CREATION, duration=0:00:06.301, duration_ms=6301, data={name=App2, project_type=sdk, os=standalone, processor=cortex-a9, runtime=C/C++, platform=HwWithAcc2, application_type=application}
+timestamp=[2020-11-13 17:32:37], mode=BUILD, duration=0:00:00.864, duration_ms=864, data={name=App2, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 17:32:42], mode=BUILD, duration=0:00:05.498, duration_ms=5498, data={name=App2_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 18:01:36], mode=PLATFORM_GENERATION, duration=0:00:03.108, duration_ms=3108, data={name=HwWithAcc1}
+timestamp=[2020-11-13 18:02:12], mode=PLATFORM_GENERATION, duration=0:00:33.860, duration_ms=33860, data={name=HwWithAcc1}
+timestamp=[2020-11-13 18:02:16], mode=BUILD, duration=0:00:00.210, duration_ms=210, data={name=App1, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 18:02:27], mode=BUILD, duration=0:00:05.290, duration_ms=5290, data={name=App1_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 18:02:33], mode=BUILD, duration=0:00:00.616, duration_ms=616, data={name=App1, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 18:02:38], mode=BUILD, duration=0:00:05.235, duration_ms=5235, data={name=App1_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 18:02:45], mode=PLATFORM_GENERATION, duration=0:00:02.902, duration_ms=2902, data={name=HwWithAcc1}
+timestamp=[2020-11-13 18:02:45], mode=BUILD, duration=0:00:00.158, duration_ms=158, data={name=App1, configuration=Debug, clean_build=true}
+timestamp=[2020-11-13 18:02:45], mode=BUILD, duration=0:00:00.109, duration_ms=109, data={name=App1_system, configuration=Debug, clean_build=true}
+timestamp=[2020-11-13 18:03:19], mode=PLATFORM_GENERATION, duration=0:00:30.742, duration_ms=30742, data={name=HwWithAcc1}
+timestamp=[2020-11-13 18:03:19], mode=BUILD, duration=0:00:00.787, duration_ms=787, data={name=App1, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 18:03:25], mode=BUILD, duration=0:00:05.303, duration_ms=5303, data={name=App1_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 18:09:36], mode=PLATFORM_CREATION, duration=0:00:16.322, duration_ms=16322, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2020-11-13 18:10:19], mode=PLATFORM_GENERATION, duration=0:00:31.612, duration_ms=31612, data={name=Hw0}
+timestamp=[2020-11-13 18:10:48], mode=APP_CREATION, duration=0:00:07.509, duration_ms=7509, data={name=App3, project_type=sdk, os=standalone, processor=cortex-a9, runtime=C/C++, platform=Hw0, application_type=application}
+timestamp=[2020-11-13 18:11:16], mode=BUILD, duration=0:00:00.878, duration_ms=878, data={name=App3, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 18:11:22], mode=BUILD, duration=0:00:05.291, duration_ms=5291, data={name=App3_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 18:25:56], mode=BUILD, duration=0:00:00.675, duration_ms=675, data={name=App3, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 18:26:02], mode=BUILD, duration=0:00:05.535, duration_ms=5535, data={name=App3_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 18:34:56], mode=PLATFORM_CREATION, duration=0:00:17.376, duration_ms=17376, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2020-11-13 18:35:38], mode=PLATFORM_GENERATION, duration=0:00:33.034, duration_ms=33034, data={name=Hw1}
+timestamp=[2020-11-13 18:36:51], mode=APP_CREATION, duration=0:00:07.450, duration_ms=7450, data={name=App4, project_type=sdk, os=standalone, processor=cortex-a9, runtime=C/C++, platform=Hw1, application_type=application}
+timestamp=[2020-11-13 18:37:16], mode=BUILD, duration=0:00:00.820, duration_ms=820, data={name=App4, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 18:38:54], mode=PLATFORM_GENERATION, duration=0:00:03.084, duration_ms=3084, data={name=Hw0}
+timestamp=[2020-11-13 18:39:29], mode=PLATFORM_GENERATION, duration=0:00:32.566, duration_ms=32566, data={name=Hw0}
+timestamp=[2020-11-13 18:39:40], mode=BUILD, duration=0:00:00.771, duration_ms=771, data={name=App3, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 18:39:53], mode=BUILD, duration=0:00:05.391, duration_ms=5391, data={name=App3_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 18:45:53], mode=PLATFORM_GENERATION, duration=0:00:03.075, duration_ms=3075, data={name=HwWithAcc1}
+timestamp=[2020-11-13 18:46:29], mode=PLATFORM_GENERATION, duration=0:00:33.075, duration_ms=33075, data={name=HwWithAcc1}
+timestamp=[2020-11-13 18:49:07], mode=BUILD, duration=0:00:00.722, duration_ms=722, data={name=App1, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 18:50:53], mode=BUILD, duration=0:00:00.367, duration_ms=367, data={name=App1, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 18:51:01], mode=BUILD, duration=0:00:00.368, duration_ms=368, data={name=App1, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 18:51:14], mode=BUILD, duration=0:00:05.546, duration_ms=5546, data={name=App1_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 18:51:55], mode=BUILD, duration=0:00:00.623, duration_ms=623, data={name=App1, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 18:51:59], mode=BUILD, duration=0:00:00.266, duration_ms=266, data={name=App1, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 18:52:05], mode=BUILD, duration=0:00:05.752, duration_ms=5752, data={name=App1_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 18:53:24], mode=BUILD, duration=0:00:00.271, duration_ms=271, data={name=App1, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 18:53:30], mode=BUILD, duration=0:00:05.582, duration_ms=5582, data={name=App1_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 18:55:46], mode=PLATFORM_GENERATION, duration=0:00:03.232, duration_ms=3232, data={name=HwWithAcc1}
+timestamp=[2020-11-13 18:55:46], mode=BUILD, duration=0:00:00.165, duration_ms=165, data={name=App1, configuration=Debug, clean_build=true}
+timestamp=[2020-11-13 18:55:46], mode=BUILD, duration=0:00:00.123, duration_ms=123, data={name=App1_system, configuration=Debug, clean_build=true}
+timestamp=[2020-11-13 18:55:49], mode=PLATFORM_GENERATION, duration=0:00:01.899, duration_ms=1899, data={name=HwWithAcc1}
+timestamp=[2020-11-13 18:56:45], mode=PLATFORM_GENERATION, duration=0:00:33.723, duration_ms=33723, data={name=HwWithAcc1}
+timestamp=[2020-11-13 18:56:46], mode=BUILD, duration=0:00:00.825, duration_ms=825, data={name=App1, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 18:56:51], mode=BUILD, duration=0:00:05.546, duration_ms=5546, data={name=App1_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 18:59:25], mode=PLATFORM_GENERATION, duration=0:00:03.122, duration_ms=3122, data={name=HwWithAcc1}
+timestamp=[2020-11-13 18:59:25], mode=BUILD, duration=0:00:00.161, duration_ms=161, data={name=App1, configuration=Debug, clean_build=true}
+timestamp=[2020-11-13 18:59:25], mode=BUILD, duration=0:00:00.109, duration_ms=109, data={name=App1_system, configuration=Debug, clean_build=true}
+timestamp=[2020-11-13 19:00:02], mode=PLATFORM_GENERATION, duration=0:00:33.627, duration_ms=33627, data={name=HwWithAcc1}
+timestamp=[2020-11-13 19:00:03], mode=BUILD, duration=0:00:00.827, duration_ms=827, data={name=App1, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 19:00:09], mode=BUILD, duration=0:00:05.745, duration_ms=5745, data={name=App1_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 19:03:22], mode=BUILD, duration=0:00:00.676, duration_ms=676, data={name=App1, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 19:03:28], mode=BUILD, duration=0:00:05.741, duration_ms=5741, data={name=App1_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 19:03:42], mode=BUILD, duration=0:00:00.267, duration_ms=267, data={name=App1, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 19:05:10], mode=PLATFORM_CREATION, duration=0:00:21.393, duration_ms=21393, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2020-11-13 19:08:30], mode=PLATFORM_GENERATION, duration=0:00:35.350, duration_ms=35350, data={name=Hw2}
+timestamp=[2020-11-13 19:09:33], mode=APP_CREATION, duration=0:00:08.496, duration_ms=8496, data={name=App5, project_type=sdk, os=standalone, processor=cortex-a9, runtime=C/C++, platform=Hw2, application_type=application}
+timestamp=[2020-11-13 19:12:36], mode=BUILD, duration=0:00:00.880, duration_ms=880, data={name=App5, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 19:24:14], mode=BUILD, duration=0:00:00.674, duration_ms=674, data={name=App5, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 19:24:20], mode=BUILD, duration=0:00:05.799, duration_ms=5799, data={name=App5_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 19:35:42], mode=BUILD, duration=0:00:00.679, duration_ms=679, data={name=App5, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 19:35:48], mode=BUILD, duration=0:00:05.494, duration_ms=5494, data={name=App5_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 19:37:39], mode=BUILD, duration=0:00:00.676, duration_ms=676, data={name=App5, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 19:37:45], mode=BUILD, duration=0:00:05.601, duration_ms=5601, data={name=App5_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 19:42:50], mode=BUILD, duration=0:00:00.685, duration_ms=685, data={name=App5, configuration=Debug, clean_build=false}
+timestamp=[2020-11-13 19:42:55], mode=BUILD, duration=0:00:05.549, duration_ms=5549, data={name=App5_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-15 13:34:34], mode=WORKBENCH_START, duration=0:00:08.998, duration_ms=8998, data={}
+timestamp=[2020-11-15 13:34:35], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.213, duration_ms=213, data={}
+timestamp=[2020-11-15 13:34:36], mode=WORKBENCH_UI_INIT, duration=0:00:01.380, duration_ms=1380, data={editors_count=8, platform_editors_count=4, projects_count=16, platform_projects_count=1, active_platform_editor=false, projects=App1,App1_system,App2,App2_system,App3,App3_system,App4,App4_system,App5,App5_system,Hw0,Hw1,Hw2,HwWithAcc1,HwWithAcc2,RemoteSystemsTempFiles}
+timestamp=[2020-11-15 13:38:10], mode=PLATFORM_CREATION, duration=0:00:19.502, duration_ms=19502, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2020-11-15 13:39:04], mode=PLATFORM_GENERATION, duration=0:00:32.324, duration_ms=32324, data={name=Hw3}
+timestamp=[2020-11-15 13:39:41], mode=APP_CREATION, duration=0:00:06.531, duration_ms=6531, data={name=App6, project_type=sdk, os=standalone, processor=cortex-a9, runtime=C/C++, platform=Hw3, application_type=application}
+timestamp=[2020-11-15 13:45:29], mode=BUILD, duration=0:00:00.912, duration_ms=912, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-15 13:45:34], mode=BUILD, duration=0:00:05.565, duration_ms=5565, data={name=App6_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-15 19:51:03], mode=BUILD, duration=0:00:00.927, duration_ms=927, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-15 19:51:08], mode=BUILD, duration=0:00:05.407, duration_ms=5407, data={name=App6_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-15 20:00:55], mode=BUILD, duration=0:00:00.156, duration_ms=156, data={name=App6, configuration=Debug, clean_build=true}
+timestamp=[2020-11-15 20:00:56], mode=BUILD, duration=0:00:00.813, duration_ms=813, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-15 20:00:59], mode=BUILD, duration=0:00:02.678, duration_ms=2678, data={name=App6_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-15 20:01:13], mode=BUILD, duration=0:00:00.460, duration_ms=460, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-15 20:01:16], mode=BUILD, duration=0:00:02.630, duration_ms=2630, data={name=App6_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-15 20:01:32], mode=BUILD, duration=0:00:00.659, duration_ms=659, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-15 20:01:39], mode=BUILD, duration=0:00:00.203, duration_ms=203, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-15 20:01:45], mode=BUILD, duration=0:00:05.207, duration_ms=5207, data={name=App6_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-15 20:35:06], mode=PLATFORM_GENERATION, duration=0:00:03.128, duration_ms=3128, data={name=Hw3}
+timestamp=[2020-11-15 20:35:41], mode=PLATFORM_GENERATION, duration=0:00:32.421, duration_ms=32421, data={name=Hw3}
+timestamp=[2020-11-16 10:09:59], mode=WORKBENCH_START, duration=0:00:09.008, duration_ms=9008, data={}
+timestamp=[2020-11-16 10:10:00], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.239, duration_ms=239, data={}
+timestamp=[2020-11-16 10:10:01], mode=WORKBENCH_UI_INIT, duration=0:00:01.503, duration_ms=1503, data={editors_count=3, platform_editors_count=1, projects_count=19, platform_projects_count=2, active_platform_editor=true, projects=App1,App1_system,App2,App2_system,App3,App3_system,App4,App4_system,App5,App5_system,App6,App6_system,Hw0,Hw1,Hw2,Hw3,HwWithAcc1,HwWithAcc2,RemoteSystemsTempFiles}
+timestamp=[2020-11-16 10:18:08], mode=PLATFORM_GENERATION, duration=0:00:03.482, duration_ms=3482, data={name=Hw3}
+timestamp=[2020-11-16 10:18:48], mode=PLATFORM_GENERATION, duration=0:00:33.493, duration_ms=33493, data={name=Hw3}
+timestamp=[2020-11-16 10:19:03], mode=PLATFORM_GENERATION, duration=0:00:02.938, duration_ms=2938, data={name=Hw3}
+timestamp=[2020-11-16 10:19:03], mode=BUILD, duration=0:00:00.193, duration_ms=193, data={name=App6, configuration=Debug, clean_build=true}
+timestamp=[2020-11-16 10:19:03], mode=BUILD, duration=0:00:00.113, duration_ms=113, data={name=App6_system, configuration=Debug, clean_build=true}
+timestamp=[2020-11-16 10:19:37], mode=PLATFORM_GENERATION, duration=0:00:30.751, duration_ms=30751, data={name=Hw3}
+timestamp=[2020-11-16 10:19:38], mode=BUILD, duration=0:00:01.091, duration_ms=1091, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-16 10:19:50], mode=BUILD, duration=0:00:05.499, duration_ms=5499, data={name=App6_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-16 11:32:21], mode=PLATFORM_GENERATION, duration=0:00:02.958, duration_ms=2958, data={name=Hw3}
+timestamp=[2020-11-16 11:32:54], mode=PLATFORM_GENERATION, duration=0:00:31.498, duration_ms=31498, data={name=Hw3}
+timestamp=[2020-11-16 11:33:22], mode=PLATFORM_GENERATION, duration=0:00:02.959, duration_ms=2959, data={name=Hw3}
+timestamp=[2020-11-16 11:33:22], mode=BUILD, duration=0:00:00.152, duration_ms=152, data={name=App6, configuration=Debug, clean_build=true}
+timestamp=[2020-11-16 11:33:22], mode=BUILD, duration=0:00:00.103, duration_ms=103, data={name=App6_system, configuration=Debug, clean_build=true}
+timestamp=[2020-11-16 11:34:39], mode=PLATFORM_GENERATION, duration=0:00:30.641, duration_ms=30641, data={name=Hw3}
+timestamp=[2020-11-16 11:34:40], mode=BUILD, duration=0:00:00.974, duration_ms=974, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-16 11:34:52], mode=BUILD, duration=0:00:05.401, duration_ms=5401, data={name=App6_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-16 11:50:40], mode=PLATFORM_GENERATION, duration=0:00:03.064, duration_ms=3064, data={name=Hw3}
+timestamp=[2020-11-16 11:51:16], mode=PLATFORM_GENERATION, duration=0:00:32.695, duration_ms=32695, data={name=Hw3}
+timestamp=[2020-11-16 11:52:10], mode=PLATFORM_GENERATION, duration=0:00:02.963, duration_ms=2963, data={name=Hw3}
+timestamp=[2020-11-16 11:52:10], mode=BUILD, duration=0:00:00.157, duration_ms=157, data={name=App6, configuration=Debug, clean_build=true}
+timestamp=[2020-11-16 11:52:10], mode=BUILD, duration=0:00:00.105, duration_ms=105, data={name=App6_system, configuration=Debug, clean_build=true}
+timestamp=[2020-11-16 11:54:51], mode=PLATFORM_GENERATION, duration=0:00:01.835, duration_ms=1835, data={name=Hw3}
+timestamp=[2020-11-16 11:54:51], mode=BUILD, duration=0:00:00.158, duration_ms=158, data={name=App6, configuration=Debug, clean_build=true}
+timestamp=[2020-11-16 11:54:51], mode=BUILD, duration=0:00:00.107, duration_ms=107, data={name=App6_system, configuration=Debug, clean_build=true}
+timestamp=[2020-11-16 11:55:28], mode=PLATFORM_GENERATION, duration=0:00:32.528, duration_ms=32528, data={name=Hw3}
+timestamp=[2020-11-16 11:56:30], mode=PLATFORM_GENERATION, duration=0:00:03.003, duration_ms=3003, data={name=Hw3}
+timestamp=[2020-11-16 11:57:07], mode=PLATFORM_GENERATION, duration=0:00:30.997, duration_ms=30997, data={name=Hw3}
+timestamp=[2020-11-16 12:01:39], mode=PLATFORM_GENERATION, duration=0:00:03.008, duration_ms=3008, data={name=Hw3}
+timestamp=[2020-11-16 12:01:39], mode=BUILD, duration=0:00:00.151, duration_ms=151, data={name=App6, configuration=Debug, clean_build=true}
+timestamp=[2020-11-16 12:01:39], mode=BUILD, duration=0:00:00.106, duration_ms=106, data={name=App6_system, configuration=Debug, clean_build=true}
+timestamp=[2020-11-16 12:02:24], mode=PLATFORM_GENERATION, duration=0:00:30.889, duration_ms=30889, data={name=Hw3}
+timestamp=[2020-11-16 12:07:10], mode=PLATFORM_CREATION, duration=0:00:18.714, duration_ms=18714, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2020-11-16 12:10:09], mode=PLATFORM_GENERATION, duration=0:00:32.214, duration_ms=32214, data={name=Hw4}
+timestamp=[2020-11-16 12:11:48], mode=PLATFORM_CREATION, duration=0:00:04.114, duration_ms=4114, data={platform_source=platform, os=null, processor=null, platform=custom}
+timestamp=[2020-11-16 12:12:20], mode=BUILD, duration=0:00:00.972, duration_ms=972, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-16 12:12:26], mode=BUILD, duration=0:00:05.346, duration_ms=5346, data={name=App6_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-16 12:22:00], mode=WORKBENCH_START, duration=0:00:08.009, duration_ms=8009, data={}
+timestamp=[2020-11-16 12:22:01], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.323, duration_ms=323, data={}
+timestamp=[2020-11-16 12:22:02], mode=WORKBENCH_UI_INIT, duration=0:00:01.465, duration_ms=1465, data={editors_count=3, platform_editors_count=1, projects_count=9, platform_projects_count=2, active_platform_editor=true, projects=App6,App6_system,Hw0,Hw1,Hw3,Hw4,HwWithAcc1,HwWithAcc2,RemoteSystemsTempFiles}
+timestamp=[2020-11-16 12:23:41], mode=BUILD, duration=0:00:00.293, duration_ms=293, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-16 12:38:41], mode=WORKBENCH_START, duration=0:00:07.591, duration_ms=7591, data={}
+timestamp=[2020-11-16 12:38:42], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.362, duration_ms=362, data={}
+timestamp=[2020-11-16 12:38:43], mode=WORKBENCH_UI_INIT, duration=0:00:01.471, duration_ms=1471, data={editors_count=3, platform_editors_count=1, projects_count=9, platform_projects_count=2, active_platform_editor=true, projects=App6,App6_system,Hw0,Hw1,Hw3,Hw4,HwWithAcc1,HwWithAcc2,RemoteSystemsTempFiles}
+timestamp=[2020-11-16 13:01:43], mode=PLATFORM_GENERATION, duration=0:00:08.326, duration_ms=8326, data={name=Hw4}
+timestamp=[2020-11-16 13:01:43], mode=BUILD, duration=0:00:00.199, duration_ms=199, data={name=App6, configuration=Debug, clean_build=true}
+timestamp=[2020-11-16 13:03:01], mode=WORKBENCH_START, duration=0:00:08.010, duration_ms=8010, data={}
+timestamp=[2020-11-16 13:03:02], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.331, duration_ms=331, data={}
+timestamp=[2020-11-16 13:03:02], mode=WORKBENCH_UI_INIT, duration=0:00:01.436, duration_ms=1436, data={editors_count=3, platform_editors_count=1, projects_count=9, platform_projects_count=2, active_platform_editor=false, projects=App6,App6_system,Hw0,Hw1,Hw3,Hw4,HwWithAcc1,HwWithAcc2,RemoteSystemsTempFiles}
+timestamp=[2020-11-16 13:03:43], mode=PLATFORM_GENERATION, duration=0:00:07.213, duration_ms=7213, data={name=Hw4}
+timestamp=[2020-11-16 13:03:43], mode=BUILD, duration=0:00:00.202, duration_ms=202, data={name=App6, configuration=Debug, clean_build=true}
+timestamp=[2020-11-16 13:04:49], mode=PLATFORM_GENERATION, duration=0:00:30.944, duration_ms=30944, data={name=Hw4}
+timestamp=[2020-11-16 13:06:29], mode=PLATFORM_GENERATION, duration=0:00:02.507, duration_ms=2507, data={name=Hw4}
+timestamp=[2020-11-16 13:07:44], mode=PLATFORM_GENERATION, duration=0:00:02.904, duration_ms=2904, data={name=Hw4}
+timestamp=[2020-11-16 13:07:45], mode=BUILD, duration=0:00:00.160, duration_ms=160, data={name=App6, configuration=Debug, clean_build=true}
+timestamp=[2020-11-16 13:10:10], mode=PLATFORM_GENERATION, duration=0:00:30.432, duration_ms=30432, data={name=Hw4}
+timestamp=[2020-11-16 13:10:14], mode=BUILD, duration=0:00:00.875, duration_ms=875, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-16 18:54:46], mode=PLATFORM_GENERATION, duration=0:00:03.285, duration_ms=3285, data={name=Hw4}
+timestamp=[2020-11-16 18:55:22], mode=PLATFORM_GENERATION, duration=0:00:32.734, duration_ms=32734, data={name=Hw4}
+timestamp=[2020-11-16 18:55:34], mode=PLATFORM_GENERATION, duration=0:00:02.950, duration_ms=2950, data={name=Hw4}
+timestamp=[2020-11-16 18:55:34], mode=BUILD, duration=0:00:00.160, duration_ms=160, data={name=App6, configuration=Debug, clean_build=true}
+timestamp=[2020-11-16 18:56:39], mode=PLATFORM_GENERATION, duration=0:00:31.136, duration_ms=31136, data={name=Hw4}
+timestamp=[2020-11-16 19:03:53], mode=WORKBENCH_START, duration=0:00:08.239, duration_ms=8239, data={}
+timestamp=[2020-11-16 19:03:54], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.370, duration_ms=370, data={}
+timestamp=[2020-11-16 19:03:54], mode=WORKBENCH_UI_INIT, duration=0:00:01.194, duration_ms=1194, data={editors_count=4, platform_editors_count=1, projects_count=9, platform_projects_count=2, active_platform_editor=false, projects=App6,App6_system,Hw0,Hw1,Hw3,Hw4,HwWithAcc1,HwWithAcc2,RemoteSystemsTempFiles}
+timestamp=[2020-11-16 19:05:36], mode=PLATFORM_GENERATION, duration=0:00:17.422, duration_ms=17422, data={name=Hw5}
+timestamp=[2020-11-16 19:07:44], mode=PLATFORM_CREATION, duration=0:00:15.741, duration_ms=15741, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2020-11-16 19:15:13], mode=PLATFORM_GENERATION, duration=0:00:31.346, duration_ms=31346, data={name=Hw6}
+timestamp=[2020-11-16 19:15:38], mode=PLATFORM_GENERATION, duration=0:00:02.643, duration_ms=2643, data={name=Hw6}
+timestamp=[2020-11-16 19:16:23], mode=PLATFORM_GENERATION, duration=0:00:30.786, duration_ms=30786, data={name=Hw6}
+timestamp=[2020-11-16 19:16:24], mode=BUILD, duration=0:00:01.014, duration_ms=1014, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-16 19:16:29], mode=BUILD, duration=0:00:04.718, duration_ms=4718, data={name=App6_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-16 19:57:07], mode=PLATFORM_CREATION, duration=0:00:14.413, duration_ms=14413, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2020-11-16 19:58:05], mode=PLATFORM_GENERATION, duration=0:00:31.650, duration_ms=31650, data={name=Hw7}
+timestamp=[2020-11-16 20:00:09], mode=PLATFORM_GENERATION, duration=0:00:02.692, duration_ms=2692, data={name=Hw7}
+timestamp=[2020-11-16 20:00:44], mode=PLATFORM_GENERATION, duration=0:00:30.729, duration_ms=30729, data={name=Hw7}
+timestamp=[2020-11-16 20:00:45], mode=BUILD, duration=0:00:00.972, duration_ms=972, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-16 20:00:49], mode=BUILD, duration=0:00:04.572, duration_ms=4572, data={name=App6_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-18 10:11:00], mode=WORKBENCH_START, duration=0:00:08.398, duration_ms=8398, data={}
+timestamp=[2020-11-18 10:11:01], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.200, duration_ms=200, data={}
+timestamp=[2020-11-18 10:11:01], mode=WORKBENCH_UI_INIT, duration=0:00:01.296, duration_ms=1296, data={editors_count=6, platform_editors_count=2, projects_count=8, platform_projects_count=1, active_platform_editor=true, projects=App6,App6_system,Hw0,Hw1,Hw7,HwWithAcc1,HwWithAcc2,RemoteSystemsTempFiles}
+timestamp=[2020-11-18 10:11:36], mode=PLATFORM_GENERATION, duration=0:00:02.849, duration_ms=2849, data={name=Hw7}
+timestamp=[2020-11-18 10:12:04], mode=PLATFORM_GENERATION, duration=0:00:25.388, duration_ms=25388, data={name=Hw7}
+timestamp=[2020-11-18 10:12:21], mode=PLATFORM_GENERATION, duration=0:00:02.695, duration_ms=2695, data={name=Hw7}
+timestamp=[2020-11-18 10:12:22], mode=BUILD, duration=0:00:00.122, duration_ms=122, data={name=App6, configuration=Debug, clean_build=true}
+timestamp=[2020-11-18 10:12:22], mode=BUILD, duration=0:00:00.097, duration_ms=97, data={name=App6_system, configuration=Debug, clean_build=true}
+timestamp=[2020-11-18 10:12:56], mode=PLATFORM_GENERATION, duration=0:00:24.973, duration_ms=24973, data={name=Hw7}
+timestamp=[2020-11-18 10:12:56], mode=BUILD, duration=0:00:00.606, duration_ms=606, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-18 10:13:07], mode=BUILD, duration=0:00:04.929, duration_ms=4929, data={name=App6_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-18 10:15:37], mode=PLATFORM_CREATION, duration=0:00:10.952, duration_ms=10952, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2020-11-18 10:16:16], mode=PLATFORM_GENERATION, duration=0:00:25.382, duration_ms=25382, data={name=Hw8}
+timestamp=[2020-11-18 10:16:36], mode=PLATFORM_GENERATION, duration=0:00:02.689, duration_ms=2689, data={name=Hw8}
+timestamp=[2020-11-18 10:17:07], mode=PLATFORM_GENERATION, duration=0:00:25.227, duration_ms=25227, data={name=Hw8}
+timestamp=[2020-11-18 10:17:07], mode=BUILD, duration=0:00:00.601, duration_ms=601, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-18 10:17:13], mode=BUILD, duration=0:00:04.977, duration_ms=4977, data={name=App6_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-18 10:41:07], mode=PLATFORM_CREATION, duration=0:00:10.775, duration_ms=10775, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2020-11-18 10:41:47], mode=PLATFORM_GENERATION, duration=0:00:25.228, duration_ms=25228, data={name=Hw2}
+timestamp=[2020-11-18 10:42:15], mode=PLATFORM_GENERATION, duration=0:00:02.747, duration_ms=2747, data={name=Hw2}
+timestamp=[2020-11-18 10:42:42], mode=PLATFORM_GENERATION, duration=0:00:25.302, duration_ms=25302, data={name=Hw2}
+timestamp=[2020-11-18 10:42:43], mode=BUILD, duration=0:00:00.603, duration_ms=603, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-18 10:42:48], mode=BUILD, duration=0:00:04.980, duration_ms=4980, data={name=App6_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-18 15:29:59], mode=WORKBENCH_START, duration=0:00:09.452, duration_ms=9452, data={}
+timestamp=[2020-11-18 15:30:00], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.344, duration_ms=344, data={}
+timestamp=[2020-11-18 15:30:00], mode=WORKBENCH_UI_INIT, duration=0:00:01.465, duration_ms=1465, data={editors_count=5, platform_editors_count=2, projects_count=8, platform_projects_count=1, active_platform_editor=true, projects=App6,App6_system,Hw0,Hw1,Hw2,HwWithAcc1,HwWithAcc2,RemoteSystemsTempFiles}
+timestamp=[2020-11-18 15:30:39], mode=PLATFORM_CREATION, duration=0:00:13.707, duration_ms=13707, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2020-11-18 15:31:32], mode=PLATFORM_GENERATION, duration=0:00:45.322, duration_ms=45322, data={name=Hw3}
+timestamp=[2020-11-18 15:32:34], mode=PLATFORM_GENERATION, duration=0:00:03.469, duration_ms=3469, data={name=Hw3}
+timestamp=[2020-11-18 15:34:14], mode=PLATFORM_GENERATION, duration=0:00:43.803, duration_ms=43803, data={name=Hw3}
+timestamp=[2020-11-18 15:34:16], mode=BUILD, duration=0:00:02.259, duration_ms=2259, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-18 15:34:25], mode=BUILD, duration=0:00:07.991, duration_ms=7991, data={name=App6_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-18 16:49:15], mode=PLATFORM_CREATION, duration=0:00:12.441, duration_ms=12441, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2020-11-18 16:50:07], mode=PLATFORM_GENERATION, duration=0:00:45.450, duration_ms=45450, data={name=Hw4}
+timestamp=[2020-11-18 16:51:02], mode=PLATFORM_GENERATION, duration=0:00:03.518, duration_ms=3518, data={name=Hw4}
+timestamp=[2020-11-18 16:52:52], mode=PLATFORM_GENERATION, duration=0:00:44.104, duration_ms=44104, data={name=Hw4}
+timestamp=[2020-11-18 16:52:54], mode=BUILD, duration=0:00:02.204, duration_ms=2204, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-18 16:53:02], mode=BUILD, duration=0:00:07.837, duration_ms=7837, data={name=App6_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-18 17:04:16], mode=PLATFORM_CREATION, duration=0:00:11.756, duration_ms=11756, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2020-11-18 17:05:17], mode=PLATFORM_GENERATION, duration=0:00:44.055, duration_ms=44055, data={name=Hw5}
+timestamp=[2020-11-18 17:06:59], mode=PLATFORM_GENERATION, duration=0:00:03.411, duration_ms=3411, data={name=Hw5}
+timestamp=[2020-11-18 17:07:46], mode=PLATFORM_GENERATION, duration=0:00:44.154, duration_ms=44154, data={name=Hw5}
+timestamp=[2020-11-18 17:07:48], mode=BUILD, duration=0:00:01.837, duration_ms=1837, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-18 17:07:56], mode=BUILD, duration=0:00:07.175, duration_ms=7175, data={name=App6_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-18 17:09:10], mode=PLATFORM_GENERATION, duration=0:00:03.409, duration_ms=3409, data={name=Hw5}
+timestamp=[2020-11-18 17:09:10], mode=BUILD, duration=0:00:00.207, duration_ms=207, data={name=App6, configuration=Debug, clean_build=true}
+timestamp=[2020-11-18 17:09:15], mode=PLATFORM_GENERATION, duration=0:00:01.976, duration_ms=1976, data={name=Hw5}
+timestamp=[2020-11-18 17:09:15], mode=BUILD, duration=0:00:00.156, duration_ms=156, data={name=App6, configuration=Debug, clean_build=true}
+timestamp=[2020-11-18 17:09:15], mode=BUILD, duration=0:00:00.159, duration_ms=159, data={name=App6_system, configuration=Debug, clean_build=true}
+timestamp=[2020-11-18 17:10:01], mode=PLATFORM_GENERATION, duration=0:00:43.851, duration_ms=43851, data={name=Hw5}
+timestamp=[2020-11-18 17:10:03], mode=BUILD, duration=0:00:01.936, duration_ms=1936, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-18 17:10:10], mode=BUILD, duration=0:00:07.276, duration_ms=7276, data={name=App6_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-19 11:41:16], mode=WORKBENCH_START, duration=0:00:10.500, duration_ms=10500, data={}
+timestamp=[2020-11-19 11:41:17], mode=WORKBENCH_UI_INIT, duration=0:00:01.511, duration_ms=1511, data={editors_count=2, platform_editors_count=1, projects_count=11, platform_projects_count=4, active_platform_editor=true, projects=App6,App6_system,Hw0,Hw1,Hw2,Hw3,Hw4,Hw5,HwWithAcc1,HwWithAcc2,RemoteSystemsTempFiles}
+timestamp=[2020-11-19 11:41:18], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.819, duration_ms=819, data={}
+timestamp=[2020-11-19 11:41:32], mode=BUILD, duration=0:00:00.527, duration_ms=527, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-19 12:00:15], mode=PLATFORM_CREATION, duration=0:00:13.961, duration_ms=13961, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2020-11-19 12:01:17], mode=PLATFORM_GENERATION, duration=0:00:46.652, duration_ms=46652, data={name=Hw6}
+timestamp=[2020-11-19 12:01:54], mode=PLATFORM_GENERATION, duration=0:00:03.468, duration_ms=3468, data={name=Hw6}
+timestamp=[2020-11-19 12:02:45], mode=PLATFORM_GENERATION, duration=0:00:46.701, duration_ms=46701, data={name=Hw6}
+timestamp=[2020-11-19 12:02:47], mode=BUILD, duration=0:00:02.088, duration_ms=2088, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-19 12:02:55], mode=BUILD, duration=0:00:08.043, duration_ms=8043, data={name=App6_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-19 12:11:00], mode=BUILD, duration=0:00:01.235, duration_ms=1235, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-19 12:11:08], mode=BUILD, duration=0:00:07.325, duration_ms=7325, data={name=App6_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-19 12:17:12], mode=PLATFORM_GENERATION, duration=0:00:03.517, duration_ms=3517, data={name=Hw6}
+timestamp=[2020-11-19 12:17:12], mode=BUILD, duration=0:00:00.211, duration_ms=211, data={name=App6, configuration=Debug, clean_build=true}
+timestamp=[2020-11-19 12:17:12], mode=BUILD, duration=0:00:00.156, duration_ms=156, data={name=App6_system, configuration=Debug, clean_build=true}
+timestamp=[2020-11-19 12:18:01], mode=PLATFORM_GENERATION, duration=0:00:46.510, duration_ms=46510, data={name=Hw6}
+timestamp=[2020-11-19 12:18:03], mode=BUILD, duration=0:00:01.834, duration_ms=1834, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-19 12:18:11], mode=BUILD, duration=0:00:07.482, duration_ms=7482, data={name=App6_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-19 12:18:45], mode=BUILD, duration=0:00:00.312, duration_ms=312, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-19 12:18:53], mode=BUILD, duration=0:00:07.429, duration_ms=7429, data={name=App6_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-19 12:29:08], mode=BUILD, duration=0:00:00.311, duration_ms=311, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-19 12:29:16], mode=BUILD, duration=0:00:07.681, duration_ms=7681, data={name=App6_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-19 12:32:31], mode=BUILD, duration=0:00:01.178, duration_ms=1178, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-19 12:32:39], mode=BUILD, duration=0:00:07.272, duration_ms=7272, data={name=App6_system, configuration=Debug, clean_build=false}
+timestamp=[2020-11-19 12:35:43], mode=BUILD, duration=0:00:01.176, duration_ms=1176, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-19 12:35:49], mode=BUILD, duration=0:00:00.312, duration_ms=312, data={name=App6, configuration=Debug, clean_build=false}
+timestamp=[2020-11-19 12:35:57], mode=BUILD, duration=0:00:07.483, duration_ms=7483, data={name=App6_system, configuration=Debug, clean_build=false}

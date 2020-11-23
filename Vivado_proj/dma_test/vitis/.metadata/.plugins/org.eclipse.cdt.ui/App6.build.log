@@ -1,0 +1,10 @@
+12:35:49 **** Incremental Build of configuration Debug for project App6 ****
+make all 
+D:/Vivado/Vitis/2020.1/gnuwin/bin/make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+D:/Vivado/Vitis/2020.1/gnuwin/bin/make --no-print-directory main-build
+make[1]: Nothing to be done for 'main-build'.
+
+12:35:49 Build Finished (took 305ms)
+
