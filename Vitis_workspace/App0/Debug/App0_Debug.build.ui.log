@@ -1,25 +1,0 @@
-2020-11-12T14:06:51.95041900255-14:06:51 **** Incremental Build of configuration Debug for project App0 ****
-000-make all 
-000-D:/Vivado/Vitis/2020.1/gnuwin/bin/make --no-print-directory pre-build
-000-a9-linaro-pre-build-step
-000-' '
-000-D:/Vivado/Vitis/2020.1/gnuwin/bin/make --no-print-directory main-build
-000-'Building file: ../src/helloworld.c'
-000-'Invoking: ARM v7 gcc compiler'
-000-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/Vivado_Project/dma_test/vitis/Hw2WithAcc/export/Hw2WithAcc/sw/Hw2WithAcc/standalone_domain/bspinclude/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
-000-'Finished building: ../src/helloworld.c'
-000-' '
-000-'Building target: App0.elf'
-000-'Invoking: ARM v7 gcc linker'
-000-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LD:/Vivado_Project/dma_test/vitis/Hw2WithAcc/export/Hw2WithAcc/sw/Hw2WithAcc/standalone_domain/bsplib/lib -o "App0.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-000-'Finished building target: App0.elf'
-000-' '
-000-'Invoking: ARM v7 Print Size'
-000-arm-none-eabi-size App0.elf  |tee "App0.elf.size"
-000-   text	   data	    bss	    dec	    hex	filename
-000-  33080	   2248	  24504	  59832	   e9b8	App0.elf
-000-'Finished building: App0.elf.size'
-000-' '
-00255-
-14:06:52 Build Finished (took 625ms)
-
