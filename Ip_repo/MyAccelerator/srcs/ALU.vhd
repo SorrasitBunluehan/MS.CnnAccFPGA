@@ -5,7 +5,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity ALU is
 	generic(
-		input_size : integer;
+		input_size : natural;
 		input_width : natural;
 		compute_byte : natural
 	);
