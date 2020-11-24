@@ -195,3 +195,8 @@ save_wave_config {D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/main_fms
 restart
 INFO: [Simtcl 6-17] Simulation restarted
 run 500 us
+save_wave_config {D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/main_fms_tb_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 24 20:16:19 2020...

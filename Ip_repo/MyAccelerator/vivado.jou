@@ -40,3 +40,5 @@ run 500 us
 save_wave_config {D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/main_fms_tb_behav.wcfg}
 restart
 run 500 us
+save_wave_config {D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/main_fms_tb_behav.wcfg}
+close_sim

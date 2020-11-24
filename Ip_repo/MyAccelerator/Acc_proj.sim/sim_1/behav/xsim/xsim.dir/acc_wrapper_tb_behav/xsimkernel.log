@@ -2,3 +2,6 @@ Running: xsim.dir/acc_wrapper_tb_behav/xsimk.exe -simmode gui -wdb acc_wrapper_t
 Design successfully loaded
 Design Loading Memory Usage: 6052 KB (Peak: 6052 KB)
 Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 15024 KB (Peak: 15024 KB)
+Simulation CPU Usage: 1233 ms
