@@ -5,12 +5,14 @@ use IEEE.NUMERIC_STD.ALL;
 entity acc_wrapper is
 	generic(
 		input_size : natural := 28;
+		input_depth : natural := 1; 					-- Need todo sth with this param
 		kernel_size : natural := 3;             
 		kernel_depth : natural := 16;
 		stride : natural := 1;
-		data_width : natural := 32;
 		compute_byte : natural := 25;
-		-- Hidden parameter
+
+		-- Width of the signal
+		data_width : natural := 32;
 		addr_width : natural := 8;
 		rowcol_width : natural := 16
 	);
@@ -114,6 +116,22 @@ architecture behav of acc_wrapper is
 		);
 	end component;
 
+	component ALU is
+		generic(
+			input_size : natural;
+			input_width : natural;
+			compute_byte : natural
+		);
+		port (
+			clk : in std_logic;
+			x_in : in std_logic_vector((compute_byte*input_width)-1 downto 0);                
+			w_in : in std_logic_vector((compute_byte*input_width)-1 downto 0);				 
+			compute_en : in std_logic;
+			alu_out : out std_logic_vector((2*input_width + compute_byte) - 1 downto 0);
+			alu_valid : out std_logic          
+		);
+	end component;
+
 	-- Main MUX variables
 	signal agu_tdata : std_logic_vector(XAXIS_TDATA'range);
 	signal agu_tvalid : std_logic;
@@ -130,6 +148,9 @@ architecture behav of acc_wrapper is
 	signal agu_out : std_logic_vector((compute_byte*data_width)-1 downto 0);
 	signal w_addr_c : std_logic_vector(addr_width-1 downto 0);
 	signal row_c, col_c : std_logic_vector(rowcol_width-1 downto 0);
+
+	signal alu_out0, alu_out1 : std_logic_vector((2*data_width + compute_byte) - 1 downto 0);
+	signal alu_valid0, alu_valid1  : std_logic;
 
 begin
 
@@ -199,7 +220,7 @@ begin
 	);
 
 	wgu_dut : wgu
-	generic map(
+		generic map(
 		input_width  => data_width, 
 		kernel_size  => kernel_size, 
 		kernel_depth => kernel_depth,
@@ -215,6 +236,35 @@ begin
 		wgu_out1    => wgu_out1,
 		w_addr_c 	=> w_addr_c
 	);
+
+	alu0 : ALU
+	generic map(
+		input_size => input_size,
+		input_width => data_width,
+		compute_byte => compute_byte
+	) port map(
+		clk => XAXIS_ACLK,
+		x_in => agu_out,
+		w_in => wgu_out0,
+		compute_en => compute_en,
+		alu_out => alu_out0,
+		alu_valid => alu_valid0
+	);
+
+	alu1 : ALU
+	generic map(
+		input_size => input_size,
+		input_width => data_width,
+		compute_byte => compute_byte
+	) port map(
+		clk => XAXIS_ACLK,
+		x_in => agu_out,
+		w_in => wgu_out1,
+		compute_en => compute_en,
+		alu_out => alu_out1,
+		alu_valid => alu_valid1
+	);
+
 
 	---------------------------------------------------------------------------------------------------------
 

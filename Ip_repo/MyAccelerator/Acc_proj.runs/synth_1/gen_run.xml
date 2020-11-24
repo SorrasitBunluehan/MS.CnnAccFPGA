@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1605889952">
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1606219101">
   <File Type="PA-TCL" Name="acc_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="acc_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="acc_wrapper_reports.tcl"/>
@@ -36,34 +36,15 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/srcs/dlau_pkg.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/srcs/DPU.vhd">
-      <FileInfo>
-        <Attr Name="UserDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/srcs/SPM.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/srcs/data_fifo.vhd">
-      <FileInfo>
-        <Attr Name="UserDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/srcs/jk_ff.vhd">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -85,9 +66,6 @@
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../../vivado_project/myaccelerator/component.xml">
-      <FileInfo SFType="IPXACT"/>
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>

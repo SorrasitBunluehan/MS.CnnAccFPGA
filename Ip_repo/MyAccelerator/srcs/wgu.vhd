@@ -64,15 +64,15 @@ architecture behav of wgu is
 		);
 	end component;
 
-	component jk_ff is
-		port( 
-			J,K: in  std_logic;
-			Reset: in std_logic;
-			Clock_enable: in std_logic;
-			Clock: in std_logic;
-			Output: out std_logic
-		);
-	end component;
+--	component jk_ff is
+--		port( 
+--			J,K: in  std_logic;
+--			Reset: in std_logic;
+--			Clock_enable: in std_logic;
+--			Clock: in std_logic;
+--			Output: out std_logic
+--		);
+--	end component;
 
 	-- SPM Related
 	signal we0,we1,we_sel, addr_trg, addr_en : std_logic;
