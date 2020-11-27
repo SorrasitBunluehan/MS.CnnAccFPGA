@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="238057000fs"></ZoomStartTime>
-      <ZoomEndTime time="238323601fs"></ZoomEndTime>
-      <Cursor1Time time="238240000fs"></Cursor1Time>
+      <ZoomStartTime time="3200000fs"></ZoomStartTime>
+      <ZoomEndTime time="4549001fs"></ZoomEndTime>
+      <Cursor1Time time="3500000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="181"></NameColumnWidth>
-      <ValueColumnWidth column_width="87"></ValueColumnWidth>
+      <ValueColumnWidth column_width="71"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="6" />
+   <WVObjectSize size="11" />
    <wvobject fp_name="group225" type="group">
       <obj_property name="label">AXI Signal</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -68,6 +68,7 @@
    <wvobject fp_name="group26" type="group">
       <obj_property name="label">Debugged Signal</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/acc_wrapper_tb/acc_dut/agu_out_test" type="array">
          <obj_property name="ElementShortName">agu_out_test[31:0]</obj_property>
          <obj_property name="ObjectShortName">agu_out_test[31:0]</obj_property>
@@ -92,16 +93,6 @@
          <obj_property name="CustomSignalColor">#0000FF</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_en_test" type="logic">
-         <obj_property name="ElementShortName">main_en_test</obj_property>
-         <obj_property name="ObjectShortName">main_en_test</obj_property>
-         <obj_property name="CustomSignalColor">#0000FF</obj_property>
-         <obj_property name="UseCustomSignalColor">true</obj_property>
-      </wvobject>
-      <wvobject fp_name="/acc_wrapper_tb/acc_dut/agu_dut/comp_done" type="logic">
-         <obj_property name="ElementShortName">comp_done</obj_property>
-         <obj_property name="ObjectShortName">comp_done</obj_property>
-      </wvobject>
       <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/done" type="logic">
          <obj_property name="ElementShortName">done</obj_property>
          <obj_property name="ObjectShortName">done</obj_property>
@@ -110,20 +101,7 @@
    <wvobject fp_name="group54" type="group">
       <obj_property name="label">State Machine</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/acc_wrapper_tb/acc_dut/agu_dut/prep_count" type="other">
-         <obj_property name="ElementShortName">prep_count</obj_property>
-         <obj_property name="ObjectShortName">prep_count</obj_property>
-      </wvobject>
-      <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/row_c" type="array">
-         <obj_property name="ElementShortName">row_c[15:0]</obj_property>
-         <obj_property name="ObjectShortName">row_c[15:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/col_c" type="array">
-         <obj_property name="ElementShortName">col_c[15:0]</obj_property>
-         <obj_property name="ObjectShortName">col_c[15:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/c_state" type="other">
          <obj_property name="ElementShortName">c_state</obj_property>
          <obj_property name="ObjectShortName">c_state</obj_property>
@@ -132,15 +110,10 @@
          <obj_property name="ElementShortName">n_state</obj_property>
          <obj_property name="ObjectShortName">n_state</obj_property>
       </wvobject>
-      <wvobject fp_name="/acc_wrapper_tb/acc_dut/agu_dut/agu_ready" type="logic">
-         <obj_property name="ElementShortName">agu_ready</obj_property>
-         <obj_property name="ObjectShortName">agu_ready</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject fp_name="group53" type="group">
       <obj_property name="label">ALU0</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/acc_wrapper_tb/acc_dut/alu0/x_in" type="array">
          <obj_property name="ElementShortName">x_in[799:0]</obj_property>
          <obj_property name="ObjectShortName">x_in[799:0]</obj_property>
@@ -167,7 +140,6 @@
    <wvobject fp_name="group47" type="group">
       <obj_property name="label">ALU1</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/acc_wrapper_tb/acc_dut/alu1/x_in" type="array">
          <obj_property name="ElementShortName">x_in[799:0]</obj_property>
          <obj_property name="ObjectShortName">x_in[799:0]</obj_property>
@@ -189,5 +161,25 @@
          <obj_property name="ElementShortName">alu_valid</obj_property>
          <obj_property name="ObjectShortName">alu_valid</obj_property>
       </wvobject>
+   </wvobject>
+   <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/x_row" type="other">
+      <obj_property name="ElementShortName">x_row</obj_property>
+      <obj_property name="ObjectShortName">x_row</obj_property>
+   </wvobject>
+   <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/x_col" type="other">
+      <obj_property name="ElementShortName">x_col</obj_property>
+      <obj_property name="ObjectShortName">x_col</obj_property>
+   </wvobject>
+   <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/x_prep_c" type="other">
+      <obj_property name="ElementShortName">x_prep_c</obj_property>
+      <obj_property name="ObjectShortName">x_prep_c</obj_property>
+   </wvobject>
+   <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/pixel_last" type="logic">
+      <obj_property name="ElementShortName">pixel_last</obj_property>
+      <obj_property name="ObjectShortName">pixel_last</obj_property>
+   </wvobject>
+   <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/agu_en" type="logic">
+      <obj_property name="ElementShortName">agu_en</obj_property>
+      <obj_property name="ObjectShortName">agu_en</obj_property>
    </wvobject>
 </wave_config>

@@ -14,27 +14,32 @@ entity main_fsm	is
 		rowcol_width : natural
 	); 
 	port (
+
+		-- Input signals
 		clk : in std_logic;
 		arstn : in std_logic;
 		tvalid : in std_logic;
 		tlast : in std_logic;
-
-		-- Input from AGU
-		agu_ready : in std_logic;
-		compute_done : in std_logic;
 		w_addr_c : in std_logic_vector(addr_width-1 downto 0);
-		row_c, col_c : in std_logic_vector(rowcol_width-1 downto 0);
 
-		-- OUTPUT
-		input_mux : out std_logic;
-		main_en : out std_logic;
+		-- Output to AGU
+		agu_en : out std_logic;
+
+		-- Output to WGU
 		w_addr_incr : out std_logic;
-		tready : out std_logic;
-		compute_en : out std_logic;
-		done : out std_logic;
 
+		-- Output to mux
+		mux_sel : out std_logic;
+
+		-- Output to DMA
+		tready : out std_logic;
+
+		-- Output to ALU
+		alu_en : out std_logic;
+	
 		--TODO : For debugged purpose (Need to delete)
-		fsm_state_test : out std_logic_vector(2 downto 0)
+		fsm_state_test : out std_logic_vector(2 downto 0);
+		done : out std_logic
 
 	);
 end main_fsm;
@@ -44,11 +49,17 @@ architecture behav of main_fsm is
 	constant output_size : natural := (input_size - kernel_size)/stride + 1;
 
 	type state_type is (IDLE, W_PREP, X_PREP, L_X, L_W, COMPUTE);
-	signal  c_state, n_state : state_type;
-	signal  w_addr_c_en, pixel_last : std_logic;
+	signal c_state, n_state : state_type;
+	signal compute_done, x_prep_done, x_prep_c_en ,w_addr_c_en, pixel_last, count_en, agu_en_s, compute_c_en : std_logic;
+	signal x_row, x_col, x_prep_c : integer range 0 to 255;
+
 
 
 begin
+
+	agu_en <= agu_en_s;
+	--x_prep_done <= '1' when (c_state = X_PREP) and (x_row = kernel_size-1) and (x_col = input_size-1) else '0';
+	x_prep_done <= '1' when  x_prep_c = input_size*kernel_size-1 else '0';
 
 	-- TODO : For debugging purpose delete it!!
 	process(c_state)
@@ -67,114 +78,154 @@ begin
 	w_addr_incr <= w_addr_c_en;
 
 	STATE_SYNC: 
-	process(clk,arstn)
-	begin
-		if arstn = '0' then 
-			c_state <= IDLE;
-		elsif rising_edge(clk) then 
-			c_state <= n_state;
-		end if;
-	end process;
+		process(clk,arstn)
+		begin
+			if arstn = '0' then 
+				c_state <= IDLE;
+			elsif rising_edge(clk) then 
+				c_state <= n_state;
+			end if;
+		end process;
 
 	NEXT_STATE_DECODE:
-	process (c_state, agu_ready, w_addr_c, compute_done, tvalid, tlast, col_c, row_c, pixel_last)
-	begin
-		n_state <= c_state;
-		case c_state is
-			when IDLE =>
-				if compute_done = '1' then
-					n_state <= IDLE;
-				elsif tvalid = '1' then
-					n_state <= W_PREP;	
-				end if;
-			when W_PREP =>
-				if tlast = '1' then
-					n_state <= X_PREP;
-				end if;
-			when X_PREP =>
-				if agu_ready = '1' then
-					n_state <= COMPUTE;
-				end if;
-			when COMPUTE =>
-				n_state <= L_W;
-			when L_W =>
-				if unsigned(w_addr_c) = (kernel_depth/2) - 1 then
-					n_state <= L_X;
+		process (c_state, w_addr_c, compute_done, tvalid, tlast, x_col, x_row, pixel_last, x_prep_done)
+		begin
+			n_state <= c_state;
+			case c_state is
+				when IDLE =>
 					if compute_done = '1' then
 						n_state <= IDLE;
+					elsif tvalid = '1' then
+						n_state <= W_PREP;	
 					end if;
-				else
-					n_state <= COMPUTE;
-				end if;
-			when L_X =>
-				if tvalid = '1' then 
-					if pixel_last = '1' then
+				when W_PREP =>
+					if tlast = '1' then
+						n_state <= X_PREP;
+					end if;
+				when X_PREP =>
+					if x_prep_done = '1' then
 						n_state <= COMPUTE;
-					elsif (to_integer(unsigned(row_c)) mod stride = 0) then
-						if (to_integer(unsigned(col_c)) mod stride = 0) then
-							if to_integer(unsigned(col_c)) < (output_size-1)*stride then 
-								n_state <= COMPUTE;
+					end if;
+				when COMPUTE =>
+					n_state <= L_W;
+				when L_W =>
+					if unsigned(w_addr_c) = (kernel_depth/2) - 1 then
+						n_state <= L_X;
+						if compute_done = '1' then
+							n_state <= IDLE;
+						end if;
+					else
+						n_state <= COMPUTE;
+					end if;
+				when L_X =>
+					if tvalid = '1' then 
+						if pixel_last = '1' then
+							n_state <= COMPUTE;
+						elsif (x_row mod stride) = 0 then
+							if (x_col mod stride) = 0 then
+								if x_col < (output_size-1)*stride then 
+									n_state <= COMPUTE;
+								end if;
 							end if;
 						end if;
+						--n_state <= COMPUTE;
 					end if;
-					--n_state <= COMPUTE;
-				end if;
-			end case;
-	end process;
+				end case;
+		end process;
 
-	pixel_last <= '1' when unsigned(col_c) = input_size-1 else '0';
-
+	pixel_last <= '1' when x_col = input_size-1 else '0';
 
 	OUTPUT_DECODE:
-   	process(c_state, agu_ready, w_addr_c, compute_done, tvalid, tlast)
-	begin
+		process(c_state, x_prep_done, w_addr_c, compute_done, tvalid, tlast)
+		begin
 
-	-- Initial value in IDLE state to prevent latch
-		input_mux <= '0';
-		main_en <= '0';
-		w_addr_c_en <= '0';
-		tready <= '1';
-		compute_en <= '0';
-		done <= '0';
+			-- Initial value in IDLE state to prevent latch
+			-- External output 
+			agu_en_s <= '0';
+			w_addr_c_en <= '0';
+			mux_sel <= '0';
+			tready <= '1';
+			alu_en <= '0';
 
-		case c_state is
-			when IDLE =>
-				if compute_done = '1' then
-					done <= '1';
-				end if;
-			when W_PREP =>
-			when X_PREP =>
-				if agu_ready = '1' then
-					main_en <= '0';
+			-- Debugged Purpose
+			done <= '0';
+
+			-- Internal output
+			x_prep_c_en <= '0';
+			compute_c_en <= '0';
+
+			case c_state is
+				when IDLE =>
+					if compute_done = '1' then
+						done <= '1';
+					end if;
+				when W_PREP =>
+				when X_PREP =>
+				--	if x_prep_done = '1' then
+				--		agu_en_s <= '0';
+				--		tready <= '0';
+				--		mux_sel <= '1';
+				--	else
+						if tvalid = '1' then
+							agu_en_s <= '1';
+						end if;
+
+						x_prep_c_en <= '1';
+						mux_sel <= '1';
+						
+						w_addr_c_en <= '0';
+						tready <= '1';
+						alu_en <= '0';
+				--	end if;
+				when COMPUTE =>
 					tready <= '0';
-					input_mux <= '1';
-				else
-					input_mux <= '1';
-					main_en <= '1';
-					w_addr_c_en <= '0';
+					mux_sel <= '1';
+					alu_en <= '1';
+				when L_W =>
+					tready <= '0';
+					w_addr_c_en <= '1';
+					mux_sel <= '1';
+				when L_X =>
+					if tvalid = '1' then
+						agu_en_s <= '1';
+					end if;
 					tready <= '1';
-					compute_en <= '0';
+					mux_sel <= '1';
+			end case;
+		end process;
+
+	-- Counter use to count row,column of processed input
+	COMPUTE_COUNTER:
+		process(clk,arstn)
+		begin
+			if arstn = '0' then
+				x_row <= 0;
+				x_col <= 0;
+			elsif rising_edge(clk) then
+				if agu_en_s = '1' then 
+					if x_col = input_size-1 then
+						x_col <= 0;
+						x_row <= x_row + 1;
+					else
+						x_col <= x_col + 1;
+					end if;
 				end if;
-			when COMPUTE =>
-				tready <= '0';
-				input_mux <= '1';
-				compute_en <= '1';
-			when L_W =>
-				tready <= '0';
-				w_addr_c_en <= '1';
-				input_mux <= '1';
-			when L_X =>
-				if tvalid = '1' then
-					main_en <= '1';
+			end if;
+        end process;
+
+	X_PREP_COUNTER:	
+		process(clk,arstn)
+		begin
+			if arstn = '0' then 
+				x_prep_c <= 0;
+			elsif rising_edge(clk) then 
+				if x_prep_c_en = '1' then
+					if tvalid = '1' then
+						x_prep_c <= x_prep_c + 1;
+					end if;
 				end if;
-				tready <= '1';
-				input_mux <= '1';
-		end case;
-	end process;
-
-
-
-
+			end if;
+		end process;
 
 
 end behav;

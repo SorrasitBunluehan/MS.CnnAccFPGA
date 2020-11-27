@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1606219101">
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1606474221">
   <File Type="PA-TCL" Name="acc_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="acc_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="acc_wrapper_reports.tcl"/>
@@ -31,20 +31,12 @@
     </File>
     <File Path="$PPRDIR/srcs/ALU.vhd">
       <FileInfo>
-        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PPRDIR/srcs/SPM.vhd">
       <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/srcs/jk_ff.vhd">
-      <FileInfo>
-        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -63,6 +55,13 @@
     </File>
     <File Path="$PPRDIR/srcs/acc_wrapper.vhd">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/srcs/ACCU.vhd">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>

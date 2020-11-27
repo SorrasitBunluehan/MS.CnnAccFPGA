@@ -92,6 +92,7 @@ read_vhdl -library xil_defaultlib {
   D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/main_fsm.vhd
   D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/dff.vhd
   D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/AGU.vhd
+  D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/ALU.vhd
   D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/SPM.vhd
   D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/w_sticker.vhd
   D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/wgu.vhd

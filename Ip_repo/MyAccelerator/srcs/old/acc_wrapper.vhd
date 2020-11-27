@@ -1,4 +1,5 @@
-library IEEE; use IEEE.STD_LOGIC_1164.ALL;
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity acc_wrapper is
@@ -53,18 +54,20 @@ architecture behav of acc_wrapper is
 			tlast : in std_logic;
 
 			-- Input from AGU
+			agu_ready : in std_logic;
+			compute_done : in std_logic;
 			w_addr_c : in std_logic_vector(addr_width-1 downto 0);
+			row_c, col_c : in std_logic_vector(rowcol_width-1 downto 0);
 
 			-- OUTPUT
-			agu_en : out std_logic;
+			input_mux : out std_logic;
+			main_en : out std_logic;
 			w_addr_incr : out std_logic;
-			mux_sel : out std_logic;
 			tready : out std_logic;
-			alu_en : out std_logic;
-
+			compute_en : out std_logic;
+			done : out std_logic;
 
 			--TODO : For debugged purpose (Need to delete)
-			done : out std_logic;
 			fsm_state_test : out std_logic_vector(2 downto 0)
 		);
 	end component;
@@ -102,10 +105,14 @@ architecture behav of acc_wrapper is
 			clk : in std_logic;
 			arstn : in std_logic;
 			agu_in : in std_logic_vector(data_width-1 downto 0);
-			agu_en : in std_logic;
+			w_valid : in std_logic;
+			main_en : in std_logic;
 
 			-- Output
-			agu_out : out std_logic_vector((compute_byte*data_width)-1 downto 0)
+			agu_out : out std_logic_vector((compute_byte*data_width)-1 downto 0);
+			agu_ready : out std_logic;
+			compute_done : out std_logic;
+			row_c, col_c : out std_logic_vector(rowcol_width-1 downto 0)
 		);
 	end component;
 
@@ -125,23 +132,23 @@ architecture behav of acc_wrapper is
 		);
 	end component;
 
-	--component ACCU is
-	--	generic(
-	--		input_size : natural;
-	--		input_depth : natural;
-	--		kernel_size : natural;
-	--		stride : natural;
-	--		kernel_depth : natural;
-	--		input_width : natural;
-	--		compute_byte : natural
-	--	); 
-	--	port(
-	--		clk, arstn : in std_logic;
-	--		din0, din1 : in std_logic_vector((2*input_width + compute_byte) - 1 downto 0);
-	--		en0, en1 : in std_logic;
-	--		accu_ready : out std_logic
-	--	);
-	--end component;
+	component ACCU is
+		generic(
+			input_size : natural;
+			input_depth : natural;
+			kernel_size : natural;
+			stride : natural;
+			kernel_depth : natural;
+			input_width : natural;
+			compute_byte : natural
+		); 
+		port(
+			clk, arstn : in std_logic;
+			din0, din1 : in std_logic_vector((2*input_width + compute_byte) - 1 downto 0);
+			en0, en1 : in std_logic;
+			accu_ready : out std_logic
+		);
+	end component;
 
 	-- Main MUX variables
 	signal agu_tdata : std_logic_vector(XAXIS_TDATA'range);
@@ -155,12 +162,12 @@ architecture behav of acc_wrapper is
 	signal wgu_out1 : std_logic_vector((compute_byte*data_width)-1 downto 0);
 
 	-- FSM Signal
-	signal agu_ready, compute_done, main_en, input_mux , alu_en, w_addr_incr : std_logic;
+	signal agu_ready, compute_done, main_en, input_mux , compute_en, w_addr_incr : std_logic;
 
 	-- AGU Signal
 	signal agu_out : std_logic_vector((compute_byte*data_width)-1 downto 0);
 	signal w_addr_c : std_logic_vector(addr_width-1 downto 0);
-	signal agu_en : std_logic;
+	signal row_c, col_c : std_logic_vector(rowcol_width-1 downto 0);
 
 	-- ALU signal
 	signal alu_out0, alu_out1 : std_logic_vector((2*data_width + compute_byte) - 1 downto 0);
@@ -177,7 +184,7 @@ begin
 	agu_out_test <= agu_out(31 downto 0);
 	wgu_out0_test <= wgu_out0(31 downto 0);
 	wgu_out1_test <= wgu_out1(31 downto 0);
-	compute_en_test <= alu_en;
+	compute_en_test <= compute_en;
 	agu_valid_test <= agu_ready;
 	input_mux_test <= mux_sel;
 	main_en_test <= main_en;
@@ -200,17 +207,20 @@ begin
         arstn 		 => XAXIS_ARSTN , 		
         tvalid 		 => XAXIS_TVALID , 		
         tlast 		 => XAXIS_TLAST , 		
+        agu_ready 	 => agu_ready, 	
+        compute_done => compute_done,
 		w_addr_c 	 => w_addr_c,
+		row_c 		 => row_c,
+		col_c 		 => col_c,
 		-- Output
-        agu_en 	 	 => agu_en, 	
+        input_mux 	 => mux_sel, 	
+        main_en 	 => main_en, 	
         w_addr_incr  => w_addr_incr, 	
-        mux_sel 	 => mux_sel, 	
         tready 		 => XAXIS_TREADY, 
-		alu_en 	 	 => alu_en,
-
+		compute_en 	 => compute_en,
+		done 		 => done_test,
 		-- TODO : Remove this line (Debugged purpose)
-		fsm_state_test => fsm_state_test,
-		done 		 => done_test
+		fsm_state_test => fsm_state_test
 	);
 
 	agu_dut : AGU
@@ -225,8 +235,13 @@ begin
 		clk 		 => XAXIS_ACLK, 		
 		arstn        => XAXIS_ARSTN,       
 		agu_in       => agu_tdata,      
-		agu_en 		 => agu_en,
-		agu_out      => agu_out
+		w_valid      => agu_tvalid,     
+		main_en      => main_en,    
+		agu_out      => agu_out,     
+		agu_ready    => agu_ready,   
+		compute_done => compute_done,
+		row_c 		 => row_c,
+		col_c 		 => col_c
 	);
 
 	wgu_dut : wgu
@@ -256,7 +271,7 @@ begin
 		clk => XAXIS_ACLK,
 		x_in => agu_out,
 		w_in => wgu_out0,
-		compute_en => alu_en,
+		compute_en => compute_en,
 		alu_out => alu_out0,
 		alu_valid => alu_valid0
 	);
@@ -270,29 +285,29 @@ begin
 		clk => XAXIS_ACLK,
 		x_in => agu_out,
 		w_in => wgu_out1,
-		compute_en => alu_en,
+		compute_en => compute_en,
 		alu_out => alu_out1,
 		alu_valid => alu_valid1
 	);
 
-	--accu_dut : ACCU
-	--generic map(
-	--	input_size   => input_size, 
-    --    input_depth  => input_depth, 
-    --    kernel_size  => kernel_size, 
-	--	stride 	   	 => stride,
-    --    kernel_depth => kernel_depth,
-    --    input_width  => data_width,
-    --    compute_byte => compute_byte
-	--) port map(
-	--	clk => XAXIS_ACLK,
-	--	arstn => XAXIS_ARSTN,
-	--	din0 => alu_out0,
-	--	din1 => alu_out1,
-	--	en0 => alu_valid0,
-	--	en1 => alu_valid1,
-	--	accu_ready => accu_ready
-	--);
+	accu_dut : ACCU
+	generic map(
+		input_size   => input_size, 
+        input_depth  => input_depth, 
+        kernel_size  => kernel_size, 
+		stride 	   	 => stride,
+        kernel_depth => kernel_depth,
+        input_width  => data_width,
+        compute_byte => compute_byte
+	) port map(
+		clk => XAXIS_ACLK,
+		arstn => XAXIS_ARSTN,
+		din0 => alu_out0,
+		din1 => alu_out1,
+		en0 => alu_valid0,
+		en1 => alu_valid1,
+		accu_ready => accu_ready
+	);
 
 
 

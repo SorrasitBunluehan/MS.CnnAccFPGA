@@ -1,3 +1,9 @@
+-- Usage Condition'
+-- 	1. Kernel depth needed to be divided by 2 (ex. 2, 4, 16, ... , 128)
+--  2. 
+
+
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -87,7 +93,7 @@ begin
 		wait for CLK_PERIOD*100;
 		XAXIS_TVALID <= '1';
 		wait for CLK_PERIOD*11185;
-		XAXIS_TVALID <= '0';
+		--XAXIS_TVALID <= '0';
 		wait;
 	end process;
 

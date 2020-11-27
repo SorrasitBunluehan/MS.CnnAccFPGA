@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Tue Nov 24 12:58:59 2020
+| Date         : Fri Nov 27 11:50:49 2020
 | Host         : DESKTOP-BJ9E846 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file acc_wrapper_utilization_synth.rpt -pb acc_wrapper_utilization_synth.pb
 | Design       : acc_wrapper
@@ -27,20 +27,18 @@ Table of Contents
 1. Slice Logic
 --------------
 
-+----------------------------+------+-------+-----------+-------+
-|          Site Type         | Used | Fixed | Available | Util% |
-+----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                |  295 |     0 |     17600 |  1.68 |
-|   LUT as Logic             |  135 |     0 |     17600 |  0.77 |
-|   LUT as Memory            |  160 |     0 |      6000 |  2.67 |
-|     LUT as Distributed RAM |   64 |     0 |           |       |
-|     LUT as Shift Register  |   96 |     0 |           |       |
-| Slice Registers            |  173 |     0 |     35200 |  0.49 |
-|   Register as Flip Flop    |  173 |     0 |     35200 |  0.49 |
-|   Register as Latch        |    0 |     0 |     35200 |  0.00 |
-| F7 Muxes                   |    0 |     0 |      8800 |  0.00 |
-| F8 Muxes                   |    0 |     0 |      4400 |  0.00 |
-+----------------------------+------+-------+-----------+-------+
++-------------------------+------+-------+-----------+-------+
+|        Site Type        | Used | Fixed | Available | Util% |
++-------------------------+------+-------+-----------+-------+
+| Slice LUTs*             |   54 |     0 |     17600 |  0.31 |
+|   LUT as Logic          |   54 |     0 |     17600 |  0.31 |
+|   LUT as Memory         |    0 |     0 |      6000 |  0.00 |
+| Slice Registers         |   46 |     0 |     35200 |  0.13 |
+|   Register as Flip Flop |   46 |     0 |     35200 |  0.13 |
+|   Register as Latch     |    0 |     0 |     35200 |  0.00 |
+| F7 Muxes                |    0 |     0 |      8800 |  0.00 |
+| F8 Muxes                |    0 |     0 |      4400 |  0.00 |
++-------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
 
@@ -56,10 +54,10 @@ Table of Contents
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 1     |          Yes |           - |          Set |
-| 107   |          Yes |           - |        Reset |
+| 0     |          Yes |           - |          Set |
+| 45    |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 65    |          Yes |       Reset |            - |
+| 1     |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -89,24 +87,24 @@ Table of Contents
 4. IO and GT Specific
 ---------------------
 
-+-----------------------------+------+-------+-----------+--------+
-|          Site Type          | Used | Fixed | Available |  Util% |
-+-----------------------------+------+-------+-----------+--------+
-| Bonded IOB                  |  141 |     0 |       100 | 141.00 |
-| Bonded IPADs                |    0 |     0 |         2 |   0.00 |
-| Bonded IOPADs               |    0 |     0 |       130 |   0.00 |
-| PHY_CONTROL                 |    0 |     0 |         2 |   0.00 |
-| PHASER_REF                  |    0 |     0 |         2 |   0.00 |
-| OUT_FIFO                    |    0 |     0 |         8 |   0.00 |
-| IN_FIFO                     |    0 |     0 |         8 |   0.00 |
-| IDELAYCTRL                  |    0 |     0 |         2 |   0.00 |
-| IBUFDS                      |    0 |     0 |        96 |   0.00 |
-| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |         8 |   0.00 |
-| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |         8 |   0.00 |
-| IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |       100 |   0.00 |
-| ILOGIC                      |    0 |     0 |       100 |   0.00 |
-| OLOGIC                      |    0 |     0 |       100 |   0.00 |
-+-----------------------------+------+-------+-----------+--------+
++-----------------------------+------+-------+-----------+-------+
+|          Site Type          | Used | Fixed | Available | Util% |
++-----------------------------+------+-------+-----------+-------+
+| Bonded IOB                  |   13 |     0 |       100 | 13.00 |
+| Bonded IPADs                |    0 |     0 |         2 |  0.00 |
+| Bonded IOPADs               |    0 |     0 |       130 |  0.00 |
+| PHY_CONTROL                 |    0 |     0 |         2 |  0.00 |
+| PHASER_REF                  |    0 |     0 |         2 |  0.00 |
+| OUT_FIFO                    |    0 |     0 |         8 |  0.00 |
+| IN_FIFO                     |    0 |     0 |         8 |  0.00 |
+| IDELAYCTRL                  |    0 |     0 |         2 |  0.00 |
+| IBUFDS                      |    0 |     0 |        96 |  0.00 |
+| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |         8 |  0.00 |
+| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |         8 |  0.00 |
+| IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |       100 |  0.00 |
+| ILOGIC                      |    0 |     0 |       100 |  0.00 |
+| OLOGIC                      |    0 |     0 |       100 |  0.00 |
++-----------------------------+------+-------+-----------+-------+
 
 
 5. Clocking
@@ -148,20 +146,17 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDCE     |  107 |        Flop & Latch |
-| OBUF     |  105 |                  IO |
-| SRLC32E  |   96 |  Distributed Memory |
-| FDRE     |   65 |        Flop & Latch |
-| RAMS32   |   64 |  Distributed Memory |
-| LUT3     |   64 |                 LUT |
-| LUT2     |   46 |                 LUT |
-| IBUF     |   36 |                  IO |
-| LUT6     |   31 |                 LUT |
-| LUT4     |   18 |                 LUT |
-| LUT5     |   14 |                 LUT |
-| CARRY4   |   12 |          CarryLogic |
+| FDCE     |   45 |        Flop & Latch |
+| LUT6     |   20 |                 LUT |
+| LUT3     |   16 |                 LUT |
+| LUT5     |   13 |                 LUT |
+| LUT4     |   11 |                 LUT |
+| LUT2     |    7 |                 LUT |
+| OBUF     |    5 |                  IO |
+| OBUFT    |    4 |                  IO |
 | LUT1     |    4 |                 LUT |
-| FDPE     |    1 |        Flop & Latch |
+| IBUF     |    4 |                  IO |
+| FDRE     |    1 |        Flop & Latch |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 
