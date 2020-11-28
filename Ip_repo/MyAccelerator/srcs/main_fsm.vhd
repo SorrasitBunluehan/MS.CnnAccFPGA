@@ -93,7 +93,7 @@ begin
 		end process;
 
 	NEXT_STATE_DECODE:
-		process (c_state, w_addr_c, last_input, tvalid, tlast, x_col, x_row, pixel_last, x_prep_done)
+		process (c_t_f, c_state, w_addr_c, last_input, tvalid, tlast, x_col, x_row, pixel_last, x_prep_done)
 		begin
 			n_state <= c_state;
 			case c_state is
@@ -156,7 +156,7 @@ begin
 	pixel_last <= '1' when x_col = input_size-1 else '0';
 
 	OUTPUT_DECODE:
-		process(c_state, x_prep_done, w_addr_c, last_input, tvalid, tlast)
+		process(c_state, x_prep_done, w_addr_c, last_input, tvalid, tlast, c_t_f)
 		begin
 
 			-- Initial value in IDLE state to prevent latch

@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Fri Nov 27 14:43:25 2020
-# Process ID: 22108
+# Start of session at: Sat Nov 28 21:03:06 2020
+# Process ID: 8924
 # Current directory: D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/Acc_proj.runs/synth_1
 # Command line: vivado.exe -log acc_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source acc_wrapper.tcl
 # Log file: D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/Acc_proj.runs/synth_1/acc_wrapper.vds
@@ -20,13 +20,13 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 15984
+INFO: [Synth 8-7075] Helper process launched with PID 25416
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1070.410 ; gain = 0.000
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1070.703 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'acc_wrapper' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/acc_wrapper.vhd:36]
 	Parameter input_size bound to: 28 - type: integer 
-	Parameter input_depth bound to: 1 - type: integer 
+	Parameter input_depth bound to: 2 - type: integer 
 	Parameter kernel_size bound to: 3 - type: integer 
 	Parameter kernel_depth bound to: 16 - type: integer 
 	Parameter stride bound to: 1 - type: integer 
@@ -35,6 +35,7 @@ INFO: [Synth 8-638] synthesizing module 'acc_wrapper' [D:/Vivado_Project/MS.CnnA
 	Parameter addr_width bound to: 8 - type: integer 
 	Parameter rowcol_width bound to: 16 - type: integer 
 	Parameter input_size bound to: 28 - type: integer 
+	Parameter input_depth bound to: 2 - type: integer 
 	Parameter kernel_size bound to: 3 - type: integer 
 	Parameter kernel_depth bound to: 16 - type: integer 
 	Parameter stride bound to: 1 - type: integer 
@@ -42,9 +43,10 @@ INFO: [Synth 8-638] synthesizing module 'acc_wrapper' [D:/Vivado_Project/MS.CnnA
 	Parameter compute_byte bound to: 25 - type: integer 
 	Parameter addr_width bound to: 8 - type: integer 
 	Parameter rowcol_width bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'main_fsm' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/main_fsm.vhd:5' bound to instance 'main_fsm_dut' of component 'main_fsm' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/acc_wrapper.vhd:188]
-INFO: [Synth 8-638] synthesizing module 'main_fsm' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/main_fsm.vhd:47]
+INFO: [Synth 8-3491] module 'main_fsm' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/main_fsm.vhd:5' bound to instance 'main_fsm_dut' of component 'main_fsm' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/acc_wrapper.vhd:189]
+INFO: [Synth 8-638] synthesizing module 'main_fsm' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/main_fsm.vhd:48]
 	Parameter input_size bound to: 28 - type: integer 
+	Parameter input_depth bound to: 2 - type: integer 
 	Parameter kernel_size bound to: 3 - type: integer 
 	Parameter kernel_depth bound to: 16 - type: integer 
 	Parameter stride bound to: 1 - type: integer 
@@ -52,14 +54,14 @@ INFO: [Synth 8-638] synthesizing module 'main_fsm' [D:/Vivado_Project/MS.CnnAccF
 	Parameter compute_byte bound to: 25 - type: integer 
 	Parameter addr_width bound to: 8 - type: integer 
 	Parameter rowcol_width bound to: 16 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'main_fsm' (1#1) [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/main_fsm.vhd:47]
+INFO: [Synth 8-256] done synthesizing module 'main_fsm' (1#1) [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/main_fsm.vhd:48]
 	Parameter input_size bound to: 28 - type: integer 
 	Parameter kernel_size bound to: 3 - type: integer 
 	Parameter stride bound to: 1 - type: integer 
 	Parameter data_width bound to: 32 - type: integer 
 	Parameter compute_byte bound to: 25 - type: integer 
 	Parameter rowcol_width bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'AGU' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/AGU.vhd:10' bound to instance 'agu_dut' of component 'AGU' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/acc_wrapper.vhd:216]
+INFO: [Synth 8-3491] module 'AGU' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/AGU.vhd:10' bound to instance 'agu_dut' of component 'AGU' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/acc_wrapper.vhd:218]
 INFO: [Synth 8-638] synthesizing module 'AGU' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/AGU.vhd:30]
 	Parameter input_size bound to: 28 - type: integer 
 	Parameter kernel_size bound to: 3 - type: integer 
@@ -71,7 +73,6 @@ INFO: [Synth 8-638] synthesizing module 'AGU' [D:/Vivado_Project/MS.CnnAccFPGA/I
 INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/AGU.vhd:91]
 INFO: [Synth 8-638] synthesizing module 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/dff.vhd:17]
 	Parameter input_width bound to: 32 - type: integer 
-WARNING: [Synth 8-614] signal 'arstn' is read in the process but is not in the sensitivity list [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/dff.vhd:19]
 INFO: [Synth 8-256] done synthesizing module 'dff' (2#1) [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/dff.vhd:17]
 	Parameter input_width bound to: 32 - type: integer 
 INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/AGU.vhd:91]
@@ -245,7 +246,7 @@ INFO: [Synth 8-256] done synthesizing module 'AGU' (3#1) [D:/Vivado_Project/MS.C
 	Parameter kernel_depth bound to: 16 - type: integer 
 	Parameter compute_byte bound to: 25 - type: integer 
 	Parameter addr_width bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'wgu' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/wgu.vhd:7' bound to instance 'wgu_dut' of component 'wgu' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/acc_wrapper.vhd:232]
+INFO: [Synth 8-3491] module 'wgu' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/wgu.vhd:7' bound to instance 'wgu_dut' of component 'wgu' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/acc_wrapper.vhd:234]
 INFO: [Synth 8-638] synthesizing module 'wgu' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/wgu.vhd:32]
 	Parameter input_width bound to: 32 - type: integer 
 	Parameter kernel_size bound to: 3 - type: integer 
@@ -281,7 +282,7 @@ INFO: [Synth 8-256] done synthesizing module 'wgu' (6#1) [D:/Vivado_Project/MS.C
 	Parameter input_size bound to: 28 - type: integer 
 	Parameter input_width bound to: 32 - type: integer 
 	Parameter compute_byte bound to: 25 - type: integer 
-INFO: [Synth 8-3491] module 'ALU' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/ALU.vhd:6' bound to instance 'alu0' of component 'ALU' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/acc_wrapper.vhd:250]
+INFO: [Synth 8-3491] module 'ALU' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/ALU.vhd:6' bound to instance 'alu0' of component 'ALU' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/acc_wrapper.vhd:252]
 INFO: [Synth 8-638] synthesizing module 'ALU' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/ALU.vhd:22]
 	Parameter input_size bound to: 28 - type: integer 
 	Parameter input_width bound to: 32 - type: integer 
@@ -290,36 +291,37 @@ INFO: [Synth 8-256] done synthesizing module 'ALU' (7#1) [D:/Vivado_Project/MS.C
 	Parameter input_size bound to: 28 - type: integer 
 	Parameter input_width bound to: 32 - type: integer 
 	Parameter compute_byte bound to: 25 - type: integer 
-INFO: [Synth 8-3491] module 'ALU' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/ALU.vhd:6' bound to instance 'alu1' of component 'ALU' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/acc_wrapper.vhd:264]
+INFO: [Synth 8-3491] module 'ALU' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/ALU.vhd:6' bound to instance 'alu1' of component 'ALU' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/acc_wrapper.vhd:266]
 INFO: [Synth 8-256] done synthesizing module 'acc_wrapper' (8#1) [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/acc_wrapper.vhd:36]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1070.410 ; gain = 0.000
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1070.703 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1070.410 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1070.703 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1070.410 ; gain = 0.000
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1070.703 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Synth 8-802] inferred FSM for state register 'c_state_reg' in module 'main_fsm'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                    idle |                              000 |                              000
-                  w_prep |                              001 |                              001
-                  x_prep |                              010 |                              010
-                 compute |                              011 |                              101
-                     l_w |                              100 |                              100
-                     l_x |                              101 |                              011
+                    idle |                          0000001 |                              000
+                  w_prep |                          0000010 |                              001
+                  x_prep |                          0000100 |                              010
+                 compute |                          0001000 |                              101
+                     l_w |                          0010000 |                              100
+                     l_x |                          0100000 |                              011
+               clear_reg |                          1000000 |                              110
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'c_state_reg' using encoding 'sequential' in module 'main_fsm'
+INFO: [Synth 8-3354] encoded FSM with state register 'c_state_reg' using encoding 'one-hot' in module 'main_fsm'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1070.410 ; gain = 0.000
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1070.703 ; gain = 0.000
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
@@ -328,23 +330,24 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	  25 Input   89 Bit       Adders := 2     
-	   2 Input    8 Bit       Adders := 5     
+	   2 Input    8 Bit       Adders := 7     
 	   2 Input    1 Bit       Adders := 1     
 +---Registers : 
 	               89 Bit    Registers := 2     
 	               32 Bit    Registers := 109   
-	                8 Bit    Registers := 5     
+	                8 Bit    Registers := 7     
 	                1 Bit    Registers := 6     
 +---Multipliers : 
 	              32x33  Multipliers := 50    
 +---Muxes : 
 	   2 Input  800 Bit        Muxes := 1     
 	   2 Input   32 Bit        Muxes := 2     
-	   2 Input    8 Bit        Muxes := 4     
-	   6 Input    3 Bit        Muxes := 2     
-	   2 Input    3 Bit        Muxes := 3     
-	   2 Input    1 Bit        Muxes := 27    
-	   6 Input    1 Bit        Muxes := 9     
+	   2 Input    8 Bit        Muxes := 6     
+	   7 Input    7 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 5     
+	   7 Input    3 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 32    
+	   7 Input    1 Bit        Muxes := 6     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -962,7 +965,7 @@ DSP Report: Generating DSP alu_out24, operation Mode is: (PCIN>>17)+A*B.
 DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
 DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1070.410 ; gain = 0.000
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1070.703 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1193,7 +1196,7 @@ No constraint files found.
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1070.410 ; gain = 0.000
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1070.703 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1214,7 +1217,7 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1070.410 ; gain = 0.000
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1070.703 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -1232,37 +1235,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1070.410 ; gain = 0.000
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1070.703 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1070.410 ; gain = 0.000
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1070.703 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1070.410 ; gain = 0.000
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1070.703 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1070.410 ; gain = 0.000
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1070.703 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1070.410 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1070.703 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1070.410 ; gain = 0.000
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1070.703 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1293,59 +1296,60 @@ Report Cell Usage:
 |      |Cell     |Count |
 +------+---------+------+
 |1     |BUFG     |     1|
-|2     |LUT1     |     4|
-|3     |LUT2     |    71|
-|4     |LUT3     |    81|
-|5     |LUT4     |    22|
-|6     |LUT5     |    13|
-|7     |LUT6     |    20|
+|2     |LUT1     |     6|
+|3     |LUT2     |    78|
+|4     |LUT3     |    21|
+|5     |LUT4     |    27|
+|6     |LUT5     |    19|
+|7     |LUT6     |    96|
 |8     |RAM16X1S |    64|
 |9     |SRLC32E  |    96|
-|10    |FDCE     |   193|
-|11    |FDRE     |    33|
-|12    |IBUF     |    36|
-|13    |OBUF     |   103|
-|14    |OBUFT    |     2|
+|10    |FDCE     |   212|
+|11    |FDPE     |     1|
+|12    |FDRE     |    33|
+|13    |IBUF     |    36|
+|14    |OBUF     |   103|
+|15    |OBUFT    |     2|
 +------+---------+------+
 
 Report Instance Areas: 
 +------+--------------------------+----------+------+
 |      |Instance                  |Module    |Cells |
 +------+--------------------------+----------+------+
-|1     |top                       |          |   739|
-|2     |  agu_dut                 |AGU       |   276|
-|3     |    \FF_GEN[0].FFX.ddfx   |dff       |    33|
+|1     |top                       |          |   795|
+|2     |  agu_dut                 |AGU       |   275|
+|3     |    \FF_GEN[0].FFX.ddfx   |dff       |    32|
 |4     |    \FF_GEN[1].FFX.ddfx   |dff_1     |    32|
 |5     |    \FF_GEN[20].FFX.ddfx  |dff_2     |    32|
 |6     |    \FF_GEN[2].FFX.ddfx   |dff_3     |    32|
 |7     |    \FF_GEN[52].FFX.ddfx  |dff_4     |    32|
-|8     |  main_fsm_dut            |main_fsm  |   125|
-|9     |  wgu_dut                 |wgu       |   196|
+|8     |  main_fsm_dut            |main_fsm  |   181|
+|9     |  wgu_dut                 |wgu       |   197|
 |10    |    ram0                  |SPM       |    32|
 |11    |    ram1                  |SPM_0     |    32|
 |12    |    stick                 |w_sticker |   111|
 +------+--------------------------+----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1070.410 ; gain = 0.000
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1070.703 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1070.410 ; gain = 0.000
-Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1070.410 ; gain = 0.000
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1070.703 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1070.703 ; gain = 0.000
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1070.410 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1070.703 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 64 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1070.410 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1074.457 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 64 instances were transformed.
   RAM16X1S => RAM32X1S (RAMS32): 64 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-125 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+125 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1070.410 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1074.457 ; gain = 3.754
 INFO: [Common 17-1381] The checkpoint 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/Acc_proj.runs/synth_1/acc_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file acc_wrapper_utilization_synth.rpt -pb acc_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Nov 27 14:43:55 2020...
+INFO: [Common 17-206] Exiting Vivado at Sat Nov 28 21:03:36 2020...

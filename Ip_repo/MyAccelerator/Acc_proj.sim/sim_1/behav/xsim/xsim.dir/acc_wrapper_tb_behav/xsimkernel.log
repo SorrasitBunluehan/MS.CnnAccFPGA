@@ -1,4 +1,7 @@
-Running: xsim.dir/acc_wrapper_tb_behav/xsimk.exe -simmode gui -wdb acc_wrapper_tb_behav.wdb -simrunnum 0 -socket 58446
+Running: xsim.dir/acc_wrapper_tb_behav/xsimk.exe -simmode gui -wdb acc_wrapper_tb_behav.wdb -simrunnum 0 -socket 59092
 Design successfully loaded
-Design Loading Memory Usage: 5568 KB (Peak: 5568 KB)
+Design Loading Memory Usage: 5572 KB (Peak: 5572 KB)
 Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 14288 KB (Peak: 14288 KB)
+Simulation CPU Usage: 1343 ms

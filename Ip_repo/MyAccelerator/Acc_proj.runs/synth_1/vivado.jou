@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Fri Nov 27 14:43:25 2020
-# Process ID: 22108
+# Start of session at: Sat Nov 28 21:03:06 2020
+# Process ID: 8924
 # Current directory: D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/Acc_proj.runs/synth_1
 # Command line: vivado.exe -log acc_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source acc_wrapper.tcl
 # Log file: D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/Acc_proj.runs/synth_1/acc_wrapper.vds

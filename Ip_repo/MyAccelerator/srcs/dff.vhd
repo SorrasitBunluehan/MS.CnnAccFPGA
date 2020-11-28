@@ -16,7 +16,7 @@ end entity dff;
 
 architecture str of dff is
 begin  
-	main : process (clk) 
+	main : process (clk, arstn) 
 	begin 
 		if arstn = '0' then
 			q <= (others => '0');
