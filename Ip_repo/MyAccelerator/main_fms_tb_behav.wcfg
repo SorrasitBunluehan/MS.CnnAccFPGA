@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="3200000fs"></ZoomStartTime>
-      <ZoomEndTime time="4549001fs"></ZoomEndTime>
-      <Cursor1Time time="3500000fs"></Cursor1Time>
+      <ZoomStartTime time="228312500fs"></ZoomStartTime>
+      <ZoomEndTime time="235077501fs"></ZoomEndTime>
+      <Cursor1Time time="229440000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="181"></NameColumnWidth>
-      <ValueColumnWidth column_width="71"></ValueColumnWidth>
+      <ValueColumnWidth column_width="67"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="11" />
+   <WVObjectSize size="12" />
    <wvobject fp_name="group225" type="group">
       <obj_property name="label">AXI Signal</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -181,5 +181,9 @@
    <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/agu_en" type="logic">
       <obj_property name="ElementShortName">agu_en</obj_property>
       <obj_property name="ObjectShortName">agu_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/c_t_f" type="logic">
+      <obj_property name="ElementShortName">c_t_f</obj_property>
+      <obj_property name="ObjectShortName">c_t_f</obj_property>
    </wvobject>
 </wave_config>

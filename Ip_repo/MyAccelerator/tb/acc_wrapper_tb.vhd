@@ -93,7 +93,7 @@ begin
 		wait for CLK_PERIOD*100;
 		XAXIS_TVALID <= '1';
 		wait for CLK_PERIOD*11185;
-		--XAXIS_TVALID <= '0';
+		XAXIS_TVALID <= '0';
 		wait;
 	end process;
 

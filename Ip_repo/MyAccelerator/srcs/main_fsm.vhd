@@ -48,10 +48,15 @@ architecture behav of main_fsm is
 	
 	constant output_size : natural := (input_size - kernel_size)/stride + 1;
 
-	type state_type is (IDLE, W_PREP, X_PREP, L_X, L_W, COMPUTE);
+	type state_type is (IDLE, W_PREP, X_PREP, L_X, L_W, COMPUTE, CLEAR_REG);
 	signal c_state, n_state : state_type;
 	signal compute_done, x_prep_done, x_prep_c_en ,w_addr_c_en, pixel_last, count_en, agu_en_s, compute_c_en : std_logic;
 	signal x_row, x_col, x_prep_c : integer range 0 to 255;
+
+	-- c_t_f (Compute to finished) : is the signal that will assert after tlast = 1 but the accelerator is not yet 
+	-- 								 finished compute all data inside  shift register this signal is act as replaced  
+	-- 							     tvalid signal allowing all data to be able compute even AXIS_TVALID is '0'.
+	signal c_t_f : std_logic;
 
 
 
@@ -60,6 +65,7 @@ begin
 	agu_en <= agu_en_s;
 	--x_prep_done <= '1' when (c_state = X_PREP) and (x_row = kernel_size-1) and (x_col = input_size-1) else '0';
 	x_prep_done <= '1' when  x_prep_c = input_size*kernel_size-1 else '0';
+	c_t_f <= '1' when x_row = (output_size-1)*stride else '0';
 
 	-- TODO : For debugging purpose delete it!!
 	process(c_state)
@@ -118,8 +124,19 @@ begin
 						n_state <= COMPUTE;
 					end if;
 				when L_X =>
-					if tvalid = '1' then 
-						if pixel_last = '1' then
+					-- c_t_f use to handle the last row for conv output 
+					if c_t_f = '1' then
+						if pixel_last = '1' then 
+							n_state <= CLEAR_REG;
+						elsif (x_row mod stride) = 0 then
+							if (x_col mod stride) = 0 then
+								if x_col < (output_size-1)*stride then 
+									n_state <= COMPUTE;
+								end if;
+							end if;
+						end if;
+					elsif tvalid = '1' then
+						if pixel_last = '1' then 
 							n_state <= COMPUTE;
 						elsif (x_row mod stride) = 0 then
 							if (x_col mod stride) = 0 then
@@ -128,8 +145,11 @@ begin
 								end if;
 							end if;
 						end if;
-						--n_state <= COMPUTE;
 					end if;
+				when CLEAR_REG =>
+				-- TODO : Write logic for Clear register
+
+
 				end case;
 		end process;
 
@@ -161,36 +181,37 @@ begin
 					end if;
 				when W_PREP =>
 				when X_PREP =>
-				--	if x_prep_done = '1' then
-				--		agu_en_s <= '0';
-				--		tready <= '0';
-				--		mux_sel <= '1';
-				--	else
-						if tvalid = '1' then
-							agu_en_s <= '1';
-						end if;
 
-						x_prep_c_en <= '1';
-						mux_sel <= '1';
-						
-						w_addr_c_en <= '0';
-						tready <= '1';
-						alu_en <= '0';
-				--	end if;
+					if tvalid = '1' then
+						agu_en_s <= '1';
+					end if;
+
+					x_prep_c_en <= '1';
+					mux_sel <= '1';
+					
+					w_addr_c_en <= '0';
+					tready <= '1';
+					alu_en <= '0';
 				when COMPUTE =>
+					compute_c_en <= '1';
 					tready <= '0';
 					mux_sel <= '1';
 					alu_en <= '1';
 				when L_W =>
+					compute_c_en <= '1';
 					tready <= '0';
 					w_addr_c_en <= '1';
 					mux_sel <= '1';
 				when L_X =>
-					if tvalid = '1' then
+					compute_c_en <= '1';
+					-- Check availability of the input
+					if c_t_f = '1' or tvalid = '1' then
 						agu_en_s <= '1';
 					end if;
 					tready <= '1';
 					mux_sel <= '1';
+				when CLEAR_REG =>
+				-- TODO : Write logic for Clear register
 			end case;
 		end process;
 
@@ -202,12 +223,18 @@ begin
 				x_row <= 0;
 				x_col <= 0;
 			elsif rising_edge(clk) then
-				if agu_en_s = '1' then 
-					if x_col = input_size-1 then
-						x_col <= 0;
-						x_row <= x_row + 1;
-					else
-						x_col <= x_col + 1;
+				if compute_c_en = '1' then
+					if agu_en_s = '1' then 
+						if x_col = input_size-1 then
+							x_col <= 0;
+							if x_row = input_size-1 then
+									x_row <= 0;
+							else
+								x_row <= x_row + 1;
+							end if;
+						else
+							x_col <= x_col + 1;
+						end if;
 					end if;
 				end if;
 			end if;
