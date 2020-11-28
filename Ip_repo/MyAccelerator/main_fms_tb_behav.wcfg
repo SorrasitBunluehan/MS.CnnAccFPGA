@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="228312500fs"></ZoomStartTime>
-      <ZoomEndTime time="235077501fs"></ZoomEndTime>
-      <Cursor1Time time="229440000fs"></Cursor1Time>
+      <ZoomStartTime time="237226000fs"></ZoomStartTime>
+      <ZoomEndTime time="238587001fs"></ZoomEndTime>
+      <Cursor1Time time="238340000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="181"></NameColumnWidth>
-      <ValueColumnWidth column_width="67"></ValueColumnWidth>
+      <ValueColumnWidth column_width="59"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="12" />
+   <WVObjectSize size="15" />
    <wvobject fp_name="group225" type="group">
       <obj_property name="label">AXI Signal</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -185,5 +185,17 @@
    <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/c_t_f" type="logic">
       <obj_property name="ElementShortName">c_t_f</obj_property>
       <obj_property name="ObjectShortName">c_t_f</obj_property>
+   </wvobject>
+   <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/last_input" type="logic">
+      <obj_property name="ElementShortName">last_input</obj_property>
+      <obj_property name="ObjectShortName">last_input</obj_property>
+   </wvobject>
+   <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/input_depth" type="other">
+      <obj_property name="ElementShortName">input_depth</obj_property>
+      <obj_property name="ObjectShortName">input_depth</obj_property>
+   </wvobject>
+   <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/input_count" type="other">
+      <obj_property name="ElementShortName">input_count</obj_property>
+      <obj_property name="ObjectShortName">input_count</obj_property>
    </wvobject>
 </wave_config>

@@ -4,7 +4,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity acc_wrapper is
 	generic(
 		input_size : natural := 28;
-		input_depth : natural := 1; 					-- Need todo sth with this param
+		input_depth : natural := 2; 					-- Need todo sth with this param
 		kernel_size : natural := 3;             
 		kernel_depth : natural := 16;
 		stride : natural := 1;
@@ -38,6 +38,7 @@ architecture behav of acc_wrapper is
 	component main_fsm is
 		generic(
 			input_size : natural;
+			input_depth : natural;
 			kernel_size : natural;             
 			kernel_depth : natural;
 			stride : natural;
@@ -188,6 +189,7 @@ begin
 	main_fsm_dut : main_fsm
 	generic map(
 		input_size   => input_size, 
+		input_depth  => input_depth,
 		kernel_size  => kernel_size, 
 		kernel_depth => kernel_depth,
 		stride 		 => stride, 

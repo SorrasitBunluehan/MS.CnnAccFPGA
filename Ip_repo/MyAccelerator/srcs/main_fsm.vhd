@@ -5,6 +5,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity main_fsm	is
 	generic(
 		input_size : natural;
+		input_depth : natural;
 		kernel_size : natural;             
 		kernel_depth : natural;
 		stride : natural;
@@ -50,15 +51,13 @@ architecture behav of main_fsm is
 
 	type state_type is (IDLE, W_PREP, X_PREP, L_X, L_W, COMPUTE, CLEAR_REG);
 	signal c_state, n_state : state_type;
-	signal compute_done, x_prep_done, x_prep_c_en ,w_addr_c_en, pixel_last, count_en, agu_en_s, compute_c_en : std_logic;
-	signal x_row, x_col, x_prep_c : integer range 0 to 255;
+	signal last_input, x_prep_done, x_prep_c_en ,w_addr_c_en, pixel_last, count_en, agu_en_s, compute_c_en : std_logic;
+	signal x_row, x_col, x_prep_c, input_count : integer range 0 to 255;
 
 	-- c_t_f (Compute to finished) : is the signal that will assert after tlast = 1 but the accelerator is not yet 
 	-- 								 finished compute all data inside  shift register this signal is act as replaced  
 	-- 							     tvalid signal allowing all data to be able compute even AXIS_TVALID is '0'.
 	signal c_t_f : std_logic;
-
-
 
 begin
 
@@ -94,12 +93,12 @@ begin
 		end process;
 
 	NEXT_STATE_DECODE:
-		process (c_state, w_addr_c, compute_done, tvalid, tlast, x_col, x_row, pixel_last, x_prep_done)
+		process (c_state, w_addr_c, last_input, tvalid, tlast, x_col, x_row, pixel_last, x_prep_done)
 		begin
 			n_state <= c_state;
 			case c_state is
 				when IDLE =>
-					if compute_done = '1' then
+					if last_input = '1' then
 						n_state <= IDLE;
 					elsif tvalid = '1' then
 						n_state <= W_PREP;	
@@ -117,9 +116,6 @@ begin
 				when L_W =>
 					if unsigned(w_addr_c) = (kernel_depth/2) - 1 then
 						n_state <= L_X;
-						if compute_done = '1' then
-							n_state <= IDLE;
-						end if;
 					else
 						n_state <= COMPUTE;
 					end if;
@@ -147,16 +143,20 @@ begin
 						end if;
 					end if;
 				when CLEAR_REG =>
-				-- TODO : Write logic for Clear register
-
-
+					if x_row = input_size-1 and x_col = input_size-1 then
+						if last_input = '1' then 
+							n_state <= IDLE;
+						else
+							n_state <= X_PREP;
+						end if;
+					end if;
 				end case;
 		end process;
 
 	pixel_last <= '1' when x_col = input_size-1 else '0';
 
 	OUTPUT_DECODE:
-		process(c_state, x_prep_done, w_addr_c, compute_done, tvalid, tlast)
+		process(c_state, x_prep_done, w_addr_c, last_input, tvalid, tlast)
 		begin
 
 			-- Initial value in IDLE state to prevent latch
@@ -176,7 +176,7 @@ begin
 
 			case c_state is
 				when IDLE =>
-					if compute_done = '1' then
+					if last_input = '1' then
 						done <= '1';
 					end if;
 				when W_PREP =>
@@ -205,15 +205,36 @@ begin
 				when L_X =>
 					compute_c_en <= '1';
 					-- Check availability of the input
-					if c_t_f = '1' or tvalid = '1' then
+					if c_t_f = '1' then
+						tready <= '0';	
+						agu_en_s <= '1';
+					elsif tvalid = '1' then	
+						tready <= '1';
 						agu_en_s <= '1';
 					end if;
-					tready <= '1';
 					mux_sel <= '1';
 				when CLEAR_REG =>
-				-- TODO : Write logic for Clear register
+					agu_en_s <= '1';
+					compute_c_en <= '1';
+					tready <= '0';
+					mux_sel <= '1';
 			end case;
 		end process;
+
+
+	IMAGE_INST_COUNTER:
+		process(clk, arstn)
+		begin
+			if arstn = '0' then
+				input_count <= 0;
+			elsif rising_edge(clk) then
+				if c_t_f = '1' and pixel_last = '1' then
+					input_count <= input_count + 1;
+				end if;
+			end if;
+		end process;
+
+	last_input <= '1' when input_count = input_depth else '0';
 
 	-- Counter use to count row,column of processed input
 	COMPUTE_COUNTER:
@@ -247,8 +268,12 @@ begin
 				x_prep_c <= 0;
 			elsif rising_edge(clk) then 
 				if x_prep_c_en = '1' then
-					if tvalid = '1' then
-						x_prep_c <= x_prep_c + 1;
+					if x_prep_c = input_size*kernel_size-1 then
+						x_prep_c <= 0;	
+					else
+						if tvalid = '1' then
+							x_prep_c <= x_prep_c + 1;
+						end if;
 					end if;
 				end if;
 			end if;

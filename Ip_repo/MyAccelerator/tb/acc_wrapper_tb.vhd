@@ -15,6 +15,7 @@ architecture behav of acc_wrapper_tb is
 	component acc_wrapper is
 		generic(
 			input_size : natural;
+			input_depth : natural;
 			kernel_size : natural;             
 			kernel_depth : natural;
 			stride : natural;
@@ -38,6 +39,7 @@ architecture behav of acc_wrapper_tb is
 
 	
 	constant input_size : natural := 28;
+	constant input_depth : natural := 2;
 	constant kernel_size : natural := 3;             
 	constant kernel_depth : natural := 16;
 	constant stride : natural := 1;
@@ -57,6 +59,7 @@ begin
 	acc_dut : acc_wrapper
 		generic map(
 			input_size    =>  input_size, 
+			input_depth   =>  input_depth,
 			kernel_size   =>  kernel_size, 
 			kernel_depth  =>  kernel_depth,
 			stride        =>  stride,      
@@ -93,7 +96,7 @@ begin
 		wait for CLK_PERIOD*100;
 		XAXIS_TVALID <= '1';
 		wait for CLK_PERIOD*11185;
-		XAXIS_TVALID <= '0';
+		--XAXIS_TVALID <= '0';
 		wait;
 	end process;
 
@@ -122,7 +125,7 @@ begin
 					else
 						if temp = (input_size*input_size) - 1 then
 							XAXIS_TLAST <= '1';
-						elsif temp = (input_size*input_size) then
+						elsif temp = (input_size*input_size*3) then
 							temp := (others => '0');
 							finished := '1';
 						end if;

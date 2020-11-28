@@ -11,7 +11,7 @@ Compiling package std.standard
 Compiling package std.textio
 Compiling package ieee.std_logic_1164
 Compiling package ieee.numeric_std
-Compiling architecture behav of entity xil_defaultlib.main_fsm [\main_fsm(input_size=28,kernel_s...]
+Compiling architecture behav of entity xil_defaultlib.main_fsm [\main_fsm(input_size=28,input_de...]
 Compiling architecture str of entity xil_defaultlib.dff [\dff(input_width=32)\]
 Compiling architecture behav of entity xil_defaultlib.AGU [\AGU(input_size=28,kernel_size=3...]
 Compiling architecture behav of entity xil_defaultlib.w_sticker [\w_sticker(input_width=32,comput...]
