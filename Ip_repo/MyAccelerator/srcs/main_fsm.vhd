@@ -4,17 +4,28 @@ use IEEE.NUMERIC_STD.ALL;
 	
 entity main_fsm	is
 	generic(
-		input_size : natural;
-		input_depth : natural;
-		kernel_size : natural;             
-		kernel_depth : natural;
-		stride : natural;
+		------------------------------------
+		-- Network Information Bitwidth 
+		------------------------------------
+		INPUT_SIZE_BIT_WIDTH : natural;
+		INPUT_DEPTH_BIT_WIDTH : natural;
+		STRIDE_BIT_WIDTH : natural;  
+		KERNEL_DEPTH_BIT_WIDTH : natural;
+		KERNEL_SIZE_BIT_WIDTH : natural;
+	
 		data_width : natural;
 		compute_byte : natural; 			-- number of byte send to output PU maximum support by 5x5 
-		addr_width : natural;
-		rowcol_width : natural
+		addr_width : natural
 	); 
 	port (
+
+		-- Network Config Signal
+		input_size : in unsigned(INPUT_SIZE_BIT_WIDTH -1 downto 0);
+		input_depth : in unsigned(INPUT_DEPTH_BIT_WIDTH-1 downto 0);
+		kernel_size : in unsigned(KERNEL_SIZE_BIT_WIDTH-1 downto 0);
+		kernel_depth : in unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);
+		stride : in unsigned(STRIDE_BIT_WIDTH-1 downto 0);
+		hw_acc_en : in std_logic;
 
 		-- Input signals
 		clk : in std_logic;
@@ -47,8 +58,8 @@ end main_fsm;
 
 architecture behav of main_fsm is
 	
-	constant output_size : natural := (input_size - kernel_size)/stride + 1;
-
+	signal output_size : unsigned(data_width-1 downto 0);
+	
 	type state_type is (IDLE, W_PREP, X_PREP, L_X, L_W, COMPUTE, CLEAR_REG);
 	signal c_state, n_state : state_type;
 	signal last_input, x_prep_done, x_prep_c_en ,w_addr_c_en, pixel_last, count_en, agu_en_s, compute_c_en : std_logic;
@@ -60,6 +71,22 @@ architecture behav of main_fsm is
 	signal c_t_f : std_logic;
 
 begin
+
+	---------------------------------------------------------------------------------------------
+	-- Set Output Variable
+	-- Def.			: This process is use to set output_size when input_size,
+	-- 				  kernel_size, or stride is changed.
+	-- Process Type : Sequential Circuit
+	---------------------------------------------------------------------------------------------
+	SET_OUTPUT_VAR:
+	process(clk,arstn)
+	begin
+		if arstn = '0' then
+		   output_size <= (others=>'0');	
+		elsif rising_edge(clk) then
+			output_size <= (input_size - kernel_size)/stride + 1;  
+		end if;
+	end process;
 
 	agu_en <= agu_en_s;
 	--x_prep_done <= '1' when (c_state = X_PREP) and (x_row = kernel_size-1) and (x_col = input_size-1) else '0';
@@ -96,61 +123,63 @@ begin
 		process (c_t_f, c_state, w_addr_c, last_input, tvalid, tlast, x_col, x_row, pixel_last, x_prep_done)
 		begin
 			n_state <= c_state;
-			case c_state is
-				when IDLE =>
-					if last_input = '1' then
-						n_state <= IDLE;
-					elsif tvalid = '1' then
-						n_state <= W_PREP;	
-					end if;
-				when W_PREP =>
-					if tlast = '1' then
-						n_state <= X_PREP;
-					end if;
-				when X_PREP =>
-					if x_prep_done = '1' then
-						n_state <= COMPUTE;
-					end if;
-				when COMPUTE =>
-					n_state <= L_W;
-				when L_W =>
-					if unsigned(w_addr_c) = (kernel_depth/2) - 1 then
-						n_state <= L_X;
-					else
-						n_state <= COMPUTE;
-					end if;
-				when L_X =>
-					-- c_t_f use to handle the last row for conv output 
-					if c_t_f = '1' then
-						if pixel_last = '1' then 
-							n_state <= CLEAR_REG;
-						elsif (x_row mod stride) = 0 then
-							if (x_col mod stride) = 0 then
-								if x_col < (output_size-1)*stride then 
-									n_state <= COMPUTE;
-								end if;
-							end if;
-						end if;
-					elsif tvalid = '1' then
-						if pixel_last = '1' then 
-							n_state <= COMPUTE;
-						elsif (x_row mod stride) = 0 then
-							if (x_col mod stride) = 0 then
-								if x_col < (output_size-1)*stride then 
-									n_state <= COMPUTE;
-								end if;
-							end if;
-						end if;
-					end if;
-				when CLEAR_REG =>
-					if x_row = input_size-1 and x_col = input_size-1 then
-						if last_input = '1' then 
+			if hw_acc_en = '1' then
+				case c_state is
+					when IDLE =>
+						if last_input = '1' then
 							n_state <= IDLE;
-						else
+						elsif tvalid = '1' then
+							n_state <= W_PREP;	
+						end if;
+					when W_PREP =>
+						if tlast = '1' then
 							n_state <= X_PREP;
 						end if;
-					end if;
-				end case;
+					when X_PREP =>
+						if x_prep_done = '1' then
+							n_state <= COMPUTE;
+						end if;
+					when COMPUTE =>
+						n_state <= L_W;
+					when L_W =>
+						if unsigned(w_addr_c) = (kernel_depth/2) - 1 then
+							n_state <= L_X;
+						else
+							n_state <= COMPUTE;
+						end if;
+					when L_X =>
+						-- c_t_f use to handle the last row for conv output 
+						if c_t_f = '1' then
+							if pixel_last = '1' then 
+								n_state <= CLEAR_REG;
+							elsif (x_row mod stride) = 0 then
+								if (x_col mod stride) = 0 then
+									if x_col < (output_size-1)*stride then 
+										n_state <= COMPUTE;
+									end if;
+								end if;
+							end if;
+						elsif tvalid = '1' then
+							if pixel_last = '1' then 
+								n_state <= COMPUTE;
+							elsif (x_row mod stride) = 0 then
+								if (x_col mod stride) = 0 then
+									if x_col < (output_size-1)*stride then 
+										n_state <= COMPUTE;
+									end if;
+								end if;
+							end if;
+						end if;
+					when CLEAR_REG =>
+						if x_row = input_size-1 and x_col = input_size-1 then
+							if last_input = '1' then 
+								n_state <= IDLE;
+							else
+								n_state <= X_PREP;
+							end if;
+						end if;
+					end case;
+			end if;
 		end process;
 
 	pixel_last <= '1' when x_col = input_size-1 else '0';
@@ -181,14 +210,11 @@ begin
 					end if;
 				when W_PREP =>
 				when X_PREP =>
-
 					if tvalid = '1' then
 						agu_en_s <= '1';
 					end if;
-
 					x_prep_c_en <= '1';
 					mux_sel <= '1';
-					
 					w_addr_c_en <= '0';
 					tready <= '1';
 					alu_en <= '0';

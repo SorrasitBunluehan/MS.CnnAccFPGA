@@ -1,13 +1,13 @@
 library IEEE; use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_STD.ALL;
+ 
 
 entity acc_wrapper is
 	generic(
-		input_size : natural := 28;
-		input_depth : natural := 2; 					-- Need todo sth with this param
-		kernel_size : natural := 3;             
-		kernel_depth : natural := 16;
-		stride : natural := 1;
+		--input_size : natural := 28;
+		--input_depth : natural := 2; 					-- Need todo sth with this param
+		--kernel_size : natural := 3;             
+		--kernel_depth : natural := 16;
+		--stride : natural := 1;
 		compute_byte : natural := 25;
 
 		-- Width of the signal
@@ -16,13 +16,47 @@ entity acc_wrapper is
 		rowcol_width : natural := 16
 	);
 	port(
-		-- AXI DAta
-		XAXIS_TDATA : in std_logic_vector(data_width-1 downto 0);
-		XAXIS_TVALID : in std_logic;
-		XAXIS_TLAST : in std_logic;
-		XAXIS_ARSTN : in std_logic;
-		XAXIS_ACLK : in std_logic;
-		XAXIS_TREADY : out std_logic;
+
+		-- Ports of Axi Slave Bus Interface S00_AXI
+		s00_axi_aclk	: in std_logic;
+		s00_axi_aresetn	: in std_logic;
+		s00_axi_awaddr	: in std_logic_vector(addr_width-1 downto 0);
+		s00_axi_awprot	: in std_logic_vector(2 downto 0);
+		s00_axi_awvalid	: in std_logic;
+		s00_axi_awready	: out std_logic;
+		s00_axi_wdata	: in std_logic_vector(data_width-1 downto 0);
+		s00_axi_wstrb	: in std_logic_vector((data_width/8)-1 downto 0);
+		s00_axi_wvalid	: in std_logic;
+		s00_axi_wready	: out std_logic;
+		s00_axi_bresp	: out std_logic_vector(1 downto 0);
+		s00_axi_bvalid	: out std_logic;
+		s00_axi_bready	: in std_logic;
+		s00_axi_araddr	: in std_logic_vector(addr_width-1 downto 0);
+		s00_axi_arprot	: in std_logic_vector(2 downto 0);
+		s00_axi_arvalid	: in std_logic;
+		s00_axi_arready	: out std_logic;
+		s00_axi_rdata	: out std_logic_vector(data_width-1 downto 0);
+		s00_axi_rresp	: out std_logic_vector(1 downto 0);
+		s00_axi_rvalid	: out std_logic;
+		s00_axi_rready	: in std_logic;
+
+		-- Ports of Axi Slave Bus Interface S00_AXIS
+		s00_axis_aclk	: in std_logic;
+		s00_axis_aresetn	: in std_logic;
+		s00_axis_tready	: out std_logic;
+		s00_axis_tdata	: in std_logic_vector(data_width-1 downto 0);
+		s00_axis_tstrb	: in std_logic_vector((data_width/8)-1 downto 0);
+		s00_axis_tlast	: in std_logic;
+		s00_axis_tvalid	: in std_logic;
+
+		-- Ports of Axi Master Bus Interface M01_AXIS
+		m01_axis_aclk	: in std_logic;
+		m01_axis_aresetn	: in std_logic;
+		m01_axis_tvalid	: out std_logic;
+		m01_axis_tdata	: out std_logic_vector(data_width-1 downto 0);
+		m01_axis_tstrb	: out std_logic_vector((data_width/8)-1 downto 0);
+		m01_axis_tlast	: out std_logic;
+		m01_axis_tready	: in std_logic
 
 		-- TODO : For debugged purpose
 		agu_out_test : out std_logic_vector(data_width-1 downto 0);
@@ -35,13 +69,61 @@ end acc_wrapper;
 
 architecture behav of acc_wrapper is
 
+	-- component declaration
+	component MyAccelerator_v2_0_S00_AXI is
+		generic (
+		data_width	: natural;
+		addr_width	: natural
+		);
+		port (
+
+		-- Network Config Signal
+		input_size : out unsigned(data_width-1 downto 0);
+		input_depth : out unsigned(data_width-1 downto 0);
+		kernel_size : out unsigned(data_width-1 downto 0);
+		kernel_depth : out unsigned(data_width-1 downto 0);
+		stride : out unsigned(data_width-1 downto 0);
+
+		S_AXI_ACLK	: in std_logic;
+		S_AXI_ARESETN	: in std_logic;
+		S_AXI_AWADDR	: in std_logic_vector(addr_width-1 downto 0);
+		S_AXI_AWPROT	: in std_logic_vector(2 downto 0);
+		S_AXI_AWVALID	: in std_logic;
+		S_AXI_AWREADY	: out std_logic;
+		S_AXI_WDATA	: in std_logic_vector(data_width-1 downto 0);
+		S_AXI_WSTRB	: in std_logic_vector((data_width/8)-1 downto 0);
+		S_AXI_WVALID	: in std_logic;
+		S_AXI_WREADY	: out std_logic;
+		S_AXI_BRESP	: out std_logic_vector(1 downto 0);
+		S_AXI_BVALID	: out std_logic;
+		S_AXI_BREADY	: in std_logic;
+		S_AXI_ARADDR	: in std_logic_vector(addr_width-1 downto 0);
+		S_AXI_ARPROT	: in std_logic_vector(2 downto 0);
+		S_AXI_ARVALID	: in std_logic;
+		S_AXI_ARREADY	: out std_logic;
+		S_AXI_RDATA	: out std_logic_vector(data_width-1 downto 0);
+		S_AXI_RRESP	: out std_logic_vector(1 downto 0);
+		S_AXI_RVALID	: out std_logic;
+		S_AXI_RREADY	: in std_logic
+		);
+	end component MyAccelerator_v2_0_S00_AXI;
+
+	-- TODO : Implement AXIS Master port logic HERE!!
+	-- **Note: This logic should send the result of convolution to DRAM through DMA.
+	-- 		   It will connect directly to S2MM_Axis_Slave Port in DMA
+	
+
+
+
+
 	component main_fsm is
 		generic(
-			input_size : natural;
-			input_depth : natural;
-			kernel_size : natural;             
-			kernel_depth : natural;
-			stride : natural;
+			--input_size : natural;
+			--input_depth : natural;
+			--kernel_size : natural;             
+			--kernel_depth : natural;
+			--stride : natural;
+
 			data_width : natural;
 			compute_byte : natural;
 			addr_width : natural;
@@ -145,9 +227,9 @@ architecture behav of acc_wrapper is
 	--end component;
 
 	-- Main MUX variables
-	signal agu_tdata : std_logic_vector(XAXIS_TDATA'range);
+	signal agu_tdata : std_logic_vector(s00_axis_aclk'range);
 	signal agu_tvalid : std_logic;
-	signal wgu_tdata : std_logic_vector(XAXIS_TDATA'range);
+	signal wgu_tdata : std_logic_vector(s00_axis_aclk'range);
 	signal wgu_tvalid : std_logic;
 	signal mux_sel : std_logic;
 	
@@ -170,8 +252,12 @@ architecture behav of acc_wrapper is
 	-- ACCU signal
 	signal accu_ready : std_logic;
 
-	
-
+	-- Network parameter Signal
+	signal input_size_s 		: std_logic_vector(data_width-1 downto 0);		
+    signal input_depth_s 		: std_logic_vector(data_width-1 downto 0);	
+    signal kernel_size_s 		: std_logic_vector(data_width-1 downto 0);
+	signal kernel_depth_s	: std_logic_vector(data_width-1 downto 0);
+    signal stride_s 			: std_logic_vector(data_width-1 downto 0);
 begin
 
 	-- TODO : Remove this line (Debugged purpose)
@@ -183,31 +269,69 @@ begin
 	input_mux_test <= mux_sel;
 	main_en_test <= main_en;
 
-
+	--------------------------------------------------------------------------------------------------------
 	---------------------------------- Instantiation -------------------------------------------------------
+	--------------------------------------------------------------------------------------------------------
+	
+	-- Instantiation of Axi Bus Interface S00_AXI
+	MyAccelerator_v2_0_S00_AXI_inst : MyAccelerator_v2_0_S00_AXI
+	generic map (
+		data_width	=> data_width,
+		addr_width	=> addr_width
+	)
+	port map (
+		input_size => input_size_s,
+		input_depth => input_depth_s,
+		kernel_size => kernel_size_s
+		kernel_depth => kernel_depth_s,
+		stride => stride_s,
+
+		S_AXI_ACLK	=> s00_axi_aclk,
+		S_AXI_ARESETN	=> s00_axi_aresetn,
+		S_AXI_AWADDR	=> s00_axi_awaddr,
+		S_AXI_AWPROT	=> s00_axi_awprot,
+		S_AXI_AWVALID	=> s00_axi_awvalid,
+		S_AXI_AWREADY	=> s00_axi_awready,
+		S_AXI_WDATA	=> s00_axi_wdata,
+		S_AXI_WSTRB	=> s00_axi_wstrb,
+		S_AXI_WVALID	=> s00_axi_wvalid,
+		S_AXI_WREADY	=> s00_axi_wready,
+		S_AXI_BRESP	=> s00_axi_bresp,
+		S_AXI_BVALID	=> s00_axi_bvalid,
+		S_AXI_BREADY	=> s00_axi_bready,
+		S_AXI_ARADDR	=> s00_axi_araddr,
+		S_AXI_ARPROT	=> s00_axi_arprot,
+		S_AXI_ARVALID	=> s00_axi_arvalid,
+		S_AXI_ARREADY	=> s00_axi_arready,
+		S_AXI_RDATA	=> s00_axi_rdata,
+		S_AXI_RRESP	=> s00_axi_rresp,
+		S_AXI_RVALID	=> s00_axi_rvalid,
+		S_AXI_RREADY	=> s00_axi_rready
+	);
 
 	main_fsm_dut : main_fsm
 	generic map(
-		input_size   => input_size, 
-		input_depth  => input_depth,
-		kernel_size  => kernel_size, 
-		kernel_depth => kernel_depth,
-		stride 		 => stride, 
+		--input_size   => input_size, 
+		--input_depth  => input_depth,
+		--kernel_size  => kernel_size, 
+		--kernel_depth => kernel_depth,
+		--stride 		 => stride, 
+
 		data_width   => data_width, 
 		compute_byte => compute_byte,
 		addr_width 	 => addr_width,
 		rowcol_width => rowcol_width 
 	) port map(
-		clk 		 => XAXIS_ACLK , 		
-        arstn 		 => XAXIS_ARSTN , 		
-        tvalid 		 => XAXIS_TVALID , 		
-        tlast 		 => XAXIS_TLAST , 		
+		clk 		 => s00_axis_aclk , 		
+        arstn 		 => s00_axis_aresetn , 		
+        tvalid 		 => s00_axis_tvalid , 		
+        tlast 		 => s00_axis_tlast , 		
 		w_addr_c 	 => w_addr_c,
 		-- Output
         agu_en 	 	 => agu_en, 	
         w_addr_incr  => w_addr_incr, 	
         mux_sel 	 => mux_sel, 	
-        tready 		 => XAXIS_TREADY, 
+        tready 		 => s00_axis_tready, 
 		alu_en 	 	 => alu_en,
 
 		-- TODO : Remove this line (Debugged purpose)
@@ -220,12 +344,13 @@ begin
 		input_size 	 => input_size, 	
 		kernel_size  => kernel_size, 
 		stride 		 => stride, 		
+
 		data_width 	 => data_width, 	
 		compute_byte => compute_byte,
 		rowcol_width => rowcol_width
 	) port map(
-		clk 		 => XAXIS_ACLK, 		
-		arstn        => XAXIS_ARSTN,       
+		clk 		 => s00_axis_aclk, 		
+		arstn        => s00_axis_aresetn,       
 		agu_in       => agu_tdata,      
 		agu_en 		 => agu_en,
 		agu_out      => agu_out
@@ -239,8 +364,8 @@ begin
 		compute_byte => compute_byte,
 		addr_width   => addr_width  
 	) port map(
-		clk 		=> XAXIS_ACLK,
-		arstn       => XAXIS_ARSTN,
+		clk 		=> s00_axis_aclk,
+		arstn       => s00_axis_aresetn,
 		d_in        => wgu_tdata,
 		w_valid     => wgu_tvalid,
 		w_addr_incr => w_addr_incr,
@@ -255,7 +380,7 @@ begin
 		input_width => data_width,
 		compute_byte => compute_byte
 	) port map(
-		clk => XAXIS_ACLK,
+		clk => s00_axis_aclk,
 		x_in => agu_out,
 		w_in => wgu_out0,
 		compute_en => alu_en,
@@ -269,7 +394,7 @@ begin
 		input_width => data_width,
 		compute_byte => compute_byte
 	) port map(
-		clk => XAXIS_ACLK,
+		clk => s00_axis_aclk,
 		x_in => agu_out,
 		w_in => wgu_out1,
 		compute_en => alu_en,
@@ -287,8 +412,8 @@ begin
     --    input_width  => data_width,
     --    compute_byte => compute_byte
 	--) port map(
-	--	clk => XAXIS_ACLK,
-	--	arstn => XAXIS_ARSTN,
+	--	clk => s00_axis_aclk,
+	--	arstn => s00_axis_aresetn,
 	--	din0 => alu_out0,
 	--	din1 => alu_out1,
 	--	en0 => alu_valid0,
@@ -303,16 +428,16 @@ begin
 	---------------------------------------------------------------------------------------------------------
 
 	MAIN_MUX:
-	process(XAXIS_TDATA, XAXIS_TVALID, mux_sel)
+	process(s00_axis_aclk, s00_axis_tvalid, mux_sel)
 	begin
 		if mux_sel = '0' then
 			agu_tdata <= (others => '0');
             agu_tvalid <= '0';
-            wgu_tdata  <= XAXIS_TDATA;
-            wgu_tvalid <= XAXIS_TVALID;
+            wgu_tdata  <= s00_axis_aclk;
+            wgu_tvalid <= s00_axis_tvalid;
 		else 
-			agu_tdata <= XAXIS_TDATA;
-            agu_tvalid <= XAXIS_TVALID;
+			agu_tdata <= s00_axis_aclk;
+            agu_tvalid <= s00_axis_tvalid;
             wgu_tdata  <= (others => '0');
             wgu_tvalid <= '0';
 		end if;

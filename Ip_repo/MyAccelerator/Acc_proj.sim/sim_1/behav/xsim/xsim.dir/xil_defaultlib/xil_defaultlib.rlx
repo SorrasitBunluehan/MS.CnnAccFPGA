@@ -2,15 +2,7 @@
 2020.1
 May 27 2020
 20:09:33
-D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/ACCU.vhd,1606309535,vhdl,,,,accu,,,,,,,,
-D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/AGU.vhd,1606415862,vhdl,,,,agu,,,,,,,,
-D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/ALU.vhd,1605897494,vhdl,,,,alu,,,,,,,,
-D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/SPM.vhd,1604406521,vhdl,,,,spm,,,,,,,,
-D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/acc_wrapper.vhd,1606591009,vhdl,,,,acc_wrapper,,,,,,,,
-D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/dff.vhd,1606593476,vhdl,,,,dff,,,,,,,,
-D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/main_fsm.vhd,1606593531,vhdl,,,,main_fsm,,,,,,,,
-D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/w_sticker.vhd,1605708982,vhdl,,,,w_sticker,,,,,,,,
-D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/wgu.vhd,1606402773,vhdl,,,,wgu,,,,,,,,
+D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/main_fsm.vhd,1608293094,vhdl,,,,main_fsm,,,,,,,,
 D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/tb/acc_wrapper_tb.vhd,1606591469,vhdl,,,,acc_wrapper_tb,,,,,,,,
 D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/tb/agu_tb.vhd,1605035041,vhdl,,,,agu_tb,,,,,,,,
-D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/tb/main_fsm_tb.vhd,1605096672,vhdl,,,,main_fms_tb,,,,,,,,
+D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/tb/main_fsm_tb.vhd,1608291563,vhdl,,,,main_fms_tb,,,,,,,,
