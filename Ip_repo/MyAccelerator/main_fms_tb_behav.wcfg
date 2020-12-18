@@ -3,199 +3,85 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="acc_wrapper_tb_behav.wdb" id="1">
+      <db_ref path="main_fms_tb_behav.wdb" id="1">
          <top_modules>
-            <top_module name="acc_wrapper_tb" />
+            <top_module name="main_fms_tb" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="469955000fs"></ZoomStartTime>
-      <ZoomEndTime time="476780001fs"></ZoomEndTime>
-      <Cursor1Time time="471940000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="137301fs"></ZoomEndTime>
+      <Cursor1Time time="41700fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="178"></NameColumnWidth>
+      <NameColumnWidth column_width="170"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="15" />
-   <wvobject fp_name="group225" type="group">
-      <obj_property name="label">AXI Signal</obj_property>
+   <WVObjectSize size="10" />
+   <wvobject fp_name="group131" type="group">
+      <obj_property name="label">AXI Group</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="isExpanded"></obj_property>
-      <wvobject fp_name="/acc_wrapper_tb/XAXIS_ACLK" type="logic">
+      <wvobject fp_name="/main_fms_tb/XAXIS_ACLK" type="logic">
          <obj_property name="ElementShortName">XAXIS_ACLK</obj_property>
          <obj_property name="ObjectShortName">XAXIS_ACLK</obj_property>
       </wvobject>
-      <wvobject fp_name="/acc_wrapper_tb/XAXIS_ARSTN" type="logic">
+      <wvobject fp_name="/main_fms_tb/XAXIS_ARSTN" type="logic">
          <obj_property name="ElementShortName">XAXIS_ARSTN</obj_property>
          <obj_property name="ObjectShortName">XAXIS_ARSTN</obj_property>
       </wvobject>
-      <wvobject fp_name="/acc_wrapper_tb/XAXIS_TDATA" type="array">
-         <obj_property name="ElementShortName">XAXIS_TDATA[31:0]</obj_property>
-         <obj_property name="ObjectShortName">XAXIS_TDATA[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/acc_wrapper_tb/XAXIS_TVALID" type="logic">
-         <obj_property name="ElementShortName">XAXIS_TVALID</obj_property>
-         <obj_property name="ObjectShortName">XAXIS_TVALID</obj_property>
-      </wvobject>
-      <wvobject fp_name="/acc_wrapper_tb/XAXIS_TREADY" type="logic">
+      <wvobject fp_name="/main_fms_tb/XAXIS_TREADY" type="logic">
          <obj_property name="ElementShortName">XAXIS_TREADY</obj_property>
          <obj_property name="ObjectShortName">XAXIS_TREADY</obj_property>
       </wvobject>
-      <wvobject fp_name="/acc_wrapper_tb/XAXIS_TLAST" type="logic">
+      <wvobject fp_name="/main_fms_tb/XAXIS_TLAST" type="logic">
          <obj_property name="ElementShortName">XAXIS_TLAST</obj_property>
          <obj_property name="ObjectShortName">XAXIS_TLAST</obj_property>
       </wvobject>
-   </wvobject>
-   <wvobject fp_name="group211" type="group">
-      <obj_property name="label">AGU/WGU to ALU</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-      <wvobject fp_name="/acc_wrapper_tb/acc_dut/agu_out" type="array">
-         <obj_property name="ElementShortName">agu_out[799:0]</obj_property>
-         <obj_property name="ObjectShortName">agu_out[799:0]</obj_property>
+      <wvobject fp_name="/main_fms_tb/XAXIS_TVALID" type="logic">
+         <obj_property name="ElementShortName">XAXIS_TVALID</obj_property>
+         <obj_property name="ObjectShortName">XAXIS_TVALID</obj_property>
       </wvobject>
-      <wvobject fp_name="/acc_wrapper_tb/acc_dut/wgu_out0" type="array">
-         <obj_property name="ElementShortName">wgu_out0[799:0]</obj_property>
-         <obj_property name="ObjectShortName">wgu_out0[799:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/acc_wrapper_tb/acc_dut/wgu_out1" type="array">
-         <obj_property name="ElementShortName">wgu_out1[799:0]</obj_property>
-         <obj_property name="ObjectShortName">wgu_out1[799:0]</obj_property>
+      <wvobject fp_name="/main_fms_tb/XAXIS_TDATA" type="array">
+         <obj_property name="ElementShortName">XAXIS_TDATA[31:0]</obj_property>
+         <obj_property name="ObjectShortName">XAXIS_TDATA[31:0]</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject fp_name="group26" type="group">
-      <obj_property name="label">Debugged Signal</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-      <wvobject fp_name="/acc_wrapper_tb/acc_dut/agu_out_test" type="array">
-         <obj_property name="ElementShortName">agu_out_test[31:0]</obj_property>
-         <obj_property name="ObjectShortName">agu_out_test[31:0]</obj_property>
-         <obj_property name="CustomSignalColor">#0000FF</obj_property>
-         <obj_property name="UseCustomSignalColor">true</obj_property>
-      </wvobject>
-      <wvobject fp_name="/acc_wrapper_tb/acc_dut/wgu_out0_test" type="array">
-         <obj_property name="ElementShortName">wgu_out0_test[31:0]</obj_property>
-         <obj_property name="ObjectShortName">wgu_out0_test[31:0]</obj_property>
-         <obj_property name="CustomSignalColor">#0000FF</obj_property>
-         <obj_property name="UseCustomSignalColor">true</obj_property>
-      </wvobject>
-      <wvobject fp_name="/acc_wrapper_tb/acc_dut/wgu_out1_test" type="array">
-         <obj_property name="ElementShortName">wgu_out1_test[31:0]</obj_property>
-         <obj_property name="ObjectShortName">wgu_out1_test[31:0]</obj_property>
-         <obj_property name="CustomSignalColor">#0000FF</obj_property>
-         <obj_property name="UseCustomSignalColor">true</obj_property>
-      </wvobject>
-      <wvobject fp_name="/acc_wrapper_tb/acc_dut/compute_en_test" type="logic">
-         <obj_property name="ElementShortName">compute_en_test</obj_property>
-         <obj_property name="ObjectShortName">compute_en_test</obj_property>
-         <obj_property name="CustomSignalColor">#0000FF</obj_property>
-         <obj_property name="UseCustomSignalColor">true</obj_property>
-      </wvobject>
-      <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/done" type="logic">
-         <obj_property name="ElementShortName">done</obj_property>
-         <obj_property name="ObjectShortName">done</obj_property>
-      </wvobject>
+   <wvobject fp_name="/main_fms_tb/fsm_state_test" type="array">
+      <obj_property name="ElementShortName">fsm_state_test[2:0]</obj_property>
+      <obj_property name="ObjectShortName">fsm_state_test[2:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="group54" type="group">
-      <obj_property name="label">State Machine</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-      <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/c_state" type="other">
-         <obj_property name="ElementShortName">c_state</obj_property>
-         <obj_property name="ObjectShortName">c_state</obj_property>
-      </wvobject>
-      <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/n_state" type="other">
-         <obj_property name="ElementShortName">n_state</obj_property>
-         <obj_property name="ObjectShortName">n_state</obj_property>
-      </wvobject>
+   <wvobject fp_name="/main_fms_tb/mux_sel" type="logic">
+      <obj_property name="ElementShortName">mux_sel</obj_property>
+      <obj_property name="ObjectShortName">mux_sel</obj_property>
    </wvobject>
-   <wvobject fp_name="group53" type="group">
-      <obj_property name="label">ALU0</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/acc_wrapper_tb/acc_dut/alu0/x_in" type="array">
-         <obj_property name="ElementShortName">x_in[799:0]</obj_property>
-         <obj_property name="ObjectShortName">x_in[799:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/acc_wrapper_tb/acc_dut/alu0/w_in" type="array">
-         <obj_property name="ElementShortName">w_in[799:0]</obj_property>
-         <obj_property name="ObjectShortName">w_in[799:0]</obj_property>
-         <obj_property name="Reversed">false</obj_property>
-      </wvobject>
-      <wvobject fp_name="/acc_wrapper_tb/acc_dut/alu0/compute_en" type="logic">
-         <obj_property name="ElementShortName">compute_en</obj_property>
-         <obj_property name="ObjectShortName">compute_en</obj_property>
-      </wvobject>
-      <wvobject fp_name="/acc_wrapper_tb/acc_dut/alu0/alu_out" type="array">
-         <obj_property name="ElementShortName">alu_out[88:0]</obj_property>
-         <obj_property name="ObjectShortName">alu_out[88:0]</obj_property>
-         <obj_property name="Reversed">false</obj_property>
-      </wvobject>
-      <wvobject fp_name="/acc_wrapper_tb/acc_dut/alu0/alu_valid" type="logic">
-         <obj_property name="ElementShortName">alu_valid</obj_property>
-         <obj_property name="ObjectShortName">alu_valid</obj_property>
-      </wvobject>
+   <wvobject fp_name="/main_fms_tb/alu_en" type="logic">
+      <obj_property name="ElementShortName">alu_en</obj_property>
+      <obj_property name="ObjectShortName">alu_en</obj_property>
    </wvobject>
-   <wvobject fp_name="group47" type="group">
-      <obj_property name="label">ALU1</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/acc_wrapper_tb/acc_dut/alu1/x_in" type="array">
-         <obj_property name="ElementShortName">x_in[799:0]</obj_property>
-         <obj_property name="ObjectShortName">x_in[799:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/acc_wrapper_tb/acc_dut/alu1/w_in" type="array">
-         <obj_property name="ElementShortName">w_in[799:0]</obj_property>
-         <obj_property name="ObjectShortName">w_in[799:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/acc_wrapper_tb/acc_dut/alu1/compute_en" type="logic">
-         <obj_property name="ElementShortName">compute_en</obj_property>
-         <obj_property name="ObjectShortName">compute_en</obj_property>
-      </wvobject>
-      <wvobject fp_name="/acc_wrapper_tb/acc_dut/alu1/alu_out" type="array">
-         <obj_property name="ElementShortName">alu_out[88:0]</obj_property>
-         <obj_property name="ObjectShortName">alu_out[88:0]</obj_property>
-         <obj_property name="Reversed">false</obj_property>
-      </wvobject>
-      <wvobject fp_name="/acc_wrapper_tb/acc_dut/alu1/alu_valid" type="logic">
-         <obj_property name="ElementShortName">alu_valid</obj_property>
-         <obj_property name="ObjectShortName">alu_valid</obj_property>
-      </wvobject>
+   <wvobject fp_name="/main_fms_tb/input_size" type="array">
+      <obj_property name="ElementShortName">input_size[15:0]</obj_property>
+      <obj_property name="ObjectShortName">input_size[15:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/x_row" type="other">
-      <obj_property name="ElementShortName">x_row</obj_property>
-      <obj_property name="ObjectShortName">x_row</obj_property>
+   <wvobject fp_name="/main_fms_tb/input_depth" type="array">
+      <obj_property name="ElementShortName">input_depth[12:0]</obj_property>
+      <obj_property name="ObjectShortName">input_depth[12:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/x_col" type="other">
-      <obj_property name="ElementShortName">x_col</obj_property>
-      <obj_property name="ObjectShortName">x_col</obj_property>
+   <wvobject fp_name="/main_fms_tb/kernel_size" type="array">
+      <obj_property name="ElementShortName">kernel_size[7:0]</obj_property>
+      <obj_property name="ObjectShortName">kernel_size[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/x_prep_c" type="other">
-      <obj_property name="ElementShortName">x_prep_c</obj_property>
-      <obj_property name="ObjectShortName">x_prep_c</obj_property>
+   <wvobject fp_name="/main_fms_tb/kernel_depth" type="array">
+      <obj_property name="ElementShortName">kernel_depth[12:0]</obj_property>
+      <obj_property name="ObjectShortName">kernel_depth[12:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/pixel_last" type="logic">
-      <obj_property name="ElementShortName">pixel_last</obj_property>
-      <obj_property name="ObjectShortName">pixel_last</obj_property>
+   <wvobject fp_name="/main_fms_tb/stride" type="array">
+      <obj_property name="ElementShortName">stride[2:0]</obj_property>
+      <obj_property name="ObjectShortName">stride[2:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/agu_en" type="logic">
-      <obj_property name="ElementShortName">agu_en</obj_property>
-      <obj_property name="ObjectShortName">agu_en</obj_property>
-   </wvobject>
-   <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/c_t_f" type="logic">
-      <obj_property name="ElementShortName">c_t_f</obj_property>
-      <obj_property name="ObjectShortName">c_t_f</obj_property>
-   </wvobject>
-   <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/last_input" type="logic">
-      <obj_property name="ElementShortName">last_input</obj_property>
-      <obj_property name="ObjectShortName">last_input</obj_property>
-   </wvobject>
-   <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/input_depth" type="other">
-      <obj_property name="ElementShortName">input_depth</obj_property>
-      <obj_property name="ObjectShortName">input_depth</obj_property>
-   </wvobject>
-   <wvobject fp_name="/acc_wrapper_tb/acc_dut/main_fsm_dut/input_count" type="other">
-      <obj_property name="ElementShortName">input_count</obj_property>
-      <obj_property name="ObjectShortName">input_count</obj_property>
+   <wvobject fp_name="/main_fms_tb/hw_acc_en" type="logic">
+      <obj_property name="ElementShortName">hw_acc_en</obj_property>
+      <obj_property name="ObjectShortName">hw_acc_en</obj_property>
    </wvobject>
 </wave_config>

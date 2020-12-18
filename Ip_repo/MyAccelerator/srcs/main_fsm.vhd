@@ -84,11 +84,12 @@ begin
 		if arstn = '0' then
 		   output_size <= (others=>'0');	
 		elsif rising_edge(clk) then
-			output_size <= (input_size - kernel_size)/stride + 1;  
+			output_size <= resize(unsigned((input_size - kernel_size)/stride + 1),output_size'length);  
 		end if;
 	end process;
 
 	agu_en <= agu_en_s;
+
 	--x_prep_done <= '1' when (c_state = X_PREP) and (x_row = kernel_size-1) and (x_col = input_size-1) else '0';
 	x_prep_done <= '1' when  x_prep_c = input_size*kernel_size-1 else '0';
 	c_t_f <= '1' when x_row = (output_size-1)*stride else '0';
@@ -187,7 +188,6 @@ begin
 	OUTPUT_DECODE:
 		process(c_state, x_prep_done, w_addr_c, last_input, tvalid, tlast, c_t_f)
 		begin
-
 			-- Initial value in IDLE state to prevent latch
 			-- External output 
 			agu_en_s <= '0';
@@ -262,7 +262,11 @@ begin
 
 	last_input <= '1' when input_count = input_depth else '0';
 
-	-- Counter use to count row,column of processed input
+	------------------------------------------------------------------------
+	-- Main Counter
+   	-- Def. : Use to count row, column of processed input in 2D Dimension
+	-- **Note : Row will get reset after reach the end of the image 	
+	------------------------------------------------------------------------
 	COMPUTE_COUNTER:
 		process(clk,arstn)
 		begin
@@ -287,6 +291,11 @@ begin
 			end if;
         end process;
 
+	---------------------------------------------------------------------------------
+	-- Counter for XPREP State
+   	-- Def. : Use to count the amount of input instand saved in AGU in state XPREP.
+	-- 		  This count use for switch from state XPREP to COMPUTE
+	----------------------------------------------------------------------------------
 	X_PREP_COUNTER:	
 		process(clk,arstn)
 		begin

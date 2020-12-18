@@ -8,23 +8,28 @@ end main_fms_tb;
 architecture behav of main_fms_tb is
 	component main_fsm is
 		generic(
-			--input_size : natural;
-			--kernel_size : natural;             
-			--kernel_depth : natural;
-			--stride : natural;
+			------------------------------------
+			-- Network Information Bitwidth 
+			------------------------------------
+			INPUT_SIZE_BIT_WIDTH : natural;
+			INPUT_DEPTH_BIT_WIDTH : natural;
+			STRIDE_BIT_WIDTH : natural;  
+			KERNEL_DEPTH_BIT_WIDTH : natural;
+			KERNEL_SIZE_BIT_WIDTH : natural;
+
 			data_width : natural := 32;
 			compute_byte : natural := 25;
 			addr_width : natural
 		); 
 		port (
 			-- Network Config Signal
-			input_size : in unsigned(data_width-1 downto 0);
-			input_depth : in unsigned(data_width-1 downto 0);
-			kernel_size : in unsigned(data_width-1 downto 0);
-			kernel_depth : in unsigned(data_width-1 downto 0);
-			stride : in unsigned(data_width-1 downto 0);
-
-
+			input_size : in unsigned(INPUT_SIZE_BIT_WIDTH -1 downto 0);
+			input_depth : in unsigned(INPUT_DEPTH_BIT_WIDTH-1 downto 0);
+			kernel_size : in unsigned(KERNEL_SIZE_BIT_WIDTH-1 downto 0);
+			kernel_depth : in unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);
+			stride : in unsigned(STRIDE_BIT_WIDTH-1 downto 0);
+			hw_acc_en : in std_logic;
+			
 			-- Input signals
 			clk : in std_logic;
 			arstn : in std_logic;
@@ -76,12 +81,16 @@ architecture behav of main_fms_tb is
 	--end component;
 
 	
-
-
 	constant CLK_PERIOD : time := 20 ns;
 	constant data_width  : natural := 32;
 	constant compute_byte : natural := 25;
 	constant addr_width : natural := 8;
+
+	constant INPUT_SIZE_BIT_WIDTH : natural := 16;
+	constant INPUT_DEPTH_BIT_WIDTH : natural := 13;
+	constant STRIDE_BIT_WIDTH : natural := 3; 
+	constant KERNEL_DEPTH_BIT_WIDTH : natural := 13;
+	constant KERNEL_SIZE_BIT_WIDTH : natural := 8;
 
 	-- AXI Interface
 	signal XAXIS_TDATA : std_logic_vector(data_width-1 downto 0);
@@ -107,11 +116,12 @@ architecture behav of main_fms_tb is
 	signal alu_en : std_logic;
 
 	-- Network Parameter 
-	signal input_size : unsigned(data_width-1 downto 0);
-	signal input_depth : unsigned(data_width-1 downto 0);
-	signal kernel_size : unsigned(data_width-1 downto 0);
-	signal kernel_depth : unsigned(data_width-1 downto 0);
-	signal stride : unsigned(data_width-1 downto 0);
+	signal input_size : unsigned(INPUT_SIZE_BIT_WIDTH-1 downto 0);
+	signal input_depth : unsigned(INPUT_DEPTH_BIT_WIDTH-1 downto 0);
+	signal kernel_size : unsigned(KERNEL_SIZE_BIT_WIDTH-1 downto 0);
+	signal kernel_depth : unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);
+	signal stride : unsigned(STRIDE_BIT_WIDTH-1 downto 0);
+	signal hw_acc_en : std_logic;
 
 	-- Test Signal
 	signal fsm_state_test : std_logic_vector(2 downto 0);
@@ -123,10 +133,12 @@ begin
 	
 	main_fsm_dut : main_fsm
 	generic map(
-		--input_size   => input_size, 
-		--kernel_size  => kernel_size, 
-		--kernel_depth => kernel_depth,
-		--stride 		 => stride, 
+		INPUT_SIZE_BIT_WIDTH => INPUT_SIZE_BIT_WIDTH,  
+		INPUT_DEPTH_BIT_WIDTH => INPUT_DEPTH_BIT_WIDTH,  
+		STRIDE_BIT_WIDTH => STRIDE_BIT_WIDTH,  
+		KERNEL_DEPTH_BIT_WIDTH => KERNEL_DEPTH_BIT_WIDTH,
+		KERNEL_SIZE_BIT_WIDTH => KERNEL_SIZE_BIT_WIDTH,  
+
 		data_width   => data_width, 
 		compute_byte => compute_byte,
 		addr_width 	 => addr_width
@@ -137,6 +149,7 @@ begin
 		kernel_size => kernel_size, 
 		kernel_depth => kernel_depth, 
 		stride => stride, 
+		hw_acc_en => hw_acc_en,
 
 		-- Input signals
 		clk => XAXIS_ACLK , 
@@ -186,31 +199,42 @@ begin
 
 	stim_proc: 
 	process
-		variable loop_count  : integer range 0 to 65535 := (to_integer(kernel_depth)*to_integer(kernel_size)*to_integer(kernel_size)-1);
 	begin
+				
 		XAXIS_ARSTN <= '0';
 		wait for CLK_PERIOD;
 		XAXIS_ARSTN <= '1';
+		wait for CLK_PERIOD;
+		input_size <= to_unsigned(16#C#, input_size'length);
+		input_depth <= to_unsigned(16#1#, input_depth'length); 
+		kernel_size <= to_unsigned(16#3#, kernel_size'length); 
+		kernel_depth <= to_unsigned(16#5#, kernel_depth'length); 
+		stride <= to_unsigned(16#1#, stride'length); 
+		wait for CLK_PERIOD;
+		hw_acc_en <= '1';
+		wait for CLK_PERIOD;
 		XAXIS_TVALID <= '1';
+
 		-- Weight Loop
-		for i in 0 to loop_count loop
+		for i in 0 to (to_integer(kernel_depth*kernel_size*kernel_size))-1 loop
 			XAXIS_TDATA <= std_logic_vector(to_unsigned(i,XAXIS_TDATA'length));
-			if i = kernel_depth*kernel_size*kernel_size-1 then
+			if i = (kernel_depth*kernel_size*kernel_size)-1 then
 				XAXIS_TLAST <= '1';
 			end if;
 			wait for CLK_PERIOD;
 		end loop;
-
 		XAXIS_TLAST <= '0';
-		XAXIS_TDATA <= (others => '0');
-		wait for CLK_PERIOD*10;
+
+		-- Data Loop
+		for i in 0 to (to_integer(input_size*input_size)-1) loop
+			XAXIS_TDATA <= std_logic_vector(to_unsigned(i,XAXIS_TDATA'length));
+			if i = (to_integer(input_size*input_size)-1) then
+				XAXIS_TLAST <= '1';
+			end if;
+			wait for CLK_PERIOD;
+		end loop;
+		XAXIS_TDATA <= x"FFFF_FFFF";
 		XAXIS_TVALID <= '0';
-		wait for CLK_PERIOD*3;
-		XAXIS_TVALID <= '1';
-		wait for CLK_PERIOD*20;
-		XAXIS_TVALID <= '0';
-		wait for CLK_PERIOD*3;
-		XAXIS_TVALID <= '1';
 		wait;
 	end process;
 	
