@@ -74,8 +74,9 @@ begin
 
 	---------------------------------------------------------------------------------------------
 	-- Set Output Variable
-	-- Def.			: This process is use to set output_size when input_size,
+	-- Def.			: This process is use to re-calculated output_size when input_size,
 	-- 				  kernel_size, or stride is changed.
+	-- **Note		: This Setting Process only work when Hw_acc_en is low
 	-- Process Type : Sequential Circuit
 	---------------------------------------------------------------------------------------------
 	SET_OUTPUT_VAR:
@@ -84,13 +85,14 @@ begin
 		if arstn = '0' then
 		   output_size <= (others=>'0');	
 		elsif rising_edge(clk) then
-			output_size <= resize(unsigned((input_size - kernel_size)/stride + 1),output_size'length);  
+			if Hw_acc_en = '1' then
+				output_size <= resize(unsigned((input_size - kernel_size)/stride + 1),output_size'length);  
+			end if;
 		end if;
 	end process;
 
 	agu_en <= agu_en_s;
 
-	--x_prep_done <= '1' when (c_state = X_PREP) and (x_row = kernel_size-1) and (x_col = input_size-1) else '0';
 	x_prep_done <= '1' when  x_prep_c = input_size*kernel_size-1 else '0';
 	c_t_f <= '1' when x_row = (output_size-1)*stride else '0';
 
@@ -110,6 +112,13 @@ begin
 
 	w_addr_incr <= w_addr_c_en;
 
+	------------------------------------------------------------------------
+	-- Synchronous State
+   	-- Def. : Set current state to next state
+	-- Process Type : Sequential Circuit
+	-- **Note : 
+	-- 		
+	------------------------------------------------------------------------
 	STATE_SYNC: 
 		process(clk,arstn)
 		begin
@@ -120,8 +129,16 @@ begin
 			end if;
 		end process;
 
+	------------------------------------------------------------------------
+	-- Next State Decode
+   	-- Def. : Use to decode next state in FSM
+	-- FSM Type : Moor Machine
+	-- Process Type : Combinatorial Circuit
+	-- **Note : FSM only work after hw_acc_en is assert after all network 
+	-- 			variables is set
+	------------------------------------------------------------------------
 	NEXT_STATE_DECODE:
-		process (c_t_f, c_state, w_addr_c, last_input, tvalid, tlast, x_col, x_row, pixel_last, x_prep_done)
+		process (hw_acc_en, c_t_f, c_state, w_addr_c, last_input, tvalid, tlast, x_col, x_row, pixel_last, x_prep_done)
 		begin
 			n_state <= c_state;
 			if hw_acc_en = '1' then
@@ -183,8 +200,18 @@ begin
 			end if;
 		end process;
 
+	------------------------------------------------------------------------
+	-- Pixel_last assert when compute pointer is point at the last element 
+	-- of the input row. 		
+	------------------------------------------------------------------------
 	pixel_last <= '1' when x_col = input_size-1 else '0';
 
+	------------------------------------------------------------------------
+	-- Output Decode
+   	-- Def. : Use to decode output based on curent state
+	-- **Note : 
+	-- 		
+	------------------------------------------------------------------------
 	OUTPUT_DECODE:
 		process(c_state, x_prep_done, w_addr_c, last_input, tvalid, tlast, c_t_f)
 		begin
@@ -247,7 +274,15 @@ begin
 			end case;
 		end process;
 
-
+	------------------------------------------------------------------------
+	-- IMAGE_INST_COUNTER
+	-- Def. : Count instant of processed input in ACC
+	-- **Note : - This input_count doesn't represet input pixel but the whole 
+	--			  input ex. when finished process input 28x28 then input_count++).
+	-- 			- The benefit of this signal is to track how many image have 
+	--			  we processed inorder to detect the end of the convolution process.
+	-- 		
+	------------------------------------------------------------------------
 	IMAGE_INST_COUNTER:
 		process(clk, arstn)
 		begin

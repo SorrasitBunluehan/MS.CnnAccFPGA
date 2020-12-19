@@ -1,0 +1,1289 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/6262ea62/
+3synth_design -top acc_wrapper -part xc7z010clg400-12\adefault:\adefaultZ\x054-113h	Acc_proj.runs/synth_1/vivado.pb	/^3synth_design -top acc_wrapper -part xc7z010clg400-12default:defaultZ4-113h:$/;"	l
+::optrace	Acc_proj.runs/synth_1/acc_wrapper.tcl	/^namespace eval ::optrace {$/;"	n
+ACCU	srcs/ACCU.vhd	/^entity ACCU is$/;"	e
+ADDR_COUNTER	srcs/wgu.vhd	/^	ADDR_COUNTER:$/;"	Q	architecture:wgu.behav
+ADDR_LSB	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	constant ADDR_LSB  : integer := (data_width\/32)+ 1;$/;"	c	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+ADDR_TRIG_GEN	srcs/wgu.vhd	/^	ADDR_TRIG_GEN:$/;"	Q	architecture:wgu.behav
+ADDR_WIDTH	srcs/ACCU.vhd	/^		  ADDR_WIDTH : natural $/;"	g	component:ACCU.behav.SPM
+ADDR_WIDTH	srcs/SPM.vhd	/^	  ADDR_WIDTH : natural $/;"	g	entity:SPM
+ADDR_WIDTH	srcs/not use/dlau_pkg.vhd	/^	constant ADDR_WIDTH : natural := 8;   -- Address range 0-255$/;"	c	package:general_pkg
+ADDR_WIDTH	srcs/wgu.vhd	/^		  ADDR_WIDTH : natural $/;"	g	component:wgu.behav.SPM
+AGU	srcs/AGU.vhd	/^entity AGU is$/;"	e
+AGU	srcs/old/AGU.vhd	/^entity AGU is$/;"	e
+ALU	srcs/ALU.vhd	/^entity ALU is$/;"	e
+ALU_OUT_V	srcs/not use/dlau_pkg.vhd	/^	subtype ALU_OUT_V is std_logic_vector((2*(BYTE_WIDTH-1)) + BIW + BYTE_WIDTH downto 0);    -- AL/;"	T	package:general_pkg
+ALU_TEMP_ARRAY	srcs/not use/dlau_pkg.vhd	/^	type ALU_TEMP_ARRAY is array(BIW-1 downto 0) of ALU_OUT_V;$/;"	t	package:general_pkg
+ALU_W_V	srcs/not use/dlau_pkg.vhd	/^	subtype ALU_W_V is std_logic_vector ((2*TILE_WIDTH)-1 downto 0);                   -- ALU weigh/;"	T	package:general_pkg
+ALU_X_V	srcs/not use/dlau_pkg.vhd	/^	subtype ALU_X_V is std_logic_vector (TILE_WIDTH-1 downto 0);                               -- A/;"	T	package:general_pkg
+ARRAY_DISPLAY_LIMIT	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^ARRAY_DISPLAY_LIMIT=1024$/;"	k	section:General
+ARRAY_DISPLAY_LIMIT	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^ARRAY_DISPLAY_LIMIT=1024$/;"	k	section:General
+BIW	srcs/not use/dlau_pkg.vhd	/^	constant BIW : integer := TILE_WIDTH\/BYTE_WIDTH;$/;"	c	package:general_pkg
+BYTE_WIDTH	srcs/not use/dlau_pkg.vhd	/^	constant BYTE_WIDTH : integer := 8;$/;"	c	package:general_pkg
+Behavioral	srcs/ALU.vhd	/^architecture Behavioral of ALU is$/;"	a	entity:ALU
+Behavioral	srcs/SPM.vhd	/^architecture Behavioral of SPM is$/;"	a	entity:SPM
+Behavioral	srcs/not use/DPU.vhd	/^architecture Behavioral of DPU is$/;"	a	entity:DPU
+CLK_PERIOD	srcs/not use/dlau_pkg.vhd	/^	constant CLK_PERIOD : time := 50 ns;$/;"	c	package:general_pkg
+CLK_PERIOD	srcs/not use/top.vhd	/^	constant CLK_PERIOD : time := 50 ns;$/;"	c	architecture:agu_tb.behav
+CLK_PERIOD	tb/acc_wrapper_tb.vhd	/^	constant CLK_PERIOD : time := 20 ns;$/;"	c	architecture:acc_wrapper_tb.behav
+CLK_PERIOD	tb/agu_tb.vhd	/^	constant CLK_PERIOD : time := 50 ns;$/;"	c	architecture:agu_tb.behav
+CLK_PERIOD	tb/main_fsm_tb.vhd	/^	constant CLK_PERIOD : time := 20 ns;$/;"	c	architecture:main_fms_tb.behav
+CLK_PERIOD	tb/w_sticker_tb.vhd	/^	constant CLK_PERIOD : time := 50 ns;$/;"	c	architecture:w_sticker_tb.rtl
+CLK_PERIOD	tb/wgu_tb.vhd	/^	constant CLK_PERIOD : time := 20 ns;$/;"	c	architecture:wgu_tb.behav
+COMPUTE_COUNTER	srcs/main_fsm.vhd	/^	COMPUTE_COUNTER:$/;"	Q	architecture:main_fsm.behav
+COMP_COUNTER	srcs/old/AGU.vhd	/^	COMP_COUNTER:$/;"	Q	architecture:AGU.behav
+CONSTANT_LOCAL_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^CONSTANT_LOCAL_FILTER=1$/;"	k	section:General
+CONSTANT_LOCAL_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^CONSTANT_LOCAL_FILTER=1$/;"	k	section:General
+CONSTANT_OBJECT_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^CONSTANT_OBJECT_FILTER=true$/;"	k	section:General
+CONSTANT_OBJECT_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^CONSTANT_OBJECT_FILTER=true$/;"	k	section:General
+CONSTANT_PROTOINST_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^CONSTANT_PROTOINST_FILTER=true$/;"	k	section:General
+CONSTANT_PROTOINST_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^CONSTANT_PROTOINST_FILTER=true$/;"	k	section:General
+C_M01_AXIS_START_COUNT	srcs/MyAccelerator_v2_0.vhd	/^		C_M01_AXIS_START_COUNT	: integer	:= 32$/;"	g	entity:MyAccelerator_v2_0
+C_M01_AXIS_TDATA_WIDTH	srcs/MyAccelerator_v2_0.vhd	/^		C_M01_AXIS_TDATA_WIDTH	: integer	:= 32;$/;"	g	entity:MyAccelerator_v2_0
+C_M_AXIS_TDATA_WIDTH	srcs/MyAccelerator_v2_0.vhd	/^		C_M_AXIS_TDATA_WIDTH	: integer	:= 32;$/;"	g	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_M01_AXIS
+C_M_AXIS_TDATA_WIDTH	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^		C_M_AXIS_TDATA_WIDTH	: integer	:= 32;$/;"	g	entity:MyAccelerator_v2_0_M01_AXIS
+C_M_START_COUNT	srcs/MyAccelerator_v2_0.vhd	/^		C_M_START_COUNT	: integer	:= 32$/;"	g	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_M01_AXIS
+C_M_START_COUNT	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^		C_M_START_COUNT	: integer	:= 32$/;"	g	entity:MyAccelerator_v2_0_M01_AXIS
+C_S00_AXIS_TDATA_WIDTH	srcs/MyAccelerator_v2_0.vhd	/^		C_S00_AXIS_TDATA_WIDTH	: integer	:= 32;$/;"	g	entity:MyAccelerator_v2_0
+C_S00_AXI_ADDR_WIDTH	srcs/MyAccelerator_v2_0.vhd	/^		C_S00_AXI_ADDR_WIDTH	: integer	:= 5;$/;"	g	entity:MyAccelerator_v2_0
+C_S00_AXI_DATA_WIDTH	srcs/MyAccelerator_v2_0.vhd	/^		C_S00_AXI_DATA_WIDTH	: integer	:= 32;$/;"	g	entity:MyAccelerator_v2_0
+C_S_AXIS_TDATA_WIDTH	srcs/MyAccelerator_v2_0.vhd	/^		C_S_AXIS_TDATA_WIDTH	: integer	:= 32$/;"	g	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXIS
+C_S_AXI_ADDR_WIDTH	srcs/MyAccelerator_v2_0.vhd	/^		C_S_AXI_ADDR_WIDTH	: integer	:= 5$/;"	g	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXI
+C_S_AXI_DATA_WIDTH	srcs/MyAccelerator_v2_0.vhd	/^		C_S_AXI_DATA_WIDTH	: integer	:= 32;$/;"	g	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXI
+Clock	srcs/not use/jk_ff.vhd	/^         Clock: in std_logic;$/;"	q	entity:jk_ff
+Clock_enable	srcs/not use/jk_ff.vhd	/^         Clock_enable: in std_logic;$/;"	q	entity:jk_ff
+DATA_GEN	tb/acc_wrapper_tb.vhd	/^	DATA_GEN:$/;"	Q	architecture:acc_wrapper_tb.behav
+DATA_WORD_WIDTH	srcs/not use/dlau_pkg.vhd	/^	constant DATA_WORD_WIDTH : natural := 128;$/;"	c	package:general_pkg
+DPU	srcs/not use/DPU.vhd	/^entity DPU is$/;"	e
+DPU_DO	srcs/not use/DPU.vhd	/^        DPU_DO : out std_logic_vector(OUTPUT_WIDTH-1 downto 0);$/;"	q	entity:DPU
+DPU_VALID	srcs/not use/DPU.vhd	/^		DPU_VALID : out std_logic$/;"	q	entity:DPU
+EAInclude	Acc_proj.runs/synth_1/rundef.js	/^function EAInclude( EAInclFilename ) {$/;"	f
+EAStep	Acc_proj.runs/synth_1/runme.sh	/^EAStep()$/;"	f
+END	Acc_proj.sim/sim_1/behav/xsim/compile.bat	/^:END$/;"	l
+END	Acc_proj.sim/sim_1/behav/xsim/elaborate.bat	/^:END$/;"	l
+END	Acc_proj.sim/sim_1/behav/xsim/simulate.bat	/^:END$/;"	l
+FRAME_FILE_NAME_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^FRAME_FILE_NAME_COLUMN_WIDTH=75$/;"	k	section:General
+FRAME_FILE_NAME_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^FRAME_FILE_NAME_COLUMN_WIDTH=75$/;"	k	section:General
+FRAME_INDEX_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^FRAME_INDEX_COLUMN_WIDTH=75$/;"	k	section:General
+FRAME_INDEX_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^FRAME_INDEX_COLUMN_WIDTH=75$/;"	k	section:General
+FRAME_LINE_NUM_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^FRAME_LINE_NUM_COLUMN_WIDTH=334$/;"	k	section:General
+FRAME_LINE_NUM_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^FRAME_LINE_NUM_COLUMN_WIDTH=334$/;"	k	section:General
+FRAME_NAME_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^FRAME_NAME_COLUMN_WIDTH=75$/;"	k	section:General
+FRAME_NAME_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^FRAME_NAME_COLUMN_WIDTH=75$/;"	k	section:General
+General	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^[General]$/;"	s
+General	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^[General]$/;"	s
+HD_SDIR	Acc_proj.runs/synth_1/runme.bat	/^set HD_SDIR=%~dp0$/;"	v
+IKI_DLLESPEC	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/obj/xsim_1.c	/^ #define IKI_DLLESPEC /;"	d	file:
+IKI_DLLESPEC	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/obj/xsim_1.c	/^ #define IKI_DLLESPEC$/;"	d	file:
+IKI_DLLESPEC	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/obj/xsim_1.c	/^ #define IKI_DLLESPEC /;"	d	file:
+IKI_DLLESPEC	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/obj/xsim_1.c	/^ #define IKI_DLLESPEC$/;"	d	file:
+IMAGE_INST_COUNTER	srcs/main_fsm.vhd	/^	IMAGE_INST_COUNTER:$/;"	Q	architecture:main_fsm.behav
+INOUT_LOCAL_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^INOUT_LOCAL_FILTER=1$/;"	k	section:General
+INOUT_LOCAL_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^INOUT_LOCAL_FILTER=1$/;"	k	section:General
+INOUT_OBJECT_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^INOUT_OBJECT_FILTER=true$/;"	k	section:General
+INOUT_OBJECT_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^INOUT_OBJECT_FILTER=true$/;"	k	section:General
+INOUT_PROTOINST_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^INOUT_PROTOINST_FILTER=true$/;"	k	section:General
+INOUT_PROTOINST_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^INOUT_PROTOINST_FILTER=true$/;"	k	section:General
+INPUT_DEPTH_BIT_WIDTH	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		INPUT_DEPTH_BIT_WIDTH : natural;$/;"	g	entity:MyAccelerator_v2_0_S00_AXI
+INPUT_DEPTH_BIT_WIDTH	srcs/main_fsm.vhd	/^		INPUT_DEPTH_BIT_WIDTH : natural;$/;"	g	entity:main_fsm
+INPUT_DEPTH_BIT_WIDTH	tb/main_fsm_tb.vhd	/^			INPUT_DEPTH_BIT_WIDTH : natural;$/;"	g	component:main_fms_tb.behav.main_fsm
+INPUT_DEPTH_BIT_WIDTH	tb/main_fsm_tb.vhd	/^	constant INPUT_DEPTH_BIT_WIDTH : natural := 13;$/;"	c	architecture:main_fms_tb.behav
+INPUT_LOCAL_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^INPUT_LOCAL_FILTER=1$/;"	k	section:General
+INPUT_LOCAL_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^INPUT_LOCAL_FILTER=1$/;"	k	section:General
+INPUT_OBJECT_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^INPUT_OBJECT_FILTER=true$/;"	k	section:General
+INPUT_OBJECT_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^INPUT_OBJECT_FILTER=true$/;"	k	section:General
+INPUT_PROTOINST_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^INPUT_PROTOINST_FILTER=true$/;"	k	section:General
+INPUT_PROTOINST_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^INPUT_PROTOINST_FILTER=true$/;"	k	section:General
+INPUT_SIZE_BIT_WIDTH	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		INPUT_SIZE_BIT_WIDTH : natural;$/;"	g	entity:MyAccelerator_v2_0_S00_AXI
+INPUT_SIZE_BIT_WIDTH	srcs/main_fsm.vhd	/^		INPUT_SIZE_BIT_WIDTH : natural;$/;"	g	entity:main_fsm
+INPUT_SIZE_BIT_WIDTH	tb/main_fsm_tb.vhd	/^			INPUT_SIZE_BIT_WIDTH : natural;$/;"	g	component:main_fms_tb.behav.main_fsm
+INPUT_SIZE_BIT_WIDTH	tb/main_fsm_tb.vhd	/^	constant INPUT_SIZE_BIT_WIDTH : natural := 16;$/;"	c	architecture:main_fms_tb.behav
+INPUT_WIDTH	srcs/ACCU.vhd	/^		  INPUT_WIDTH : natural;$/;"	g	component:ACCU.behav.SPM
+INPUT_WIDTH	srcs/SPM.vhd	/^      INPUT_WIDTH : natural;$/;"	g	entity:SPM
+INPUT_WIDTH	srcs/wgu.vhd	/^		  INPUT_WIDTH : natural;$/;"	g	component:wgu.behav.SPM
+INTERNAL_LOCAL_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^INTERNAL_LOCAL_FILTER=1$/;"	k	section:General
+INTERNAL_LOCAL_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^INTERNAL_LOCAL_FILTER=1$/;"	k	section:General
+INTERNAL_OBJECT_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^INTERNAL_OBJECT_FILTER=true$/;"	k	section:General
+INTERNAL_OBJECT_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^INTERNAL_OBJECT_FILTER=true$/;"	k	section:General
+INTERNAL_PROTOINST_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^INTERNAL_PROTOINST_FILTER=true$/;"	k	section:General
+INTERNAL_PROTOINST_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^INTERNAL_PROTOINST_FILTER=true$/;"	k	section:General
+ISEExec	Acc_proj.runs/synth_1/ISEWrap.js	/^function ISEExec( ISEProg, ISEArgs ) {$/;"	f
+ISEFileSys	Acc_proj.runs/synth_1/ISEWrap.js	/^var ISEFileSys = new ActiveXObject( "Scripting.FileSystemObject" );$/;"	v
+ISEInit	Acc_proj.runs/synth_1/ISEWrap.js	/^function ISEInit() {$/;"	f
+ISEJScriptLib	Acc_proj.runs/synth_1/rundef.js	/^var ISEJScriptLib = RDScrDir + "\/ISEWrap.js";$/;"	v
+ISELogEcho	Acc_proj.runs/synth_1/ISEWrap.js	/^var ISELogEcho = true;$/;"	v
+ISELogFile	Acc_proj.runs/synth_1/ISEWrap.js	/^var ISELogFile = "runme.log";$/;"	v
+ISELogFileStr	Acc_proj.runs/synth_1/ISEWrap.js	/^var ISELogFileStr = null;$/;"	v
+ISEOldVersionWSH	Acc_proj.runs/synth_1/ISEWrap.js	/^var ISEOldVersionWSH = false;$/;"	v
+ISEOpenFile	Acc_proj.runs/synth_1/ISEWrap.js	/^function ISEOpenFile( ISEFilename ) {$/;"	f
+ISERunDir	Acc_proj.runs/synth_1/ISEWrap.js	/^var ISERunDir = "";$/;"	v
+ISEShell	Acc_proj.runs/synth_1/ISEWrap.js	/^var ISEShell = new ActiveXObject( "WScript.Shell" );$/;"	v
+ISEStdErr	Acc_proj.runs/synth_1/ISEWrap.js	/^function ISEStdErr( ISELine ) {$/;"	f
+ISEStdOut	Acc_proj.runs/synth_1/ISEWrap.js	/^function ISEStdOut( ISELine ) {$/;"	f
+ISEStep	Acc_proj.runs/synth_1/ISEWrap.js	/^function ISEStep( ISEProg, ISEArgs ) {$/;"	f
+ISETouchFile	Acc_proj.runs/synth_1/ISEWrap.js	/^function ISETouchFile( ISERoot, ISEStatus ) {$/;"	f
+J	srcs/not use/jk_ff.vhd	/^   port( J,K: in  std_logic;$/;"	q	entity:jk_ff
+JK_FF_INST	srcs/wgu.vhd	/^	JK_FF_INST:$/;"	Q	architecture:wgu.behav
+K	srcs/not use/jk_ff.vhd	/^   port( J,K: in  std_logic;$/;"	q	entity:jk_ff
+KERNEL_DEPTH_BIT_WIDTH	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		KERNEL_DEPTH_BIT_WIDTH : natural;$/;"	g	entity:MyAccelerator_v2_0_S00_AXI
+KERNEL_DEPTH_BIT_WIDTH	srcs/main_fsm.vhd	/^		KERNEL_DEPTH_BIT_WIDTH : natural;$/;"	g	entity:main_fsm
+KERNEL_DEPTH_BIT_WIDTH	tb/main_fsm_tb.vhd	/^			KERNEL_DEPTH_BIT_WIDTH : natural;$/;"	g	component:main_fms_tb.behav.main_fsm
+KERNEL_DEPTH_BIT_WIDTH	tb/main_fsm_tb.vhd	/^	constant KERNEL_DEPTH_BIT_WIDTH : natural := 13;$/;"	c	architecture:main_fms_tb.behav
+KERNEL_SIZE_BIT_WIDTH	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		KERNEL_SIZE_BIT_WIDTH : natural;	$/;"	g	entity:MyAccelerator_v2_0_S00_AXI
+KERNEL_SIZE_BIT_WIDTH	srcs/main_fsm.vhd	/^		KERNEL_SIZE_BIT_WIDTH : natural;$/;"	g	entity:main_fsm
+KERNEL_SIZE_BIT_WIDTH	tb/main_fsm_tb.vhd	/^			KERNEL_SIZE_BIT_WIDTH : natural;$/;"	g	component:main_fms_tb.behav.main_fsm
+KERNEL_SIZE_BIT_WIDTH	tb/main_fsm_tb.vhd	/^	constant KERNEL_SIZE_BIT_WIDTH : natural := 8;$/;"	c	architecture:main_fms_tb.behav
+LOCAL_DATA_TYPE_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^LOCAL_DATA_TYPE_COLUMN_WIDTH=0$/;"	k	section:General
+LOCAL_DATA_TYPE_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^LOCAL_DATA_TYPE_COLUMN_WIDTH=0$/;"	k	section:General
+LOCAL_NAME_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^LOCAL_NAME_COLUMN_WIDTH=130$/;"	k	section:General
+LOCAL_NAME_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^LOCAL_NAME_COLUMN_WIDTH=130$/;"	k	section:General
+LOCAL_VALUE_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^LOCAL_VALUE_COLUMN_WIDTH=75$/;"	k	section:General
+LOCAL_VALUE_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^LOCAL_VALUE_COLUMN_WIDTH=75$/;"	k	section:General
+LSB	srcs/not use/DPU.vhd	/^    signal  MSB,LSB : integer range 0 to 65535;$/;"	s	architecture:DPU.Behavioral
+MAIN_MUX	srcs/acc_wrapper.vhd	/^	MAIN_MUX:$/;"	Q	architecture:acc_wrapper.behav
+MAIN_MUX	srcs/old/acc_wrapper.vhd	/^	MAIN_MUX:$/;"	Q	architecture:acc_wrapper.behav
+MEM_ARRAY_SIZE	srcs/not use/dlau_pkg.vhd	/^	constant MEM_ARRAY_SIZE : natural := 256;$/;"	c	package:general_pkg
+MEM_DEPTH	srcs/ACCU.vhd	/^		  MEM_DEPTH : natural;$/;"	g	component:ACCU.behav.SPM
+MEM_DEPTH	srcs/SPM.vhd	/^      MEM_DEPTH : natural;$/;"	g	entity:SPM
+MEM_DEPTH	srcs/wgu.vhd	/^		  MEM_DEPTH : natural;$/;"	g	component:wgu.behav.SPM
+MSB	srcs/not use/DPU.vhd	/^    signal  MSB,LSB : integer range 0 to 65535;$/;"	s	architecture:DPU.Behavioral
+M_AXIS_ACLK	srcs/MyAccelerator_v2_0.vhd	/^		M_AXIS_ACLK	: in std_logic;$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_M01_AXIS
+M_AXIS_ACLK	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^		M_AXIS_ACLK	: in std_logic;$/;"	q	entity:MyAccelerator_v2_0_M01_AXIS
+M_AXIS_ARESETN	srcs/MyAccelerator_v2_0.vhd	/^		M_AXIS_ARESETN	: in std_logic;$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_M01_AXIS
+M_AXIS_ARESETN	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^		M_AXIS_ARESETN	: in std_logic;$/;"	q	entity:MyAccelerator_v2_0_M01_AXIS
+M_AXIS_TDATA	srcs/MyAccelerator_v2_0.vhd	/^		M_AXIS_TDATA	: out std_logic_vector(C_M_AXIS_TDATA_WIDTH-1 downto 0);$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_M01_AXIS
+M_AXIS_TDATA	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^		M_AXIS_TDATA	: out std_logic_vector(C_M_AXIS_TDATA_WIDTH-1 downto 0);$/;"	q	entity:MyAccelerator_v2_0_M01_AXIS
+M_AXIS_TLAST	srcs/MyAccelerator_v2_0.vhd	/^		M_AXIS_TLAST	: out std_logic;$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_M01_AXIS
+M_AXIS_TLAST	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^		M_AXIS_TLAST	: out std_logic;$/;"	q	entity:MyAccelerator_v2_0_M01_AXIS
+M_AXIS_TREADY	srcs/MyAccelerator_v2_0.vhd	/^		M_AXIS_TREADY	: in std_logic$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_M01_AXIS
+M_AXIS_TREADY	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^		M_AXIS_TREADY	: in std_logic$/;"	q	entity:MyAccelerator_v2_0_M01_AXIS
+M_AXIS_TSTRB	srcs/MyAccelerator_v2_0.vhd	/^		M_AXIS_TSTRB	: out std_logic_vector((C_M_AXIS_TDATA_WIDTH\/8)-1 downto 0);$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_M01_AXIS
+M_AXIS_TSTRB	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^		M_AXIS_TSTRB	: out std_logic_vector((C_M_AXIS_TDATA_WIDTH\/8)-1 downto 0);$/;"	q	entity:MyAccelerator_v2_0_M01_AXIS
+M_AXIS_TVALID	srcs/MyAccelerator_v2_0.vhd	/^		M_AXIS_TVALID	: out std_logic;$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_M01_AXIS
+M_AXIS_TVALID	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^		M_AXIS_TVALID	: out std_logic;$/;"	q	entity:MyAccelerator_v2_0_M01_AXIS
+MyAccelerator	README.md	/^# MyAccelerator$/;"	c
+MyAccelerator_v2_0	srcs/MyAccelerator_v2_0.vhd	/^entity MyAccelerator_v2_0 is$/;"	e
+MyAccelerator_v2_0_M01_AXIS	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^entity MyAccelerator_v2_0_M01_AXIS is$/;"	e
+MyAccelerator_v2_0_S00_AXI	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^entity MyAccelerator_v2_0_S00_AXI is$/;"	e
+NEXT_STATE_DECODE	srcs/main_fsm.vhd	/^	NEXT_STATE_DECODE:$/;"	Q	architecture:main_fsm.behav
+NEXT_STATE_DECODE	srcs/not use/fsm_agu.vhd	/^	NEXT_STATE_DECODE:$/;"	Q	architecture:fsm_agu.behav
+NEXT_STATE_DECODE	srcs/old/AGU.vhd	/^	NEXT_STATE_DECODE:$/;"	Q	architecture:AGU.behav
+NUMBER_OF_OUTPUT_WORDS	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^	constant NUMBER_OF_OUTPUT_WORDS : integer := 8;                                   $/;"	c	architecture:MyAccelerator_v2_0_M01_AXIS.implementation
+NumRelocateId	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/obj/xsim_1.c	/^const int NumRelocateId= 6;$/;"	v	typeref:typename:const int
+NumRelocateId	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/obj/xsim_1.c	/^const int NumRelocateId= 18;$/;"	v	typeref:typename:const int
+OBJECT_DATA_TYPE_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^OBJECT_DATA_TYPE_COLUMN_WIDTH=75$/;"	k	section:General
+OBJECT_DATA_TYPE_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^OBJECT_DATA_TYPE_COLUMN_WIDTH=75$/;"	k	section:General
+OBJECT_NAME_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^OBJECT_NAME_COLUMN_WIDTH=334$/;"	k	section:General
+OBJECT_NAME_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^OBJECT_NAME_COLUMN_WIDTH=334$/;"	k	section:General
+OBJECT_VALUE_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^OBJECT_VALUE_COLUMN_WIDTH=130$/;"	k	section:General
+OBJECT_VALUE_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^OBJECT_VALUE_COLUMN_WIDTH=130$/;"	k	section:General
+OPT_MEM_ADDR_BITS	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	constant OPT_MEM_ADDR_BITS : integer := 2;$/;"	c	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+OUTPUT_DECODE	srcs/main_fsm.vhd	/^	OUTPUT_DECODE:$/;"	Q	architecture:main_fsm.behav
+OUTPUT_DECODE	srcs/not use/fsm_agu.vhd	/^	OUTPUT_DECODE:$/;"	Q	architecture:fsm_agu.behav
+OUTPUT_LOCAL_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^OUTPUT_LOCAL_FILTER=1$/;"	k	section:General
+OUTPUT_LOCAL_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^OUTPUT_LOCAL_FILTER=1$/;"	k	section:General
+OUTPUT_OBJECT_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^OUTPUT_OBJECT_FILTER=true$/;"	k	section:General
+OUTPUT_OBJECT_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^OUTPUT_OBJECT_FILTER=true$/;"	k	section:General
+OUTPUT_PROTOINST_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^OUTPUT_PROTOINST_FILTER=true$/;"	k	section:General
+OUTPUT_PROTOINST_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^OUTPUT_PROTOINST_FILTER=true$/;"	k	section:General
+OUTPUT_WIDTH	srcs/not use/DPU.vhd	/^      OUTPUT_WIDTH : natural$/;"	g	entity:DPU
+Output	srcs/not use/jk_ff.vhd	/^         Output: out std_logic);$/;"	q	entity:jk_ff
+PREP_COUNTER	srcs/old/AGU.vhd	/^	PREP_COUNTER:$/;"	Q	architecture:AGU.behav
+PROCESS_NAME_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^PROCESS_NAME_COLUMN_WIDTH=75$/;"	k	section:General
+PROCESS_NAME_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^PROCESS_NAME_COLUMN_WIDTH=75$/;"	k	section:General
+PROCESS_TYPE_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^PROCESS_TYPE_COLUMN_WIDTH=75$/;"	k	section:General
+PROCESS_TYPE_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^PROCESS_TYPE_COLUMN_WIDTH=75$/;"	k	section:General
+PROC_COUNT	srcs/not use/data_fifo.vhd	/^  PROC_COUNT : process(head, tail)$/;"	Q	architecture:data_fifo.rtl
+PROC_HEAD	srcs/not use/data_fifo.vhd	/^  PROC_HEAD : process(clk)$/;"	Q	architecture:data_fifo.rtl
+PROC_RAM	srcs/not use/data_fifo.vhd	/^  PROC_RAM : process(clk)$/;"	Q	architecture:data_fifo.rtl
+PROC_TAIL	srcs/not use/data_fifo.vhd	/^  PROC_TAIL : process(clk)$/;"	Q	architecture:data_fifo.rtl
+PROTO_NAME_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^PROTO_NAME_COLUMN_WIDTH=0$/;"	k	section:General
+PROTO_NAME_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^PROTO_NAME_COLUMN_WIDTH=0$/;"	k	section:General
+PROTO_VALUE_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^PROTO_VALUE_COLUMN_WIDTH=0$/;"	k	section:General
+PROTO_VALUE_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^PROTO_VALUE_COLUMN_WIDTH=0$/;"	k	section:General
+PathVal	Acc_proj.runs/synth_1/rundef.js	/^var PathVal = ProcEnv("PATH");$/;"	v
+ProcEnv	Acc_proj.runs/synth_1/rundef.js	/^var ProcEnv = WshShell.Environment( "Process" );$/;"	v
+RADIX	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^RADIX=hex$/;"	k	section:General
+RADIX	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^RADIX=hex$/;"	k	section:General
+RAM	srcs/SPM.vhd	/^    signal RAM : ram_type; $/;"	s	architecture:SPM.Behavioral
+RAM_DEPTH	srcs/not use/data_fifo.vhd	/^    RAM_DEPTH : natural$/;"	g	entity:data_fifo
+RAM_WIDTH	srcs/not use/data_fifo.vhd	/^    RAM_WIDTH : natural;$/;"	g	entity:data_fifo
+RDScrDir	Acc_proj.runs/synth_1/rundef.js	/^var RDScrDir = RDScrFP.substr( 0, RDScrFP.length - RDScrN.length - 1 );$/;"	v
+RDScrFP	Acc_proj.runs/synth_1/rundef.js	/^var RDScrFP = WScript.ScriptFullName;$/;"	v
+RDScrN	Acc_proj.runs/synth_1/rundef.js	/^var RDScrN = WScript.ScriptName;$/;"	v
+Reset	srcs/not use/jk_ff.vhd	/^         Reset: in std_logic;$/;"	q	entity:jk_ff
+SCOPE_BLOCK_TYPE_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^SCOPE_BLOCK_TYPE_COLUMN_WIDTH=75$/;"	k	section:General
+SCOPE_BLOCK_TYPE_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^SCOPE_BLOCK_TYPE_COLUMN_WIDTH=75$/;"	k	section:General
+SCOPE_DESIGN_UNIT_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^SCOPE_DESIGN_UNIT_COLUMN_WIDTH=75$/;"	k	section:General
+SCOPE_DESIGN_UNIT_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^SCOPE_DESIGN_UNIT_COLUMN_WIDTH=75$/;"	k	section:General
+SCOPE_NAME_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^SCOPE_NAME_COLUMN_WIDTH=341$/;"	k	section:General
+SCOPE_NAME_COLUMN_WIDTH	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^SCOPE_NAME_COLUMN_WIDTH=341$/;"	k	section:General
+SET_OUTPUT_VAR	srcs/main_fsm.vhd	/^	SET_OUTPUT_VAR:$/;"	Q	architecture:main_fsm.behav
+SPM	srcs/SPM.vhd	/^entity SPM is$/;"	e
+STATE_SYNC	srcs/main_fsm.vhd	/^	STATE_SYNC: $/;"	Q	architecture:main_fsm.behav
+STATE_SYNC	srcs/not use/fsm_agu.vhd	/^	STATE_SYNC: $/;"	Q	architecture:fsm_agu.behav
+STATE_SYNC	srcs/old/AGU.vhd	/^	STATE_SYNC: $/;"	Q	architecture:AGU.behav
+STIM_PROC	tb/acc_wrapper_tb.vhd	/^	STIM_PROC:$/;"	Q	architecture:acc_wrapper_tb.behav
+STORE_ARRAY	srcs/w_sticker.vhd	/^	STORE_ARRAY: $/;"	Q	architecture:w_sticker.behav
+STRIDE_BIT_WIDTH	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		STRIDE_BIT_WIDTH : natural;  $/;"	g	entity:MyAccelerator_v2_0_S00_AXI
+STRIDE_BIT_WIDTH	srcs/main_fsm.vhd	/^		STRIDE_BIT_WIDTH : natural;  $/;"	g	entity:main_fsm
+STRIDE_BIT_WIDTH	tb/main_fsm_tb.vhd	/^			STRIDE_BIT_WIDTH : natural;  $/;"	g	component:main_fms_tb.behav.main_fsm
+STRIDE_BIT_WIDTH	tb/main_fsm_tb.vhd	/^	constant STRIDE_BIT_WIDTH : natural := 3; $/;"	c	architecture:main_fms_tb.behav
+SUCCESS	Acc_proj.sim/sim_1/behav/xsim/compile.bat	/^:SUCCESS$/;"	l
+SUCCESS	Acc_proj.sim/sim_1/behav/xsim/elaborate.bat	/^:SUCCESS$/;"	l
+SUCCESS	Acc_proj.sim/sim_1/behav/xsim/simulate.bat	/^:SUCCESS$/;"	l
+S_AXIS_ACLK	srcs/MyAccelerator_v2_0.vhd	/^		S_AXIS_ACLK	: in std_logic;$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXIS
+S_AXIS_ACLK	srcs/not use/DPU.vhd	/^		S_AXIS_ACLK : in std_logic;$/;"	q	entity:DPU
+S_AXIS_ARESETN	srcs/MyAccelerator_v2_0.vhd	/^		S_AXIS_ARESETN	: in std_logic;$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXIS
+S_AXIS_ARESETN	srcs/not use/DPU.vhd	/^		S_AXIS_ARESETN : in std_logic;                          -- Active-Low reset signal$/;"	q	entity:DPU
+S_AXIS_TDATA	srcs/MyAccelerator_v2_0.vhd	/^		S_AXIS_TDATA	: in std_logic_vector(C_S_AXIS_TDATA_WIDTH-1 downto 0);$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXIS
+S_AXIS_TDATA	srcs/not use/DPU.vhd	/^		S_AXIS_TDATA : in std_logic_vector(TRANSFER_WIDTH-1 downto 0);$/;"	q	entity:DPU
+S_AXIS_TDATA_WIDTH	srcs/not use/fsm_agu.vhd	/^		S_AXIS_TDATA_WIDTH : natural := 32;$/;"	g	entity:fsm_agu
+S_AXIS_TLAST	srcs/MyAccelerator_v2_0.vhd	/^		S_AXIS_TLAST	: in std_logic;$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXIS
+S_AXIS_TLAST	srcs/not use/DPU.vhd	/^		S_AXIS_TLAST	: in std_logic;$/;"	q	entity:DPU
+S_AXIS_TREADY	srcs/MyAccelerator_v2_0.vhd	/^		S_AXIS_TREADY	: out std_logic;$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXIS
+S_AXIS_TREADY	srcs/not use/DPU.vhd	/^        S_AXIS_TREADY : out std_logic;	$/;"	q	entity:DPU
+S_AXIS_TSTRB	srcs/MyAccelerator_v2_0.vhd	/^		S_AXIS_TSTRB	: in std_logic_vector((C_S_AXIS_TDATA_WIDTH\/8)-1 downto 0);$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXIS
+S_AXIS_TSTRB	srcs/not use/DPU.vhd	/^		S_AXIS_TSTRB	: in std_logic_vector((TRANSFER_WIDTH\/8)-1 downto 0);$/;"	q	entity:DPU
+S_AXIS_TVALID	srcs/MyAccelerator_v2_0.vhd	/^		S_AXIS_TVALID	: in std_logic$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXIS
+S_AXIS_TVALID	srcs/not use/DPU.vhd	/^		S_AXIS_TVALID : in std_logic;$/;"	q	entity:DPU
+S_AXI_ACLK	srcs/MyAccelerator_v2_0.vhd	/^		S_AXI_ACLK	: in std_logic;$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXI
+S_AXI_ACLK	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		S_AXI_ACLK	: in std_logic;$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+S_AXI_ACLK	srcs/acc_wrapper.vhd	/^		S_AXI_ACLK	: in std_logic;$/;"	q	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+S_AXI_ARADDR	srcs/MyAccelerator_v2_0.vhd	/^		S_AXI_ARADDR	: in std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXI
+S_AXI_ARADDR	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		S_AXI_ARADDR	: in std_logic_vector(addr_width-1 downto 0);$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+S_AXI_ARADDR	srcs/acc_wrapper.vhd	/^		S_AXI_ARADDR	: in std_logic_vector(addr_width-1 downto 0);$/;"	q	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+S_AXI_ARESETN	srcs/MyAccelerator_v2_0.vhd	/^		S_AXI_ARESETN	: in std_logic;$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXI
+S_AXI_ARESETN	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		S_AXI_ARESETN	: in std_logic;$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+S_AXI_ARESETN	srcs/acc_wrapper.vhd	/^		S_AXI_ARESETN	: in std_logic;$/;"	q	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+S_AXI_ARPROT	srcs/MyAccelerator_v2_0.vhd	/^		S_AXI_ARPROT	: in std_logic_vector(2 downto 0);$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXI
+S_AXI_ARPROT	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		S_AXI_ARPROT	: in std_logic_vector(2 downto 0);$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+S_AXI_ARPROT	srcs/acc_wrapper.vhd	/^		S_AXI_ARPROT	: in std_logic_vector(2 downto 0);$/;"	q	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+S_AXI_ARREADY	srcs/MyAccelerator_v2_0.vhd	/^		S_AXI_ARREADY	: out std_logic;$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXI
+S_AXI_ARREADY	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		S_AXI_ARREADY	: out std_logic;$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+S_AXI_ARREADY	srcs/acc_wrapper.vhd	/^		S_AXI_ARREADY	: out std_logic;$/;"	q	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+S_AXI_ARVALID	srcs/MyAccelerator_v2_0.vhd	/^		S_AXI_ARVALID	: in std_logic;$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXI
+S_AXI_ARVALID	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		S_AXI_ARVALID	: in std_logic;$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+S_AXI_ARVALID	srcs/acc_wrapper.vhd	/^		S_AXI_ARVALID	: in std_logic;$/;"	q	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+S_AXI_AWADDR	srcs/MyAccelerator_v2_0.vhd	/^		S_AXI_AWADDR	: in std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXI
+S_AXI_AWADDR	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		S_AXI_AWADDR	: in std_logic_vector(addr_width-1 downto 0);$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+S_AXI_AWADDR	srcs/acc_wrapper.vhd	/^		S_AXI_AWADDR	: in std_logic_vector(addr_width-1 downto 0);$/;"	q	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+S_AXI_AWPROT	srcs/MyAccelerator_v2_0.vhd	/^		S_AXI_AWPROT	: in std_logic_vector(2 downto 0);$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXI
+S_AXI_AWPROT	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		S_AXI_AWPROT	: in std_logic_vector(2 downto 0);$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+S_AXI_AWPROT	srcs/acc_wrapper.vhd	/^		S_AXI_AWPROT	: in std_logic_vector(2 downto 0);$/;"	q	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+S_AXI_AWREADY	srcs/MyAccelerator_v2_0.vhd	/^		S_AXI_AWREADY	: out std_logic;$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXI
+S_AXI_AWREADY	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		S_AXI_AWREADY	: out std_logic;$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+S_AXI_AWREADY	srcs/acc_wrapper.vhd	/^		S_AXI_AWREADY	: out std_logic;$/;"	q	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+S_AXI_AWVALID	srcs/MyAccelerator_v2_0.vhd	/^		S_AXI_AWVALID	: in std_logic;$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXI
+S_AXI_AWVALID	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		S_AXI_AWVALID	: in std_logic;$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+S_AXI_AWVALID	srcs/acc_wrapper.vhd	/^		S_AXI_AWVALID	: in std_logic;$/;"	q	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+S_AXI_BREADY	srcs/MyAccelerator_v2_0.vhd	/^		S_AXI_BREADY	: in std_logic;$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXI
+S_AXI_BREADY	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		S_AXI_BREADY	: in std_logic;$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+S_AXI_BREADY	srcs/acc_wrapper.vhd	/^		S_AXI_BREADY	: in std_logic;$/;"	q	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+S_AXI_BRESP	srcs/MyAccelerator_v2_0.vhd	/^		S_AXI_BRESP	: out std_logic_vector(1 downto 0);$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXI
+S_AXI_BRESP	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		S_AXI_BRESP	: out std_logic_vector(1 downto 0);$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+S_AXI_BRESP	srcs/acc_wrapper.vhd	/^		S_AXI_BRESP	: out std_logic_vector(1 downto 0);$/;"	q	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+S_AXI_BVALID	srcs/MyAccelerator_v2_0.vhd	/^		S_AXI_BVALID	: out std_logic;$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXI
+S_AXI_BVALID	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		S_AXI_BVALID	: out std_logic;$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+S_AXI_BVALID	srcs/acc_wrapper.vhd	/^		S_AXI_BVALID	: out std_logic;$/;"	q	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+S_AXI_RDATA	srcs/MyAccelerator_v2_0.vhd	/^		S_AXI_RDATA	: out std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXI
+S_AXI_RDATA	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		S_AXI_RDATA	: out std_logic_vector(data_width-1 downto 0);$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+S_AXI_RDATA	srcs/acc_wrapper.vhd	/^		S_AXI_RDATA	: out std_logic_vector(data_width-1 downto 0);$/;"	q	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+S_AXI_RREADY	srcs/MyAccelerator_v2_0.vhd	/^		S_AXI_RREADY	: in std_logic$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXI
+S_AXI_RREADY	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		S_AXI_RREADY	: in std_logic$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+S_AXI_RREADY	srcs/acc_wrapper.vhd	/^		S_AXI_RREADY	: in std_logic$/;"	q	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+S_AXI_RRESP	srcs/MyAccelerator_v2_0.vhd	/^		S_AXI_RRESP	: out std_logic_vector(1 downto 0);$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXI
+S_AXI_RRESP	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		S_AXI_RRESP	: out std_logic_vector(1 downto 0);$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+S_AXI_RRESP	srcs/acc_wrapper.vhd	/^		S_AXI_RRESP	: out std_logic_vector(1 downto 0);$/;"	q	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+S_AXI_RVALID	srcs/MyAccelerator_v2_0.vhd	/^		S_AXI_RVALID	: out std_logic;$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXI
+S_AXI_RVALID	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		S_AXI_RVALID	: out std_logic;$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+S_AXI_RVALID	srcs/acc_wrapper.vhd	/^		S_AXI_RVALID	: out std_logic;$/;"	q	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+S_AXI_WDATA	srcs/MyAccelerator_v2_0.vhd	/^		S_AXI_WDATA	: in std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXI
+S_AXI_WDATA	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		S_AXI_WDATA	: in std_logic_vector(data_width-1 downto 0);$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+S_AXI_WDATA	srcs/acc_wrapper.vhd	/^		S_AXI_WDATA	: in std_logic_vector(data_width-1 downto 0);$/;"	q	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+S_AXI_WREADY	srcs/MyAccelerator_v2_0.vhd	/^		S_AXI_WREADY	: out std_logic;$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXI
+S_AXI_WREADY	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		S_AXI_WREADY	: out std_logic;$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+S_AXI_WREADY	srcs/acc_wrapper.vhd	/^		S_AXI_WREADY	: out std_logic;$/;"	q	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+S_AXI_WSTRB	srcs/MyAccelerator_v2_0.vhd	/^		S_AXI_WSTRB	: in std_logic_vector((C_S_AXI_DATA_WIDTH\/8)-1 downto 0);$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXI
+S_AXI_WSTRB	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		S_AXI_WSTRB	: in std_logic_vector((data_width\/8)-1 downto 0);$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+S_AXI_WSTRB	srcs/acc_wrapper.vhd	/^		S_AXI_WSTRB	: in std_logic_vector((data_width\/8)-1 downto 0);$/;"	q	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+S_AXI_WVALID	srcs/MyAccelerator_v2_0.vhd	/^		S_AXI_WVALID	: in std_logic;$/;"	q	component:MyAccelerator_v2_0.arch_imp.MyAccelerator_v2_0_S00_AXI
+S_AXI_WVALID	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		S_AXI_WVALID	: in std_logic;$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+S_AXI_WVALID	srcs/acc_wrapper.vhd	/^		S_AXI_WVALID	: in std_logic;$/;"	q	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+TILE_WIDTH	srcs/not use/dlau_pkg.vhd	/^	constant TILE_WIDTH : natural := 128;                    -- Bit width of each tile$/;"	c	package:general_pkg
+TIME_UNIT	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^TIME_UNIT=ns$/;"	k	section:General
+TIME_UNIT	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^TIME_UNIT=ns$/;"	k	section:General
+TRACE_LIMIT	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^TRACE_LIMIT=65536$/;"	k	section:General
+TRACE_LIMIT	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^TRACE_LIMIT=65536$/;"	k	section:General
+TRANSFER_WIDTH	srcs/not use/dlau_pkg.vhd	/^	constant TRANSFER_WIDTH : natural := 32;  -- channel width from PS to PL$/;"	c	package:general_pkg
+VALID_COUNTER	srcs/wgu.vhd	/^	VALID_COUNTER:$/;"	Q	architecture:wgu.behav
+VARIABLE_LOCAL_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^VARIABLE_LOCAL_FILTER=1$/;"	k	section:General
+VARIABLE_LOCAL_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^VARIABLE_LOCAL_FILTER=1$/;"	k	section:General
+VARIABLE_OBJECT_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^VARIABLE_OBJECT_FILTER=true$/;"	k	section:General
+VARIABLE_OBJECT_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^VARIABLE_OBJECT_FILTER=true$/;"	k	section:General
+VARIABLE_PROTOINST_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^VARIABLE_PROTOINST_FILTER=true$/;"	k	section:General
+VARIABLE_PROTOINST_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^VARIABLE_PROTOINST_FILTER=true$/;"	k	section:General
+VERILOG_BLOCK_SCOPE_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^VERILOG_BLOCK_SCOPE_FILTER=false$/;"	k	section:General
+VERILOG_BLOCK_SCOPE_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^VERILOG_BLOCK_SCOPE_FILTER=false$/;"	k	section:General
+VERILOG_MODULE_SCOPE_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^VERILOG_MODULE_SCOPE_FILTER=true$/;"	k	section:General
+VERILOG_MODULE_SCOPE_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^VERILOG_MODULE_SCOPE_FILTER=true$/;"	k	section:General
+VERILOG_PACKAGE_SCOPE_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^VERILOG_PACKAGE_SCOPE_FILTER=false$/;"	k	section:General
+VERILOG_PACKAGE_SCOPE_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^VERILOG_PACKAGE_SCOPE_FILTER=false$/;"	k	section:General
+VERILOG_PROCESS_SCOPE_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^VERILOG_PROCESS_SCOPE_FILTER=false$/;"	k	section:General
+VERILOG_PROCESS_SCOPE_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^VERILOG_PROCESS_SCOPE_FILTER=false$/;"	k	section:General
+VERILOG_TASK_SCOPE_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^VERILOG_TASK_SCOPE_FILTER=false$/;"	k	section:General
+VERILOG_TASK_SCOPE_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^VERILOG_TASK_SCOPE_FILTER=false$/;"	k	section:General
+VHDL_BLOCK_SCOPE_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^VHDL_BLOCK_SCOPE_FILTER=true$/;"	k	section:General
+VHDL_BLOCK_SCOPE_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^VHDL_BLOCK_SCOPE_FILTER=true$/;"	k	section:General
+VHDL_ENTITY_SCOPE_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^VHDL_ENTITY_SCOPE_FILTER=true$/;"	k	section:General
+VHDL_ENTITY_SCOPE_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^VHDL_ENTITY_SCOPE_FILTER=true$/;"	k	section:General
+VHDL_PACKAGE_SCOPE_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^VHDL_PACKAGE_SCOPE_FILTER=false$/;"	k	section:General
+VHDL_PACKAGE_SCOPE_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^VHDL_PACKAGE_SCOPE_FILTER=false$/;"	k	section:General
+VHDL_PROCEDURE_SCOPE_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^VHDL_PROCEDURE_SCOPE_FILTER=false$/;"	k	section:General
+VHDL_PROCEDURE_SCOPE_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^VHDL_PROCEDURE_SCOPE_FILTER=false$/;"	k	section:General
+VHDL_PROCESS_SCOPE_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/xsimSettings.ini	/^VHDL_PROCESS_SCOPE_FILTER=false$/;"	k	section:General
+VHDL_PROCESS_SCOPE_FILTER	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/xsimSettings.ini	/^VHDL_PROCESS_SCOPE_FILTER=false$/;"	k	section:General
+WAIT_COUNT_BITS	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^	 constant  WAIT_COUNT_BITS  : integer := clogb2(C_M_START_COUNT-1);               $/;"	c	architecture:MyAccelerator_v2_0_M01_AXIS.implementation
+WEIGHT_WORD_WIDTH	srcs/not use/dlau_pkg.vhd	/^	constant WEIGHT_WORD_WIDTH : natural := 256;$/;"	c	package:general_pkg
+W_ARRAY	srcs/not use/dlau_pkg.vhd	/^	type W_ARRAY is array(BIW-1 downto 0) of std_logic_vector(2*BYTE_WIDTH-1 downto 0);$/;"	t	package:general_pkg
+W_AVAILABLE	srcs/not use/fsm_agu.vhd	/^	W_AVAILABLE:$/;"	Q	architecture:fsm_agu.behav
+WshShell	Acc_proj.runs/synth_1/rundef.js	/^var WshShell = new ActiveXObject( "WScript.Shell" );$/;"	v
+XAXIS_ACLK	srcs/old/acc_wrapper.vhd	/^		XAXIS_ACLK : in std_logic;$/;"	q	entity:acc_wrapper
+XAXIS_ACLK	tb/acc_wrapper_tb.vhd	/^			XAXIS_ACLK : in std_logic;$/;"	q	component:acc_wrapper_tb.behav.acc_wrapper
+XAXIS_ACLK	tb/acc_wrapper_tb.vhd	/^	signal XAXIS_ACLK : std_logic := '1';$/;"	s	architecture:acc_wrapper_tb.behav
+XAXIS_ACLK	tb/main_fsm_tb.vhd	/^	signal XAXIS_ACLK : std_logic := '1';$/;"	s	architecture:main_fms_tb.behav
+XAXIS_ARSTN	srcs/old/acc_wrapper.vhd	/^		XAXIS_ARSTN : in std_logic;$/;"	q	entity:acc_wrapper
+XAXIS_ARSTN	tb/acc_wrapper_tb.vhd	/^			XAXIS_ARSTN : in std_logic;$/;"	q	component:acc_wrapper_tb.behav.acc_wrapper
+XAXIS_ARSTN	tb/acc_wrapper_tb.vhd	/^	signal XAXIS_ARSTN : std_logic := '1';$/;"	s	architecture:acc_wrapper_tb.behav
+XAXIS_ARSTN	tb/main_fsm_tb.vhd	/^	signal XAXIS_ARSTN : std_logic := '1';$/;"	s	architecture:main_fms_tb.behav
+XAXIS_TDATA	srcs/old/acc_wrapper.vhd	/^		XAXIS_TDATA : in std_logic_vector(data_width-1 downto 0);$/;"	q	entity:acc_wrapper
+XAXIS_TDATA	tb/acc_wrapper_tb.vhd	/^			XAXIS_TDATA : in std_logic_vector(data_width-1 downto 0);$/;"	q	component:acc_wrapper_tb.behav.acc_wrapper
+XAXIS_TDATA	tb/acc_wrapper_tb.vhd	/^	signal XAXIS_TDATA : std_logic_vector(data_width-1 downto 0);$/;"	s	architecture:acc_wrapper_tb.behav
+XAXIS_TDATA	tb/main_fsm_tb.vhd	/^	signal XAXIS_TDATA : std_logic_vector(data_width-1 downto 0);$/;"	s	architecture:main_fms_tb.behav
+XAXIS_TLAST	srcs/old/acc_wrapper.vhd	/^		XAXIS_TLAST : in std_logic;$/;"	q	entity:acc_wrapper
+XAXIS_TLAST	tb/acc_wrapper_tb.vhd	/^			XAXIS_TLAST : in std_logic;$/;"	q	component:acc_wrapper_tb.behav.acc_wrapper
+XAXIS_TLAST	tb/acc_wrapper_tb.vhd	/^	signal XAXIS_TLAST : std_logic;$/;"	s	architecture:acc_wrapper_tb.behav
+XAXIS_TLAST	tb/main_fsm_tb.vhd	/^	signal XAXIS_TLAST : std_logic;$/;"	s	architecture:main_fms_tb.behav
+XAXIS_TREADY	srcs/old/acc_wrapper.vhd	/^		XAXIS_TREADY : out std_logic;$/;"	q	entity:acc_wrapper
+XAXIS_TREADY	tb/acc_wrapper_tb.vhd	/^			XAXIS_TREADY : out std_logic$/;"	q	component:acc_wrapper_tb.behav.acc_wrapper
+XAXIS_TREADY	tb/acc_wrapper_tb.vhd	/^	signal XAXIS_TREADY : std_logic;$/;"	s	architecture:acc_wrapper_tb.behav
+XAXIS_TREADY	tb/main_fsm_tb.vhd	/^	signal XAXIS_TREADY : std_logic;$/;"	s	architecture:main_fms_tb.behav
+XAXIS_TVALID	srcs/old/acc_wrapper.vhd	/^		XAXIS_TVALID : in std_logic;$/;"	q	entity:acc_wrapper
+XAXIS_TVALID	tb/acc_wrapper_tb.vhd	/^			XAXIS_TVALID : in std_logic;$/;"	q	component:acc_wrapper_tb.behav.acc_wrapper
+XAXIS_TVALID	tb/acc_wrapper_tb.vhd	/^	signal XAXIS_TVALID : std_logic;$/;"	s	architecture:acc_wrapper_tb.behav
+XAXIS_TVALID	tb/main_fsm_tb.vhd	/^	signal XAXIS_TVALID : std_logic;$/;"	s	architecture:main_fms_tb.behav
+X_ARRAY	srcs/not use/dlau_pkg.vhd	/^	type X_ARRAY is array(BIW-1 downto 0) of std_logic_vector(BYTE_WIDTH-1 downto 0);$/;"	t	package:general_pkg
+X_PREP_COUNTER	srcs/main_fsm.vhd	/^	X_PREP_COUNTER:	$/;"	Q	architecture:main_fsm.behav
+acc_wrapper	srcs/acc_wrapper.vhd	/^entity acc_wrapper is$/;"	e
+acc_wrapper	srcs/old/acc_wrapper.vhd	/^entity acc_wrapper is$/;"	e
+acc_wrapper_tb	tb/acc_wrapper_tb.vhd	/^entity acc_wrapper_tb is$/;"	e
+accu_ready	srcs/ACCU.vhd	/^		accu_ready : out std_logic$/;"	q	entity:ACCU
+accu_ready	srcs/acc_wrapper.vhd	/^	signal accu_ready : std_logic;$/;"	s	architecture:acc_wrapper.behav
+accu_ready	srcs/old/acc_wrapper.vhd	/^			accu_ready : out std_logic$/;"	q	component:acc_wrapper.behav.ACCU
+accu_ready	srcs/old/acc_wrapper.vhd	/^	signal accu_ready : std_logic;$/;"	s	architecture:acc_wrapper.behav
+addr	srcs/ACCU.vhd	/^		  addr   : in std_logic_vector(ADDR_WIDTH-1 downto 0);   						$/;"	q	component:ACCU.behav.SPM
+addr	srcs/SPM.vhd	/^      addr   : in std_logic_vector(ADDR_WIDTH-1 downto 0);   						$/;"	q	entity:SPM
+addr	srcs/wgu.vhd	/^		  addr   : in std_logic_vector(ADDR_WIDTH-1 downto 0);   						$/;"	q	component:wgu.behav.SPM
+addr_en	srcs/wgu.vhd	/^	signal we0,we1,we_sel, addr_trg, addr_en : std_logic;$/;"	s	architecture:wgu.behav
+addr_trg	srcs/wgu.vhd	/^	signal we0,we1,we_sel, addr_trg, addr_en : std_logic;$/;"	s	architecture:wgu.behav
+addr_width	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		addr_width	: natural$/;"	g	entity:MyAccelerator_v2_0_S00_AXI
+addr_width	srcs/acc_wrapper.vhd	/^			addr_width : natural$/;"	g	component:acc_wrapper.behav.wgu
+addr_width	srcs/acc_wrapper.vhd	/^			addr_width : natural;$/;"	g	component:acc_wrapper.behav.main_fsm
+addr_width	srcs/acc_wrapper.vhd	/^		addr_width	: natural$/;"	g	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+addr_width	srcs/acc_wrapper.vhd	/^		addr_width : natural := 8;$/;"	g	entity:acc_wrapper
+addr_width	srcs/main_fsm.vhd	/^		addr_width : natural$/;"	g	entity:main_fsm
+addr_width	srcs/old/acc_wrapper.vhd	/^			addr_width : natural$/;"	g	component:acc_wrapper.behav.wgu
+addr_width	srcs/old/acc_wrapper.vhd	/^			addr_width : natural;$/;"	g	component:acc_wrapper.behav.main_fsm
+addr_width	srcs/old/acc_wrapper.vhd	/^		addr_width : natural := 8;$/;"	g	entity:acc_wrapper
+addr_width	srcs/wgu.vhd	/^		addr_width : natural$/;"	g	entity:wgu
+addr_width	tb/acc_wrapper_tb.vhd	/^			addr_width : natural;$/;"	g	component:acc_wrapper_tb.behav.acc_wrapper
+addr_width	tb/acc_wrapper_tb.vhd	/^	constant addr_width : natural := 8;$/;"	c	architecture:acc_wrapper_tb.behav
+addr_width	tb/main_fsm_tb.vhd	/^			addr_width : natural$/;"	g	component:main_fms_tb.behav.main_fsm
+addr_width	tb/main_fsm_tb.vhd	/^	constant addr_width : natural := 8;$/;"	c	architecture:main_fms_tb.behav
+addr_width	tb/wgu_tb.vhd	/^			addr_width : natural$/;"	g	component:wgu_tb.behav.wgu
+addr_width	tb/wgu_tb.vhd	/^	constant addr_width : natural := 8;$/;"	c	architecture:wgu_tb.behav
+agu_en	srcs/AGU.vhd	/^		agu_en : in std_logic;$/;"	q	entity:AGU
+agu_en	srcs/acc_wrapper.vhd	/^			agu_en : in std_logic;$/;"	q	component:acc_wrapper.behav.AGU
+agu_en	srcs/acc_wrapper.vhd	/^			agu_en : out std_logic;$/;"	q	component:acc_wrapper.behav.main_fsm
+agu_en	srcs/acc_wrapper.vhd	/^	signal agu_en : std_logic;$/;"	s	architecture:acc_wrapper.behav
+agu_en	srcs/main_fsm.vhd	/^		agu_en : out std_logic;$/;"	q	entity:main_fsm
+agu_en	tb/main_fsm_tb.vhd	/^			agu_en : out std_logic;$/;"	q	component:main_fms_tb.behav.main_fsm
+agu_en	tb/main_fsm_tb.vhd	/^	signal agu_en : std_logic;$/;"	s	architecture:main_fms_tb.behav
+agu_en_s	srcs/main_fsm.vhd	/^	signal last_input, x_prep_done, x_prep_c_en ,w_addr_c_en, pixel_last, count_en, agu_en_s, compu/;"	s	architecture:main_fsm.behav
+agu_in	srcs/AGU.vhd	/^		agu_in : in std_logic_vector(data_width-1 downto 0);$/;"	q	entity:AGU
+agu_in	srcs/acc_wrapper.vhd	/^			agu_in : in std_logic_vector(data_width-1 downto 0);$/;"	q	component:acc_wrapper.behav.AGU
+agu_in	srcs/not use/top.vhd	/^			agu_in : in std_logic_vector(byte_width-1 downto 0);$/;"	q	component:agu_tb.behav.AGU
+agu_in	srcs/not use/top.vhd	/^	signal agu_in : std_logic_vector(byte_width-1 downto 0);$/;"	s	architecture:agu_tb.behav
+agu_in	srcs/old/AGU.vhd	/^		agu_in : in std_logic_vector(data_width-1 downto 0);$/;"	q	entity:AGU
+agu_in	srcs/old/acc_wrapper.vhd	/^			agu_in : in std_logic_vector(data_width-1 downto 0);$/;"	q	component:acc_wrapper.behav.AGU
+agu_in	tb/agu_tb.vhd	/^			agu_in : in std_logic_vector(data_width-1 downto 0);$/;"	q	component:agu_tb.behav.AGU
+agu_in	tb/agu_tb.vhd	/^	signal agu_in : std_logic_vector(data_width-1 downto 0);$/;"	s	architecture:agu_tb.behav
+agu_out	srcs/AGU.vhd	/^		agu_out : out std_logic_vector((compute_byte*data_width)-1 downto 0)$/;"	q	entity:AGU
+agu_out	srcs/acc_wrapper.vhd	/^			agu_out : out std_logic_vector((compute_byte*data_width)-1 downto 0)$/;"	q	component:acc_wrapper.behav.AGU
+agu_out	srcs/acc_wrapper.vhd	/^	signal agu_out : std_logic_vector((compute_byte*data_width)-1 downto 0);$/;"	s	architecture:acc_wrapper.behav
+agu_out	srcs/not use/top.vhd	/^			agu_out : out std_logic_vector((compute_byte*byte_width)-1 downto 0);$/;"	q	component:agu_tb.behav.AGU
+agu_out	srcs/not use/top.vhd	/^	signal agu_out : std_logic_vector((compute_byte*byte_width)-1 downto 0);$/;"	s	architecture:agu_tb.behav
+agu_out	srcs/old/AGU.vhd	/^		agu_out : out std_logic_vector((compute_byte*data_width)-1 downto 0);$/;"	q	entity:AGU
+agu_out	srcs/old/acc_wrapper.vhd	/^			agu_out : out std_logic_vector((compute_byte*data_width)-1 downto 0);$/;"	q	component:acc_wrapper.behav.AGU
+agu_out	srcs/old/acc_wrapper.vhd	/^	signal agu_out : std_logic_vector((compute_byte*data_width)-1 downto 0);$/;"	s	architecture:acc_wrapper.behav
+agu_out	tb/agu_tb.vhd	/^			agu_out : out std_logic_vector((compute_byte*data_width)-1 downto 0);$/;"	q	component:agu_tb.behav.AGU
+agu_out	tb/agu_tb.vhd	/^	signal x_in,agu_out : std_logic_vector((compute_byte*data_width)-1 downto 0);$/;"	s	architecture:agu_tb.behav
+agu_out_test	srcs/old/acc_wrapper.vhd	/^		agu_out_test : out std_logic_vector(data_width-1 downto 0);$/;"	q	entity:acc_wrapper
+agu_ready	srcs/acc_wrapper.vhd	/^	signal agu_ready, compute_done, main_en, input_mux , alu_en, w_addr_incr : std_logic;$/;"	s	architecture:acc_wrapper.behav
+agu_ready	srcs/old/AGU.vhd	/^		agu_ready : out std_logic;$/;"	q	entity:AGU
+agu_ready	srcs/old/acc_wrapper.vhd	/^			agu_ready : in std_logic;$/;"	q	component:acc_wrapper.behav.main_fsm
+agu_ready	srcs/old/acc_wrapper.vhd	/^			agu_ready : out std_logic;$/;"	q	component:acc_wrapper.behav.AGU
+agu_ready	srcs/old/acc_wrapper.vhd	/^	signal agu_ready, compute_done, main_en, input_mux , compute_en, w_addr_incr : std_logic;$/;"	s	architecture:acc_wrapper.behav
+agu_tb	tb/agu_tb.vhd	/^entity agu_tb is$/;"	e
+agu_tdata	srcs/acc_wrapper.vhd	/^	signal agu_tdata : std_logic_vector(s00_axis_aclk'range);$/;"	s	architecture:acc_wrapper.behav
+agu_tdata	srcs/old/acc_wrapper.vhd	/^	signal agu_tdata : std_logic_vector(XAXIS_TDATA'range);$/;"	s	architecture:acc_wrapper.behav
+agu_tvalid	srcs/acc_wrapper.vhd	/^	signal agu_tvalid : std_logic;$/;"	s	architecture:acc_wrapper.behav
+agu_tvalid	srcs/old/acc_wrapper.vhd	/^	signal agu_tvalid : std_logic;$/;"	s	architecture:acc_wrapper.behav
+agu_valid	tb/agu_tb.vhd	/^			agu_valid : out std_logic;$/;"	q	component:agu_tb.behav.AGU
+agu_valid	tb/agu_tb.vhd	/^	signal w_valid,agu_valid, alu_valid : std_logic;$/;"	s	architecture:agu_tb.behav
+agu_valid_test	srcs/acc_wrapper.vhd	/^		done_test, compute_en_test, agu_valid_test , input_mux_test, main_en_test : out std_logic;$/;"	q	entity:acc_wrapper
+agu_valid_test	srcs/old/acc_wrapper.vhd	/^		done_test, compute_en_test, agu_valid_test , input_mux_test, main_en_test : out std_logic;$/;"	q	entity:acc_wrapper
+alloca	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/obj/xsim_1.c	/^#define alloca /;"	d	file:
+alloca	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/obj/xsim_1.c	/^#define alloca /;"	d	file:
+alu_en	srcs/acc_wrapper.vhd	/^			alu_en : out std_logic;$/;"	q	component:acc_wrapper.behav.main_fsm
+alu_en	srcs/acc_wrapper.vhd	/^	signal agu_ready, compute_done, main_en, input_mux , alu_en, w_addr_incr : std_logic;$/;"	s	architecture:acc_wrapper.behav
+alu_en	srcs/main_fsm.vhd	/^		alu_en : out std_logic;$/;"	q	entity:main_fsm
+alu_en	tb/main_fsm_tb.vhd	/^			alu_en : out std_logic;$/;"	q	component:main_fms_tb.behav.main_fsm
+alu_en	tb/main_fsm_tb.vhd	/^	signal alu_en : std_logic;$/;"	s	architecture:main_fms_tb.behav
+alu_out	srcs/ALU.vhd	/^		alu_out : out std_logic_vector(input_width - 1 downto 0);$/;"	q	entity:ALU
+alu_out	srcs/acc_wrapper.vhd	/^			alu_out : out std_logic_vector((2*input_width + compute_byte) - 1 downto 0);$/;"	q	component:acc_wrapper.behav.ALU
+alu_out	srcs/old/acc_wrapper.vhd	/^			alu_out : out std_logic_vector((2*input_width + compute_byte) - 1 downto 0);$/;"	q	component:acc_wrapper.behav.ALU
+alu_out	tb/agu_tb.vhd	/^	signal alu_out : std_logic_vector((weight_width + data_width + compute_byte) - 1 downto 0);$/;"	s	architecture:agu_tb.behav
+alu_out0	srcs/acc_wrapper.vhd	/^	signal alu_out0, alu_out1 : std_logic_vector((2*data_width + compute_byte) - 1 downto 0);$/;"	s	architecture:acc_wrapper.behav
+alu_out0	srcs/old/acc_wrapper.vhd	/^	signal alu_out0, alu_out1 : std_logic_vector((2*data_width + compute_byte) - 1 downto 0);$/;"	s	architecture:acc_wrapper.behav
+alu_out1	srcs/acc_wrapper.vhd	/^	signal alu_out0, alu_out1 : std_logic_vector((2*data_width + compute_byte) - 1 downto 0);$/;"	s	architecture:acc_wrapper.behav
+alu_out1	srcs/old/acc_wrapper.vhd	/^	signal alu_out0, alu_out1 : std_logic_vector((2*data_width + compute_byte) - 1 downto 0);$/;"	s	architecture:acc_wrapper.behav
+alu_valid	srcs/ALU.vhd	/^		alu_valid : out std_logic          -- Indication for output to Accumulation Unit$/;"	q	entity:ALU
+alu_valid	srcs/acc_wrapper.vhd	/^			alu_valid : out std_logic          $/;"	q	component:acc_wrapper.behav.ALU
+alu_valid	srcs/old/acc_wrapper.vhd	/^			alu_valid : out std_logic          $/;"	q	component:acc_wrapper.behav.ALU
+alu_valid	tb/agu_tb.vhd	/^	signal w_valid,agu_valid, alu_valid : std_logic;$/;"	s	architecture:agu_tb.behav
+alu_valid0	srcs/acc_wrapper.vhd	/^	signal alu_valid0, alu_valid1  : std_logic;$/;"	s	architecture:acc_wrapper.behav
+alu_valid0	srcs/old/acc_wrapper.vhd	/^	signal alu_valid0, alu_valid1  : std_logic;$/;"	s	architecture:acc_wrapper.behav
+alu_valid1	srcs/acc_wrapper.vhd	/^	signal alu_valid0, alu_valid1  : std_logic;$/;"	s	architecture:acc_wrapper.behav
+alu_valid1	srcs/old/acc_wrapper.vhd	/^	signal alu_valid0, alu_valid1  : std_logic;$/;"	s	architecture:acc_wrapper.behav
+anonProcess8ddd9d81010f	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^	process(M_AXIS_ACLK)                                                                        $/;"	Q	architecture:MyAccelerator_v2_0_M01_AXIS.implementation
+anonProcess8ddd9d81020f	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^	process(M_AXIS_ACLK)                                                                           $/;"	Q	architecture:MyAccelerator_v2_0_M01_AXIS.implementation
+anonProcess8ddd9d81030f	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^	process(M_AXIS_ACLK)                                                       $/;"	Q	architecture:MyAccelerator_v2_0_M01_AXIS.implementation
+anonProcess8ddd9d81040f	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^	  process(M_AXIS_ACLK)                                                          $/;"	Q	architecture:MyAccelerator_v2_0_M01_AXIS.implementation
+anonProcessb29c676f010f	srcs/SPM.vhd	/^		process (clk)   $/;"	Q	architecture:SPM.Behavioral
+anonProcessb5737da9010f	srcs/main_fsm.vhd	/^	process(c_state)$/;"	Q	architecture:main_fsm.behav
+anonProcessef0e90ec010f	srcs/not use/jk_ff.vhd	/^   process (Clock) $/;"	Q	architecture:jk_ff.behav
+anonProcessfd7ca273010f	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	process (S_AXI_ACLK)$/;"	Q	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+anonProcessfd7ca273020f	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	process (S_AXI_ACLK)$/;"	Q	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+anonProcessfd7ca273030f	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	process (S_AXI_ACLK)$/;"	Q	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+anonProcessfd7ca273040f	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	process (S_AXI_ACLK)$/;"	Q	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+anonProcessfd7ca273050f	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	process (S_AXI_ACLK)$/;"	Q	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+anonProcessfd7ca273060f	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	process (S_AXI_ACLK)$/;"	Q	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+anonProcessfd7ca273070f	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	process (S_AXI_ACLK)$/;"	Q	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+anonProcessfd7ca273080f	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	process (slv_reg0, slv_reg1, slv_reg2, slv_reg3, slv_reg4, axi_araddr, S_AXI_ARESETN, slv_reg_r/;"	Q	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+anonProcessfd7ca273090f	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	process( S_AXI_ACLK ) is$/;"	Q	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+arch_imp	srcs/MyAccelerator_v2_0.vhd	/^architecture arch_imp of MyAccelerator_v2_0 is$/;"	a	entity:MyAccelerator_v2_0
+arch_imp	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^architecture arch_imp of MyAccelerator_v2_0_S00_AXI is$/;"	a	entity:MyAccelerator_v2_0_S00_AXI
+arstn	srcs/ACCU.vhd	/^		clk, arstn : in std_logic;$/;"	q	entity:ACCU
+arstn	srcs/AGU.vhd	/^			arstn : in std_logic;$/;"	q	component:AGU.behav.dff
+arstn	srcs/AGU.vhd	/^		arstn : in std_logic;$/;"	q	entity:AGU
+arstn	srcs/acc_wrapper.vhd	/^			arstn : in std_logic;$/;"	q	component:acc_wrapper.behav.AGU
+arstn	srcs/acc_wrapper.vhd	/^			arstn : in std_logic;$/;"	q	component:acc_wrapper.behav.main_fsm
+arstn	srcs/acc_wrapper.vhd	/^			arstn : in std_logic;$/;"	q	component:acc_wrapper.behav.wgu
+arstn	srcs/dff.vhd	/^		arstn : in std_logic;$/;"	q	entity:dff
+arstn	srcs/main_fsm.vhd	/^		arstn : in std_logic;$/;"	q	entity:main_fsm
+arstn	srcs/not use/fsm_agu.vhd	/^		arstn : in std_logic;$/;"	q	entity:fsm_agu
+arstn	srcs/not use/top.vhd	/^			arstn : in std_logic;$/;"	q	component:agu_tb.behav.AGU
+arstn	srcs/not use/top.vhd	/^	signal arstn : std_logic;$/;"	s	architecture:agu_tb.behav
+arstn	srcs/old/AGU.vhd	/^		arstn : in std_logic;$/;"	q	entity:AGU
+arstn	srcs/old/acc_wrapper.vhd	/^			arstn : in std_logic;$/;"	q	component:acc_wrapper.behav.AGU
+arstn	srcs/old/acc_wrapper.vhd	/^			arstn : in std_logic;$/;"	q	component:acc_wrapper.behav.main_fsm
+arstn	srcs/old/acc_wrapper.vhd	/^			arstn : in std_logic;$/;"	q	component:acc_wrapper.behav.wgu
+arstn	srcs/old/acc_wrapper.vhd	/^			clk, arstn : in std_logic;$/;"	q	component:acc_wrapper.behav.ACCU
+arstn	srcs/w_sticker.vhd	/^		arstn : in std_logic;$/;"	q	entity:w_sticker
+arstn	srcs/wgu.vhd	/^			arstn : in std_logic;$/;"	q	component:wgu.behav.w_sticker
+arstn	srcs/wgu.vhd	/^		arstn : in std_logic;$/;"	q	entity:wgu
+arstn	tb/agu_tb.vhd	/^			arstn : in std_logic;$/;"	q	component:agu_tb.behav.AGU
+arstn	tb/agu_tb.vhd	/^	signal arstn : std_logic;$/;"	s	architecture:agu_tb.behav
+arstn	tb/main_fsm_tb.vhd	/^			arstn : in std_logic;$/;"	q	component:main_fms_tb.behav.main_fsm
+arstn	tb/w_sticker_tb.vhd	/^			arstn : in std_logic;$/;"	q	component:w_sticker_tb.rtl.w_sticker
+arstn	tb/w_sticker_tb.vhd	/^	signal  arstn : std_logic := '1';$/;"	s	architecture:w_sticker_tb.rtl
+arstn	tb/wgu_tb.vhd	/^			arstn : in std_logic;$/;"	q	component:wgu_tb.behav.wgu
+arstn	tb/wgu_tb.vhd	/^	signal arstn : std_logic;$/;"	s	architecture:wgu_tb.behav
+aw_en	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	signal aw_en	: std_logic;$/;"	s	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+axi_araddr	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	signal axi_araddr	: std_logic_vector(addr_width-1 downto 0);$/;"	s	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+axi_arready	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	signal axi_arready	: std_logic;$/;"	s	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+axi_awaddr	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	signal axi_awaddr	: std_logic_vector(addr_width-1 downto 0);$/;"	s	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+axi_awready	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	signal axi_awready	: std_logic;$/;"	s	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+axi_bresp	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	signal axi_bresp	: std_logic_vector(1 downto 0);$/;"	s	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+axi_bvalid	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	signal axi_bvalid	: std_logic;$/;"	s	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+axi_rdata	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	signal axi_rdata	: std_logic_vector(data_width-1 downto 0);$/;"	s	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+axi_rresp	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	signal axi_rresp	: std_logic_vector(1 downto 0);$/;"	s	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+axi_rvalid	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	signal axi_rvalid	: std_logic;$/;"	s	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+axi_wready	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	signal axi_wready	: std_logic;$/;"	s	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+axis_tlast	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^	signal axis_tlast	: std_logic;$/;"	s	architecture:MyAccelerator_v2_0_M01_AXIS.implementation
+axis_tlast_delay	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^	signal axis_tlast_delay	: std_logic;$/;"	s	architecture:MyAccelerator_v2_0_M01_AXIS.implementation
+axis_tready	srcs/not use/DPU.vhd	/^    signal axis_tready : std_logic;$/;"	s	architecture:DPU.Behavioral
+axis_tvalid	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^	signal axis_tvalid	: std_logic;$/;"	s	architecture:MyAccelerator_v2_0_M01_AXIS.implementation
+axis_tvalid_delay	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^	signal axis_tvalid_delay	: std_logic;$/;"	s	architecture:MyAccelerator_v2_0_M01_AXIS.implementation
+behav	srcs/ACCU.vhd	/^architecture behav of ACCU is$/;"	a	entity:ACCU
+behav	srcs/AGU.vhd	/^architecture behav of AGU is$/;"	a	entity:AGU
+behav	srcs/acc_wrapper.vhd	/^architecture behav of acc_wrapper is$/;"	a	entity:acc_wrapper
+behav	srcs/main_fsm.vhd	/^architecture behav of main_fsm is$/;"	a	entity:main_fsm
+behav	srcs/not use/fsm_agu.vhd	/^architecture behav of fsm_agu is$/;"	a	entity:fsm_agu
+behav	srcs/not use/jk_ff.vhd	/^architecture behav of jk_ff is$/;"	a	entity:jk_ff
+behav	srcs/not use/top.vhd	/^architecture behav of agu_tb is$/;"	a	entity:agu_tb
+behav	srcs/old/AGU.vhd	/^architecture behav of AGU is$/;"	a	entity:AGU
+behav	srcs/old/acc_wrapper.vhd	/^architecture behav of acc_wrapper is$/;"	a	entity:acc_wrapper
+behav	srcs/w_sticker.vhd	/^architecture behav of w_sticker is$/;"	a	entity:w_sticker
+behav	srcs/wgu.vhd	/^architecture behav of wgu is$/;"	a	entity:wgu
+behav	tb/acc_wrapper_tb.vhd	/^architecture behav of acc_wrapper_tb is$/;"	a	entity:acc_wrapper_tb
+behav	tb/agu_tb.vhd	/^architecture behav of agu_tb is$/;"	a	entity:agu_tb
+behav	tb/main_fsm_tb.vhd	/^architecture behav of main_fms_tb is$/;"	a	entity:main_fms_tb
+behav	tb/wgu_tb.vhd	/^architecture behav of wgu_tb is$/;"	a	entity:wgu_tb
+bit_num	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^	constant bit_num : integer := clogb2(depth);                                      $/;"	c	architecture:MyAccelerator_v2_0_M01_AXIS.implementation
+buf_update_proc	srcs/not use/DPU.vhd	/^  buf_update_proc : process(S_AXIS_ACLK,S_AXIS_ARESETN, done) $/;"	Q	architecture:DPU.Behavioral
+byte_index	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	signal byte_index	: integer;$/;"	s	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+byte_width	srcs/not use/top.vhd	/^			byte_width : natural := 8;$/;"	g	component:agu_tb.behav.AGU
+byte_width	srcs/not use/top.vhd	/^	constant byte_width : natural := 8;$/;"	c	architecture:agu_tb.behav
+c_state	srcs/main_fsm.vhd	/^	signal c_state, n_state : state_type;$/;"	s	architecture:main_fsm.behav
+c_state	srcs/not use/fsm_agu.vhd	/^	signal c_state,n_state : state_type;$/;"	s	architecture:fsm_agu.behav
+c_state	srcs/old/AGU.vhd	/^	signal c_state,n_state : state_type;$/;"	s	architecture:AGU.behav
+c_t_f	srcs/main_fsm.vhd	/^	signal c_t_f : std_logic;$/;"	s	architecture:main_fsm.behav
+clk	srcs/ACCU.vhd	/^		  clk : in std_logic;   $/;"	q	component:ACCU.behav.SPM
+clk	srcs/ACCU.vhd	/^		clk, arstn : in std_logic;$/;"	q	entity:ACCU
+clk	srcs/AGU.vhd	/^			clk : in std_logic;$/;"	q	component:AGU.behav.dff
+clk	srcs/AGU.vhd	/^		clk : in std_logic;$/;"	q	entity:AGU
+clk	srcs/ALU.vhd	/^		clk : in std_logic;$/;"	q	entity:ALU
+clk	srcs/SPM.vhd	/^      clk : in std_logic;   $/;"	q	entity:SPM
+clk	srcs/acc_wrapper.vhd	/^			clk : in std_logic;$/;"	q	component:acc_wrapper.behav.AGU
+clk	srcs/acc_wrapper.vhd	/^			clk : in std_logic;$/;"	q	component:acc_wrapper.behav.ALU
+clk	srcs/acc_wrapper.vhd	/^			clk : in std_logic;$/;"	q	component:acc_wrapper.behav.main_fsm
+clk	srcs/acc_wrapper.vhd	/^			clk : in std_logic;$/;"	q	component:acc_wrapper.behav.wgu
+clk	srcs/dff.vhd	/^		clk : in std_logic;$/;"	q	entity:dff
+clk	srcs/main_fsm.vhd	/^		clk : in std_logic;$/;"	q	entity:main_fsm
+clk	srcs/not use/data_fifo.vhd	/^    clk : in std_logic;$/;"	q	entity:data_fifo
+clk	srcs/not use/fsm_agu.vhd	/^		clk : in std_logic;$/;"	q	entity:fsm_agu
+clk	srcs/not use/top.vhd	/^			clk : in std_logic;$/;"	q	component:agu_tb.behav.AGU
+clk	srcs/not use/top.vhd	/^	signal clk : std_logic := '0';$/;"	s	architecture:agu_tb.behav
+clk	srcs/old/AGU.vhd	/^			clk : in std_logic;$/;"	q	component:AGU.behav.dff
+clk	srcs/old/AGU.vhd	/^		clk : in std_logic;$/;"	q	entity:AGU
+clk	srcs/old/acc_wrapper.vhd	/^			clk : in std_logic;$/;"	q	component:acc_wrapper.behav.AGU
+clk	srcs/old/acc_wrapper.vhd	/^			clk : in std_logic;$/;"	q	component:acc_wrapper.behav.ALU
+clk	srcs/old/acc_wrapper.vhd	/^			clk : in std_logic;$/;"	q	component:acc_wrapper.behav.main_fsm
+clk	srcs/old/acc_wrapper.vhd	/^			clk : in std_logic;$/;"	q	component:acc_wrapper.behav.wgu
+clk	srcs/old/acc_wrapper.vhd	/^			clk, arstn : in std_logic;$/;"	q	component:acc_wrapper.behav.ACCU
+clk	srcs/old/dff.vhd	/^		clk : in std_logic;$/;"	q	entity:dff
+clk	srcs/w_sticker.vhd	/^		clk : in std_logic;$/;"	q	entity:w_sticker
+clk	srcs/wgu.vhd	/^			clk : in std_logic;$/;"	q	component:wgu.behav.w_sticker
+clk	srcs/wgu.vhd	/^		  clk : in std_logic;   $/;"	q	component:wgu.behav.SPM
+clk	srcs/wgu.vhd	/^		clk : in std_logic;$/;"	q	entity:wgu
+clk	tb/agu_tb.vhd	/^			clk : in std_logic;$/;"	q	component:agu_tb.behav.AGU
+clk	tb/agu_tb.vhd	/^	signal clk : std_logic := '1';$/;"	s	architecture:agu_tb.behav
+clk	tb/main_fsm_tb.vhd	/^			clk : in std_logic;$/;"	q	component:main_fms_tb.behav.main_fsm
+clk	tb/w_sticker_tb.vhd	/^			clk : in std_logic;$/;"	q	component:w_sticker_tb.rtl.w_sticker
+clk	tb/w_sticker_tb.vhd	/^	signal  clk : std_logic := '1';$/;"	s	architecture:w_sticker_tb.rtl
+clk	tb/wgu_tb.vhd	/^			clk : in std_logic;$/;"	q	component:wgu_tb.behav.wgu
+clk	tb/wgu_tb.vhd	/^	signal clk : std_logic := '1';$/;"	s	architecture:wgu_tb.behav
+clk_gen	srcs/not use/dlau_pkg.vhd	/^	procedure clk_gen(signal clk : inout std_logic) is$/;"	p	package:general_pkg
+clogb2	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^	function clogb2 (bit_depth : integer) return integer is                  $/;"	f	architecture:MyAccelerator_v2_0_M01_AXIS.implementation
+col	srcs/ACCU.vhd	/^	signal row,col, input_count : integer range 0 to 255;$/;"	s	architecture:ACCU.behav
+col	srcs/w_sticker.vhd	/^	signal row, col : integer range 0 to 255; $/;"	s	architecture:w_sticker.behav
+col_c	srcs/old/AGU.vhd	/^		row_c, col_c : out std_logic_vector(rowcol_width-1 downto 0)$/;"	q	entity:AGU
+col_c	srcs/old/acc_wrapper.vhd	/^			row_c, col_c : in std_logic_vector(rowcol_width-1 downto 0);$/;"	q	component:acc_wrapper.behav.main_fsm
+col_c	srcs/old/acc_wrapper.vhd	/^			row_c, col_c : out std_logic_vector(rowcol_width-1 downto 0)$/;"	q	component:acc_wrapper.behav.AGU
+col_c	srcs/old/acc_wrapper.vhd	/^	signal row_c, col_c : std_logic_vector(rowcol_width-1 downto 0);$/;"	s	architecture:acc_wrapper.behav
+col_count	srcs/old/AGU.vhd	/^	signal prep_count, col_count, row_count : integer range 0 to 65535;$/;"	s	architecture:AGU.behav
+comp_done	srcs/old/AGU.vhd	/^	signal eor,prep_en,comp_en, prep_done,  r_clr, comp_done : std_logic;$/;"	s	architecture:AGU.behav
+comp_en	srcs/old/AGU.vhd	/^	signal eor,prep_en,comp_en, prep_done,  r_clr, comp_done : std_logic;$/;"	s	architecture:AGU.behav
+compute_byte	srcs/ACCU.vhd	/^		compute_byte : natural$/;"	g	entity:ACCU
+compute_byte	srcs/AGU.vhd	/^		compute_byte : natural; 			-- number of byte send to output PU maximum support by 5x5 $/;"	g	entity:AGU
+compute_byte	srcs/ALU.vhd	/^		compute_byte : natural$/;"	g	entity:ALU
+compute_byte	srcs/acc_wrapper.vhd	/^			compute_byte : natural$/;"	g	component:acc_wrapper.behav.ALU
+compute_byte	srcs/acc_wrapper.vhd	/^			compute_byte : natural; $/;"	g	component:acc_wrapper.behav.AGU
+compute_byte	srcs/acc_wrapper.vhd	/^			compute_byte : natural;$/;"	g	component:acc_wrapper.behav.main_fsm
+compute_byte	srcs/acc_wrapper.vhd	/^			compute_byte : natural;$/;"	g	component:acc_wrapper.behav.wgu
+compute_byte	srcs/acc_wrapper.vhd	/^		compute_byte : natural := 25;$/;"	g	entity:acc_wrapper
+compute_byte	srcs/main_fsm.vhd	/^		compute_byte : natural; 			-- number of byte send to output PU maximum support by 5x5 $/;"	g	entity:main_fsm
+compute_byte	srcs/not use/top.vhd	/^			compute_byte : natural := 25 	-- number of byte send to output PU maximum support by 5x5 $/;"	g	component:agu_tb.behav.AGU
+compute_byte	srcs/not use/top.vhd	/^	constant compute_byte : natural := 25;$/;"	c	architecture:agu_tb.behav
+compute_byte	srcs/old/AGU.vhd	/^		compute_byte : natural; 			-- number of byte send to output PU maximum support by 5x5 $/;"	g	entity:AGU
+compute_byte	srcs/old/acc_wrapper.vhd	/^			compute_byte : natural$/;"	g	component:acc_wrapper.behav.ACCU
+compute_byte	srcs/old/acc_wrapper.vhd	/^			compute_byte : natural$/;"	g	component:acc_wrapper.behav.ALU
+compute_byte	srcs/old/acc_wrapper.vhd	/^			compute_byte : natural; $/;"	g	component:acc_wrapper.behav.AGU
+compute_byte	srcs/old/acc_wrapper.vhd	/^			compute_byte : natural;$/;"	g	component:acc_wrapper.behav.main_fsm
+compute_byte	srcs/old/acc_wrapper.vhd	/^			compute_byte : natural;$/;"	g	component:acc_wrapper.behav.wgu
+compute_byte	srcs/old/acc_wrapper.vhd	/^		compute_byte : natural := 25;$/;"	g	entity:acc_wrapper
+compute_byte	srcs/w_sticker.vhd	/^		compute_byte : natural;$/;"	g	entity:w_sticker
+compute_byte	srcs/wgu.vhd	/^			compute_byte : natural;$/;"	g	component:wgu.behav.w_sticker
+compute_byte	srcs/wgu.vhd	/^		compute_byte : natural; 		-- Total amount of data will be send to compute in PU per 1 clk $/;"	g	entity:wgu
+compute_byte	tb/acc_wrapper_tb.vhd	/^			compute_byte : natural := 25;$/;"	g	component:acc_wrapper_tb.behav.acc_wrapper
+compute_byte	tb/acc_wrapper_tb.vhd	/^	constant compute_byte : natural := 25;$/;"	c	architecture:acc_wrapper_tb.behav
+compute_byte	tb/agu_tb.vhd	/^			compute_byte : natural := 25 	-- number of byte send to output PU maximum support by 5x5 $/;"	g	component:agu_tb.behav.AGU
+compute_byte	tb/agu_tb.vhd	/^	constant compute_byte : natural := 25;$/;"	c	architecture:agu_tb.behav
+compute_byte	tb/main_fsm_tb.vhd	/^			compute_byte : natural := 25;$/;"	g	component:main_fms_tb.behav.main_fsm
+compute_byte	tb/main_fsm_tb.vhd	/^	constant compute_byte : natural := 25;$/;"	c	architecture:main_fms_tb.behav
+compute_byte	tb/w_sticker_tb.vhd	/^			compute_byte : natural;$/;"	g	component:w_sticker_tb.rtl.w_sticker
+compute_byte	tb/w_sticker_tb.vhd	/^    constant compute_byte : natural := 25;$/;"	c	architecture:w_sticker_tb.rtl
+compute_byte	tb/wgu_tb.vhd	/^			compute_byte : natural; 		-- Total amount of data will be send to compute in PU per 1 clk $/;"	g	component:wgu_tb.behav.wgu
+compute_byte	tb/wgu_tb.vhd	/^	constant compute_byte : natural := 25;$/;"	c	architecture:wgu_tb.behav
+compute_c_en	srcs/main_fsm.vhd	/^	signal last_input, x_prep_done, x_prep_c_en ,w_addr_c_en, pixel_last, count_en, agu_en_s, compu/;"	s	architecture:main_fsm.behav
+compute_done	srcs/acc_wrapper.vhd	/^	signal agu_ready, compute_done, main_en, input_mux , alu_en, w_addr_incr : std_logic;$/;"	s	architecture:acc_wrapper.behav
+compute_done	srcs/old/AGU.vhd	/^		compute_done : out std_logic;$/;"	q	entity:AGU
+compute_done	srcs/old/acc_wrapper.vhd	/^			compute_done : in std_logic;$/;"	q	component:acc_wrapper.behav.main_fsm
+compute_done	srcs/old/acc_wrapper.vhd	/^			compute_done : out std_logic;$/;"	q	component:acc_wrapper.behav.AGU
+compute_done	srcs/old/acc_wrapper.vhd	/^	signal agu_ready, compute_done, main_en, input_mux , compute_en, w_addr_incr : std_logic;$/;"	s	architecture:acc_wrapper.behav
+compute_en	srcs/ALU.vhd	/^		compute_en : in std_logic;$/;"	q	entity:ALU
+compute_en	srcs/acc_wrapper.vhd	/^			compute_en : in std_logic;$/;"	q	component:acc_wrapper.behav.ALU
+compute_en	srcs/old/acc_wrapper.vhd	/^			compute_en : in std_logic;$/;"	q	component:acc_wrapper.behav.ALU
+compute_en	srcs/old/acc_wrapper.vhd	/^			compute_en : out std_logic;$/;"	q	component:acc_wrapper.behav.main_fsm
+compute_en	srcs/old/acc_wrapper.vhd	/^	signal agu_ready, compute_done, main_en, input_mux , compute_en, w_addr_incr : std_logic;$/;"	s	architecture:acc_wrapper.behav
+compute_en	tb/wgu_tb.vhd	/^			compute_en : in std_logic;$/;"	q	component:wgu_tb.behav.wgu
+compute_en	tb/wgu_tb.vhd	/^	signal compute_en : std_logic;$/;"	s	architecture:wgu_tb.behav
+compute_en_test	srcs/acc_wrapper.vhd	/^		done_test, compute_en_test, agu_valid_test , input_mux_test, main_en_test : out std_logic;$/;"	q	entity:acc_wrapper
+compute_en_test	srcs/old/acc_wrapper.vhd	/^		done_test, compute_en_test, agu_valid_test , input_mux_test, main_en_test : out std_logic;$/;"	q	entity:acc_wrapper
+compute_proc	srcs/ALU.vhd	/^	compute_proc : process(clk)$/;"	Q	architecture:ALU.Behavioral
+count	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^	 	variable count  : integer := 1;                                       $/;"	v	function:MyAccelerator_v2_0_M01_AXIS.implementation.clogb2
+count	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^	signal count	: std_logic_vector(WAIT_COUNT_BITS-1 downto 0);$/;"	s	architecture:MyAccelerator_v2_0_M01_AXIS.implementation
+count_en	srcs/main_fsm.vhd	/^	signal last_input, x_prep_done, x_prep_c_en ,w_addr_c_en, pixel_last, count_en, agu_en_s, compu/;"	s	architecture:main_fsm.behav
+counter	srcs/not use/dlau_pkg.vhd	/^	procedure counter(signal c_inst : inout integer;$/;"	p	package:general_pkg
+create_report	Acc_proj.runs/synth_1/acc_wrapper.tcl	/^proc create_report { reportName command } {$/;"	p
+current_state	srcs/not use/DPU.vhd	/^    signal current_state, next_state : state_type;$/;"	s	architecture:DPU.Behavioral
+d	srcs/AGU.vhd	/^			d : in std_logic_vector(input_width-1 downto 0);$/;"	q	component:AGU.behav.dff
+d	srcs/dff.vhd	/^		d : in std_logic_vector(input_width-1 downto 0);$/;"	q	entity:dff
+d	srcs/old/AGU.vhd	/^			d : in std_logic_vector(input_width-1 downto 0);$/;"	q	component:AGU.behav.dff
+d	srcs/old/dff.vhd	/^		d : in std_logic_vector(input_width-1 downto 0);$/;"	q	entity:dff
+d_in	srcs/acc_wrapper.vhd	/^			d_in : in std_logic_vector(input_width-1 downto 0);$/;"	q	component:acc_wrapper.behav.wgu
+d_in	srcs/old/acc_wrapper.vhd	/^			d_in : in std_logic_vector(input_width-1 downto 0);$/;"	q	component:acc_wrapper.behav.wgu
+d_in	srcs/w_sticker.vhd	/^		d_in : in std_logic_vector(input_width-1 downto 0);$/;"	q	entity:w_sticker
+d_in	srcs/wgu.vhd	/^			d_in : in std_logic_vector(input_width-1 downto 0);$/;"	q	component:wgu.behav.w_sticker
+d_in	srcs/wgu.vhd	/^		d_in : in std_logic_vector(input_width-1 downto 0);$/;"	q	entity:wgu
+d_in	tb/w_sticker_tb.vhd	/^			d_in : in std_logic_vector(input_width-1 downto 0);$/;"	q	component:w_sticker_tb.rtl.w_sticker
+d_in	tb/w_sticker_tb.vhd	/^	signal d_in : std_logic_vector(input_width-1 downto 0);$/;"	s	architecture:w_sticker_tb.rtl
+d_in	tb/wgu_tb.vhd	/^			d_in : in std_logic_vector(input_width-1 downto 0);$/;"	q	component:wgu_tb.behav.wgu
+d_in	tb/wgu_tb.vhd	/^	signal d_in :  std_logic_vector(input_width-1 downto 0);$/;"	s	architecture:wgu_tb.behav
+d_out	srcs/w_sticker.vhd	/^		d_out : out std_logic_vector((compute_byte*input_width)-1 downto 0)$/;"	q	entity:w_sticker
+d_out	srcs/wgu.vhd	/^			d_out : out std_logic_vector((compute_byte*input_width)-1 downto 0)$/;"	q	component:wgu.behav.w_sticker
+d_out	tb/w_sticker_tb.vhd	/^			d_out : out std_logic_vector((compute_byte*input_width)-1 downto 0)$/;"	q	component:w_sticker_tb.rtl.w_sticker
+d_out	tb/w_sticker_tb.vhd	/^	signal d_out : std_logic_vector((compute_byte*input_width)-1 downto 0);$/;"	s	architecture:w_sticker_tb.rtl
+data_array	srcs/AGU.vhd	/^	type data_array is array((input_size*kernel_size) - 1 downto 0) of std_logic_vector(data_width-/;"	t	architecture:AGU.behav
+data_array	srcs/old/AGU.vhd	/^	type data_array is array((input_size*kernel_size) - 1 downto 0) of std_logic_vector(data_width-/;"	t	architecture:AGU.behav
+data_fifo	srcs/not use/data_fifo.vhd	/^entity data_fifo is$/;"	e
+data_valid	srcs/w_sticker.vhd	/^	signal data_valid : std_logic;$/;"	s	architecture:w_sticker.behav
+data_width	srcs/AGU.vhd	/^		data_width : natural;$/;"	g	entity:AGU
+data_width	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		data_width	: natural;	$/;"	g	entity:MyAccelerator_v2_0_S00_AXI
+data_width	srcs/acc_wrapper.vhd	/^			data_width : natural;$/;"	g	component:acc_wrapper.behav.AGU
+data_width	srcs/acc_wrapper.vhd	/^			data_width : natural;$/;"	g	component:acc_wrapper.behav.main_fsm
+data_width	srcs/acc_wrapper.vhd	/^		data_width	: natural;$/;"	g	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+data_width	srcs/acc_wrapper.vhd	/^		data_width : natural := 32;$/;"	g	entity:acc_wrapper
+data_width	srcs/main_fsm.vhd	/^		data_width : natural;$/;"	g	entity:main_fsm
+data_width	srcs/old/AGU.vhd	/^		data_width : natural;$/;"	g	entity:AGU
+data_width	srcs/old/acc_wrapper.vhd	/^			data_width : natural;$/;"	g	component:acc_wrapper.behav.AGU
+data_width	srcs/old/acc_wrapper.vhd	/^			data_width : natural;$/;"	g	component:acc_wrapper.behav.main_fsm
+data_width	srcs/old/acc_wrapper.vhd	/^		data_width : natural := 32;$/;"	g	entity:acc_wrapper
+data_width	tb/acc_wrapper_tb.vhd	/^			data_width : natural := 32;$/;"	g	component:acc_wrapper_tb.behav.acc_wrapper
+data_width	tb/acc_wrapper_tb.vhd	/^	constant data_width : natural := 32;$/;"	c	architecture:acc_wrapper_tb.behav
+data_width	tb/agu_tb.vhd	/^			data_width : natural := 32;$/;"	g	component:agu_tb.behav.AGU
+data_width	tb/agu_tb.vhd	/^	constant data_width : natural := 32;$/;"	c	architecture:agu_tb.behav
+data_width	tb/main_fsm_tb.vhd	/^			data_width : natural := 32;$/;"	g	component:main_fms_tb.behav.main_fsm
+data_width	tb/main_fsm_tb.vhd	/^	constant data_width  : natural := 32;$/;"	c	architecture:main_fms_tb.behav
+depth	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^	 	variable depth  : integer := bit_depth;                               $/;"	v	function:MyAccelerator_v2_0_M01_AXIS.implementation.clogb2
+depth	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^	constant depth : integer := NUMBER_OF_OUTPUT_WORDS;                               $/;"	c	architecture:MyAccelerator_v2_0_M01_AXIS.implementation
+dff	srcs/dff.vhd	/^entity dff is$/;"	e
+dff	srcs/old/dff.vhd	/^entity dff is$/;"	e
+di	srcs/ACCU.vhd	/^		  di  : in std_logic_vector(INPUT_WIDTH-1 downto 0);   $/;"	q	component:ACCU.behav.SPM
+di	srcs/SPM.vhd	/^      di  : in std_logic_vector(INPUT_WIDTH-1 downto 0);   $/;"	q	entity:SPM
+di	srcs/wgu.vhd	/^		  di  : in std_logic_vector(INPUT_WIDTH-1 downto 0);   $/;"	q	component:wgu.behav.SPM
+din0	srcs/ACCU.vhd	/^		din0, din1 : in std_logic_vector((2*input_width + compute_byte) - 1 downto 0);$/;"	q	entity:ACCU
+din0	srcs/old/acc_wrapper.vhd	/^			din0, din1 : in std_logic_vector((2*input_width + compute_byte) - 1 downto 0);$/;"	q	component:acc_wrapper.behav.ACCU
+din1	srcs/ACCU.vhd	/^		din0, din1 : in std_logic_vector((2*input_width + compute_byte) - 1 downto 0);$/;"	q	entity:ACCU
+din1	srcs/old/acc_wrapper.vhd	/^			din0, din1 : in std_logic_vector((2*input_width + compute_byte) - 1 downto 0);$/;"	q	component:acc_wrapper.behav.ACCU
+do	srcs/ACCU.vhd	/^		  do  : out std_logic_vector(INPUT_WIDTH-1 downto 0)$/;"	q	component:ACCU.behav.SPM
+do	srcs/SPM.vhd	/^      do  : out std_logic_vector(INPUT_WIDTH-1 downto 0)$/;"	q	entity:SPM
+do	srcs/wgu.vhd	/^		  do  : out std_logic_vector(INPUT_WIDTH-1 downto 0)$/;"	q	component:wgu.behav.SPM
+done	srcs/acc_wrapper.vhd	/^			done : out std_logic;$/;"	q	component:acc_wrapper.behav.main_fsm
+done	srcs/main_fsm.vhd	/^		done : out std_logic$/;"	q	entity:main_fsm
+done	srcs/not use/DPU.vhd	/^    signal done : std_logic;$/;"	s	architecture:DPU.Behavioral
+done	srcs/old/acc_wrapper.vhd	/^			done : out std_logic;$/;"	q	component:acc_wrapper.behav.main_fsm
+done	tb/main_fsm_tb.vhd	/^			done : out std_logic$/;"	q	component:main_fms_tb.behav.main_fsm
+done	tb/main_fsm_tb.vhd	/^	signal done : std_logic;$/;"	s	architecture:main_fms_tb.behav
+done_test	srcs/acc_wrapper.vhd	/^		done_test, compute_en_test, agu_valid_test , input_mux_test, main_en_test : out std_logic;$/;"	q	entity:acc_wrapper
+done_test	srcs/old/acc_wrapper.vhd	/^		done_test, compute_en_test, agu_valid_test , input_mux_test, main_en_test : out std_logic;$/;"	q	entity:acc_wrapper
+empty	srcs/not use/data_fifo.vhd	/^    empty : out std_logic;$/;"	q	entity:data_fifo
+empty_i	srcs/not use/data_fifo.vhd	/^  signal empty_i : std_logic;$/;"	s	architecture:data_fifo.rtl
+empty_next	srcs/not use/data_fifo.vhd	/^    empty_next : out std_logic;$/;"	q	entity:data_fifo
+en	srcs/AGU.vhd	/^			en : in std_logic;$/;"	q	component:AGU.behav.dff
+en	srcs/dff.vhd	/^		en : in std_logic;$/;"	q	entity:dff
+en	srcs/not use/fsm_agu.vhd	/^		en : in std_logic;$/;"	q	entity:fsm_agu
+en	srcs/old/AGU.vhd	/^			en : in std_logic;$/;"	q	component:AGU.behav.dff
+en	srcs/old/dff.vhd	/^		en : in std_logic;$/;"	q	entity:dff
+en0	srcs/ACCU.vhd	/^		en0, en1 : in std_logic;$/;"	q	entity:ACCU
+en0	srcs/old/acc_wrapper.vhd	/^			en0, en1 : in std_logic;$/;"	q	component:acc_wrapper.behav.ACCU
+en1	srcs/ACCU.vhd	/^		en0, en1 : in std_logic;$/;"	q	entity:ACCU
+en1	srcs/old/acc_wrapper.vhd	/^			en0, en1 : in std_logic;$/;"	q	component:acc_wrapper.behav.ACCU
+end_weight	tb/acc_wrapper_tb.vhd	/^		variable end_weight, finished : std_logic;$/;"	v	process:acc_wrapper_tb.behav.DATA_GEN
+eor	srcs/old/AGU.vhd	/^	signal eor,prep_en,comp_en, prep_done,  r_clr, comp_done : std_logic;$/;"	s	architecture:AGU.behav
+fill_count	srcs/not use/data_fifo.vhd	/^    fill_count : out integer range RAM_DEPTH - 1 downto 0$/;"	q	entity:data_fifo
+fill_count_i	srcs/not use/data_fifo.vhd	/^  signal fill_count_i : integer range RAM_DEPTH - 1 downto 0;$/;"	s	architecture:data_fifo.rtl
+finished	tb/acc_wrapper_tb.vhd	/^		variable end_weight, finished : std_logic;$/;"	v	process:acc_wrapper_tb.behav.DATA_GEN
+flatten	srcs/w_sticker.vhd	/^	function flatten (x : temp_array)$/;"	f	architecture:w_sticker.behav
+fsm_agu	srcs/not use/fsm_agu.vhd	/^entity fsm_agu is$/;"	e
+fsm_state_test	srcs/acc_wrapper.vhd	/^			fsm_state_test : out std_logic_vector(2 downto 0)$/;"	q	component:acc_wrapper.behav.main_fsm
+fsm_state_test	srcs/acc_wrapper.vhd	/^		fsm_state_test : out std_logic_vector(2 downto 0) $/;"	q	entity:acc_wrapper
+fsm_state_test	srcs/main_fsm.vhd	/^		fsm_state_test : out std_logic_vector(2 downto 0);$/;"	q	entity:main_fsm
+fsm_state_test	srcs/old/acc_wrapper.vhd	/^			fsm_state_test : out std_logic_vector(2 downto 0)$/;"	q	component:acc_wrapper.behav.main_fsm
+fsm_state_test	srcs/old/acc_wrapper.vhd	/^		fsm_state_test : out std_logic_vector(2 downto 0) $/;"	q	entity:acc_wrapper
+fsm_state_test	tb/main_fsm_tb.vhd	/^			fsm_state_test : out std_logic_vector(2 downto 0);$/;"	q	component:main_fms_tb.behav.main_fsm
+fsm_state_test	tb/main_fsm_tb.vhd	/^	signal fsm_state_test : std_logic_vector(2 downto 0);$/;"	s	architecture:main_fms_tb.behav
+full	srcs/not use/data_fifo.vhd	/^    full : out std_logic;$/;"	q	entity:data_fifo
+full_i	srcs/not use/data_fifo.vhd	/^  signal full_i : std_logic;$/;"	s	architecture:data_fifo.rtl
+full_next	srcs/not use/data_fifo.vhd	/^    full_next : out std_logic;$/;"	q	entity:data_fifo
+funcTab	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/obj/xsim_1.c	/^funcp funcTab[6] = {(funcp)execute_23, (funcp)execute_24, (funcp)execute_25, (funcp)vhdl_transfu/;"	v	typeref:typename:funcp[6]
+funcTab	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/obj/xsim_1.c	/^funcp funcTab[18] = {(funcp)execute_57, (funcp)execute_58, (funcp)execute_43, (funcp)execute_44,/;"	v	typeref:typename:funcp[18]
+funcp	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/obj/xsim_1.c	/^typedef void (*funcp)(char *, char *);$/;"	t	typeref:typename:void (*)(char *,char *)	file:
+funcp	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/obj/xsim_1.c	/^typedef void (*funcp)(char *, char *);$/;"	t	typeref:typename:void (*)(char *,char *)	file:
+general_pkg	srcs/not use/dlau_pkg.vhd	/^package body general_pkg is$/;"	P
+general_pkg	srcs/not use/dlau_pkg.vhd	/^package general_pkg is $/;"	P
+head	srcs/not use/data_fifo.vhd	/^  signal head : index_type;$/;"	s	architecture:data_fifo.rtl
+hw_acc_en	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		hw_acc_en : out std_logic;$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+hw_acc_en	srcs/main_fsm.vhd	/^		hw_acc_en : in std_logic;$/;"	q	entity:main_fsm
+hw_acc_en	tb/main_fsm_tb.vhd	/^			hw_acc_en : in std_logic;$/;"	q	component:main_fms_tb.behav.main_fsm
+hw_acc_en	tb/main_fsm_tb.vhd	/^	signal hw_acc_en : std_logic;$/;"	s	architecture:main_fms_tb.behav
+image_height	srcs/not use/fsm_agu.vhd	/^		image_height : integer;$/;"	g	entity:fsm_agu
+image_size	srcs/not use/top.vhd	/^			image_size : integer ;$/;"	g	component:agu_tb.behav.AGU
+image_size	srcs/not use/top.vhd	/^	constant image_size : natural := 12;$/;"	c	architecture:agu_tb.behav
+image_width	srcs/not use/fsm_agu.vhd	/^		image_width : integer ;$/;"	g	entity:fsm_agu
+implementation	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^architecture implementation of MyAccelerator_v2_0_M01_AXIS is$/;"	a	entity:MyAccelerator_v2_0_M01_AXIS
+in_array	srcs/not use/top.vhd	/^	type in_array is array(compute_byte-1 downto 0) of std_logic_vector(byte_width-1 downto 0);$/;"	t	architecture:agu_tb.behav
+in_valid	srcs/w_sticker.vhd	/^		in_valid : in std_logic;$/;"	q	entity:w_sticker
+in_valid	srcs/wgu.vhd	/^			in_valid : in std_logic;$/;"	q	component:wgu.behav.w_sticker
+in_valid	tb/w_sticker_tb.vhd	/^			in_valid : in std_logic;$/;"	q	component:w_sticker_tb.rtl.w_sticker
+in_valid	tb/w_sticker_tb.vhd	/^	signal in_valid,out_valid : std_logic;$/;"	s	architecture:w_sticker_tb.rtl
+incr	srcs/not use/data_fifo.vhd	/^  procedure incr(signal index : inout index_type) is$/;"	p	architecture:data_fifo.rtl
+index_counter	srcs/ACCU.vhd	/^	index_counter: $/;"	Q	architecture:ACCU.behav
+index_incr	srcs/not use/DPU.vhd	/^  index_incr : process (S_AXIS_ACLK,S_AXIS_ARESETN)$/;"	Q	architecture:DPU.Behavioral
+index_type	srcs/not use/data_fifo.vhd	/^  subtype index_type is integer range ram_type'range;$/;"	T	architecture:data_fifo.rtl
+init_gui	xgui/MyConvAcc_v1_0.tcl	/^proc init_gui { IPINST } {$/;"	p
+init_gui	xgui/acc_wrapper_v1_0.tcl	/^proc init_gui { IPINST } {$/;"	p
+input	srcs/not use/relu.vhd	/^		input : std_logic_vector((weight_width + data_width + compute_byte) - 1 downto 0);$/;"	q	entity:relu
+input_count	srcs/ACCU.vhd	/^	signal row,col, input_count : integer range 0 to 255;$/;"	s	architecture:ACCU.behav
+input_count	srcs/main_fsm.vhd	/^	signal x_row, x_col, x_prep_c, input_count : integer range 0 to 255;$/;"	s	architecture:main_fsm.behav
+input_decode	srcs/ACCU.vhd	/^	input_decode:$/;"	Q	architecture:ACCU.behav
+input_depth	srcs/ACCU.vhd	/^		input_depth : natural;$/;"	g	entity:ACCU
+input_depth	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		input_depth : out unsigned(INPUT_DEPTH_BIT_WIDTH-1 downto 0);$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+input_depth	srcs/acc_wrapper.vhd	/^		input_depth : out unsigned(data_width-1 downto 0);$/;"	q	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+input_depth	srcs/main_fsm.vhd	/^		input_depth : in unsigned(INPUT_DEPTH_BIT_WIDTH-1 downto 0);$/;"	q	entity:main_fsm
+input_depth	srcs/old/acc_wrapper.vhd	/^			input_depth : natural;$/;"	g	component:acc_wrapper.behav.ACCU
+input_depth	srcs/old/acc_wrapper.vhd	/^		input_depth : natural := 1; 					-- Need todo sth with this param$/;"	g	entity:acc_wrapper
+input_depth	tb/acc_wrapper_tb.vhd	/^			input_depth : natural;$/;"	g	component:acc_wrapper_tb.behav.acc_wrapper
+input_depth	tb/acc_wrapper_tb.vhd	/^	constant input_depth : natural := 2;$/;"	c	architecture:acc_wrapper_tb.behav
+input_depth	tb/agu_tb.vhd	/^	constant input_depth : natural := 16;$/;"	c	architecture:agu_tb.behav
+input_depth	tb/main_fsm_tb.vhd	/^			input_depth : in unsigned(INPUT_DEPTH_BIT_WIDTH-1 downto 0);$/;"	q	component:main_fms_tb.behav.main_fsm
+input_depth	tb/main_fsm_tb.vhd	/^	signal input_depth : unsigned(INPUT_DEPTH_BIT_WIDTH-1 downto 0);$/;"	s	architecture:main_fms_tb.behav
+input_depth_s	srcs/acc_wrapper.vhd	/^    signal input_depth_s 		: std_logic_vector(data_width-1 downto 0);	$/;"	s	architecture:acc_wrapper.behav
+input_mux	srcs/acc_wrapper.vhd	/^	signal agu_ready, compute_done, main_en, input_mux , alu_en, w_addr_incr : std_logic;$/;"	s	architecture:acc_wrapper.behav
+input_mux	srcs/old/acc_wrapper.vhd	/^			input_mux : out std_logic;$/;"	q	component:acc_wrapper.behav.main_fsm
+input_mux	srcs/old/acc_wrapper.vhd	/^	signal agu_ready, compute_done, main_en, input_mux , compute_en, w_addr_incr : std_logic;$/;"	s	architecture:acc_wrapper.behav
+input_mux_test	srcs/acc_wrapper.vhd	/^		done_test, compute_en_test, agu_valid_test , input_mux_test, main_en_test : out std_logic;$/;"	q	entity:acc_wrapper
+input_mux_test	srcs/old/acc_wrapper.vhd	/^		done_test, compute_en_test, agu_valid_test , input_mux_test, main_en_test : out std_logic;$/;"	q	entity:acc_wrapper
+input_size	srcs/ACCU.vhd	/^		input_size : natural;$/;"	g	entity:ACCU
+input_size	srcs/AGU.vhd	/^		input_size : natural;$/;"	g	entity:AGU
+input_size	srcs/ALU.vhd	/^		input_size : natural;$/;"	g	entity:ALU
+input_size	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		input_size : out unsigned(INPUT_SIZE_BIT_WIDTH -1 downto 0);$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+input_size	srcs/acc_wrapper.vhd	/^			input_size : natural;$/;"	g	component:acc_wrapper.behav.AGU
+input_size	srcs/acc_wrapper.vhd	/^			input_size : natural;$/;"	g	component:acc_wrapper.behav.ALU
+input_size	srcs/acc_wrapper.vhd	/^		input_size : out unsigned(data_width-1 downto 0);$/;"	q	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+input_size	srcs/main_fsm.vhd	/^		input_size : in unsigned(INPUT_SIZE_BIT_WIDTH -1 downto 0);$/;"	q	entity:main_fsm
+input_size	srcs/old/AGU.vhd	/^		input_size : natural;$/;"	g	entity:AGU
+input_size	srcs/old/acc_wrapper.vhd	/^			input_size : natural;$/;"	g	component:acc_wrapper.behav.ACCU
+input_size	srcs/old/acc_wrapper.vhd	/^			input_size : natural;$/;"	g	component:acc_wrapper.behav.AGU
+input_size	srcs/old/acc_wrapper.vhd	/^			input_size : natural;$/;"	g	component:acc_wrapper.behav.ALU
+input_size	srcs/old/acc_wrapper.vhd	/^			input_size : natural;$/;"	g	component:acc_wrapper.behav.main_fsm
+input_size	srcs/old/acc_wrapper.vhd	/^		input_size : natural := 28;$/;"	g	entity:acc_wrapper
+input_size	tb/acc_wrapper_tb.vhd	/^			input_size : natural;$/;"	g	component:acc_wrapper_tb.behav.acc_wrapper
+input_size	tb/acc_wrapper_tb.vhd	/^	constant input_size : natural := 28;$/;"	c	architecture:acc_wrapper_tb.behav
+input_size	tb/agu_tb.vhd	/^			input_size : natural ;$/;"	g	component:agu_tb.behav.AGU
+input_size	tb/agu_tb.vhd	/^	constant input_size : natural := 28;$/;"	c	architecture:agu_tb.behav
+input_size	tb/main_fsm_tb.vhd	/^			input_size : in unsigned(INPUT_SIZE_BIT_WIDTH -1 downto 0);$/;"	q	component:main_fms_tb.behav.main_fsm
+input_size	tb/main_fsm_tb.vhd	/^	signal input_size : unsigned(INPUT_SIZE_BIT_WIDTH-1 downto 0);$/;"	s	architecture:main_fms_tb.behav
+input_size_s	srcs/acc_wrapper.vhd	/^	signal input_size_s 		: std_logic_vector(data_width-1 downto 0);		$/;"	s	architecture:acc_wrapper.behav
+input_temp	srcs/not use/DPU.vhd	/^    signal input_temp, input_temp1 : unsigned(DPU_DO'range) ;$/;"	s	architecture:DPU.Behavioral
+input_temp1	srcs/not use/DPU.vhd	/^    signal input_temp, input_temp1 : unsigned(DPU_DO'range) ;$/;"	s	architecture:DPU.Behavioral
+input_width	srcs/ACCU.vhd	/^		input_width : natural;$/;"	g	entity:ACCU
+input_width	srcs/AGU.vhd	/^			input_width : integer$/;"	g	component:AGU.behav.dff
+input_width	srcs/ALU.vhd	/^		input_width : natural;$/;"	g	entity:ALU
+input_width	srcs/acc_wrapper.vhd	/^			input_width : natural;			$/;"	g	component:acc_wrapper.behav.wgu
+input_width	srcs/acc_wrapper.vhd	/^			input_width : natural;$/;"	g	component:acc_wrapper.behav.ALU
+input_width	srcs/dff.vhd	/^		input_width : natural $/;"	g	entity:dff
+input_width	srcs/old/AGU.vhd	/^			input_width : integer$/;"	g	component:AGU.behav.dff
+input_width	srcs/old/acc_wrapper.vhd	/^			input_width : natural;			$/;"	g	component:acc_wrapper.behav.wgu
+input_width	srcs/old/acc_wrapper.vhd	/^			input_width : natural;$/;"	g	component:acc_wrapper.behav.ACCU
+input_width	srcs/old/acc_wrapper.vhd	/^			input_width : natural;$/;"	g	component:acc_wrapper.behav.ALU
+input_width	srcs/old/dff.vhd	/^		input_width : natural $/;"	g	entity:dff
+input_width	srcs/w_sticker.vhd	/^		input_width : natural;$/;"	g	entity:w_sticker
+input_width	srcs/wgu.vhd	/^			input_width : natural;$/;"	g	component:wgu.behav.w_sticker
+input_width	srcs/wgu.vhd	/^		input_width : natural;			-- Number of bit for input data (default = 32)$/;"	g	entity:wgu
+input_width	tb/w_sticker_tb.vhd	/^			input_width : natural;$/;"	g	component:w_sticker_tb.rtl.w_sticker
+input_width	tb/w_sticker_tb.vhd	/^	constant input_width : natural := 32;$/;"	c	architecture:w_sticker_tb.rtl
+input_width	tb/wgu_tb.vhd	/^			input_width : natural;			-- Number of bit for input data (default = 32)$/;"	g	component:wgu_tb.behav.wgu
+input_width	tb/wgu_tb.vhd	/^	constant input_width : natural := 32;$/;"	c	architecture:wgu_tb.behav
+jk_ff	srcs/not use/jk_ff.vhd	/^entity jk_ff is$/;"	e
+kernel_depth	srcs/ACCU.vhd	/^		kernel_depth : natural;$/;"	g	entity:ACCU
+kernel_depth	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		kernel_depth : out unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+kernel_depth	srcs/acc_wrapper.vhd	/^			kernel_depth : natural;	$/;"	g	component:acc_wrapper.behav.wgu
+kernel_depth	srcs/acc_wrapper.vhd	/^		kernel_depth : out unsigned(data_width-1 downto 0);$/;"	q	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+kernel_depth	srcs/main_fsm.vhd	/^		kernel_depth : in unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);$/;"	q	entity:main_fsm
+kernel_depth	srcs/old/acc_wrapper.vhd	/^			kernel_depth : natural;	$/;"	g	component:acc_wrapper.behav.wgu
+kernel_depth	srcs/old/acc_wrapper.vhd	/^			kernel_depth : natural;$/;"	g	component:acc_wrapper.behav.ACCU
+kernel_depth	srcs/old/acc_wrapper.vhd	/^			kernel_depth : natural;$/;"	g	component:acc_wrapper.behav.main_fsm
+kernel_depth	srcs/old/acc_wrapper.vhd	/^		kernel_depth : natural := 16;$/;"	g	entity:acc_wrapper
+kernel_depth	srcs/wgu.vhd	/^		kernel_depth : natural;			-- #kernels (ex. 16, 32)$/;"	g	entity:wgu
+kernel_depth	tb/acc_wrapper_tb.vhd	/^			kernel_depth : natural;$/;"	g	component:acc_wrapper_tb.behav.acc_wrapper
+kernel_depth	tb/acc_wrapper_tb.vhd	/^	constant kernel_depth : natural := 16;$/;"	c	architecture:acc_wrapper_tb.behav
+kernel_depth	tb/main_fsm_tb.vhd	/^			kernel_depth : in unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);$/;"	q	component:main_fms_tb.behav.main_fsm
+kernel_depth	tb/main_fsm_tb.vhd	/^	signal kernel_depth : unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);$/;"	s	architecture:main_fms_tb.behav
+kernel_depth	tb/wgu_tb.vhd	/^			kernel_depth : natural;			-- #kernels (ex. 16, 32)$/;"	g	component:wgu_tb.behav.wgu
+kernel_depth	tb/wgu_tb.vhd	/^	constant kernel_depth: natural := 16;$/;"	c	architecture:wgu_tb.behav
+kernel_depth_s	srcs/acc_wrapper.vhd	/^	signal kernel_depth_s	: std_logic_vector(data_width-1 downto 0);$/;"	s	architecture:acc_wrapper.behav
+kernel_size	srcs/ACCU.vhd	/^		kernel_size : natural;$/;"	g	entity:ACCU
+kernel_size	srcs/AGU.vhd	/^		kernel_size : natural;             $/;"	g	entity:AGU
+kernel_size	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		kernel_size : out unsigned(KERNEL_SIZE_BIT_WIDTH-1 downto 0);$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+kernel_size	srcs/acc_wrapper.vhd	/^			kernel_size : natural;		$/;"	g	component:acc_wrapper.behav.wgu
+kernel_size	srcs/acc_wrapper.vhd	/^			kernel_size : natural;             $/;"	g	component:acc_wrapper.behav.AGU
+kernel_size	srcs/acc_wrapper.vhd	/^		kernel_size : out unsigned(data_width-1 downto 0);$/;"	q	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+kernel_size	srcs/main_fsm.vhd	/^		kernel_size : in unsigned(KERNEL_SIZE_BIT_WIDTH-1 downto 0);$/;"	q	entity:main_fsm
+kernel_size	srcs/not use/fsm_agu.vhd	/^		kernel_size : integer ;             $/;"	g	entity:fsm_agu
+kernel_size	srcs/not use/top.vhd	/^			kernel_size : integer ;             $/;"	g	component:agu_tb.behav.AGU
+kernel_size	srcs/not use/top.vhd	/^	constant kernel_size : natural := 5;$/;"	c	architecture:agu_tb.behav
+kernel_size	srcs/old/AGU.vhd	/^		kernel_size : natural;             $/;"	g	entity:AGU
+kernel_size	srcs/old/acc_wrapper.vhd	/^			kernel_size : natural;		$/;"	g	component:acc_wrapper.behav.wgu
+kernel_size	srcs/old/acc_wrapper.vhd	/^			kernel_size : natural;             $/;"	g	component:acc_wrapper.behav.AGU
+kernel_size	srcs/old/acc_wrapper.vhd	/^			kernel_size : natural;             $/;"	g	component:acc_wrapper.behav.main_fsm
+kernel_size	srcs/old/acc_wrapper.vhd	/^			kernel_size : natural;$/;"	g	component:acc_wrapper.behav.ACCU
+kernel_size	srcs/old/acc_wrapper.vhd	/^		kernel_size : natural := 3;             $/;"	g	entity:acc_wrapper
+kernel_size	srcs/w_sticker.vhd	/^		kernel_size : natural$/;"	g	entity:w_sticker
+kernel_size	srcs/wgu.vhd	/^			kernel_size : natural$/;"	g	component:wgu.behav.w_sticker
+kernel_size	srcs/wgu.vhd	/^		kernel_size : natural;			-- Size of kernel (ex. 3 for 3x3)             $/;"	g	entity:wgu
+kernel_size	tb/acc_wrapper_tb.vhd	/^			kernel_size : natural;             $/;"	g	component:acc_wrapper_tb.behav.acc_wrapper
+kernel_size	tb/acc_wrapper_tb.vhd	/^	constant kernel_size : natural := 3;             $/;"	c	architecture:acc_wrapper_tb.behav
+kernel_size	tb/agu_tb.vhd	/^			kernel_size : natural ;             $/;"	g	component:agu_tb.behav.AGU
+kernel_size	tb/agu_tb.vhd	/^	constant kernel_size : natural := 3;$/;"	c	architecture:agu_tb.behav
+kernel_size	tb/main_fsm_tb.vhd	/^			kernel_size : in unsigned(KERNEL_SIZE_BIT_WIDTH-1 downto 0);$/;"	q	component:main_fms_tb.behav.main_fsm
+kernel_size	tb/main_fsm_tb.vhd	/^	signal kernel_size : unsigned(KERNEL_SIZE_BIT_WIDTH-1 downto 0);$/;"	s	architecture:main_fms_tb.behav
+kernel_size	tb/w_sticker_tb.vhd	/^			kernel_size : natural$/;"	g	component:w_sticker_tb.rtl.w_sticker
+kernel_size	tb/w_sticker_tb.vhd	/^	constant kernel_size : natural := 3;$/;"	c	architecture:w_sticker_tb.rtl
+kernel_size	tb/wgu_tb.vhd	/^			kernel_size : natural;			-- Size of kernel (ex. 3 for 3x3)             $/;"	g	component:wgu_tb.behav.wgu
+kernel_size	tb/wgu_tb.vhd	/^	constant kernel_size : natural := 3;$/;"	c	architecture:wgu_tb.behav
+kernel_size_s	srcs/acc_wrapper.vhd	/^    signal kernel_size_s 		: std_logic_vector(data_width-1 downto 0);$/;"	s	architecture:acc_wrapper.behav
+last_input	srcs/main_fsm.vhd	/^	signal last_input, x_prep_done, x_prep_c_en ,w_addr_c_en, pixel_last, count_en, agu_en_s, compu/;"	s	architecture:main_fsm.behav
+loc_addr	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	variable loc_addr :std_logic_vector(OPT_MEM_ADDR_BITS downto 0); $/;"	v	process:MyAccelerator_v2_0_S00_AXI.arch_imp.anonProcessfd7ca273040f
+loc_addr	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	variable loc_addr :std_logic_vector(OPT_MEM_ADDR_BITS downto 0);$/;"	v	process:MyAccelerator_v2_0_S00_AXI.arch_imp.anonProcessfd7ca273080f
+m01_axis_aclk	srcs/MyAccelerator_v2_0.vhd	/^		m01_axis_aclk	: in std_logic;$/;"	q	entity:MyAccelerator_v2_0
+m01_axis_aclk	srcs/acc_wrapper.vhd	/^		m01_axis_aclk	: in std_logic;$/;"	q	entity:acc_wrapper
+m01_axis_aresetn	srcs/MyAccelerator_v2_0.vhd	/^		m01_axis_aresetn	: in std_logic;$/;"	q	entity:MyAccelerator_v2_0
+m01_axis_aresetn	srcs/acc_wrapper.vhd	/^		m01_axis_aresetn	: in std_logic;$/;"	q	entity:acc_wrapper
+m01_axis_tdata	srcs/MyAccelerator_v2_0.vhd	/^		m01_axis_tdata	: out std_logic_vector(C_M01_AXIS_TDATA_WIDTH-1 downto 0);$/;"	q	entity:MyAccelerator_v2_0
+m01_axis_tdata	srcs/acc_wrapper.vhd	/^		m01_axis_tdata	: out std_logic_vector(data_width-1 downto 0);$/;"	q	entity:acc_wrapper
+m01_axis_tlast	srcs/MyAccelerator_v2_0.vhd	/^		m01_axis_tlast	: out std_logic;$/;"	q	entity:MyAccelerator_v2_0
+m01_axis_tlast	srcs/acc_wrapper.vhd	/^		m01_axis_tlast	: out std_logic;$/;"	q	entity:acc_wrapper
+m01_axis_tready	srcs/MyAccelerator_v2_0.vhd	/^		m01_axis_tready	: in std_logic$/;"	q	entity:MyAccelerator_v2_0
+m01_axis_tready	srcs/acc_wrapper.vhd	/^		m01_axis_tready	: in std_logic$/;"	q	entity:acc_wrapper
+m01_axis_tstrb	srcs/MyAccelerator_v2_0.vhd	/^		m01_axis_tstrb	: out std_logic_vector((C_M01_AXIS_TDATA_WIDTH\/8)-1 downto 0);$/;"	q	entity:MyAccelerator_v2_0
+m01_axis_tstrb	srcs/acc_wrapper.vhd	/^		m01_axis_tstrb	: out std_logic_vector((data_width\/8)-1 downto 0);$/;"	q	entity:acc_wrapper
+m01_axis_tvalid	srcs/MyAccelerator_v2_0.vhd	/^		m01_axis_tvalid	: out std_logic;$/;"	q	entity:MyAccelerator_v2_0
+m01_axis_tvalid	srcs/acc_wrapper.vhd	/^		m01_axis_tvalid	: out std_logic;$/;"	q	entity:acc_wrapper
+main	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/obj/xsim_1.c	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
+main	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/obj/xsim_1.c	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
+main	srcs/dff.vhd	/^	main : process (clk, arstn) $/;"	Q	architecture:dff.str
+main	srcs/old/dff.vhd	/^	main : process (clk) $/;"	Q	architecture:dff.str
+main_counter_en	srcs/old/AGU.vhd	/^	signal main_counter_en : std_logic;$/;"	s	architecture:AGU.behav
+main_en	srcs/acc_wrapper.vhd	/^	signal agu_ready, compute_done, main_en, input_mux , alu_en, w_addr_incr : std_logic;$/;"	s	architecture:acc_wrapper.behav
+main_en	srcs/old/AGU.vhd	/^		main_en : in std_logic;$/;"	q	entity:AGU
+main_en	srcs/old/acc_wrapper.vhd	/^			main_en : in std_logic;$/;"	q	component:acc_wrapper.behav.AGU
+main_en	srcs/old/acc_wrapper.vhd	/^			main_en : out std_logic;$/;"	q	component:acc_wrapper.behav.main_fsm
+main_en	srcs/old/acc_wrapper.vhd	/^	signal agu_ready, compute_done, main_en, input_mux , compute_en, w_addr_incr : std_logic;$/;"	s	architecture:acc_wrapper.behav
+main_en	tb/agu_tb.vhd	/^			main_en : in std_logic$/;"	q	component:agu_tb.behav.AGU
+main_en	tb/agu_tb.vhd	/^	signal main_en : std_logic;$/;"	s	architecture:agu_tb.behav
+main_en_test	srcs/acc_wrapper.vhd	/^		done_test, compute_en_test, agu_valid_test , input_mux_test, main_en_test : out std_logic;$/;"	q	entity:acc_wrapper
+main_en_test	srcs/old/acc_wrapper.vhd	/^		done_test, compute_en_test, agu_valid_test , input_mux_test, main_en_test : out std_logic;$/;"	q	entity:acc_wrapper
+main_fms_tb	tb/main_fsm_tb.vhd	/^entity main_fms_tb is$/;"	e
+main_fsm	srcs/main_fsm.vhd	/^entity main_fsm	is$/;"	e
+max_pos	srcs/not use/dlau_pkg.vhd	/^							  variable max_pos : integer;$/;"	v	procedure:general_pkg.rotate_left
+max_stored_row	srcs/not use/fsm_agu.vhd	/^		max_stored_row : natural := 8;$/;"	g	entity:fsm_agu
+mem_addr	srcs/wgu.vhd	/^	signal mem_addr : std_logic_vector(addr_width-1 downto 0);$/;"	s	architecture:wgu.behav
+mst_exec_state	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^	signal  mst_exec_state : state;                                                   $/;"	s	architecture:MyAccelerator_v2_0_M01_AXIS.implementation
+mux_sel	srcs/acc_wrapper.vhd	/^			mux_sel : out std_logic;$/;"	q	component:acc_wrapper.behav.main_fsm
+mux_sel	srcs/acc_wrapper.vhd	/^	signal mux_sel : std_logic;$/;"	s	architecture:acc_wrapper.behav
+mux_sel	srcs/main_fsm.vhd	/^		mux_sel : out std_logic;$/;"	q	entity:main_fsm
+mux_sel	srcs/old/acc_wrapper.vhd	/^	signal mux_sel : std_logic;$/;"	s	architecture:acc_wrapper.behav
+mux_sel	tb/main_fsm_tb.vhd	/^			mux_sel : out std_logic;$/;"	q	component:main_fms_tb.behav.main_fsm
+mux_sel	tb/main_fsm_tb.vhd	/^	signal mux_sel : std_logic;$/;"	s	architecture:main_fms_tb.behav
+n_state	srcs/main_fsm.vhd	/^	signal c_state, n_state : state_type;$/;"	s	architecture:main_fsm.behav
+n_state	srcs/not use/fsm_agu.vhd	/^	signal c_state,n_state : state_type;$/;"	s	architecture:fsm_agu.behav
+n_state	srcs/old/AGU.vhd	/^	signal c_state,n_state : state_type;$/;"	s	architecture:AGU.behav
+next_state	srcs/not use/DPU.vhd	/^    signal current_state, next_state : state_type;$/;"	s	architecture:DPU.Behavioral
+next_state_decode	srcs/not use/DPU.vhd	/^  next_state_decode : process(current_state,S_AXIS_TVALID,done, S_AXIS_TLAST)$/;"	Q	architecture:DPU.Behavioral
+o_a	srcs/w_sticker.vhd	/^	signal o_a : temp_array;$/;"	s	architecture:w_sticker.behav
+o_c	srcs/ACCU.vhd	/^		variable o_r,o_c : integer range 0 to 255;$/;"	v	process:ACCU.behav.output_gen
+o_r	srcs/ACCU.vhd	/^		variable o_r,o_c : integer range 0 to 255;$/;"	v	process:ACCU.behav.output_gen
+old0	srcs/ACCU.vhd	/^	signal old0, old1, out0, out1 : signed(din0'range);$/;"	s	architecture:ACCU.behav
+old1	srcs/ACCU.vhd	/^	signal old0, old1, out0, out1 : signed(din0'range);$/;"	s	architecture:ACCU.behav
+out0	srcs/ACCU.vhd	/^	signal old0, old1, out0, out1 : signed(din0'range);$/;"	s	architecture:ACCU.behav
+out1	srcs/ACCU.vhd	/^	signal old0, old1, out0, out1 : signed(din0'range);$/;"	s	architecture:ACCU.behav
+out_valid	srcs/w_sticker.vhd	/^		out_valid : out std_logic;$/;"	q	entity:w_sticker
+out_valid	srcs/wgu.vhd	/^			out_valid : out std_logic;$/;"	q	component:wgu.behav.w_sticker
+out_valid	tb/w_sticker_tb.vhd	/^			out_valid : out std_logic;$/;"	q	component:w_sticker_tb.rtl.w_sticker
+out_valid	tb/w_sticker_tb.vhd	/^	signal in_valid,out_valid : std_logic;$/;"	s	architecture:w_sticker_tb.rtl
+output_buf	srcs/not use/DPU.vhd	/^	signal output_buf : std_logic_vector(DPU_DO'range);$/;"	s	architecture:DPU.Behavioral
+output_gen	srcs/ACCU.vhd	/^	output_gen:$/;"	Q	architecture:ACCU.behav
+output_size	srcs/ACCU.vhd	/^	constant output_size : natural := (input_size - kernel_size)\/stride + 1;$/;"	c	architecture:ACCU.behav
+output_size	srcs/AGU.vhd	/^	constant output_size : natural := (input_size - kernel_size)\/stride + 1;$/;"	c	architecture:AGU.behav
+output_size	srcs/main_fsm.vhd	/^	signal output_size : unsigned(data_width-1 downto 0);$/;"	s	architecture:main_fsm.behav
+output_size	srcs/old/AGU.vhd	/^	constant output_size : natural := (input_size - kernel_size)\/stride + 1;$/;"	c	architecture:AGU.behav
+output_size	srcs/w_sticker.vhd	/^		output_size : natural := 5;$/;"	g	entity:w_sticker
+output_size	srcs/wgu.vhd	/^			output_size : natural := 5;$/;"	g	component:wgu.behav.w_sticker
+output_size	tb/w_sticker_tb.vhd	/^			output_size : natural := 5;$/;"	g	component:w_sticker_tb.rtl.w_sticker
+pixel_last	srcs/main_fsm.vhd	/^	signal last_input, x_prep_done, x_prep_c_en ,w_addr_c_en, pixel_last, count_en, agu_en_s, compu/;"	s	architecture:main_fsm.behav
+prep_count	srcs/old/AGU.vhd	/^	signal prep_count, col_count, row_count : integer range 0 to 65535;$/;"	s	architecture:AGU.behav
+prep_done	srcs/old/AGU.vhd	/^	signal eor,prep_en,comp_en, prep_done,  r_clr, comp_done : std_logic;$/;"	s	architecture:AGU.behav
+prep_en	srcs/old/AGU.vhd	/^	signal eor,prep_en,comp_en, prep_done,  r_clr, comp_done : std_logic;$/;"	s	architecture:AGU.behav
+q	srcs/AGU.vhd	/^			q : out std_logic_vector(input_width-1 downto 0)$/;"	q	component:AGU.behav.dff
+q	srcs/dff.vhd	/^		q : out std_logic_vector(input_width-1 downto 0)$/;"	q	entity:dff
+q	srcs/old/AGU.vhd	/^			q : out std_logic_vector(input_width-1 downto 0)$/;"	q	component:AGU.behav.dff
+q	srcs/old/dff.vhd	/^		q : out std_logic_vector(input_width-1 downto 0)$/;"	q	entity:dff
+r_clr	srcs/old/AGU.vhd	/^	signal eor,prep_en,comp_en, prep_done,  r_clr, comp_done : std_logic;$/;"	s	architecture:AGU.behav
+r_col	srcs/not use/fsm_agu.vhd	/^		r_col : in integer range 0 to image_width;$/;"	q	entity:fsm_agu
+r_en	srcs/not use/fsm_agu.vhd	/^		r_en : out std_logic;			-- Read en$/;"	q	entity:fsm_agu
+r_row	srcs/not use/fsm_agu.vhd	/^		r_row : in integer range 0 to max_stored_row;$/;"	q	entity:fsm_agu
+r_valid	srcs/not use/top.vhd	/^			r_valid : out std_logic$/;"	q	component:agu_tb.behav.AGU
+r_valid	srcs/not use/top.vhd	/^	signal w_ready,w_valid,r_valid : std_logic;$/;"	s	architecture:agu_tb.behav
+ram	srcs/ACCU.vhd	/^	signal ram : ram_type;$/;"	s	architecture:ACCU.behav
+ram	srcs/not use/data_fifo.vhd	/^  signal ram : ram_type;$/;"	s	architecture:data_fifo.rtl
+ram_mm	srcs/ACCU.vhd	/^	ram_mm:$/;"	Q	architecture:ACCU.behav
+ram_type	srcs/ACCU.vhd	/^	type ram_type is array (kernel_depth-1 downto 0, output_size*output_size-1 downto 0) of signed(/;"	t	architecture:ACCU.behav
+ram_type	srcs/SPM.vhd	/^	type ram_type is array (MEM_DEPTH-1 downto 0) of std_logic_vector(di'range); $/;"	t	architecture:SPM.Behavioral
+ram_type	srcs/not use/data_fifo.vhd	/^  type ram_type is array (0 to RAM_DEPTH - 1) of$/;"	t	architecture:data_fifo.rtl
+rd_data	srcs/not use/data_fifo.vhd	/^    rd_data : out std_logic_vector(RAM_WIDTH - 1 downto 0);$/;"	q	entity:data_fifo
+rd_en	srcs/not use/data_fifo.vhd	/^    rd_en : in std_logic;$/;"	q	entity:data_fifo
+rd_valid	srcs/not use/data_fifo.vhd	/^    rd_valid : out std_logic;$/;"	q	entity:data_fifo
+read_a	srcs/SPM.vhd	/^	signal read_a : std_logic_vector(ADDR_WIDTH-1 downto 0);  $/;"	s	architecture:SPM.Behavioral
+read_pointer	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^	signal read_pointer : integer range 0 to depth-1;                               $/;"	s	architecture:MyAccelerator_v2_0_M01_AXIS.implementation
+reg_data_out	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	signal reg_data_out	:std_logic_vector(data_width-1 downto 0);$/;"	s	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+relocate	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/obj/xsim_1.c	/^void relocate(char *dp)$/;"	f	typeref:typename:void
+relocate	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/obj/xsim_1.c	/^void relocate(char *dp)$/;"	f	typeref:typename:void
+relu	srcs/not use/relu.vhd	/^entity relu is$/;"	e
+rotate_left	srcs/not use/dlau_pkg.vhd	/^	procedure rotate_left(variable sig : inout std_logic_vector;$/;"	p	package:general_pkg
+row	srcs/ACCU.vhd	/^	signal row,col, input_count : integer range 0 to 255;$/;"	s	architecture:ACCU.behav
+row	srcs/w_sticker.vhd	/^	signal row, col : integer range 0 to 255; $/;"	s	architecture:w_sticker.behav
+row_c	srcs/old/AGU.vhd	/^		row_c, col_c : out std_logic_vector(rowcol_width-1 downto 0)$/;"	q	entity:AGU
+row_c	srcs/old/acc_wrapper.vhd	/^			row_c, col_c : in std_logic_vector(rowcol_width-1 downto 0);$/;"	q	component:acc_wrapper.behav.main_fsm
+row_c	srcs/old/acc_wrapper.vhd	/^			row_c, col_c : out std_logic_vector(rowcol_width-1 downto 0)$/;"	q	component:acc_wrapper.behav.AGU
+row_c	srcs/old/acc_wrapper.vhd	/^	signal row_c, col_c : std_logic_vector(rowcol_width-1 downto 0);$/;"	s	architecture:acc_wrapper.behav
+row_count	srcs/old/AGU.vhd	/^	signal prep_count, col_count, row_count : integer range 0 to 65535;$/;"	s	architecture:AGU.behav
+row_temp	srcs/not use/fsm_agu.vhd	/^		row_temp : in integer range 0 to image_height;$/;"	q	entity:fsm_agu
+rowcol_width	srcs/AGU.vhd	/^		rowcol_width : natural$/;"	g	entity:AGU
+rowcol_width	srcs/acc_wrapper.vhd	/^			rowcol_width : natural$/;"	g	component:acc_wrapper.behav.AGU
+rowcol_width	srcs/acc_wrapper.vhd	/^			rowcol_width : natural$/;"	g	component:acc_wrapper.behav.main_fsm
+rowcol_width	srcs/acc_wrapper.vhd	/^		rowcol_width : natural := 16$/;"	g	entity:acc_wrapper
+rowcol_width	srcs/old/AGU.vhd	/^		rowcol_width : natural$/;"	g	entity:AGU
+rowcol_width	srcs/old/acc_wrapper.vhd	/^			rowcol_width : natural$/;"	g	component:acc_wrapper.behav.AGU
+rowcol_width	srcs/old/acc_wrapper.vhd	/^			rowcol_width : natural$/;"	g	component:acc_wrapper.behav.main_fsm
+rowcol_width	srcs/old/acc_wrapper.vhd	/^		rowcol_width : natural := 16$/;"	g	entity:acc_wrapper
+rowcol_width	tb/acc_wrapper_tb.vhd	/^			rowcol_width : natural := 16$/;"	g	component:acc_wrapper_tb.behav.acc_wrapper
+rst	srcs/not use/data_fifo.vhd	/^    rst : in std_logic;$/;"	q	entity:data_fifo
+rtl	srcs/not use/data_fifo.vhd	/^architecture rtl of data_fifo is$/;"	a	entity:data_fifo
+rtl	tb/w_sticker_tb.vhd	/^architecture rtl of w_sticker_tb is$/;"	a	entity:w_sticker_tb
+s00_axi_aclk	srcs/MyAccelerator_v2_0.vhd	/^		s00_axi_aclk	: in std_logic;$/;"	q	entity:MyAccelerator_v2_0
+s00_axi_aclk	srcs/acc_wrapper.vhd	/^		s00_axi_aclk	: in std_logic;$/;"	q	entity:acc_wrapper
+s00_axi_araddr	srcs/MyAccelerator_v2_0.vhd	/^		s00_axi_araddr	: in std_logic_vector(C_S00_AXI_ADDR_WIDTH-1 downto 0);$/;"	q	entity:MyAccelerator_v2_0
+s00_axi_araddr	srcs/acc_wrapper.vhd	/^		s00_axi_araddr	: in std_logic_vector(addr_width-1 downto 0);$/;"	q	entity:acc_wrapper
+s00_axi_aresetn	srcs/MyAccelerator_v2_0.vhd	/^		s00_axi_aresetn	: in std_logic;$/;"	q	entity:MyAccelerator_v2_0
+s00_axi_aresetn	srcs/acc_wrapper.vhd	/^		s00_axi_aresetn	: in std_logic;$/;"	q	entity:acc_wrapper
+s00_axi_arprot	srcs/MyAccelerator_v2_0.vhd	/^		s00_axi_arprot	: in std_logic_vector(2 downto 0);$/;"	q	entity:MyAccelerator_v2_0
+s00_axi_arprot	srcs/acc_wrapper.vhd	/^		s00_axi_arprot	: in std_logic_vector(2 downto 0);$/;"	q	entity:acc_wrapper
+s00_axi_arready	srcs/MyAccelerator_v2_0.vhd	/^		s00_axi_arready	: out std_logic;$/;"	q	entity:MyAccelerator_v2_0
+s00_axi_arready	srcs/acc_wrapper.vhd	/^		s00_axi_arready	: out std_logic;$/;"	q	entity:acc_wrapper
+s00_axi_arvalid	srcs/MyAccelerator_v2_0.vhd	/^		s00_axi_arvalid	: in std_logic;$/;"	q	entity:MyAccelerator_v2_0
+s00_axi_arvalid	srcs/acc_wrapper.vhd	/^		s00_axi_arvalid	: in std_logic;$/;"	q	entity:acc_wrapper
+s00_axi_awaddr	srcs/MyAccelerator_v2_0.vhd	/^		s00_axi_awaddr	: in std_logic_vector(C_S00_AXI_ADDR_WIDTH-1 downto 0);$/;"	q	entity:MyAccelerator_v2_0
+s00_axi_awaddr	srcs/acc_wrapper.vhd	/^		s00_axi_awaddr	: in std_logic_vector(addr_width-1 downto 0);$/;"	q	entity:acc_wrapper
+s00_axi_awprot	srcs/MyAccelerator_v2_0.vhd	/^		s00_axi_awprot	: in std_logic_vector(2 downto 0);$/;"	q	entity:MyAccelerator_v2_0
+s00_axi_awprot	srcs/acc_wrapper.vhd	/^		s00_axi_awprot	: in std_logic_vector(2 downto 0);$/;"	q	entity:acc_wrapper
+s00_axi_awready	srcs/MyAccelerator_v2_0.vhd	/^		s00_axi_awready	: out std_logic;$/;"	q	entity:MyAccelerator_v2_0
+s00_axi_awready	srcs/acc_wrapper.vhd	/^		s00_axi_awready	: out std_logic;$/;"	q	entity:acc_wrapper
+s00_axi_awvalid	srcs/MyAccelerator_v2_0.vhd	/^		s00_axi_awvalid	: in std_logic;$/;"	q	entity:MyAccelerator_v2_0
+s00_axi_awvalid	srcs/acc_wrapper.vhd	/^		s00_axi_awvalid	: in std_logic;$/;"	q	entity:acc_wrapper
+s00_axi_bready	srcs/MyAccelerator_v2_0.vhd	/^		s00_axi_bready	: in std_logic;$/;"	q	entity:MyAccelerator_v2_0
+s00_axi_bready	srcs/acc_wrapper.vhd	/^		s00_axi_bready	: in std_logic;$/;"	q	entity:acc_wrapper
+s00_axi_bresp	srcs/MyAccelerator_v2_0.vhd	/^		s00_axi_bresp	: out std_logic_vector(1 downto 0);$/;"	q	entity:MyAccelerator_v2_0
+s00_axi_bresp	srcs/acc_wrapper.vhd	/^		s00_axi_bresp	: out std_logic_vector(1 downto 0);$/;"	q	entity:acc_wrapper
+s00_axi_bvalid	srcs/MyAccelerator_v2_0.vhd	/^		s00_axi_bvalid	: out std_logic;$/;"	q	entity:MyAccelerator_v2_0
+s00_axi_bvalid	srcs/acc_wrapper.vhd	/^		s00_axi_bvalid	: out std_logic;$/;"	q	entity:acc_wrapper
+s00_axi_rdata	srcs/MyAccelerator_v2_0.vhd	/^		s00_axi_rdata	: out std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);$/;"	q	entity:MyAccelerator_v2_0
+s00_axi_rdata	srcs/acc_wrapper.vhd	/^		s00_axi_rdata	: out std_logic_vector(data_width-1 downto 0);$/;"	q	entity:acc_wrapper
+s00_axi_rready	srcs/MyAccelerator_v2_0.vhd	/^		s00_axi_rready	: in std_logic;$/;"	q	entity:MyAccelerator_v2_0
+s00_axi_rready	srcs/acc_wrapper.vhd	/^		s00_axi_rready	: in std_logic;$/;"	q	entity:acc_wrapper
+s00_axi_rresp	srcs/MyAccelerator_v2_0.vhd	/^		s00_axi_rresp	: out std_logic_vector(1 downto 0);$/;"	q	entity:MyAccelerator_v2_0
+s00_axi_rresp	srcs/acc_wrapper.vhd	/^		s00_axi_rresp	: out std_logic_vector(1 downto 0);$/;"	q	entity:acc_wrapper
+s00_axi_rvalid	srcs/MyAccelerator_v2_0.vhd	/^		s00_axi_rvalid	: out std_logic;$/;"	q	entity:MyAccelerator_v2_0
+s00_axi_rvalid	srcs/acc_wrapper.vhd	/^		s00_axi_rvalid	: out std_logic;$/;"	q	entity:acc_wrapper
+s00_axi_wdata	srcs/MyAccelerator_v2_0.vhd	/^		s00_axi_wdata	: in std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);$/;"	q	entity:MyAccelerator_v2_0
+s00_axi_wdata	srcs/acc_wrapper.vhd	/^		s00_axi_wdata	: in std_logic_vector(data_width-1 downto 0);$/;"	q	entity:acc_wrapper
+s00_axi_wready	srcs/MyAccelerator_v2_0.vhd	/^		s00_axi_wready	: out std_logic;$/;"	q	entity:MyAccelerator_v2_0
+s00_axi_wready	srcs/acc_wrapper.vhd	/^		s00_axi_wready	: out std_logic;$/;"	q	entity:acc_wrapper
+s00_axi_wstrb	srcs/MyAccelerator_v2_0.vhd	/^		s00_axi_wstrb	: in std_logic_vector((C_S00_AXI_DATA_WIDTH\/8)-1 downto 0);$/;"	q	entity:MyAccelerator_v2_0
+s00_axi_wstrb	srcs/acc_wrapper.vhd	/^		s00_axi_wstrb	: in std_logic_vector((data_width\/8)-1 downto 0);$/;"	q	entity:acc_wrapper
+s00_axi_wvalid	srcs/MyAccelerator_v2_0.vhd	/^		s00_axi_wvalid	: in std_logic;$/;"	q	entity:MyAccelerator_v2_0
+s00_axi_wvalid	srcs/acc_wrapper.vhd	/^		s00_axi_wvalid	: in std_logic;$/;"	q	entity:acc_wrapper
+s00_axis_aclk	srcs/MyAccelerator_v2_0.vhd	/^		s00_axis_aclk	: in std_logic;$/;"	q	entity:MyAccelerator_v2_0
+s00_axis_aclk	srcs/acc_wrapper.vhd	/^		s00_axis_aclk	: in std_logic;$/;"	q	entity:acc_wrapper
+s00_axis_aresetn	srcs/MyAccelerator_v2_0.vhd	/^		s00_axis_aresetn	: in std_logic;$/;"	q	entity:MyAccelerator_v2_0
+s00_axis_aresetn	srcs/acc_wrapper.vhd	/^		s00_axis_aresetn	: in std_logic;$/;"	q	entity:acc_wrapper
+s00_axis_tdata	srcs/MyAccelerator_v2_0.vhd	/^		s00_axis_tdata	: in std_logic_vector(C_S00_AXIS_TDATA_WIDTH-1 downto 0);$/;"	q	entity:MyAccelerator_v2_0
+s00_axis_tdata	srcs/acc_wrapper.vhd	/^		s00_axis_tdata	: in std_logic_vector(data_width-1 downto 0);$/;"	q	entity:acc_wrapper
+s00_axis_tlast	srcs/MyAccelerator_v2_0.vhd	/^		s00_axis_tlast	: in std_logic;$/;"	q	entity:MyAccelerator_v2_0
+s00_axis_tlast	srcs/acc_wrapper.vhd	/^		s00_axis_tlast	: in std_logic;$/;"	q	entity:acc_wrapper
+s00_axis_tready	srcs/MyAccelerator_v2_0.vhd	/^		s00_axis_tready	: out std_logic;$/;"	q	entity:MyAccelerator_v2_0
+s00_axis_tready	srcs/acc_wrapper.vhd	/^		s00_axis_tready	: out std_logic;$/;"	q	entity:acc_wrapper
+s00_axis_tstrb	srcs/MyAccelerator_v2_0.vhd	/^		s00_axis_tstrb	: in std_logic_vector((C_S00_AXIS_TDATA_WIDTH\/8)-1 downto 0);$/;"	q	entity:MyAccelerator_v2_0
+s00_axis_tstrb	srcs/acc_wrapper.vhd	/^		s00_axis_tstrb	: in std_logic_vector((data_width\/8)-1 downto 0);$/;"	q	entity:acc_wrapper
+s00_axis_tvalid	srcs/MyAccelerator_v2_0.vhd	/^		s00_axis_tvalid	: in std_logic;$/;"	q	entity:MyAccelerator_v2_0
+s00_axis_tvalid	srcs/acc_wrapper.vhd	/^		s00_axis_tvalid	: in std_logic;$/;"	q	entity:acc_wrapper
+s_c	srcs/wgu.vhd	/^	signal s_c : integer range 0 to 1; $/;"	s	architecture:wgu.behav
+sensitize	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/obj/xsim_1.c	/^void sensitize(char *dp)$/;"	f	typeref:typename:void
+sensitize	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/obj/xsim_1.c	/^void sensitize(char *dp)$/;"	f	typeref:typename:void
+sig_one	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^	  variable  sig_one : integer := 1;                                             $/;"	v	process:MyAccelerator_v2_0_M01_AXIS.implementation.anonProcess8ddd9d81040f
+simple_counter	srcs/not use/dlau_pkg.vhd	/^	procedure simple_counter(variable counter_inst : inout integer;$/;"	p	package:general_pkg
+simulate	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/acc_wrapper_tb_behav/obj/xsim_1.c	/^void simulate(char *dp)$/;"	f	typeref:typename:void
+simulate	Acc_proj.sim/sim_1/behav/xsim/xsim.dir/main_fms_tb_behav/obj/xsim_1.c	/^void simulate(char *dp)$/;"	f	typeref:typename:void
+slv_reg0	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	signal slv_reg0	:std_logic_vector(data_width-1 downto 0);$/;"	s	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+slv_reg1	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	signal slv_reg1	:std_logic_vector(data_width-1 downto 0);$/;"	s	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+slv_reg2	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	signal slv_reg2	:std_logic_vector(data_width-1 downto 0);$/;"	s	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+slv_reg3	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	signal slv_reg3	:std_logic_vector(data_width-1 downto 0);$/;"	s	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+slv_reg4	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	signal slv_reg4	:std_logic_vector(data_width-1 downto 0);$/;"	s	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+slv_reg_rden	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	signal slv_reg_rden	: std_logic;$/;"	s	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+slv_reg_wren	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^	signal slv_reg_wren	: std_logic;$/;"	s	architecture:MyAccelerator_v2_0_S00_AXI.arch_imp
+spirit	component.xml	/^<spirit:component xmlns:xilinx="http:\/\/www.xilinx.com" xmlns:spirit="http:\/\/www.spiritconsor/;"	n	uri:http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009
+spm0_mux	srcs/wgu.vhd	/^	spm0_mux:$/;"	Q	architecture:wgu.behav
+spm1_mux	srcs/wgu.vhd	/^	spm1_mux:$/;"	Q	architecture:wgu.behav
+state	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^	type state is ( IDLE,        -- This is the initial\/idle state                    $/;"	t	architecture:MyAccelerator_v2_0_M01_AXIS.implementation
+state_sync	srcs/not use/DPU.vhd	/^  state_sync : process(S_AXIS_ACLK,S_AXIS_ARESETN)$/;"	Q	architecture:DPU.Behavioral
+state_type	srcs/main_fsm.vhd	/^	type state_type is (IDLE, W_PREP, X_PREP, L_X, L_W, COMPUTE, CLEAR_REG);$/;"	t	architecture:main_fsm.behav
+state_type	srcs/not use/DPU.vhd	/^    type state_type is (S_STORE,S_READY,S_IDLE);$/;"	t	architecture:DPU.Behavioral
+state_type	srcs/not use/fsm_agu.vhd	/^	type state_type is (IDLE,W,RW,R);$/;"	t	architecture:fsm_agu.behav
+state_type	srcs/old/AGU.vhd	/^	type state_type is (IDLE,PREP,COMP);$/;"	t	architecture:AGU.behav
+sticker_out	srcs/wgu.vhd	/^	signal sticker_out : std_logic_vector(wgu_out0'range);$/;"	s	architecture:wgu.behav
+sticker_valid	srcs/wgu.vhd	/^	signal sticker_valid : std_logic;$/;"	s	architecture:wgu.behav
+stim_proc	srcs/not use/top.vhd	/^	stim_proc : process$/;"	Q	architecture:agu_tb.behav
+stim_proc	tb/agu_tb.vhd	/^	stim_proc : process$/;"	Q	architecture:agu_tb.behav
+stim_proc	tb/main_fsm_tb.vhd	/^	stim_proc: $/;"	Q	architecture:main_fms_tb.behav
+stim_proc	tb/w_sticker_tb.vhd	/^	stim_proc : $/;"	Q	architecture:w_sticker_tb.rtl
+stim_proc	tb/wgu_tb.vhd	/^	stim_proc: $/;"	Q	architecture:wgu_tb.behav
+store_en	srcs/not use/DPU.vhd	/^    signal store_en : std_logic;$/;"	s	architecture:DPU.Behavioral
+str	srcs/dff.vhd	/^architecture str of dff is$/;"	a	entity:dff
+str	srcs/old/dff.vhd	/^architecture str of dff is$/;"	a	entity:dff
+stream_data_out	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^	signal stream_data_out	: std_logic_vector(C_M_AXIS_TDATA_WIDTH-1 downto 0);$/;"	s	architecture:MyAccelerator_v2_0_M01_AXIS.implementation
+stride	srcs/ACCU.vhd	/^		stride : natural;$/;"	g	entity:ACCU
+stride	srcs/AGU.vhd	/^		stride : natural;$/;"	g	entity:AGU
+stride	srcs/MyAccelerator_v2_0_S00_AXI.vhd	/^		stride : out unsigned(STRIDE_BIT_WIDTH-1 downto 0);$/;"	q	entity:MyAccelerator_v2_0_S00_AXI
+stride	srcs/acc_wrapper.vhd	/^			stride : natural;$/;"	g	component:acc_wrapper.behav.AGU
+stride	srcs/acc_wrapper.vhd	/^		stride : out unsigned(data_width-1 downto 0);$/;"	q	component:acc_wrapper.behav.MyAccelerator_v2_0_S00_AXI
+stride	srcs/main_fsm.vhd	/^		stride : in unsigned(STRIDE_BIT_WIDTH-1 downto 0);$/;"	q	entity:main_fsm
+stride	srcs/not use/fsm_agu.vhd	/^		stride : integer;$/;"	g	entity:fsm_agu
+stride	srcs/not use/top.vhd	/^			stride : integer;$/;"	g	component:agu_tb.behav.AGU
+stride	srcs/old/AGU.vhd	/^		stride : natural;$/;"	g	entity:AGU
+stride	srcs/old/acc_wrapper.vhd	/^			stride : natural;$/;"	g	component:acc_wrapper.behav.ACCU
+stride	srcs/old/acc_wrapper.vhd	/^			stride : natural;$/;"	g	component:acc_wrapper.behav.AGU
+stride	srcs/old/acc_wrapper.vhd	/^			stride : natural;$/;"	g	component:acc_wrapper.behav.main_fsm
+stride	srcs/old/acc_wrapper.vhd	/^		stride : natural := 1;$/;"	g	entity:acc_wrapper
+stride	tb/acc_wrapper_tb.vhd	/^			stride : natural;$/;"	g	component:acc_wrapper_tb.behav.acc_wrapper
+stride	tb/acc_wrapper_tb.vhd	/^	constant stride : natural := 1;$/;"	c	architecture:acc_wrapper_tb.behav
+stride	tb/agu_tb.vhd	/^			stride : natural;$/;"	g	component:agu_tb.behav.AGU
+stride	tb/main_fsm_tb.vhd	/^			stride : in unsigned(STRIDE_BIT_WIDTH-1 downto 0);$/;"	q	component:main_fms_tb.behav.main_fsm
+stride	tb/main_fsm_tb.vhd	/^	signal stride : unsigned(STRIDE_BIT_WIDTH-1 downto 0);$/;"	s	architecture:main_fms_tb.behav
+stride_s	srcs/acc_wrapper.vhd	/^    signal stride_s 			: std_logic_vector(data_width-1 downto 0);$/;"	s	architecture:acc_wrapper.behav
+tail	srcs/not use/data_fifo.vhd	/^  signal tail : index_type;$/;"	s	architecture:data_fifo.rtl
+temp	srcs/ALU.vhd	/^		variable temp : signed((2*input_width + compute_byte)-1 downto 0);$/;"	v	process:ALU.Behavioral.compute_proc
+temp	srcs/not use/jk_ff.vhd	/^   signal temp: std_logic;$/;"	s	architecture:jk_ff.behav
+temp	srcs/w_sticker.vhd	/^		variable temp : std_logic_vector(d_out'range);$/;"	v	function:w_sticker.behav.flatten
+temp	tb/acc_wrapper_tb.vhd	/^		variable temp : unsigned(XAXIS_TDATA'range);$/;"	v	process:acc_wrapper_tb.behav.DATA_GEN
+temp_array	srcs/AGU.vhd	/^	signal temp_array : data_array;$/;"	s	architecture:AGU.behav
+temp_array	srcs/old/AGU.vhd	/^	signal temp_array : data_array;$/;"	s	architecture:AGU.behav
+temp_array	srcs/w_sticker.vhd	/^	type temp_array is array(output_size-1 downto 0, output_size-1 downto 0) of std_logic_vector(in/;"	t	architecture:w_sticker.behav
+tlast	srcs/acc_wrapper.vhd	/^			tlast : in std_logic;$/;"	q	component:acc_wrapper.behav.main_fsm
+tlast	srcs/main_fsm.vhd	/^		tlast : in std_logic;$/;"	q	entity:main_fsm
+tlast	srcs/old/acc_wrapper.vhd	/^			tlast : in std_logic;$/;"	q	component:acc_wrapper.behav.main_fsm
+tlast	tb/main_fsm_tb.vhd	/^			tlast : in std_logic;$/;"	q	component:main_fms_tb.behav.main_fsm
+top	srcs/not use/top.vhd	/^entity top is$/;"	e
+top	tb/top.vhd	/^entity top is$/;"	e
+tready	srcs/acc_wrapper.vhd	/^			tready : out std_logic;$/;"	q	component:acc_wrapper.behav.main_fsm
+tready	srcs/main_fsm.vhd	/^		tready : out std_logic;$/;"	q	entity:main_fsm
+tready	srcs/old/acc_wrapper.vhd	/^			tready : out std_logic;$/;"	q	component:acc_wrapper.behav.main_fsm
+tready	tb/main_fsm_tb.vhd	/^			tready : out std_logic;$/;"	q	component:main_fms_tb.behav.main_fsm
+tvalid	srcs/acc_wrapper.vhd	/^			tvalid : in std_logic;$/;"	q	component:acc_wrapper.behav.main_fsm
+tvalid	srcs/main_fsm.vhd	/^		tvalid : in std_logic;$/;"	q	entity:main_fsm
+tvalid	srcs/old/acc_wrapper.vhd	/^			tvalid : in std_logic;$/;"	q	component:acc_wrapper.behav.main_fsm
+tvalid	tb/main_fsm_tb.vhd	/^			tvalid : in std_logic;$/;"	q	component:main_fms_tb.behav.main_fsm
+tx_done	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^	signal tx_done	: std_logic;$/;"	s	architecture:MyAccelerator_v2_0_M01_AXIS.implementation
+tx_en	srcs/MyAccelerator_v2_0_M01_AXIS.vhd	/^	signal tx_en	: std_logic;$/;"	s	architecture:MyAccelerator_v2_0_M01_AXIS.implementation
+update_MODELPARAM_VALUE.addr_width	xgui/MyConvAcc_v1_0.tcl	/^proc update_MODELPARAM_VALUE.addr_width { MODELPARAM_VALUE.addr_width PARAM_VALUE.addr_width } {$/;"	p
+update_MODELPARAM_VALUE.addr_width	xgui/acc_wrapper_v1_0.tcl	/^proc update_MODELPARAM_VALUE.addr_width { MODELPARAM_VALUE.addr_width PARAM_VALUE.addr_width } {$/;"	p
+update_MODELPARAM_VALUE.compute_byte	xgui/MyConvAcc_v1_0.tcl	/^proc update_MODELPARAM_VALUE.compute_byte { MODELPARAM_VALUE.compute_byte PARAM_VALUE.compute_by/;"	p
+update_MODELPARAM_VALUE.compute_byte	xgui/acc_wrapper_v1_0.tcl	/^proc update_MODELPARAM_VALUE.compute_byte { MODELPARAM_VALUE.compute_byte PARAM_VALUE.compute_by/;"	p
+update_MODELPARAM_VALUE.data_width	xgui/MyConvAcc_v1_0.tcl	/^proc update_MODELPARAM_VALUE.data_width { MODELPARAM_VALUE.data_width PARAM_VALUE.data_width } {$/;"	p
+update_MODELPARAM_VALUE.data_width	xgui/acc_wrapper_v1_0.tcl	/^proc update_MODELPARAM_VALUE.data_width { MODELPARAM_VALUE.data_width PARAM_VALUE.data_width } {$/;"	p
+update_MODELPARAM_VALUE.input_depth	xgui/acc_wrapper_v1_0.tcl	/^proc update_MODELPARAM_VALUE.input_depth { MODELPARAM_VALUE.input_depth PARAM_VALUE.input_depth /;"	p
+update_MODELPARAM_VALUE.input_size	xgui/MyConvAcc_v1_0.tcl	/^proc update_MODELPARAM_VALUE.input_size { MODELPARAM_VALUE.input_size PARAM_VALUE.input_size } {$/;"	p
+update_MODELPARAM_VALUE.input_size	xgui/acc_wrapper_v1_0.tcl	/^proc update_MODELPARAM_VALUE.input_size { MODELPARAM_VALUE.input_size PARAM_VALUE.input_size } {$/;"	p
+update_MODELPARAM_VALUE.kernel_depth	xgui/MyConvAcc_v1_0.tcl	/^proc update_MODELPARAM_VALUE.kernel_depth { MODELPARAM_VALUE.kernel_depth PARAM_VALUE.kernel_dep/;"	p
+update_MODELPARAM_VALUE.kernel_depth	xgui/acc_wrapper_v1_0.tcl	/^proc update_MODELPARAM_VALUE.kernel_depth { MODELPARAM_VALUE.kernel_depth PARAM_VALUE.kernel_dep/;"	p
+update_MODELPARAM_VALUE.kernel_size	xgui/MyConvAcc_v1_0.tcl	/^proc update_MODELPARAM_VALUE.kernel_size { MODELPARAM_VALUE.kernel_size PARAM_VALUE.kernel_size /;"	p
+update_MODELPARAM_VALUE.kernel_size	xgui/acc_wrapper_v1_0.tcl	/^proc update_MODELPARAM_VALUE.kernel_size { MODELPARAM_VALUE.kernel_size PARAM_VALUE.kernel_size /;"	p
+update_MODELPARAM_VALUE.rowcol_width	xgui/acc_wrapper_v1_0.tcl	/^proc update_MODELPARAM_VALUE.rowcol_width { MODELPARAM_VALUE.rowcol_width PARAM_VALUE.rowcol_wid/;"	p
+update_MODELPARAM_VALUE.stride	xgui/MyConvAcc_v1_0.tcl	/^proc update_MODELPARAM_VALUE.stride { MODELPARAM_VALUE.stride PARAM_VALUE.stride } {$/;"	p
+update_MODELPARAM_VALUE.stride	xgui/acc_wrapper_v1_0.tcl	/^proc update_MODELPARAM_VALUE.stride { MODELPARAM_VALUE.stride PARAM_VALUE.stride } {$/;"	p
+update_PARAM_VALUE.addr_width	xgui/MyConvAcc_v1_0.tcl	/^proc update_PARAM_VALUE.addr_width { PARAM_VALUE.addr_width } {$/;"	p
+update_PARAM_VALUE.addr_width	xgui/acc_wrapper_v1_0.tcl	/^proc update_PARAM_VALUE.addr_width { PARAM_VALUE.addr_width } {$/;"	p
+update_PARAM_VALUE.compute_byte	xgui/MyConvAcc_v1_0.tcl	/^proc update_PARAM_VALUE.compute_byte { PARAM_VALUE.compute_byte } {$/;"	p
+update_PARAM_VALUE.compute_byte	xgui/acc_wrapper_v1_0.tcl	/^proc update_PARAM_VALUE.compute_byte { PARAM_VALUE.compute_byte } {$/;"	p
+update_PARAM_VALUE.data_width	xgui/MyConvAcc_v1_0.tcl	/^proc update_PARAM_VALUE.data_width { PARAM_VALUE.data_width } {$/;"	p
+update_PARAM_VALUE.data_width	xgui/acc_wrapper_v1_0.tcl	/^proc update_PARAM_VALUE.data_width { PARAM_VALUE.data_width } {$/;"	p
+update_PARAM_VALUE.input_depth	xgui/acc_wrapper_v1_0.tcl	/^proc update_PARAM_VALUE.input_depth { PARAM_VALUE.input_depth } {$/;"	p
+update_PARAM_VALUE.input_size	xgui/MyConvAcc_v1_0.tcl	/^proc update_PARAM_VALUE.input_size { PARAM_VALUE.input_size } {$/;"	p
+update_PARAM_VALUE.input_size	xgui/acc_wrapper_v1_0.tcl	/^proc update_PARAM_VALUE.input_size { PARAM_VALUE.input_size } {$/;"	p
+update_PARAM_VALUE.kernel_depth	xgui/MyConvAcc_v1_0.tcl	/^proc update_PARAM_VALUE.kernel_depth { PARAM_VALUE.kernel_depth } {$/;"	p
+update_PARAM_VALUE.kernel_depth	xgui/acc_wrapper_v1_0.tcl	/^proc update_PARAM_VALUE.kernel_depth { PARAM_VALUE.kernel_depth } {$/;"	p
+update_PARAM_VALUE.kernel_size	xgui/MyConvAcc_v1_0.tcl	/^proc update_PARAM_VALUE.kernel_size { PARAM_VALUE.kernel_size } {$/;"	p
+update_PARAM_VALUE.kernel_size	xgui/acc_wrapper_v1_0.tcl	/^proc update_PARAM_VALUE.kernel_size { PARAM_VALUE.kernel_size } {$/;"	p
+update_PARAM_VALUE.rowcol_width	xgui/acc_wrapper_v1_0.tcl	/^proc update_PARAM_VALUE.rowcol_width { PARAM_VALUE.rowcol_width } {$/;"	p
+update_PARAM_VALUE.stride	xgui/MyConvAcc_v1_0.tcl	/^proc update_PARAM_VALUE.stride { PARAM_VALUE.stride } {$/;"	p
+update_PARAM_VALUE.stride	xgui/acc_wrapper_v1_0.tcl	/^proc update_PARAM_VALUE.stride { PARAM_VALUE.stride } {$/;"	p
+validate_PARAM_VALUE.addr_width	xgui/MyConvAcc_v1_0.tcl	/^proc validate_PARAM_VALUE.addr_width { PARAM_VALUE.addr_width } {$/;"	p
+validate_PARAM_VALUE.addr_width	xgui/acc_wrapper_v1_0.tcl	/^proc validate_PARAM_VALUE.addr_width { PARAM_VALUE.addr_width } {$/;"	p
+validate_PARAM_VALUE.compute_byte	xgui/MyConvAcc_v1_0.tcl	/^proc validate_PARAM_VALUE.compute_byte { PARAM_VALUE.compute_byte } {$/;"	p
+validate_PARAM_VALUE.compute_byte	xgui/acc_wrapper_v1_0.tcl	/^proc validate_PARAM_VALUE.compute_byte { PARAM_VALUE.compute_byte } {$/;"	p
+validate_PARAM_VALUE.data_width	xgui/MyConvAcc_v1_0.tcl	/^proc validate_PARAM_VALUE.data_width { PARAM_VALUE.data_width } {$/;"	p
+validate_PARAM_VALUE.data_width	xgui/acc_wrapper_v1_0.tcl	/^proc validate_PARAM_VALUE.data_width { PARAM_VALUE.data_width } {$/;"	p
+validate_PARAM_VALUE.input_depth	xgui/acc_wrapper_v1_0.tcl	/^proc validate_PARAM_VALUE.input_depth { PARAM_VALUE.input_depth } {$/;"	p
+validate_PARAM_VALUE.input_size	xgui/MyConvAcc_v1_0.tcl	/^proc validate_PARAM_VALUE.input_size { PARAM_VALUE.input_size } {$/;"	p
+validate_PARAM_VALUE.input_size	xgui/acc_wrapper_v1_0.tcl	/^proc validate_PARAM_VALUE.input_size { PARAM_VALUE.input_size } {$/;"	p
+validate_PARAM_VALUE.kernel_depth	xgui/MyConvAcc_v1_0.tcl	/^proc validate_PARAM_VALUE.kernel_depth { PARAM_VALUE.kernel_depth } {$/;"	p
+validate_PARAM_VALUE.kernel_depth	xgui/acc_wrapper_v1_0.tcl	/^proc validate_PARAM_VALUE.kernel_depth { PARAM_VALUE.kernel_depth } {$/;"	p
+validate_PARAM_VALUE.kernel_size	xgui/MyConvAcc_v1_0.tcl	/^proc validate_PARAM_VALUE.kernel_size { PARAM_VALUE.kernel_size } {$/;"	p
+validate_PARAM_VALUE.kernel_size	xgui/acc_wrapper_v1_0.tcl	/^proc validate_PARAM_VALUE.kernel_size { PARAM_VALUE.kernel_size } {$/;"	p
+validate_PARAM_VALUE.rowcol_width	xgui/acc_wrapper_v1_0.tcl	/^proc validate_PARAM_VALUE.rowcol_width { PARAM_VALUE.rowcol_width } {$/;"	p
+validate_PARAM_VALUE.stride	xgui/MyConvAcc_v1_0.tcl	/^proc validate_PARAM_VALUE.stride { PARAM_VALUE.stride } {$/;"	p
+validate_PARAM_VALUE.stride	xgui/acc_wrapper_v1_0.tcl	/^proc validate_PARAM_VALUE.stride { PARAM_VALUE.stride } {$/;"	p
+w_a	srcs/ALU.vhd	/^	signal w_a : w_array;$/;"	s	architecture:ALU.Behavioral
+w_addr_c	srcs/acc_wrapper.vhd	/^			w_addr_c : in std_logic_vector(addr_width-1 downto 0);$/;"	q	component:acc_wrapper.behav.main_fsm
+w_addr_c	srcs/acc_wrapper.vhd	/^			w_addr_c : out std_logic_vector(addr_width-1 downto 0)$/;"	q	component:acc_wrapper.behav.wgu
+w_addr_c	srcs/acc_wrapper.vhd	/^	signal w_addr_c : std_logic_vector(addr_width-1 downto 0);$/;"	s	architecture:acc_wrapper.behav
+w_addr_c	srcs/main_fsm.vhd	/^		w_addr_c : in std_logic_vector(addr_width-1 downto 0);$/;"	q	entity:main_fsm
+w_addr_c	srcs/old/acc_wrapper.vhd	/^			w_addr_c : in std_logic_vector(addr_width-1 downto 0);$/;"	q	component:acc_wrapper.behav.main_fsm
+w_addr_c	srcs/old/acc_wrapper.vhd	/^			w_addr_c : out std_logic_vector(addr_width-1 downto 0)$/;"	q	component:acc_wrapper.behav.wgu
+w_addr_c	srcs/old/acc_wrapper.vhd	/^	signal w_addr_c : std_logic_vector(addr_width-1 downto 0);$/;"	s	architecture:acc_wrapper.behav
+w_addr_c	srcs/wgu.vhd	/^		w_addr_c : out std_logic_vector(addr_width-1 downto 0)$/;"	q	entity:wgu
+w_addr_c	tb/main_fsm_tb.vhd	/^			w_addr_c : in std_logic_vector(addr_width-1 downto 0);$/;"	q	component:main_fms_tb.behav.main_fsm
+w_addr_c	tb/main_fsm_tb.vhd	/^	signal w_addr_c : std_logic_vector(addr_width-1 downto 0);$/;"	s	architecture:main_fms_tb.behav
+w_addr_c_en	srcs/main_fsm.vhd	/^	signal last_input, x_prep_done, x_prep_c_en ,w_addr_c_en, pixel_last, count_en, agu_en_s, compu/;"	s	architecture:main_fsm.behav
+w_addr_incr	srcs/acc_wrapper.vhd	/^			w_addr_incr : in std_logic;$/;"	q	component:acc_wrapper.behav.wgu
+w_addr_incr	srcs/acc_wrapper.vhd	/^			w_addr_incr : out std_logic;$/;"	q	component:acc_wrapper.behav.main_fsm
+w_addr_incr	srcs/acc_wrapper.vhd	/^	signal agu_ready, compute_done, main_en, input_mux , alu_en, w_addr_incr : std_logic;$/;"	s	architecture:acc_wrapper.behav
+w_addr_incr	srcs/main_fsm.vhd	/^		w_addr_incr : out std_logic;$/;"	q	entity:main_fsm
+w_addr_incr	srcs/old/acc_wrapper.vhd	/^			w_addr_incr : in std_logic;$/;"	q	component:acc_wrapper.behav.wgu
+w_addr_incr	srcs/old/acc_wrapper.vhd	/^			w_addr_incr : out std_logic;$/;"	q	component:acc_wrapper.behav.main_fsm
+w_addr_incr	srcs/old/acc_wrapper.vhd	/^	signal agu_ready, compute_done, main_en, input_mux , compute_en, w_addr_incr : std_logic;$/;"	s	architecture:acc_wrapper.behav
+w_addr_incr	srcs/wgu.vhd	/^		w_addr_incr : in std_logic;$/;"	q	entity:wgu
+w_addr_incr	tb/main_fsm_tb.vhd	/^			w_addr_incr : out std_logic;$/;"	q	component:main_fms_tb.behav.main_fsm
+w_addr_incr	tb/main_fsm_tb.vhd	/^	signal w_addr_incr : std_logic;$/;"	s	architecture:main_fms_tb.behav
+w_array	srcs/ALU.vhd	/^	type w_array is array (compute_byte-1 downto 0) of signed(input_width-1 downto 0);$/;"	t	architecture:ALU.Behavioral
+w_ava	srcs/not use/fsm_agu.vhd	/^	signal w_ready_s, w_en_s, w_ava : std_logic;$/;"	s	architecture:fsm_agu.behav
+w_col	srcs/not use/fsm_agu.vhd	/^		w_col : in integer range 0 to image_width;$/;"	q	entity:fsm_agu
+w_en	srcs/not use/fsm_agu.vhd	/^		w_en : out std_logic;			-- Write en $/;"	q	entity:fsm_agu
+w_en_s	srcs/not use/fsm_agu.vhd	/^	signal w_ready_s, w_en_s, w_ava : std_logic;$/;"	s	architecture:fsm_agu.behav
+w_in	srcs/ALU.vhd	/^		w_in : in std_logic_vector((compute_byte*input_width)-1 downto 0);				 -- 2.14 fixed point$/;"	q	entity:ALU
+w_in	srcs/acc_wrapper.vhd	/^			w_in : in std_logic_vector((compute_byte*input_width)-1 downto 0);				 $/;"	q	component:acc_wrapper.behav.ALU
+w_in	srcs/old/acc_wrapper.vhd	/^			w_in : in std_logic_vector((compute_byte*input_width)-1 downto 0);				 $/;"	q	component:acc_wrapper.behav.ALU
+w_in	tb/agu_tb.vhd	/^	signal w_in : std_logic_vector((compute_byte*weight_width)-1 downto 0);$/;"	s	architecture:agu_tb.behav
+w_ready	srcs/not use/fsm_agu.vhd	/^		w_ready : out std_logic			-- This signal will mapped to ready signal in Fifo$/;"	q	entity:fsm_agu
+w_ready	srcs/not use/top.vhd	/^			w_ready : out std_logic;$/;"	q	component:agu_tb.behav.AGU
+w_ready	srcs/not use/top.vhd	/^	signal w_ready,w_valid,r_valid : std_logic;$/;"	s	architecture:agu_tb.behav
+w_ready_s	srcs/not use/fsm_agu.vhd	/^	signal w_ready_s, w_en_s, w_ava : std_logic;$/;"	s	architecture:fsm_agu.behav
+w_row	srcs/not use/fsm_agu.vhd	/^		w_row : in integer range 0 to max_stored_row;$/;"	q	entity:fsm_agu
+w_sticker	srcs/w_sticker.vhd	/^entity w_sticker is$/;"	e
+w_sticker_tb	tb/w_sticker_tb.vhd	/^entity w_sticker_tb is$/;"	e
+w_valid	srcs/acc_wrapper.vhd	/^			w_valid : in std_logic;$/;"	q	component:acc_wrapper.behav.wgu
+w_valid	srcs/not use/fsm_agu.vhd	/^		w_valid : in std_logic;			-- Valid signal from Fifo$/;"	q	entity:fsm_agu
+w_valid	srcs/not use/top.vhd	/^			w_valid : in std_logic;$/;"	q	component:agu_tb.behav.AGU
+w_valid	srcs/not use/top.vhd	/^	signal w_ready,w_valid,r_valid : std_logic;$/;"	s	architecture:agu_tb.behav
+w_valid	srcs/old/AGU.vhd	/^		w_valid : in std_logic;$/;"	q	entity:AGU
+w_valid	srcs/old/acc_wrapper.vhd	/^			w_valid : in std_logic;$/;"	q	component:acc_wrapper.behav.AGU
+w_valid	srcs/old/acc_wrapper.vhd	/^			w_valid : in std_logic;$/;"	q	component:acc_wrapper.behav.wgu
+w_valid	srcs/wgu.vhd	/^		w_valid : in std_logic;$/;"	q	entity:wgu
+w_valid	tb/agu_tb.vhd	/^			w_valid : in std_logic;$/;"	q	component:agu_tb.behav.AGU
+w_valid	tb/agu_tb.vhd	/^	signal w_valid,agu_valid, alu_valid : std_logic;$/;"	s	architecture:agu_tb.behav
+w_valid	tb/wgu_tb.vhd	/^			w_valid : in std_logic;$/;"	q	component:wgu_tb.behav.wgu
+w_valid	tb/wgu_tb.vhd	/^	signal w_valid : std_logic;$/;"	s	architecture:wgu_tb.behav
+we	srcs/ACCU.vhd	/^		  we  : in std_logic;   $/;"	q	component:ACCU.behav.SPM
+we	srcs/ACCU.vhd	/^	signal we : std_logic;$/;"	s	architecture:ACCU.behav
+we	srcs/SPM.vhd	/^      we  : in std_logic;   $/;"	q	entity:SPM
+we	srcs/wgu.vhd	/^		  we  : in std_logic;   $/;"	q	component:wgu.behav.SPM
+we0	srcs/wgu.vhd	/^	signal we0,we1,we_sel, addr_trg, addr_en : std_logic;$/;"	s	architecture:wgu.behav
+we1	srcs/wgu.vhd	/^	signal we0,we1,we_sel, addr_trg, addr_en : std_logic;$/;"	s	architecture:wgu.behav
+we_sel	srcs/wgu.vhd	/^	signal we0,we1,we_sel, addr_trg, addr_en : std_logic;$/;"	s	architecture:wgu.behav
+weight_width	tb/agu_tb.vhd	/^	constant weight_width : natural := 16;$/;"	c	architecture:agu_tb.behav
+wgu	srcs/wgu.vhd	/^entity wgu is$/;"	e
+wgu_out0	srcs/acc_wrapper.vhd	/^			wgu_out0 : out std_logic_vector((compute_byte*input_width)-1 downto 0);$/;"	q	component:acc_wrapper.behav.wgu
+wgu_out0	srcs/acc_wrapper.vhd	/^	signal wgu_out0 : std_logic_vector((compute_byte*data_width)-1 downto 0);$/;"	s	architecture:acc_wrapper.behav
+wgu_out0	srcs/old/acc_wrapper.vhd	/^			wgu_out0 : out std_logic_vector((compute_byte*input_width)-1 downto 0);$/;"	q	component:acc_wrapper.behav.wgu
+wgu_out0	srcs/old/acc_wrapper.vhd	/^	signal wgu_out0 : std_logic_vector((compute_byte*data_width)-1 downto 0);$/;"	s	architecture:acc_wrapper.behav
+wgu_out0	srcs/wgu.vhd	/^		wgu_out0 : out std_logic_vector((compute_byte*input_width)-1 downto 0);$/;"	q	entity:wgu
+wgu_out0	tb/main_fsm_tb.vhd	/^	signal wgu_out0 : std_logic_vector((compute_byte*data_width)-1 downto 0);$/;"	s	architecture:main_fms_tb.behav
+wgu_out0	tb/wgu_tb.vhd	/^			wgu_out0 : out std_logic_vector((compute_byte*input_width)-1 downto 0);$/;"	q	component:wgu_tb.behav.wgu
+wgu_out0	tb/wgu_tb.vhd	/^	signal wgu_out0 : std_logic_vector((compute_byte*input_width)-1 downto 0);$/;"	s	architecture:wgu_tb.behav
+wgu_out0_test	srcs/acc_wrapper.vhd	/^		wgu_out0_test : out std_logic_vector(data_width-1 downto 0);$/;"	q	entity:acc_wrapper
+wgu_out0_test	srcs/old/acc_wrapper.vhd	/^		wgu_out0_test : out std_logic_vector(data_width-1 downto 0);$/;"	q	entity:acc_wrapper
+wgu_out1	srcs/acc_wrapper.vhd	/^			wgu_out1 : out std_logic_vector((compute_byte*input_width)-1 downto 0);$/;"	q	component:acc_wrapper.behav.wgu
+wgu_out1	srcs/acc_wrapper.vhd	/^	signal wgu_out1 : std_logic_vector((compute_byte*data_width)-1 downto 0);$/;"	s	architecture:acc_wrapper.behav
+wgu_out1	srcs/old/acc_wrapper.vhd	/^			wgu_out1 : out std_logic_vector((compute_byte*input_width)-1 downto 0);$/;"	q	component:acc_wrapper.behav.wgu
+wgu_out1	srcs/old/acc_wrapper.vhd	/^	signal wgu_out1 : std_logic_vector((compute_byte*data_width)-1 downto 0);$/;"	s	architecture:acc_wrapper.behav
+wgu_out1	srcs/wgu.vhd	/^		wgu_out1 : out std_logic_vector((compute_byte*input_width)-1 downto 0);$/;"	q	entity:wgu
+wgu_out1	tb/main_fsm_tb.vhd	/^	signal wgu_out1 : std_logic_vector((compute_byte*data_width)-1 downto 0);$/;"	s	architecture:main_fms_tb.behav
+wgu_out1	tb/wgu_tb.vhd	/^			wgu_out1 : out std_logic_vector((compute_byte*input_width)-1 downto 0);$/;"	q	component:wgu_tb.behav.wgu
+wgu_out1	tb/wgu_tb.vhd	/^	signal wgu_out1 : std_logic_vector((compute_byte*input_width)-1 downto 0);$/;"	s	architecture:wgu_tb.behav
+wgu_out1_test	srcs/acc_wrapper.vhd	/^		wgu_out1_test : out std_logic_vector(data_width-1 downto 0);$/;"	q	entity:acc_wrapper
+wgu_out1_test	srcs/old/acc_wrapper.vhd	/^		wgu_out1_test : out std_logic_vector(data_width-1 downto 0);$/;"	q	entity:acc_wrapper
+wgu_tb	tb/wgu_tb.vhd	/^entity wgu_tb is$/;"	e
+wgu_tdata	srcs/acc_wrapper.vhd	/^	signal wgu_tdata : std_logic_vector(s00_axis_aclk'range);$/;"	s	architecture:acc_wrapper.behav
+wgu_tdata	srcs/old/acc_wrapper.vhd	/^	signal wgu_tdata : std_logic_vector(XAXIS_TDATA'range);$/;"	s	architecture:acc_wrapper.behav
+wgu_tvalid	srcs/acc_wrapper.vhd	/^	signal wgu_tvalid : std_logic;$/;"	s	architecture:acc_wrapper.behav
+wgu_tvalid	srcs/old/acc_wrapper.vhd	/^	signal wgu_tvalid : std_logic;$/;"	s	architecture:acc_wrapper.behav
+wgu_valid	tb/wgu_tb.vhd	/^			wgu_valid : out std_logic$/;"	q	component:wgu_tb.behav.wgu
+wgu_valid	tb/wgu_tb.vhd	/^	signal wgu_valid : std_logic;$/;"	s	architecture:wgu_tb.behav
+wr_data	srcs/not use/data_fifo.vhd	/^    wr_data : in std_logic_vector(RAM_WIDTH - 1 downto 0);$/;"	q	entity:data_fifo
+wr_en	srcs/not use/data_fifo.vhd	/^    wr_en : in std_logic;$/;"	q	entity:data_fifo
+x_a	srcs/ALU.vhd	/^	signal x_a : x_array;$/;"	s	architecture:ALU.Behavioral
+x_a	srcs/not use/top.vhd	/^	signal x_a : in_array;$/;"	s	architecture:agu_tb.behav
+x_array	srcs/ALU.vhd	/^	type x_array is array (compute_byte-1 downto 0) of signed(input_width-1 downto 0);			$/;"	t	architecture:ALU.Behavioral
+x_col	srcs/main_fsm.vhd	/^	signal x_row, x_col, x_prep_c, input_count : integer range 0 to 255;$/;"	s	architecture:main_fsm.behav
+x_in	srcs/ALU.vhd	/^		x_in : in std_logic_vector((compute_byte*input_width)-1 downto 0);                -- 127 downt/;"	q	entity:ALU
+x_in	srcs/acc_wrapper.vhd	/^			x_in : in std_logic_vector((compute_byte*input_width)-1 downto 0);                $/;"	q	component:acc_wrapper.behav.ALU
+x_in	srcs/old/acc_wrapper.vhd	/^			x_in : in std_logic_vector((compute_byte*input_width)-1 downto 0);                $/;"	q	component:acc_wrapper.behav.ALU
+x_in	tb/agu_tb.vhd	/^	signal x_in,agu_out : std_logic_vector((compute_byte*data_width)-1 downto 0);$/;"	s	architecture:agu_tb.behav
+x_prep_c	srcs/main_fsm.vhd	/^	signal x_row, x_col, x_prep_c, input_count : integer range 0 to 255;$/;"	s	architecture:main_fsm.behav
+x_prep_c_en	srcs/main_fsm.vhd	/^	signal last_input, x_prep_done, x_prep_c_en ,w_addr_c_en, pixel_last, count_en, agu_en_s, compu/;"	s	architecture:main_fsm.behav
+x_prep_done	srcs/main_fsm.vhd	/^	signal last_input, x_prep_done, x_prep_c_en ,w_addr_c_en, pixel_last, count_en, agu_en_s, compu/;"	s	architecture:main_fsm.behav
+x_row	srcs/main_fsm.vhd	/^	signal x_row, x_col, x_prep_c, input_count : integer range 0 to 255;$/;"	s	architecture:main_fsm.behav
+xil_defaultlib	Acc_proj.sim/sim_1/behav/xsim/xsim.ini	/^xil_defaultlib=xsim.dir\/xil_defaultlib$/;"	k
+xilinx	component.xml	/^<spirit:component xmlns:xilinx="http:\/\/www.xilinx.com" xmlns:spirit="http:\/\/www.spiritconsor/;"	n	uri:http://www.xilinx.com
+xsi	component.xml	/^<spirit:component xmlns:xilinx="http:\/\/www.xilinx.com" xmlns:spirit="http:\/\/www.spiritconsor/;"	n	uri:http://www.w3.org/2001/XMLSchema-instance

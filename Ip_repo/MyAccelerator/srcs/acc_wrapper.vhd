@@ -72,8 +72,8 @@ architecture behav of acc_wrapper is
 	-- component declaration
 	component MyAccelerator_v2_0_S00_AXI is
 		generic (
-		data_width	: natural;
-		addr_width	: natural
+			data_width	: natural;
+			addr_width	: natural
 		);
 		port (
 
@@ -83,6 +83,7 @@ architecture behav of acc_wrapper is
 		kernel_size : out unsigned(data_width-1 downto 0);
 		kernel_depth : out unsigned(data_width-1 downto 0);
 		stride : out unsigned(data_width-1 downto 0);
+		hw_acc_en : out std_logic;
 
 		S_AXI_ACLK	: in std_logic;
 		S_AXI_ARESETN	: in std_logic;
@@ -258,6 +259,7 @@ architecture behav of acc_wrapper is
     signal kernel_size_s 		: std_logic_vector(data_width-1 downto 0);
 	signal kernel_depth_s	: std_logic_vector(data_width-1 downto 0);
     signal stride_s 			: std_logic_vector(data_width-1 downto 0);
+	signal hw_acc_en_s : std_logic;
 begin
 
 	-- TODO : Remove this line (Debugged purpose)
@@ -285,6 +287,7 @@ begin
 		kernel_size => kernel_size_s
 		kernel_depth => kernel_depth_s,
 		stride => stride_s,
+		hw_acc_en => hw_acc_en_s,
 
 		S_AXI_ACLK	=> s00_axi_aclk,
 		S_AXI_ARESETN	=> s00_axi_aresetn,
