@@ -36,3 +36,6 @@ INFO: [Common 17-83] Releasing license: Synthesis
 synth_design failed
 ERROR: [Common 17-69] Command failed: Vivado Synthesis failed
 INFO: [Common 17-206] Exiting Vivado at Fri Dec 18 19:31:40 2020...
+
+*** Halting run - EA reset detected ***
+

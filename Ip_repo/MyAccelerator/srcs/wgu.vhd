@@ -6,17 +6,26 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity wgu is
 	generic(
+		------------------------------------
+		-- Network Information Bitwidth 
+		------------------------------------
+		KERNEL_SIZE_BIT_WIDTH : natural;
+		KERNEL_DEPTH_BIT_WIDTH : natural;
+		MAX_KERNEL_DEPTH : natural; 
+
 		-- Info. abt. input 
 		input_width : natural;			-- Number of bit for input data (default = 32)
-		-- Info. abt. kernel 
-		kernel_size : natural;			-- Size of kernel (ex. 3 for 3x3)             
-		kernel_depth : natural;			-- #kernels (ex. 16, 32)
-		-- Info. abt output to PU
-		compute_byte : natural; 		-- Total amount of data will be send to compute in PU per 1 clk 
 
+		-- Total amount of data will be send to compute in PU per 1 clk 
+		compute_byte : natural; 		
 		addr_width : natural
+
 	);
 	port (
+		-- Network Parameters
+		kernel_size : in unsigned(KERNEL_SIZE_BIT_WIDTH-1 downto 0); 
+		kernel_depth : in unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);
+
 		clk : in std_logic;
 		arstn : in std_logic;
 		d_in : in std_logic_vector(input_width-1 downto 0);
@@ -25,7 +34,6 @@ entity wgu is
 		wgu_out0 : out std_logic_vector((compute_byte*input_width)-1 downto 0);
 		wgu_out1 : out std_logic_vector((compute_byte*input_width)-1 downto 0);
 		w_addr_c : out std_logic_vector(addr_width-1 downto 0)
-		--wgu_valid : out std_logic
 	);
 end wgu;
 
@@ -36,10 +44,12 @@ architecture behav of wgu is
 		generic(
 			input_width : natural;
 			compute_byte : natural;
-			output_size : natural := 5;
-			kernel_size : natural
+			MAX_KERNEL_SIZE : natural := 5;
+			KERNEL_SIZE_BIT_WIDTH : natural
 		);
 		port(
+			kernel_size : in unsigned(KERNEL_SIZE_BIT_WIDTH-1 downto 0); 
+
 			clk : in std_logic;
 			arstn : in std_logic;
 			d_in : in std_logic_vector(input_width-1 downto 0);
@@ -80,22 +90,27 @@ begin
 	
 	w_addr_c <= mem_addr;
 
------------------------------------------------------- COMPONENT INSTANTIATION -------------------------------------------------
+------------------------------------
+-- COMPONENT INSTANTIATION 
+------------------------------------
 	stick : w_sticker 
-	generic map (input_width => input_width, compute_byte => compute_byte, kernel_size => kernel_size)
-	port map(
-		clk => clk, 
-		arstn => arstn, 
-		d_in => d_in, 
-		in_valid => w_valid, 
-		out_valid => sticker_valid,
-		d_out => sticker_out
-	);
-
+		generic map (
+			input_width => input_width, 
+			compute_byte => compute_byte, 
+			KERNEL_SIZE_BIT_WIDTH => KERNEL_SIZE_BIT_WIDTH
+		)port map(
+			kernel_size => kernel_size,
+			clk => clk, 
+			arstn => arstn, 
+			d_in => d_in, 
+			in_valid => w_valid, 
+			out_valid => sticker_valid,
+			d_out => sticker_out
+		);
 	ram0 : SPM
 		generic map(
 			INPUT_WIDTH => input_width*compute_byte, 
-			MEM_DEPTH => kernel_depth/2,
+			MEM_DEPTH => MAX_KERNEL_DEPTH/2,
 			ADDR_WIDTH => addr_width
 		)port map(
 			clk => clk,
@@ -108,7 +123,7 @@ begin
 	ram1 : SPM
 		generic map(
 			INPUT_WIDTH => input_width*compute_byte, 
-			MEM_DEPTH => kernel_depth/2,
+			MEM_DEPTH => MAX_KERNEL_DEPTH/2,
 			ADDR_WIDTH => addr_width
 		)port map(
 			clk => clk,
@@ -117,9 +132,13 @@ begin
 			di => sticker_out,
 			do => wgu_out1
 		);
--------------------------------------------------------------------------------------------------------------------------
 
------------------------------------------------------- MEM_CTRL_DESIGN -------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+-- MEM_CTRL_DESIGN 
+-- Description	-	Control "we" signal for both SPM0 and SPM1.
+--					we signal is depend on sticker_valid which only assert during W_PREP
+--					state in main_fsm. Thus after W_PREP state this Part will be inactive.
+------------------------------------------------------------------------------------------------------------
 	JK_FF_INST:
 		process(clk,arstn)
 		begin
@@ -153,39 +172,47 @@ begin
 				we1 <= '0';
 			end if;
 		end process;
--------------------------------------------------------------------------------------------------------------------------
 
-
------------------------------------------------------- ADDRESS_CTRL_DESIGN -------------------------------------------------
-	-- A Counter that use to count the instant of full size weight (5x5) (ex. 
-	VALID_COUNTER:
+------------------------------------------------------------------------------------------------------------
+-- ADDRESS_CTRL_DESIGN 
+-- Description	-	Generate an address for both SPM0 and SPM1. The address is increase due to 2 reasons:
+--						1. Sticker_valid is assert (Sticker module ready to save next weight into memory)
+--						2. w_addr_incr is assert (Main_FSM want to read the next kernel value out from the memory)
+-- Note**		-	The "Addr" interface of both SMP0 and SMP1 is connected to the same address signal so when 
+--					the address is increase both SMP are taken the action (Either read or write). 		
+------------------------------------------------------------------------------------------------------------
+	-- A Counter that use to count the instant of full size weight (5x5) 
+	ADDR_TRIG_GEN:
 		process(clk,arstn)
 		begin
 			if arstn = '0' then 
 				s_c <= 0;
+				addr_trg <= '0';
 			elsif rising_edge(clk) then 
+				addr_trg <= '0';
 				if sticker_valid = '1' then
 					s_c <= s_c + 1;
 					if s_c = 1 then
 						s_c <= 0;
+						addr_trg <= '1';
 					end if;
 				end if;
 			end if;
 		end process;
 
-	ADDR_TRIG_GEN:
-		process(clk, arstn)
-		begin
-			if arstn = '0' then
-				addr_trg <= '0'; 
-			elsif rising_edge(clk) then
-				if sticker_valid = '1' and s_c = 1 then
-					addr_trg <= '1';
-				else 
-					addr_trg <= '0';
-				end if;
-			end if;
-		end process;
+	--ADDR_TRIG_GEN:
+	--	process(clk, arstn)
+	--	begin
+	--		if arstn = '0' then
+	--			addr_trg <= '0'; 
+	--		elsif rising_edge(clk) then
+	--			if sticker_valid = '1' and s_c = 1 then
+	--				addr_trg <= '1';
+	--			else 
+	--				addr_trg <= '0';
+	--			end if;
+	--		end if;
+	--	end process;
 		
 	addr_en <= addr_trg or w_addr_incr;
 
@@ -204,9 +231,6 @@ begin
 				end if;
 			end if;
 		end process;
--------------------------------------------------------------------------------------------------------------------------
-
-
 
 end behav;
 

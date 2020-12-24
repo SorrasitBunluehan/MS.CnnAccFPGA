@@ -1,19 +1,26 @@
-library IEEE; use IEEE.STD_LOGIC_1164.ALL;
+library IEEE; 
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.numeric_std.all;
  
 
 entity acc_wrapper is
 	generic(
-		--input_size : natural := 28;
-		--input_depth : natural := 2; 					-- Need todo sth with this param
-		--kernel_size : natural := 3;             
-		--kernel_depth : natural := 16;
-		--stride : natural := 1;
+		------------------------------------
+		-- Network Information Bitwidth 
+		------------------------------------
+		INPUT_SIZE_BIT_WIDTH : natural := 16;
+		INPUT_DEPTH_BIT_WIDTH : natural := 13;
+		STRIDE_BIT_WIDTH : natural := 3;  
+		KERNEL_DEPTH_BIT_WIDTH : natural := 13;
+		KERNEL_SIZE_BIT_WIDTH : natural := 8;
+		MAX_KERNEL_DEPTH : natural := 512;
+		
 		compute_byte : natural := 25;
-
 		-- Width of the signal
 		data_width : natural := 32;
 		addr_width : natural := 8;
 		rowcol_width : natural := 16
+		
 	);
 	port(
 
@@ -56,7 +63,7 @@ entity acc_wrapper is
 		m01_axis_tdata	: out std_logic_vector(data_width-1 downto 0);
 		m01_axis_tstrb	: out std_logic_vector((data_width/8)-1 downto 0);
 		m01_axis_tlast	: out std_logic;
-		m01_axis_tready	: in std_logic
+		m01_axis_tready	: in std_logic;
 
 		-- TODO : For debugged purpose
 		agu_out_test : out std_logic_vector(data_width-1 downto 0);
@@ -72,17 +79,26 @@ architecture behav of acc_wrapper is
 	-- component declaration
 	component MyAccelerator_v2_0_S00_AXI is
 		generic (
+			------------------------------------
+			-- Network Information Bitwidth 
+			------------------------------------
+			INPUT_SIZE_BIT_WIDTH : natural;
+			INPUT_DEPTH_BIT_WIDTH : natural;
+			STRIDE_BIT_WIDTH : natural;  
+			KERNEL_DEPTH_BIT_WIDTH : natural;
+			KERNEL_SIZE_BIT_WIDTH : natural;
+
 			data_width	: natural;
 			addr_width	: natural
 		);
 		port (
 
 		-- Network Config Signal
-		input_size : out unsigned(data_width-1 downto 0);
-		input_depth : out unsigned(data_width-1 downto 0);
-		kernel_size : out unsigned(data_width-1 downto 0);
-		kernel_depth : out unsigned(data_width-1 downto 0);
-		stride : out unsigned(data_width-1 downto 0);
+		input_size : out unsigned(INPUT_SIZE_BIT_WIDTH -1 downto 0);
+		input_depth : out unsigned(INPUT_DEPTH_BIT_WIDTH-1 downto 0);
+		kernel_size : out unsigned(KERNEL_SIZE_BIT_WIDTH-1 downto 0);
+		kernel_depth : out unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);
+		stride : out unsigned(STRIDE_BIT_WIDTH-1 downto 0);
 		hw_acc_en : out std_logic;
 
 		S_AXI_ACLK	: in std_logic;
@@ -114,54 +130,79 @@ architecture behav of acc_wrapper is
 	-- 		   It will connect directly to S2MM_Axis_Slave Port in DMA
 	
 
-
-
-
 	component main_fsm is
 		generic(
-			--input_size : natural;
-			--input_depth : natural;
-			--kernel_size : natural;             
-			--kernel_depth : natural;
-			--stride : natural;
-
+			------------------------------------
+			-- Network Information Bitwidth 
+			------------------------------------
+			INPUT_SIZE_BIT_WIDTH : natural;
+			INPUT_DEPTH_BIT_WIDTH : natural;
+			STRIDE_BIT_WIDTH : natural;  
+			KERNEL_DEPTH_BIT_WIDTH : natural;
+			KERNEL_SIZE_BIT_WIDTH : natural;
+		
 			data_width : natural;
-			compute_byte : natural;
-			addr_width : natural;
-			rowcol_width : natural
+			compute_byte : natural; 			-- number of byte send to output PU maximum support by 5x5 
+			addr_width : natural
 		); 
 		port (
+			-- Network Config Signal
+			input_size : in unsigned(INPUT_SIZE_BIT_WIDTH -1 downto 0);
+			input_depth : in unsigned(INPUT_DEPTH_BIT_WIDTH-1 downto 0);
+			kernel_size : in unsigned(KERNEL_SIZE_BIT_WIDTH-1 downto 0);
+			kernel_depth : in unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);
+			stride : in unsigned(STRIDE_BIT_WIDTH-1 downto 0);
+			hw_acc_en : in std_logic;
+
+			-- Input signals
 			clk : in std_logic;
 			arstn : in std_logic;
 			tvalid : in std_logic;
 			tlast : in std_logic;
-
-			-- Input from AGU
 			w_addr_c : in std_logic_vector(addr_width-1 downto 0);
 
-			-- OUTPUT
+			-- Output to AGU
 			agu_en : out std_logic;
+
+			-- Output to WGU
 			w_addr_incr : out std_logic;
+
+			-- Output to mux
 			mux_sel : out std_logic;
+
+			-- Output to DMA
 			tready : out std_logic;
+
+			-- Output to ALU
 			alu_en : out std_logic;
-
-
+		
 			--TODO : For debugged purpose (Need to delete)
-			done : out std_logic;
-			fsm_state_test : out std_logic_vector(2 downto 0)
+			fsm_state_test : out std_logic_vector(2 downto 0);
+			done : out std_logic
 		);
 	end component;
 
 	component wgu is
 		generic(
-			input_width : natural;			
-			kernel_size : natural;		
-			kernel_depth : natural;	
-			compute_byte : natural;
+			------------------------------------
+			-- Network Information Bitwidth 
+			------------------------------------
+			KERNEL_SIZE_BIT_WIDTH : natural;
+			KERNEL_DEPTH_BIT_WIDTH : natural;
+			MAX_KERNEL_DEPTH : natural; 
+
+			-- Info. abt. input 
+			input_width : natural;			-- Number of bit for input data (default = 32)
+
+			-- Total amount of data will be send to compute in PU per 1 clk 
+			compute_byte : natural; 		
 			addr_width : natural
 		);
 		port (
+			-- Network Parameters
+			kernel_size : in unsigned(KERNEL_SIZE_BIT_WIDTH-1 downto 0); 
+			kernel_depth : in unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);
+
 			clk : in std_logic;
 			arstn : in std_logic;
 			d_in : in std_logic_vector(input_width-1 downto 0);
@@ -173,41 +214,41 @@ architecture behav of acc_wrapper is
 		);
 	end component;
 
-	component AGU is
-		generic(
-			input_size : natural;
-			kernel_size : natural;             
-			stride : natural;
-			data_width : natural;
-			compute_byte : natural; 
-			rowcol_width : natural
-		); 
-		port (
-			clk : in std_logic;
-			arstn : in std_logic;
-			agu_in : in std_logic_vector(data_width-1 downto 0);
-			agu_en : in std_logic;
+	--component AGU is
+	--	generic(
+	--		input_size : natural;
+	--		kernel_size : natural;             
+	--		stride : natural;
+	--		data_width : natural;
+	--		compute_byte : natural; 
+	--		rowcol_width : natural
+	--	); 
+	--	port (
+	--		clk : in std_logic;
+	--		arstn : in std_logic;
+	--		agu_in : in std_logic_vector(data_width-1 downto 0);
+	--		agu_en : in std_logic;
 
-			-- Output
-			agu_out : out std_logic_vector((compute_byte*data_width)-1 downto 0)
-		);
-	end component;
+	--		-- Output
+	--		agu_out : out std_logic_vector((compute_byte*data_width)-1 downto 0)
+	--	);
+	--end component;
 
-	component ALU is
-		generic(
-			input_size : natural;
-			input_width : natural;
-			compute_byte : natural
-		);
-		port (
-			clk : in std_logic;
-			x_in : in std_logic_vector((compute_byte*input_width)-1 downto 0);                
-			w_in : in std_logic_vector((compute_byte*input_width)-1 downto 0);				 
-			compute_en : in std_logic;
-			alu_out : out std_logic_vector((2*input_width + compute_byte) - 1 downto 0);
-			alu_valid : out std_logic          
-		);
-	end component;
+	--component ALU is
+	--	generic(
+	--		input_size : natural;
+	--		input_width : natural;
+	--		compute_byte : natural
+	--	);
+	--	port (
+	--		clk : in std_logic;
+	--		x_in : in std_logic_vector((compute_byte*input_width)-1 downto 0);                
+	--		w_in : in std_logic_vector((compute_byte*input_width)-1 downto 0);				 
+	--		compute_en : in std_logic;
+	--		alu_out : out std_logic_vector((2*input_width + compute_byte) - 1 downto 0);
+	--		alu_valid : out std_logic          
+	--	);
+	--end component;
 
 	--component ACCU is
 	--	generic(
@@ -228,9 +269,9 @@ architecture behav of acc_wrapper is
 	--end component;
 
 	-- Main MUX variables
-	signal agu_tdata : std_logic_vector(s00_axis_aclk'range);
+	signal agu_tdata : std_logic_vector(s00_axis_tdata'range);
 	signal agu_tvalid : std_logic;
-	signal wgu_tdata : std_logic_vector(s00_axis_aclk'range);
+	signal wgu_tdata : std_logic_vector(s00_axis_tdata'range);
 	signal wgu_tvalid : std_logic;
 	signal mux_sel : std_logic;
 	
@@ -254,11 +295,11 @@ architecture behav of acc_wrapper is
 	signal accu_ready : std_logic;
 
 	-- Network parameter Signal
-	signal input_size_s 		: std_logic_vector(data_width-1 downto 0);		
-    signal input_depth_s 		: std_logic_vector(data_width-1 downto 0);	
-    signal kernel_size_s 		: std_logic_vector(data_width-1 downto 0);
-	signal kernel_depth_s	: std_logic_vector(data_width-1 downto 0);
-    signal stride_s 			: std_logic_vector(data_width-1 downto 0);
+	signal input_size_s 		: unsigned(INPUT_SIZE_BIT_WIDTH-1 downto 0);		
+    signal input_depth_s 		: unsigned(INPUT_DEPTH_BIT_WIDTH-1 downto 0);	
+    signal kernel_size_s 		: unsigned(KERNEL_SIZE_BIT_WIDTH-1 downto 0);
+	signal kernel_depth_s		: unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);
+    signal stride_s 			: unsigned(STRIDE_BIT_WIDTH-1 downto 0);
 	signal hw_acc_en_s : std_logic;
 begin
 
@@ -278,13 +319,22 @@ begin
 	-- Instantiation of Axi Bus Interface S00_AXI
 	MyAccelerator_v2_0_S00_AXI_inst : MyAccelerator_v2_0_S00_AXI
 	generic map (
+		------------------------------------
+		-- Network Information Bitwidth 
+		------------------------------------
+		INPUT_SIZE_BIT_WIDTH		=>		INPUT_SIZE_BIT_WIDTH,		 
+		INPUT_DEPTH_BIT_WIDTH		=>      INPUT_DEPTH_BIT_WIDTH,	
+		STRIDE_BIT_WIDTH			=>      STRIDE_BIT_WIDTH,		
+		KERNEL_DEPTH_BIT_WIDTH		=>      KERNEL_DEPTH_BIT_WIDTH,	
+		KERNEL_SIZE_BIT_WIDTH		=>      KERNEL_SIZE_BIT_WIDTH,	
+
 		data_width	=> data_width,
 		addr_width	=> addr_width
 	)
 	port map (
 		input_size => input_size_s,
 		input_depth => input_depth_s,
-		kernel_size => kernel_size_s
+		kernel_size => kernel_size_s,
 		kernel_depth => kernel_depth_s,
 		stride => stride_s,
 		hw_acc_en => hw_acc_en_s,
@@ -314,17 +364,24 @@ begin
 
 	main_fsm_dut : main_fsm
 	generic map(
-		--input_size   => input_size, 
-		--input_depth  => input_depth,
-		--kernel_size  => kernel_size, 
-		--kernel_depth => kernel_depth,
-		--stride 		 => stride, 
+		INPUT_SIZE_BIT_WIDTH 		=>  	INPUT_SIZE_BIT_WIDTH, 		
+		INPUT_DEPTH_BIT_WIDTH		=>  	INPUT_DEPTH_BIT_WIDTH,	 
+		STRIDE_BIT_WIDTH	 		=>  	STRIDE_BIT_WIDTH,	 	   
+		KERNEL_DEPTH_BIT_WIDTH		=>  	KERNEL_DEPTH_BIT_WIDTH,	 
+		KERNEL_SIZE_BIT_WIDTH		=>  	KERNEL_SIZE_BIT_WIDTH,	 
 
 		data_width   => data_width, 
 		compute_byte => compute_byte,
-		addr_width 	 => addr_width,
-		rowcol_width => rowcol_width 
+		addr_width 	 => addr_width
 	) port map(
+		-- Network port map
+		input_size 		=>		input_size_s, 
+		input_depth		=>      input_depth_s,	
+		kernel_size		=>      kernel_size_s,	
+		kernel_depth	=>      kernel_depth_s,
+		stride  		=>      stride_s,  	
+		hw_acc_en  		=>      hw_acc_en_s,  	
+
 		clk 		 => s00_axis_aclk , 		
         arstn 		 => s00_axis_aresetn , 		
         tvalid 		 => s00_axis_tvalid , 		
@@ -342,68 +399,72 @@ begin
 		done 		 => done_test
 	);
 
-	agu_dut : AGU
-	generic map(
-		input_size 	 => input_size, 	
-		kernel_size  => kernel_size, 
-		stride 		 => stride, 		
+	--agu_dut : AGU
+	--generic map(
+	--	input_size 	 => input_size, 	
+	--	kernel_size  => kernel_size, 
+	--	stride 		 => stride, 		
 
-		data_width 	 => data_width, 	
-		compute_byte => compute_byte,
-		rowcol_width => rowcol_width
-	) port map(
-		clk 		 => s00_axis_aclk, 		
-		arstn        => s00_axis_aresetn,       
-		agu_in       => agu_tdata,      
-		agu_en 		 => agu_en,
-		agu_out      => agu_out
-	);
+	--	data_width 	 => data_width, 	
+	--	compute_byte => compute_byte,
+	--	rowcol_width => rowcol_width
+	--) port map(
+	--	clk 		 => s00_axis_aclk, 		
+	--	arstn        => s00_axis_aresetn,       
+	--	agu_in       => agu_tdata,      
+	--	agu_en 		 => agu_en,
+	--	agu_out      => agu_out
+	--);
 
 	wgu_dut : wgu
-		generic map(
+	generic map(
+		KERNEL_SIZE_BIT_WIDTH 		=>		KERNEL_SIZE_BIT_WIDTH, 			
+		KERNEL_DEPTH_BIT_WIDTH 		=>      KERNEL_DEPTH_BIT_WIDTH, 	
+		MAX_KERNEL_DEPTH 			=>      MAX_KERNEL_DEPTH,	
+
 		input_width  => data_width, 
-		kernel_size  => kernel_size, 
-		kernel_depth => kernel_depth,
 		compute_byte => compute_byte,
 		addr_width   => addr_width  
 	) port map(
-		clk 		=> s00_axis_aclk,
-		arstn       => s00_axis_aresetn,
-		d_in        => wgu_tdata,
-		w_valid     => wgu_tvalid,
-		w_addr_incr => w_addr_incr,
-		wgu_out0    => wgu_out0,
-		wgu_out1    => wgu_out1,
-		w_addr_c 	=> w_addr_c
+		kernel_size 	=>		kernel_size_s,
+		kernel_depth 	=>		kernel_depth_s,
+		clk 			=> 		s00_axis_aclk,
+		arstn       	=> 		s00_axis_aresetn,
+		d_in        	=> 		wgu_tdata,
+		w_valid     	=> 		wgu_tvalid,
+		w_addr_incr 	=> 		w_addr_incr,
+		wgu_out0    	=> 		wgu_out0,
+		wgu_out1    	=> 		wgu_out1,
+		w_addr_c 		=> 		w_addr_c
 	);
 
-	alu0 : ALU
-	generic map(
-		input_size => input_size,
-		input_width => data_width,
-		compute_byte => compute_byte
-	) port map(
-		clk => s00_axis_aclk,
-		x_in => agu_out,
-		w_in => wgu_out0,
-		compute_en => alu_en,
-		alu_out => alu_out0,
-		alu_valid => alu_valid0
-	);
+	--alu0 : ALU
+	--generic map(
+	--	input_size => input_size,
+	--	input_width => data_width,
+	--	compute_byte => compute_byte
+	--) port map(
+	--	clk => s00_axis_aclk,
+	--	x_in => agu_out,
+	--	w_in => wgu_out0,
+	--	compute_en => alu_en,
+	--	alu_out => alu_out0,
+	--	alu_valid => alu_valid0
+	--);
 
-	alu1 : ALU
-	generic map(
-		input_size => input_size,
-		input_width => data_width,
-		compute_byte => compute_byte
-	) port map(
-		clk => s00_axis_aclk,
-		x_in => agu_out,
-		w_in => wgu_out1,
-		compute_en => alu_en,
-		alu_out => alu_out1,
-		alu_valid => alu_valid1
-	);
+	--alu1 : ALU
+	--generic map(
+	--	input_size => input_size,
+	--	input_width => data_width,
+	--	compute_byte => compute_byte
+	--) port map(
+	--	clk => s00_axis_aclk,
+	--	x_in => agu_out,
+	--	w_in => wgu_out1,
+	--	compute_en => alu_en,
+	--	alu_out => alu_out1,
+	--	alu_valid => alu_valid1
+	--);
 
 	--accu_dut : ACCU
 	--generic map(
@@ -431,15 +492,15 @@ begin
 	---------------------------------------------------------------------------------------------------------
 
 	MAIN_MUX:
-	process(s00_axis_aclk, s00_axis_tvalid, mux_sel)
+	process(s00_axis_tdata , s00_axis_tvalid, mux_sel)
 	begin
 		if mux_sel = '0' then
 			agu_tdata <= (others => '0');
             agu_tvalid <= '0';
-            wgu_tdata  <= s00_axis_aclk;
+            wgu_tdata  <= s00_axis_tdata;
             wgu_tvalid <= s00_axis_tvalid;
 		else 
-			agu_tdata <= s00_axis_aclk;
+			agu_tdata <= s00_axis_tdata;
             agu_tvalid <= s00_axis_tvalid;
             wgu_tdata  <= (others => '0');
             wgu_tvalid <= '0';

@@ -92,7 +92,12 @@ set_property ip_output_repo d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerato
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_vhdl -library xil_defaultlib D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/main_fsm.vhd
+read_vhdl -library xil_defaultlib {
+  D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/main_fsm.vhd
+  D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/wgu.vhd
+  D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/acc_wrapper.vhd
+  D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/MyAccelerator_v2_0_S00_AXI.vhd
+}
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
