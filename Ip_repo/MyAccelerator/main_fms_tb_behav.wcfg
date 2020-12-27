@@ -10,13 +10,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="499860051fs"></ZoomStartTime>
-      <ZoomEndTime time="500027990fs"></ZoomEndTime>
-      <Cursor1Time time="499904532fs"></Cursor1Time>
+      <ZoomStartTime time="813631fs"></ZoomStartTime>
+      <ZoomEndTime time="1024865fs"></ZoomEndTime>
+      <Cursor1Time time="1000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="166"></NameColumnWidth>
-      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="84"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="5" />
    <wvobject fp_name="/acc_wrapper_tb/s00_axi_aclk" type="logic">
@@ -62,6 +62,18 @@
       <wvobject fp_name="/acc_wrapper_tb/acc_dut/hw_acc_en_s" type="logic">
          <obj_property name="ElementShortName">hw_acc_en_s</obj_property>
          <obj_property name="ObjectShortName">hw_acc_en_s</obj_property>
+      </wvobject>
+      <wvobject fp_name="/acc_wrapper_tb/s00_axi_awaddr" type="array">
+         <obj_property name="ElementShortName">s00_axi_awaddr[7:0]</obj_property>
+         <obj_property name="ObjectShortName">s00_axi_awaddr[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/acc_wrapper_tb/s00_axi_awvalid" type="logic">
+         <obj_property name="ElementShortName">s00_axi_awvalid</obj_property>
+         <obj_property name="ObjectShortName">s00_axi_awvalid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/acc_wrapper_tb/s00_axi_awready" type="logic">
+         <obj_property name="ElementShortName">s00_axi_awready</obj_property>
+         <obj_property name="ObjectShortName">s00_axi_awready</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>

@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/Vivado_Project/dma_test/dma_test.runs/synth_1'
+HD_PWD='D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/dma_test/dma_test.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

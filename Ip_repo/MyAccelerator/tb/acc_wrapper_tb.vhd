@@ -1,6 +1,3 @@
--- Usage Condition'
--- 	1. Kernel depth needed to be divided by 2 (ex. 2, 4, 16, ... , 128)
---  2. 
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -200,6 +197,7 @@ begin
 		s00_axis_aresetn <= '0';
 		wait for CLK_PERIOD;
 		s00_axis_aresetn <= '1';
+
 		--s00_axis_tlast <= '0';
 		--wait for CLK_PERIOD*10;
 		--s00_axis_tlast <= '1';
