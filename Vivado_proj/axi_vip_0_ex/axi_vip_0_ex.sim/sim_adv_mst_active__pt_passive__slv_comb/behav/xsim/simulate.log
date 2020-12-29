@@ -1,0 +1,7 @@
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+FATAL_ERROR: Vivado Simulator kernel has discovered an exceptional condition from which it cannot recover. Process will terminate. For technical support on this issue, please open a WebCase with this project attached at http://www.xilinx.com/support.
+Time: 0 ps  Iteration: 0  Process: /axi_vip_pkg/axi_vif_mem_proxy(C_AXI_PROTOCOL=0,C_AXI_ADDR_WIDTH=32,C_AXI_WDATA_WIDTH=32,C_AXI_RDATA_WIDTH=32,C_AXI_WID_WIDTH=0,C_AXI_RID_WIDTH=0,C_AXI_AWUSER_WIDTH=0,C_AXI_WUSER_WIDTH=0,C_AXI_BUSER_WIDTH=0,C_AXI_ARUSER_WIDTH=0,C_AXI_RUSER_WIDTH=0,C_AXI_SUPPORTS_NARROW=1,C_AXI_HAS_BURST=1,C_AXI_HAS_LOCK=1,C_AXI_HAS_CACHE=1,C_AXI_HAS_REGION=1,C_AXI_HAS_PROT=1,C_AXI_HAS_QOS=1,C_AXI_HAS_WSTRB=1,C_AXI_HAS_BRESP=1,C_AXI_HAS_RRESP=1,C_AXI_HAS_ARESETN=1)::wait_posedge_aclk_with_hold
+  File: D:/Vivado/Vivado/2020.1/data/xilinx_vip/hdl/axi_vip_pkg.sv
+
+HDL Line: D:/Vivado/Vivado/2020.1/data/xilinx_vip/hdl/axi_vip_pkg.sv:6673

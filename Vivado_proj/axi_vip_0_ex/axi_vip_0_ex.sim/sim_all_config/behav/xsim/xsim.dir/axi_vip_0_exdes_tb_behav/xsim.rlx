@@ -1,0 +1,12 @@
+
+{ 
+    crc :  11731506425313659792  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto 2e84d9d7cd8442f6a44a01858779a30e --incr --debug typical --relax --mt 2 -L axi_infrastructure_v1_1_0 -L xil_defaultlib -L axi_vip_v1_1_7 -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot axi_vip_0_exdes_tb_behav xil_defaultlib.axi_vip_0_exdes_tb xil_defaultlib.glbl" , 
+    buildDate : "May 27 2020" , 
+    buildTime : "20:09:33" , 
+    linkCmd : "D:\\Vivado\\Vivado\\2020.1\\data\\..\\tps\\mingw\\6.2.0\\win64.o\\nt\\bin\\gcc.exe -Wa,-W  -O -Wl,--stack,104857600 -o \"xsim.dir/axi_vip_0_exdes_tb_behav/xsimk.exe\"   \"xsim.dir/axi_vip_0_exdes_tb_behav/obj/xsim_0.win64.obj\" \"xsim.dir/axi_vip_0_exdes_tb_behav/obj/xsim_1.win64.obj\" \"xsim.dir/axi_vip_0_exdes_tb_behav/obj/xsim_2.win64.obj\" \"xsim.dir/axi_vip_0_exdes_tb_behav/obj/xsim_3.win64.obj\" \"xsim.dir/axi_vip_0_exdes_tb_behav/obj/xsim_4.win64.obj\" \"xsim.dir/axi_vip_0_exdes_tb_behav/obj/xsim_5.win64.obj\" \"xsim.dir/axi_vip_0_exdes_tb_behav/obj/xsim_6.win64.obj\" -L\"D:\\Vivado\\Vivado\\2020.1\\lib\\win64.o\" -lrdi_simulator_kernel   -lrdi_simbridge_kernel" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 

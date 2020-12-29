@@ -1,0 +1,7 @@
+Exception at PC 0x00007FFA1673E693
+Attemped to read address 0x0000000000000BC0
+Printing stacktrace...
+
+[0] (iki_remove_dynamic_wait+0x13) [0x00007FFA1673E693]
+[1] (iki_remove_dynamic_wait+0x13) [0x00007FFA1673E693]
+Done

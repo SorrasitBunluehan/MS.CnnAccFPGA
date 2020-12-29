@@ -1,0 +1,20 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/axi_vip_1_ex/axi_vip_1_ex.ip_user_files/bd/ex_sim/ip/ex_sim_axi_vip_mst_0/sim/ex_sim_axi_vip_mst_0_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/axi_vip_1_ex/axi_vip_1_ex.ip_user_files/bd/ex_sim/ip/ex_sim_axi_vip_mst_0/sim/ex_sim_axi_vip_mst_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ex_sim_axi_vip_mst_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/axi_vip_1_ex/axi_vip_1_ex.ip_user_files/bd/ex_sim/ip/ex_sim_axi_vip_passthrough_0/sim/ex_sim_axi_vip_passthrough_0_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/axi_vip_1_ex/axi_vip_1_ex.ip_user_files/bd/ex_sim/ip/ex_sim_axi_vip_passthrough_0/sim/ex_sim_axi_vip_passthrough_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ex_sim_axi_vip_passthrough_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/axi_vip_1_ex/axi_vip_1_ex.ip_user_files/bd/ex_sim/ip/ex_sim_axi_vip_slv_0/sim/ex_sim_axi_vip_slv_0_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/axi_vip_1_ex/axi_vip_1_ex.ip_user_files/bd/ex_sim/ip/ex_sim_axi_vip_slv_0/sim/ex_sim_axi_vip_slv_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ex_sim_axi_vip_slv_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/axi_vip_1_ex/imports/axi_vip_1_chip.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chip
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/axi_vip_1_ex/imports/axi_vip_1_exdes_adv_mst_active__pt_passive__slv_comb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axi_vip_1_exdes_generic
+INFO: [VRFC 10-311] analyzing module axi_vip_1_mst_stimulus
+INFO: [VRFC 10-311] analyzing module axi_vip_1_slv_stimulus
+INFO: [VRFC 10-311] analyzing module axi_vip_1_exdes_adv_mst_active__pt_passive__slv_comb
+INFO: [VRFC 10-2263] Analyzing Verilog file "d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/axi_vip_1_ex/axi_vip_1_ex.sim/sim_adv_mst_active__pt_passive__slv_comb/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-163] Analyzing VHDL file "d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/axi_vip_1_ex/axi_vip_1_ex.ip_user_files/bd/ex_sim/sim/ex_sim.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ex_sim'

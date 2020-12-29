@@ -6876,3 +6876,108 @@ con
 
 12:38:03 INFO  : Launch script is exported to file 'D:\Vivado_Project\dma_test\vitis\.sdk\launch_scripts\single_application_debug\debugger_app6-default.tcl'
 20:17:49 INFO  : Disconnected from the channel tcfchan#22.
+17:15:31 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\Vivado_Project\MS.CnnAccFPGA\Vivado_proj\dma_test\vitis\temp_xsdb_launch_script.tcl
+17:15:33 INFO  : XSCT server has started successfully.
+17:15:33 INFO  : Successfully done setting XSCT server connection channel  
+17:15:33 INFO  : plnx-install-location is set to ''
+17:15:33 INFO  : Successfully done setting workspace for the tool. 
+17:15:36 ERROR : Error encountered while initializing user repository paths
+Reason: No Platforms Found.
+
+
+17:15:36 INFO  : Platform repository initialization has completed.
+17:15:36 INFO  : Registering command handlers for Vitis TCF services
+17:15:38 INFO  : Successfully done query RDI_DATADIR 
+18:14:47 INFO  : Checking for BSP changes to sync application flags for project 'App6'...
+18:14:47 ERROR : Failed to get platform details for the project 'App6'. Cannot sync application flags.
+18:14:55 INFO  : Checking for BSP changes to sync application flags for project 'App6'...
+18:14:55 ERROR : Failed to get platform details for the project 'App6'. Cannot sync application flags.
+18:15:21 INFO  : Checking for BSP changes to sync application flags for project 'App6'...
+18:15:21 ERROR : Failed to get platform details for the project 'App6'. Cannot sync application flags.
+18:16:00 INFO  : Hardware specification for platform project 'Hw6' is updated.
+18:16:24 INFO  : Result from executing command 'getProjects': Hw2;Hw3;Hw4;Hw5;Hw6
+18:16:24 INFO  : Result from executing command 'getPlatforms': 
+18:16:33 INFO  : Checking for BSP changes to sync application flags for project 'App6'...
+18:16:33 INFO  : Updating application flags with new BSP settings...
+18:16:33 INFO  : Successfully updated application flags for project App6.
+18:16:35 INFO  : The hardware specfication used by project 'App6' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+18:16:35 INFO  : The file 'D:\Vivado_Project\MS.CnnAccFPGA\Vivado_proj\dma_test\vitis\App6\_ide\bitstream\design_1_wrapper.bit' stored in project is removed.
+18:16:35 INFO  : The updated bitstream files are copied from platform to folder 'D:\Vivado_Project\MS.CnnAccFPGA\Vivado_proj\dma_test\vitis\App6\_ide\bitstream' in project 'App6'.
+18:16:35 INFO  : The file 'D:\Vivado_Project\MS.CnnAccFPGA\Vivado_proj\dma_test\vitis\App6\_ide\psinit\ps7_init.tcl' stored in project is removed.
+18:16:40 INFO  : The updated ps init files are copied from platform to folder 'D:\Vivado_Project\MS.CnnAccFPGA\Vivado_proj\dma_test\vitis\App6\_ide\psinit' in project 'App6'.
+18:20:59 ERROR : (XSDB Server)In file included from usleep.c:34:
+xtime_l.h:65:9: note: #pragma message: For the sleep routines, Global timer is being used
+   65 | #pragma message ("For the sleep routines, Global timer is being used")
+      |         ^~~~~~~
+
+18:21:20 INFO  : Result from executing command 'getProjects': Hw2;Hw3;Hw4;Hw5;Hw6
+18:21:34 INFO  : Result from executing command 'getPlatforms': Hw6|D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/dma_test/vitis/Hw6/export/Hw6/Hw6.xpfm
+18:21:35 INFO  : Checking for BSP changes to sync application flags for project 'App6'...
+18:21:57 INFO  : Checking for BSP changes to sync application flags for project 'App6'...
+18:23:38 INFO  : Result from executing command 'getProjects': Hw2;Hw3;Hw4;Hw5;Hw6
+18:23:38 INFO  : Result from executing command 'getPlatforms': Hw6|D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/dma_test/vitis/Hw6/export/Hw6/Hw6.xpfm
+18:23:45 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:23:45 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:23:45 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:23:45 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:24:17 ERROR : An unexpected exception occurred in the module 'reading platform'
+18:24:17 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:24:17 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:24:17 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:24:17 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:24:31 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\Vivado_Project\MS.CnnAccFPGA\Vivado_proj\dma_test\vitis\temp_xsdb_launch_script.tcl
+18:24:33 INFO  : XSCT server has started successfully.
+18:24:33 INFO  : Successfully done setting XSCT server connection channel  
+18:24:33 INFO  : plnx-install-location is set to ''
+18:24:33 INFO  : Successfully done setting workspace for the tool. 
+18:24:36 INFO  : Platform repository initialization has completed.
+18:24:36 INFO  : Successfully done query RDI_DATADIR 
+18:24:37 INFO  : Registering command handlers for Vitis TCF services
+18:24:43 ERROR : An unexpected exception occurred in the module 'reading platform'
+18:24:43 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:24:43 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:24:43 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:24:43 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:24:49 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:24:49 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:24:49 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:24:49 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:24:49 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:24:49 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:24:49 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:24:49 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:24:50 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:24:50 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:24:50 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:24:50 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:25:06 ERROR : An unexpected exception occurred in the module 'reading platform'
+18:25:06 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:25:06 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:25:06 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:25:06 ERROR : An unexpected exception occurred in the module 'updating project references'
+18:27:23 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\Vivado_Project\MS.CnnAccFPGA\Vivado_proj\dma_test\vitis\temp_xsdb_launch_script.tcl
+18:27:25 INFO  : XSCT server has started successfully.
+18:27:25 INFO  : Successfully done setting XSCT server connection channel  
+18:27:25 INFO  : plnx-install-location is set to ''
+18:27:25 INFO  : Successfully done setting workspace for the tool. 
+18:27:27 INFO  : Platform repository initialization has completed.
+18:27:27 INFO  : Successfully done query RDI_DATADIR 
+18:27:27 INFO  : Registering command handlers for Vitis TCF services
+18:28:03 INFO  : Result from executing command 'getProjects': Hw6
+18:28:03 INFO  : Result from executing command 'getPlatforms': Hw6|D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/dma_test/vitis/Hw6/export/Hw6/Hw6.xpfm
+18:28:03 INFO  : Checking for BSP changes to sync application flags for project 'App6'...
+18:33:16 INFO  : Checking for BSP changes to sync application flags for project 'App6'...
+18:33:36 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+18:35:04 INFO  : Result from executing command 'getProjects': Hw6
+18:35:04 INFO  : Result from executing command 'getPlatforms': Hw6|D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/dma_test/vitis/Hw6/export/Hw6/Hw6.xpfm
+18:35:05 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+18:37:03 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+18:37:34 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+18:41:11 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\Vivado_Project\MS.CnnAccFPGA\Vivado_proj\dma_test\vitis\temp_xsdb_launch_script.tcl
+18:41:13 INFO  : XSCT server has started successfully.
+18:41:13 INFO  : Successfully done setting XSCT server connection channel  
+18:41:13 INFO  : plnx-install-location is set to ''
+18:41:13 INFO  : Successfully done setting workspace for the tool. 
+18:41:15 INFO  : Platform repository initialization has completed.
+18:41:15 INFO  : Registering command handlers for Vitis TCF services
+18:41:15 INFO  : Successfully done query RDI_DATADIR 

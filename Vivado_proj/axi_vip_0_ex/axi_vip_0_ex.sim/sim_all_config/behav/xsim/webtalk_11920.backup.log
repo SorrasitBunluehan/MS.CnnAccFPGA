@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Webtalk v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Mon Dec 28 13:49:43 2020
+# Process ID: 11920
+# Current directory: d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/axi_vip_0_ex/axi_vip_0_ex.sim/sim_all_config/behav/xsim
+# Command line: wbtcv.exe -mode batch -source d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/axi_vip_0_ex/axi_vip_0_ex.sim/sim_all_config/behav/xsim/xsim.dir/axi_vip_0_exdes_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/axi_vip_0_ex/axi_vip_0_ex.sim/sim_all_config/behav/xsim/webtalk.log
+# Journal file: d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/axi_vip_0_ex/axi_vip_0_ex.sim/sim_all_config/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/axi_vip_0_ex/axi_vip_0_ex.sim/sim_all_config/behav/xsim/xsim.dir/axi_vip_0_exdes_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Mon Dec 28 13:49:43 2020...
