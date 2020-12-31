@@ -11,6 +11,7 @@ entity wgu is
 		------------------------------------
 		KERNEL_SIZE_BIT_WIDTH : natural;
 		KERNEL_DEPTH_BIT_WIDTH : natural;
+		-- MAX_KERNEL_DEPTH: This value limit the maximum Memory depth for both SPM
 		MAX_KERNEL_DEPTH : natural; 
 
 		-- Info. abt. input 
@@ -25,12 +26,15 @@ entity wgu is
 		-- Network Parameters
 		kernel_size : in unsigned(KERNEL_SIZE_BIT_WIDTH-1 downto 0); 
 		kernel_depth : in unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);
+		hw_acc_en : in std_logic;
 
+		
 		clk : in std_logic;
 		arstn : in std_logic;
 		d_in : in std_logic_vector(input_width-1 downto 0);
 		w_valid : in std_logic;
 		w_addr_incr : in std_logic;
+		setzero : in std_logic;
 		wgu_out0 : out std_logic_vector((compute_byte*input_width)-1 downto 0);
 		wgu_out1 : out std_logic_vector((compute_byte*input_width)-1 downto 0);
 		w_addr_c : out std_logic_vector(addr_width-1 downto 0)
@@ -53,6 +57,8 @@ architecture behav of wgu is
 			arstn : in std_logic;
 			d_in : in std_logic_vector(input_width-1 downto 0);
 			in_valid : in std_logic;
+			setzero : in std_logic;
+			hw_acc_en : in std_logic;
 			out_valid : out std_logic;
 			d_out : out std_logic_vector((compute_byte*input_width)-1 downto 0)
 		);
@@ -95,6 +101,7 @@ begin
 	stick : w_sticker 
 		generic map (
 			input_width => input_width, 
+			MAX_KERNEL_SIZE => 5,
 			KERNEL_SIZE_BIT_WIDTH => KERNEL_SIZE_BIT_WIDTH
 		)port map(
 			kernel_size => kernel_size,
@@ -102,6 +109,8 @@ begin
 			arstn => arstn, 
 			d_in => d_in, 
 			in_valid => w_valid, 
+			setzero => setzero,
+			hw_acc_en => hw_acc_en,
 			out_valid => sticker_valid,
 			d_out => sticker_out
 		);
@@ -143,11 +152,15 @@ begin
 			if arstn = '0' then
 				we_sel <= '0';
 			elsif rising_edge(clk) then 
-				case sticker_valid is 
-					when '0' => we_sel <= we_sel;
-					when '1' => we_sel <= not(we_sel);
-					when others => we_sel <= '0';
-				end case;
+				if setzero ='1' then
+					we_sel <= '0';
+				else
+					case sticker_valid is 
+						when '0' => we_sel <= we_sel;
+						when '1' => we_sel <= not(we_sel);
+						when others => we_sel <= '0';
+					end case;
+				end if;
 			end if;
 		end process;
 
@@ -188,30 +201,21 @@ begin
 				addr_trg <= '0';
 			elsif rising_edge(clk) then 
 				addr_trg <= '0';
-				if sticker_valid = '1' then
-					s_c <= s_c + 1;
-					if s_c = 1 then
-						s_c <= 0;
-						addr_trg <= '1';
-					end if;
+				if setzero = '1' then
+					s_c <= 0;
+					addr_trg <= '0';
+				else
+				   if sticker_valid = '1' then
+					   s_c <= s_c + 1;
+					   if s_c = 1 then
+						   s_c <= 0;
+						   addr_trg <= '1';
+					   end if;
+				   end if;
 				end if;
 			end if;
 		end process;
 
-	--ADDR_TRIG_GEN:
-	--	process(clk, arstn)
-	--	begin
-	--		if arstn = '0' then
-	--			addr_trg <= '0'; 
-	--		elsif rising_edge(clk) then
-	--			if sticker_valid = '1' and s_c = 1 then
-	--				addr_trg <= '1';
-	--			else 
-	--				addr_trg <= '0';
-	--			end if;
-	--		end if;
-	--	end process;
-		
 	addr_en <= addr_trg or w_addr_incr;
 
 	ADDR_COUNTER:
@@ -220,11 +224,15 @@ begin
 			if arstn = '0' then 
 				mem_addr <= (others => '0');
 			elsif rising_edge(clk) then 
-				if addr_en = '1' then 
-				    if unsigned(mem_addr) = (kernel_depth/2)-1 then 
-						mem_addr <= (others => '0');
-					else
-						mem_addr <= std_logic_vector(unsigned(mem_addr) + 1);
+				if setzero = '1' then
+					mem_addr <= (others => '0');
+				else
+					if addr_en = '1' then 
+						if unsigned(mem_addr) = (kernel_depth/2)-1 then 
+							mem_addr <= (others => '0');
+						else
+							mem_addr <= std_logic_vector(unsigned(mem_addr) + 1);
+						end if;
 					end if;
 				end if;
 			end if;

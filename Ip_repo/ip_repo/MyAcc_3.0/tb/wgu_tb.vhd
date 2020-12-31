@@ -10,33 +10,43 @@ end wgu_tb;
 architecture behav of wgu_tb is
 	component wgu is
 		generic(
+			------------------------------------
+			-- Network Information Bitwidth 
+			------------------------------------
+			KERNEL_SIZE_BIT_WIDTH : natural;
+			KERNEL_DEPTH_BIT_WIDTH : natural;
+			MAX_KERNEL_DEPTH : natural;
+
 			-- Info. abt. input 
 			input_width : natural;			-- Number of bit for input data (default = 32)
-			-- Info. abt. kernel 
-			kernel_size : natural;			-- Size of kernel (ex. 3 for 3x3)             
-			kernel_depth : natural;			-- #kernels (ex. 16, 32)
-			-- Info. abt output to PU
 			compute_byte : natural; 		-- Total amount of data will be send to compute in PU per 1 clk 
-
 			addr_width : natural
 		);
 		port (
+			-- Network Parameters
+			kernel_size : in unsigned(KERNEL_SIZE_BIT_WIDTH-1 downto 0); 
+			kernel_depth : in unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);
+			hw_acc_en : in std_logic;
+
 			clk : in std_logic;
 			arstn : in std_logic;
 			d_in : in std_logic_vector(input_width-1 downto 0);
 			w_valid : in std_logic;
-			compute_en : in std_logic;
+			w_addr_incr : in std_logic;
+			setzero : in std_logic;
 			wgu_out0 : out std_logic_vector((compute_byte*input_width)-1 downto 0);
 			wgu_out1 : out std_logic_vector((compute_byte*input_width)-1 downto 0);
-			wgu_valid : out std_logic
+			w_addr_c : out std_logic_vector(addr_width-1 downto 0)
 		);
 	end component;
 
 	constant CLK_PERIOD : time := 20 ns;
-	constant input_width : natural := 32;
-	constant kernel_size : natural := 3;
-	constant kernel_depth: natural := 16;
-	constant compute_byte : natural := 25;
+	constant KERNEL_SIZE_BIT_WIDTH : natural := 8;
+	constant KERNEL_DEPTH_BIT_WIDTH : natural := 13;
+	constant MAX_KERNEL_DEPTH : natural := 512;
+
+	constant input_width : natural := 32;			-- Number of bit for input data (default = 32)
+	constant compute_byte : natural := 25; 		-- Total amount of data will be send to compute in PU per 1 clk 
 	constant addr_width : natural := 8;
 
 
@@ -44,29 +54,36 @@ architecture behav of wgu_tb is
 	signal arstn : std_logic;
 	signal d_in :  std_logic_vector(input_width-1 downto 0);
 	signal w_valid : std_logic;
-	signal compute_en : std_logic;
+	signal w_addr_incr : std_logic;
+	signal setzero : std_logic;
 	signal wgu_out0 : std_logic_vector((compute_byte*input_width)-1 downto 0);
 	signal wgu_out1 : std_logic_vector((compute_byte*input_width)-1 downto 0);
-	signal wgu_valid : std_logic;
+	signal w_addr_c : std_logic_vector(addr_width-1 downto 0);
 
 begin
 
 	dut : wgu
 	generic map(
+		KERNEL_SIZE_BIT_WIDTH		=>		KERNEL_SIZE_BIT_WIDTH,
+		KERNEL_DEPTH_BIT_WIDTH		=>      KERNEL_DEPTH_BIT_WIDTH,	
+		MAX_KERNEL_DEPTH			=>      MAX_KERNEL_DEPTH,		
 		input_width => input_width,
-		kernel_size => kernel_size,
-		kernel_depth => kernel_depth,
 		compute_byte => compute_byte,
 		addr_width => addr_width
 	)port map(
+		kernel_size => kernel_size,
+		kernel_depth => kernel_depth,
+		hw_acc_en => hw_acc_en,
+
 		clk => clk,
 		arstn => arstn,
 		d_in => d_in,
 		w_valid => w_valid,
-		compute_en => compute_en,
+		w_addr_incr => w_addr_incr,
+		setzero => setzero,
 		wgu_out0 => wgu_out0,
 		wgu_out1 => wgu_out1,
-		wgu_valid => wgu_valid
+		w_addr_c => w_addr_c
 	);
 
 	stim_proc: 

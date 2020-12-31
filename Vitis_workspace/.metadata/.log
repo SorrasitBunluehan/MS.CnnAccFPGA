@@ -12425,3 +12425,9 @@ Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-13: Launc
 
 !ENTRY com.xilinx.sdk.utils 0 0 2020-12-31 10:41:46.612
 !MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-13: Launching Debugger_UserApp-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-12-31 12:52:24.460
+!MESSAGE XSCT Command: [disconnect tcfchan#5], Thread: Thread-387
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-12-31 12:52:24.472
+!MESSAGE XSCT command with result: [disconnect tcfchan#5], Result: [null, ]. Thread: Thread-387
