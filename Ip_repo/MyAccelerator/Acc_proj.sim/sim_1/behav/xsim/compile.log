@@ -1,10 +1,4 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/main_fsm.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'main_fsm'
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/SPM.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'SPM'
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/w_sticker.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/w_sticker.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'w_sticker'
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/acc_wrapper.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'acc_wrapper'
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/tb/acc_wrapper_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'acc_wrapper_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/tb/w_sticker_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'w_sticker_tb'

@@ -53,7 +53,7 @@
 #define XPAR_AXI_DMA_0_S2MM_BURST_SIZE 16
 #define XPAR_AXI_DMA_0_MICRO_DMA 0
 #define XPAR_AXI_DMA_0_ADDR_WIDTH 32
-#define XPAR_AXI_DMA_0_SG_LENGTH_WIDTH 21
+#define XPAR_AXI_DMA_0_SG_LENGTH_WIDTH 14
 
 
 /******************************************************************/
@@ -76,7 +76,7 @@
 #define XPAR_AXIDMA_0_S2MM_BURST_SIZE 16
 #define XPAR_AXIDMA_0_MICRO_DMA 0
 #define XPAR_AXIDMA_0_c_addr_width 32
-#define XPAR_AXIDMA_0_c_sg_length_width 21
+#define XPAR_AXIDMA_0_c_sg_length_width 14
 
 
 /******************************************************************/
@@ -137,48 +137,6 @@
 
 
 /******************************************************************/
-
-/* Definitions for driver EMACPS */
-#define XPAR_XEMACPS_NUM_INSTANCES 1
-
-/* Definitions for peripheral PS7_ETHERNET_0 */
-#define XPAR_PS7_ETHERNET_0_DEVICE_ID 0
-#define XPAR_PS7_ETHERNET_0_BASEADDR 0xE000B000
-#define XPAR_PS7_ETHERNET_0_HIGHADDR 0xE000BFFF
-#define XPAR_PS7_ETHERNET_0_ENET_CLK_FREQ_HZ 125000000
-#define XPAR_PS7_ETHERNET_0_ENET_SLCR_1000MBPS_DIV0 8
-#define XPAR_PS7_ETHERNET_0_ENET_SLCR_1000MBPS_DIV1 1
-#define XPAR_PS7_ETHERNET_0_ENET_SLCR_100MBPS_DIV0 8
-#define XPAR_PS7_ETHERNET_0_ENET_SLCR_100MBPS_DIV1 5
-#define XPAR_PS7_ETHERNET_0_ENET_SLCR_10MBPS_DIV0 8
-#define XPAR_PS7_ETHERNET_0_ENET_SLCR_10MBPS_DIV1 50
-#define XPAR_PS7_ETHERNET_0_ENET_TSU_CLK_FREQ_HZ 0
-
-
-/******************************************************************/
-
-#define XPAR_PS7_ETHERNET_0_IS_CACHE_COHERENT 0
-#define XPAR_XEMACPS_0_IS_CACHE_COHERENT 0
-/* Canonical definitions for peripheral PS7_ETHERNET_0 */
-#define XPAR_XEMACPS_0_DEVICE_ID XPAR_PS7_ETHERNET_0_DEVICE_ID
-#define XPAR_XEMACPS_0_BASEADDR 0xE000B000
-#define XPAR_XEMACPS_0_HIGHADDR 0xE000BFFF
-#define XPAR_XEMACPS_0_ENET_CLK_FREQ_HZ 125000000
-#define XPAR_XEMACPS_0_ENET_SLCR_1000Mbps_DIV0 8
-#define XPAR_XEMACPS_0_ENET_SLCR_1000Mbps_DIV1 1
-#define XPAR_XEMACPS_0_ENET_SLCR_100Mbps_DIV0 8
-#define XPAR_XEMACPS_0_ENET_SLCR_100Mbps_DIV1 5
-#define XPAR_XEMACPS_0_ENET_SLCR_10Mbps_DIV0 8
-#define XPAR_XEMACPS_0_ENET_SLCR_10Mbps_DIV1 50
-#define XPAR_XEMACPS_0_ENET_TSU_CLK_FREQ_HZ 0
-
-
-/******************************************************************/
-
-
-/* Definitions for peripheral MYACCELERATOR_0 */
-#define XPAR_MYACCELERATOR_0_BASEADDR 0x43C00000
-#define XPAR_MYACCELERATOR_0_HIGHADDR 0x43C0FFFF
 
 
 /* Definitions for peripheral PS7_AFI_0 */
@@ -248,11 +206,6 @@
 #define XPAR_PS7_PMU_0_PMU1_S_AXI_HIGHADDR 0xF8893FFF
 
 
-/* Definitions for peripheral PS7_QSPI_LINEAR_0 */
-#define XPAR_PS7_QSPI_LINEAR_0_S_AXI_BASEADDR 0xFC000000
-#define XPAR_PS7_QSPI_LINEAR_0_S_AXI_HIGHADDR 0xFCFFFFFF
-
-
 /* Definitions for peripheral PS7_RAM_0 */
 #define XPAR_PS7_RAM_0_S_AXI_BASEADDR 0x00000000
 #define XPAR_PS7_RAM_0_S_AXI_HIGHADDR 0x0003FFFF
@@ -271,6 +224,11 @@
 /* Definitions for peripheral PS7_SLCR_0 */
 #define XPAR_PS7_SLCR_0_S_AXI_BASEADDR 0xF8000000
 #define XPAR_PS7_SLCR_0_S_AXI_HIGHADDR 0xF8000FFF
+
+
+/* Definitions for peripheral MYACC_0 */
+#define XPAR_MYACC_0_S01_AXI_BASEADDR 0x43C00000
+#define XPAR_MYACC_0_S01_AXI_HIGHADDR 0x43C0FFFF
 
 
 /******************************************************************/
@@ -294,28 +252,15 @@
 
 /******************************************************************/
 
-/* Definitions for driver QSPIPS */
-#define XPAR_XQSPIPS_NUM_INSTANCES 1
-
-/* Definitions for peripheral PS7_QSPI_0 */
-#define XPAR_PS7_QSPI_0_DEVICE_ID 0
-#define XPAR_PS7_QSPI_0_BASEADDR 0xE000D000
-#define XPAR_PS7_QSPI_0_HIGHADDR 0xE000DFFF
-#define XPAR_PS7_QSPI_0_QSPI_CLK_FREQ_HZ 200000000
-#define XPAR_PS7_QSPI_0_QSPI_MODE 0
-#define XPAR_PS7_QSPI_0_QSPI_BUS_WIDTH 2
-
+/* Definitions for Fabric interrupts connected to ps7_scugic_0 */
+#define XPAR_FABRIC_AXI_DMA_0_MM2S_INTROUT_INTR 61U
+#define XPAR_FABRIC_AXI_DMA_0_S2MM_INTROUT_INTR 62U
 
 /******************************************************************/
 
-/* Canonical definitions for peripheral PS7_QSPI_0 */
-#define XPAR_XQSPIPS_0_DEVICE_ID XPAR_PS7_QSPI_0_DEVICE_ID
-#define XPAR_XQSPIPS_0_BASEADDR 0xE000D000
-#define XPAR_XQSPIPS_0_HIGHADDR 0xE000DFFF
-#define XPAR_XQSPIPS_0_QSPI_CLK_FREQ_HZ 200000000
-#define XPAR_XQSPIPS_0_QSPI_MODE 0
-#define XPAR_XQSPIPS_0_QSPI_BUS_WIDTH 2
-
+/* Canonical definitions for Fabric interrupts connected to ps7_scugic_0 */
+#define XPAR_FABRIC_AXIDMA_0_MM2S_INTROUT_VEC_ID XPAR_FABRIC_AXI_DMA_0_MM2S_INTROUT_INTR
+#define XPAR_FABRIC_AXIDMA_0_S2MM_INTROUT_VEC_ID XPAR_FABRIC_AXI_DMA_0_S2MM_INTROUT_INTR
 
 /******************************************************************/
 

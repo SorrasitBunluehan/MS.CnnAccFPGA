@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="w_sticker_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="w_sticker_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="1954000fs"></ZoomStartTime>
+      <ZoomEndTime time="3732001fs"></ZoomEndTime>
+      <Cursor1Time time="2750000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="171"></NameColumnWidth>
+      <ValueColumnWidth column_width="198"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="15" />
+   <wvobject fp_name="/w_sticker_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/w_sticker_tb/arstn" type="logic">
+      <obj_property name="ElementShortName">arstn</obj_property>
+      <obj_property name="ObjectShortName">arstn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/w_sticker_tb/kernel_size" type="array">
+      <obj_property name="ElementShortName">kernel_size[7:0]</obj_property>
+      <obj_property name="ObjectShortName">kernel_size[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/w_sticker_tb/d_in" type="array">
+      <obj_property name="ElementShortName">d_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">d_in[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/w_sticker_tb/in_valid" type="logic">
+      <obj_property name="ElementShortName">in_valid</obj_property>
+      <obj_property name="ObjectShortName">in_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/w_sticker_tb/setzero" type="logic">
+      <obj_property name="ElementShortName">setzero</obj_property>
+      <obj_property name="ObjectShortName">setzero</obj_property>
+   </wvobject>
+   <wvobject fp_name="/w_sticker_tb/hw_acc_en" type="logic">
+      <obj_property name="ElementShortName">hw_acc_en</obj_property>
+      <obj_property name="ObjectShortName">hw_acc_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/w_sticker_tb/out_valid" type="logic">
+      <obj_property name="ElementShortName">out_valid</obj_property>
+      <obj_property name="ObjectShortName">out_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/w_sticker_tb/d_out" type="array">
+      <obj_property name="ElementShortName">d_out[799:0]</obj_property>
+      <obj_property name="ObjectShortName">d_out[799:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/w_sticker_tb/input_width" type="other">
+      <obj_property name="ElementShortName">input_width</obj_property>
+      <obj_property name="ObjectShortName">input_width</obj_property>
+   </wvobject>
+   <wvobject fp_name="/w_sticker_tb/MAX_KERNEL_SIZE" type="other">
+      <obj_property name="ElementShortName">MAX_KERNEL_SIZE</obj_property>
+      <obj_property name="ObjectShortName">MAX_KERNEL_SIZE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/w_sticker_tb/KERNEL_SIZE_BIT_WIDTH" type="other">
+      <obj_property name="ElementShortName">KERNEL_SIZE_BIT_WIDTH</obj_property>
+      <obj_property name="ObjectShortName">KERNEL_SIZE_BIT_WIDTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/w_sticker_tb/CLK_PERIOD" type="other">
+      <obj_property name="ElementShortName">CLK_PERIOD</obj_property>
+      <obj_property name="ObjectShortName">CLK_PERIOD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/w_sticker_tb/dut/row" type="other">
+      <obj_property name="ElementShortName">row</obj_property>
+      <obj_property name="ObjectShortName">row</obj_property>
+   </wvobject>
+   <wvobject fp_name="/w_sticker_tb/dut/col" type="other">
+      <obj_property name="ElementShortName">col</obj_property>
+      <obj_property name="ObjectShortName">col</obj_property>
+   </wvobject>
+</wave_config>

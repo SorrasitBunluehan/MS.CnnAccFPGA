@@ -70,7 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 3
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z010clg400-1
 
@@ -83,7 +82,10 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part_repo_paths {C:/Users/bsorr/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store} [current_project]
 set_property board_part digilentinc.com:zybo:part0:1.0 [current_project]
-set_property ip_repo_paths d:/vivado_project/ms.cnnaccfpga/ip_repo/myaccelerator [current_project]
+set_property ip_repo_paths {
+  d:/vivado_project/ms.cnnaccfpga/ip_repo/myaccelerator
+  c:/Users/bsorr/AppData/Roaming/Xilinx/ip_repo
+} [current_project]
 update_ip_catalog
 set_property ip_output_repo d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/Acc_proj.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
@@ -96,6 +98,7 @@ read_vhdl -library xil_defaultlib {
   D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/wgu.vhd
   D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/acc_wrapper.vhd
   D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/MyAccelerator_v2_0_S00_AXI.vhd
+  D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/MyAccelerator/srcs/MyAccelerator_v2_0_M01_AXIS.vhd
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

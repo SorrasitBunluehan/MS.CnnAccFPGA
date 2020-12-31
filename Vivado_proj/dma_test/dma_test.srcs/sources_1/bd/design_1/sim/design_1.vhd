@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
---Date        : Sun Dec 27 17:03:29 2020
+--Date        : Tue Dec 29 13:23:27 2020
 --Host        : DESKTOP-BJ9E846 running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -2961,7 +2961,7 @@ entity design_1 is
     FIXED_IO_ps_srstb : inout STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=18,numReposBlks=9,numNonXlnxBlks=0,numHierBlks=9,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=7,da_clkrst_cnt=19,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=24,numReposBlks=15,numNonXlnxBlks=0,numHierBlks=9,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=8,da_clkrst_cnt=33,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
@@ -3182,29 +3182,14 @@ architecture STRUCTURE of design_1 is
     peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component design_1_rst_ps7_0_100M_0;
-  component design_1_myaccelerator_0_0 is
+  component design_1_MyAcc_0_0 is
   port (
-    s00_axi_aclk : in STD_LOGIC;
-    s00_axi_aresetn : in STD_LOGIC;
-    s00_axi_awaddr : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s00_axi_awvalid : in STD_LOGIC;
-    s00_axi_awready : out STD_LOGIC;
-    s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s00_axi_wvalid : in STD_LOGIC;
-    s00_axi_wready : out STD_LOGIC;
-    s00_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s00_axi_bvalid : out STD_LOGIC;
-    s00_axi_bready : in STD_LOGIC;
-    s00_axi_araddr : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    s00_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s00_axi_arvalid : in STD_LOGIC;
-    s00_axi_arready : out STD_LOGIC;
-    s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s00_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s00_axi_rvalid : out STD_LOGIC;
-    s00_axi_rready : in STD_LOGIC;
+    input_size_test : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    input_depth_test : out STD_LOGIC_VECTOR ( 12 downto 0 );
+    kernel_size_test : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    kernel_depth_test : out STD_LOGIC_VECTOR ( 12 downto 0 );
+    stride_test : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    hw_acc_en_test : out STD_LOGIC;
     s00_axis_aclk : in STD_LOGIC;
     s00_axis_aresetn : in STD_LOGIC;
     s00_axis_tready : out STD_LOGIC;
@@ -3212,15 +3197,76 @@ architecture STRUCTURE of design_1 is
     s00_axis_tstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s00_axis_tlast : in STD_LOGIC;
     s00_axis_tvalid : in STD_LOGIC;
-    m01_axis_aclk : in STD_LOGIC;
-    m01_axis_aresetn : in STD_LOGIC;
-    m01_axis_tvalid : out STD_LOGIC;
-    m01_axis_tdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    m01_axis_tstrb : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    m01_axis_tlast : out STD_LOGIC;
-    m01_axis_tready : in STD_LOGIC
+    s01_axi_aclk : in STD_LOGIC;
+    s01_axi_aresetn : in STD_LOGIC;
+    s01_axi_awaddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s01_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s01_axi_awvalid : in STD_LOGIC;
+    s01_axi_awready : out STD_LOGIC;
+    s01_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s01_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s01_axi_wvalid : in STD_LOGIC;
+    s01_axi_wready : out STD_LOGIC;
+    s01_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s01_axi_bvalid : out STD_LOGIC;
+    s01_axi_bready : in STD_LOGIC;
+    s01_axi_araddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s01_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s01_axi_arvalid : in STD_LOGIC;
+    s01_axi_arready : out STD_LOGIC;
+    s01_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s01_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s01_axi_rvalid : out STD_LOGIC;
+    s01_axi_rready : in STD_LOGIC;
+    m00_axis_aclk : in STD_LOGIC;
+    m00_axis_aresetn : in STD_LOGIC;
+    m00_axis_tvalid : out STD_LOGIC;
+    m00_axis_tdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    m00_axis_tstrb : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    m00_axis_tlast : out STD_LOGIC;
+    m00_axis_tready : in STD_LOGIC
   );
-  end component design_1_myaccelerator_0_0;
+  end component design_1_MyAcc_0_0;
+  component design_1_system_ila_0_1 is
+  port (
+    clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component design_1_system_ila_0_1;
+  component design_1_system_ila_1_1 is
+  port (
+    clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 12 downto 0 )
+  );
+  end component design_1_system_ila_1_1;
+  component design_1_system_ila_2_1 is
+  port (
+    clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 15 downto 0 )
+  );
+  end component design_1_system_ila_2_1;
+  component design_1_system_ila_3_1 is
+  port (
+    clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 12 downto 0 )
+  );
+  end component design_1_system_ila_3_1;
+  component design_1_system_ila_4_1 is
+  port (
+    clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 7 downto 0 )
+  );
+  end component design_1_system_ila_4_1;
+  component design_1_system_ila_5_1 is
+  port (
+    clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 2 downto 0 )
+  );
+  end component design_1_system_ila_5_1;
+  signal MyAcc_0_M00_AXIS_TDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal MyAcc_0_M00_AXIS_TLAST : STD_LOGIC;
+  signal MyAcc_0_M00_AXIS_TREADY : STD_LOGIC;
+  signal MyAcc_0_M00_AXIS_TVALID : STD_LOGIC;
   signal axi_dma_0_M_AXIS_MM2S_TDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal axi_dma_0_M_AXIS_MM2S_TKEEP : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_dma_0_M_AXIS_MM2S_TLAST : STD_LOGIC;
@@ -3297,10 +3343,23 @@ architecture STRUCTURE of design_1 is
   signal axis_data_fifo_0_M_AXIS_TLAST : STD_LOGIC;
   signal axis_data_fifo_0_M_AXIS_TREADY : STD_LOGIC;
   signal axis_data_fifo_0_M_AXIS_TVALID : STD_LOGIC;
-  signal myaccelerator_0_m01_axis_TDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal myaccelerator_0_m01_axis_TLAST : STD_LOGIC;
-  signal myaccelerator_0_m01_axis_TREADY : STD_LOGIC;
-  signal myaccelerator_0_m01_axis_TVALID : STD_LOGIC;
+  signal hw_acc_en_test : STD_LOGIC;
+  attribute DEBUG : string;
+  attribute DEBUG of hw_acc_en_test : signal is "true";
+  attribute MARK_DEBUG : boolean;
+  attribute MARK_DEBUG of hw_acc_en_test : signal is std.standard.true;
+  signal input_depth_test : STD_LOGIC_VECTOR ( 12 downto 0 );
+  attribute DEBUG of input_depth_test : signal is "true";
+  attribute MARK_DEBUG of input_depth_test : signal is std.standard.true;
+  signal input_size_test : STD_LOGIC_VECTOR ( 15 downto 0 );
+  attribute DEBUG of input_size_test : signal is "true";
+  attribute MARK_DEBUG of input_size_test : signal is std.standard.true;
+  signal kernel_depth_test : STD_LOGIC_VECTOR ( 12 downto 0 );
+  attribute DEBUG of kernel_depth_test : signal is "true";
+  attribute MARK_DEBUG of kernel_depth_test : signal is std.standard.true;
+  signal kernel_size_test : STD_LOGIC_VECTOR ( 7 downto 0 );
+  attribute DEBUG of kernel_size_test : signal is "true";
+  attribute MARK_DEBUG of kernel_size_test : signal is std.standard.true;
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal processing_system7_0_DDR_BA : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal processing_system7_0_DDR_CAS_N : STD_LOGIC;
@@ -3398,6 +3457,10 @@ architecture STRUCTURE of design_1 is
   signal ps7_0_axi_periph_M01_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal ps7_0_axi_periph_M01_AXI_WVALID : STD_LOGIC;
   signal rst_ps7_0_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal stride_test : STD_LOGIC_VECTOR ( 2 downto 0 );
+  attribute DEBUG of stride_test : signal is "true";
+  attribute MARK_DEBUG of stride_test : signal is std.standard.true;
+  signal NLW_MyAcc_0_m00_axis_tstrb_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_axi_dma_0_mm2s_introut_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_dma_0_mm2s_prmry_reset_out_n_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_dma_0_s2mm_introut_UNCONNECTED : STD_LOGIC;
@@ -3414,7 +3477,6 @@ architecture STRUCTURE of design_1 is
   signal NLW_axi_mem_intercon_S00_AXI_rvalid_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_mem_intercon_S00_AXI_wready_UNCONNECTED : STD_LOGIC;
   signal NLW_axis_data_fifo_0_m_axis_tkeep_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal NLW_myaccelerator_0_m01_axis_tstrb_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_processing_system7_0_TTC0_WAVE0_OUT_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_TTC0_WAVE1_OUT_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_TTC0_WAVE2_OUT_UNCONNECTED : STD_LOGIC;
@@ -3454,6 +3516,50 @@ architecture STRUCTURE of design_1 is
   attribute X_INTERFACE_INFO of DDR_dqs_p : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_P";
   attribute X_INTERFACE_INFO of FIXED_IO_mio : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO MIO";
 begin
+MyAcc_0: component design_1_MyAcc_0_0
+     port map (
+      hw_acc_en_test => hw_acc_en_test,
+      input_depth_test(12 downto 0) => input_depth_test(12 downto 0),
+      input_size_test(15 downto 0) => input_size_test(15 downto 0),
+      kernel_depth_test(12 downto 0) => kernel_depth_test(12 downto 0),
+      kernel_size_test(7 downto 0) => kernel_size_test(7 downto 0),
+      m00_axis_aclk => processing_system7_0_FCLK_CLK0,
+      m00_axis_aresetn => rst_ps7_0_100M_peripheral_aresetn(0),
+      m00_axis_tdata(31 downto 0) => MyAcc_0_M00_AXIS_TDATA(31 downto 0),
+      m00_axis_tlast => MyAcc_0_M00_AXIS_TLAST,
+      m00_axis_tready => MyAcc_0_M00_AXIS_TREADY,
+      m00_axis_tstrb(3 downto 0) => NLW_MyAcc_0_m00_axis_tstrb_UNCONNECTED(3 downto 0),
+      m00_axis_tvalid => MyAcc_0_M00_AXIS_TVALID,
+      s00_axis_aclk => processing_system7_0_FCLK_CLK0,
+      s00_axis_aresetn => rst_ps7_0_100M_peripheral_aresetn(0),
+      s00_axis_tdata(31 downto 0) => axis_data_fifo_0_M_AXIS_TDATA(31 downto 0),
+      s00_axis_tlast => axis_data_fifo_0_M_AXIS_TLAST,
+      s00_axis_tready => axis_data_fifo_0_M_AXIS_TREADY,
+      s00_axis_tstrb(3 downto 0) => B"1111",
+      s00_axis_tvalid => axis_data_fifo_0_M_AXIS_TVALID,
+      s01_axi_aclk => processing_system7_0_FCLK_CLK0,
+      s01_axi_araddr(3 downto 0) => ps7_0_axi_periph_M01_AXI_ARADDR(3 downto 0),
+      s01_axi_aresetn => rst_ps7_0_100M_peripheral_aresetn(0),
+      s01_axi_arprot(2 downto 0) => ps7_0_axi_periph_M01_AXI_ARPROT(2 downto 0),
+      s01_axi_arready => ps7_0_axi_periph_M01_AXI_ARREADY,
+      s01_axi_arvalid => ps7_0_axi_periph_M01_AXI_ARVALID,
+      s01_axi_awaddr(3 downto 0) => ps7_0_axi_periph_M01_AXI_AWADDR(3 downto 0),
+      s01_axi_awprot(2 downto 0) => ps7_0_axi_periph_M01_AXI_AWPROT(2 downto 0),
+      s01_axi_awready => ps7_0_axi_periph_M01_AXI_AWREADY,
+      s01_axi_awvalid => ps7_0_axi_periph_M01_AXI_AWVALID,
+      s01_axi_bready => ps7_0_axi_periph_M01_AXI_BREADY,
+      s01_axi_bresp(1 downto 0) => ps7_0_axi_periph_M01_AXI_BRESP(1 downto 0),
+      s01_axi_bvalid => ps7_0_axi_periph_M01_AXI_BVALID,
+      s01_axi_rdata(31 downto 0) => ps7_0_axi_periph_M01_AXI_RDATA(31 downto 0),
+      s01_axi_rready => ps7_0_axi_periph_M01_AXI_RREADY,
+      s01_axi_rresp(1 downto 0) => ps7_0_axi_periph_M01_AXI_RRESP(1 downto 0),
+      s01_axi_rvalid => ps7_0_axi_periph_M01_AXI_RVALID,
+      s01_axi_wdata(31 downto 0) => ps7_0_axi_periph_M01_AXI_WDATA(31 downto 0),
+      s01_axi_wready => ps7_0_axi_periph_M01_AXI_WREADY,
+      s01_axi_wstrb(3 downto 0) => ps7_0_axi_periph_M01_AXI_WSTRB(3 downto 0),
+      s01_axi_wvalid => ps7_0_axi_periph_M01_AXI_WVALID,
+      stride_test(2 downto 0) => stride_test(2 downto 0)
+    );
 axi_dma_0: component design_1_axi_dma_0_0
      port map (
       axi_resetn => rst_ps7_0_100M_peripheral_aresetn(0),
@@ -3514,11 +3620,11 @@ axi_dma_0: component design_1_axi_dma_0_0
       s_axi_lite_wdata(31 downto 0) => ps7_0_axi_periph_M00_AXI_WDATA(31 downto 0),
       s_axi_lite_wready => ps7_0_axi_periph_M00_AXI_WREADY,
       s_axi_lite_wvalid => ps7_0_axi_periph_M00_AXI_WVALID,
-      s_axis_s2mm_tdata(31 downto 0) => myaccelerator_0_m01_axis_TDATA(31 downto 0),
+      s_axis_s2mm_tdata(31 downto 0) => MyAcc_0_M00_AXIS_TDATA(31 downto 0),
       s_axis_s2mm_tkeep(3 downto 0) => B"1111",
-      s_axis_s2mm_tlast => myaccelerator_0_m01_axis_TLAST,
-      s_axis_s2mm_tready => myaccelerator_0_m01_axis_TREADY,
-      s_axis_s2mm_tvalid => myaccelerator_0_m01_axis_TVALID
+      s_axis_s2mm_tlast => MyAcc_0_M00_AXIS_TLAST,
+      s_axis_s2mm_tready => MyAcc_0_M00_AXIS_TREADY,
+      s_axis_s2mm_tvalid => MyAcc_0_M00_AXIS_TVALID
     );
 axi_mem_intercon: entity work.design_1_axi_mem_intercon_0
      port map (
@@ -3651,44 +3757,6 @@ axis_data_fifo_0: component design_1_axis_data_fifo_0_0
       s_axis_tlast => axi_dma_0_M_AXIS_MM2S_TLAST,
       s_axis_tready => axi_dma_0_M_AXIS_MM2S_TREADY,
       s_axis_tvalid => axi_dma_0_M_AXIS_MM2S_TVALID
-    );
-myaccelerator_0: component design_1_myaccelerator_0_0
-     port map (
-      m01_axis_aclk => processing_system7_0_FCLK_CLK0,
-      m01_axis_aresetn => rst_ps7_0_100M_peripheral_aresetn(0),
-      m01_axis_tdata(31 downto 0) => myaccelerator_0_m01_axis_TDATA(31 downto 0),
-      m01_axis_tlast => myaccelerator_0_m01_axis_TLAST,
-      m01_axis_tready => myaccelerator_0_m01_axis_TREADY,
-      m01_axis_tstrb(3 downto 0) => NLW_myaccelerator_0_m01_axis_tstrb_UNCONNECTED(3 downto 0),
-      m01_axis_tvalid => myaccelerator_0_m01_axis_TVALID,
-      s00_axi_aclk => processing_system7_0_FCLK_CLK0,
-      s00_axi_araddr(7 downto 0) => ps7_0_axi_periph_M01_AXI_ARADDR(7 downto 0),
-      s00_axi_aresetn => rst_ps7_0_100M_peripheral_aresetn(0),
-      s00_axi_arprot(2 downto 0) => ps7_0_axi_periph_M01_AXI_ARPROT(2 downto 0),
-      s00_axi_arready => ps7_0_axi_periph_M01_AXI_ARREADY,
-      s00_axi_arvalid => ps7_0_axi_periph_M01_AXI_ARVALID,
-      s00_axi_awaddr(7 downto 0) => ps7_0_axi_periph_M01_AXI_AWADDR(7 downto 0),
-      s00_axi_awprot(2 downto 0) => ps7_0_axi_periph_M01_AXI_AWPROT(2 downto 0),
-      s00_axi_awready => ps7_0_axi_periph_M01_AXI_AWREADY,
-      s00_axi_awvalid => ps7_0_axi_periph_M01_AXI_AWVALID,
-      s00_axi_bready => ps7_0_axi_periph_M01_AXI_BREADY,
-      s00_axi_bresp(1 downto 0) => ps7_0_axi_periph_M01_AXI_BRESP(1 downto 0),
-      s00_axi_bvalid => ps7_0_axi_periph_M01_AXI_BVALID,
-      s00_axi_rdata(31 downto 0) => ps7_0_axi_periph_M01_AXI_RDATA(31 downto 0),
-      s00_axi_rready => ps7_0_axi_periph_M01_AXI_RREADY,
-      s00_axi_rresp(1 downto 0) => ps7_0_axi_periph_M01_AXI_RRESP(1 downto 0),
-      s00_axi_rvalid => ps7_0_axi_periph_M01_AXI_RVALID,
-      s00_axi_wdata(31 downto 0) => ps7_0_axi_periph_M01_AXI_WDATA(31 downto 0),
-      s00_axi_wready => ps7_0_axi_periph_M01_AXI_WREADY,
-      s00_axi_wstrb(3 downto 0) => ps7_0_axi_periph_M01_AXI_WSTRB(3 downto 0),
-      s00_axi_wvalid => ps7_0_axi_periph_M01_AXI_WVALID,
-      s00_axis_aclk => processing_system7_0_FCLK_CLK0,
-      s00_axis_aresetn => rst_ps7_0_100M_peripheral_aresetn(0),
-      s00_axis_tdata(31 downto 0) => axis_data_fifo_0_M_AXIS_TDATA(31 downto 0),
-      s00_axis_tlast => axis_data_fifo_0_M_AXIS_TLAST,
-      s00_axis_tready => axis_data_fifo_0_M_AXIS_TREADY,
-      s00_axis_tstrb(3 downto 0) => B"1111",
-      s00_axis_tvalid => axis_data_fifo_0_M_AXIS_TVALID
     );
 processing_system7_0: component design_1_processing_system7_0_0
      port map (
@@ -3906,5 +3974,35 @@ rst_ps7_0_100M: component design_1_rst_ps7_0_100M_0
       peripheral_aresetn(0) => rst_ps7_0_100M_peripheral_aresetn(0),
       peripheral_reset(0) => NLW_rst_ps7_0_100M_peripheral_reset_UNCONNECTED(0),
       slowest_sync_clk => processing_system7_0_FCLK_CLK0
+    );
+system_ila_0: component design_1_system_ila_0_1
+     port map (
+      clk => processing_system7_0_FCLK_CLK0,
+      probe0(0) => hw_acc_en_test
+    );
+system_ila_1: component design_1_system_ila_1_1
+     port map (
+      clk => processing_system7_0_FCLK_CLK0,
+      probe0(12 downto 0) => input_depth_test(12 downto 0)
+    );
+system_ila_2: component design_1_system_ila_2_1
+     port map (
+      clk => processing_system7_0_FCLK_CLK0,
+      probe0(15 downto 0) => input_size_test(15 downto 0)
+    );
+system_ila_3: component design_1_system_ila_3_1
+     port map (
+      clk => processing_system7_0_FCLK_CLK0,
+      probe0(12 downto 0) => kernel_depth_test(12 downto 0)
+    );
+system_ila_4: component design_1_system_ila_4_1
+     port map (
+      clk => processing_system7_0_FCLK_CLK0,
+      probe0(7 downto 0) => kernel_size_test(7 downto 0)
+    );
+system_ila_5: component design_1_system_ila_5_1
+     port map (
+      clk => processing_system7_0_FCLK_CLK0,
+      probe0(2 downto 0) => stride_test(2 downto 0)
     );
 end STRUCTURE;

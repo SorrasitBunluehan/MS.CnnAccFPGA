@@ -1,0 +1,10 @@
+10:41:30 **** Incremental Build of configuration Debug for project UserApp_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 49992 D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj/export/HwProj/HwProj.xpfm standalone_domain D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp_system/Debug/system.bif
+sdcard_gen --xpfm D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj/export/HwProj/HwProj.xpfm --sys_config HwProj --bif D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp_system/Debug/system.bif --bitstream D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/bitstream/design_1_wrapper.bit --elf D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/Debug/UserApp.elf,ps7_cortexa9_0
+creating BOOT.BIN using D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/bitstream/design_1_wrapper.bit
+Running D:/Vivado/Vitis/2020.1/bin/bootgen  -image D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+
+10:41:35 Build Finished (took 4s.985ms)
+

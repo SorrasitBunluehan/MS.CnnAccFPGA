@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Sun Dec 27 17:05:19 2020
+-- Date        : Sun Dec 27 17:05:18 2020
 -- Host        : DESKTOP-BJ9E846 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/dma_test/dma_test.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top design_1_processing_system7_0_0 -prefix
+--               design_1_processing_system7_0_0_ design_1_processing_system7_0_0_sim_netlist.vhdl
 -- Design      : design_1_processing_system7_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -814,8 +814,6 @@ entity design_1_processing_system7_0_0_processing_system7_v5_5_processing_system
   attribute C_USE_S_AXI_HP3 of design_1_processing_system7_0_0_processing_system7_v5_5_processing_system7 : entity is 0;
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1_processing_system7_0_0_processing_system7_v5_5_processing_system7 : entity is "design_1_processing_system7_0_0.hwdef";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_processing_system7_0_0_processing_system7_v5_5_processing_system7 : entity is "processing_system7_v5_5_processing_system7";
   attribute POWER : string;
   attribute POWER of design_1_processing_system7_0_0_processing_system7_v5_5_processing_system7 : entity is "<PROCESSOR name={system} numA9Cores={2} clockFreq={650} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={32} clockFreq={525} readRate={0.5} writeRate={0.5} /><IO interface={GPIO_Bank_1} ioStandard={LVCMOS18} bidis={2} ioBank={Vcco_p1} clockFreq={1} usageRate={0.5} /><IO interface={GPIO_Bank_0} ioStandard={LVCMOS33} bidis={9} ioBank={Vcco_p0} clockFreq={1} usageRate={0.5} /><IO interface={Timer} ioStandard={} bidis={0} ioBank={} clockFreq={108.333336} usageRate={0.5} /><IO interface={UART} ioStandard={LVCMOS18} bidis={2} ioBank={Vcco_p1} clockFreq={100.000000} usageRate={0.5} /><IO interface={SD} ioStandard={LVCMOS18} bidis={7} ioBank={Vcco_p1} clockFreq={50.000000} usageRate={0.5} /><IO interface={USB} ioStandard={LVCMOS18} bidis={12} ioBank={Vcco_p1} clockFreq={60} usageRate={0.5} /><IO interface={GigE} ioStandard={HSTL_I_18} bidis={14} ioBank={Vcco_p1} clockFreq={125.000000} usageRate={0.5} /><IO interface={QSPI} ioStandard={LVCMOS33} bidis={7} ioBank={Vcco_p0} clockFreq={200} usageRate={0.5} /><PLL domain={Processor} vco={1300.000} /><PLL domain={Memory} vco={1050.000} /><PLL domain={IO} vco={1000.000} /><AXI interface={S_AXI_HP0} dataWidth={32} clockFreq={50} usageRate={0.5} /><AXI interface={M_AXI_GP0} dataWidth={32} clockFreq={50} usageRate={0.5} />/>";
   attribute USE_TRACE_DATA_EDGE_DETECTOR : integer;

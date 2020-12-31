@@ -1,0 +1,4 @@
+Running: xsim.dir/w_sticker_tb_behav/xsimk.exe -simmode gui -wdb w_sticker_tb_behav.wdb -simrunnum 0 -socket 54113
+Design successfully loaded
+Design Loading Memory Usage: 5412 KB (Peak: 5412 KB)
+Design Loading CPU Usage: 0 ms
