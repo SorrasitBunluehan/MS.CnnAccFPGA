@@ -167,6 +167,8 @@ begin
 						end if;
 					when L_X =>
 						-- c_t_f use to handle the last row for conv output 
+						-- In this condition all data is saved inside memory so 
+						-- no need to tvalid in this case.
 						if c_t_f = '1' then
 							if pixel_last = '1' then 
 								n_state <= CLEAR_REG;

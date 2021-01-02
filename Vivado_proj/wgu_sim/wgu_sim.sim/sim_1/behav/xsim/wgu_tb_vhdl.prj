@@ -1,0 +1,9 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/SPM.vhd" \
+"../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/w_sticker.vhd" \
+"../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/wgu.vhd" \
+"../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/wgu_tb.vhd" \
+
+# Do not sort compile order
+nosort

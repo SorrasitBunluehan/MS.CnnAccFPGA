@@ -3,7 +3,6 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-
 entity wgu_tb is
 end wgu_tb;
 
@@ -60,6 +59,13 @@ architecture behav of wgu_tb is
 	signal wgu_out1 : std_logic_vector((compute_byte*input_width)-1 downto 0);
 	signal w_addr_c : std_logic_vector(addr_width-1 downto 0);
 
+	-------------------------
+	-- Network Parameters 
+	-------------------------
+	signal kernel_size : unsigned(KERNEL_SIZE_BIT_WIDTH-1 downto 0); 
+	signal kernel_depth : unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);
+	signal hw_acc_en : std_logic;
+
 begin
 
 	dut : wgu
@@ -93,15 +99,60 @@ begin
 			arstn <= '0';
 			wait for CLK_PERIOD;
 			arstn <= '1';
-			compute_en <= '0';
+			wait for CLK_PERIOD;
+			kernel_size <= to_unsigned(4,kernel_size'length);
+			kernel_depth <= to_unsigned(50,kernel_depth'length);
+			wait for CLK_PERIOD;
+			hw_acc_en <= '1';
+			wait for 4*CLK_PERIOD;
 			w_valid <= '1';
-			for i in 0 to kernel_depth*kernel_size*kernel_size loop
+			for i in 0 to (to_integer(kernel_depth*kernel_size*kernel_size) - 1)  loop
 			   d_in <= std_logic_vector(to_unsigned(i,d_in'length));	
 			   wait for CLK_PERIOD;
 			end loop;
 			w_valid <= '0';
 			wait for CLK_PERIOD*30;
-			compute_en <= '1';
+			for i in 0 to 99 loop
+				w_addr_incr <= '1';
+				wait for CLK_PERIOD;
+				w_addr_incr <= '0';
+				wait for CLK_PERIOD;
+			end loop;
+			w_addr_incr <= '0';
+			setzero <= '1';
+			wait for CLK_PERIOD;
+			setzero <= '0';
+			hw_acc_en <= '0';
+			wait for CLK_PERIOD*3;
+
+			-- Implement second batch
+			kernel_size <= to_unsigned(3,kernel_size'length);
+			kernel_depth <= to_unsigned(20,kernel_depth'length);
+			wait for CLK_PERIOD;
+			hw_acc_en <= '1';
+			wait for 4*CLK_PERIOD;
+			w_valid <= '1';
+			for i in 0 to (to_integer(kernel_depth*kernel_size*kernel_size) - 1)  loop
+			   d_in <= std_logic_vector(to_unsigned(i,d_in'length));	
+			   wait for CLK_PERIOD;
+			end loop;
+			w_valid <= '0';
+			wait for CLK_PERIOD*30;
+
+			for i in 0 to 39 loop
+				w_addr_incr <= '1';
+				wait for CLK_PERIOD;
+				w_addr_incr <= '0';
+				wait for CLK_PERIOD;
+			end loop;
+			w_addr_incr <= '0';
+			setzero <= '1';
+			wait for CLK_PERIOD;
+			setzero <= '0';
+			hw_acc_en <= '0';
+			wait for CLK_PERIOD*3;
+
+
 			wait;
 			
 
