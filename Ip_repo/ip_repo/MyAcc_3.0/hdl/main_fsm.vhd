@@ -33,6 +33,7 @@ entity main_fsm	is
 		tvalid : in std_logic;
 		tlast : in std_logic;
 		w_addr_c : in std_logic_vector(addr_width-1 downto 0);
+		setzero : in std_logic;
 
 		-- Output to AGU
 		agu_en : out std_logic;
@@ -85,15 +86,19 @@ begin
 		if arstn = '0' then
 		   output_size <= (others=>'0');	
 		elsif rising_edge(clk) then
-			if Hw_acc_en = '1' then
-				output_size <= resize(unsigned((input_size - kernel_size)/stride + 1),output_size'length);  
+			if setzero = '1' then
+			   output_size <= (others=>'0');	
+			else
+			   if Hw_acc_en = '1' then
+				   output_size <= resize(unsigned((input_size - kernel_size)/stride + 1),output_size'length);  
+			   end if;
 			end if;
 		end if;
 	end process;
 
 	agu_en <= agu_en_s;
 
-	x_prep_done <= '1' when  x_prep_c = input_size*kernel_size-1 else '0';
+	x_prep_done <= '1' when x_prep_c = input_size*kernel_size-1 else '0';
 	c_t_f <= '1' when x_row = (output_size-1)*stride else '0';
 
 	-- TODO : For debugging purpose delete it!!
@@ -138,67 +143,71 @@ begin
 	-- 			variables is set
 	------------------------------------------------------------------------
 	NEXT_STATE_DECODE:
-		process (hw_acc_en, c_t_f, c_state, w_addr_c, last_input, tvalid, tlast, x_col, x_row, pixel_last, x_prep_done)
+		process (hw_acc_en, c_t_f, c_state, w_addr_c, last_input, tvalid, tlast, x_col, x_row, pixel_last, x_prep_done, setzero)
 		begin
 			n_state <= c_state;
-			if hw_acc_en = '1' then
-				case c_state is
-					when IDLE =>
-						if last_input = '1' then
-							n_state <= IDLE;
-						elsif tvalid = '1' then
-							n_state <= W_PREP;	
-						end if;
-					when W_PREP =>
-						if tlast = '1' then
-							n_state <= X_PREP;
-						end if;
-					when X_PREP =>
-						if x_prep_done = '1' then
-							n_state <= COMPUTE;
-						end if;
-					when COMPUTE =>
-						n_state <= L_W;
-					when L_W =>
-						if unsigned(w_addr_c) = (kernel_depth/2) - 1 then
-							n_state <= L_X;
-						else
-							n_state <= COMPUTE;
-						end if;
-					when L_X =>
+			if setzero = '1' then
+				n_state <= IDLE;
+			else
+				if hw_acc_en = '1' then
+					case c_state is
+						when IDLE =>
+							if last_input = '1' then
+								n_state <= IDLE;
+							elsif tvalid = '1' then
+								n_state <= W_PREP;	
+							end if;
+						when W_PREP =>
+							if tlast = '1' then
+								n_state <= X_PREP;
+							end if;
+						when X_PREP =>
+							if x_prep_done = '1' then
+								n_state <= COMPUTE;
+							end if;
+						when COMPUTE =>
+							n_state <= L_W;
+						when L_W =>
+							if unsigned(w_addr_c) = (kernel_depth/2) - 1 then
+								n_state <= L_X;
+							else
+								n_state <= COMPUTE;
+							end if;
+						when L_X =>
 						-- c_t_f use to handle the last row for conv output 
 						-- In this condition all data is saved inside memory so 
 						-- no need to tvalid in this case.
-						if c_t_f = '1' then
-							if pixel_last = '1' then 
-								n_state <= CLEAR_REG;
-							elsif (x_row mod stride) = 0 then
-								if (x_col mod stride) = 0 then
-									if x_col < (output_size-1)*stride then 
-										n_state <= COMPUTE;
+							if c_t_f = '1' then
+								if pixel_last = '1' then 
+									n_state <= CLEAR_REG;
+								elsif (x_row mod stride) = 0 then
+									if (x_col mod stride) = 0 then
+										if x_col < (output_size-1)*stride then 
+											n_state <= COMPUTE;
+										end if;
+									end if;
+								end if;
+							elsif tvalid = '1' then
+								if pixel_last = '1' then 
+									n_state <= COMPUTE;
+								elsif (x_row mod stride) = 0 then
+									if (x_col mod stride) = 0 then
+										if x_col < (output_size-1)*stride then 
+											n_state <= COMPUTE;
+										end if;
 									end if;
 								end if;
 							end if;
-						elsif tvalid = '1' then
-							if pixel_last = '1' then 
-								n_state <= COMPUTE;
-							elsif (x_row mod stride) = 0 then
-								if (x_col mod stride) = 0 then
-									if x_col < (output_size-1)*stride then 
-										n_state <= COMPUTE;
-									end if;
+						when CLEAR_REG =>
+							if x_row = input_size-1 and x_col = input_size-1 then
+								if last_input = '1' then 
+									n_state <= IDLE;
+								else
+									n_state <= X_PREP;
 								end if;
 							end if;
-						end if;
-					when CLEAR_REG =>
-						if x_row = input_size-1 and x_col = input_size-1 then
-							if last_input = '1' then 
-								n_state <= IDLE;
-							else
-								n_state <= X_PREP;
-							end if;
-						end if;
 					end case;
+				end if;
 			end if;
 		end process;
 
@@ -291,8 +300,12 @@ begin
 			if arstn = '0' then
 				input_count <= 0;
 			elsif rising_edge(clk) then
-				if c_t_f = '1' and pixel_last = '1' then
-					input_count <= input_count + 1;
+				if setzero = '1' then
+					input_count <= 0;
+				else
+					if c_t_f = '1' and pixel_last = '1' then
+						input_count <= input_count + 1;
+					end if;
 				end if;
 			end if;
 		end process;
@@ -311,17 +324,22 @@ begin
 				x_row <= 0;
 				x_col <= 0;
 			elsif rising_edge(clk) then
-				if compute_c_en = '1' then
-					if agu_en_s = '1' then 
-						if x_col = input_size-1 then
-							x_col <= 0;
-							if x_row = input_size-1 then
-									x_row <= 0;
+				if setzero = '1' then
+					x_row <= 0;
+					x_col <= 0;
+				else
+					if compute_c_en = '1' then
+						if agu_en_s = '1' then 
+							if x_col = input_size-1 then
+								x_col <= 0;
+								if x_row = input_size-1 then
+										x_row <= 0;
+								else
+									x_row <= x_row + 1;
+								end if;
 							else
-								x_row <= x_row + 1;
+								x_col <= x_col + 1;
 							end if;
-						else
-							x_col <= x_col + 1;
 						end if;
 					end if;
 				end if;
@@ -339,12 +357,16 @@ begin
 			if arstn = '0' then 
 				x_prep_c <= 0;
 			elsif rising_edge(clk) then 
-				if x_prep_c_en = '1' then
-					if x_prep_c = input_size*kernel_size-1 then
-						x_prep_c <= 0;	
-					else
-						if tvalid = '1' then
-							x_prep_c <= x_prep_c + 1;
+				if setzero = '1' then
+					x_prep_c <= 0;
+				else
+					if x_prep_c_en = '1' then
+						if x_prep_c = input_size*kernel_size-1 then
+							x_prep_c <= 0;	
+						else
+							if tvalid = '1' then
+								x_prep_c <= x_prep_c + 1;
+							end if;
 						end if;
 					end if;
 				end if;

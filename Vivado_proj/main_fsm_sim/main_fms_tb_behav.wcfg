@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="main_fms_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="main_fms_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="803670fs"></ZoomStartTime>
+      <ZoomEndTime time="3745671fs"></ZoomEndTime>
+      <Cursor1Time time="2141670fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="171"></NameColumnWidth>
+      <ValueColumnWidth column_width="186"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="34" />
+   <wvobject fp_name="/main_fms_tb/XAXIS_ACLK" type="logic">
+      <obj_property name="ElementShortName">XAXIS_ACLK</obj_property>
+      <obj_property name="ObjectShortName">XAXIS_ACLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/XAXIS_ARSTN" type="logic">
+      <obj_property name="ElementShortName">XAXIS_ARSTN</obj_property>
+      <obj_property name="ObjectShortName">XAXIS_ARSTN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/XAXIS_TREADY" type="logic">
+      <obj_property name="ElementShortName">XAXIS_TREADY</obj_property>
+      <obj_property name="ObjectShortName">XAXIS_TREADY</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/XAXIS_TVALID" type="logic">
+      <obj_property name="ElementShortName">XAXIS_TVALID</obj_property>
+      <obj_property name="ObjectShortName">XAXIS_TVALID</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/XAXIS_TLAST" type="logic">
+      <obj_property name="ElementShortName">XAXIS_TLAST</obj_property>
+      <obj_property name="ObjectShortName">XAXIS_TLAST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/XAXIS_TDATA" type="array">
+      <obj_property name="ElementShortName">XAXIS_TDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">XAXIS_TDATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/agu_en" type="logic">
+      <obj_property name="ElementShortName">agu_en</obj_property>
+      <obj_property name="ObjectShortName">agu_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/agu_tdata" type="array">
+      <obj_property name="ElementShortName">agu_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">agu_tdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/agu_tvalid" type="logic">
+      <obj_property name="ElementShortName">agu_tvalid</obj_property>
+      <obj_property name="ObjectShortName">agu_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/wgu_out0" type="array">
+      <obj_property name="ElementShortName">wgu_out0[799:0]</obj_property>
+      <obj_property name="ObjectShortName">wgu_out0[799:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/w_addr_c" type="array">
+      <obj_property name="ElementShortName">w_addr_c[7:0]</obj_property>
+      <obj_property name="ObjectShortName">w_addr_c[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/wgu_out1" type="array">
+      <obj_property name="ElementShortName">wgu_out1[799:0]</obj_property>
+      <obj_property name="ObjectShortName">wgu_out1[799:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/w_addr_incr" type="logic">
+      <obj_property name="ElementShortName">w_addr_incr</obj_property>
+      <obj_property name="ObjectShortName">w_addr_incr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/wgu_tvalid" type="logic">
+      <obj_property name="ElementShortName">wgu_tvalid</obj_property>
+      <obj_property name="ObjectShortName">wgu_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/wgu_tdata" type="array">
+      <obj_property name="ElementShortName">wgu_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">wgu_tdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/mux_sel" type="logic">
+      <obj_property name="ElementShortName">mux_sel</obj_property>
+      <obj_property name="ObjectShortName">mux_sel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/alu_en" type="logic">
+      <obj_property name="ElementShortName">alu_en</obj_property>
+      <obj_property name="ObjectShortName">alu_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/input_size" type="array">
+      <obj_property name="ElementShortName">input_size[15:0]</obj_property>
+      <obj_property name="ObjectShortName">input_size[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/input_depth" type="array">
+      <obj_property name="ElementShortName">input_depth[12:0]</obj_property>
+      <obj_property name="ObjectShortName">input_depth[12:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/kernel_size" type="array">
+      <obj_property name="ElementShortName">kernel_size[7:0]</obj_property>
+      <obj_property name="ObjectShortName">kernel_size[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/kernel_depth" type="array">
+      <obj_property name="ElementShortName">kernel_depth[12:0]</obj_property>
+      <obj_property name="ObjectShortName">kernel_depth[12:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/stride" type="array">
+      <obj_property name="ElementShortName">stride[2:0]</obj_property>
+      <obj_property name="ObjectShortName">stride[2:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/hw_acc_en" type="logic">
+      <obj_property name="ElementShortName">hw_acc_en</obj_property>
+      <obj_property name="ObjectShortName">hw_acc_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/setzero" type="logic">
+      <obj_property name="ElementShortName">setzero</obj_property>
+      <obj_property name="ObjectShortName">setzero</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/CLK_PERIOD" type="other">
+      <obj_property name="ElementShortName">CLK_PERIOD</obj_property>
+      <obj_property name="ObjectShortName">CLK_PERIOD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/data_width" type="other">
+      <obj_property name="ElementShortName">data_width</obj_property>
+      <obj_property name="ObjectShortName">data_width</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/compute_byte" type="other">
+      <obj_property name="ElementShortName">compute_byte</obj_property>
+      <obj_property name="ObjectShortName">compute_byte</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/addr_width" type="other">
+      <obj_property name="ElementShortName">addr_width</obj_property>
+      <obj_property name="ObjectShortName">addr_width</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/INPUT_SIZE_BIT_WIDTH" type="other">
+      <obj_property name="ElementShortName">INPUT_SIZE_BIT_WIDTH</obj_property>
+      <obj_property name="ObjectShortName">INPUT_SIZE_BIT_WIDTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/INPUT_DEPTH_BIT_WIDTH" type="other">
+      <obj_property name="ElementShortName">INPUT_DEPTH_BIT_WIDTH</obj_property>
+      <obj_property name="ObjectShortName">INPUT_DEPTH_BIT_WIDTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/STRIDE_BIT_WIDTH" type="other">
+      <obj_property name="ElementShortName">STRIDE_BIT_WIDTH</obj_property>
+      <obj_property name="ObjectShortName">STRIDE_BIT_WIDTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/KERNEL_DEPTH_BIT_WIDTH" type="other">
+      <obj_property name="ElementShortName">KERNEL_DEPTH_BIT_WIDTH</obj_property>
+      <obj_property name="ObjectShortName">KERNEL_DEPTH_BIT_WIDTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/KERNEL_SIZE_BIT_WIDTH" type="other">
+      <obj_property name="ElementShortName">KERNEL_SIZE_BIT_WIDTH</obj_property>
+      <obj_property name="ObjectShortName">KERNEL_SIZE_BIT_WIDTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/MAX_KERNEL_DEPTH" type="other">
+      <obj_property name="ElementShortName">MAX_KERNEL_DEPTH</obj_property>
+      <obj_property name="ObjectShortName">MAX_KERNEL_DEPTH</obj_property>
+   </wvobject>
+</wave_config>

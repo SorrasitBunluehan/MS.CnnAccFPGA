@@ -105,6 +105,8 @@ begin
 			wait for CLK_PERIOD;
 			hw_acc_en <= '1';
 			wait for 4*CLK_PERIOD;
+
+
 			w_valid <= '1';
 			for i in 0 to (to_integer(kernel_depth*kernel_size*kernel_size) - 1)  loop
 			   d_in <= std_logic_vector(to_unsigned(i,d_in'length));	
@@ -121,6 +123,9 @@ begin
 			w_addr_incr <= '0';
 			setzero <= '1';
 			wait for CLK_PERIOD;
+
+
+
 			setzero <= '0';
 			hw_acc_en <= '0';
 			wait for CLK_PERIOD*3;
