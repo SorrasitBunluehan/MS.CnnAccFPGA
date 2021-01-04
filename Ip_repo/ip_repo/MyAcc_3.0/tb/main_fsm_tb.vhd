@@ -230,10 +230,81 @@ begin
 		wait for CLK_PERIOD;
 		XAXIS_ARSTN <= '1';
 		wait for CLK_PERIOD;
-		input_size <= to_unsigned(16, input_size'length);
-		input_depth <= to_unsigned(1, input_depth'length); 
+		input_size <= to_unsigned(17, input_size'length);
+		input_depth <= to_unsigned(3, input_depth'length); 
 		kernel_size <= to_unsigned(3, kernel_size'length); 
 		kernel_depth <= to_unsigned(20, kernel_depth'length); 
+		stride <= to_unsigned(2, stride'length); 
+		wait for CLK_PERIOD;
+		hw_acc_en <= '1';
+		wait for CLK_PERIOD;
+
+		---------------------
+		-- Weight Input
+		---------------------
+		XAXIS_TVALID <= '1';
+		for i in 0 to (to_integer(kernel_depth*kernel_size*kernel_size))-1 loop
+			XAXIS_TDATA <= std_logic_vector(to_unsigned(i,XAXIS_TDATA'length));
+			
+			-- Implement Pause Input Case (Due to some Error)
+			if i = (kernel_depth*kernel_size*kernel_size)/2 then
+				XAXIS_TVALID <= '0';
+				wait for CLK_PERIOD*30;
+			end if;
+			XAXIS_TVALID <= '1';
+
+			
+			-- Implement TLast logic
+			if i = (kernel_depth*kernel_size*kernel_size)-1 then
+				XAXIS_TLAST <= '1';
+			end if;
+
+			wait for CLK_PERIOD;
+		end loop;
+		XAXIS_TVALID <= '0';
+		XAXIS_TLAST <= '0';
+		wait for CLK_PERIOD*5;
+
+		---------------------
+		-- Data Input
+		---------------------
+		XAXIS_TVALID <= '1';
+		for i in 0 to (to_integer(input_size*input_size*input_depth)-1) loop
+			XAXIS_TDATA <= std_logic_vector(to_unsigned(i,XAXIS_TDATA'length));
+
+			-- Implement Pause Input Case (Due to some Error)
+			if i = (input_size*input_size)/2 then
+				XAXIS_TVALID <= '0';
+				wait for CLK_PERIOD*30;
+			end if;
+			XAXIS_TVALID <= '1';
+
+			if i = (to_integer(input_size*input_size*input_depth)-1) then
+				XAXIS_TLAST <= '1';
+			end if;
+			wait until rising_edge(XAXIS_ACLK) and XAXIS_TREADY = '1';
+
+		end loop;
+		XAXIS_TDATA <= (others => '1'); 
+		XAXIS_TVALID <= '0';
+		XAXIS_TLAST <= '0';
+
+		wait for CLK_PERIOD*500;
+		----------------------------
+		-- Reset Every Module 
+		----------------------------
+		setzero <= '1';
+		wait for CLK_PERIOD;
+		setzero <= '0';
+		wait for CLK_PERIOD*5;
+
+		-----------------------------------------------------------------------------------
+		-- Second Network Config.
+		-----------------------------------------------------------------------------------
+		input_size <= to_unsigned(8, input_size'length);
+		input_depth <= to_unsigned(20, input_depth'length); 
+		kernel_size <= to_unsigned(3, kernel_size'length); 
+		kernel_depth <= to_unsigned(10, kernel_depth'length); 
 		stride <= to_unsigned(1, stride'length); 
 		wait for CLK_PERIOD;
 		hw_acc_en <= '1';
@@ -269,7 +340,7 @@ begin
 		-- Data Input
 		---------------------
 		XAXIS_TVALID <= '1';
-		for i in 0 to (to_integer(input_size*input_size)-1) loop
+		for i in 0 to (to_integer(input_size*input_size*input_depth)-1) loop
 			XAXIS_TDATA <= std_logic_vector(to_unsigned(i,XAXIS_TDATA'length));
 
 			-- Implement Pause Input Case (Due to some Error)
@@ -279,14 +350,50 @@ begin
 			end if;
 			XAXIS_TVALID <= '1';
 
-			if i = (to_integer(input_size*input_size)-1) then
+			if i = (to_integer(input_size*input_size*input_depth)-1) then
 				XAXIS_TLAST <= '1';
 			end if;
-			wait for CLK_PERIOD;
+			wait until rising_edge(XAXIS_ACLK) and XAXIS_TREADY = '1';
+
 		end loop;
 		XAXIS_TDATA <= (others => '1'); 
 		XAXIS_TVALID <= '0';
+		XAXIS_TLAST <= '0';
+
+
+		wait for CLK_PERIOD*500;
+		----------------------------
+		-- Reset Every Module 
+		----------------------------
+		setzero <= '1';
+		wait for CLK_PERIOD;
+		setzero <= '0';
+		wait for CLK_PERIOD*5;
+
+
+		
 		wait;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	end process;
 
 	MAIN_MUX:

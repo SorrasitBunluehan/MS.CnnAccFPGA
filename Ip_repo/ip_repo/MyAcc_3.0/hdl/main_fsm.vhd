@@ -61,9 +61,9 @@ architecture behav of main_fsm is
 	
 	signal output_size : unsigned(data_width-1 downto 0);
 	
-	type state_type is (IDLE, W_PREP, X_PREP, L_X, L_W, COMPUTE, CLEAR_REG);
+	type state_type is (IDLE, W_PREP, X_PREP, L_X, READ_INDEX,  L_W, COMPUTE, CLEAR_REG);
 	signal c_state, n_state : state_type;
-	signal last_input, x_prep_done, x_prep_c_en ,w_addr_c_en, pixel_last, count_en, agu_en_s, compute_c_en : std_logic;
+	signal last_input, x_prep_done, x_prep_c_en ,w_addr_c_en, pixel_last, count_en, agu_en_s, compute_c_en, reset_count : std_logic;
 	signal x_row, x_col, x_prep_c, input_count : integer range 0 to 255;
 
 	-- c_t_f (Compute to finished) : is the signal that will assert after tlast = 1 but the accelerator is not yet 
@@ -174,28 +174,29 @@ begin
 								n_state <= COMPUTE;
 							end if;
 						when L_X =>
+							if tvalid = '1' or c_t_f = '1' then
+								n_state <= READ_INDEX;
+							end if;
+						when READ_INDEX =>
+						-----------------------------------------------------------
 						-- c_t_f use to handle the last row for conv output 
 						-- In this condition all data is saved inside memory so 
 						-- no need to tvalid in this case.
+						-----------------------------------------------------------
 							if c_t_f = '1' then
 								if pixel_last = '1' then 
 									n_state <= CLEAR_REG;
-								elsif (x_row mod stride) = 0 then
-									if (x_col mod stride) = 0 then
-										if x_col < (output_size-1)*stride then 
-											n_state <= COMPUTE;
-										end if;
-									end if;
-								end if;
-							elsif tvalid = '1' then
-								if pixel_last = '1' then 
+								elsif (x_row mod (to_integer(stride)) = 0) and (x_col mod (to_integer(stride))= 0) and (x_col <= (output_size-1)*stride) then
 									n_state <= COMPUTE;
-								elsif (x_row mod stride) = 0 then
-									if (x_col mod stride) = 0 then
-										if x_col < (output_size-1)*stride then 
-											n_state <= COMPUTE;
-										end if;
-									end if;
+								else 
+									n_state <= L_X;
+								end if;
+							else
+								-- TODO : Remove Pixel_last logic HERE!!!
+								if ((x_row mod (to_integer(stride))= 0) and (x_col mod (to_integer(stride))= 0) and (x_col <= (output_size-1)*stride)) then 
+									n_state <= COMPUTE;
+								else 
+									n_state <= L_X;
 								end if;
 							end if;
 						when CLEAR_REG =>
@@ -224,7 +225,7 @@ begin
 	-- 		
 	------------------------------------------------------------------------
 	OUTPUT_DECODE:
-		process(c_state, x_prep_done, w_addr_c, last_input, tvalid, tlast, c_t_f)
+		process(c_state, x_prep_done, w_addr_c, last_input, tvalid, tlast, c_t_f, x_col, x_row)
 		begin
 			-- Initial value in IDLE state to prevent latch
 			-- External output 
@@ -239,17 +240,17 @@ begin
 
 			-- Internal output
 			x_prep_c_en <= '0';
-			compute_c_en <= '0';
+			--compute_c_en <= '0';
 
 			case c_state is
 				when IDLE =>
-					if last_input = '1' then
-						--done <= '1';
-					end if;
 				when W_PREP =>
 				when X_PREP =>
 					if tvalid = '1' then
 						agu_en_s <= '1';
+					end if;
+					if x_prep_done = '1' then
+
 					end if;
 					x_prep_c_en <= '1';
 					mux_sel <= '1';
@@ -257,29 +258,57 @@ begin
 					tready <= '1';
 					alu_en <= '0';
 				when COMPUTE =>
-					compute_c_en <= '1';
+					--compute_c_en <= '1';
 					tready <= '0';
 					mux_sel <= '1';
 					alu_en <= '1';
 				when L_W =>
-					compute_c_en <= '1';
 					tready <= '0';
 					w_addr_c_en <= '1';
 					mux_sel <= '1';
 				when L_X =>
-					compute_c_en <= '1';
-					-- Check availability of the input
-					if c_t_f = '1' then
-						tready <= '0';	
-						agu_en_s <= '1';
-					elsif tvalid = '1' then	
-						tready <= '1';
-						agu_en_s <= '1';
-					end if;
+				--	if unsigned(w_addr_c) = (kernel_depth/2) - 1 then
+				--		agu_en_s <= '1';
+				--	end if;
 					mux_sel <= '1';
+					tready <= '1';
+					agu_en_s <= '1';
+
+					if c_t_f = '1' then
+						tready <= '0';
+					elsif tvalid = '1' then
+						tready <= '1';
+					else 
+						agu_en_s <= '0';
+					end if;
+
+
+
+
+					
+
+					--if c_t_f = '1' then
+					--	tready <= '0';	
+					--	if (x_row mod stride) = 0 then
+					--		if (x_col mod stride) = 0 then
+					--			agu_en_s <= '0';
+					--		end if;
+					--	end if;
+					--elsif tvalid = '1' then	
+					--	tready <= '1';
+					--	if (x_row mod stride) = 0 then
+					--		if (x_col mod stride) = 0 then
+					--			agu_en_s <= '0';
+					--		end if;
+					--	end if;
+					--end if;
+
+				when READ_INDEX=>
+					mux_sel <= '1';
+					tready <= '0';
 				when CLEAR_REG =>
 					agu_en_s <= '1';
-					compute_c_en <= '1';
+					--compute_c_en <= '1';
 					tready <= '0';
 					mux_sel <= '1';
 			end case;
@@ -303,15 +332,17 @@ begin
 				if setzero = '1' then
 					input_count <= 0;
 				else
-					if c_t_f = '1' and pixel_last = '1' then
+					if c_state = CLEAR_REG and c_t_f = '1' then
 						input_count <= input_count + 1;
 					end if;
 				end if;
 			end if;
 		end process;
 
-	last_input <= '1' when input_count = input_depth else '0';
+	last_input <= '1' when input_count >= input_depth else '0';
 
+
+	reset_count <= setzero or x_prep_done;
 	------------------------------------------------------------------------
 	-- Main Counter
    	-- Def. : Use to count row, column of processed input in 2D Dimension
@@ -324,11 +355,11 @@ begin
 				x_row <= 0;
 				x_col <= 0;
 			elsif rising_edge(clk) then
-				if setzero = '1' then
+				if reset_count = '1' then
 					x_row <= 0;
 					x_col <= 0;
 				else
-					if compute_c_en = '1' then
+					--if compute_c_en = '1' then
 						if agu_en_s = '1' then 
 							if x_col = input_size-1 then
 								x_col <= 0;
@@ -341,7 +372,7 @@ begin
 								x_col <= x_col + 1;
 							end if;
 						end if;
-					end if;
+					--end if;
 				end if;
 			end if;
         end process;
