@@ -1,7 +1,7 @@
-Running: xsim.dir/agu_tb_behav/xsimk.exe -simmode gui -wdb agu_tb_behav.wdb -simrunnum 0 -socket 58054
+Running: xsim.dir/agu_tb_behav/xsimk.exe -simmode gui -wdb agu_tb_behav.wdb -simrunnum 0 -socket 56120
 Design successfully loaded
-Design Loading Memory Usage: 5516 KB (Peak: 5516 KB)
+Design Loading Memory Usage: 6240 KB (Peak: 6240 KB)
 Design Loading CPU Usage: 0 ms
 Simulation completed
-Simulation Memory Usage: 6692 KB (Peak: 6692 KB)
-Simulation CPU Usage: 15 ms
+Simulation Memory Usage: 15884 KB (Peak: 15884 KB)
+Simulation CPU Usage: 390 ms

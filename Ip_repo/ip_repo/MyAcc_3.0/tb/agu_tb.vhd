@@ -38,7 +38,7 @@ architecture behav of agu_tb is
 	 	);
 	end component;
 
-	constant MAX_INPUT_SIZE : natural := 15;
+	constant MAX_INPUT_SIZE : natural := 128;
 	constant MAX_KERNEL_SIZE : natural := 5;
 	constant MAX_COMPUTE_BYTE : natural := 25;
 	constant INPUT_SIZE_BIT_WIDTH : natural := 16;
@@ -98,7 +98,7 @@ begin
 		arstn <= '1';
 		wait for CLK_PERIOD;
 
-		input_size <= to_unsigned(9, input_size'length);
+		input_size <= to_unsigned(128, input_size'length);
 		kernel_size <= to_unsigned(3, kernel_size'length); 
 		wait for CLK_PERIOD*5;
 		agu_en <= '1';
@@ -108,6 +108,7 @@ begin
 			agu_in <= std_logic_vector(to_unsigned(i,agu_in'length));
 			wait for CLK_PERIOD;
 		end loop;
+		agu_en <= '0';
 		wait;
 	end process;
 

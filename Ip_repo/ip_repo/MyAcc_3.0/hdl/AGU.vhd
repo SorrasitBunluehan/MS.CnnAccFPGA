@@ -73,30 +73,30 @@ begin
 	agu_out((DATA_WIDTH*4)-1 downto DATA_WIDTH*3) <= output_a(3) when to_integer(kernel_size) > 3 else (others => '0');
 	agu_out((DATA_WIDTH*5)-1 downto DATA_WIDTH*4) <= output_a(4) when to_integer(kernel_size) > 4 else (others => '0');
 	-- Row 1
-	agu_out((DATA_WIDTH*6)-1 downto DATA_WIDTH*5) <= output_a(to_integer(input_size));
-	agu_out((DATA_WIDTH*7)-1 downto DATA_WIDTH*6) <= output_a(to_integer(input_size) + 1);
-	agu_out((DATA_WIDTH*8)-1 downto DATA_WIDTH*7) <= output_a(to_integer(input_size) + 2);
-	agu_out((DATA_WIDTH*9)-1 downto DATA_WIDTH*8) <= output_a(to_integer(input_size) + 3) when to_integer(kernel_size) > 3 else (others => '0');
-	agu_out((DATA_WIDTH*10)-1 downto DATA_WIDTH*9) <= output_a(to_integer(input_size) + 4) when to_integer(kernel_size) > 4 else (others => '0');
+	agu_out((DATA_WIDTH*6)-1 downto DATA_WIDTH*5) <= output_a(MAX_INPUT_SIZE);
+	agu_out((DATA_WIDTH*7)-1 downto DATA_WIDTH*6) <= output_a(MAX_INPUT_SIZE+ 1);
+	agu_out((DATA_WIDTH*8)-1 downto DATA_WIDTH*7) <= output_a(MAX_INPUT_SIZE + 2);
+	agu_out((DATA_WIDTH*9)-1 downto DATA_WIDTH*8) <= output_a(MAX_INPUT_SIZE + 3) when to_integer(kernel_size) > 3 else (others => '0');
+	agu_out((DATA_WIDTH*10)-1 downto DATA_WIDTH*9) <= output_a(MAX_INPUT_SIZE + 4) when to_integer(kernel_size) > 4 else (others => '0');
 	-- Row 2
-	agu_out((DATA_WIDTH*11)-1 downto DATA_WIDTH*10) <= output_a(to_integer(input_size)*2);
-	agu_out((DATA_WIDTH*12)-1 downto DATA_WIDTH*11) <= output_a(to_integer(input_size)*2 + 1);
-	agu_out((DATA_WIDTH*13)-1 downto DATA_WIDTH*12) <= output_a(to_integer(input_size)*2 + 2);
-	agu_out((DATA_WIDTH*14)-1 downto DATA_WIDTH*13) <= output_a(to_integer(input_size)*2 + 3) when to_integer(kernel_size) > 3 else (others => '0');
-	agu_out((DATA_WIDTH*15)-1 downto DATA_WIDTH*14) <= output_a(to_integer(input_size)*2 + 4) when to_integer(kernel_size) > 4 else (others => '0');
+	agu_out((DATA_WIDTH*11)-1 downto DATA_WIDTH*10) <= output_a(MAX_INPUT_SIZE*2);
+	agu_out((DATA_WIDTH*12)-1 downto DATA_WIDTH*11) <= output_a(MAX_INPUT_SIZE*2 + 1);
+	agu_out((DATA_WIDTH*13)-1 downto DATA_WIDTH*12) <= output_a(MAX_INPUT_SIZE*2 + 2);
+	agu_out((DATA_WIDTH*14)-1 downto DATA_WIDTH*13) <= output_a(MAX_INPUT_SIZE*2 + 3) when to_integer(kernel_size) > 3 else (others => '0');
+	agu_out((DATA_WIDTH*15)-1 downto DATA_WIDTH*14) <= output_a(MAX_INPUT_SIZE*2 + 4) when to_integer(kernel_size) > 4 else (others => '0');
 	-- Row 3
-	agu_out((DATA_WIDTH*16)-1 downto DATA_WIDTH*15)	<= output_a(to_integer(input_size)*3) when to_integer(kernel_size) > 3 else (others => '0');
-	agu_out((DATA_WIDTH*17)-1 downto DATA_WIDTH*16) <= output_a(to_integer(input_size)*3 + 1) when to_integer(kernel_size) > 3 else (others => '0');
-	agu_out((DATA_WIDTH*18)-1 downto DATA_WIDTH*17) <= output_a(to_integer(input_size)*3 + 2) when to_integer(kernel_size) > 3 else (others => '0');
-	agu_out((DATA_WIDTH*19)-1 downto DATA_WIDTH*18) <= output_a(to_integer(input_size)*3 + 3) when to_integer(kernel_size) > 3 else (others => '0');
-	agu_out((DATA_WIDTH*20)-1 downto DATA_WIDTH*19) <= output_a(to_integer(input_size)*3 + 4) when to_integer(kernel_size) > 4 else (others => '0');
+	agu_out((DATA_WIDTH*16)-1 downto DATA_WIDTH*15)	<= output_a(MAX_INPUT_SIZE*3) when to_integer(kernel_size) > 3 else (others => '0');
+	agu_out((DATA_WIDTH*17)-1 downto DATA_WIDTH*16) <= output_a(MAX_INPUT_SIZE*3 + 1) when to_integer(kernel_size) > 3 else (others => '0');
+	agu_out((DATA_WIDTH*18)-1 downto DATA_WIDTH*17) <= output_a(MAX_INPUT_SIZE*3 + 2) when to_integer(kernel_size) > 3 else (others => '0');
+	agu_out((DATA_WIDTH*19)-1 downto DATA_WIDTH*18) <= output_a(MAX_INPUT_SIZE*3 + 3) when to_integer(kernel_size) > 3 else (others => '0');
+	agu_out((DATA_WIDTH*20)-1 downto DATA_WIDTH*19) <= output_a(MAX_INPUT_SIZE*3 + 4) when to_integer(kernel_size) > 4 else (others => '0');
 
 	-- Row 4
-	agu_out((DATA_WIDTH*21)-1 downto DATA_WIDTH*20) <= output_a(to_integer(input_size)*4) when to_integer(kernel_size) > 4 else (others => '0');
-	agu_out((DATA_WIDTH*22)-1 downto DATA_WIDTH*21) <= output_a(to_integer(input_size)*4 + 1) when to_integer(kernel_size) > 4 else (others => '0');
-	agu_out((DATA_WIDTH*23)-1 downto DATA_WIDTH*22) <= output_a(to_integer(input_size)*4 + 2) when to_integer(kernel_size) > 4 else (others => '0');
-	agu_out((DATA_WIDTH*24)-1 downto DATA_WIDTH*23) <= output_a(to_integer(input_size)*4 + 3) when to_integer(kernel_size) > 4 else (others => '0');
-	agu_out((DATA_WIDTH*25)-1 downto DATA_WIDTH*24) <= output_a(to_integer(input_size)*4 + 4) when to_integer(kernel_size) > 4 else (others => '0');
+	agu_out((DATA_WIDTH*21)-1 downto DATA_WIDTH*20) <= output_a(MAX_INPUT_SIZE*4) when to_integer(kernel_size) > 4 else (others => '0');
+	agu_out((DATA_WIDTH*22)-1 downto DATA_WIDTH*21) <= output_a(MAX_INPUT_SIZE*4 + 1) when to_integer(kernel_size) > 4 else (others => '0');
+	agu_out((DATA_WIDTH*23)-1 downto DATA_WIDTH*22) <= output_a(MAX_INPUT_SIZE*4 + 2) when to_integer(kernel_size) > 4 else (others => '0');
+	agu_out((DATA_WIDTH*24)-1 downto DATA_WIDTH*23) <= output_a(MAX_INPUT_SIZE*4 + 3) when to_integer(kernel_size) > 4 else (others => '0');
+	agu_out((DATA_WIDTH*25)-1 downto DATA_WIDTH*24) <= output_a(MAX_INPUT_SIZE*4 + 4) when to_integer(kernel_size) > 4 else (others => '0');
 	------------------------------------------------------------------------------------------------------------------------
 
 		
