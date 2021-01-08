@@ -11,7 +11,7 @@ Compiling package std.standard
 Compiling package std.textio
 Compiling package ieee.std_logic_1164
 Compiling package ieee.numeric_std
-Compiling architecture str of entity xil_defaultlib.dff [\dff(input_width=32)\]
+Compiling architecture str of entity xil_defaultlib.dff [\dff(data_width=32)\]
 Compiling architecture behav of entity xil_defaultlib.AGU [\AGU(max_input_size=128,max_kern...]
 Compiling architecture behav of entity xil_defaultlib.agu_tb
 Built simulation snapshot agu_tb_behav

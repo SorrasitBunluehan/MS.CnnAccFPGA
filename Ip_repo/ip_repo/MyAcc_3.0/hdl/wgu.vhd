@@ -1,4 +1,4 @@
--- Weight Moduel use to store weight from information in generic this moduel is compose of 2 SPM (FIXED) 
+	-- Weight Moduel use to store weight from information in generic this moduel is compose of 2 SPM (FIXED) 
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -15,11 +15,11 @@ entity wgu is
 		MAX_KERNEL_DEPTH : natural; 
 
 		-- Info. abt. input 
-		input_width : natural;			-- Number of bit for input data (default = 32)
+		DATA_WIDTH : natural;			-- Number of bit for input data (default = 32)
 
 		-- Total amount of data will be send to compute in PU per 1 clk 
-		compute_byte : natural; 		
-		addr_width : natural
+		MAX_COMPUTE_BYTE : natural; 		
+		ADDR_WIDTH : natural
 
 	);
 	port (
@@ -31,13 +31,13 @@ entity wgu is
 		
 		clk : in std_logic;
 		arstn : in std_logic;
-		d_in : in std_logic_vector(input_width-1 downto 0);
+		d_in : in std_logic_vector(DATA_WIDTH-1 downto 0);
 		w_valid : in std_logic;
 		w_addr_incr : in std_logic;
 		setzero : in std_logic;
-		wgu_out0 : out std_logic_vector((compute_byte*input_width)-1 downto 0);
-		wgu_out1 : out std_logic_vector((compute_byte*input_width)-1 downto 0);
-		w_addr_c : out std_logic_vector(addr_width-1 downto 0)
+		wgu_out0 : out std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);
+		wgu_out1 : out std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);
+		w_addr_c : out std_logic_vector(ADDR_WIDTH-1 downto 0)
 	);
 end wgu;
 
@@ -46,7 +46,7 @@ architecture behav of wgu is
 	-- COMPONENT DECLARATION
 	component w_sticker is
 		generic(
-			input_width : natural;
+			DATA_WIDTH : natural;
 			MAX_KERNEL_SIZE : natural := 5;
 			KERNEL_SIZE_BIT_WIDTH : natural
 		);
@@ -55,34 +55,36 @@ architecture behav of wgu is
 
 			clk : in std_logic;
 			arstn : in std_logic;
-			d_in : in std_logic_vector(input_width-1 downto 0);
+			d_in : in std_logic_vector(DATA_WIDTH-1 downto 0);
 			in_valid : in std_logic;
 			setzero : in std_logic;
 			hw_acc_en : in std_logic;
 			out_valid : out std_logic;
-			d_out : out std_logic_vector((compute_byte*input_width)-1 downto 0)
+			d_out : out std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0)
 		);
 	end component;
 
 	component SPM is
 		generic(
-		  INPUT_WIDTH : natural;
+		  DATA_WIDTH : natural;
 		  MEM_DEPTH : natural;
 		  ADDR_WIDTH : natural 
 		);
 		port (
 		  clk : in std_logic;   
+		  arstn : in std_logic;
+		  setzero : in std_logic;
 		  we  : in std_logic;   
 		  addr   : in std_logic_vector(ADDR_WIDTH-1 downto 0);   						
-		  di  : in std_logic_vector(INPUT_WIDTH-1 downto 0);   
-		  do  : out std_logic_vector(INPUT_WIDTH-1 downto 0)
+		  di  : in std_logic_vector(DATA_WIDTH-1 downto 0);   
+		  do  : out std_logic_vector(DATA_WIDTH-1 downto 0)
 		);
 	end component;
 
 
 	-- SPM Related
 	signal we0,we1,we_sel, addr_trg, addr_en : std_logic;
-	signal mem_addr : std_logic_vector(addr_width-1 downto 0);
+	signal mem_addr : std_logic_vector(ADDR_WIDTH-1 downto 0);
 	
 	signal s_c : integer range 0 to 1; 
 	
@@ -100,7 +102,7 @@ begin
 ------------------------------------
 	stick : w_sticker 
 		generic map (
-			input_width => input_width, 
+			DATA_WIDTH => DATA_WIDTH, 
 			MAX_KERNEL_SIZE => 5,
 			KERNEL_SIZE_BIT_WIDTH => KERNEL_SIZE_BIT_WIDTH
 		)port map(
@@ -116,11 +118,13 @@ begin
 		);
 	ram0 : SPM
 		generic map(
-			INPUT_WIDTH => input_width*compute_byte, 
+			DATA_WIDTH => DATA_WIDTH*MAX_COMPUTE_BYTE, 
 			MEM_DEPTH => MAX_KERNEL_DEPTH/2,
-			ADDR_WIDTH => addr_width
+			ADDR_WIDTH => ADDR_WIDTH
 		)port map(
 			clk => clk,
+			arstn => arstn,
+			setzero => setzero,
 			we => we0,
 			addr => mem_addr,
 			di => sticker_out,
@@ -129,11 +133,13 @@ begin
 
 	ram1 : SPM
 		generic map(
-			INPUT_WIDTH => input_width*compute_byte, 
+			DATA_WIDTH => DATA_WIDTH*MAX_COMPUTE_BYTE, 
 			MEM_DEPTH => MAX_KERNEL_DEPTH/2,
-			ADDR_WIDTH => addr_width
+			ADDR_WIDTH => ADDR_WIDTH
 		)port map(
 			clk => clk,
+			arstn => arstn,
+			setzero => setzero,
 			we => we1,
 			addr => mem_addr,
 			di => sticker_out,
@@ -229,6 +235,7 @@ begin
 				else
 					if addr_en = '1' then 
 						if unsigned(mem_addr) = (kernel_depth/2)-1 then 
+						--if unsigned(mem_addr) = ((kernel_depth/2) + to_unsigned((to_integer(kernel_depth) mod 2),kernel_depth'length)) - 1 then
 							mem_addr <= (others => '0');
 						else
 							mem_addr <= std_logic_vector(unsigned(mem_addr) + 1);

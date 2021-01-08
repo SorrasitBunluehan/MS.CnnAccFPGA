@@ -11,7 +11,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity w_sticker is
 	generic(
-		input_width : natural;
+		DATA_WIDTH : natural;
 		MAX_KERNEL_SIZE : natural := 5;					-- Maximum support kernel size 5x5
 		KERNEL_SIZE_BIT_WIDTH : natural
 	);
@@ -20,19 +20,19 @@ entity w_sticker is
 
 		clk : in std_logic;
 		arstn : in std_logic;
-		d_in : in std_logic_vector(input_width-1 downto 0);
+		d_in : in std_logic_vector(DATA_WIDTH-1 downto 0);
 		in_valid : in std_logic;
 		setzero : in std_logic;
 		hw_acc_en : in std_logic;
 
 		out_valid : out std_logic;
-		d_out : out std_logic_vector((MAX_KERNEL_SIZE*MAX_KERNEL_SIZE*input_width)-1 downto 0)
+		d_out : out std_logic_vector((MAX_KERNEL_SIZE*MAX_KERNEL_SIZE*DATA_WIDTH)-1 downto 0)
 	);
 end w_sticker;
 
 architecture behav of w_sticker is
 
-	type temp_array is array(MAX_KERNEL_SIZE -1 downto 0, MAX_KERNEL_SIZE -1 downto 0) of std_logic_vector(input_width-1 downto 0);
+	type temp_array is array(MAX_KERNEL_SIZE -1 downto 0, MAX_KERNEL_SIZE -1 downto 0) of std_logic_vector(DATA_WIDTH-1 downto 0);
 	signal o_a : temp_array;
 	signal data_valid : std_logic;
 	signal row, col : integer range 0 to 255; 
@@ -48,35 +48,35 @@ architecture behav of w_sticker is
 		variable temp : std_logic_vector(d_out'range);
 	begin
 		-- Row 0
-		temp(input_width-1 downto 0) := x(0,0);
-		temp((input_width*2)-1 downto input_width) := x(0,1);                  	
-		temp((input_width*3)-1 downto input_width*2) := x(0,2);
-		temp((input_width*4)-1 downto input_width*3) := x(0,3); 
-		temp((input_width*5)-1 downto input_width*4) := x(0,4);
+		temp(DATA_WIDTH-1 downto 0) := x(0,0);
+		temp((DATA_WIDTH*2)-1 downto DATA_WIDTH) := x(0,1);                  	
+		temp((DATA_WIDTH*3)-1 downto DATA_WIDTH*2) := x(0,2);
+		temp((DATA_WIDTH*4)-1 downto DATA_WIDTH*3) := x(0,3); 
+		temp((DATA_WIDTH*5)-1 downto DATA_WIDTH*4) := x(0,4);
 		-- Row 1                                           
-		temp((input_width*6)-1 downto input_width*5) := x(1,0);
-		temp((input_width*7)-1 downto input_width*6) := x(1,1);
-		temp((input_width*8)-1 downto input_width*7) := x(1,2);
-		temp((input_width*9)-1 downto input_width*8) := x(1,3);
-		temp((input_width*10)-1 downto input_width*9) := x(1,4);
+		temp((DATA_WIDTH*6)-1 downto DATA_WIDTH*5) := x(1,0);
+		temp((DATA_WIDTH*7)-1 downto DATA_WIDTH*6) := x(1,1);
+		temp((DATA_WIDTH*8)-1 downto DATA_WIDTH*7) := x(1,2);
+		temp((DATA_WIDTH*9)-1 downto DATA_WIDTH*8) := x(1,3);
+		temp((DATA_WIDTH*10)-1 downto DATA_WIDTH*9) := x(1,4);
 		-- Row 2                                                                       				
-		temp((input_width*11)-1 downto input_width*10) := x(2,0);   				
-		temp((input_width*12)-1 downto input_width*11) := x(2,1);
-		temp((input_width*13)-1 downto input_width*12) := x(2,2);				
-		temp((input_width*14)-1 downto input_width*13) := x(2,3);			
-		temp((input_width*15)-1 downto input_width*14) := x(2,4);		
+		temp((DATA_WIDTH*11)-1 downto DATA_WIDTH*10) := x(2,0);   				
+		temp((DATA_WIDTH*12)-1 downto DATA_WIDTH*11) := x(2,1);
+		temp((DATA_WIDTH*13)-1 downto DATA_WIDTH*12) := x(2,2);				
+		temp((DATA_WIDTH*14)-1 downto DATA_WIDTH*13) := x(2,3);			
+		temp((DATA_WIDTH*15)-1 downto DATA_WIDTH*14) := x(2,4);		
 		-- Row 3                                                                   
-		temp((input_width*16)-1 downto input_width*15)	:= x(3,0); 
-		temp((input_width*17)-1 downto input_width*16) := x(3,1);							
-		temp((input_width*18)-1 downto input_width*17) := x(3,2);						
-		temp((input_width*19)-1 downto input_width*18) := x(3,3);					
-		temp((input_width*20)-1 downto input_width*19) := x(3,4);				
+		temp((DATA_WIDTH*16)-1 downto DATA_WIDTH*15)	:= x(3,0); 
+		temp((DATA_WIDTH*17)-1 downto DATA_WIDTH*16) := x(3,1);							
+		temp((DATA_WIDTH*18)-1 downto DATA_WIDTH*17) := x(3,2);						
+		temp((DATA_WIDTH*19)-1 downto DATA_WIDTH*18) := x(3,3);					
+		temp((DATA_WIDTH*20)-1 downto DATA_WIDTH*19) := x(3,4);				
 		-- Row 4                                                                       
-		temp((input_width*21)-1 downto input_width*20) := x(4,0);
-		temp((input_width*22)-1 downto input_width*21) := x(4,1);	
-		temp((input_width*23)-1 downto input_width*22) := x(4,2);
-		temp((input_width*24)-1 downto input_width*23) := x(4,3);			
-		temp((input_width*25)-1 downto input_width*24) := x(4,4);		
+		temp((DATA_WIDTH*21)-1 downto DATA_WIDTH*20) := x(4,0);
+		temp((DATA_WIDTH*22)-1 downto DATA_WIDTH*21) := x(4,1);	
+		temp((DATA_WIDTH*23)-1 downto DATA_WIDTH*22) := x(4,2);
+		temp((DATA_WIDTH*24)-1 downto DATA_WIDTH*23) := x(4,3);			
+		temp((DATA_WIDTH*25)-1 downto DATA_WIDTH*24) := x(4,4);		
 		
 		return temp;
 	end flatten;

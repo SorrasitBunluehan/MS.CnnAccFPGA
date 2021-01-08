@@ -17,9 +17,8 @@ architecture behav of main_fms_tb is
 			KERNEL_DEPTH_BIT_WIDTH : natural;
 			KERNEL_SIZE_BIT_WIDTH : natural;
 
-			data_width : natural := 32;
-			compute_byte : natural := 25;
-			addr_width : natural
+			DATA_WIDTH : natural := 32;
+			ADDR_WIDTH : natural
 		); 
 		port (
 			-- Network Config Signal
@@ -35,7 +34,7 @@ architecture behav of main_fms_tb is
 			arstn : in std_logic;
 			tvalid : in std_logic;
 			tlast : in std_logic;
-			w_addr_c : in std_logic_vector(addr_width-1 downto 0);
+			w_addr_c : in std_logic_vector(ADDR_WIDTH-1 downto 0);
 			setzero : in std_logic;
 
 			-- Output to AGU
@@ -72,11 +71,11 @@ architecture behav of main_fms_tb is
 			MAX_KERNEL_DEPTH : natural; 
 
 			-- Info. abt. input 
-			input_width : natural;			-- Number of bit for input data (default = 32)
+			DATA_WIDTH : natural;			-- Number of bit for input data (default = 32)
 
 			-- Total amount of data will be send to compute in PU per 1 clk 
-			compute_byte : natural; 		
-			addr_width : natural
+			MAX_COMPUTE_BYTE : natural; 		
+			ADDR_WIDTH : natural
 		);
 		port (
 			-- Network Parameters
@@ -87,13 +86,13 @@ architecture behav of main_fms_tb is
 			
 			clk : in std_logic;
 			arstn : in std_logic;
-			d_in : in std_logic_vector(input_width-1 downto 0);
+			d_in : in std_logic_vector(DATA_WIDTH-1 downto 0);
 			w_valid : in std_logic;
 			w_addr_incr : in std_logic;
 			setzero : in std_logic;
-			wgu_out0 : out std_logic_vector((compute_byte*input_width)-1 downto 0);
-			wgu_out1 : out std_logic_vector((compute_byte*input_width)-1 downto 0);
-			w_addr_c : out std_logic_vector(addr_width-1 downto 0)
+			wgu_out0 : out std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);
+			wgu_out1 : out std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);
+			w_addr_c : out std_logic_vector(ADDR_WIDTH-1 downto 0)
 		);
 	end component;
 
@@ -102,9 +101,9 @@ architecture behav of main_fms_tb is
 	-- Constant 
 	---------------------
 	constant CLK_PERIOD : time := 20 ns;
-	constant data_width  : natural := 32;
-	constant compute_byte : natural := 25;
-	constant addr_width : natural := 8;
+	constant DATA_WIDTH  : natural := 32;
+	constant MAX_COMPUTE_BYTE : natural := 25;
+	constant ADDR_WIDTH : natural := 8;
 	constant INPUT_SIZE_BIT_WIDTH : natural := 16;
 	constant INPUT_DEPTH_BIT_WIDTH : natural := 13;
 	constant STRIDE_BIT_WIDTH : natural := 3; 
@@ -115,7 +114,7 @@ architecture behav of main_fms_tb is
 	---------------------
 	-- AXI Interface
 	---------------------
-	signal XAXIS_TDATA : std_logic_vector(data_width-1 downto 0);
+	signal XAXIS_TDATA : std_logic_vector(DATA_WIDTH-1 downto 0);
 	signal XAXIS_TVALID : std_logic;
 	signal XAXIS_TLAST : std_logic;
 	signal XAXIS_ARSTN : std_logic := '1';
@@ -124,16 +123,16 @@ architecture behav of main_fms_tb is
 
 	-- AGU Interface
 	signal agu_en : std_logic;
-	signal agu_tdata : std_logic_vector(data_width-1 downto 0); 
+	signal agu_tdata : std_logic_vector(DATA_WIDTH-1 downto 0); 
 	signal agu_tvalid : std_logic;
 
 	-- WGU Interface
-	signal wgu_out0 : std_logic_vector((compute_byte*data_width)-1 downto 0);
-	signal w_addr_c : std_logic_vector(addr_width-1 downto 0);
-	signal wgu_out1 : std_logic_vector((compute_byte*data_width)-1 downto 0);
+	signal wgu_out0 : std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);
+	signal w_addr_c : std_logic_vector(ADDR_WIDTH-1 downto 0);
+	signal wgu_out1 : std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);
 	signal w_addr_incr : std_logic;
 	signal wgu_tvalid : std_logic;
-	signal wgu_tdata : std_logic_vector(data_width-1 downto 0);
+	signal wgu_tdata : std_logic_vector(DATA_WIDTH-1 downto 0);
 
 	-- Mux Interface
 	signal mux_sel : std_logic;
@@ -162,9 +161,8 @@ begin
 		KERNEL_DEPTH_BIT_WIDTH => KERNEL_DEPTH_BIT_WIDTH,
 		KERNEL_SIZE_BIT_WIDTH => KERNEL_SIZE_BIT_WIDTH,  
 
-		data_width   => data_width, 
-		compute_byte => compute_byte,
-		addr_width 	 => addr_width
+		DATA_WIDTH   => DATA_WIDTH, 
+		ADDR_WIDTH 	 => ADDR_WIDTH
 	) port map(
 		-- Network Config Signal
 		input_size => input_size, 
@@ -204,9 +202,9 @@ begin
 		KERNEL_DEPTH_BIT_WIDTH => KERNEL_DEPTH_BIT_WIDTH,
 		KERNEL_SIZE_BIT_WIDTH => KERNEL_SIZE_BIT_WIDTH,  
 		MAX_KERNEL_DEPTH => MAX_KERNEL_DEPTH,
-		input_width   => data_width, 
-		compute_byte => compute_byte,
-		addr_width 	 => addr_width 
+		DATA_WIDTH   => DATA_WIDTH, 
+		MAX_COMPUTE_BYTE => MAX_COMPUTE_BYTE,
+		ADDR_WIDTH 	 => ADDR_WIDTH 
 	) port map(
 		kernel_size => kernel_size,
 		kernel_depth => kernel_depth,

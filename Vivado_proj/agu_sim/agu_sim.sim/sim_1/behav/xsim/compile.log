@@ -1,2 +1,4 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/tb/agu_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'agu_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/AGU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'AGU'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'dff'

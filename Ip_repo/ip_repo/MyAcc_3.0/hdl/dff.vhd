@@ -3,14 +3,14 @@ use ieee.std_logic_1164.all;
 
 entity dff is
 	generic(
-		input_width : natural 
+		DATA_WIDTH : natural 
 	);
 	port (
 		en : in std_logic;
-		d : in std_logic_vector(input_width-1 downto 0);
+		d : in std_logic_vector(DATA_WIDTH-1 downto 0);
 		clk : in std_logic;
 		arstn : in std_logic;
-		q : out std_logic_vector(input_width-1 downto 0)
+		q : out std_logic_vector(DATA_WIDTH-1 downto 0)
 	);
 end entity dff;
 

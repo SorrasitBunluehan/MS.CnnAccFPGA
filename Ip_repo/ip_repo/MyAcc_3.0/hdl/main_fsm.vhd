@@ -13,9 +13,8 @@ entity main_fsm	is
 		KERNEL_DEPTH_BIT_WIDTH : natural;
 		KERNEL_SIZE_BIT_WIDTH : natural;
 	
-		data_width : natural;
-		compute_byte : natural; 			-- number of byte send to output PU maximum support by 5x5 
-		addr_width : natural
+		DATA_WIDTH : natural;
+		ADDR_WIDTH : natural
 	); 
 	port (
 
@@ -32,7 +31,7 @@ entity main_fsm	is
 		arstn : in std_logic;
 		tvalid : in std_logic;
 		tlast : in std_logic;
-		w_addr_c : in std_logic_vector(addr_width-1 downto 0);
+		w_addr_c : in std_logic_vector(ADDR_WIDTH-1 downto 0);
 		setzero : in std_logic;
 
 		-- Output to AGU
@@ -59,7 +58,7 @@ end main_fsm;
 
 architecture behav of main_fsm is
 	
-	signal output_size : unsigned(data_width-1 downto 0);
+	signal output_size : unsigned(DATA_WIDTH-1 downto 0);
 	
 	type state_type is (IDLE, W_PREP, X_PREP, L_X, READ_INDEX,  L_W, COMPUTE, CLEAR_REG);
 	signal c_state, n_state : state_type;
@@ -166,9 +165,13 @@ begin
 								n_state <= COMPUTE;
 							end if;
 						when COMPUTE =>
-							n_state <= L_W;
+							if kernel_depth = 1 then
+								n_state <= L_X;
+							else
+								n_state <= L_W;
+							end if;
 						when L_W =>
-							if unsigned(w_addr_c) = (kernel_depth/2) - 1 then
+							if unsigned(w_addr_c) = (kernel_depth/2)-1 then 
 								n_state <= L_X;
 							else
 								n_state <= COMPUTE;
@@ -265,7 +268,7 @@ begin
 				when L_W =>
 					tready <= '0';
 					w_addr_c_en <= '1';
-					mux_sel <= '1';
+ 					mux_sel <= '1';
 				when L_X =>
 				--	if unsigned(w_addr_c) = (kernel_depth/2) - 1 then
 				--		agu_en_s <= '1';

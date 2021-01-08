@@ -98,7 +98,7 @@ begin
 		arstn <= '1';
 		wait for CLK_PERIOD;
 
-		input_size <= to_unsigned(128, input_size'length);
+		input_size <= to_unsigned(3, input_size'length);
 		kernel_size <= to_unsigned(3, kernel_size'length); 
 		wait for CLK_PERIOD*5;
 		agu_en <= '1';

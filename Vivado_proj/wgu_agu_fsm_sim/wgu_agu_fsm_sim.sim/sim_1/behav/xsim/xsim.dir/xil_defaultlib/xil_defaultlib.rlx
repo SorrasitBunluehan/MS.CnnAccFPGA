@@ -1,0 +1,12 @@
+0.7
+2020.1
+May 27 2020
+20:09:33
+D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/AGU.vhd,1609843101,vhdl,,,,agu,,,,,,,,
+D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/ALU.vhd,1610099470,vhdl,,,,alu,,,,,,,,
+D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/SPM.vhd,1610106471,vhdl,,,,spm,,,,,,,,
+D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd,1609842974,vhdl,,,,dff,,,,,,,,
+D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/main_fsm.vhd,1610108051,vhdl,,,,main_fsm,,,,,,,,
+D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/w_sticker.vhd,1609842566,vhdl,,,,w_sticker,,,,,,,,
+D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/wgu.vhd,1610108074,vhdl,,,,wgu,,,,,,,,
+D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/tb/wgu_agu_fsm_sim.vhd,1610119979,vhdl,,,,wgu_agu_fsm_sim_tb,,,,,,,,

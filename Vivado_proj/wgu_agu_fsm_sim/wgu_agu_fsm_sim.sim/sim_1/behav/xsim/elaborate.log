@@ -1,0 +1,22 @@
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 745d2a65bac147448893dbefb19f9ad3 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot wgu_agu_fsm_sim_tb_behav xil_defaultlib.wgu_agu_fsm_sim_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behav of entity xil_defaultlib.main_fsm [\main_fsm(input_size_bit_width=1...]
+Compiling architecture behav of entity xil_defaultlib.w_sticker [\w_sticker(data_width=32,kernel_...]
+Compiling architecture behavioral of entity xil_defaultlib.SPM [\SPM(data_width=800,mem_depth=25...]
+Compiling architecture behav of entity xil_defaultlib.wgu [\wgu(kernel_size_bit_width=8,ker...]
+Compiling architecture str of entity xil_defaultlib.dff [\dff(data_width=32)\]
+Compiling architecture behav of entity xil_defaultlib.AGU [\AGU(max_input_size=128,max_kern...]
+Compiling architecture behavioral of entity xil_defaultlib.ALU [\ALU(data_width=32,max_compute_b...]
+Compiling architecture behav of entity xil_defaultlib.wgu_agu_fsm_sim_tb
+Built simulation snapshot wgu_agu_fsm_sim_tb_behav

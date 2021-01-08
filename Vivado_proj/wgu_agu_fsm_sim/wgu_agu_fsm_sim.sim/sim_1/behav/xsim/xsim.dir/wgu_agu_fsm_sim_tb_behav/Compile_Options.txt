@@ -1,0 +1,1 @@
+-wto "745d2a65bac147448893dbefb19f9ad3" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "wgu_agu_fsm_sim_tb_behav" "xil_defaultlib.wgu_agu_fsm_sim_tb" -log "elaborate.log" 

@@ -43,17 +43,16 @@ end AGU;
 
 architecture behav of AGU is
 
-
 	component dff is  
 		generic(
-			input_width : integer
+			DATA_WIDTH : integer
 		);
 		port (
 			en : in std_logic;
-			d : in std_logic_vector(input_width-1 downto 0);
+			d : in std_logic_vector(DATA_WIDTH-1 downto 0);
 			clk : in std_logic;
 			arstn : in std_logic;
-			q : out std_logic_vector(input_width-1 downto 0)
+			q : out std_logic_vector(DATA_WIDTH-1 downto 0)
 		);
 	end component;
 
@@ -191,7 +190,7 @@ begin
 		FFX : if i < (MAX_INPUT_SIZE*MAX_KERNEL_SIZE) - 1 generate 
 			ddfx : dff
 			generic map(
-			   input_width => DATA_WIDTH
+			   DATA_WIDTH => DATA_WIDTH
 			)port map(
 			   en => agu_en,
 			   d => input_a(i),
@@ -205,7 +204,7 @@ begin
 		FF_LAST : if i = (MAX_INPUT_SIZE*MAX_KERNEL_SIZE) - 1  generate
 			dffl : dff
 				generic map(
-					input_width => DATA_WIDTH
+					DATA_WIDTH => DATA_WIDTH
 				)
 				port map (
 					en => agu_en,
