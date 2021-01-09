@@ -9,17 +9,40 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity ACCU is
 	generic(
-		input_size : natural;
-		input_depth : natural;
-		kernel_size : natural;
-		stride : natural;
-		kernel_depth : natural;
-		input_width : natural;
+		------------------------------------
+		-- Network Information Bitwidth 
+		------------------------------------
+		INPUT_SIZE_BIT_WIDTH : natural;
+		INPUT_DEPTH_BIT_WIDTH : natural;
+		STRIDE_BIT_WIDTH : natural;  
+		KERNEL_DEPTH_BIT_WIDTH : natural;
+		KERNEL_SIZE_BIT_WIDTH : natural;
+
+		------------------------------------
+		-- Maximum Comdition
+		------------------------------------
+		MAX_INPUT_SIZE : natural;
+		MAX_KERNEL_SIZE : natural;
+		MAX_COMPUTE_BYTE : natural; 			-- number of byte send to output ALU maximum support by 5x5 
+		MAX_KERNEL_DEPTH : natural;
+	
+		DATA_WIDTH : natural;
 		compute_byte : natural
 	); 
 	port(
+
+		-- Network Config Signal
+		input_size : in unsigned(INPUT_SIZE_BIT_WIDTH -1 downto 0);
+		input_depth : in unsigned(INPUT_DEPTH_BIT_WIDTH-1 downto 0);
+		kernel_size : in unsigned(KERNEL_SIZE_BIT_WIDTH-1 downto 0);
+		kernel_depth : in unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);
+		stride : in unsigned(STRIDE_BIT_WIDTH-1 downto 0);
+		hw_acc_en : in std_logic;
+
+
+		input_size : in s
 		clk, arstn : in std_logic;
-		din0, din1 : in std_logic_vector((2*input_width + compute_byte) - 1 downto 0);
+		din0, din1 : in std_logic_vector((2*DATA_WIDTH + compute_byte) - 1 downto 0);
 		en0, en1 : in std_logic;
 		accu_ready : out std_logic
 	);
@@ -27,25 +50,31 @@ end ACCU;
 
 architecture behav of ACCU is
 
-	constant output_size : natural := (input_size - kernel_size)/stride + 1;
+	--constant output_size : natural := (input_size - kernel_size)/stride + 1;
+
+	-- When calculate MAX_OUTPUT_SIZE set stride equal to 1 to get the maximum value. Also,
+	-- in here the accelerator don't care about padding (Handle by software).
+	constant MAX_OUTPUT_SIZE : natural := (MAX_INPUT_SIZE - MAX_KERNEL_SIZE)/1 + 1;
 
 	component SPM is 
 		generic(
-		  INPUT_WIDTH : natural;
+		  DATA_WIDTH : natural;
 		  MEM_DEPTH : natural;
 		  ADDR_WIDTH : natural 
 		);
 		port (
 		  clk : in std_logic;   
+		  arstn : in std_logic;
+		  setzero : in std_logic;
 		  we  : in std_logic;   
 		  addr   : in std_logic_vector(ADDR_WIDTH-1 downto 0);   						
-		  di  : in std_logic_vector(INPUT_WIDTH-1 downto 0);   
-		  do  : out std_logic_vector(INPUT_WIDTH-1 downto 0)
+		  di  : in std_logic_vector(DATA_WIDTH-1 downto 0);   
+		  do  : out std_logic_vector(DATA_WIDTH-1 downto 0)
 		);
 	end component;
 
-	signal row,col, input_count : integer range 0 to 255;
-	type ram_type is array (kernel_depth-1 downto 0, output_size*output_size-1 downto 0) of signed(din0'range);
+	signal row,col, input_count : integer range 0 to 65535;
+	type ram_type is array ((MAX_KERNEL_DEPTH-1 downto 0), ((MAX_OUTPUT_SIZE*MAX_OUTPUT_SIZE)-1 downto 0)) of signed(din0'range);
 	signal old0, old1, out0, out1 : signed(din0'range);
 	signal ram : ram_type;
 	signal we : std_logic;
