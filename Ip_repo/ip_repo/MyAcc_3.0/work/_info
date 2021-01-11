@@ -1,0 +1,92 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0
+Eaccu
+Z1 w1610304105
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/ACCU.vhd
+Z6 FD:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/ACCU.vhd
+l0
+L11
+VMo[lba;hOAzn3hnGN]PR[2
+!s100 gKcGXA9?j:o5RioH`lhbV2
+Z7 OP;C;10.4a;61
+32
+Z8 !s110 1610305245
+!i10b 1
+Z9 !s108 1610305245.000000
+Z10 !s90 -reportprogress|300|-work|work|D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/ACCU.vhd|
+Z11 !s107 D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/ACCU.vhd|
+!i113 1
+Z12 o-work work -O0
+Z13 tExplicit 1
+Abehav
+R2
+R3
+R4
+DEx4 work 4 accu 0 22 Mo[lba;hOAzn3hnGN]PR[2
+l65
+L50
+VThnGieMOaYQgV@>;JF@S[0
+!s100 YFIfoGXkC[9^WOZb?F0:C1
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Eaccu_tb
+Z14 w1610305242
+R2
+R3
+R4
+R0
+Z15 8D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/tb/accu_tb.vhd
+Z16 FD:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/tb/accu_tb.vhd
+l0
+L5
+VE8iEd8h0P`@8o;>__YCQ]0
+!s100 U^9FUeIS@=nRYCSiB;2;22
+R7
+32
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-work|work|D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/tb/accu_tb.vhd|
+Z18 !s107 D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/tb/accu_tb.vhd|
+!i113 1
+R12
+R13
+Abehav
+R2
+R3
+R4
+Z19 DEx4 work 7 accu_tb 0 22 E8iEd8h0P`@8o;>__YCQ]0
+l90
+L9
+Vna@::i0^8e4m<okKf;F`R1
+!s100 FNkLzdZC[=2LX3=9b<HKT0
+R7
+32
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13

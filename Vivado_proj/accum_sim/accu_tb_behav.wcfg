@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="accu_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="accu_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="49999992fs"></ZoomStartTime>
+      <ZoomEndTime time="50000002fs"></ZoomEndTime>
+      <Cursor1Time time="50000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="302"></NameColumnWidth>
+      <ValueColumnWidth column_width="115"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="26" />
+   <wvobject fp_name="/accu_tb/input_size" type="array">
+      <obj_property name="ElementShortName">input_size[15:0]</obj_property>
+      <obj_property name="ObjectShortName">input_size[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/input_depth" type="array">
+      <obj_property name="ElementShortName">input_depth[12:0]</obj_property>
+      <obj_property name="ObjectShortName">input_depth[12:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/kernel_size" type="array">
+      <obj_property name="ElementShortName">kernel_size[7:0]</obj_property>
+      <obj_property name="ObjectShortName">kernel_size[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/kernel_depth" type="array">
+      <obj_property name="ElementShortName">kernel_depth[12:0]</obj_property>
+      <obj_property name="ObjectShortName">kernel_depth[12:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/stride" type="array">
+      <obj_property name="ElementShortName">stride[2:0]</obj_property>
+      <obj_property name="ObjectShortName">stride[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/hw_acc_en" type="logic">
+      <obj_property name="ElementShortName">hw_acc_en</obj_property>
+      <obj_property name="ObjectShortName">hw_acc_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/setzero" type="logic">
+      <obj_property name="ElementShortName">setzero</obj_property>
+      <obj_property name="ObjectShortName">setzero</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/arstn" type="logic">
+      <obj_property name="ElementShortName">arstn</obj_property>
+      <obj_property name="ObjectShortName">arstn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/din0" type="array">
+      <obj_property name="ElementShortName">din0[31:0]</obj_property>
+      <obj_property name="ObjectShortName">din0[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/din1" type="array">
+      <obj_property name="ElementShortName">din1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">din1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/valid0" type="logic">
+      <obj_property name="ElementShortName">valid0</obj_property>
+      <obj_property name="ObjectShortName">valid0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/valid1" type="logic">
+      <obj_property name="ElementShortName">valid1</obj_property>
+      <obj_property name="ObjectShortName">valid1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/accu_ready" type="logic">
+      <obj_property name="ElementShortName">accu_ready</obj_property>
+      <obj_property name="ObjectShortName">accu_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/INPUT_SIZE_BIT_WIDTH" type="other">
+      <obj_property name="ElementShortName">INPUT_SIZE_BIT_WIDTH</obj_property>
+      <obj_property name="ObjectShortName">INPUT_SIZE_BIT_WIDTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/INPUT_DEPTH_BIT_WIDTH" type="other">
+      <obj_property name="ElementShortName">INPUT_DEPTH_BIT_WIDTH</obj_property>
+      <obj_property name="ObjectShortName">INPUT_DEPTH_BIT_WIDTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/STRIDE_BIT_WIDTH" type="other">
+      <obj_property name="ElementShortName">STRIDE_BIT_WIDTH</obj_property>
+      <obj_property name="ObjectShortName">STRIDE_BIT_WIDTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/KERNEL_DEPTH_BIT_WIDTH" type="other">
+      <obj_property name="ElementShortName">KERNEL_DEPTH_BIT_WIDTH</obj_property>
+      <obj_property name="ObjectShortName">KERNEL_DEPTH_BIT_WIDTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/KERNEL_SIZE_BIT_WIDTH" type="other">
+      <obj_property name="ElementShortName">KERNEL_SIZE_BIT_WIDTH</obj_property>
+      <obj_property name="ObjectShortName">KERNEL_SIZE_BIT_WIDTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/MAX_INPUT_SIZE" type="other">
+      <obj_property name="ElementShortName">MAX_INPUT_SIZE</obj_property>
+      <obj_property name="ObjectShortName">MAX_INPUT_SIZE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/MAX_KERNEL_SIZE" type="other">
+      <obj_property name="ElementShortName">MAX_KERNEL_SIZE</obj_property>
+      <obj_property name="ObjectShortName">MAX_KERNEL_SIZE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/MAX_COMPUTE_BYTE" type="other">
+      <obj_property name="ElementShortName">MAX_COMPUTE_BYTE</obj_property>
+      <obj_property name="ObjectShortName">MAX_COMPUTE_BYTE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/MAX_KERNEL_DEPTH" type="other">
+      <obj_property name="ElementShortName">MAX_KERNEL_DEPTH</obj_property>
+      <obj_property name="ObjectShortName">MAX_KERNEL_DEPTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/DATA_WIDTH" type="other">
+      <obj_property name="ElementShortName">DATA_WIDTH</obj_property>
+      <obj_property name="ObjectShortName">DATA_WIDTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/CLK_PERIOD" type="other">
+      <obj_property name="ElementShortName">CLK_PERIOD</obj_property>
+      <obj_property name="ObjectShortName">CLK_PERIOD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/accum_dut/ram[31,783]" type="array">
+      <obj_property name="ElementShortName">[31,783][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[31,783][31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+</wave_config>
