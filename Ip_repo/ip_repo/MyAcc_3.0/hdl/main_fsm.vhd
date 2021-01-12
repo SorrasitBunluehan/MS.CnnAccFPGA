@@ -49,10 +49,6 @@ entity main_fsm	is
 		-- Output to ALU
 		alu_en : out std_logic
 	
-		--TODO : For debugged purpose (Need to delete)
-		--fsm_state_test : out std_logic_vector(2 downto 0);
-		--done : out std_logic
-
 	);
 end main_fsm;
 

@@ -20,7 +20,6 @@ entity ALU is
 	);
 	port (
 		-- DEBUGGING PURPOSE
-		temp_sig : out std_logic_vector((2*DATA_WIDTH + MAX_COMPUTE_BYTE)-1 downto 0);
 
 		clk : in std_logic;
 		x_in : in std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);                -- 127 downto 0
@@ -76,7 +75,6 @@ begin
 				alu_out(30 downto 16) <= std_logic_vector(temp(46 downto 32)); 
 				---- Get 16 bit Fraction Part
 				alu_out(15 downto 0) <= std_logic_vector(temp(31 downto 16));
-				--temp_sig <= std_logic_vector(temp);
 
 				alu_valid <= '1';
 			end if;

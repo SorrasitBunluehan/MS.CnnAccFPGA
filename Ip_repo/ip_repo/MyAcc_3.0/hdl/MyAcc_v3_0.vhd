@@ -18,7 +18,6 @@ entity MyAcc_v3_0 is
 			compute_byte : natural := 25;
 			-- Width of the signal
 			addr_width : natural := 8;
-			rowcol_width : natural := 16;
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
@@ -33,7 +32,6 @@ entity MyAcc_v3_0 is
 		-- Parameters of Axi Master Bus Interface M00_AXIS
 		C_M00_AXIS_TDATA_WIDTH	: integer	:= 32;
 		C_M00_AXIS_START_COUNT	: integer	:= 32
-	);
 	port (
 		-- Users to add ports here
 			-- TODO : For debugged purpose

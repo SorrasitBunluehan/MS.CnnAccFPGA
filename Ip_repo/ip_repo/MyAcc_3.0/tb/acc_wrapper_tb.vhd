@@ -1,4 +1,3 @@
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -7,74 +6,6 @@ entity acc_wrapper_tb is
 end acc_wrapper_tb;
 
 architecture behav of acc_wrapper_tb is
-	component acc_wrapper is
-		generic(
-			------------------------------------
-			-- Network Information Bitwidth 
-			------------------------------------
-			INPUT_SIZE_BIT_WIDTH : natural := 16;
-			INPUT_DEPTH_BIT_WIDTH : natural := 13;
-			STRIDE_BIT_WIDTH : natural := 3;  
-			KERNEL_DEPTH_BIT_WIDTH : natural := 13;
-			KERNEL_SIZE_BIT_WIDTH : natural := 8;
-			MAX_KERNEL_DEPTH : natural := 512;
-			
-			compute_byte : natural := 25;
-			-- Width of the signal
-			data_width : natural := 32;
-			addr_width : natural := 8;
-			rowcol_width : natural := 16
-		);
-		port(
-			-- Ports of Axi Slave Bus Interface S00_AXI
-			s00_axi_aclk	: in std_logic;
-			s00_axi_aresetn	: in std_logic;
-			s00_axi_awaddr	: in std_logic_vector(addr_width-1 downto 0);
-			s00_axi_awprot	: in std_logic_vector(2 downto 0);
-			s00_axi_awvalid	: in std_logic;
-			s00_axi_awready	: out std_logic;
-			s00_axi_wdata	: in std_logic_vector(data_width-1 downto 0);
-			s00_axi_wstrb	: in std_logic_vector((data_width/8)-1 downto 0);
-			s00_axi_wvalid	: in std_logic;
-			s00_axi_wready	: out std_logic;
-			s00_axi_bresp	: out std_logic_vector(1 downto 0);
-			s00_axi_bvalid	: out std_logic;
-			s00_axi_bready	: in std_logic;
-			s00_axi_araddr	: in std_logic_vector(addr_width-1 downto 0);
-			s00_axi_arprot	: in std_logic_vector(2 downto 0);
-			s00_axi_arvalid	: in std_logic;
-			s00_axi_arready	: out std_logic;
-			s00_axi_rdata	: out std_logic_vector(data_width-1 downto 0);
-			s00_axi_rresp	: out std_logic_vector(1 downto 0);
-			s00_axi_rvalid	: out std_logic;
-			s00_axi_rready	: in std_logic;
-
-			-- Ports of Axi Slave Bus Interface S00_AXIS
-			s00_axis_aclk	: in std_logic;
-			s00_axis_aresetn	: in std_logic;
-			s00_axis_tready	: out std_logic;
-			s00_axis_tdata	: in std_logic_vector(data_width-1 downto 0);
-			s00_axis_tstrb	: in std_logic_vector((data_width/8)-1 downto 0);
-			s00_axis_tlast	: in std_logic;
-			s00_axis_tvalid	: in std_logic;
-
-			-- Ports of Axi Master Bus Interface M01_AXIS
-			m01_axis_aclk	: in std_logic;
-			m01_axis_aresetn	: in std_logic;
-			m01_axis_tvalid	: out std_logic;
-			m01_axis_tdata	: out std_logic_vector(data_width-1 downto 0);
-			m01_axis_tstrb	: out std_logic_vector((data_width/8)-1 downto 0);
-			m01_axis_tlast	: out std_logic;
-			m01_axis_tready	: in std_logic;
-
-			-- TODO : For debugged purpose
-			agu_out_test : out std_logic_vector(data_width-1 downto 0);
-			wgu_out0_test : out std_logic_vector(data_width-1 downto 0);
-			wgu_out1_test : out std_logic_vector(data_width-1 downto 0);
-			done_test, compute_en_test, agu_valid_test , input_mux_test, main_en_test : out std_logic;
-			fsm_state_test : out std_logic_vector(2 downto 0) 
-		);
-	end component;
 	
 	constant data_width : natural := 32;
 	constant addr_width : natural := 8;

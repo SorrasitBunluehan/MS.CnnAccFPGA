@@ -136,13 +136,14 @@ begin
 		arstn <= '1';
         
         -- Network Input
-		input_size <= to_unsigned(17 , input_size'length);
-		input_depth <= to_unsigned(3, input_depth'length); 
+		input_size <= to_unsigned(7 , input_size'length);
+		input_depth <= to_unsigned(2, input_depth'length); 
 		kernel_size <= to_unsigned(3, kernel_size'length); 
 		kernel_depth <= to_unsigned(2, kernel_depth'length); 
 		stride <= to_unsigned(1, stride'length); 
 
-        -- Stimulate
+        -------------------- START OF FIRST input compute --------------------------
+        -- Stimulate (0 to 4)
         din0 <= x"0000_8000";
         din1 <= x"0000_4000";
         set_reset_valid(valid0,valid1);
@@ -158,6 +159,155 @@ begin
         din0 <= x"FFFF_7C00";
         din1 <= x"0000_4800";
         set_reset_valid(valid0,valid1);
+        -- Stimulate (5 to 9)
+        din0 <= x"0000_8000";
+        din1 <= x"0000_4000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_4000";
+        din1 <= x"FFFF_E000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_5000";
+        din1 <= x"FFFF_F000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_0400";
+        din1 <= x"0000_0600";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"FFFF_7C00";
+        din1 <= x"0000_4800";
+        set_reset_valid(valid0,valid1);
+        -- Stimulate (10 to 14)
+        din0 <= x"0000_8000";
+        din1 <= x"0000_4000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_4000";
+        din1 <= x"FFFF_E000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_5000";
+        din1 <= x"FFFF_F000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_0400";
+        din1 <= x"0000_0600";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"FFFF_7C00";
+        din1 <= x"0000_4800";
+        set_reset_valid(valid0,valid1);
+        -- Stimulate (15 to 19)
+        din0 <= x"0000_8000";
+        din1 <= x"0000_4000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_4000";
+        din1 <= x"FFFF_E000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_5000";
+        din1 <= x"FFFF_F000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_0400";
+        din1 <= x"0000_0600";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"FFFF_7C00";
+        din1 <= x"0000_4800";
+        set_reset_valid(valid0,valid1);
+        -- Stimulate (20 to 24)
+        din0 <= x"0000_8000";
+        din1 <= x"0000_4000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_4000";
+        din1 <= x"FFFF_E000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_5000";
+        din1 <= x"FFFF_F000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_0400";
+        din1 <= x"0000_0600";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"FFFF_7C00";
+        din1 <= x"0000_4800";
+        set_reset_valid(valid0,valid1);
+        ------------------------ END OF FIRST input compute -------------------------------------
+
+        -------------------- START OF Second input compute --------------------------
+        -- Stimulate (0 to 4)
+        din0 <= x"0000_8000";
+        din1 <= x"FFFF_E000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_4000";
+        din1 <= x"FFFF_E000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_5000";
+        din1 <= x"FFFF_F000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_0400";
+        din1 <= x"0000_0600";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"FFFF_7C00";
+        din1 <= x"0000_4800";
+        set_reset_valid(valid0,valid1);
+        -- Stimulate (5 to 9)
+        din0 <= x"0000_8000";
+        din1 <= x"0000_4000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_4000";
+        din1 <= x"FFFF_E000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_5000";
+        din1 <= x"FFFF_F000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_0400";
+        din1 <= x"0000_0600";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"FFFF_7C00";
+        din1 <= x"0000_4800";
+        set_reset_valid(valid0,valid1);
+        -- Stimulate (10 to 14)
+        din0 <= x"0000_8000";
+        din1 <= x"0000_4000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_4000";
+        din1 <= x"FFFF_E000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_5000";
+        din1 <= x"FFFF_F000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_0400";
+        din1 <= x"0000_0600";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"FFFF_7C00";
+        din1 <= x"0000_4800";
+        set_reset_valid(valid0,valid1);
+        -- Stimulate (15 to 19)
+        din0 <= x"0000_8000";
+        din1 <= x"0000_4000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_4000";
+        din1 <= x"FFFF_E000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_5000";
+        din1 <= x"FFFF_F000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_0400";
+        din1 <= x"0000_0600";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"FFFF_7C00";
+        din1 <= x"0000_4800";
+        set_reset_valid(valid0,valid1);
+        -- Stimulate (20 to 24)
+        din0 <= x"0000_8000";
+        din1 <= x"0000_4000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_4000";
+        din1 <= x"FFFF_E000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_5000";
+        din1 <= x"FFFF_F000";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"0000_0400";
+        din1 <= x"0000_0600";
+        set_reset_valid(valid0,valid1);
+        din0 <= x"FFFF_7C00";
+        din1 <= x"0000_4800";
+        set_reset_valid(valid0,valid1);
+        ------------------------ END OF Second input compute -------------------------------------
+
 		wait;
 
 		
