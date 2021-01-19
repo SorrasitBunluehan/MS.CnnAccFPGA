@@ -9,23 +9,23 @@ end w_sticker_tb;
 architecture rtl of w_sticker_tb is
 	component w_sticker is
 		generic(
-		   input_width : natural;
+		   DATA_WIDTH : natural;
 		   MAX_KERNEL_SIZE : natural := 5;					-- Maximum support kernel size 5x5
 		   KERNEL_SIZE_BIT_WIDTH : natural
 		); port(
 			kernel_size : in unsigned(KERNEL_SIZE_BIT_WIDTH-1 downto 0); 
 			clk : in std_logic;
 			arstn : in std_logic;
-			d_in : in std_logic_vector(input_width-1 downto 0);
+			d_in : in std_logic_vector(DATA_WIDTH-1 downto 0);
 			in_valid : in std_logic;
 			setzero : in std_logic;
 			hw_acc_en : in std_logic;
 			out_valid : out std_logic;
-			d_out : out std_logic_vector((MAX_KERNEL_SIZE*MAX_KERNEL_SIZE*input_width)-1 downto 0)
+			d_out : out std_logic_vector((MAX_KERNEL_SIZE*MAX_KERNEL_SIZE*DATA_WIDTH)-1 downto 0)
 		);
 	end component;
 
-	constant input_width : natural := 32;
+	constant DATA_WIDTH : natural := 32;
     constant MAX_KERNEL_SIZE : natural := 5;
 	constant KERNEL_SIZE_BIT_WIDTH : natural := 8;
 	constant CLK_PERIOD : time := 50 ns;
@@ -34,18 +34,18 @@ architecture rtl of w_sticker_tb is
 	signal  arstn : std_logic := '1';
 
 	signal kernel_size : unsigned(KERNEL_SIZE_BIT_WIDTH-1 downto 0); 
-	signal d_in : std_logic_vector(input_width-1 downto 0);
+	signal d_in : std_logic_vector(DATA_WIDTH-1 downto 0);
 	signal in_valid : std_logic;
 	signal setzero : std_logic;
 	signal hw_acc_en : std_logic := '0';
 	signal out_valid : std_logic;
-	signal d_out : std_logic_vector((MAX_KERNEL_SIZE*MAX_KERNEL_SIZE*input_width)-1 downto 0);
+	signal d_out : std_logic_vector((MAX_KERNEL_SIZE*MAX_KERNEL_SIZE*DATA_WIDTH)-1 downto 0);
 
 begin
 
 	dut : w_sticker
 		generic map(
-			input_width 				=>	input_width,
+			DATA_WIDTH 				=>	DATA_WIDTH,
 			MAX_KERNEL_SIZE 			=>	MAX_KERNEL_SIZE,
 			KERNEL_SIZE_BIT_WIDTH 		=>	KERNEL_SIZE_BIT_WIDTH
 		)port map(
@@ -72,7 +72,7 @@ begin
 			hw_acc_en <= '1';
 			wait for CLK_PERIOD;
 			in_valid <= '1';
-			for i in 0 to 48 loop
+			for i in 0 to 60 loop
 				d_in <= std_logic_vector(to_unsigned(i,d_in'length));
 				wait for CLK_PERIOD;
 			end loop;

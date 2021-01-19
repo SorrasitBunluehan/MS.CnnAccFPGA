@@ -109,7 +109,7 @@ begin
 			process(output_a, agu_en, agu_in, input_size)
 			begin
 				-- Check Activated FF
-				if (i-(input_size-1) = 0) then
+				if (i-(to_integer(input_size)-1) = 0) then
 					input_a(i) <= output_a(MAX_INPUT_SIZE);
 				else
 					input_a(i) <= output_a(i+1);
@@ -124,7 +124,7 @@ begin
 			process(output_a, agu_en, agu_in, input_size)
 			begin
 				-- Check Activated FF
-				if (((i-MAX_INPUT_SIZE)-(input_size-1)) = 0) then
+				if (((i-MAX_INPUT_SIZE)-(to_integer(input_size)-1)) = 0) then
 					input_a(i) <= output_a(MAX_INPUT_SIZE*2);
 				else
 					input_a(i) <= output_a(i+1);
@@ -139,8 +139,8 @@ begin
 			process(output_a, agu_en, agu_in, input_size)
 			begin
 				-- Check Activated FF
-				if (((i-MAX_INPUT_SIZE*2)-(input_size-1)) = 0) then
-					if kernel_size = 3 then
+				if (((i-MAX_INPUT_SIZE*2)-(to_integer(input_size)-1)) = 0) then
+					if to_integer(kernel_size) = 3 then
 						input_a(i) <= agu_in;
 					else
 						input_a(i) <= output_a(MAX_INPUT_SIZE*3);
@@ -159,8 +159,8 @@ begin
 				variable mux_sel_temp : unsigned(8 downto 0);
 			begin
 				-- Check Activated FF
-				if (((i-MAX_INPUT_SIZE*3)-(input_size-1)) = 0) then
-					if kernel_size = 4 then
+				if (((i-MAX_INPUT_SIZE*3)-(to_integer(input_size)-1)) = 0) then
+					if to_integer(kernel_size) = 4 then
 						input_a(i) <= agu_in;
 					else
 						input_a(i) <= output_a(MAX_INPUT_SIZE*4);
@@ -179,7 +179,7 @@ begin
 				variable mux_sel_temp : unsigned(8 downto 0);
 			begin
 				-- Check Activated FF
-				if (((i-MAX_INPUT_SIZE*4)-(input_size-1)) = 0) then
+				if (((i-MAX_INPUT_SIZE*4)-(to_integer(input_size)-1)) = 0) then
 					input_a(i) <= agu_in;
 				else
 					input_a(i) <= output_a(i+1);

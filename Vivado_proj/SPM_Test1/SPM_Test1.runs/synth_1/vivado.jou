@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Thu Jan 14 18:15:23 2021
+# Process ID: 10904
+# Current directory: D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/SPM_Test1/SPM_Test1.runs/synth_1
+# Command line: vivado.exe -log SPM.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source SPM.tcl
+# Log file: D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/SPM_Test1/SPM_Test1.runs/synth_1/SPM.vds
+# Journal file: D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/SPM_Test1/SPM_Test1.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source SPM.tcl -notrace

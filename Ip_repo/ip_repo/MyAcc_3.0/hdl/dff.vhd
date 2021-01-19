@@ -23,7 +23,7 @@ begin
 		elsif rising_edge(clk) then  
 			if en = '1' then
 				q  <= d;
-			end if;
+            end if;
 		end if;
 	end process main;
 

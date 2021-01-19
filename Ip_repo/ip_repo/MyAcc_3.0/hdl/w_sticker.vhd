@@ -1,10 +1,12 @@
 ---------------------------------------------------------------------------------------------
-	-- Sticker Module for kernel saved
-	-- Def.			: This Module use to attach 5 inputs together and send it to save in 
-	-- 				  memory in WGU Module.
-	-- Key Structure : 2D Memeory Structure save column and row of the weight kernel.
-	-- **Note		: Maximum_KERNEL_SIZE is 5  
+	-- Sticker Module 
+	-- Def.			    : This Module use to attach 5 inputs together and send it to save in 
+	-- 				      memory in WGU Module.
+	-- Key Structure    : 2D Memeory Structure save column and row of the weight kernel.
+    -- Resource Usage   : LUTs RAM
+	-- **Note		    : 
 ---------------------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -12,8 +14,8 @@ use IEEE.NUMERIC_STD.ALL;
 entity w_sticker is
 	generic(
 		DATA_WIDTH : natural;
-		MAX_KERNEL_SIZE : natural := 5;					-- Maximum support kernel size 5x5
-		KERNEL_SIZE_BIT_WIDTH : natural
+		MAX_KERNEL_SIZE : natural;					-- Maximum support kernel size 5x5
+		KERNEL_SIZE_BIT_WIDTH : natural 
 	);
 	port(
 		kernel_size : in unsigned(KERNEL_SIZE_BIT_WIDTH-1 downto 0); 
@@ -33,9 +35,10 @@ end w_sticker;
 architecture behav of w_sticker is
 
 	type temp_array is array(MAX_KERNEL_SIZE -1 downto 0, MAX_KERNEL_SIZE -1 downto 0) of std_logic_vector(DATA_WIDTH-1 downto 0);
-	signal o_a : temp_array;
-	signal data_valid : std_logic;
-	signal row, col : integer range 0 to 255; 
+	signal ram : temp_array := (others=>(others => (others=> '0')));
+    signal ram_out : std_logic_vector(DATA_WIDTH-1 downto 0);
+	signal data_valid, we : std_logic;
+	signal cur_row, cur_col, nxt_row, nxt_col : integer range -1 to 254; 
 
 	---------------------------------------------------------------------------------------------
 	-- Flatten
@@ -85,42 +88,61 @@ begin
 	
 	out_valid <= data_valid;
 
-	STORE_ARRAY: 
-		process(clk,arstn)
-		begin
-			if arstn = '0' then
-				col <= 0;
-				row <= 0;
-				o_a <= (others => (others => (others =>'0')));
-			elsif rising_edge(clk) then
-				data_valid <= '0';
-				----------------------
+    we <= in_valid and hw_acc_en;
+
+    ------------------------------------------------------------------------------
+    -- Write First SPM
+    -- Note: ram_out will get the old value of ram(nxt_row,nxt_col) when read. 
+    ------------------------------------------------------------------------------
+    RAM_2D:
+        process(clk)
+        begin
+            if rising_edge(clk) then
+                if setzero = '1' then
+                    ram <= (others=>(others => (others=> '0')));
+                elsif we = '1' then
+                    ram(nxt_row,nxt_col) <= d_in;
+                end if;
+                ram_out <= ram(nxt_row,nxt_col);
+            end if;
+        end process;
+
+    INDEX_UPDATING_PROC: 
+        process(clk,arstn)
+        begin
+            if arstn = '0' then
+                cur_row <= -1;
+                cur_col <= -1;
+            elsif rising_edge(clk) then
+                data_valid <= '0';
+                ----------------------
 				-- Synchronous Reset
 				----------------------
 				if setzero = '1' then
-					col <= 0;
-					row <= 0;
-					o_a <= (others => (others => (others =>'0')));
+                    cur_row <= -1;
+                    cur_col <= -1;
 				elsif in_valid = '1' and hw_acc_en = '1' then
-					-- Increase row and column index
-					if col = kernel_size-1 then
-						col <= 0;
-						if row = kernel_size-1 then 
-							row <= 0;
-							data_valid <= '1';
-						else
-							row <= row + 1;
-						end if;
-					else
-						col <= col + 1;
-					end if;
-					-- Store input to Array
-					o_a(row,col) <= d_in;
-				end if;
-			end if;
-		end process;
+                    if nxt_col = kernel_size-1 then
+                        cur_col <= -1;
+                        if nxt_row = kernel_size-1 then
+                            cur_row <= -1;
+                            data_valid <= '1';
+                        else 
+                            cur_row <= nxt_row;
+                        end if;
+                    else
+                        cur_col <= nxt_col;
+                    end if;
+                end if;
+            end if;
+        end process;
 
-		d_out <= flatten(o_a) when data_valid = '1' else (others => '0');
+    -- Combinatorial Circuit
+    nxt_row <= cur_row + 1;
+    nxt_col <= cur_col + 1;
+
+
+    d_out <= flatten(ram) when data_valid = '1' else (others => '0');
 					
 end behav;
 

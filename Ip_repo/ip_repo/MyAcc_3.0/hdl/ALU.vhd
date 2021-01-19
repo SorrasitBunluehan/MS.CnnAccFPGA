@@ -38,7 +38,7 @@ architecture Behavioral of ALU is
 	type temp_array is array (MAX_COMPUTE_BYTE-1 downto 0) of signed(2*DATA_WIDTH-1 downto 0);			
 	signal x_a,w_a : data_array;
 	signal temp_a : temp_array;
-
+    signal filter_out : alu_out'range;
 
 
 begin   
@@ -49,6 +49,16 @@ begin
 		w_a(i) <= signed(w_in((DATA_WIDTH*i + DATA_WIDTH) - 1 downto DATA_WIDTH*i));
 	end generate;
 	
+    process(x_in,w_in)
+		variable temp : signed((2*DATA_WIDTH + MAX_COMPUTE_BYTE)-1 downto 0);
+    begin
+        temp := (others => '0');
+        for i in 0 to MAX_COMPUTE_BYTE-1 loop
+            temp := temp + x_a(i)*w_a(i);
+        end loop;
+        filter_out <= temp;
+    end process;
+
 	compute_proc : process(clk)
 		variable temp : signed((2*DATA_WIDTH + MAX_COMPUTE_BYTE)-1 downto 0);
 		--variable temp : signed(alu_out'range);
@@ -59,8 +69,6 @@ begin
 				temp := (others => '0');
 				for i in 0 to MAX_COMPUTE_BYTE-1 loop
 					temp := temp + x_a(i)*w_a(i);
-
-
 					--temp_a(i) <= x_a(i)*w_a(i);
 				end loop;
 

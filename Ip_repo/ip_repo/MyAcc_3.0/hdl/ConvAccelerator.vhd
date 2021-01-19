@@ -16,9 +16,9 @@ entity ConvAccelerator is
         ---------------------------------------
         -- Maximum Value
         ---------------------------------------
-        MAX_KERNEL_DEPTH    : natural := 32;
+        MAX_KERNEL_DEPTH    : natural := 16;
         MAX_COMPUTE_BYTE    : natural := 25;
-        MAX_INPUT_SIZE      : natural := 20;
+        MAX_INPUT_SIZE      : natural := 10;
         MAX_KERNEL_SIZE     : natural := 5;
 
 
@@ -552,7 +552,7 @@ begin
             clk => s00_axis_aclk,	
             arstn => s00_axis_aresetn,	
             agu_in => agu_tdata, 
-            agu_en => agu_tvalid,
+            agu_en => agu_en,
             -- Output
             agu_out => agu_out
         );

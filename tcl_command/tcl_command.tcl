@@ -25,10 +25,12 @@ write_hw_platform -fixed -include_bit -force -file D:/Vivado_Project/MS.CnnAccFP
 
 
 #Create Project TCL Script
-create_project w_sticker_sim D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/w_sticker_sim -part xc7z010clg400-1
-set_property board_part digilentinc.com:zybo:part0:2.0 [current_project]
-set_property target_language VHDL [current_project]
-set_property simulator_language VHDL [current_project]
+create_project w_sticker_sim D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/w_sticker_sim -part xc7z010clg400-1;
+set_property board_part digilentinc.com:zybo:part0:2.0 [current_project];
+set_property target_language VHDL [current_project];
+set_property simulator_language VHDL [current_project];
+set_property target_simulator ModelSim [current_project];
+set_property -name {modelsim.simulate.runtime} -value {20us} -objects [get_filesets sim_1]
 
 #Add Source file to project
 add_files -norecurse D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/w_sticker.vhd

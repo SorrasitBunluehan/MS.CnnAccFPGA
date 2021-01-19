@@ -1,0 +1,23 @@
+# do {w_sticker_tb_compile.do}
+# ** Warning: (vlib-34) Library already exists at "modelsim_lib/work".
+# 
+# ** Warning: (vlib-34) Library already exists at "modelsim_lib/msim".
+# 
+# ** Warning: (vlib-34) Library already exists at "modelsim_lib/msim/xil_defaultlib".
+# 
+# Model Technology ModelSim PE vmap 10.4a Lib Mapping Utility 2015.03 Apr  7 2015
+# vmap -modelsim_quiet xil_defaultlib modelsim_lib/msim/xil_defaultlib 
+# Modifying modelsim.ini
+# Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 13:52:11 on Jan 18,2021
+# vcom -93 -work xil_defaultlib ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/w_sticker.vhd ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/w_sticker_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity w_sticker
+# -- Compiling architecture behav of w_sticker
+# -- Compiling entity w_sticker_tb
+# -- Compiling architecture rtl of w_sticker_tb
+# End time: 13:52:11 on Jan 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

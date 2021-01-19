@@ -149,6 +149,9 @@ architecture tb_arch of ConvAccelerator_tb is
     signal m00_axis_tstrb	:   std_logic_vector((C_M00_AXIS_TDATA_WIDTH/8)-1 downto 0);
     signal m00_axis_tlast	:   std_logic;
     signal m00_axis_tready	:   std_logic;
+
+   
+
 begin
     ------------------------------------------------
     -- Component Instantiation
@@ -192,20 +195,146 @@ begin
             m00_axis_tready	    => m00_axis_tready	
     );
 
-
-
-
-
-
     stim_proc:
         process
         begin
             s00_axis_aresetn <= '1';
-            wait for CLK_PERIOD;
+            wait for CLK_PERIOD + 2 ns;
             s00_axis_aresetn <= '0';
             wait for CLK_PERIOD;
             s00_axis_aresetn <= '1';
+            wait for CLK_PERIOD; 
+
+            -------------------------------
+            -- Setup Network component 
+            --  Input Size = 7
+            --  Input Depth = 2
+            --  Kernel Size = 3
+            --  Kernel Depth = 2
+            --  Stride = 1 
+            -------------------------------
+            s01_axi_awaddr <= (others => '0');
+            s01_axi_awvalid <= '1';
+            s01_axi_wdata <= x"00100039";
+            s01_axi_wstrb <= x"F";
+            s01_axi_wvalid <= '1';
+            s01_axi_bready <= '1';
+            wait until s01_axi_bvalid = '1';
+            s01_axi_wvalid <= '0';
+            s01_axi_awvalid <= '0';
+            wait for CLK_PERIOD;
+            s01_axi_awaddr <= x"04";
+            s01_axi_awvalid <= '1';
+            s01_axi_wdata <= x"00000203";
+            s01_axi_wvalid <= '1';
+            s01_axi_awvalid <= '1';
+            wait until s01_axi_bvalid = '1';
+            s01_axi_wvalid <= '0';
+            s01_axi_awvalid <= '0';
+            wait for CLK_PERIOD;
+            s01_axi_awaddr <= x"04";
+            s01_axi_awvalid <= '1';
+            s01_axi_wdata <= x"00200203";
+            s01_axi_wvalid <= '1';
+            s01_axi_awvalid <= '1';
+            wait until s01_axi_bvalid = '1';
+            s01_axi_wvalid <= '0';
+            s01_axi_awvalid <= '0';
+            wait for CLK_PERIOD;
+
+            ---------------------
+            -- Kernel #1 
+            ---------------------
+            s00_axis_tvalid <= '1';
+            -- First Weight
+            s00_axis_tdata	<= x"0000_8000";
+            wait for CLK_PERIOD;
+            -- Second Weight 
+            s00_axis_tdata <= x"0000_4000";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            s00_axis_tdata	<= x"FFFF_E000";
+            wait for CLK_PERIOD;
+            -- Forth Weight 
+            s00_axis_tdata	<= x"0000_5000";
+            wait for CLK_PERIOD;
+            -- Fifth Weight 
+            s00_axis_tdata	<= x"FFFF_F000";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            s00_axis_tdata	<= x"0000_0400";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            s00_axis_tdata	<= x"0000_0600";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            s00_axis_tdata	<= x"FFFF_7C00";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            s00_axis_tdata	<= x"0000_4800";
+            wait for CLK_PERIOD;
+
+            ---------------------
+            -- Kernel #2 
+            ---------------------
+            s00_axis_tdata <= x"0000_4000";
+            wait for CLK_PERIOD;
+            -- Second Weight 
+            s00_axis_tdata <= x"0000_8000";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            s00_axis_tdata <= x"0000_8400";
+            wait for CLK_PERIOD;
+            -- Forth Weight 
+            s00_axis_tdata <= x"0000_0400";
+            wait for CLK_PERIOD;
+            -- Fifth Weight 
+            s00_axis_tdata <= x"0000_0600";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            s00_axis_tdata <= x"FFFF_8000";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            s00_axis_tdata <= x"FFFF_E000";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            s00_axis_tdata <= x"FFFF_E000";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            s00_axis_tdata <= x"FFFF_F000";
+            s00_axis_tlast <= '1';
+            wait for CLK_PERIOD;
+            s00_axis_tlast <= '0';
+            s00_axis_tvalid <= '0';
+
+            ---------------------
+            -- Data Input
+            ---------------------
+            s00_axis_tvalid <= '1';
+            for i in 0 to 97 loop
+                --s00_axis_tdata <= std_logic_vector(to_unsigned(i,s00_axis_tdata'length));
+                s00_axis_tdata <= std_logic_vector(shift_left(to_unsigned(i,s00_axis_tdata'length), 16));
+
+                -- Implement Pause Input Case (Due to some Error)
+                --if i = (input_size*input_size)/2 then
+                --    XAXIS_TVALID <= '0';
+                --    wait for CLK_PERIOD*30;
+                --end if;
+                --XAXIS_TVALID <= '1';
+
+                if i = 97 then
+                    s00_axis_tlast <= '1';
+                end if;
+                wait until rising_edge(s00_axis_aclk) and s00_axis_tready = '1';
+
+            end loop;
+            s00_axis_tdata <= (others => '1'); 
+            s00_axis_tvalid <= '0';
+            s00_axis_tlast <= '0';
+
             wait;
+
+
 
         end process;
     

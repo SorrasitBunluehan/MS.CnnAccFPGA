@@ -1,18 +1,13 @@
 Vivado Simulator 2020.1
 Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
-Running: D:/Vivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 3a024801c5de4ece87438811b6f3b876 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot wgu_tb_behav xil_defaultlib.wgu_tb -log elaborate.log 
+Running: D:/Vivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 3a024801c5de4ece87438811b6f3b876 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot weight_buffer_behav xil_defaultlib.weight_buffer -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling package std.standard
-Compiling package std.textio
-Compiling package ieee.std_logic_1164
-Compiling package ieee.numeric_std
-Compiling architecture behav of entity xil_defaultlib.w_sticker [\w_sticker(input_width=32,kernel...]
-Compiling architecture behavioral of entity xil_defaultlib.SPM [\SPM(input_width=800,mem_depth=2...]
-Compiling architecture behav of entity xil_defaultlib.wgu [\wgu(kernel_size_bit_width=8,ker...]
-Compiling architecture behav of entity xil_defaultlib.wgu_tb
-Built simulation snapshot wgu_tb_behav
+ERROR: [VRFC 10-3348] formal generic 'kernel_size_bit_width' has no actual or default value [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/weight_buffer.vhd:12]
+ERROR: [VRFC 10-3348] formal generic 'kernel_depth_bit_width' has no actual or default value [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/weight_buffer.vhd:13]
+ERROR: [VRFC 10-3348] formal generic 'max_kernel_depth' has no actual or default value [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/weight_buffer.vhd:15]
+ERROR: [VRFC 10-3348] formal generic 'max_kernel_size' has no actual or default value [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/weight_buffer.vhd:16]
+ERROR: [VRFC 10-3348] formal generic 'data_width' has no actual or default value [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/weight_buffer.vhd:19]
+ERROR: [VRFC 10-3348] formal generic 'max_compute_byte' has no actual or default value [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/weight_buffer.vhd:22]
+ERROR: [VRFC 10-3348] formal generic 'addr_width' has no actual or default value [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/weight_buffer.vhd:23]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit weight_buffer in library work failed.

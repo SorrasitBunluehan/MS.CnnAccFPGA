@@ -2,7 +2,6 @@
 2020.1
 May 27 2020
 20:09:33
-D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/SPM.vhd,1604406521,vhdl,,,,spm,,,,,,,,
-D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/w_sticker.vhd,1609416900,vhdl,,,,w_sticker,,,,,,,,
-D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/wgu.vhd,1609417251,vhdl,,,,wgu,,,,,,,,
-D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/tb/wgu_tb.vhd,1609589862,vhdl,,,,wgu_tb,,,,,,,,
+D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/SPM.vhd,1610964416,vhdl,,,,spm,,,,,,,,
+D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/w_sticker.vhd,1610963480,vhdl,,,,w_sticker,,,,,,,,
+D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/weight_buffer.vhd,1610972720,vhdl,,,,weight_buffer,,,,,,,,
