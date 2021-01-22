@@ -1,0 +1,336 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/main_fsm_sim/main_fsm_sim.sim/sim_1/behav/modelsim
+Ealu
+Z1 w1611148815
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ALU.vhd
+Z6 F../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ALU.vhd
+l0
+L16
+VIoNIb^AN0X_R<j9c5mS?N3
+!s100 C4d^:caQ?h;AI7e@Al:go3
+Z7 OP;C;10.4a;61
+31
+Z8 !s110 1611314593
+!i10b 1
+Z9 !s108 1611314592.000000
+Z10 !s90 -93|-work|xil_defaultlib|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ALU.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/DIS_RAM_SP.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/main_fsm.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/w_sticker.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/weight_buffer.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/main_fsm_tb.vhd|
+Z11 !s107 ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/main_fsm_tb.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/weight_buffer.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/w_sticker.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/main_fsm.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/DIS_RAM_SP.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ALU.vhd|
+!i113 1
+Z12 o-93 -work xil_defaultlib -O0
+Z13 tExplicit 1
+Abehavioral
+R2
+R3
+R4
+Z14 DEx4 work 3 alu 0 22 IoNIb^AN0X_R<j9c5mS?N3
+l43
+L35
+Z15 VUbL_DG:=j=i17a0PzNW5F2
+Z16 !s100 em_LzN?WLjkd9HJ8XKDzO2
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Edata_buffer
+Z17 w1611137509
+R2
+R3
+R4
+R0
+Z18 8../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd
+Z19 F../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd
+l0
+L10
+Vd3Qb]IgnKM7a>[5z[4RoS3
+!s100 Nh[?=eD;ePmkGl?iXSTVJ2
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Abehav
+R2
+R3
+R4
+Z20 DEx4 work 11 data_buffer 0 22 d3Qb]IgnKM7a>[5z[4RoS3
+l65
+L44
+Z21 VkYPdB6F<@g_GX?RY6OiKk1
+Z22 !s100 LH55ZmC>9UFdX]bHT@Rm>1
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Edff
+Z23 w1610544311
+R3
+R4
+R0
+Z24 8../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd
+Z25 F../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd
+l0
+L4
+V2M?9Fdn5iiDLQKE6Zz@DQ2
+!s100 >FWnTi[TjO_mnTP8Beo7G0
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Astr
+R3
+R4
+Z26 DEx4 work 3 dff 0 22 2M?9Fdn5iiDLQKE6Zz@DQ2
+l18
+L17
+Z27 Vn0jL@l0L?J`0jJ?]N_lWa3
+Z28 !s100 V]d74kmk_9knXFKKUC9Pc3
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Edis_ram_sp
+Z29 w1610977681
+R2
+R3
+R4
+R0
+Z30 8../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/DIS_RAM_SP.vhd
+Z31 F../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/DIS_RAM_SP.vhd
+l0
+L9
+Vh[EoaGQ6:NAPQgN_YfXgC2
+!s100 6<DmdW=HT_]m<UWB<9o5J3
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Abehavioral
+R2
+R3
+R4
+Z32 DEx4 work 10 dis_ram_sp 0 22 h[EoaGQ6:NAPQgN_YfXgC2
+l28
+L24
+Z33 VLUZRID]gf]GQ6X^4S85`j3
+Z34 !s100 e1P^gdli>:P7z@5NKWE;<0
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Emain_fms_tb
+Z35 w1611157873
+R2
+R3
+R4
+R0
+Z36 8../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/main_fsm_tb.vhd
+Z37 F../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/main_fsm_tb.vhd
+l0
+L5
+VeYBgJ7XC_>SDD4he?_7Oa0
+!s100 d`fn?J9oaM;cRTULMk>OI0
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Abehav
+R2
+R3
+R4
+Z38 DEx4 work 11 main_fms_tb 0 22 eYBgJ7XC_>SDD4he?_7Oa0
+l214
+L8
+Z39 VEKfcH=?`AlW>oDhj^1b=R0
+Z40 !s100 IVig85UZ0Y4mZoXAnNDh:0
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Emain_fsm
+Z41 w1611309701
+R2
+R3
+R4
+R0
+Z42 8../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/main_fsm.vhd
+Z43 F../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/main_fsm.vhd
+l0
+L5
+VYfQkdih4@=]LXRI`X]YA41
+!s100 HO43MS]_n0>YGB0JCNmLl0
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Abehav
+R2
+R3
+R4
+Z44 DEx4 work 8 main_fsm 0 22 YfQkdih4@=]LXRI`X]YA41
+l72
+L55
+VVYnh6S>oL=F`JIQ0Ln;QY1
+!s100 ePEQm?mNMicO`Y@Q@0BDV1
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Ew_sticker
+Z45 w1611054004
+R2
+R3
+R4
+R0
+Z46 8../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/w_sticker.vhd
+Z47 F../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/w_sticker.vhd
+l0
+L14
+VDS<]VUP0J?O0_ko>^[j=72
+!s100 Kgj;[S@JO?l>djA4;S[c_1
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Abehav
+R2
+R3
+R4
+Z48 DEx4 work 9 w_sticker 0 22 DS<]VUP0J?O0_ko>^[j=72
+l87
+L35
+Z49 VGk:GYj8kUWfR9=lb539Y]2
+Z50 !s100 YeBo>F@8LY`7A:VlJNVnV2
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Eweight_buffer
+Z51 w1611158394
+R2
+R3
+R4
+R0
+Z52 8../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/weight_buffer.vhd
+Z53 F../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/weight_buffer.vhd
+l0
+L7
+V]8a6KJ^_cT9TS;i8TJKV52
+!s100 9KGYZD;48;7[lGPmJ1LV30
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Abehav
+R2
+R3
+R4
+Z54 DEx4 work 13 weight_buffer 0 22 ]8a6KJ^_cT9TS;i8TJKV52
+l99
+L45
+Z55 VTb9A:6If^d<ZH^Wod3[I22
+Z56 !s100 N>Ukm3Dg[;iI61QM:6UA[1
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13

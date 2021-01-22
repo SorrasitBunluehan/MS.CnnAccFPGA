@@ -35,7 +35,7 @@ entity main_fsm	is
 		setzero : in std_logic;
 
 		-- Output to AGU
-		agu_en : out std_logic;
+		db_en : out std_logic;
 
 		-- Output to WGU
 		w_addr_incr : out std_logic;
@@ -54,12 +54,15 @@ end main_fsm;
 
 architecture behav of main_fsm is
 	
-	signal output_size : unsigned(DATA_WIDTH-1 downto 0);
+	signal output_size, output_size_temp : unsigned(DATA_WIDTH-1 downto 0);
 	
 	type state_type is (IDLE, W_PREP, X_PREP, L_X, READ_INDEX,  L_W, COMPUTE, CLEAR_REG);
 	signal c_state, n_state : state_type;
-	signal last_input, x_prep_done, x_prep_c_en ,w_addr_c_en, pixel_last, count_en, agu_en_s, compute_c_en, reset_count : std_logic;
-	signal x_row, x_col, x_prep_c, input_count : integer range 0 to 255;
+	signal last_input, x_prep_done, x_prep_c_en ,w_addr_c_en : std_logic;
+    signal image_inst_counter_ce, image_inst_counter_rst : std_logic;
+    signal pixel_last, count_en, db_en_s, compute_c_en, compute_counter_rst : std_logic;
+    signal row_counter_ce, x_prep_counter_ce, x_prep_counter_rst : std_logic;
+	signal x_row_cur, x_row_nxt, x_col_cur, x_col_nxt, x_prep_c, x_prep_c_nxt, input_count, input_count_next : integer range 0 to 255;
 
 	-- c_t_f (Compute to finished) : is the signal that will assert after tlast = 1 but the accelerator is not yet 
 	-- 								 finished compute all data inside  shift register this signal is act as replaced  
@@ -75,40 +78,27 @@ begin
 	-- **Note		: This Setting Process only work when Hw_acc_en is low
 	-- Process Type : Sequential Circuit
 	---------------------------------------------------------------------------------------------
-	SET_OUTPUT_VAR:
-	process(clk,arstn)
-	begin
-		if arstn = '0' then
-		   output_size <= (others=>'0');	
-		elsif rising_edge(clk) then
-			if setzero = '1' then
-			   output_size <= (others=>'0');	
-			else
-			   if Hw_acc_en = '1' then
-				   output_size <= resize(unsigned((input_size - kernel_size)/stride + 1),output_size'length);  
-			   end if;
-			end if;
-		end if;
-	end process;
+	--SET_OUTPUT_VAR:
+	--process(clk)
+	--begin
+    --    if rising_edge(clk) then
+	--		if set_output_var_rst = '1' then
+	--		   output_size <= (others=>'0');	
+    --        elsif Hw_acc_en = '1' then
+    --           output_size <= output_size_temp; 
+    --       end if;
+	--	end if;
+	--end process;
 
-	agu_en <= agu_en_s;
+    -- TODO : Make sure that output_size can use without using FF and everything work fine?
+    output_size <= resize(unsigned((input_size - kernel_size)/stride + 1),output_size'length);
+    --output_size_temp <= resize(unsigned((input_size - kernel_size)/stride + 1),output_size'length);  
+    --set_output_var_rst <= (not arstn) or (setzero);
+
+	db_en <= db_en_s;
 
 	x_prep_done <= '1' when x_prep_c = input_size*kernel_size-1 else '0';
-	c_t_f <= '1' when x_row = (output_size-1)*stride else '0';
-
-	-- TODO : For debugging purpose delete it!!
---	process(c_state)
---	begin
---		case c_state is
---			when IDLE => fsm_state_test <= "000";
---			when W_PREP => fsm_state_test <= "001";
---			when X_PREP => fsm_state_test <= "010";
---			when L_X => fsm_state_test <= "011";
---			when L_W => fsm_state_test <= "100";
---			when COMPUTE => fsm_state_test <= "101";
---			when others => fsm_state_test <= "111";
---		end case;
---	end process;
+	c_t_f <= '1' when x_row_cur = (output_size-1)*stride else '0';
 
 	w_addr_incr <= w_addr_c_en;
 
@@ -125,7 +115,9 @@ begin
 			if arstn = '0' then 
 				c_state <= IDLE;
 			elsif rising_edge(clk) then 
-				c_state <= n_state;
+                if hw_acc_en = '1' then
+                    c_state <= n_state;
+                end if;
 			end if;
 		end process;
 
@@ -137,8 +129,12 @@ begin
 	-- **Note : FSM only work after hw_acc_en is assert after all network 
 	-- 			variables is set
 	------------------------------------------------------------------------
+    
+	------------------------------------------------------------------------
+    -- Next State Decode <Combinatorial>
+	------------------------------------------------------------------------
 	NEXT_STATE_DECODE:
-		process (hw_acc_en, c_t_f, c_state, w_addr_c, last_input, tvalid, tlast, x_col, x_row, pixel_last, x_prep_done, setzero)
+		process (hw_acc_en, c_t_f, c_state, w_addr_c, last_input, tvalid, tlast, x_col_cur, x_row_cur, pixel_last, x_prep_done, setzero, kernel_depth)
 		begin
 			n_state <= c_state;
 			if setzero = '1' then
@@ -185,21 +181,21 @@ begin
 							if c_t_f = '1' then
 								if pixel_last = '1' then 
 									n_state <= CLEAR_REG;
-								elsif (x_row mod (to_integer(stride)) = 0) and (x_col mod (to_integer(stride))= 0) and (x_col <= (output_size-1)*stride) then
+								elsif (x_row_cur mod (to_integer(stride)) = 0) and (x_col_cur mod (to_integer(stride))= 0) and (x_col_cur <= (output_size-1)*stride) then
 									n_state <= COMPUTE;
 								else 
 									n_state <= L_X;
 								end if;
 							else
 								-- TODO : Remove Pixel_last logic HERE!!!
-								if ((x_row mod (to_integer(stride))= 0) and (x_col mod (to_integer(stride))= 0) and (x_col <= (output_size-1)*stride)) then 
+								if ((x_row_cur mod (to_integer(stride))= 0) and (x_col_cur mod (to_integer(stride))= 0) and (x_col_cur <= (output_size-1)*stride)) then 
 									n_state <= COMPUTE;
 								else 
 									n_state <= L_X;
 								end if;
 							end if;
 						when CLEAR_REG =>
-							if x_row = input_size-1 and x_col = input_size-1 then
+							if x_row_cur = input_size-1 and x_col_cur = input_size-1 then
 								if last_input = '1' then 
 									n_state <= IDLE;
 								else
@@ -215,7 +211,7 @@ begin
 	-- Pixel_last assert when compute pointer is point at the last element 
 	-- of the input row. 		
 	------------------------------------------------------------------------
-	pixel_last <= '1' when x_col = input_size-1 else '0';
+	pixel_last <= '1' when x_col_cur = input_size-1 else '0';
 
 	------------------------------------------------------------------------
 	-- Output Decode
@@ -224,29 +220,25 @@ begin
 	-- 		
 	------------------------------------------------------------------------
 	OUTPUT_DECODE:
-		process(c_state, x_prep_done, w_addr_c, last_input, tvalid, tlast, c_t_f, x_col, x_row)
+		process(c_state, x_prep_done, w_addr_c, last_input, tvalid, tlast, c_t_f, x_col_cur, x_row_cur)
 		begin
 			-- Initial value in IDLE state to prevent latch
 			-- External output 
-			agu_en_s <= '0';
+			db_en_s <= '0';
 			w_addr_c_en <= '0';
 			mux_sel <= '0';
 			tready <= '1';
 			alu_en <= '0';
 
-			-- Debugged Purpose
-			--done <= '0';
-
 			-- Internal output
 			x_prep_c_en <= '0';
-			--compute_c_en <= '0';
 
 			case c_state is
 				when IDLE =>
 				when W_PREP =>
 				when X_PREP =>
 					if tvalid = '1' then
-						agu_en_s <= '1';
+						db_en_s <= '1';
 					end if;
 					if x_prep_done = '1' then
 
@@ -266,47 +258,22 @@ begin
 					w_addr_c_en <= '1';
  					mux_sel <= '1';
 				when L_X =>
-				--	if unsigned(w_addr_c) = (kernel_depth/2) - 1 then
-				--		agu_en_s <= '1';
-				--	end if;
 					mux_sel <= '1';
 					tready <= '1';
-					agu_en_s <= '1';
+					db_en_s <= '1';
 
 					if c_t_f = '1' then
 						tready <= '0';
 					elsif tvalid = '1' then
 						tready <= '1';
 					else 
-						agu_en_s <= '0';
+						db_en_s <= '0';
 					end if;
-
-
-
-
-					
-
-					--if c_t_f = '1' then
-					--	tready <= '0';	
-					--	if (x_row mod stride) = 0 then
-					--		if (x_col mod stride) = 0 then
-					--			agu_en_s <= '0';
-					--		end if;
-					--	end if;
-					--elsif tvalid = '1' then	
-					--	tready <= '1';
-					--	if (x_row mod stride) = 0 then
-					--		if (x_col mod stride) = 0 then
-					--			agu_en_s <= '0';
-					--		end if;
-					--	end if;
-					--end if;
-
 				when READ_INDEX=>
 					mux_sel <= '1';
 					tready <= '0';
 				when CLEAR_REG =>
-					agu_en_s <= '1';
+					db_en_s <= '1';
 					--compute_c_en <= '1';
 					tready <= '0';
 					mux_sel <= '1';
@@ -323,58 +290,105 @@ begin
 	-- 		
 	------------------------------------------------------------------------
 	IMAGE_INST_COUNTER:
-		process(clk, arstn)
+		process(clk)
 		begin
-			if arstn = '0' then
-				input_count <= 0;
-			elsif rising_edge(clk) then
-				if setzero = '1' then
-					input_count <= 0;
-				else
-					if c_state = CLEAR_REG and c_t_f = '1' then
-						input_count <= input_count + 1;
-					end if;
-				end if;
-			end if;
+            if rising_edge(clk) then
+                if image_inst_counter_rst = '1' then
+                    input_count <= 0;
+                elsif image_inst_counter_ce = '1' then
+                        input_count <= input_count_next;
+                end if;
+            end if;
 		end process;
 
+    ----------------------
+    -- Combinatorial logic
+    ----------------------
+    input_count_next <= input_count + 1;
 	last_input <= '1' when input_count >= input_depth else '0';
+    image_inst_counter_ce <= '1' when (c_state = CLEAR_REG) and (c_t_f = '1') else '0';
+    image_inst_counter_rst <= (not arstn) or (setzero);
 
-
-	reset_count <= setzero or x_prep_done;
 	------------------------------------------------------------------------
 	-- Main Counter
    	-- Def. : Use to count row, column of processed input in 2D Dimension
 	-- **Note : Row will get reset after reach the end of the image 	
 	------------------------------------------------------------------------
-	COMPUTE_COUNTER:
-		process(clk,arstn)
+	--COMPUTE_COUNTER:
+	--	process(clk,arstn)
+	--	begin
+    --        if rising_edge(clk) then
+	--			if compute_counter_rst = '1' then
+	--				x_row_cur <= 0;
+	--				x_col_cur <= 0;
+	--			else
+    --                if db_en_s = '1' then 
+    --                    if x_col_cur = input_size-1 then
+    --                        x_col_cur <= 0;
+    --                        if x_row_cur = input_size-1 then
+    --                            x_row_cur <= 0;
+    --                        else
+    --                            x_row <= x_row_nxt;
+    --                        end if;
+    --                    else
+    --                        x_col_cur <= x_col_nxt;
+    --                    end if;
+    --                end if;
+	--			end if;
+	--		end if;
+    --    end process;
+
+	COLUMN_COUNTER:
+		process(clk)
 		begin
-			if arstn = '0' then
-				x_row <= 0;
-				x_col <= 0;
-			elsif rising_edge(clk) then
-				if reset_count = '1' then
-					x_row <= 0;
-					x_col <= 0;
-				else
-					--if compute_c_en = '1' then
-						if agu_en_s = '1' then 
-							if x_col = input_size-1 then
-								x_col <= 0;
-								if x_row = input_size-1 then
-										x_row <= 0;
-								else
-									x_row <= x_row + 1;
-								end if;
-							else
-								x_col <= x_col + 1;
-							end if;
-						end if;
-					--end if;
-				end if;
-			end if;
+            if rising_edge(clk) then
+				if compute_counter_rst = '1' then
+					x_col_cur <= 0;
+                elsif db_en_s = '1' then
+                    x_col_cur <= x_col_nxt;
+                end if;
+            end if;
         end process;
+
+    ROW_COUNTER:
+		process(clk)
+		begin
+            if rising_edge(clk) then
+				if compute_counter_rst = '1' then
+					x_row_cur <= 0;
+                elsif row_counter_ce = '1' then
+                    x_row_cur <= x_row_nxt;
+                end if;
+            end if;
+        end process;
+
+    ----------------------
+    -- Combinatorial logic
+    ----------------------
+    row_counter_ce <= '1' when (db_en_s = '1') and (x_col_cur = input_size -1) else '0'; 
+    compute_counter_rst <= (setzero) or (x_prep_done) or (not arstn);
+
+    ROW_NEXT_DECODE:
+    process(x_row_cur)
+    begin
+        if x_row_cur = input_size-1 then
+            x_row_nxt <= 0;
+        else
+            x_row_nxt <= x_row_cur + 1;
+        end if;
+    end process;
+
+    COL_NEXT_DECODE:
+    process(x_col_cur)
+    begin
+        if x_col_cur = input_size-1 then
+            x_col_nxt <= 0;
+        else
+            x_col_nxt <= x_col_cur + 1;
+        end if;
+    end process;
+
+	
 
 	---------------------------------------------------------------------------------
 	-- Counter for XPREP State
@@ -382,26 +396,35 @@ begin
 	-- 		  This count use for switch from state XPREP to COMPUTE
 	----------------------------------------------------------------------------------
 	X_PREP_COUNTER:	
-		process(clk,arstn)
+		process(clk)
 		begin
-			if arstn = '0' then 
-				x_prep_c <= 0;
-			elsif rising_edge(clk) then 
-				if setzero = '1' then
+            if rising_edge(clk) then 
+				if x_prep_counter_rst = '1' then
 					x_prep_c <= 0;
-				else
-					if x_prep_c_en = '1' then
-						if x_prep_c = input_size*kernel_size-1 then
-							x_prep_c <= 0;	
-						else
-							if tvalid = '1' then
-								x_prep_c <= x_prep_c + 1;
-							end if;
-						end if;
-					end if;
-				end if;
-			end if;
-		end process;
+                elsif x_prep_counter_ce = '1' then
+                    x_prep_c <= x_prep_c_nxt;
+                end if;
+            end if;
+        end process;
+
+    ----------------------
+    -- Combinatorial logic
+    ----------------------
+    x_prep_counter_ce <= x_prep_c_en and tvalid;
+    x_prep_counter_rst <= (not arstn) or (setzero);
+
+    X_PREP_NEXT_DECODE:
+    process(x_prep_c)
+    begin
+        if x_prep_c = (input_size*kernel_size)-1 then
+            x_prep_c_nxt <= 0;
+        else
+            x_prep_c_nxt <= x_prep_c + 1;
+        end if;
+    end process;
+    
+
+
 
 
 end behav;

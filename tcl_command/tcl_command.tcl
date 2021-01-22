@@ -25,18 +25,22 @@ write_hw_platform -fixed -include_bit -force -file D:/Vivado_Project/MS.CnnAccFP
 
 
 #Create Project TCL Script
-create_project w_sticker_sim D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/w_sticker_sim -part xc7z010clg400-1;
+create_project main_fsm_syn D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/main_fsm_syn -part xc7z010clg400-1;
 set_property board_part digilentinc.com:zybo:part0:2.0 [current_project];
 set_property target_language VHDL [current_project];
 set_property simulator_language VHDL [current_project];
 set_property target_simulator ModelSim [current_project];
-set_property -name {modelsim.simulate.runtime} -value {20us} -objects [get_filesets sim_1]
+set_property -name {modelsim.simulate.runtime} -value {20us} -objects [get_filesets sim_1];
 
 #Add Source file to project
-add_files -norecurse D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/w_sticker.vhd
+add_files -norecurse D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/weight_buffer.vhd;
+add_files -norecurse D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/w_sticker.vhd;
+add_files -norecurse D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/main_fsm.vhd;
+add_files -norecurse D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/DIS_RAM_SP.vhd;
+
 
 #Add Simulation File to project
-add_files -fileset sim_1 -norecurse D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/tb/w_sticker_tb.vhd
+add_files -fileset sim_1 -norecurse D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/tb/main_fsm_tb.vhd
 
 #Lauch Simulation
 launch_simulation

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="alu_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="alu_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="722500fs"></ZoomStartTime>
+      <ZoomEndTime time="1139501fs"></ZoomEndTime>
+      <Cursor1Time time="825000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="171"></NameColumnWidth>
+      <ValueColumnWidth column_width="194"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="13" />
+   <wvobject fp_name="/alu_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/arstn" type="logic">
+      <obj_property name="ElementShortName">arstn</obj_property>
+      <obj_property name="ObjectShortName">arstn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/x_in" type="array">
+      <obj_property name="ElementShortName">x_in[799:0]</obj_property>
+      <obj_property name="ObjectShortName">x_in[799:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/w_in" type="array">
+      <obj_property name="ElementShortName">w_in[799:0]</obj_property>
+      <obj_property name="ObjectShortName">w_in[799:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/compute_en" type="logic">
+      <obj_property name="ElementShortName">compute_en</obj_property>
+      <obj_property name="ObjectShortName">compute_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/alu_out" type="array">
+      <obj_property name="ElementShortName">alu_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_out[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">16</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/alu_valid" type="logic">
+      <obj_property name="ElementShortName">alu_valid</obj_property>
+      <obj_property name="ObjectShortName">alu_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/CLK_PERIOD" type="other">
+      <obj_property name="ElementShortName">CLK_PERIOD</obj_property>
+      <obj_property name="ObjectShortName">CLK_PERIOD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/DATA_WIDTH" type="other">
+      <obj_property name="ElementShortName">DATA_WIDTH</obj_property>
+      <obj_property name="ObjectShortName">DATA_WIDTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/MAX_COMPUTE_BYTE" type="other">
+      <obj_property name="ElementShortName">MAX_COMPUTE_BYTE</obj_property>
+      <obj_property name="ObjectShortName">MAX_COMPUTE_BYTE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/alu_dut/x_a" type="array">
+      <obj_property name="ElementShortName">x_a[24:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">x_a[24:0][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/alu_dut/w_a" type="array">
+      <obj_property name="ElementShortName">w_a[24:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_a[24:0][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/alu_dut/test_temp" type="array">
+      <obj_property name="ElementShortName">test_temp[88:0]</obj_property>
+      <obj_property name="ObjectShortName">test_temp[88:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">32</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+</wave_config>

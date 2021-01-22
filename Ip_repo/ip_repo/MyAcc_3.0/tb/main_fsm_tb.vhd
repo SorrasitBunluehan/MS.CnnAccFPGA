@@ -17,7 +17,7 @@ architecture behav of main_fms_tb is
 			KERNEL_DEPTH_BIT_WIDTH : natural;
 			KERNEL_SIZE_BIT_WIDTH : natural;
 
-			DATA_WIDTH : natural := 32;
+			DATA_WIDTH : natural;
 			ADDR_WIDTH : natural
 		); 
 		port (
@@ -37,10 +37,10 @@ architecture behav of main_fms_tb is
 			w_addr_c : in std_logic_vector(ADDR_WIDTH-1 downto 0);
 			setzero : in std_logic;
 
-			-- Output to AGU
-			agu_en : out std_logic;
+			-- Output to Data Buffer
+			db_en : out std_logic;
 
-			-- Output to WGU
+			-- Output to Weight Buffer
 			w_addr_incr : out std_logic;
 
 			-- Output to mux
@@ -60,7 +60,7 @@ architecture behav of main_fms_tb is
 	end component;
 	
 
-	component wgu is
+	component weight_buffer is
 		generic(
 			------------------------------------
 			-- Network Information Bitwidth 
@@ -69,6 +69,7 @@ architecture behav of main_fms_tb is
 			KERNEL_DEPTH_BIT_WIDTH : natural;
 			-- MAX_KERNEL_DEPTH: This value limit the maximum Memory depth for both SPM
 			MAX_KERNEL_DEPTH : natural; 
+            MAX_KERNEL_SIZE : natural;
 
 			-- Info. abt. input 
 			DATA_WIDTH : natural;			-- Number of bit for input data (default = 32)
@@ -90,11 +91,64 @@ architecture behav of main_fms_tb is
 			w_valid : in std_logic;
 			w_addr_incr : in std_logic;
 			setzero : in std_logic;
-			wgu_out0 : out std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);
-			wgu_out1 : out std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);
+			weight_out0 : out std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);
+			weight_out1 : out std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);
 			w_addr_c : out std_logic_vector(ADDR_WIDTH-1 downto 0)
 		);
 	end component;
+
+    component ALU is
+        generic(
+            DATA_WIDTH : natural;
+            MAX_COMPUTE_BYTE : natural
+        );
+        port (
+            -- DEBUGGING PURPOSE
+
+            clk : in std_logic;
+            arstn : in std_logic;
+            x_in : in std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);                -- 127 downto 0
+            w_in : in std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);				 -- 16.16 fixed point
+            compute_en : in std_logic;
+            alu_out : out std_logic_vector(DATA_WIDTH - 1 downto 0);
+            alu_valid : out std_logic          -- Indication for output to Accumulation Unit
+
+        );
+    end component;
+
+
+    component data_buffer is
+        generic(
+            ------------------------------------
+            -- Maximum Comdition
+            ------------------------------------
+            MAX_INPUT_SIZE : natural;
+            MAX_KERNEL_SIZE : natural;
+            MAX_COMPUTE_BYTE : natural; 			-- number of byte send to output ALU maximum support by 5x5 
+
+            ------------------------------------
+            -- Network Information Bitwidth 
+            ------------------------------------
+            INPUT_SIZE_BIT_WIDTH : natural;
+            KERNEL_SIZE_BIT_WIDTH : natural;
+            DATA_WIDTH : natural
+
+        ); 
+        port (
+            -----------------------
+            -- Network Parameters 
+            -----------------------
+            input_size : in unsigned(INPUT_SIZE_BIT_WIDTH -1 downto 0);
+            kernel_size : in unsigned(KERNEL_SIZE_BIT_WIDTH-1 downto 0);
+            
+            clk : in std_logic;
+            arstn : in std_logic;
+            db_in : in std_logic_vector(DATA_WIDTH-1 downto 0);
+            db_en : in std_logic;
+            -- Output
+            db_out : out std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0)
+        );
+    end component;
 
 	
 	---------------------
@@ -109,7 +163,10 @@ architecture behav of main_fms_tb is
 	constant STRIDE_BIT_WIDTH : natural := 3; 
 	constant KERNEL_DEPTH_BIT_WIDTH : natural := 13;
 	constant KERNEL_SIZE_BIT_WIDTH : natural := 8;
-	constant MAX_KERNEL_DEPTH : natural := 512;
+	constant MAX_KERNEL_DEPTH : natural := 32;
+    constant MAX_KERNEL_SIZE : natural := 5;
+    constant MAX_INPUT_SIZE : natural := 32;
+
 
 	---------------------
 	-- AXI Interface
@@ -121,10 +178,11 @@ architecture behav of main_fms_tb is
 	signal XAXIS_ACLK : std_logic := '1';
 	signal XAXIS_TREADY : std_logic;
 
-	-- AGU Interface
-	signal agu_en : std_logic;
-	signal agu_tdata : std_logic_vector(DATA_WIDTH-1 downto 0); 
-	signal agu_tvalid : std_logic;
+	-- Data buffer Interface
+	signal db_en : std_logic;
+	signal db_tdata : std_logic_vector(DATA_WIDTH-1 downto 0); 
+	signal db_tvalid : std_logic;
+    signal db_out : std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);
 
 	-- WGU Interface
 	signal wgu_out0 : std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);
@@ -139,6 +197,8 @@ architecture behav of main_fms_tb is
 
 	-- ALU Interface
 	signal alu_en : std_logic;
+    signal alu_valid0, alu_valid1 : std_logic;
+    signal alu_out0, alu_out1 : std_logic_vector(DATA_WIDTH - 1 downto 0);
 
 	-- Network Parameter 
 	signal input_size : unsigned(INPUT_SIZE_BIT_WIDTH-1 downto 0);
@@ -153,6 +213,9 @@ architecture behav of main_fms_tb is
 
 begin
 	
+    -------------------------------------------------------------
+    -- Component Instantiation
+    -------------------------------------------------------------
 	main_fsm_dut : main_fsm
 	generic map(
 		INPUT_SIZE_BIT_WIDTH => INPUT_SIZE_BIT_WIDTH,  
@@ -180,8 +243,8 @@ begin
 		w_addr_c => w_addr_c, 
 		setzero => setzero,
 
-		-- Output to AGU
-		agu_en => agu_en, 
+		-- Output to Data Buffer
+		db_en => db_en, 
 
 		-- Output to WGU
 		w_addr_incr => w_addr_incr, 
@@ -197,11 +260,12 @@ begin
 	
 	);
 
-	wgu_dut : wgu
+	wgu_dut : weight_buffer
 	generic map(
 		KERNEL_DEPTH_BIT_WIDTH => KERNEL_DEPTH_BIT_WIDTH,
 		KERNEL_SIZE_BIT_WIDTH => KERNEL_SIZE_BIT_WIDTH,  
 		MAX_KERNEL_DEPTH => MAX_KERNEL_DEPTH,
+        MAX_KERNEL_SIZE => MAX_KERNEL_SIZE,
 		DATA_WIDTH   => DATA_WIDTH, 
 		MAX_COMPUTE_BYTE => MAX_COMPUTE_BYTE,
 		ADDR_WIDTH 	 => ADDR_WIDTH 
@@ -216,10 +280,57 @@ begin
 		w_valid     => wgu_tvalid,
 		w_addr_incr => w_addr_incr,
 		setzero 	=> setzero,
-		wgu_out0    => wgu_out0,
-		wgu_out1    => wgu_out1,
+		weight_out0    => wgu_out0,
+		weight_out1    => wgu_out1,
 		w_addr_c 	=> w_addr_c
 	);
+
+    data_buffer_dut : data_buffer
+    generic map(
+        MAX_INPUT_SIZE              => MAX_INPUT_SIZE,
+        MAX_KERNEL_SIZE             => MAX_KERNEL_SIZE,      
+        MAX_COMPUTE_BYTE            => MAX_COMPUTE_BYTE,     
+        INPUT_SIZE_BIT_WIDTH        => INPUT_SIZE_BIT_WIDTH, 
+        KERNEL_SIZE_BIT_WIDTH       => KERNEL_SIZE_BIT_WIDTH,
+        DATA_WIDTH                  => DATA_WIDTH
+    ) port map (
+        input_size => input_size,
+        kernel_size => kernel_size,
+        clk         => XAXIS_ACLK,
+        arstn       => XAXIS_ARSTN,
+        db_in       => db_tdata,
+        db_en       => db_en,
+        db_out      => db_out
+    );
+    
+    alu_dut0 : ALU
+    generic map(
+        DATA_WIDTH => DATA_WIDTH,
+        MAX_COMPUTE_BYTE => MAX_COMPUTE_BYTE
+    )port map(
+        clk => XAXIS_ACLK,
+        arstn => XAXIS_ARSTN,
+        x_in => db_out, 
+        w_in => wgu_out0, 
+        compute_en => alu_en,
+        alu_out => alu_out0,
+        alu_valid => alu_valid0
+    );
+
+    alu_dut1 : ALU
+    generic map(
+        DATA_WIDTH => DATA_WIDTH,
+        MAX_COMPUTE_BYTE => MAX_COMPUTE_BYTE
+    )port map(
+        clk => XAXIS_ACLK,
+        arstn => XAXIS_ARSTN,
+        x_in => db_out, 
+        w_in => wgu_out1, 
+        compute_en => alu_en,
+        alu_out => alu_out1,
+        alu_valid => alu_valid1
+    );
+
 
 	stim_proc: 
 	process
@@ -228,169 +339,242 @@ begin
 		wait for CLK_PERIOD;
 		XAXIS_ARSTN <= '1';
 		wait for CLK_PERIOD;
-		input_size <= to_unsigned(17, input_size'length);
-		input_depth <= to_unsigned(3, input_depth'length); 
+		input_size <= to_unsigned(7, input_size'length);
+		input_depth <= to_unsigned(2, input_depth'length); 
 		kernel_size <= to_unsigned(3, kernel_size'length); 
-		kernel_depth <= to_unsigned(20, kernel_depth'length); 
-		stride <= to_unsigned(2, stride'length); 
-		wait for CLK_PERIOD;
-		hw_acc_en <= '1';
-		wait for CLK_PERIOD;
-
-		---------------------
-		-- Weight Input
-		---------------------
-		XAXIS_TVALID <= '1';
-		for i in 0 to (to_integer(kernel_depth*kernel_size*kernel_size))-1 loop
-			XAXIS_TDATA <= std_logic_vector(to_unsigned(i,XAXIS_TDATA'length));
-			
-			-- Implement Pause Input Case (Due to some Error)
-			if i = (kernel_depth*kernel_size*kernel_size)/2 then
-				XAXIS_TVALID <= '0';
-				wait for CLK_PERIOD*30;
-			end if;
-			XAXIS_TVALID <= '1';
-
-			
-			-- Implement TLast logic
-			if i = (kernel_depth*kernel_size*kernel_size)-1 then
-				XAXIS_TLAST <= '1';
-			end if;
-
-			wait for CLK_PERIOD;
-		end loop;
-		XAXIS_TVALID <= '0';
-		XAXIS_TLAST <= '0';
-		wait for CLK_PERIOD*5;
-
-		---------------------
-		-- Data Input
-		---------------------
-		XAXIS_TVALID <= '1';
-		for i in 0 to (to_integer(input_size*input_size*input_depth)-1) loop
-			XAXIS_TDATA <= std_logic_vector(to_unsigned(i,XAXIS_TDATA'length));
-
-			-- Implement Pause Input Case (Due to some Error)
-			if i = (input_size*input_size)/2 then
-				XAXIS_TVALID <= '0';
-				wait for CLK_PERIOD*30;
-			end if;
-			XAXIS_TVALID <= '1';
-
-			if i = (to_integer(input_size*input_size*input_depth)-1) then
-				XAXIS_TLAST <= '1';
-			end if;
-			wait until rising_edge(XAXIS_ACLK) and XAXIS_TREADY = '1';
-
-		end loop;
-		XAXIS_TDATA <= (others => '1'); 
-		XAXIS_TVALID <= '0';
-		XAXIS_TLAST <= '0';
-
-		wait for CLK_PERIOD*500;
-		----------------------------
-		-- Reset Every Module 
-		----------------------------
-		setzero <= '1';
-		wait for CLK_PERIOD;
-		setzero <= '0';
-		wait for CLK_PERIOD*5;
-
-		-----------------------------------------------------------------------------------
-		-- Second Network Config.
-		-----------------------------------------------------------------------------------
-		input_size <= to_unsigned(8, input_size'length);
-		input_depth <= to_unsigned(20, input_depth'length); 
-		kernel_size <= to_unsigned(3, kernel_size'length); 
-		kernel_depth <= to_unsigned(10, kernel_depth'length); 
+		kernel_depth <= to_unsigned(2, kernel_depth'length); 
 		stride <= to_unsigned(1, stride'length); 
 		wait for CLK_PERIOD;
 		hw_acc_en <= '1';
 		wait for CLK_PERIOD;
 
+            ---------------------
+            -- Kernel #1 
+            ---------------------
+            XAXIS_TVALID <= '1';
+            -- First Weight
+            XAXIS_TDATA	<= x"0000_8000";
+            wait for CLK_PERIOD;
+            -- Second Weight 
+            XAXIS_TDATA <= x"0000_4000";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            XAXIS_TDATA	<= x"FFFF_E000";
+            wait for CLK_PERIOD;
+            -- Forth Weight 
+            XAXIS_TDATA	<= x"0000_5000";
+            wait for CLK_PERIOD;
+            -- Fifth Weight 
+            XAXIS_TDATA	<= x"FFFF_F000";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            XAXIS_TDATA	<= x"0000_0400";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            XAXIS_TDATA	<= x"0000_0600";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            XAXIS_TDATA	<= x"FFFF_7C00";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            XAXIS_TDATA	<= x"0000_4800";
+            wait for CLK_PERIOD;
+
+            ---------------------
+            -- Kernel #2 
+            ---------------------
+            XAXIS_TDATA <= x"0000_4000";
+            wait for CLK_PERIOD;
+            -- Second Weight 
+            XAXIS_TDATA <= x"0000_8000";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            XAXIS_TDATA <= x"0000_8400";
+            wait for CLK_PERIOD;
+            -- Forth Weight 
+            XAXIS_TDATA <= x"0000_0400";
+            wait for CLK_PERIOD;
+            -- Fifth Weight 
+            XAXIS_TDATA <= x"0000_0600";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            XAXIS_TDATA <= x"FFFF_8000";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            XAXIS_TDATA <= x"FFFF_E000";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            XAXIS_TDATA <= x"FFFF_E000";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            XAXIS_TDATA <= x"FFFF_F000";
+            XAXIS_TLAST <= '1';
+            wait for CLK_PERIOD;
+            XAXIS_TLAST <= '0';
+            XAXIS_TVALID <= '0';
+
+
+----------------------------------------------------------------------------------------------------------------------------
+
+
+
+
 		---------------------
 		-- Weight Input
 		---------------------
-		XAXIS_TVALID <= '1';
-		for i in 0 to (to_integer(kernel_depth*kernel_size*kernel_size))-1 loop
-			XAXIS_TDATA <= std_logic_vector(to_unsigned(i,XAXIS_TDATA'length));
-			
-			-- Implement Pause Input Case (Due to some Error)
-			if i = (kernel_depth*kernel_size*kernel_size)/2 then
-				XAXIS_TVALID <= '0';
-				wait for CLK_PERIOD*30;
-			end if;
-			XAXIS_TVALID <= '1';
+		--XAXIS_TVALID <= '1';
+		--for i in 0 to (to_integer(kernel_depth*kernel_size*kernel_size))-1 loop
+		--	XAXIS_TDATA <= std_logic_vector(to_unsigned(i,XAXIS_TDATA'length));
+		--	
+		--	-- Implement Pause Input Case (Due to some Error)
+		--	if i = (kernel_depth*kernel_size*kernel_size)/2 then
+		--		XAXIS_TVALID <= '0';
+		--		wait for CLK_PERIOD*30;
+		--	end if;
+		--	XAXIS_TVALID <= '1';
 
-			
-			-- Implement TLast logic
-			if i = (kernel_depth*kernel_size*kernel_size)-1 then
-				XAXIS_TLAST <= '1';
-			end if;
+		--	
+		--	-- Implement TLast logic
+		--	if i = (kernel_depth*kernel_size*kernel_size)-1 then
+		--		XAXIS_TLAST <= '1';
+		--	end if;
 
-			wait for CLK_PERIOD;
-		end loop;
-		XAXIS_TVALID <= '0';
-		XAXIS_TLAST <= '0';
-		wait for CLK_PERIOD*5;
-
-		---------------------
-		-- Data Input
-		---------------------
-		XAXIS_TVALID <= '1';
-		for i in 0 to (to_integer(input_size*input_size*input_depth)-1) loop
-			XAXIS_TDATA <= std_logic_vector(to_unsigned(i,XAXIS_TDATA'length));
-
-			-- Implement Pause Input Case (Due to some Error)
-			if i = (input_size*input_size)/2 then
-				XAXIS_TVALID <= '0';
-				wait for CLK_PERIOD*30;
-			end if;
-			XAXIS_TVALID <= '1';
-
-			if i = (to_integer(input_size*input_size*input_depth)-1) then
-				XAXIS_TLAST <= '1';
-			end if;
-			wait until rising_edge(XAXIS_ACLK) and XAXIS_TREADY = '1';
-
-		end loop;
-		XAXIS_TDATA <= (others => '1'); 
-		XAXIS_TVALID <= '0';
-		XAXIS_TLAST <= '0';
-
-
-		wait for CLK_PERIOD*500;
-		----------------------------
-		-- Reset Every Module 
-		----------------------------
-		setzero <= '1';
-		wait for CLK_PERIOD;
-		setzero <= '0';
+		--	wait for CLK_PERIOD;
+		--end loop;
+		--XAXIS_TVALID <= '0';
+		--XAXIS_TLAST <= '0';
 		wait for CLK_PERIOD*5;
 
 
-		
-		wait;
+            ---------------------
+            -- Data Input
+            ---------------------
+            XAXIS_TVALID <= '1';
+            for i in 0 to 97 loop
+                --s00_axis_tdata <= std_logic_vector(to_unsigned(i,s00_axis_tdata'length));
+                XAXIS_TDATA <= std_logic_vector(shift_left(to_unsigned(i,XAXIS_TDATA'length), 16));
+
+                -- Implement Pause Input Case (Due to some Error)
+                --if i = (input_size*input_size)/2 then
+                --    XAXIS_TVALID <= '0';
+                --    wait for CLK_PERIOD*30;
+                --end if;
+                --XAXIS_TVALID <= '1';
+
+                if i = 97 then
+                    XAXIS_TLAST <= '1';
+                end if;
+                wait until rising_edge(XAXIS_ACLK) and XAXIS_TREADY = '1';
+
+            end loop;
+            XAXIS_TDATA <= (others => '1'); 
+            XAXIS_TVALID <= '0';
+            XAXIS_TLAST <= '0';
+            wait;
 
 
+---------------------------------------------------------------------------------------------------------------------------------
+		--for i in 0 to (to_integer(input_size*input_size*input_depth)-1) loop
+		--	XAXIS_TDATA <= std_logic_vector(to_unsigned(i,XAXIS_TDATA'length));
+
+		--	-- Implement Pause Input Case (Due to some Error)
+		--	if i = (input_size*input_size)/2 then
+		--		XAXIS_TVALID <= '0';
+		--		wait for CLK_PERIOD*30;
+		--	end if;
+		--	XAXIS_TVALID <= '1';
+
+		--	if i = (to_integer(input_size*input_size*input_depth)-1) then
+		--		XAXIS_TLAST <= '1';
+		--	end if;
+		--	wait until rising_edge(XAXIS_ACLK) and XAXIS_TREADY = '1';
+
+		--end loop;
+		--XAXIS_TDATA <= (others => '1'); 
+		--XAXIS_TVALID <= '0';
+		--XAXIS_TLAST <= '0';
+
+		--wait for CLK_PERIOD*500;
+		------------------------------
+		---- Reset Every Module 
+		------------------------------
+		--setzero <= '1';
+		--wait for CLK_PERIOD;
+		--setzero <= '0';
+		--wait for CLK_PERIOD*5;
+
+		-----------------------------------------------------------------------------------
+		-- Second Network Config.
+		-----------------------------------------------------------------------------------
+		--input_size <= to_unsigned(8, input_size'length);
+		--input_depth <= to_unsigned(20, input_depth'length); 
+		--kernel_size <= to_unsigned(3, kernel_size'length); 
+		--kernel_depth <= to_unsigned(10, kernel_depth'length); 
+		--stride <= to_unsigned(1, stride'length); 
+		--wait for CLK_PERIOD;
+		--hw_acc_en <= '1';
+		--wait for CLK_PERIOD;
+
+		-----------------------
+		---- Weight Input
+		-----------------------
+		--XAXIS_TVALID <= '1';
+		--for i in 0 to (to_integer(kernel_depth*kernel_size*kernel_size))-1 loop
+		--	XAXIS_TDATA <= std_logic_vector(to_unsigned(i,XAXIS_TDATA'length));
+		--	
+		--	-- Implement Pause Input Case (Due to some Error)
+		--	if i = (kernel_depth*kernel_size*kernel_size)/2 then
+		--		XAXIS_TVALID <= '0';
+		--		wait for CLK_PERIOD*30;
+		--	end if;
+		--	XAXIS_TVALID <= '1';
+
+		--	
+		--	-- Implement TLast logic
+		--	if i = (kernel_depth*kernel_size*kernel_size)-1 then
+		--		XAXIS_TLAST <= '1';
+		--	end if;
+
+		--	wait for CLK_PERIOD;
+		--end loop;
+		--XAXIS_TVALID <= '0';
+		--XAXIS_TLAST <= '0';
+		--wait for CLK_PERIOD*5;
+
+		-----------------------
+		---- Data Input
+		-----------------------
+		--XAXIS_TVALID <= '1';
+		--for i in 0 to (to_integer(input_size*input_size*input_depth)-1) loop
+		--	XAXIS_TDATA <= std_logic_vector(to_unsigned(i,XAXIS_TDATA'length));
+
+		--	-- Implement Pause Input Case (Due to some Error)
+		--	if i = (input_size*input_size)/2 then
+		--		XAXIS_TVALID <= '0';
+		--		wait for CLK_PERIOD*30;
+		--	end if;
+		--	XAXIS_TVALID <= '1';
+
+		--	if i = (to_integer(input_size*input_size*input_depth)-1) then
+		--		XAXIS_TLAST <= '1';
+		--	end if;
+		--	wait until rising_edge(XAXIS_ACLK) and XAXIS_TREADY = '1';
+
+		--end loop;
+		--XAXIS_TDATA <= (others => '1'); 
+		--XAXIS_TVALID <= '0';
+		--XAXIS_TLAST <= '0';
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		--wait for CLK_PERIOD*500;
+		------------------------------
+		---- Reset Every Module 
+		------------------------------
+		--setzero <= '1';
+		--wait for CLK_PERIOD;
+		--setzero <= '0';
+		--wait for CLK_PERIOD*5;
+		--wait;
 
 	end process;
 
@@ -398,13 +582,13 @@ begin
 		process(XAXIS_ACLK, XAXIS_TVALID, mux_sel)
 		begin
 			if mux_sel = '0' then
-				agu_tdata <= (others => '0');
-				agu_tvalid <= '0';
+				db_tdata <= (others => '0');
+				db_tvalid <= '0';
 				wgu_tdata  <= XAXIS_TDATA;
 				wgu_tvalid <= XAXIS_TVALID ;
 			else 
-				agu_tdata <= XAXIS_TDATA;
-				agu_tvalid <= XAXIS_TVALID;
+				db_tdata <= XAXIS_TDATA;
+				db_tvalid <= XAXIS_TVALID;
 				wgu_tdata  <= (others => '0');
 				wgu_tvalid <= '0';
 			end if;

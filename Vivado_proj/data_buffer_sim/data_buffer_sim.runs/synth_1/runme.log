@@ -1,0 +1,618 @@
+
+*** Running vivado
+    with args -log data_buffer.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source data_buffer.tcl
+
+
+
+****** Vivado v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source data_buffer.tcl -notrace
+Command: synth_design -top data_buffer -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 11876
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1076.559 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'data_buffer' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:44]
+	Parameter MAX_INPUT_SIZE bound to: 32 - type: integer 
+	Parameter MAX_KERNEL_SIZE bound to: 5 - type: integer 
+	Parameter MAX_COMPUTE_BYTE bound to: 25 - type: integer 
+	Parameter INPUT_SIZE_BIT_WIDTH bound to: 16 - type: integer 
+	Parameter KERNEL_SIZE_BIT_WIDTH bound to: 8 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+INFO: [Synth 8-638] synthesizing module 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:17]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'dff' (1#1) [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:17]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'dff' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd:4' bound to instance 'ddfx' of component 'dff' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:192]
+INFO: [Common 17-14] Message 'Synth 8-3491' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'data_buffer' (2#1) [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:44]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1076.559 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1076.559 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1076.559 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:12 . Memory (MB): peak = 1076.559 ; gain = 0.000
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   17 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 160   
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 174   
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:32 . Memory (MB): peak = 1175.637 ; gain = 99.078
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:33 . Memory (MB): peak = 1175.637 ; gain = 99.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:34 . Memory (MB): peak = 1175.637 ; gain = 99.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:39 ; elapsed = 00:00:38 . Memory (MB): peak = 1175.637 ; gain = 99.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:39 ; elapsed = 00:00:38 . Memory (MB): peak = 1175.637 ; gain = 99.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:40 ; elapsed = 00:00:38 . Memory (MB): peak = 1175.637 ; gain = 99.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:40 ; elapsed = 00:00:38 . Memory (MB): peak = 1175.637 ; gain = 99.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:40 ; elapsed = 00:00:38 . Memory (MB): peak = 1175.637 ; gain = 99.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:40 ; elapsed = 00:00:39 . Memory (MB): peak = 1175.637 ; gain = 99.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     4|
+|3     |LUT1   |    16|
+|4     |LUT2   |   247|
+|5     |LUT3   |  3114|
+|6     |LUT4   |   681|
+|7     |LUT5   |  1194|
+|8     |LUT6   |   489|
+|9     |FDCE   |  5120|
+|10    |IBUF   |    59|
+|11    |OBUF   |   800|
++------+-------+------+
+
+Report Instance Areas: 
++------+-----------------------------+--------+------+
+|      |Instance                     |Module  |Cells |
++------+-----------------------------+--------+------+
+|1     |top                          |        | 11725|
+|2     |  \FF_GEN[0].FFX.ddfx        |dff     |    41|
+|3     |  \FF_GEN[100].FFX.ddfx      |dff_0   |    65|
+|4     |  \FF_GEN[101].FFX.ddfx      |dff_1   |    34|
+|5     |  \FF_GEN[102].FFX.ddfx      |dff_2   |    33|
+|6     |  \FF_GEN[103].FFX.ddfx      |dff_3   |    41|
+|7     |  \FF_GEN[104].FFX.ddfx      |dff_4   |    34|
+|8     |  \FF_GEN[105].FFX.ddfx      |dff_5   |    33|
+|9     |  \FF_GEN[106].FFX.ddfx      |dff_6   |    33|
+|10    |  \FF_GEN[107].FFX.ddfx      |dff_7   |    34|
+|11    |  \FF_GEN[108].FFX.ddfx      |dff_8   |    35|
+|12    |  \FF_GEN[109].FFX.ddfx      |dff_9   |    34|
+|13    |  \FF_GEN[10].FFX.ddfx       |dff_10  |    34|
+|14    |  \FF_GEN[110].FFX.ddfx      |dff_11  |    34|
+|15    |  \FF_GEN[111].FFX.ddfx      |dff_12  |    33|
+|16    |  \FF_GEN[112].FFX.ddfx      |dff_13  |    35|
+|17    |  \FF_GEN[113].FFX.ddfx      |dff_14  |    34|
+|18    |  \FF_GEN[114].FFX.ddfx      |dff_15  |    34|
+|19    |  \FF_GEN[115].FFX.ddfx      |dff_16  |    33|
+|20    |  \FF_GEN[116].FFX.ddfx      |dff_17  |    33|
+|21    |  \FF_GEN[117].FFX.ddfx      |dff_18  |    34|
+|22    |  \FF_GEN[118].FFX.ddfx      |dff_19  |    33|
+|23    |  \FF_GEN[119].FFX.ddfx      |dff_20  |    34|
+|24    |  \FF_GEN[11].FFX.ddfx       |dff_21  |    34|
+|25    |  \FF_GEN[120].FFX.ddfx      |dff_22  |    33|
+|26    |  \FF_GEN[121].FFX.ddfx      |dff_23  |    33|
+|27    |  \FF_GEN[122].FFX.ddfx      |dff_24  |    33|
+|28    |  \FF_GEN[123].FFX.ddfx      |dff_25  |    34|
+|29    |  \FF_GEN[124].FFX.ddfx      |dff_26  |    34|
+|30    |  \FF_GEN[125].FFX.ddfx      |dff_27  |    33|
+|31    |  \FF_GEN[126].FFX.ddfx      |dff_28  |    34|
+|32    |  \FF_GEN[127].FFX.ddfx      |dff_29  |    33|
+|33    |  \FF_GEN[128].FFX.ddfx      |dff_30  |  1089|
+|34    |  \FF_GEN[129].FFX.ddfx      |dff_31  |    98|
+|35    |  \FF_GEN[12].FFX.ddfx       |dff_32  |    35|
+|36    |  \FF_GEN[130].FFX.ddfx      |dff_33  |    96|
+|37    |  \FF_GEN[131].FFX.ddfx      |dff_34  |    96|
+|38    |  \FF_GEN[132].FFX.ddfx      |dff_35  |    97|
+|39    |  \FF_GEN[133].FFX.ddfx      |dff_36  |    67|
+|40    |  \FF_GEN[134].FFX.ddfx      |dff_37  |    64|
+|41    |  \FF_GEN[135].FFX.ddfx      |dff_38  |    66|
+|42    |  \FF_GEN[136].FFX.ddfx      |dff_39  |    65|
+|43    |  \FF_GEN[137].FFX.ddfx      |dff_40  |    64|
+|44    |  \FF_GEN[138].FFX.ddfx      |dff_41  |    64|
+|45    |  \FF_GEN[139].FFX.ddfx      |dff_42  |    65|
+|46    |  \FF_GEN[13].FFX.ddfx       |dff_43  |    34|
+|47    |  \FF_GEN[140].FFX.ddfx      |dff_44  |    64|
+|48    |  \FF_GEN[141].FFX.ddfx      |dff_45  |    65|
+|49    |  \FF_GEN[142].FFX.ddfx      |dff_46  |    64|
+|50    |  \FF_GEN[143].FFX.ddfx      |dff_47  |    65|
+|51    |  \FF_GEN[144].FFX.ddfx      |dff_48  |    65|
+|52    |  \FF_GEN[145].FFX.ddfx      |dff_49  |    64|
+|53    |  \FF_GEN[146].FFX.ddfx      |dff_50  |    64|
+|54    |  \FF_GEN[147].FFX.ddfx      |dff_51  |    64|
+|55    |  \FF_GEN[148].FFX.ddfx      |dff_52  |    65|
+|56    |  \FF_GEN[149].FFX.ddfx      |dff_53  |    66|
+|57    |  \FF_GEN[14].FFX.ddfx       |dff_54  |    33|
+|58    |  \FF_GEN[150].FFX.ddfx      |dff_55  |    64|
+|59    |  \FF_GEN[151].FFX.ddfx      |dff_56  |    64|
+|60    |  \FF_GEN[152].FFX.ddfx      |dff_57  |    66|
+|61    |  \FF_GEN[153].FFX.ddfx      |dff_58  |    68|
+|62    |  \FF_GEN[154].FFX.ddfx      |dff_59  |    70|
+|63    |  \FF_GEN[155].FFX.ddfx      |dff_60  |    65|
+|64    |  \FF_GEN[156].FFX.ddfx      |dff_61  |    75|
+|65    |  \FF_GEN[157].FFX.ddfx      |dff_62  |    64|
+|66    |  \FF_GEN[158].FFX.ddfx      |dff_63  |    64|
+|67    |  \FF_GEN[159].FF_LAST.dffl  |dff_64  |    65|
+|68    |  \FF_GEN[15].FFX.ddfx       |dff_65  |    33|
+|69    |  \FF_GEN[16].FFX.ddfx       |dff_66  |    35|
+|70    |  \FF_GEN[17].FFX.ddfx       |dff_67  |    34|
+|71    |  \FF_GEN[18].FFX.ddfx       |dff_68  |    33|
+|72    |  \FF_GEN[19].FFX.ddfx       |dff_69  |    34|
+|73    |  \FF_GEN[1].FFX.ddfx        |dff_70  |    39|
+|74    |  \FF_GEN[20].FFX.ddfx       |dff_71  |    34|
+|75    |  \FF_GEN[21].FFX.ddfx       |dff_72  |    33|
+|76    |  \FF_GEN[22].FFX.ddfx       |dff_73  |    34|
+|77    |  \FF_GEN[23].FFX.ddfx       |dff_74  |    33|
+|78    |  \FF_GEN[24].FFX.ddfx       |dff_75  |    34|
+|79    |  \FF_GEN[25].FFX.ddfx       |dff_76  |    35|
+|80    |  \FF_GEN[26].FFX.ddfx       |dff_77  |    39|
+|81    |  \FF_GEN[27].FFX.ddfx       |dff_78  |    33|
+|82    |  \FF_GEN[28].FFX.ddfx       |dff_79  |    35|
+|83    |  \FF_GEN[29].FFX.ddfx       |dff_80  |    33|
+|84    |  \FF_GEN[2].FFX.ddfx        |dff_81  |    33|
+|85    |  \FF_GEN[30].FFX.ddfx       |dff_82  |    34|
+|86    |  \FF_GEN[31].FFX.ddfx       |dff_83  |    32|
+|87    |  \FF_GEN[32].FFX.ddfx       |dff_84  |   960|
+|88    |  \FF_GEN[33].FFX.ddfx       |dff_85  |    32|
+|89    |  \FF_GEN[34].FFX.ddfx       |dff_86  |    32|
+|90    |  \FF_GEN[35].FFX.ddfx       |dff_87  |    96|
+|91    |  \FF_GEN[36].FFX.ddfx       |dff_88  |    96|
+|92    |  \FF_GEN[37].FFX.ddfx       |dff_89  |    32|
+|93    |  \FF_GEN[38].FFX.ddfx       |dff_90  |    64|
+|94    |  \FF_GEN[39].FFX.ddfx       |dff_91  |    32|
+|95    |  \FF_GEN[3].FFX.ddfx        |dff_92  |    97|
+|96    |  \FF_GEN[40].FFX.ddfx       |dff_93  |    64|
+|97    |  \FF_GEN[41].FFX.ddfx       |dff_94  |    32|
+|98    |  \FF_GEN[42].FFX.ddfx       |dff_95  |    32|
+|99    |  \FF_GEN[43].FFX.ddfx       |dff_96  |    32|
+|100   |  \FF_GEN[44].FFX.ddfx       |dff_97  |    32|
+|101   |  \FF_GEN[45].FFX.ddfx       |dff_98  |    32|
+|102   |  \FF_GEN[46].FFX.ddfx       |dff_99  |    64|
+|103   |  \FF_GEN[47].FFX.ddfx       |dff_100 |    32|
+|104   |  \FF_GEN[48].FFX.ddfx       |dff_101 |    32|
+|105   |  \FF_GEN[49].FFX.ddfx       |dff_102 |    32|
+|106   |  \FF_GEN[4].FFX.ddfx        |dff_103 |    98|
+|107   |  \FF_GEN[50].FFX.ddfx       |dff_104 |    32|
+|108   |  \FF_GEN[51].FFX.ddfx       |dff_105 |    32|
+|109   |  \FF_GEN[52].FFX.ddfx       |dff_106 |    32|
+|110   |  \FF_GEN[53].FFX.ddfx       |dff_107 |    32|
+|111   |  \FF_GEN[54].FFX.ddfx       |dff_108 |    32|
+|112   |  \FF_GEN[55].FFX.ddfx       |dff_109 |    32|
+|113   |  \FF_GEN[56].FFX.ddfx       |dff_110 |    64|
+|114   |  \FF_GEN[57].FFX.ddfx       |dff_111 |    64|
+|115   |  \FF_GEN[58].FFX.ddfx       |dff_112 |    64|
+|116   |  \FF_GEN[59].FFX.ddfx       |dff_113 |    64|
+|117   |  \FF_GEN[5].FFX.ddfx        |dff_114 |    33|
+|118   |  \FF_GEN[60].FFX.ddfx       |dff_115 |    64|
+|119   |  \FF_GEN[61].FFX.ddfx       |dff_116 |    32|
+|120   |  \FF_GEN[62].FFX.ddfx       |dff_117 |    64|
+|121   |  \FF_GEN[63].FFX.ddfx       |dff_118 |    64|
+|122   |  \FF_GEN[64].FFX.ddfx       |dff_119 |   640|
+|123   |  \FF_GEN[65].FFX.ddfx       |dff_120 |    32|
+|124   |  \FF_GEN[66].FFX.ddfx       |dff_121 |    33|
+|125   |  \FF_GEN[67].FFX.ddfx       |dff_122 |    96|
+|126   |  \FF_GEN[68].FFX.ddfx       |dff_123 |    96|
+|127   |  \FF_GEN[69].FFX.ddfx       |dff_124 |    32|
+|128   |  \FF_GEN[6].FFX.ddfx        |dff_125 |    33|
+|129   |  \FF_GEN[70].FFX.ddfx       |dff_126 |    64|
+|130   |  \FF_GEN[71].FFX.ddfx       |dff_127 |    32|
+|131   |  \FF_GEN[72].FFX.ddfx       |dff_128 |    64|
+|132   |  \FF_GEN[73].FFX.ddfx       |dff_129 |    32|
+|133   |  \FF_GEN[74].FFX.ddfx       |dff_130 |    32|
+|134   |  \FF_GEN[75].FFX.ddfx       |dff_131 |    32|
+|135   |  \FF_GEN[76].FFX.ddfx       |dff_132 |    32|
+|136   |  \FF_GEN[77].FFX.ddfx       |dff_133 |    32|
+|137   |  \FF_GEN[78].FFX.ddfx       |dff_134 |    64|
+|138   |  \FF_GEN[79].FFX.ddfx       |dff_135 |    32|
+|139   |  \FF_GEN[7].FFX.ddfx        |dff_136 |    33|
+|140   |  \FF_GEN[80].FFX.ddfx       |dff_137 |    32|
+|141   |  \FF_GEN[81].FFX.ddfx       |dff_138 |    32|
+|142   |  \FF_GEN[82].FFX.ddfx       |dff_139 |    32|
+|143   |  \FF_GEN[83].FFX.ddfx       |dff_140 |    32|
+|144   |  \FF_GEN[84].FFX.ddfx       |dff_141 |    32|
+|145   |  \FF_GEN[85].FFX.ddfx       |dff_142 |    32|
+|146   |  \FF_GEN[86].FFX.ddfx       |dff_143 |    32|
+|147   |  \FF_GEN[87].FFX.ddfx       |dff_144 |    32|
+|148   |  \FF_GEN[88].FFX.ddfx       |dff_145 |    64|
+|149   |  \FF_GEN[89].FFX.ddfx       |dff_146 |    64|
+|150   |  \FF_GEN[8].FFX.ddfx        |dff_147 |    34|
+|151   |  \FF_GEN[90].FFX.ddfx       |dff_148 |    64|
+|152   |  \FF_GEN[91].FFX.ddfx       |dff_149 |    64|
+|153   |  \FF_GEN[92].FFX.ddfx       |dff_150 |    64|
+|154   |  \FF_GEN[93].FFX.ddfx       |dff_151 |    32|
+|155   |  \FF_GEN[94].FFX.ddfx       |dff_152 |    64|
+|156   |  \FF_GEN[95].FFX.ddfx       |dff_153 |    64|
+|157   |  \FF_GEN[96].FFX.ddfx       |dff_154 |   739|
+|158   |  \FF_GEN[97].FFX.ddfx       |dff_155 |    65|
+|159   |  \FF_GEN[98].FFX.ddfx       |dff_156 |    65|
+|160   |  \FF_GEN[99].FFX.ddfx       |dff_157 |    67|
+|161   |  \FF_GEN[9].FFX.ddfx        |dff_158 |    35|
++------+-----------------------------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:40 ; elapsed = 00:00:39 . Memory (MB): peak = 1175.637 ; gain = 99.078
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:40 ; elapsed = 00:00:39 . Memory (MB): peak = 1175.637 ; gain = 99.078
+Synthesis Optimization Complete : Time (s): cpu = 00:00:40 ; elapsed = 00:00:39 . Memory (MB): peak = 1175.637 ; gain = 99.078
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.170 . Memory (MB): peak = 1175.637 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1175.637 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+117 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:00:45 . Memory (MB): peak = 1175.637 ; gain = 99.078
+INFO: [Common 17-1381] The checkpoint 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/data_buffer_sim/data_buffer_sim.runs/synth_1/data_buffer.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file data_buffer_utilization_synth.rpt -pb data_buffer_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Jan 19 16:44:38 2021...

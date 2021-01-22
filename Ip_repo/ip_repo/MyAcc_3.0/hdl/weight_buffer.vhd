@@ -1,4 +1,4 @@
-	-- Weight Moduel use to store weight from information in generic this moduel is compose of 2 SPM (FIXED) 
+-- Weight Moduel use to store weight from information in generic this moduel is compose of 2 SPM (FIXED) 
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -202,9 +202,9 @@ begin
     --------------------------------
     nxt_tmp <= cur_temp + 1;
 
-    process(cur_addr)
+    process(cur_addr, kernel_depth)
     begin
-        if cur_addr = (kernel_depth/2)-1 then 
+        if cur_addr >= (kernel_depth/2)-1 then 
             nxt_addr <= (others => '0');
         else
             nxt_addr <= cur_addr + 1;

@@ -15,6 +15,7 @@ architecture behav of alu_tb is
 		);
 		port (
 			clk : in std_logic;
+            arstn : in std_logic;
 			x_in : in std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);                -- 127 downto 0
 			w_in : in std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);				 -- 2.14 fixed point
 			compute_en : in std_logic;
@@ -36,6 +37,7 @@ architecture behav of alu_tb is
 	-- Signals
 	---------------------
 	signal clk : std_logic := '1';
+    signal arstn : std_logic := '1';
 	signal x_in : std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);                -- 127 downto 0
 	signal w_in : std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);				 -- 2.14 fixed point
 	signal compute_en : std_logic;
@@ -50,6 +52,7 @@ begin
 		MAX_COMPUTE_BYTE => MAX_COMPUTE_BYTE
 	)port map(
 		clk => clk,
+        arstn => arstn,
 		x_in => x_in,
 		w_in => w_in,
 		compute_en => compute_en,
@@ -63,11 +66,24 @@ begin
 	stim_proc: 
 	process
 	begin
-		x_in <= std_logic_vector(to_unsigned(16#0064_0000_0037_00E9_00F3_00F3_0016_0037_0018#,x_in'length));
-
+        wait for CLK_PERIOD;
+        arstn <= '0';
+        wait for CLK_PERIOD;
+        arstn <= '1';
+        wait for CLK_PERIOD;
+        w_in <= x"0000_8000_0000_4000_FFFF_E000_0000_0000_0000_0000_0000_5000_FFFF_F000_0000_0400_0000_0000_0000_0000_0000_0600_FFFF_7C00_0000_4800_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000";
+        x_in <= x"0000_0000_0001_0000_0002_0000_0000_0000_0000_0000_0007_0000_0008_0000_0009_0000_0000_0000_0000_0000_000E_0000_000F_0000_0010_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000";
+        compute_en <= '1';
+        wait for CLK_PERIOD;
+        compute_en <= '0';
 		wait;
+
+        --0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000
 
 	end process;
 
 	clk <= not clk after CLK_PERIOD/2;
 end behav;
+
+
+--0000_0000_0001_0000_0002_0000_0000_0000_0000_0000_0007_0000_0008_0000_0009_0000_0000_0000_0000_0000_000E_0000_000F_0000_0010_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000

@@ -1,0 +1,131 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/data_buffer_sim/data_buffer_sim.sim/sim_1/behav/modelsim
+Edata_buffer
+Z1 w1611062210
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd
+Z6 F../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd
+l0
+L10
+V1D6km_8;WeF^VGfVzb8lh0
+!s100 Q=A5YER:fXnGcI]zf8EeU0
+Z7 OP;C;10.4a;61
+31
+Z8 !s110 1611069475
+!i10b 1
+Z9 !s108 1611069475.000000
+Z10 !s90 -93|-work|xil_defaultlib|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/data_buffer_tb.vhd|
+Z11 !s107 ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/data_buffer_tb.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd|
+!i113 1
+Z12 o-93 -work xil_defaultlib -O0
+Z13 tExplicit 1
+Abehav
+R2
+R3
+R4
+Z14 DEx4 work 11 data_buffer 0 22 1D6km_8;WeF^VGfVzb8lh0
+l65
+L44
+Z15 V8V2MnIj[R[7YNePTc6h0O1
+Z16 !s100 mAJBPc9aaLgW7;QO_lPog3
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Edata_buffer_tb
+Z17 w1611069471
+R2
+R3
+R4
+R0
+Z18 8../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/data_buffer_tb.vhd
+Z19 F../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/data_buffer_tb.vhd
+l0
+L5
+VC=dW9TADe7bQ`IF>C00hT2
+!s100 FM7o76TZG6GbBgA=YSYVJ1
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Abehav
+R2
+R3
+R4
+Z20 DEx4 work 14 data_buffer_tb 0 22 C=dW9TADe7bQ`IF>C00hT2
+l58
+L8
+V0]_jQCOb:h2cMXgkjblE70
+!s100 ]4k9W?[zmh[S7RLb;iec^1
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Edff
+Z21 w1610544311
+R3
+R4
+R0
+Z22 8../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd
+Z23 F../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd
+l0
+L4
+V2M?9Fdn5iiDLQKE6Zz@DQ2
+!s100 >FWnTi[TjO_mnTP8Beo7G0
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Astr
+R3
+R4
+Z24 DEx4 work 3 dff 0 22 2M?9Fdn5iiDLQKE6Zz@DQ2
+l18
+L17
+Z25 Vn0jL@l0L?J`0jJ?]N_lWa3
+Z26 !s100 V]d74kmk_9knXFKKUC9Pc3
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
