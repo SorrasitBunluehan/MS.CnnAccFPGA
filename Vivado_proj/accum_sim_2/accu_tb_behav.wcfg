@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="accu_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="accu_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="12326000fs"></ZoomStartTime>
+      <ZoomEndTime time="12921001fs"></ZoomEndTime>
+      <Cursor1Time time="12511000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="302"></NameColumnWidth>
+      <ValueColumnWidth column_width="95"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="24" />
+   <wvobject fp_name="group26" type="group">
+      <obj_property name="label">Network Params</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/accu_tb/input_size" type="array">
+         <obj_property name="ElementShortName">input_size[15:0]</obj_property>
+         <obj_property name="ObjectShortName">input_size[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/accu_tb/input_depth" type="array">
+         <obj_property name="ElementShortName">input_depth[12:0]</obj_property>
+         <obj_property name="ObjectShortName">input_depth[12:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/accu_tb/kernel_size" type="array">
+         <obj_property name="ElementShortName">kernel_size[7:0]</obj_property>
+         <obj_property name="ObjectShortName">kernel_size[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/accu_tb/kernel_depth" type="array">
+         <obj_property name="ElementShortName">kernel_depth[12:0]</obj_property>
+         <obj_property name="ObjectShortName">kernel_depth[12:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/accu_tb/stride" type="array">
+         <obj_property name="ElementShortName">stride[2:0]</obj_property>
+         <obj_property name="ObjectShortName">stride[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/accu_tb/hw_acc_en" type="logic">
+         <obj_property name="ElementShortName">hw_acc_en</obj_property>
+         <obj_property name="ObjectShortName">hw_acc_en</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/setzero" type="logic">
+      <obj_property name="ElementShortName">setzero</obj_property>
+      <obj_property name="ObjectShortName">setzero</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/arstn" type="logic">
+      <obj_property name="ElementShortName">arstn</obj_property>
+      <obj_property name="ObjectShortName">arstn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/din0" type="array">
+      <obj_property name="ElementShortName">din0[31:0]</obj_property>
+      <obj_property name="ObjectShortName">din0[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">16</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/din1" type="array">
+      <obj_property name="ElementShortName">din1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">din1[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">16</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/valid0" type="logic">
+      <obj_property name="ElementShortName">valid0</obj_property>
+      <obj_property name="ObjectShortName">valid0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/valid1" type="logic">
+      <obj_property name="ElementShortName">valid1</obj_property>
+      <obj_property name="ObjectShortName">valid1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/accu_ready" type="logic">
+      <obj_property name="ElementShortName">accu_ready</obj_property>
+      <obj_property name="ObjectShortName">accu_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/accum_dut/c_state" type="other">
+      <obj_property name="ElementShortName">c_state</obj_property>
+      <obj_property name="ObjectShortName">c_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/accum_dut/n_state" type="other">
+      <obj_property name="ElementShortName">n_state</obj_property>
+      <obj_property name="ObjectShortName">n_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/accum_dut/bram_we" type="logic">
+      <obj_property name="ElementShortName">bram_we</obj_property>
+      <obj_property name="ObjectShortName">bram_we</obj_property>
+      <obj_property name="CustomSignalColor">#FF0000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/accum_dut/cur_col" type="array">
+      <obj_property name="ElementShortName">cur_col[9:0]</obj_property>
+      <obj_property name="ObjectShortName">cur_col[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/accum_dut/cur_row" type="array">
+      <obj_property name="ElementShortName">cur_row[4:0]</obj_property>
+      <obj_property name="ObjectShortName">cur_row[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/accum_dut/nxt_col" type="array">
+      <obj_property name="ElementShortName">nxt_col[9:0]</obj_property>
+      <obj_property name="ObjectShortName">nxt_col[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/accum_dut/nxt_row" type="array">
+      <obj_property name="ElementShortName">nxt_row[4:0]</obj_property>
+      <obj_property name="ObjectShortName">nxt_row[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/accum_dut/col_decode_ce" type="logic">
+      <obj_property name="ElementShortName">col_decode_ce</obj_property>
+      <obj_property name="ObjectShortName">col_decode_ce</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/accum_dut/mux_sel" type="logic">
+      <obj_property name="ElementShortName">mux_sel</obj_property>
+      <obj_property name="ObjectShortName">mux_sel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/accum_dut/main_rst" type="logic">
+      <obj_property name="ElementShortName">main_rst</obj_property>
+      <obj_property name="ObjectShortName">main_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/accum_dut/ram_out" type="array">
+      <obj_property name="ElementShortName">ram_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ram_out[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">16</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/accum_dut/data_temp" type="array">
+      <obj_property name="ElementShortName">data_temp[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_temp[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">16</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+      <obj_property name="CustomSignalColor">#800080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/accum_dut/input_temp" type="array">
+      <obj_property name="ElementShortName">input_temp[31:0]</obj_property>
+      <obj_property name="ObjectShortName">input_temp[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">16</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/accum_dut/cur_input_count" type="other">
+      <obj_property name="ElementShortName">cur_input_count</obj_property>
+      <obj_property name="ObjectShortName">cur_input_count</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accu_tb/accum_dut/nxt_input_count" type="other">
+      <obj_property name="ElementShortName">nxt_input_count</obj_property>
+      <obj_property name="ObjectShortName">nxt_input_count</obj_property>
+   </wvobject>
+</wave_config>

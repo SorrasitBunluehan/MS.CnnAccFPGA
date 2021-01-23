@@ -1,0 +1,23 @@
+# do {bram_dp_tb_compile.do}
+# ** Warning: (vlib-34) Library already exists at "modelsim_lib/work".
+# 
+# ** Warning: (vlib-34) Library already exists at "modelsim_lib/msim".
+# 
+# ** Warning: (vlib-34) Library already exists at "modelsim_lib/msim/xil_defaultlib".
+# 
+# Model Technology ModelSim PE vmap 10.4a Lib Mapping Utility 2015.03 Apr  7 2015
+# vmap -modelsim_quiet xil_defaultlib modelsim_lib/msim/xil_defaultlib 
+# Modifying modelsim.ini
+# Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 11:26:05 on Jan 23,2021
+# vcom -93 -work xil_defaultlib ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/BRAM_DP.vhd ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/bram_sp_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity BRAM_DP
+# -- Compiling architecture Behavioral of BRAM_DP
+# -- Compiling entity bram_dp_tb
+# -- Compiling architecture sim of bram_dp_tb
+# End time: 11:26:05 on Jan 23,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

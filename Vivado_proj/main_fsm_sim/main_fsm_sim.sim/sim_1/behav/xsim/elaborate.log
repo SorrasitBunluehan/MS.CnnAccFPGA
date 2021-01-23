@@ -1,0 +1,23 @@
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto e1da18203a314175bb5ba40005e42377 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot main_fms_tb_behav xil_defaultlib.main_fms_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behav of entity xil_defaultlib.main_fsm [\main_fsm(input_size_bit_width=1...]
+Compiling architecture behav of entity xil_defaultlib.w_sticker [\w_sticker(data_width=32,max_ker...]
+Compiling architecture behavioral of entity xil_defaultlib.DIS_RAM_SP [\DIS_RAM_SP(data_width=800,mem_d...]
+Compiling architecture behav of entity xil_defaultlib.weight_buffer [\weight_buffer(kernel_size_bit_w...]
+Compiling architecture str of entity xil_defaultlib.dff [\dff(data_width=32)\]
+Compiling architecture behav of entity xil_defaultlib.data_buffer [\data_buffer(max_input_size=32,m...]
+Compiling architecture behavioral of entity xil_defaultlib.ALU [\ALU(data_width=32,max_compute_b...]
+Compiling architecture behav of entity xil_defaultlib.ACCU [accu_default]
+Compiling architecture behav of entity xil_defaultlib.main_fms_tb
+Built simulation snapshot main_fms_tb_behav

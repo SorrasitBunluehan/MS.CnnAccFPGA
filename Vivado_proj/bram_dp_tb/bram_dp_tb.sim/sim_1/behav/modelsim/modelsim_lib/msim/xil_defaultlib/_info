@@ -1,0 +1,92 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/bram_dp_tb/bram_dp_tb.sim/sim_1/behav/modelsim
+Ebram_dp
+Z1 w1611394849
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/BRAM_DP.vhd
+Z6 F../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/BRAM_DP.vhd
+l0
+L9
+VBG[;ShOa9IW^IR>zAeWJN0
+!s100 <ONODmQ2;`bS?]l60G?=70
+Z7 OP;C;10.4a;61
+31
+Z8 !s110 1611397565
+!i10b 1
+Z9 !s108 1611397565.000000
+Z10 !s90 -93|-work|xil_defaultlib|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/BRAM_DP.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/bram_sp_tb.vhd|
+Z11 !s107 ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/bram_sp_tb.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/BRAM_DP.vhd|
+!i113 1
+Z12 o-93 -work xil_defaultlib -O0
+Z13 tExplicit 1
+Abehavioral
+R2
+R3
+R4
+Z14 DEx4 work 7 bram_dp 0 22 BG[;ShOa9IW^IR>zAeWJN0
+l31
+L27
+Z15 V_<fLVHmIm8T7ffoA4kdLg1
+Z16 !s100 WPWAUi9ckG7Ui9`cPT1a43
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Ebram_dp_tb
+Z17 w1611397549
+R2
+R3
+R4
+R0
+Z18 8../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/bram_sp_tb.vhd
+Z19 F../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/bram_sp_tb.vhd
+l0
+L6
+V52]Om_H>@m:9<cVgmfS8W3
+!s100 cYj`^5EjSn6DB3=n7;gE;0
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Asim
+R2
+R3
+R4
+Z20 DEx4 work 10 bram_dp_tb 0 22 52]Om_H>@m:9<cVgmfS8W3
+l44
+L9
+Z21 Vc=kFgzC2AaCAmEC4P48z@0
+Z22 !s100 ]KeGcS9?@ONDEg:YL@n`[3
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13

@@ -1,0 +1,32 @@
+# do {accu_tb_compile.do}
+# ** Warning: (vlib-34) Library already exists at "modelsim_lib/work".
+# 
+# ** Warning: (vlib-34) Library already exists at "modelsim_lib/msim".
+# 
+# ** Warning: (vlib-34) Library already exists at "modelsim_lib/msim/xil_defaultlib".
+# 
+# Model Technology ModelSim PE vmap 10.4a Lib Mapping Utility 2015.03 Apr  7 2015
+# vmap -modelsim_quiet xil_defaultlib modelsim_lib/msim/xil_defaultlib 
+# Modifying modelsim.ini
+# Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 13:18:07 on Jan 23,2021
+# vcom -93 -work xil_defaultlib ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ACCU.vhd ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/accu_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ACCU
+# -- Compiling architecture behav of ACCU
+# ** Error: ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ACCU.vhd(229): Illegal target for signal assignment.
+# ** Error: ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ACCU.vhd(229): (vcom-1136) Unknown identifier "do".
+# 
+# ** Error: ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ACCU.vhd(305): VHDL Compiler exiting
+# End time: 13:18:07 on Jan 23,2021, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# ** Error: C:/Modeltech_pe_edu_10.4a/win32pe_edu/vcom failed.
+# Error in macro ./accu_tb_compile.do line 19
+# C:/Modeltech_pe_edu_10.4a/win32pe_edu/vcom failed.
+#     while executing
+# "vcom  -93 -work xil_defaultlib  \
+# "../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ACCU.vhd" \
+# "../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/accu_tb..."

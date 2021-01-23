@@ -59,7 +59,6 @@ architecture behav of main_fms_tb is
 		);
 	end component;
 	
-
 	component weight_buffer is
 		generic(
 			------------------------------------
@@ -116,7 +115,6 @@ architecture behav of main_fms_tb is
         );
     end component;
 
-
     component data_buffer is
         generic(
             ------------------------------------
@@ -147,6 +145,50 @@ architecture behav of main_fms_tb is
             db_en : in std_logic;
             -- Output
             db_out : out std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0)
+        );
+    end component;
+
+    component ACCU is
+        generic(
+            ------------------------------------
+            -- Network Information Bitwidth 
+            ------------------------------------
+            INPUT_SIZE_BIT_WIDTH : natural := 16;
+            INPUT_DEPTH_BIT_WIDTH : natural := 13;
+            STRIDE_BIT_WIDTH : natural := 3;  
+            KERNEL_DEPTH_BIT_WIDTH : natural := 13;
+            KERNEL_SIZE_BIT_WIDTH : natural := 8;
+
+            ------------------------------------
+            -- Maximum Comdition
+            ------------------------------------
+            MAX_INPUT_SIZE : natural := 32;
+            MAX_KERNEL_SIZE : natural := 5;
+            MAX_COMPUTE_BYTE : natural := 25; 			-- number of byte send to output ALU maximum support by 5x5 
+            MAX_KERNEL_DEPTH : natural := 32;
+            DATA_WIDTH : natural := 32;
+
+            ------------------------------------
+            -- New Parameters
+            ------------------------------------
+            MAX_ADDR_RAM_2D : natural := 15;
+            ROW_BIT_WIDTH : natural := 5;
+            COL_BIT_WIDTH : natural := 10
+        ); 
+        port(
+            -- Network Config Signal
+            input_size : in unsigned(INPUT_SIZE_BIT_WIDTH -1 downto 0);
+            input_depth : in unsigned(INPUT_DEPTH_BIT_WIDTH-1 downto 0);
+            kernel_size : in unsigned(KERNEL_SIZE_BIT_WIDTH-1 downto 0);
+            kernel_depth : in unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);
+            stride : in unsigned(STRIDE_BIT_WIDTH-1 downto 0);
+            hw_acc_en : in std_logic;
+            setzero : in std_logic;
+
+            clk, arstn : in std_logic;
+            din0, din1 : in std_logic_vector(DATA_WIDTH - 1 downto 0);
+            valid0, valid1 : in std_logic;
+            accu_ready : out std_logic
         );
     end component;
 
@@ -199,6 +241,9 @@ architecture behav of main_fms_tb is
 	signal alu_en : std_logic;
     signal alu_valid0, alu_valid1 : std_logic;
     signal alu_out0, alu_out1 : std_logic_vector(DATA_WIDTH - 1 downto 0);
+
+    -- ACCUM Interface
+    signal accu_ready : std_logic;
 
 	-- Network Parameter 
 	signal input_size : unsigned(INPUT_SIZE_BIT_WIDTH-1 downto 0);
@@ -257,7 +302,6 @@ begin
 
 		-- Output to ALU
 		alu_en => alu_en
-	
 	);
 
 	wgu_dut : weight_buffer
@@ -331,6 +375,39 @@ begin
         alu_valid => alu_valid1
     );
 
+    accum_dut : ACCU
+	generic map(
+		INPUT_SIZE_BIT_WIDTH => INPUT_SIZE_BIT_WIDTH,
+		INPUT_DEPTH_BIT_WIDTH => INPUT_DEPTH_BIT_WIDTH,
+		STRIDE_BIT_WIDTH => STRIDE_BIT_WIDTH,
+		KERNEL_DEPTH_BIT_WIDTH => KERNEL_DEPTH_BIT_WIDTH,
+		KERNEL_SIZE_BIT_WIDTH => KERNEL_SIZE_BIT_WIDTH,
+							  
+		----------------------
+		-- Maximum Comdition
+		----------------------
+		MAX_INPUT_SIZE => MAX_INPUT_SIZE,
+		MAX_KERNEL_SIZE  => MAX_KERNEL_SIZE,
+		MAX_COMPUTE_BYTE => MAX_COMPUTE_BYTE,
+		MAX_KERNEL_DEPTH => MAX_KERNEL_DEPTH,
+		DATA_WIDTH => DATA_WIDTH
+	)port map(
+		input_size => input_size, 
+        input_depth => input_depth, 
+        kernel_size => kernel_size, 
+        kernel_depth => kernel_depth,
+        stride => stride, 
+        hw_acc_en => hw_acc_en, 
+        setzero => setzero, 
+                    
+        clk => XAXIS_ACLK, 
+		arstn => XAXIS_ARSTN, 
+        din0 => alu_out0,
+		din1 => alu_out1, 
+        valid0 => alu_valid0,
+		valid1 => alu_valid1, 
+        accu_ready => accu_ready 
+	);
 
 	stim_proc: 
 	process

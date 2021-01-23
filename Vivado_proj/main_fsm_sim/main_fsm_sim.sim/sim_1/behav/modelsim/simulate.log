@@ -18,7 +18,7 @@
 # // FOR HIGHER EDUCATION PURPOSES ONLY
 # //
 # vsim -do "do {main_fms_tb_simulate.do}" -l simulate.log 
-# Start time: 12:23:18 on Jan 22,2021
+# Start time: 16:41:32 on Jan 23,2021
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -31,10 +31,15 @@
 # Loading xil_defaultlib.data_buffer(behav)
 # Loading xil_defaultlib.dff(str)
 # Loading xil_defaultlib.alu(behavioral)
-# ** Warning: Design size of 11389 statements or 169 leaf instances exceeds ModelSim PE Student Edition recommended capacity.
+# Loading xil_defaultlib.accu(behav)
+# ** Warning: Design size of 11756 statements or 170 leaf instances exceeds ModelSim PE Student Edition recommended capacity.
 # Expect performance to be quite adversely affected.
 # 1
 # 1
 # .main_pane.wave.interior.cs.body.pw.wf
 # .main_pane.structure.interior.cs.body.struct
 # .main_pane.objects.interior.cs.body.tree
+# ** Error: (vsim-86) Argument value -1 is not in bounds of subtype NATURAL.
+#    Time: 0 ns  Iteration: 0  Instance: /main_fms_tb/accum_dut
+# End time: 16:41:54 on Jan 23,2021, Elapsed time: 0:00:22
+# Errors: 1, Warnings: 1

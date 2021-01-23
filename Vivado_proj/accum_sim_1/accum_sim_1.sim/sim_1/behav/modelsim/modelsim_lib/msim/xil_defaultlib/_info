@@ -1,0 +1,92 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/accum_sim_1/accum_sim_1.sim/sim_1/behav/modelsim
+Eaccu
+Z1 w1611404282
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ACCU.vhd
+Z6 F../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ACCU.vhd
+l0
+L11
+Vn0`o5_lWIlg8F2jCE6KE_3
+!s100 ]jRBAVY7Z[[5o?o8jK;9C1
+Z7 OP;C;10.4a;61
+31
+!s110 1611404287
+!i10b 1
+!s108 1611404287.000000
+Z8 !s90 -93|-work|xil_defaultlib|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ACCU.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/accu_tb.vhd|
+!s107 ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/accu_tb.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ACCU.vhd|
+!i113 1
+Z9 o-93 -work xil_defaultlib -O0
+Z10 tExplicit 1
+Abehav
+R2
+R3
+R4
+DEx4 work 4 accu 0 22 n0`o5_lWIlg8F2jCE6KE_3
+l89
+L57
+V[F=4N2P1>L4lh0F@A67cb2
+!s100 I]f6EAg1ZezdAhe=;2?fW2
+R7
+31
+Z11 !s110 1611393346
+!i10b 1
+Z12 !s108 1611393346.000000
+R8
+!s107 ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/accu_tb.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ACCU.vhd|
+!i113 1
+R9
+R10
+Eaccu_tb
+Z13 w1611337008
+R2
+R3
+R4
+R0
+Z14 8../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/accu_tb.vhd
+Z15 F../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/accu_tb.vhd
+l0
+L5
+V;Yh1E[fn4786GYKU0Bk]f1
+!s100 U^9FUeIS@=nRYCSiB;2;22
+R7
+31
+R11
+!i10b 1
+R12
+R8
+!s107 ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/accu_tb.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ACCU.vhd|
+!i113 1
+R9
+R10
+Abehav
+R2
+R3
+R4
+DEx4 work 7 accu_tb 0 22 ;Yh1E[fn4786GYKU0Bk]f1
+l96
+L9
+VVjY8Gkbg9:9BnfOC=Q1W_2
+!s100 CJHzmHCOHW=0R8Zn8AeN`0
+R7
+31
+R11
+!i10b 1
+R12
+R8
+!s107 ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/accu_tb.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ACCU.vhd|
+!i113 1
+R9
+R10

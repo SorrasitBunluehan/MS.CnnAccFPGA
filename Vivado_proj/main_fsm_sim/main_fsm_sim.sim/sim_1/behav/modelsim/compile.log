@@ -9,12 +9,14 @@
 # vmap -modelsim_quiet xil_defaultlib modelsim_lib/msim/xil_defaultlib 
 # Modifying modelsim.ini
 # Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 12:23:12 on Jan 22,2021
-# vcom -93 -work xil_defaultlib ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ALU.vhd ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/DIS_RAM_SP.vhd ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/main_fsm.vhd ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/w_sticker.vhd ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/weight_buffer.vhd ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/main_fsm_tb.vhd 
+# Start time: 16:41:26 on Jan 23,2021
+# vcom -93 -work xil_defaultlib ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ACCU.vhd ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ALU.vhd ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/DIS_RAM_SP.vhd ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/main_fsm.vhd ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/w_sticker.vhd ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/weight_buffer.vhd ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/main_fsm_tb.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
+# -- Compiling entity ACCU
+# -- Compiling architecture behav of ACCU
 # -- Compiling entity ALU
 # -- Compiling architecture Behavioral of ALU
 # -- Compiling entity DIS_RAM_SP
@@ -31,5 +33,5 @@
 # -- Compiling architecture behav of weight_buffer
 # -- Compiling entity main_fms_tb
 # -- Compiling architecture behav of main_fms_tb
-# End time: 12:23:13 on Jan 22,2021, Elapsed time: 0:00:01
+# End time: 16:41:27 on Jan 23,2021, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0

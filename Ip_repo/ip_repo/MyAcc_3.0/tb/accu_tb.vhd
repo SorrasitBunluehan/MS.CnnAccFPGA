@@ -25,8 +25,14 @@ architecture behav of accu_tb is
 			MAX_KERNEL_SIZE : natural;
 			MAX_COMPUTE_BYTE : natural; 			-- number of byte send to output ALU maximum support by 5x5 
 			MAX_KERNEL_DEPTH : natural;
-		
-			DATA_WIDTH : natural
+			DATA_WIDTH : natural;
+
+            ------------------------------------
+            -- New Parameters
+            ------------------------------------
+            MAX_ADDR_RAM_2D : natural := 15;
+            ROW_BIT_WIDTH : natural := 5;
+            COL_BIT_WIDTH : natural := 10
 		); 
 		port(
 
@@ -82,7 +88,7 @@ architecture behav of accu_tb is
         wait for CLK_PERIOD;
         valid0 <= '0';
         valid1 <= '0';
-        wait for CLK_PERIOD;
+        wait for CLK_PERIOD*4;
     end procedure;
 
 
@@ -141,6 +147,7 @@ begin
 		kernel_size <= to_unsigned(3, kernel_size'length); 
 		kernel_depth <= to_unsigned(2, kernel_depth'length); 
 		stride <= to_unsigned(1, stride'length); 
+        hw_acc_en <= '1';
 
         -------------------- START OF FIRST input compute --------------------------
         -- Stimulate (0 to 4)

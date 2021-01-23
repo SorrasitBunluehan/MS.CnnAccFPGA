@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="main_fms_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="main_fms_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="10000001fs"></ZoomEndTime>
+      <Cursor1Time time="6380000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="302"></NameColumnWidth>
+      <ValueColumnWidth column_width="95"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="40" />
+   <wvobject fp_name="/main_fms_tb/XAXIS_TDATA" type="array">
+      <obj_property name="ElementShortName">XAXIS_TDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">XAXIS_TDATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/XAXIS_TVALID" type="logic">
+      <obj_property name="ElementShortName">XAXIS_TVALID</obj_property>
+      <obj_property name="ObjectShortName">XAXIS_TVALID</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/XAXIS_TLAST" type="logic">
+      <obj_property name="ElementShortName">XAXIS_TLAST</obj_property>
+      <obj_property name="ObjectShortName">XAXIS_TLAST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/XAXIS_ARSTN" type="logic">
+      <obj_property name="ElementShortName">XAXIS_ARSTN</obj_property>
+      <obj_property name="ObjectShortName">XAXIS_ARSTN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/XAXIS_ACLK" type="logic">
+      <obj_property name="ElementShortName">XAXIS_ACLK</obj_property>
+      <obj_property name="ObjectShortName">XAXIS_ACLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/XAXIS_TREADY" type="logic">
+      <obj_property name="ElementShortName">XAXIS_TREADY</obj_property>
+      <obj_property name="ObjectShortName">XAXIS_TREADY</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/db_en" type="logic">
+      <obj_property name="ElementShortName">db_en</obj_property>
+      <obj_property name="ObjectShortName">db_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/db_tdata" type="array">
+      <obj_property name="ElementShortName">db_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">db_tdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/db_tvalid" type="logic">
+      <obj_property name="ElementShortName">db_tvalid</obj_property>
+      <obj_property name="ObjectShortName">db_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/db_out" type="array">
+      <obj_property name="ElementShortName">db_out[799:0]</obj_property>
+      <obj_property name="ObjectShortName">db_out[799:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/wgu_out0" type="array">
+      <obj_property name="ElementShortName">wgu_out0[799:0]</obj_property>
+      <obj_property name="ObjectShortName">wgu_out0[799:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/w_addr_c" type="array">
+      <obj_property name="ElementShortName">w_addr_c[7:0]</obj_property>
+      <obj_property name="ObjectShortName">w_addr_c[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/wgu_out1" type="array">
+      <obj_property name="ElementShortName">wgu_out1[799:0]</obj_property>
+      <obj_property name="ObjectShortName">wgu_out1[799:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/w_addr_incr" type="logic">
+      <obj_property name="ElementShortName">w_addr_incr</obj_property>
+      <obj_property name="ObjectShortName">w_addr_incr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/wgu_tvalid" type="logic">
+      <obj_property name="ElementShortName">wgu_tvalid</obj_property>
+      <obj_property name="ObjectShortName">wgu_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/wgu_tdata" type="array">
+      <obj_property name="ElementShortName">wgu_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">wgu_tdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/mux_sel" type="logic">
+      <obj_property name="ElementShortName">mux_sel</obj_property>
+      <obj_property name="ObjectShortName">mux_sel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/alu_en" type="logic">
+      <obj_property name="ElementShortName">alu_en</obj_property>
+      <obj_property name="ObjectShortName">alu_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/alu_valid0" type="logic">
+      <obj_property name="ElementShortName">alu_valid0</obj_property>
+      <obj_property name="ObjectShortName">alu_valid0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/alu_valid1" type="logic">
+      <obj_property name="ElementShortName">alu_valid1</obj_property>
+      <obj_property name="ObjectShortName">alu_valid1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/alu_out0" type="array">
+      <obj_property name="ElementShortName">alu_out0[31:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_out0[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">16</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/alu_out1" type="array">
+      <obj_property name="ElementShortName">alu_out1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_out1[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">16</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/accu_ready" type="logic">
+      <obj_property name="ElementShortName">accu_ready</obj_property>
+      <obj_property name="ObjectShortName">accu_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/input_size" type="array">
+      <obj_property name="ElementShortName">input_size[15:0]</obj_property>
+      <obj_property name="ObjectShortName">input_size[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/input_depth" type="array">
+      <obj_property name="ElementShortName">input_depth[12:0]</obj_property>
+      <obj_property name="ObjectShortName">input_depth[12:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/kernel_size" type="array">
+      <obj_property name="ElementShortName">kernel_size[7:0]</obj_property>
+      <obj_property name="ObjectShortName">kernel_size[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/kernel_depth" type="array">
+      <obj_property name="ElementShortName">kernel_depth[12:0]</obj_property>
+      <obj_property name="ObjectShortName">kernel_depth[12:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/stride" type="array">
+      <obj_property name="ElementShortName">stride[2:0]</obj_property>
+      <obj_property name="ObjectShortName">stride[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/hw_acc_en" type="logic">
+      <obj_property name="ElementShortName">hw_acc_en</obj_property>
+      <obj_property name="ObjectShortName">hw_acc_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/setzero" type="logic">
+      <obj_property name="ElementShortName">setzero</obj_property>
+      <obj_property name="ObjectShortName">setzero</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/XAXIS_ACLK" type="logic">
+      <obj_property name="ElementShortName">XAXIS_ACLK</obj_property>
+      <obj_property name="ObjectShortName">XAXIS_ACLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/accum_dut/mux_sel" type="logic">
+      <obj_property name="ElementShortName">mux_sel</obj_property>
+      <obj_property name="ObjectShortName">mux_sel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/accum_dut/bram_we" type="logic">
+      <obj_property name="ElementShortName">bram_we</obj_property>
+      <obj_property name="ObjectShortName">bram_we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/accum_dut/data_temp" type="array">
+      <obj_property name="ElementShortName">data_temp[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_temp[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">16</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/accum_dut/input_temp" type="array">
+      <obj_property name="ElementShortName">input_temp[31:0]</obj_property>
+      <obj_property name="ObjectShortName">input_temp[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">16</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/accum_dut/ram_out" type="array">
+      <obj_property name="ElementShortName">ram_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ram_out[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">16</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/accum_dut/c_state" type="other">
+      <obj_property name="ElementShortName">c_state</obj_property>
+      <obj_property name="ObjectShortName">c_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/accum_dut/n_state" type="other">
+      <obj_property name="ElementShortName">n_state</obj_property>
+      <obj_property name="ObjectShortName">n_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/accum_dut/cur_row" type="array">
+      <obj_property name="ElementShortName">cur_row[4:0]</obj_property>
+      <obj_property name="ObjectShortName">cur_row[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/accum_dut/cur_col" type="array">
+      <obj_property name="ElementShortName">cur_col[9:0]</obj_property>
+      <obj_property name="ObjectShortName">cur_col[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>
