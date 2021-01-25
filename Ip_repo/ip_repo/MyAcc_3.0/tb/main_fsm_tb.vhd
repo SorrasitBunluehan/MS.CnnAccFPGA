@@ -153,20 +153,20 @@ architecture behav of main_fms_tb is
             ------------------------------------
             -- Network Information Bitwidth 
             ------------------------------------
-            INPUT_SIZE_BIT_WIDTH : natural := 16;
-            INPUT_DEPTH_BIT_WIDTH : natural := 13;
-            STRIDE_BIT_WIDTH : natural := 3;  
-            KERNEL_DEPTH_BIT_WIDTH : natural := 13;
-            KERNEL_SIZE_BIT_WIDTH : natural := 8;
+            INPUT_SIZE_BIT_WIDTH : natural;
+            INPUT_DEPTH_BIT_WIDTH : natural;
+            STRIDE_BIT_WIDTH : natural;
+            KERNEL_DEPTH_BIT_WIDTH : natural;
+            KERNEL_SIZE_BIT_WIDTH : natural;
 
             ------------------------------------
             -- Maximum Comdition
             ------------------------------------
-            MAX_INPUT_SIZE : natural := 32;
-            MAX_KERNEL_SIZE : natural := 5;
-            MAX_COMPUTE_BYTE : natural := 25; 			-- number of byte send to output ALU maximum support by 5x5 
-            MAX_KERNEL_DEPTH : natural := 32;
-            DATA_WIDTH : natural := 32;
+            MAX_INPUT_SIZE : natural;
+            MAX_KERNEL_SIZE : natural;
+            MAX_COMPUTE_BYTE : natural;
+            MAX_KERNEL_DEPTH : natural;
+            DATA_WIDTH : natural;
 
             ------------------------------------
             -- New Parameters
@@ -184,11 +184,18 @@ architecture behav of main_fms_tb is
             stride : in unsigned(STRIDE_BIT_WIDTH-1 downto 0);
             hw_acc_en : in std_logic;
             setzero : in std_logic;
+            af_en : in std_logic;
 
             clk, arstn : in std_logic;
             din0, din1 : in std_logic_vector(DATA_WIDTH - 1 downto 0);
             valid0, valid1 : in std_logic;
-            accu_ready : out std_logic
+
+            -- AXIS Master Interface
+            M_AXIS_TVALID	: out std_logic;
+            M_AXIS_TDATA	: out std_logic_vector(DATA_WIDTH-1 downto 0);
+            M_AXIS_TSTRB	: out std_logic_vector((DATA_WIDTH/8)-1 downto 0);
+            M_AXIS_TLAST	: out std_logic;
+            M_AXIS_TREADY	: in std_logic
         );
     end component;
 
@@ -203,7 +210,7 @@ architecture behav of main_fms_tb is
 	constant INPUT_SIZE_BIT_WIDTH : natural := 16;
 	constant INPUT_DEPTH_BIT_WIDTH : natural := 13;
 	constant STRIDE_BIT_WIDTH : natural := 3; 
-	constant KERNEL_DEPTH_BIT_WIDTH : natural := 13;
+	constant KERNEL_DEPTH_BIT_WIDTH : natural := 5;
 	constant KERNEL_SIZE_BIT_WIDTH : natural := 8;
 	constant MAX_KERNEL_DEPTH : natural := 32;
     constant MAX_KERNEL_SIZE : natural := 5;
@@ -211,7 +218,7 @@ architecture behav of main_fms_tb is
 
 
 	---------------------
-	-- AXI Interface
+	-- S_AXI Interface
 	---------------------
 	signal XAXIS_TDATA : std_logic_vector(DATA_WIDTH-1 downto 0);
 	signal XAXIS_TVALID : std_logic;
@@ -252,6 +259,16 @@ architecture behav of main_fms_tb is
 	signal kernel_depth : unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);
 	signal stride : unsigned(STRIDE_BIT_WIDTH-1 downto 0);
 	signal hw_acc_en : std_logic;
+    signal af_en : std_logic;
+
+	---------------------
+    -- M_AXIS Interface
+	---------------------
+    signal M_AXIS_TVALID	: std_logic;
+    signal M_AXIS_TDATA	: std_logic_vector(DATA_WIDTH-1 downto 0);
+    signal M_AXIS_TSTRB	: std_logic_vector((DATA_WIDTH/8)-1 downto 0);
+    signal M_AXIS_TLAST	: std_logic;
+    signal M_AXIS_TREADY	: std_logic;
 
 	-- Control Signal
 	signal setzero : std_logic;
@@ -399,19 +416,26 @@ begin
         stride => stride, 
         hw_acc_en => hw_acc_en, 
         setzero => setzero, 
+        af_en => af_en,
                     
         clk => XAXIS_ACLK, 
 		arstn => XAXIS_ARSTN, 
         din0 => alu_out0,
 		din1 => alu_out1, 
         valid0 => alu_valid0,
-		valid1 => alu_valid1, 
-        accu_ready => accu_ready 
+		valid1 => alu_valid1,
+
+        M_AXIS_TVALID => M_AXIS_TVALID,  
+        M_AXIS_TDATA => M_AXIS_TDATA,  
+        M_AXIS_TSTRB => M_AXIS_TSTRB,  
+        M_AXIS_TLAST => M_AXIS_TLAST,  
+        M_AXIS_TREADY => M_AXIS_TREADY
 	);
 
 	stim_proc: 
 	process
 	begin
+        M_AXIS_TREADY <= '1';
 		XAXIS_ARSTN <= '0';
 		wait for CLK_PERIOD;
 		XAXIS_ARSTN <= '1';
@@ -421,6 +445,7 @@ begin
 		kernel_size <= to_unsigned(3, kernel_size'length); 
 		kernel_depth <= to_unsigned(2, kernel_depth'length); 
 		stride <= to_unsigned(1, stride'length); 
+        af_en <= '1';
 		wait for CLK_PERIOD;
 		hw_acc_en <= '1';
 		wait for CLK_PERIOD;
@@ -454,19 +479,20 @@ begin
             XAXIS_TDATA	<= x"FFFF_7C00";
             wait for CLK_PERIOD;
             -- Third Weight 
-            XAXIS_TDATA	<= x"0000_4800";
+            XAXIS_TDATA	<= x"FFFF_E000";
             wait for CLK_PERIOD;
 
             ---------------------
             -- Kernel #2 
             ---------------------
-            XAXIS_TDATA <= x"0000_4000";
+
+            XAXIS_TDATA <= x"FFFF_FC00";
             wait for CLK_PERIOD;
             -- Second Weight 
             XAXIS_TDATA <= x"0000_8000";
             wait for CLK_PERIOD;
             -- Third Weight 
-            XAXIS_TDATA <= x"0000_8400";
+            XAXIS_TDATA <= x"FFFF_FC00";
             wait for CLK_PERIOD;
             -- Forth Weight 
             XAXIS_TDATA <= x"0000_0400";
@@ -475,13 +501,13 @@ begin
             XAXIS_TDATA <= x"0000_0600";
             wait for CLK_PERIOD;
             -- Third Weight 
-            XAXIS_TDATA <= x"FFFF_8000";
-            wait for CLK_PERIOD;
-            -- Third Weight 
             XAXIS_TDATA <= x"FFFF_E000";
             wait for CLK_PERIOD;
             -- Third Weight 
             XAXIS_TDATA <= x"FFFF_E000";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            XAXIS_TDATA <= x"FFFF_F000";
             wait for CLK_PERIOD;
             -- Third Weight 
             XAXIS_TDATA <= x"FFFF_F000";

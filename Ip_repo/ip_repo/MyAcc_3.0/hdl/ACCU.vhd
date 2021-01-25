@@ -1,8 +1,6 @@
     --
     -- Accumulator Unit --
     -- 
-    -- TODO : 
-    -- Check the accuracy of the data in ram if bit_width is n instead of n+1 after add input and old value 
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -13,20 +11,20 @@ entity ACCU is
 		------------------------------------
 		-- Network Information Bitwidth 
 		------------------------------------
-		INPUT_SIZE_BIT_WIDTH : natural := 16;
-		INPUT_DEPTH_BIT_WIDTH : natural := 13;
-		STRIDE_BIT_WIDTH : natural := 3;  
-		KERNEL_DEPTH_BIT_WIDTH : natural := 13;
-		KERNEL_SIZE_BIT_WIDTH : natural := 8;
+		INPUT_SIZE_BIT_WIDTH : natural; 
+		INPUT_DEPTH_BIT_WIDTH : natural;
+		STRIDE_BIT_WIDTH : natural;
+		KERNEL_DEPTH_BIT_WIDTH : natural;
+		KERNEL_SIZE_BIT_WIDTH : natural;
 
 		------------------------------------
 		-- Maximum Comdition
 		------------------------------------
-		MAX_INPUT_SIZE : natural := 32;
-		MAX_KERNEL_SIZE : natural := 5;
-		MAX_COMPUTE_BYTE : natural := 25; 			-- number of byte send to output ALU maximum support by 5x5 
-		MAX_KERNEL_DEPTH : natural := 32;
-		DATA_WIDTH : natural := 32;
+		MAX_INPUT_SIZE : natural;
+		MAX_KERNEL_SIZE : natural;
+		MAX_COMPUTE_BYTE : natural;
+		MAX_KERNEL_DEPTH : natural;
+		DATA_WIDTH : natural;
 
 		------------------------------------
 		-- New Parameters
@@ -46,11 +44,19 @@ entity ACCU is
 		stride : in unsigned(STRIDE_BIT_WIDTH-1 downto 0);
 		hw_acc_en : in std_logic;
 		setzero : in std_logic;
+        af_en : in std_logic;
 
 		clk, arstn : in std_logic;
 		din0, din1 : in std_logic_vector(DATA_WIDTH - 1 downto 0);
 		valid0, valid1 : in std_logic;
-		accu_ready : out std_logic
+
+        -- AXIS Master Interface
+		M_AXIS_TVALID	: out std_logic;
+		M_AXIS_TDATA	: out std_logic_vector(DATA_WIDTH-1 downto 0);
+		M_AXIS_TSTRB	: out std_logic_vector((DATA_WIDTH/8)-1 downto 0);
+		M_AXIS_TLAST	: out std_logic;
+		M_AXIS_TREADY	: in std_logic
+
 	);
 end ACCU;
 
@@ -59,13 +65,6 @@ architecture behav of ACCU is
 	-- When calculate MAX_OUTPUT_SIZE set stride equal to 1 to get the maximum value. Also,
 	-- in here the accelerator don't care about padding (Handle by software).
 	constant MAX_OUTPUT_SIZE : natural := (MAX_INPUT_SIZE - MAX_KERNEL_SIZE)/1 + 1;
-    
-    --    function pow_2_fn(n : integer) return integer is
-    --        variable temp : unsigned(14 downto 0) := to_unsigned(16#1#,15);
-    --    begin
-    --        temp := shift_left(temp, n); 
-    --        return to_integer(temp);
-    --    end pow_2_fn;
     
     constant RAM_MAX_ADDR : integer range 0 to 65535 := 32768;
 
@@ -77,22 +76,29 @@ architecture behav of ACCU is
     subtype DATA_TYPE is signed(DATA_WIDTH-1 downto 0);
     type RAM_2D is array (RAM_MAX_ADDR-1 downto 0) of DATA_TYPE;
 
-    type STATE is (IDLE, READ1, WRITE, READ2);
+    type STATE is (IDLE, READ1, WRITE, READ2, SEND_STREAM);
     signal c_state,n_state : STATE;
 
     signal ram : RAM_2D := (others => (others => '0'));
-	signal ram_out, input_temp, data_temp : DATA_TYPE;
-	signal mux_sel, we, main_rst, bram_we,col_decode_ce,col_rst,input_counter_ce : std_logic;
+	signal ram_out, input_temp, data_temp, sum_temp, af_temp : DATA_TYPE;
+	signal mux_sel, we, main_rst, bram_we,col_ce,row_ce ,col_max ,row_max ,col_rst,input_counter_ce, last_input, af_sel, sum_more_zero  : std_logic;
+    signal tx_en, tx_done, axis_tvalid, accu_ready, axis_tlast : std_logic;
+    signal max_addr : unsigned(MAX_ADDR_RAM_2D-1 downto 0);
     signal output_size : integer range 0 to 65535;
    
 
 begin
     
 	we <= valid0 and valid1;
-
+    tx_en <= axis_tvalid and M_AXIS_TREADY;
     output_size <= to_integer((input_size - kernel_size)/stride) + 1;
-
     main_rst <= (not arstn) or setzero;
+
+    -- I/O Connections Assignments
+    M_AXIS_TSTRB <= (others => '1');	
+    M_AXIS_TDATA <= std_logic_vector(ram_out);
+    M_AXIS_TLAST <= axis_tlast;
+    M_AXIS_TVALID <= axis_tvalid;
 
     ---------------------------------------------------------------------
     -- STATE Implementation
@@ -110,7 +116,7 @@ begin
     end process;
 
     NEXT_STATE_DECODE:
-    process(we, c_state)
+    process(we, c_state, accu_ready, tx_done)
     begin
         --** Initialize Output and state
         n_state <= c_state;
@@ -122,6 +128,10 @@ begin
                     n_state <= READ1;
                     bram_we <= '0';
                     mux_sel <= '0';
+                else
+                    if accu_ready = '1' then
+                        n_state <= SEND_STREAM;
+                    end if;
                 end if;
             when READ1 =>
                 n_state <= WRITE;
@@ -135,8 +145,17 @@ begin
                 n_state <= IDLE;
                 bram_we <= '1';
                 mux_sel <= '1';
+            when SEND_STREAM =>
+                if tx_done = '1' then
+                    n_state <= IDLE;
+                end if;
         end case;
     end process;
+
+    max_addr <= to_unsigned(((output_size*output_size)-1), COL_BIT_WIDTH) & (kernel_depth-1);
+	axis_tvalid <= '1' when (c_state = SEND_STREAM) and (unsigned(bram_addr) <= max_addr) else '0';
+    axis_tlast <= '1' when (c_state = SEND_STREAM) and  (unsigned(bram_addr) = max_addr) else '0';
+    tx_done <= '1' when (c_state = SEND_STREAM) and (cur_col = (output_size*output_size)-1) and (cur_row = kernel_depth-1);
 
 
     -----------------------------------------------------------------------
@@ -148,7 +167,7 @@ begin
         if rising_edge(clk) then
             if main_rst = '1' then
                 cur_row <= (others => '0');
-            elsif bram_we = '1' then
+            elsif row_ce = '1' then
                 cur_row <= nxt_row;
             end if;
         end if;
@@ -156,13 +175,27 @@ begin
 
     ----------------------
     -- Combinatorial logic
+    --  1. Decode Next row
     ----------------------
-    process(cur_row)
+    NEXT_ROW_DECODE:
+    process(cur_row, row_max)
     begin
-        if cur_row = kernel_depth-1 then
+        if row_max = '1' then
             nxt_row <= (others=>'0');
         else
             nxt_row <= cur_row + 1;
+        end if;
+    end process;
+
+    row_max <= '1' when cur_row = kernel_depth-1 else '0';
+
+    ROW_COUNTER_CE_DECODE:
+    process(c_state, col_max,bram_we)
+    begin
+        if c_state /= SEND_STREAM then
+            row_ce <= bram_we;
+        else
+            row_ce <= col_max;
         end if;
     end process;
 
@@ -175,26 +208,41 @@ begin
         if rising_edge(clk) then
             if main_rst = '1' then
                 cur_col <= (others => '0');
-            elsif col_decode_ce = '1' then
+            elsif col_ce = '1' then
                 cur_col <= nxt_col;
             end if;
         end if;
     end process;
 
-    ----------------------
+    -------------------------------------
     -- Combinatorial logic
-    ----------------------
-    col_decode_ce <= '1' when (bram_we = '1') and (cur_row = kernel_depth-1) else '0'; 
-    col_rst <= '1' when cur_col = (output_size*output_size)-1 else '0';
+    --  1. Decode Clock enable signal 
+    --     for COL_DECODE Flip-FLOP
+    --  2. Decode Next Col
+    -------------------------------------
+    --col_decode_ce <= '1' when (bram_we = '1') and (cur_row = kernel_depth-1) else '0'; 
+    col_max <= '1' when cur_col = (output_size*output_size)-1 else '0';
 
-    process(cur_col, col_rst)
+    NEXT_COL_DECODE:
+    process(cur_col, col_max)
     begin
-        if col_rst = '1' then
+        if col_max = '1' then
             nxt_col <= (others=> '0');
         else
             nxt_col <= cur_col + 1;
         end if;
     end process;
+
+    COL_COUNTER_CE_DECODE:
+    process(tx_en, bram_we, row_max, c_state)
+    begin
+        if c_state /= SEND_STREAM then
+            col_ce <= bram_we and row_max;
+        else
+            col_ce <= tx_en;
+        end if;
+    end process;
+
 
     -----------------------------------------------------------------------
     --  INPUT instant Counter Decode
@@ -211,11 +259,19 @@ begin
         end if;
     end process;
 
-
-    accu_ready <= '1' when (cur_input_count = input_depth); 
-
+    --------------------------------------------------------------------------
+    -- Combinatorial logic
+    --  1. Decode last_input to let the ACCUM know when to implement 
+    --     Activation Function
+    --  2. Decode Accu_ready to change the state from IDLE to SEND_STREAM
+    --  3. Decode nxt_input_count 
+    --  4. Decode Input_counter_ce to assert when last row and last col pointer is reach
+    --------------------------------------------------------------------------
+    last_input <= '1' when (cur_input_count = input_depth-1) else '0';
+    accu_ready <= '1' when (cur_input_count = input_depth) else '0'; 
     nxt_input_count <= cur_input_count + 1;
-    input_counter_ce <= col_decode_ce and col_rst; 
+    input_counter_ce <= col_ce and col_max;
+    --input_counter_ce <= '1'when (col_decode_ce = '1') and (col_max = '1') else '0'; 
 
     -----------------------------------------------------------------------
     --  BRAM Implementation
@@ -233,25 +289,42 @@ begin
         end if;
     end process;
 
-    --BRAM_PORTB: 
-    --process(clk)
-    --begin
-    --    if rising_edge(clk) then
-    --        if hw_acc_en = '1' then 
-    --            --ram_out <= ram(to_integer(unsigned((bram_addrb))));
-    --            ram_out <= ram(0);
-    --        end if;
-    --    end if;
-    --end process;
-
-    ----------------------
+    -------------------------------------------------------
     -- Combinatorial logic
-    ----------------------
+    --  1. Decode BRAM Address to write and read
+    --  2. Decode sum_temp 
+    --  3. Decode af_sel (Activation Function Selection)
+    --  4. Decode sum_more_zero to detect sum_temp > 0
+    --  5. MUX to gen data_temp as an input to BRAM
+    --  6. MUX to gen. af_temp 
+    --  7. MUX to select Input from interface di1 or di0
+    -------------------------------------------------------
     bram_addr <= std_logic_vector(cur_col) & std_logic_vector(cur_row);
+    sum_temp <= ram_out + input_temp;
+    af_sel <= af_en and last_input;
+    sum_more_zero <= '1' when sum_temp > 0 else '0';
 
-    data_temp <= ram_out + input_temp;
+    AF_MUX:
+    process(sum_temp, af_sel, af_temp)
+    begin
+        if af_sel = '1' then
+            data_temp <= af_temp;
+        else
+            data_temp <= sum_temp;
+        end if;
+    end process;
 
-    -- MUX Process
+    AF_TEMP_MUX:
+    process(sum_temp, sum_more_zero)
+    begin
+        if sum_more_zero = '1' then
+            af_temp <= sum_temp;
+        else
+            af_temp <= (others=> '0');
+        end if;
+    end process;
+
+    INPUT_MUX:
     process(din0, din1, mux_sel)
     begin
         if mux_sel = '1' then
@@ -260,49 +333,6 @@ begin
             input_temp <= signed(din0);
         end if;
     end process;
-
-	--ACCUMULATE: 
-	--process(clk,arstn)
-	--begin
-	--	if arstn = '0' then
-	--		row <= 0;
-	--		col <= 0;
-	--		input_count <= 0;
-	--		accu_ready <= '0';
-    --        ram <= (others=>(others=>(others => '0')));
-	--	elsif rising_edge(clk) then
-    --        if setzero = '1' then
-    --            row <= 0;
-    --            col <= 0;
-    --            input_count <= 0;
-    --            accu_ready <= '0';
-    --        elsif we = '1' then
-    --            ----------------------------------------------
-    --            -- Write new value to RAM (Read before Write)
-    --            ----------------------------------------------
-    --            ram(row,col) <= signed(din0) + ram(row,col);
-    --            ram(row+1,col) <= signed(din1) + ram(row+1,col);
-
-    --            --------------------
-    --            -- Index Increment
-    --            --------------------
-	--			row <= row + 2;
-	--			if row = kernel_depth-2 then
-	--				row <= 0;
-	--				col <= col + 1;
-	--				if col = (output_size*output_size-1) then
-	--					col <= 0;
-	--					if input_count = input_depth-1 then
-	--						accu_ready <= '1';
-	--					else
-
-	--						input_count <= input_count + 1;
-	--					end if;
-	--				end if;
-	--			end if;
-	--		end if;
-	--	end if;
-	--end process;
 
 end behav;
 	

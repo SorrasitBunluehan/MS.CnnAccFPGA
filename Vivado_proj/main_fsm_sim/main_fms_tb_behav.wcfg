@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="10000001fs"></ZoomEndTime>
-      <Cursor1Time time="6380000fs"></Cursor1Time>
+      <ZoomStartTime time="6049000fs"></ZoomStartTime>
+      <ZoomEndTime time="7261001fs"></ZoomEndTime>
+      <Cursor1Time time="6400000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="302"></NameColumnWidth>
-      <ValueColumnWidth column_width="95"></ValueColumnWidth>
+      <ValueColumnWidth column_width="87"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="40" />
+   <WVObjectSize size="44" />
    <wvobject fp_name="/main_fms_tb/XAXIS_TDATA" type="array">
       <obj_property name="ElementShortName">XAXIS_TDATA[31:0]</obj_property>
       <obj_property name="ObjectShortName">XAXIS_TDATA[31:0]</obj_property>
@@ -132,8 +132,8 @@
       <obj_property name="ObjectShortName">kernel_size[7:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/main_fms_tb/kernel_depth" type="array">
-      <obj_property name="ElementShortName">kernel_depth[12:0]</obj_property>
-      <obj_property name="ObjectShortName">kernel_depth[12:0]</obj_property>
+      <obj_property name="ElementShortName">kernel_depth[4:0]</obj_property>
+      <obj_property name="ObjectShortName">kernel_depth[4:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/main_fms_tb/stride" type="array">
       <obj_property name="ElementShortName">stride[2:0]</obj_property>
@@ -199,5 +199,62 @@
       <obj_property name="ElementShortName">cur_col[9:0]</obj_property>
       <obj_property name="ObjectShortName">cur_col[9:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/accum_dut/accu_ready" type="logic">
+      <obj_property name="ElementShortName">accu_ready</obj_property>
+      <obj_property name="ObjectShortName">accu_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/accum_dut/cur_input_count" type="other">
+      <obj_property name="ElementShortName">cur_input_count</obj_property>
+      <obj_property name="ObjectShortName">cur_input_count</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_fms_tb/accum_dut/nxt_input_count" type="other">
+      <obj_property name="ElementShortName">nxt_input_count</obj_property>
+      <obj_property name="ObjectShortName">nxt_input_count</obj_property>
+   </wvobject>
+   <wvobject fp_name="group344" type="group">
+      <obj_property name="label">M_AXIS</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/main_fms_tb/M_AXIS_TVALID" type="logic">
+         <obj_property name="ElementShortName">M_AXIS_TVALID</obj_property>
+         <obj_property name="ObjectShortName">M_AXIS_TVALID</obj_property>
+      </wvobject>
+      <wvobject fp_name="/main_fms_tb/M_AXIS_TDATA" type="array">
+         <obj_property name="ElementShortName">M_AXIS_TDATA[31:0]</obj_property>
+         <obj_property name="ObjectShortName">M_AXIS_TDATA[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/main_fms_tb/M_AXIS_TSTRB" type="array">
+         <obj_property name="ElementShortName">M_AXIS_TSTRB[3:0]</obj_property>
+         <obj_property name="ObjectShortName">M_AXIS_TSTRB[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/main_fms_tb/M_AXIS_TLAST" type="logic">
+         <obj_property name="ElementShortName">M_AXIS_TLAST</obj_property>
+         <obj_property name="ObjectShortName">M_AXIS_TLAST</obj_property>
+      </wvobject>
+      <wvobject fp_name="/main_fms_tb/M_AXIS_TREADY" type="logic">
+         <obj_property name="ElementShortName">M_AXIS_TREADY</obj_property>
+         <obj_property name="ObjectShortName">M_AXIS_TREADY</obj_property>
+      </wvobject>
+      <wvobject fp_name="/main_fms_tb/accum_dut/col_ce" type="logic">
+         <obj_property name="ElementShortName">col_ce</obj_property>
+         <obj_property name="ObjectShortName">col_ce</obj_property>
+      </wvobject>
+      <wvobject fp_name="/main_fms_tb/accum_dut/row_ce" type="logic">
+         <obj_property name="ElementShortName">row_ce</obj_property>
+         <obj_property name="ObjectShortName">row_ce</obj_property>
+      </wvobject>
+      <wvobject fp_name="/main_fms_tb/accum_dut/col_max" type="logic">
+         <obj_property name="ElementShortName">col_max</obj_property>
+         <obj_property name="ObjectShortName">col_max</obj_property>
+      </wvobject>
+      <wvobject fp_name="/main_fms_tb/accum_dut/row_max" type="logic">
+         <obj_property name="ElementShortName">row_max</obj_property>
+         <obj_property name="ObjectShortName">row_max</obj_property>
+      </wvobject>
+      <wvobject fp_name="/main_fms_tb/accum_dut/tx_en" type="logic">
+         <obj_property name="ElementShortName">tx_en</obj_property>
+         <obj_property name="ObjectShortName">tx_en</obj_property>
+      </wvobject>
    </wvobject>
 </wave_config>
