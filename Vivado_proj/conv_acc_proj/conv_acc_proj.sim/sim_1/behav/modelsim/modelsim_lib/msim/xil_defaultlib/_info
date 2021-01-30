@@ -1,0 +1,155 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/conv_acc_proj/conv_acc_proj.sim/sim_1/behav/modelsim
+Eaccu
+Z1 w1611849670
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ACCU.vhd
+Z6 F../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ACCU.vhd
+l0
+L14
+VVM970_C9D?=0XWC@CIA7c3
+!s100 Z[>6V<2Rn:;Kcjb8]1zl_2
+Z7 OP;C;10.4a;61
+31
+Z8 !s110 1611913580
+!i10b 1
+Z9 !s108 1611913580.000000
+Z10 !s90 -93|-work|xil_defaultlib|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ACCU.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ALU.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/BRAM_SP.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ConvAccelerator.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/DIS_RAM_SP.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/MyAccelerator_v2_0_S00_AXI.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/main_fsm.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/w_sticker.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/weight_buffer.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/ConvAccelerator_tb.vhd|
+Z11 !s107 ../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/ConvAccelerator_tb.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/weight_buffer.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/w_sticker.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/main_fsm.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/MyAccelerator_v2_0_S00_AXI.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/DIS_RAM_SP.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ConvAccelerator.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/BRAM_SP.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ALU.vhd|../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ACCU.vhd|
+!i113 1
+Z12 o-93 -work xil_defaultlib -O0
+Z13 tExplicit 1
+Abehav
+R2
+R3
+R4
+DEx4 work 4 accu 0 22 VM970_C9D?=0XWC@CIA7c3
+l115
+L69
+Vnm=B>@lQ65hJ1L1@fDOl60
+!s100 LY6F7`NlMmcf:K6dEeZTL0
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Ealu
+Z14 w1611148815
+R2
+R3
+R4
+R0
+Z15 8../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ALU.vhd
+Z16 F../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ALU.vhd
+l0
+L16
+VIoNIb^AN0X_R<j9c5mS?N3
+!s100 C4d^:caQ?h;AI7e@Al:go3
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Abehavioral
+R2
+R3
+R4
+DEx4 work 3 alu 0 22 IoNIb^AN0X_R<j9c5mS?N3
+l43
+L35
+VUbL_DG:=j=i17a0PzNW5F2
+!s100 em_LzN?WLjkd9HJ8XKDzO2
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Ebram_sp
+Z17 w1611394866
+R2
+R3
+R4
+R0
+Z18 8../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/BRAM_SP.vhd
+Z19 F../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/BRAM_SP.vhd
+l0
+L8
+VG6SUEn2Fc:@mZij00B5OE1
+!s100 OX<o6djUz]LQ5Rf?oj:i11
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Abehavioral
+R2
+R3
+R4
+DEx4 work 7 bram_sp 0 22 G6SUEn2Fc:@mZij00B5OE1
+l27
+L23
+VF:08YIkn=EmCc6V<>G0fZ0
+!s100 4aa`XamdU]4=ab<:g?zmM1
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Econvaccelerator
+w1611912889
+R2
+R3
+R4
+R0
+8../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ConvAccelerator.vhd
+F../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ConvAccelerator.vhd
+l0
+L5
+Vofo^nVO:9]8N]ZQPo>`Ao2
+!s100 ^P;MMkBQF77V_lPC12_N]0
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13

@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Mon Jan 18 14:57:40 2021
-# Process ID: 9664
+# Start of session at: Fri Jan 29 18:12:26 2021
+# Process ID: 20052
 # Current directory: D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/weight_buffer_sim/weight_buffer_sim.runs/synth_1
 # Command line: vivado.exe -log weight_buffer.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source weight_buffer.tcl
 # Log file: D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/weight_buffer_sim/weight_buffer_sim.runs/synth_1/weight_buffer.vds

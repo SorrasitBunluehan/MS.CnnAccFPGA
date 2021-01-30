@@ -1,0 +1,7 @@
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+ERROR: Index 16385 out of bound 16383 downto 0
+Time: 28700 ns  Iteration: 0  Process: /main_fms_tb/accum_dut/BRAM0/line__28
+  File: D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/BRAM_SP.vhd
+
+HDL Line: D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/BRAM_SP.vhd:32

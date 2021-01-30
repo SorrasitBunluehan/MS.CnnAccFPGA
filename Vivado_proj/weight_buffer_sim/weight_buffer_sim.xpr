@@ -70,7 +70,7 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../../Ip_repo/ip_repo/MyAcc_3.0/hdl/LUTRAM_SP.vhd">
+      <File Path="$PPRDIR/../../Ip_repo/ip_repo/MyAcc_3.0/hdl/DIS_RAM_SP.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -84,6 +84,13 @@
       </File>
       <File Path="$PPRDIR/../../Ip_repo/ip_repo/MyAcc_3.0/hdl/weight_buffer.vhd">
         <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../Ip_repo/ip_repo/MyAcc_3.0/hdl/LUTRAM_SP.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>

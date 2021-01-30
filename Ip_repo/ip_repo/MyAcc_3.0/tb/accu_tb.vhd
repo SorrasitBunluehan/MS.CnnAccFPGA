@@ -43,7 +43,7 @@ architecture behav of accu_tb is
 			kernel_depth : in unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);
 			stride : in unsigned(STRIDE_BIT_WIDTH-1 downto 0);
 			hw_acc_en : in std_logic;
-			setzero : in std_logic;
+			setzero : out std_logic;
 
 			clk, arstn : in std_logic;
 			din0, din1 : in std_logic_vector(DATA_WIDTH - 1 downto 0);

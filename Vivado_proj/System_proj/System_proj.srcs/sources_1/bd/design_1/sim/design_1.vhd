@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
---Date        : Wed Dec 30 18:20:49 2020
+--Date        : Fri Jan 29 16:21:15 2021
 --Host        : DESKTOP-BJ9E846 running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -2358,7 +2358,7 @@ entity design_1 is
     FIXED_IO_ps_srstb : inout STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=24,numReposBlks=16,numNonXlnxBlks=0,numHierBlks=8,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,da_clkrst_cnt=8,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=17,numReposBlks=9,numNonXlnxBlks=0,numHierBlks=8,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_clkrst_cnt=8,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
@@ -2571,66 +2571,8 @@ architecture STRUCTURE of design_1 is
     dout : out STD_LOGIC_VECTOR ( 1 downto 0 )
   );
   end component design_1_xlconcat_0_0;
-  component design_1_axis_data_fifo_0_0 is
+  component design_1_ConvAccelerator_0_0 is
   port (
-    s_axis_aresetn : in STD_LOGIC;
-    s_axis_aclk : in STD_LOGIC;
-    s_axis_tvalid : in STD_LOGIC;
-    s_axis_tready : out STD_LOGIC;
-    s_axis_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axis_tkeep : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s_axis_tlast : in STD_LOGIC;
-    m_axis_tvalid : out STD_LOGIC;
-    m_axis_tready : in STD_LOGIC;
-    m_axis_tdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    m_axis_tkeep : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    m_axis_tlast : out STD_LOGIC
-  );
-  end component design_1_axis_data_fifo_0_0;
-  component design_1_system_ila_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component design_1_system_ila_0_0;
-  component design_1_system_ila_1_0 is
-  port (
-    clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 12 downto 0 )
-  );
-  end component design_1_system_ila_1_0;
-  component design_1_system_ila_2_0 is
-  port (
-    clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 15 downto 0 )
-  );
-  end component design_1_system_ila_2_0;
-  component design_1_system_ila_3_0 is
-  port (
-    clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 12 downto 0 )
-  );
-  end component design_1_system_ila_3_0;
-  component design_1_system_ila_4_0 is
-  port (
-    clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 7 downto 0 )
-  );
-  end component design_1_system_ila_4_0;
-  component design_1_system_ila_5_0 is
-  port (
-    clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 2 downto 0 )
-  );
-  end component design_1_system_ila_5_0;
-  component design_1_MyAcc_0_0 is
-  port (
-    input_size_test : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    input_depth_test : out STD_LOGIC_VECTOR ( 12 downto 0 );
-    kernel_size_test : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    kernel_depth_test : out STD_LOGIC_VECTOR ( 12 downto 0 );
-    stride_test : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    hw_acc_en_test : out STD_LOGIC;
     s00_axis_aclk : in STD_LOGIC;
     s00_axis_aresetn : in STD_LOGIC;
     s00_axis_tready : out STD_LOGIC;
@@ -2667,13 +2609,12 @@ architecture STRUCTURE of design_1 is
     m00_axis_tlast : out STD_LOGIC;
     m00_axis_tready : in STD_LOGIC
   );
-  end component design_1_MyAcc_0_0;
-  signal MyAcc_0_M00_AXIS_TDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal MyAcc_0_M00_AXIS_TLAST : STD_LOGIC;
-  signal MyAcc_0_M00_AXIS_TREADY : STD_LOGIC;
-  signal MyAcc_0_M00_AXIS_TVALID : STD_LOGIC;
+  end component design_1_ConvAccelerator_0_0;
+  signal ConvAccelerator_0_m00_axis_TDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal ConvAccelerator_0_m00_axis_TLAST : STD_LOGIC;
+  signal ConvAccelerator_0_m00_axis_TREADY : STD_LOGIC;
+  signal ConvAccelerator_0_m00_axis_TVALID : STD_LOGIC;
   signal axi_dma_0_M_AXIS_MM2S_TDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal axi_dma_0_M_AXIS_MM2S_TKEEP : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_dma_0_M_AXIS_MM2S_TLAST : STD_LOGIC;
   signal axi_dma_0_M_AXIS_MM2S_TREADY : STD_LOGIC;
   signal axi_dma_0_M_AXIS_MM2S_TVALID : STD_LOGIC;
@@ -2746,27 +2687,6 @@ architecture STRUCTURE of design_1 is
   signal axi_mem_intercon_M00_AXI_WREADY : STD_LOGIC;
   signal axi_mem_intercon_M00_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_mem_intercon_M00_AXI_WVALID : STD_LOGIC;
-  signal axis_data_fifo_0_M_AXIS_TDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal axis_data_fifo_0_M_AXIS_TLAST : STD_LOGIC;
-  signal axis_data_fifo_0_M_AXIS_TREADY : STD_LOGIC;
-  signal axis_data_fifo_0_M_AXIS_TVALID : STD_LOGIC;
-  signal hw_acc_en_test : STD_LOGIC;
-  attribute DEBUG : string;
-  attribute DEBUG of hw_acc_en_test : signal is "true";
-  attribute MARK_DEBUG : boolean;
-  attribute MARK_DEBUG of hw_acc_en_test : signal is std.standard.true;
-  signal input_depth_test : STD_LOGIC_VECTOR ( 12 downto 0 );
-  attribute DEBUG of input_depth_test : signal is "true";
-  attribute MARK_DEBUG of input_depth_test : signal is std.standard.true;
-  signal input_size_test : STD_LOGIC_VECTOR ( 15 downto 0 );
-  attribute DEBUG of input_size_test : signal is "true";
-  attribute MARK_DEBUG of input_size_test : signal is std.standard.true;
-  signal kernel_depth_test : STD_LOGIC_VECTOR ( 12 downto 0 );
-  attribute DEBUG of kernel_depth_test : signal is "true";
-  attribute MARK_DEBUG of kernel_depth_test : signal is std.standard.true;
-  signal kernel_size_test : STD_LOGIC_VECTOR ( 7 downto 0 );
-  attribute DEBUG of kernel_size_test : signal is "true";
-  attribute MARK_DEBUG of kernel_size_test : signal is std.standard.true;
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal processing_system7_0_DDR_BA : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal processing_system7_0_DDR_CAS_N : STD_LOGIC;
@@ -2864,14 +2784,11 @@ architecture STRUCTURE of design_1 is
   signal ps7_0_axi_periph_M01_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal ps7_0_axi_periph_M01_AXI_WVALID : STD_LOGIC;
   signal rst_ps7_0_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal stride_test : STD_LOGIC_VECTOR ( 2 downto 0 );
-  attribute DEBUG of stride_test : signal is "true";
-  attribute MARK_DEBUG of stride_test : signal is std.standard.true;
   signal xlconcat_0_dout : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal NLW_MyAcc_0_m00_axis_tstrb_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_ConvAccelerator_0_m00_axis_tstrb_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_axi_dma_0_mm2s_prmry_reset_out_n_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_dma_0_s2mm_prmry_reset_out_n_UNCONNECTED : STD_LOGIC;
-  signal NLW_axis_data_fifo_0_m_axis_tkeep_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_axi_dma_0_m_axis_mm2s_tkeep_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_processing_system7_0_TTC0_WAVE0_OUT_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_TTC0_WAVE1_OUT_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_TTC0_WAVE2_OUT_UNCONNECTED : STD_LOGIC;
@@ -2911,27 +2828,22 @@ architecture STRUCTURE of design_1 is
   attribute X_INTERFACE_INFO of DDR_dqs_p : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_P";
   attribute X_INTERFACE_INFO of FIXED_IO_mio : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO MIO";
 begin
-MyAcc_0: component design_1_MyAcc_0_0
+ConvAccelerator_0: component design_1_ConvAccelerator_0_0
      port map (
-      hw_acc_en_test => hw_acc_en_test,
-      input_depth_test(12 downto 0) => input_depth_test(12 downto 0),
-      input_size_test(15 downto 0) => input_size_test(15 downto 0),
-      kernel_depth_test(12 downto 0) => kernel_depth_test(12 downto 0),
-      kernel_size_test(7 downto 0) => kernel_size_test(7 downto 0),
       m00_axis_aclk => processing_system7_0_FCLK_CLK0,
       m00_axis_aresetn => rst_ps7_0_100M_peripheral_aresetn(0),
-      m00_axis_tdata(31 downto 0) => MyAcc_0_M00_AXIS_TDATA(31 downto 0),
-      m00_axis_tlast => MyAcc_0_M00_AXIS_TLAST,
-      m00_axis_tready => MyAcc_0_M00_AXIS_TREADY,
-      m00_axis_tstrb(3 downto 0) => NLW_MyAcc_0_m00_axis_tstrb_UNCONNECTED(3 downto 0),
-      m00_axis_tvalid => MyAcc_0_M00_AXIS_TVALID,
+      m00_axis_tdata(31 downto 0) => ConvAccelerator_0_m00_axis_TDATA(31 downto 0),
+      m00_axis_tlast => ConvAccelerator_0_m00_axis_TLAST,
+      m00_axis_tready => ConvAccelerator_0_m00_axis_TREADY,
+      m00_axis_tstrb(3 downto 0) => NLW_ConvAccelerator_0_m00_axis_tstrb_UNCONNECTED(3 downto 0),
+      m00_axis_tvalid => ConvAccelerator_0_m00_axis_TVALID,
       s00_axis_aclk => processing_system7_0_FCLK_CLK0,
       s00_axis_aresetn => rst_ps7_0_100M_peripheral_aresetn(0),
-      s00_axis_tdata(31 downto 0) => axis_data_fifo_0_M_AXIS_TDATA(31 downto 0),
-      s00_axis_tlast => axis_data_fifo_0_M_AXIS_TLAST,
-      s00_axis_tready => axis_data_fifo_0_M_AXIS_TREADY,
+      s00_axis_tdata(31 downto 0) => axi_dma_0_M_AXIS_MM2S_TDATA(31 downto 0),
+      s00_axis_tlast => axi_dma_0_M_AXIS_MM2S_TLAST,
+      s00_axis_tready => axi_dma_0_M_AXIS_MM2S_TREADY,
       s00_axis_tstrb(3 downto 0) => B"1111",
-      s00_axis_tvalid => axis_data_fifo_0_M_AXIS_TVALID,
+      s00_axis_tvalid => axi_dma_0_M_AXIS_MM2S_TVALID,
       s01_axi_aclk => processing_system7_0_FCLK_CLK0,
       s01_axi_araddr(7 downto 0) => ps7_0_axi_periph_M01_AXI_ARADDR(7 downto 0),
       s01_axi_aresetn => rst_ps7_0_100M_peripheral_aresetn(0),
@@ -2952,8 +2864,7 @@ MyAcc_0: component design_1_MyAcc_0_0
       s01_axi_wdata(31 downto 0) => ps7_0_axi_periph_M01_AXI_WDATA(31 downto 0),
       s01_axi_wready => ps7_0_axi_periph_M01_AXI_WREADY,
       s01_axi_wstrb(3 downto 0) => ps7_0_axi_periph_M01_AXI_WSTRB(3 downto 0),
-      s01_axi_wvalid => ps7_0_axi_periph_M01_AXI_WVALID,
-      stride_test(2 downto 0) => stride_test(2 downto 0)
+      s01_axi_wvalid => ps7_0_axi_periph_M01_AXI_WVALID
     );
 axi_dma_0: component design_1_axi_dma_0_0
      port map (
@@ -2990,7 +2901,7 @@ axi_dma_0: component design_1_axi_dma_0_0
       m_axi_s2mm_wstrb(3 downto 0) => axi_dma_0_M_AXI_S2MM_WSTRB(3 downto 0),
       m_axi_s2mm_wvalid => axi_dma_0_M_AXI_S2MM_WVALID,
       m_axis_mm2s_tdata(31 downto 0) => axi_dma_0_M_AXIS_MM2S_TDATA(31 downto 0),
-      m_axis_mm2s_tkeep(3 downto 0) => axi_dma_0_M_AXIS_MM2S_TKEEP(3 downto 0),
+      m_axis_mm2s_tkeep(3 downto 0) => NLW_axi_dma_0_m_axis_mm2s_tkeep_UNCONNECTED(3 downto 0),
       m_axis_mm2s_tlast => axi_dma_0_M_AXIS_MM2S_TLAST,
       m_axis_mm2s_tready => axi_dma_0_M_AXIS_MM2S_TREADY,
       m_axis_mm2s_tvalid => axi_dma_0_M_AXIS_MM2S_TVALID,
@@ -3015,11 +2926,11 @@ axi_dma_0: component design_1_axi_dma_0_0
       s_axi_lite_wdata(31 downto 0) => ps7_0_axi_periph_M00_AXI_WDATA(31 downto 0),
       s_axi_lite_wready => ps7_0_axi_periph_M00_AXI_WREADY,
       s_axi_lite_wvalid => ps7_0_axi_periph_M00_AXI_WVALID(0),
-      s_axis_s2mm_tdata(31 downto 0) => MyAcc_0_M00_AXIS_TDATA(31 downto 0),
+      s_axis_s2mm_tdata(31 downto 0) => ConvAccelerator_0_m00_axis_TDATA(31 downto 0),
       s_axis_s2mm_tkeep(3 downto 0) => B"1111",
-      s_axis_s2mm_tlast => MyAcc_0_M00_AXIS_TLAST,
-      s_axis_s2mm_tready => MyAcc_0_M00_AXIS_TREADY,
-      s_axis_s2mm_tvalid => MyAcc_0_M00_AXIS_TVALID
+      s_axis_s2mm_tlast => ConvAccelerator_0_m00_axis_TLAST,
+      s_axis_s2mm_tready => ConvAccelerator_0_m00_axis_TREADY,
+      s_axis_s2mm_tvalid => ConvAccelerator_0_m00_axis_TVALID
     );
 axi_mem_intercon: entity work.design_1_axi_mem_intercon_0
      port map (
@@ -3098,21 +3009,6 @@ axi_mem_intercon: entity work.design_1_axi_mem_intercon_0
       S01_AXI_wready(0) => axi_dma_0_M_AXI_S2MM_WREADY(0),
       S01_AXI_wstrb(3 downto 0) => axi_dma_0_M_AXI_S2MM_WSTRB(3 downto 0),
       S01_AXI_wvalid(0) => axi_dma_0_M_AXI_S2MM_WVALID
-    );
-axis_data_fifo_0: component design_1_axis_data_fifo_0_0
-     port map (
-      m_axis_tdata(31 downto 0) => axis_data_fifo_0_M_AXIS_TDATA(31 downto 0),
-      m_axis_tkeep(3 downto 0) => NLW_axis_data_fifo_0_m_axis_tkeep_UNCONNECTED(3 downto 0),
-      m_axis_tlast => axis_data_fifo_0_M_AXIS_TLAST,
-      m_axis_tready => axis_data_fifo_0_M_AXIS_TREADY,
-      m_axis_tvalid => axis_data_fifo_0_M_AXIS_TVALID,
-      s_axis_aclk => processing_system7_0_FCLK_CLK0,
-      s_axis_aresetn => rst_ps7_0_100M_peripheral_aresetn(0),
-      s_axis_tdata(31 downto 0) => axi_dma_0_M_AXIS_MM2S_TDATA(31 downto 0),
-      s_axis_tkeep(3 downto 0) => axi_dma_0_M_AXIS_MM2S_TKEEP(3 downto 0),
-      s_axis_tlast => axi_dma_0_M_AXIS_MM2S_TLAST,
-      s_axis_tready => axi_dma_0_M_AXIS_MM2S_TREADY,
-      s_axis_tvalid => axi_dma_0_M_AXIS_MM2S_TVALID
     );
 processing_system7_0: component design_1_processing_system7_0_0
      port map (
@@ -3331,36 +3227,6 @@ rst_ps7_0_100M: component design_1_rst_ps7_0_100M_0
       peripheral_aresetn(0) => rst_ps7_0_100M_peripheral_aresetn(0),
       peripheral_reset(0) => NLW_rst_ps7_0_100M_peripheral_reset_UNCONNECTED(0),
       slowest_sync_clk => processing_system7_0_FCLK_CLK0
-    );
-system_ila_0: component design_1_system_ila_0_0
-     port map (
-      clk => processing_system7_0_FCLK_CLK0,
-      probe0(0) => hw_acc_en_test
-    );
-system_ila_1: component design_1_system_ila_1_0
-     port map (
-      clk => processing_system7_0_FCLK_CLK0,
-      probe0(12 downto 0) => input_depth_test(12 downto 0)
-    );
-system_ila_2: component design_1_system_ila_2_0
-     port map (
-      clk => processing_system7_0_FCLK_CLK0,
-      probe0(15 downto 0) => input_size_test(15 downto 0)
-    );
-system_ila_3: component design_1_system_ila_3_0
-     port map (
-      clk => processing_system7_0_FCLK_CLK0,
-      probe0(12 downto 0) => kernel_depth_test(12 downto 0)
-    );
-system_ila_4: component design_1_system_ila_4_0
-     port map (
-      clk => processing_system7_0_FCLK_CLK0,
-      probe0(7 downto 0) => kernel_size_test(7 downto 0)
-    );
-system_ila_5: component design_1_system_ila_5_0
-     port map (
-      clk => processing_system7_0_FCLK_CLK0,
-      probe0(2 downto 0) => stride_test(2 downto 0)
     );
 xlconcat_0: component design_1_xlconcat_0_0
      port map (

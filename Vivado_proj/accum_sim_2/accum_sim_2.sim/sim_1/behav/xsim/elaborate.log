@@ -3,5 +3,5 @@ Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
 Running: D:/Vivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 307a115fa5e74e3a818d8689610148cb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot accu_tb_behav xil_defaultlib.accu_tb -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-ERROR: [VRFC 10-3353] formal port 'af_en' has no actual or default value [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/ACCU.vhd:47]
+ERROR: [VRFC 10-718] formal port <accu_ready> does not exist in entity <ACCU>.  Please compare the definition of block <ACCU> to its component declaration and its instantion to detect the mismatch. [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/tb/accu_tb.vhd:51]
 ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit accu_tb in library work failed.

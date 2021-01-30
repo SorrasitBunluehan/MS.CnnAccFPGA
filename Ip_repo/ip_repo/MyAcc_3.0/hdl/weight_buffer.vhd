@@ -9,18 +9,18 @@ entity weight_buffer is
 		------------------------------------
 		-- Network Information Bitwidth 
 		------------------------------------
-		KERNEL_SIZE_BIT_WIDTH : natural;
-		KERNEL_DEPTH_BIT_WIDTH : natural;
+		KERNEL_SIZE_BIT_WIDTH : natural := 8;
+		KERNEL_DEPTH_BIT_WIDTH : natural := 13;
 		-- MAX_KERNEL_DEPTH: This value limit the maximum Memory depth for both SPM
-		MAX_KERNEL_DEPTH : natural; 
-        MAX_KERNEL_SIZE : natural;
+		MAX_KERNEL_DEPTH : natural := 32; 
+        MAX_KERNEL_SIZE : natural := 5;
 
 		-- Info. abt. input 
-		DATA_WIDTH : natural;			-- Number of bit for input data (default = 32)
+		DATA_WIDTH : natural := 32;			-- Number of bit for input data (default = 32)
 
 		-- Total amount of data will be send to compute in PU per 1 clk 
-		MAX_COMPUTE_BYTE : natural; 		
-		ADDR_WIDTH : natural
+		MAX_COMPUTE_BYTE : natural := 25; 		
+		ADDR_WIDTH : natural := 8
 
 	);
 	port (
@@ -246,9 +246,6 @@ begin
                 end if;
             end if;
         end process;
-
-
-
 
 end behav;
 

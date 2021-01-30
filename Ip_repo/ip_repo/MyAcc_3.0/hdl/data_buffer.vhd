@@ -12,16 +12,16 @@ entity data_buffer is
 		------------------------------------
 		-- Maximum Comdition
 		------------------------------------
-		MAX_INPUT_SIZE : natural;
-		MAX_KERNEL_SIZE : natural;
-        MAX_COMPUTE_BYTE : natural; 			-- number of byte send to output ALU maximum support by 5x5 
+		MAX_INPUT_SIZE : natural := 32;
+		MAX_KERNEL_SIZE : natural := 32;
+        MAX_COMPUTE_BYTE : natural := 25; 			-- number of byte send to output ALU maximum support by 5x5 
 
         ------------------------------------
         -- Network Information Bitwidth 
         ------------------------------------
-        INPUT_SIZE_BIT_WIDTH : natural;
-        KERNEL_SIZE_BIT_WIDTH : natural;
-        DATA_WIDTH : natural
+        INPUT_SIZE_BIT_WIDTH : natural := 16;
+        KERNEL_SIZE_BIT_WIDTH : natural := 8;
+        DATA_WIDTH : natural :=32
 
     ); 
     port (

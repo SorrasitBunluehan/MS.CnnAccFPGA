@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Wed Dec 30 18:22:59 2020
-# Process ID: 5732
+# Start of session at: Fri Jan 29 16:21:22 2021
+# Process ID: 18400
 # Current directory: D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1
 # Command line: vivado.exe -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
 # Log file: D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/design_1_wrapper.vds
@@ -13,7 +13,6 @@ source design_1_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Vivado_Project/MS.CnnAccFPGA/Ip_repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/Vivado/2020.1/data/ip'.
-add_files: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1070.469 ; gain = 0.000
 Command: synth_design -top design_1_wrapper -part xc7z010clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
@@ -21,61 +20,47 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 12700
+INFO: [Synth 8-7075] Helper process launched with PID 15944
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1109.500 ; gain = 39.031
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1075.645 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:40]
 INFO: [Synth 8-3491] module 'design_1' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:2336' bound to instance 'design_1_i' of component 'design_1' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:67]
 INFO: [Synth 8-638] synthesizing module 'design_1' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:2366]
-INFO: [Synth 8-3491] module 'design_1_MyAcc_0_0' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_MyAcc_0_0_stub.vhdl:5' bound to instance 'MyAcc_0' of component 'design_1_MyAcc_0_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:2914]
-INFO: [Synth 8-638] synthesizing module 'design_1_MyAcc_0_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_MyAcc_0_0_stub.vhdl:52]
+INFO: [Synth 8-3491] module 'design_1_ConvAccelerator_0_0' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-18400-DESKTOP-BJ9E846/realtime/design_1_ConvAccelerator_0_0_stub.vhdl:5' bound to instance 'ConvAccelerator_0' of component 'design_1_ConvAccelerator_0_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:2831]
+INFO: [Synth 8-638] synthesizing module 'design_1_ConvAccelerator_0_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-18400-DESKTOP-BJ9E846/realtime/design_1_ConvAccelerator_0_0_stub.vhdl:46]
 WARNING: [Synth 8-5640] Port 'axi_dma_tstvec' is missing in component declaration [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:2486]
-INFO: [Synth 8-3491] module 'design_1_axi_dma_0_0' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_axi_dma_0_0_stub.vhdl:5' bound to instance 'axi_dma_0' of component 'design_1_axi_dma_0_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:2958]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_dma_0_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_axi_dma_0_0_stub.vhdl:75]
+INFO: [Synth 8-3491] module 'design_1_axi_dma_0_0' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-18400-DESKTOP-BJ9E846/realtime/design_1_axi_dma_0_0_stub.vhdl:5' bound to instance 'axi_dma_0' of component 'design_1_axi_dma_0_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:2869]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_dma_0_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-18400-DESKTOP-BJ9E846/realtime/design_1_axi_dma_0_0_stub.vhdl:75]
 INFO: [Synth 8-638] synthesizing module 'design_1_axi_mem_intercon_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:1210]
 INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_1R706YB' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:196]
-INFO: [Synth 8-3491] module 'design_1_auto_pc_1' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_auto_pc_1_stub.vhdl:5' bound to instance 'auto_pc' of component 'design_1_auto_pc_1' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:439]
-INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_1' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_auto_pc_1_stub.vhdl:90]
+INFO: [Synth 8-3491] module 'design_1_auto_pc_1' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-18400-DESKTOP-BJ9E846/realtime/design_1_auto_pc_1_stub.vhdl:5' bound to instance 'auto_pc' of component 'design_1_auto_pc_1' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:439]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_1' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-18400-DESKTOP-BJ9E846/realtime/design_1_auto_pc_1_stub.vhdl:90]
 INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_1R706YB' (1#1) [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:196]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_7HNO1D' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:672]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_7HNO1D' (2#1) [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:672]
 INFO: [Synth 8-638] synthesizing module 's01_couplers_imp_1W60HW0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:1075]
 INFO: [Synth 8-256] done synthesizing module 's01_couplers_imp_1W60HW0' (3#1) [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:1075]
-INFO: [Synth 8-3491] module 'design_1_xbar_1' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_xbar_1_stub.vhdl:5' bound to instance 'xbar' of component 'design_1_xbar_1' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:1667]
-INFO: [Synth 8-638] synthesizing module 'design_1_xbar_1' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_xbar_1_stub.vhdl:89]
+INFO: [Synth 8-3491] module 'design_1_xbar_1' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-18400-DESKTOP-BJ9E846/realtime/design_1_xbar_1_stub.vhdl:5' bound to instance 'xbar' of component 'design_1_xbar_1' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:1667]
+INFO: [Synth 8-638] synthesizing module 'design_1_xbar_1' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-18400-DESKTOP-BJ9E846/realtime/design_1_xbar_1_stub.vhdl:89]
 INFO: [Synth 8-256] done synthesizing module 'design_1_axi_mem_intercon_0' (4#1) [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:1210]
-INFO: [Synth 8-3491] module 'design_1_axis_data_fifo_0_0' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_axis_data_fifo_0_0_stub.vhdl:5' bound to instance 'axis_data_fifo_0' of component 'design_1_axis_data_fifo_0_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:3102]
-INFO: [Synth 8-638] synthesizing module 'design_1_axis_data_fifo_0_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_axis_data_fifo_0_0_stub.vhdl:23]
-INFO: [Synth 8-3491] module 'design_1_processing_system7_0_0' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_processing_system7_0_0_stub.vhdl:5' bound to instance 'processing_system7_0' of component 'design_1_processing_system7_0_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:3117]
-INFO: [Synth 8-638] synthesizing module 'design_1_processing_system7_0_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_processing_system7_0_0_stub.vhdl:126]
+INFO: [Synth 8-3491] module 'design_1_processing_system7_0_0' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-18400-DESKTOP-BJ9E846/realtime/design_1_processing_system7_0_0_stub.vhdl:5' bound to instance 'processing_system7_0' of component 'design_1_processing_system7_0_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:3013]
+INFO: [Synth 8-638] synthesizing module 'design_1_processing_system7_0_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-18400-DESKTOP-BJ9E846/realtime/design_1_processing_system7_0_0_stub.vhdl:126]
 INFO: [Synth 8-638] synthesizing module 'design_1_ps7_0_axi_periph_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:1868]
 INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_15SPJYW' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:55]
 INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_15SPJYW' (5#1) [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:55]
 INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_XU9C55' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:573]
 INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_XU9C55' (6#1) [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:573]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_UYSKKA' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:784]
-INFO: [Synth 8-3491] module 'design_1_auto_pc_0' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'design_1_auto_pc_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:967]
-INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_auto_pc_0_stub.vhdl:70]
+INFO: [Synth 8-3491] module 'design_1_auto_pc_0' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-18400-DESKTOP-BJ9E846/realtime/design_1_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'design_1_auto_pc_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:967]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-18400-DESKTOP-BJ9E846/realtime/design_1_auto_pc_0_stub.vhdl:70]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_UYSKKA' (7#1) [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:784]
-INFO: [Synth 8-3491] module 'design_1_xbar_0' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'design_1_xbar_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:2269]
-INFO: [Synth 8-638] synthesizing module 'design_1_xbar_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_xbar_0_stub.vhdl:51]
+INFO: [Synth 8-3491] module 'design_1_xbar_0' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-18400-DESKTOP-BJ9E846/realtime/design_1_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'design_1_xbar_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:2269]
+INFO: [Synth 8-638] synthesizing module 'design_1_xbar_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-18400-DESKTOP-BJ9E846/realtime/design_1_xbar_0_stub.vhdl:51]
 INFO: [Synth 8-256] done synthesizing module 'design_1_ps7_0_axi_periph_0' (8#1) [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:1868]
-INFO: [Synth 8-3491] module 'design_1_rst_ps7_0_100M_0' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_rst_ps7_0_100M_0_stub.vhdl:5' bound to instance 'rst_ps7_0_100M' of component 'design_1_rst_ps7_0_100M_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:3322]
-INFO: [Synth 8-638] synthesizing module 'design_1_rst_ps7_0_100M_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_rst_ps7_0_100M_0_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'design_1_system_ila_0_0' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_system_ila_0_0_stub.vhdl:5' bound to instance 'system_ila_0' of component 'design_1_system_ila_0_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:3335]
-INFO: [Synth 8-638] synthesizing module 'design_1_system_ila_0_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_system_ila_0_0_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'design_1_system_ila_1_0' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_system_ila_1_0_stub.vhdl:5' bound to instance 'system_ila_1' of component 'design_1_system_ila_1_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:3340]
-INFO: [Synth 8-638] synthesizing module 'design_1_system_ila_1_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_system_ila_1_0_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'design_1_system_ila_2_0' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_system_ila_2_0_stub.vhdl:5' bound to instance 'system_ila_2' of component 'design_1_system_ila_2_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:3345]
-INFO: [Synth 8-638] synthesizing module 'design_1_system_ila_2_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_system_ila_2_0_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'design_1_system_ila_3_0' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_system_ila_3_0_stub.vhdl:5' bound to instance 'system_ila_3' of component 'design_1_system_ila_3_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:3350]
-INFO: [Synth 8-638] synthesizing module 'design_1_system_ila_3_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_system_ila_3_0_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'design_1_system_ila_4_0' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_system_ila_4_0_stub.vhdl:5' bound to instance 'system_ila_4' of component 'design_1_system_ila_4_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:3355]
-INFO: [Synth 8-638] synthesizing module 'design_1_system_ila_4_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_system_ila_4_0_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'design_1_system_ila_5_0' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_system_ila_5_0_stub.vhdl:5' bound to instance 'system_ila_5' of component 'design_1_system_ila_5_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:3360]
-INFO: [Synth 8-638] synthesizing module 'design_1_system_ila_5_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-5732-DESKTOP-BJ9E846/realtime/design_1_system_ila_5_0_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'design_1_xlconcat_0_0' declared at 'd:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_0_0/synth/design_1_xlconcat_0_0.v:58' bound to instance 'xlconcat_0' of component 'design_1_xlconcat_0_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:3365]
+INFO: [Synth 8-3491] module 'design_1_rst_ps7_0_100M_0' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-18400-DESKTOP-BJ9E846/realtime/design_1_rst_ps7_0_100M_0_stub.vhdl:5' bound to instance 'rst_ps7_0_100M' of component 'design_1_rst_ps7_0_100M_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:3218]
+INFO: [Synth 8-638] synthesizing module 'design_1_rst_ps7_0_100M_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/.Xil/Vivado-18400-DESKTOP-BJ9E846/realtime/design_1_rst_ps7_0_100M_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'design_1_xlconcat_0_0' declared at 'd:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_0_0/synth/design_1_xlconcat_0_0.v:58' bound to instance 'xlconcat_0' of component 'design_1_xlconcat_0_0' [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:3231]
 INFO: [Synth 8-6157] synthesizing module 'design_1_xlconcat_0_0' [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_0_0/synth/design_1_xlconcat_0_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
 	Parameter IN0_WIDTH bound to: 1 - type: integer 
@@ -117,18 +102,18 @@ INFO: [Synth 8-6155] done synthesizing module 'design_1_xlconcat_0_0' (10#1) [d:
 INFO: [Synth 8-256] done synthesizing module 'design_1' (11#1) [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/synth/design_1.vhd:2366]
 INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (12#1) [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:40]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1172.758 ; gain = 102.289
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1095.457 ; gain = 19.813
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1172.758 ; gain = 102.289
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1095.457 ; gain = 19.813
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1172.758 ; gain = 102.289
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1095.457 ; gain = 19.813
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 1172.758 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 1095.457 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -142,24 +127,10 @@ Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System
 Finished Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0/design_1_xbar_0_in_context.xdc] for cell 'design_1_i/ps7_0_axi_periph/xbar'
 Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0_in_context.xdc] for cell 'design_1_i/rst_ps7_0_100M'
 Finished Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0_in_context.xdc] for cell 'design_1_i/rst_ps7_0_100M'
-Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_MyAcc_0_0/design_1_MyAcc_0_0/design_1_MyAcc_0_0_in_context.xdc] for cell 'design_1_i/MyAcc_0'
-Finished Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_MyAcc_0_0/design_1_MyAcc_0_0/design_1_MyAcc_0_0_in_context.xdc] for cell 'design_1_i/MyAcc_0'
 Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_xbar_1/design_1_xbar_1/design_1_xbar_1_in_context.xdc] for cell 'design_1_i/axi_mem_intercon/xbar'
 Finished Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_xbar_1/design_1_xbar_1/design_1_xbar_1_in_context.xdc] for cell 'design_1_i/axi_mem_intercon/xbar'
-Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_axis_data_fifo_0_0/design_1_axis_data_fifo_0_0/design_1_axis_data_fifo_0_0_in_context.xdc] for cell 'design_1_i/axis_data_fifo_0'
-Finished Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_axis_data_fifo_0_0/design_1_axis_data_fifo_0_0/design_1_axis_data_fifo_0_0_in_context.xdc] for cell 'design_1_i/axis_data_fifo_0'
-Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_system_ila_0_0/design_1_system_ila_0_0/design_1_system_ila_0_0_in_context.xdc] for cell 'design_1_i/system_ila_0'
-Finished Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_system_ila_0_0/design_1_system_ila_0_0/design_1_system_ila_0_0_in_context.xdc] for cell 'design_1_i/system_ila_0'
-Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_system_ila_1_0/design_1_system_ila_1_0/design_1_system_ila_1_0_in_context.xdc] for cell 'design_1_i/system_ila_1'
-Finished Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_system_ila_1_0/design_1_system_ila_1_0/design_1_system_ila_1_0_in_context.xdc] for cell 'design_1_i/system_ila_1'
-Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_system_ila_2_0/design_1_system_ila_2_0/design_1_system_ila_2_0_in_context.xdc] for cell 'design_1_i/system_ila_2'
-Finished Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_system_ila_2_0/design_1_system_ila_2_0/design_1_system_ila_2_0_in_context.xdc] for cell 'design_1_i/system_ila_2'
-Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_system_ila_3_0/design_1_system_ila_3_0/design_1_system_ila_3_0_in_context.xdc] for cell 'design_1_i/system_ila_3'
-Finished Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_system_ila_3_0/design_1_system_ila_3_0/design_1_system_ila_3_0_in_context.xdc] for cell 'design_1_i/system_ila_3'
-Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_system_ila_4_0/design_1_system_ila_4_0/design_1_system_ila_4_0_in_context.xdc] for cell 'design_1_i/system_ila_4'
-Finished Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_system_ila_4_0/design_1_system_ila_4_0/design_1_system_ila_4_0_in_context.xdc] for cell 'design_1_i/system_ila_4'
-Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_system_ila_5_0/design_1_system_ila_5_0/design_1_system_ila_5_0_in_context.xdc] for cell 'design_1_i/system_ila_5'
-Finished Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_system_ila_5_0/design_1_system_ila_5_0/design_1_system_ila_5_0_in_context.xdc] for cell 'design_1_i/system_ila_5'
+Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_ConvAccelerator_0_0/design_1_ConvAccelerator_0_0/design_1_ConvAccelerator_0_0_in_context.xdc] for cell 'design_1_i/ConvAccelerator_0'
+Finished Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_ConvAccelerator_0_0/design_1_ConvAccelerator_0_0/design_1_ConvAccelerator_0_0_in_context.xdc] for cell 'design_1_i/ConvAccelerator_0'
 Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0/design_1_auto_pc_0_in_context.xdc] for cell 'design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc'
 Finished Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0/design_1_auto_pc_0_in_context.xdc] for cell 'design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc'
 Parsing XDC File [d:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1/design_1_auto_pc_1_in_context.xdc] for cell 'design_1_i/axi_mem_intercon/m00_couplers/auto_pc'
@@ -168,20 +139,20 @@ Parsing XDC File [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System
 Finished Parsing XDC File [D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1241.074 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1164.660 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 1241.074 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1164.660 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1241.074 ; gain = 170.605
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1164.660 ; gain = 89.016
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1241.074 ; gain = 170.605
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1164.660 ; gain = 89.016
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -452,24 +423,17 @@ Applied set_property DONT_TOUCH = true for design_1_i/axi_dma_0. (constraint fil
 Applied set_property DONT_TOUCH = true for design_1_i/ps7_0_axi_periph/xbar. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/ps7_0_axi_periph. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/rst_ps7_0_100M. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for design_1_i/MyAcc_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/xlconcat_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/axi_mem_intercon/xbar. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/axi_mem_intercon. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for design_1_i/axis_data_fifo_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for design_1_i/system_ila_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for design_1_i/system_ila_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for design_1_i/system_ila_2. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for design_1_i/system_ila_3. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for design_1_i/system_ila_4. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for design_1_i/system_ila_5. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/ConvAccelerator_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/axi_mem_intercon/m00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1241.074 ; gain = 170.605
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1164.660 ; gain = 89.016
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1241.074 ; gain = 170.605
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1164.660 ; gain = 89.016
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -491,25 +455,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1241.074 ; gain = 170.605
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1164.660 ; gain = 89.016
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1244.504 ; gain = 174.035
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1168.832 ; gain = 93.188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1244.652 ; gain = 174.184
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1168.980 ; gain = 93.336
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1264.219 ; gain = 193.750
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1188.035 ; gain = 112.391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -527,37 +491,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1270.996 ; gain = 200.527
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1193.871 ; gain = 118.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1270.996 ; gain = 200.527
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1193.871 ; gain = 118.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1270.996 ; gain = 200.527
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1193.871 ; gain = 118.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1270.996 ; gain = 200.527
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1193.871 ; gain = 118.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1270.996 ; gain = 200.527
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1193.871 ; gain = 118.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1270.996 ; gain = 200.527
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1193.871 ; gain = 118.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -571,57 +535,43 @@ Report BlackBoxes:
 |2     |design_1_auto_pc_1              |         1|
 |3     |design_1_xbar_0                 |         1|
 |4     |design_1_auto_pc_0              |         1|
-|5     |design_1_MyAcc_0_0              |         1|
+|5     |design_1_ConvAccelerator_0_0    |         1|
 |6     |design_1_axi_dma_0_0            |         1|
-|7     |design_1_axis_data_fifo_0_0     |         1|
-|8     |design_1_processing_system7_0_0 |         1|
-|9     |design_1_rst_ps7_0_100M_0       |         1|
-|10    |design_1_system_ila_0_0         |         1|
-|11    |design_1_system_ila_1_0         |         1|
-|12    |design_1_system_ila_2_0         |         1|
-|13    |design_1_system_ila_3_0         |         1|
-|14    |design_1_system_ila_4_0         |         1|
-|15    |design_1_system_ila_5_0         |         1|
+|7     |design_1_processing_system7_0_0 |         1|
+|8     |design_1_rst_ps7_0_100M_0       |         1|
 +------+--------------------------------+----------+
 
 Report Cell Usage: 
 +------+-------------------------------------+------+
 |      |Cell                                 |Count |
 +------+-------------------------------------+------+
-|1     |design_1_MyAcc_0_0_bbox              |     1|
+|1     |design_1_ConvAccelerator_0_0_bbox    |     1|
 |2     |design_1_auto_pc_0_bbox              |     1|
 |3     |design_1_auto_pc_1_bbox              |     1|
 |4     |design_1_axi_dma_0_0_bbox            |     1|
-|5     |design_1_axis_data_fifo_0_0_bbox     |     1|
-|6     |design_1_processing_system7_0_0_bbox |     1|
-|7     |design_1_rst_ps7_0_100M_0_bbox       |     1|
-|8     |design_1_system_ila_0_0_bbox         |     1|
-|9     |design_1_system_ila_1_0_bbox         |     1|
-|10    |design_1_system_ila_2_0_bbox         |     1|
-|11    |design_1_system_ila_3_0_bbox         |     1|
-|12    |design_1_system_ila_4_0_bbox         |     1|
-|13    |design_1_system_ila_5_0_bbox         |     1|
-|14    |design_1_xbar_0_bbox                 |     1|
-|15    |design_1_xbar_1_bbox                 |     1|
+|5     |design_1_processing_system7_0_0_bbox |     1|
+|6     |design_1_rst_ps7_0_100M_0_bbox       |     1|
+|7     |design_1_xbar_0_bbox                 |     1|
+|8     |design_1_xbar_1_bbox                 |     1|
 +------+-------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1270.996 ; gain = 200.527
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1193.871 ; gain = 118.227
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 1270.996 ; gain = 132.211
-Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1270.996 ; gain = 200.527
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 1193.871 ; gain = 49.023
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1193.871 ; gain = 118.227
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 1270.996 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1193.871 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1287.207 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1214.453 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-71 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+57 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1292.215 ; gain = 221.746
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1219.461 ; gain = 143.816
 INFO: [Common 17-1381] The checkpoint 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_proj/System_proj.runs/synth_1/design_1_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Dec 30 18:23:42 2020...
+INFO: [Common 17-206] Exiting Vivado at Fri Jan 29 16:21:57 2021...

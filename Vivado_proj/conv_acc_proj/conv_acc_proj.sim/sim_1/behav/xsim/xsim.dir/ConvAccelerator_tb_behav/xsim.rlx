@@ -1,0 +1,12 @@
+
+{ 
+    crc :  2312098387872827383  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto ee608dedb3624df6b2c2b6532aca0897 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot ConvAccelerator_tb_behav xil_defaultlib.ConvAccelerator_tb" , 
+    buildDate : "May 27 2020" , 
+    buildTime : "20:09:33" , 
+    linkCmd : "D:\\Vivado\\Vivado\\2020.1\\data\\..\\tps\\mingw\\6.2.0\\win64.o\\nt\\bin\\gcc.exe -Wa,-W  -O -Wl,--stack,104857600 -o \"xsim.dir/ConvAccelerator_tb_behav/xsimk.exe\"   \"xsim.dir/ConvAccelerator_tb_behav/obj/xsim_0.win64.obj\" \"xsim.dir/ConvAccelerator_tb_behav/obj/xsim_1.win64.obj\" -L\"D:\\Vivado\\Vivado\\2020.1\\lib\\win64.o\" -lrdi_simulator_kernel   -lrdi_simbridge_kernel" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 

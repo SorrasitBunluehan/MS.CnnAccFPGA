@@ -134,7 +134,7 @@ begin
     -- Next State Decode <Combinatorial>
 	------------------------------------------------------------------------
 	NEXT_STATE_DECODE:
-		process (hw_acc_en, c_t_f, c_state, w_addr_c, last_input, tvalid, tlast, x_col_cur, x_row_cur, pixel_last, x_prep_done, setzero, kernel_depth)
+		process (hw_acc_en,output_size, input_size, stride, c_t_f, c_state, w_addr_c, last_input, tvalid, tlast, x_col_cur, x_row_cur, pixel_last, x_prep_done, setzero, kernel_depth)
 		begin
 			n_state <= c_state;
 			if setzero = '1' then
@@ -369,7 +369,7 @@ begin
     compute_counter_rst <= (setzero) or (x_prep_done) or (not arstn);
 
     ROW_NEXT_DECODE:
-    process(x_row_cur)
+    process(x_row_cur, input_size)
     begin
         if x_row_cur = input_size-1 then
             x_row_nxt <= 0;
@@ -379,7 +379,7 @@ begin
     end process;
 
     COL_NEXT_DECODE:
-    process(x_col_cur)
+    process(x_col_cur, input_size)
     begin
         if x_col_cur = input_size-1 then
             x_col_nxt <= 0;
@@ -414,7 +414,7 @@ begin
     x_prep_counter_rst <= (not arstn) or (setzero);
 
     X_PREP_NEXT_DECODE:
-    process(x_prep_c)
+    process(x_prep_c, input_size, kernel_size)
     begin
         if x_prep_c = (input_size*kernel_size)-1 then
             x_prep_c_nxt <= 0;

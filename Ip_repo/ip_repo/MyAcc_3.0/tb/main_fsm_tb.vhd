@@ -103,12 +103,11 @@ architecture behav of main_fms_tb is
         );
         port (
             -- DEBUGGING PURPOSE
-
             clk : in std_logic;
             arstn : in std_logic;
             x_in : in std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);                -- 127 downto 0
             w_in : in std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);				 -- 16.16 fixed point
-            compute_en : in std_logic;
+            alu_en : in std_logic;
             alu_out : out std_logic_vector(DATA_WIDTH - 1 downto 0);
             alu_valid : out std_logic          -- Indication for output to Accumulation Unit
 
@@ -183,7 +182,7 @@ architecture behav of main_fms_tb is
             kernel_depth : in unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);
             stride : in unsigned(STRIDE_BIT_WIDTH-1 downto 0);
             hw_acc_en : in std_logic;
-            setzero : in std_logic;
+            setzero : out std_logic;
             af_en : in std_logic;
 
             clk, arstn : in std_logic;
@@ -373,7 +372,7 @@ begin
         arstn => XAXIS_ARSTN,
         x_in => db_out, 
         w_in => wgu_out0, 
-        compute_en => alu_en,
+        alu_en => alu_en,
         alu_out => alu_out0,
         alu_valid => alu_valid0
     );
@@ -387,7 +386,7 @@ begin
         arstn => XAXIS_ARSTN,
         x_in => db_out, 
         w_in => wgu_out1, 
-        compute_en => alu_en,
+        alu_en => alu_en,
         alu_out => alu_out1,
         alu_valid => alu_valid1
     );
@@ -440,12 +439,12 @@ begin
 		wait for CLK_PERIOD;
 		XAXIS_ARSTN <= '1';
 		wait for CLK_PERIOD;
-		input_size <= to_unsigned(7, input_size'length);
+		input_size <= to_unsigned(14, input_size'length);
 		input_depth <= to_unsigned(2, input_depth'length); 
-		kernel_size <= to_unsigned(3, kernel_size'length); 
+		kernel_size <= to_unsigned(4, kernel_size'length); 
 		kernel_depth <= to_unsigned(2, kernel_depth'length); 
-		stride <= to_unsigned(1, stride'length); 
-        af_en <= '1';
+		stride <= to_unsigned(2, stride'length); 
+        af_en <= '0';
 		wait for CLK_PERIOD;
 		hw_acc_en <= '1';
 		wait for CLK_PERIOD;
@@ -464,16 +463,22 @@ begin
             XAXIS_TDATA	<= x"FFFF_E000";
             wait for CLK_PERIOD;
             -- Forth Weight 
-            XAXIS_TDATA	<= x"0000_5000";
+            XAXIS_TDATA	<= x"FFFF_FA00";
             wait for CLK_PERIOD;
             -- Fifth Weight 
+            XAXIS_TDATA	<= x"0000_5000";
+            wait for CLK_PERIOD;
+            -- Third Weight 
             XAXIS_TDATA	<= x"FFFF_F000";
             wait for CLK_PERIOD;
             -- Third Weight 
             XAXIS_TDATA	<= x"0000_0400";
             wait for CLK_PERIOD;
             -- Third Weight 
-            XAXIS_TDATA	<= x"0000_0600";
+            XAXIS_TDATA	<= x"FFFF_F000";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            XAXIS_TDATA	<= x"0000_4000";
             wait for CLK_PERIOD;
             -- Third Weight 
             XAXIS_TDATA	<= x"FFFF_7C00";
@@ -481,36 +486,72 @@ begin
             -- Third Weight 
             XAXIS_TDATA	<= x"FFFF_E000";
             wait for CLK_PERIOD;
+            -- Third Weight 
+            XAXIS_TDATA	<= x"0000_2000";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            XAXIS_TDATA	<= x"FFFF_B800";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            XAXIS_TDATA	<= x"0000_0600";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            XAXIS_TDATA	<= x"FFFF_E000";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            XAXIS_TDATA	<= x"0000_0600";
+            wait for CLK_PERIOD;
 
             ---------------------
             -- Kernel #2 
             ---------------------
-
-            XAXIS_TDATA <= x"FFFF_FC00";
+            -- First Weight
+            XAXIS_TDATA	<= x"FFFF_FC00";
             wait for CLK_PERIOD;
             -- Second Weight 
             XAXIS_TDATA <= x"0000_8000";
             wait for CLK_PERIOD;
             -- Third Weight 
-            XAXIS_TDATA <= x"FFFF_FC00";
+            XAXIS_TDATA	<= x"0000_0400";
             wait for CLK_PERIOD;
             -- Forth Weight 
-            XAXIS_TDATA <= x"0000_0400";
+            XAXIS_TDATA	<= x"FFFF_E000";
             wait for CLK_PERIOD;
             -- Fifth Weight 
-            XAXIS_TDATA <= x"0000_0600";
+            XAXIS_TDATA	<= x"0000_1000";
             wait for CLK_PERIOD;
             -- Third Weight 
-            XAXIS_TDATA <= x"FFFF_E000";
+            XAXIS_TDATA	<= x"0000_0600";
             wait for CLK_PERIOD;
             -- Third Weight 
-            XAXIS_TDATA <= x"FFFF_E000";
+            XAXIS_TDATA	<= x"FFFF_E000";
             wait for CLK_PERIOD;
             -- Third Weight 
-            XAXIS_TDATA <= x"FFFF_F000";
+            XAXIS_TDATA	<= x"0000_0400";
             wait for CLK_PERIOD;
             -- Third Weight 
-            XAXIS_TDATA <= x"FFFF_F000";
+            XAXIS_TDATA	<= x"FFFF_E000";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            XAXIS_TDATA	<= x"FFFF_F000";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            XAXIS_TDATA	<= x"FFFF_F000";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            XAXIS_TDATA	<= x"0000_2000";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            XAXIS_TDATA	<= x"0000_0600";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            XAXIS_TDATA	<= x"FFFF_B800";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            XAXIS_TDATA	<= x"0000_1000";
+            wait for CLK_PERIOD;
+            -- Third Weight 
+            XAXIS_TDATA	<= x"0000_0600";
             XAXIS_TLAST <= '1';
             wait for CLK_PERIOD;
             XAXIS_TLAST <= '0';
@@ -518,166 +559,214 @@ begin
 
 
 ----------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-		---------------------
-		-- Weight Input
-		---------------------
-		--XAXIS_TVALID <= '1';
-		--for i in 0 to (to_integer(kernel_depth*kernel_size*kernel_size))-1 loop
-		--	XAXIS_TDATA <= std_logic_vector(to_unsigned(i,XAXIS_TDATA'length));
-		--	
-		--	-- Implement Pause Input Case (Due to some Error)
-		--	if i = (kernel_depth*kernel_size*kernel_size)/2 then
-		--		XAXIS_TVALID <= '0';
-		--		wait for CLK_PERIOD*30;
-		--	end if;
-		--	XAXIS_TVALID <= '1';
-
-		--	
-		--	-- Implement TLast logic
-		--	if i = (kernel_depth*kernel_size*kernel_size)-1 then
-		--		XAXIS_TLAST <= '1';
-		--	end if;
-
-		--	wait for CLK_PERIOD;
-		--end loop;
-		--XAXIS_TVALID <= '0';
-		--XAXIS_TLAST <= '0';
 		wait for CLK_PERIOD*5;
-
-
             ---------------------
             -- Data Input
             ---------------------
             XAXIS_TVALID <= '1';
-            for i in 0 to 97 loop
+            for i in 0 to to_integer(input_size*input_size*input_depth)-1 loop
                 --s00_axis_tdata <= std_logic_vector(to_unsigned(i,s00_axis_tdata'length));
                 XAXIS_TDATA <= std_logic_vector(shift_left(to_unsigned(i,XAXIS_TDATA'length), 16));
 
                 -- Implement Pause Input Case (Due to some Error)
                 --if i = (input_size*input_size)/2 then
                 --    XAXIS_TVALID <= '0';
-                --    wait for CLK_PERIOD*30;
-                --end if;
+                    --    wait for CLK_PERIOD*30;
+                    --end if;
                 --XAXIS_TVALID <= '1';
 
-                if i = 97 then
+                if i = to_integer(input_size*input_size*input_depth)-1 then
                     XAXIS_TLAST <= '1';
                 end if;
-                wait until rising_edge(XAXIS_ACLK) and XAXIS_TREADY = '1';
 
+                wait until rising_edge(XAXIS_ACLK) and XAXIS_TREADY = '1';
             end loop;
             XAXIS_TDATA <= (others => '1'); 
             XAXIS_TVALID <= '0';
             XAXIS_TLAST <= '0';
-            wait;
+            wait for CLK_PERIOD*300;
 
 
 ---------------------------------------------------------------------------------------------------------------------------------
-		--for i in 0 to (to_integer(input_size*input_size*input_depth)-1) loop
-		--	XAXIS_TDATA <= std_logic_vector(to_unsigned(i,XAXIS_TDATA'length));
 
-		--	-- Implement Pause Input Case (Due to some Error)
-		--	if i = (input_size*input_size)/2 then
-		--		XAXIS_TVALID <= '0';
-		--		wait for CLK_PERIOD*30;
-		--	end if;
-		--	XAXIS_TVALID <= '1';
-
-		--	if i = (to_integer(input_size*input_size*input_depth)-1) then
-		--		XAXIS_TLAST <= '1';
-		--	end if;
-		--	wait until rising_edge(XAXIS_ACLK) and XAXIS_TREADY = '1';
-
-		--end loop;
-		--XAXIS_TDATA <= (others => '1'); 
-		--XAXIS_TVALID <= '0';
-		--XAXIS_TLAST <= '0';
-
-		--wait for CLK_PERIOD*500;
-		------------------------------
-		---- Reset Every Module 
-		------------------------------
-		--setzero <= '1';
-		--wait for CLK_PERIOD;
-		--setzero <= '0';
-		--wait for CLK_PERIOD*5;
-
-		-----------------------------------------------------------------------------------
-		-- Second Network Config.
-		-----------------------------------------------------------------------------------
-		--input_size <= to_unsigned(8, input_size'length);
-		--input_depth <= to_unsigned(20, input_depth'length); 
-		--kernel_size <= to_unsigned(3, kernel_size'length); 
-		--kernel_depth <= to_unsigned(10, kernel_depth'length); 
-		--stride <= to_unsigned(1, stride'length); 
-		--wait for CLK_PERIOD;
-		--hw_acc_en <= '1';
-		--wait for CLK_PERIOD;
-
-		-----------------------
-		---- Weight Input
-		-----------------------
-		--XAXIS_TVALID <= '1';
-		--for i in 0 to (to_integer(kernel_depth*kernel_size*kernel_size))-1 loop
-		--	XAXIS_TDATA <= std_logic_vector(to_unsigned(i,XAXIS_TDATA'length));
-		--	
-		--	-- Implement Pause Input Case (Due to some Error)
-		--	if i = (kernel_depth*kernel_size*kernel_size)/2 then
-		--		XAXIS_TVALID <= '0';
-		--		wait for CLK_PERIOD*30;
-		--	end if;
-		--	XAXIS_TVALID <= '1';
-
-		--	
-		--	-- Implement TLast logic
-		--	if i = (kernel_depth*kernel_size*kernel_size)-1 then
-		--		XAXIS_TLAST <= '1';
-		--	end if;
-
-		--	wait for CLK_PERIOD;
-		--end loop;
-		--XAXIS_TVALID <= '0';
-		--XAXIS_TLAST <= '0';
-		--wait for CLK_PERIOD*5;
-
-		-----------------------
-		---- Data Input
-		-----------------------
-		--XAXIS_TVALID <= '1';
-		--for i in 0 to (to_integer(input_size*input_size*input_depth)-1) loop
-		--	XAXIS_TDATA <= std_logic_vector(to_unsigned(i,XAXIS_TDATA'length));
-
-		--	-- Implement Pause Input Case (Due to some Error)
-		--	if i = (input_size*input_size)/2 then
-		--		XAXIS_TVALID <= '0';
-		--		wait for CLK_PERIOD*30;
-		--	end if;
-		--	XAXIS_TVALID <= '1';
-
-		--	if i = (to_integer(input_size*input_size*input_depth)-1) then
-		--		XAXIS_TLAST <= '1';
-		--	end if;
-		--	wait until rising_edge(XAXIS_ACLK) and XAXIS_TREADY = '1';
-
-		--end loop;
-		--XAXIS_TDATA <= (others => '1'); 
-		--XAXIS_TVALID <= '0';
-		--XAXIS_TLAST <= '0';
+        -- Second Network
+        hw_acc_en <= '0';
+        wait for CLK_PERIOD;
+        input_size <= to_unsigned(6, input_size'length);
+		input_depth <= to_unsigned(2, input_depth'length); 
+		kernel_size <= to_unsigned(3, kernel_size'length); 
+		kernel_depth <= to_unsigned(4, kernel_depth'length); 
+		stride <= to_unsigned(1, stride'length); 
+        af_en <= '1';
+		wait for CLK_PERIOD;
+		hw_acc_en <= '1';
+		wait for CLK_PERIOD;
+        
 
 
-		--wait for CLK_PERIOD*500;
-		------------------------------
-		---- Reset Every Module 
-		------------------------------
-		--setzero <= '1';
-		--wait for CLK_PERIOD;
-		--setzero <= '0';
-		--wait for CLK_PERIOD*5;
-		--wait;
+
+
+        ---------------------
+        -- Kernel #3 
+        ---------------------
+        XAXIS_TVALID <= '1';
+        -- First Weight
+        XAXIS_TDATA	<= x"0000_8000";
+        wait for CLK_PERIOD;
+        -- Second Weight 
+        XAXIS_TDATA <= x"0000_4000";
+        wait for CLK_PERIOD;
+        -- Third Weight 
+        XAXIS_TDATA	<= x"FFFF_E000";
+        wait for CLK_PERIOD;
+        -- Forth Weight 
+        XAXIS_TDATA	<= x"0000_5000";
+        wait for CLK_PERIOD;
+        -- Fifth Weight 
+        XAXIS_TDATA	<= x"FFFF_F000";
+        wait for CLK_PERIOD;
+        -- Third Weight 
+        XAXIS_TDATA	<= x"0000_0400";
+        wait for CLK_PERIOD;
+        -- Third Weight 
+        XAXIS_TDATA	<= x"0000_0600";
+        wait for CLK_PERIOD;
+        -- Third Weight 
+        XAXIS_TDATA	<= x"FFFF_7C00";
+        wait for CLK_PERIOD;
+        -- Third Weight 
+        XAXIS_TDATA	<= x"FFFF_E000";
+        wait for CLK_PERIOD;
+
+        ---------------------
+        -- Kernel #4 
+        ---------------------
+        XAXIS_TVALID <= '1';
+        -- First Weight
+        XAXIS_TDATA	<= x"FFFF_FC00";
+        wait for CLK_PERIOD;
+        -- Second Weight 
+        XAXIS_TDATA <= x"0000_8000";
+        wait for CLK_PERIOD;
+        -- Third Weight 
+        XAXIS_TDATA	<= x"FFFF_FC00";
+        wait for CLK_PERIOD;
+        -- Forth Weight 
+        XAXIS_TDATA	<= x"0000_0400";
+        wait for CLK_PERIOD;
+        -- Fifth Weight 
+        XAXIS_TDATA	<= x"0000_0600";
+        wait for CLK_PERIOD;
+        -- Third Weight 
+        XAXIS_TDATA	<= x"FFFF_E000";
+        wait for CLK_PERIOD;
+        -- Third Weight 
+        XAXIS_TDATA	<= x"FFFF_E000";
+        wait for CLK_PERIOD;
+        -- Third Weight 
+        XAXIS_TDATA	<= x"FFFF_F000";
+        wait for CLK_PERIOD;
+        -- Third Weight 
+        XAXIS_TDATA	<= x"FFFF_F000";
+        wait for CLK_PERIOD;
+
+        ---------------------
+        -- Kernel #5
+        ---------------------
+        XAXIS_TVALID <= '1';
+        -- First Weight
+        XAXIS_TDATA	<= x"0000_8000";
+        wait for CLK_PERIOD;
+        -- Second Weight 
+        XAXIS_TDATA <= x"0000_4000";
+        wait for CLK_PERIOD;
+        -- Third Weight 
+        XAXIS_TDATA	<= x"FFFF_E000";
+        wait for CLK_PERIOD;
+        -- Forth Weight 
+        XAXIS_TDATA	<= x"0000_5000";
+        wait for CLK_PERIOD;
+        -- Fifth Weight 
+        XAXIS_TDATA	<= x"FFFF_F000";
+        wait for CLK_PERIOD;
+        -- Third Weight 
+        XAXIS_TDATA	<= x"0000_0400";
+        wait for CLK_PERIOD;
+        -- Third Weight 
+        XAXIS_TDATA	<= x"0000_0600";
+        wait for CLK_PERIOD;
+        -- Third Weight 
+        XAXIS_TDATA	<= x"FFFF_7C00";
+        wait for CLK_PERIOD;
+        -- Third Weight 
+        XAXIS_TDATA	<= x"FFFF_E000";
+        wait for CLK_PERIOD;
+
+        ---------------------
+        -- Kernel #6 
+        ---------------------
+        XAXIS_TVALID <= '1';
+        -- First Weight
+        XAXIS_TDATA	<= x"FFFF_FC00";
+        wait for CLK_PERIOD;
+        -- Second Weight 
+        XAXIS_TDATA <= x"0000_8000";
+        wait for CLK_PERIOD;
+        -- Third Weight 
+        XAXIS_TDATA	<= x"FFFF_FC00";
+        wait for CLK_PERIOD;
+        -- Forth Weight 
+        XAXIS_TDATA	<= x"0000_0400";
+        wait for CLK_PERIOD;
+        -- Fifth Weight 
+        XAXIS_TDATA	<= x"0000_0600";
+        wait for CLK_PERIOD;
+        -- Third Weight 
+        XAXIS_TDATA	<= x"FFFF_E000";
+        wait for CLK_PERIOD;
+        -- Third Weight 
+        XAXIS_TDATA	<= x"FFFF_E000";
+        wait for CLK_PERIOD;
+        -- Third Weight 
+        XAXIS_TDATA	<= x"FFFF_F000";
+        wait for CLK_PERIOD;
+        -- Third Weight 
+        XAXIS_TDATA	<= x"FFFF_F000";
+        XAXIS_TLAST <= '1';
+        wait for CLK_PERIOD;
+        XAXIS_TLAST <= '0';
+        XAXIS_TVALID <= '0';
+
+----------------------------------------------------------------------------------------------------------------------------
+
+        wait for CLK_PERIOD*5;
+        ---------------------
+        -- Data Input
+        ---------------------
+        XAXIS_TVALID <= '1';
+        for i in 0 to to_integer(input_size*input_size*input_depth)-1 loop
+            --s00_axis_tdata <= std_logic_vector(to_unsigned(i,s00_axis_tdata'length));
+            XAXIS_TDATA <= std_logic_vector(shift_left(to_unsigned(i,XAXIS_TDATA'length), 16));
+
+            -- Implement Pause Input Case (Due to some Error)
+            --if i = (input_size*input_size)/2 then
+            --    XAXIS_TVALID <= '0';
+                --    wait for CLK_PERIOD*30;
+                --end if;
+            --XAXIS_TVALID <= '1';
+
+            if i = to_integer(input_size*input_size*input_depth)-1 then
+                XAXIS_TLAST <= '1';
+            end if;
+
+            wait until rising_edge(XAXIS_ACLK) and XAXIS_TREADY = '1';
+        end loop;
+        XAXIS_TDATA <= (others => '1'); 
+        XAXIS_TVALID <= '0';
+        XAXIS_TLAST <= '0';
+        wait for CLK_PERIOD*10;
+        wait;
+
 
 	end process;
 

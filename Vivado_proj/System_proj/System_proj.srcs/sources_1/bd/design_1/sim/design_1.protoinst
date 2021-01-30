@@ -3,7 +3,7 @@
 	"modules": {
 		"design_1": {
 			"proto_instances": {
-				"/MyAcc_0/M00_AXIS": {
+				"/ConvAccelerator_0/m00_axis": {
 					"interface": "xilinx.com:interface:axis:1.0",
 					"ports": {
 						"ACLK": { "actual": "m00_axis_aclk"},
@@ -15,7 +15,7 @@
 						"TVALID": { "actual": "m00_axis_tvalid"}
 					}
 				},
-				"/MyAcc_0/S00_AXIS": {
+				"/ConvAccelerator_0/s00_axis": {
 					"interface": "xilinx.com:interface:axis:1.0",
 					"ports": {
 						"ACLK": { "actual": "s00_axis_aclk"},
@@ -27,7 +27,7 @@
 						"TVALID": { "actual": "s00_axis_tvalid"}
 					}
 				},
-				"/MyAcc_0/S01_AXI": {
+				"/ConvAccelerator_0/s01_axi": {
 					"interface": "xilinx.com:interface:aximm:1.0",
 					"ports": {
 						"ACLK": { "actual": "s01_axi_aclk"},
@@ -631,30 +631,6 @@
 						"WREADY": { "actual": "s_axi_wready[1:1]"},
 						"WSTRB": { "actual": "s_axi_wstrb[7:4]"},
 						"WVALID": { "actual": "s_axi_wvalid[1:1]"}
-					}
-				},
-				"/axis_data_fifo_0/M_AXIS": {
-					"interface": "xilinx.com:interface:axis:1.0",
-					"ports": {
-						"ACLK": { "actual": "s_axis_aclk"},
-						"ARESETN": { "actual": "s_axis_aresetn"},
-						"TDATA": { "actual": "m_axis_tdata"},
-						"TKEEP": { "actual": "m_axis_tkeep"},
-						"TLAST": { "actual": "m_axis_tlast"},
-						"TREADY": { "actual": "m_axis_tready"},
-						"TVALID": { "actual": "m_axis_tvalid"}
-					}
-				},
-				"/axis_data_fifo_0/S_AXIS": {
-					"interface": "xilinx.com:interface:axis:1.0",
-					"ports": {
-						"ACLK": { "actual": "s_axis_aclk"},
-						"ARESETN": { "actual": "s_axis_aresetn"},
-						"TDATA": { "actual": "s_axis_tdata"},
-						"TKEEP": { "actual": "s_axis_tkeep"},
-						"TLAST": { "actual": "s_axis_tlast"},
-						"TREADY": { "actual": "s_axis_tready"},
-						"TVALID": { "actual": "s_axis_tvalid"}
 					}
 				},
 				"/processing_system7_0/M_AXI_GP0": {

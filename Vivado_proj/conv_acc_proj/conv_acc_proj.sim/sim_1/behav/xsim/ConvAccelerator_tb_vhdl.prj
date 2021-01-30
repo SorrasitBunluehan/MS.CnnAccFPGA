@@ -1,0 +1,17 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ACCU.vhd" \
+"../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ALU.vhd" \
+"../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/BRAM_SP.vhd" \
+"../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ConvAccelerator.vhd" \
+"../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/DIS_RAM_SP.vhd" \
+"../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/MyAccelerator_v2_0_S00_AXI.vhd" \
+"../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd" \
+"../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/dff.vhd" \
+"../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/main_fsm.vhd" \
+"../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/w_sticker.vhd" \
+"../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/weight_buffer.vhd" \
+"../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/ConvAccelerator_tb.vhd" \
+
+# Do not sort compile order
+nosort

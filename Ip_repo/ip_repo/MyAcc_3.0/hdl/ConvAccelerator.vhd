@@ -7,8 +7,8 @@ entity ConvAccelerator is
         ------------------------------------
         -- Network Information Bitwidth 
         ------------------------------------
-        INPUT_SIZE_BIT_WIDTH : natural := 16;
-        INPUT_DEPTH_BIT_WIDTH : natural := 13;
+        INPUT_SIZE_BIT_WIDTH : natural := 16; 
+        INPUT_DEPTH_BIT_WIDTH : natural := 13; 
         STRIDE_BIT_WIDTH : natural := 3;  
         KERNEL_DEPTH_BIT_WIDTH : natural := 13;
         KERNEL_SIZE_BIT_WIDTH : natural := 8;
@@ -16,9 +16,9 @@ entity ConvAccelerator is
         ---------------------------------------
         -- Maximum Value
         ---------------------------------------
-        MAX_KERNEL_DEPTH    : natural := 16;
+        MAX_KERNEL_DEPTH    : natural :=  32;
         MAX_COMPUTE_BYTE    : natural := 25;
-        MAX_INPUT_SIZE      : natural := 10;
+        MAX_INPUT_SIZE      : natural := 32;
         MAX_KERNEL_SIZE     : natural := 5;
 
 
@@ -27,15 +27,14 @@ entity ConvAccelerator is
         ADDR_WIDTH: natural := 8;
 
 		-- Parameters of Axi Slave Bus Interface S00_AXIS
-		C_S00_AXIS_TDATA_WIDTH	: integer	:= 32;
+		C_S00_AXIS_TDATA_WIDTH	: integer := 32;
 
 		-- Parameters of Axi Slave Bus Interface S01_AXI
-		C_S01_AXI_DATA_WIDTH	: integer	:= 32;
-		C_S01_AXI_ADDR_WIDTH	: integer	:= 8;
+		C_S01_AXI_DATA_WIDTH	: integer := 32;
+		C_S01_AXI_ADDR_WIDTH	: integer := 8 ;
 
 		-- Parameters of Axi Master Bus Interface M00_AXIS
-		C_M00_AXIS_TDATA_WIDTH	: integer	:= 32;
-		C_M00_AXIS_START_COUNT	: integer	:= 32
+		C_M00_AXIS_TDATA_WIDTH	: integer := 32
 	);
 	port (
 		-- Users to add ports here
@@ -123,7 +122,8 @@ architecture arch_imp of ConvAccelerator is
             kernel_depth : out unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);
             stride : out unsigned(STRIDE_BIT_WIDTH-1 downto 0);
             hw_acc_en : out std_logic;
-            done : in std_logic;
+            setzero : in std_logic;
+            af_en : out std_logic;
 
             S_AXI_ACLK	: in std_logic;
             S_AXI_ARESETN	: in std_logic;
@@ -149,93 +149,55 @@ architecture arch_imp of ConvAccelerator is
 		);
 	end component MyAccelerator_v2_0_S00_AXI;
 
-	component MyAccelerator_v2_0_M01_AXIS is
-		generic (
-				-- Users to add parameters here
-
-				-- User parameters ends
-				-- Do not modify the parameters beyond this line
-
-				-- Width of S_AXIS address bus. The slave accepts the read and write addresses of width C_M_AXIS_TDATA_WIDTH.
-				C_M_AXIS_TDATA_WIDTH	: integer	:= 32;
-				-- Start count is the number of clock cycles the master will wait before initiating/issuing any transaction.
-				C_M_START_COUNT	: integer	:= 32
-			);
-			port (
-				-- Users to add ports here
-
-				-- User ports ends
-				-- Do not modify the ports beyond this line
-
-				-- Global ports
-				M_AXIS_ACLK	: in std_logic;
-				-- 
-				M_AXIS_ARESETN	: in std_logic;
-				-- Master Stream Ports. TVALID indicates that the master is driving a valid transfer, 
-				-- A transfer takes place when both TVALID and TREADY are asserted. 
-				M_AXIS_TVALID	: out std_logic;
-				-- TDATA is the primary payload that is used to provide the data that is passing across 
-				-- the interface from the master.
-				M_AXIS_TDATA	: out std_logic_vector(C_M_AXIS_TDATA_WIDTH-1 downto 0);
-				-- TSTRB is the byte qualifier that indicates whether the content of the associated byte 
-				-- of TDATA is processed as a data byte or a position byte.
-				M_AXIS_TSTRB	: out std_logic_vector((C_M_AXIS_TDATA_WIDTH/8)-1 downto 0);
-				-- TLAST indicates the boundary of a packet.
-				M_AXIS_TLAST	: out std_logic;
-				-- TREADY indicates that the slave can accept a transfer in the current cycle.
-				M_AXIS_TREADY	: in std_logic
-			);
-	end component;
-
     component main_fsm is
-		generic(
-			------------------------------------
-			-- Network Information Bitwidth 
-			------------------------------------
-			INPUT_SIZE_BIT_WIDTH : natural;
-			INPUT_DEPTH_BIT_WIDTH : natural;
-			STRIDE_BIT_WIDTH : natural;  
-			KERNEL_DEPTH_BIT_WIDTH : natural;
-			KERNEL_SIZE_BIT_WIDTH : natural;
-		
+        generic(
+            ------------------------------------
+            -- Network Information Bitwidth 
+            ------------------------------------
+            INPUT_SIZE_BIT_WIDTH : natural;
+            INPUT_DEPTH_BIT_WIDTH : natural;
+            STRIDE_BIT_WIDTH : natural;  
+            KERNEL_DEPTH_BIT_WIDTH : natural;
+            KERNEL_SIZE_BIT_WIDTH : natural;
+        
             DATA_WIDTH : natural;
             ADDR_WIDTH : natural
-		); 
-		port (
-			-- Network Config Signal
-			input_size : in unsigned(INPUT_SIZE_BIT_WIDTH -1 downto 0);
-			input_depth : in unsigned(INPUT_DEPTH_BIT_WIDTH-1 downto 0);
-			kernel_size : in unsigned(KERNEL_SIZE_BIT_WIDTH-1 downto 0);
-			kernel_depth : in unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);
-			stride : in unsigned(STRIDE_BIT_WIDTH-1 downto 0);
-			hw_acc_en : in std_logic;
-
-			-- Input signals
-			clk : in std_logic;
-			arstn : in std_logic;
-			tvalid : in std_logic;
-			tlast : in std_logic;
-			w_addr_c : in std_logic_vector(ADDR_WIDTH-1 downto 0);
+        ); 
+        port (
+            -- Network Config Signal
+            input_size : in unsigned(INPUT_SIZE_BIT_WIDTH -1 downto 0);
+            input_depth : in unsigned(INPUT_DEPTH_BIT_WIDTH-1 downto 0);
+            kernel_size : in unsigned(KERNEL_SIZE_BIT_WIDTH-1 downto 0);
+            kernel_depth : in unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);
+            stride : in unsigned(STRIDE_BIT_WIDTH-1 downto 0);
+            hw_acc_en : in std_logic;
             setzero : in std_logic;
 
-			-- Output to AGU
-			agu_en : out std_logic;
+            -- Input signals
+            clk : in std_logic;
+            arstn : in std_logic;
+            tvalid : in std_logic;
+            tlast : in std_logic;
+            w_addr_c : in std_logic_vector(ADDR_WIDTH-1 downto 0);
 
-			-- Output to WGU
-			w_addr_incr : out std_logic;
+            -- Output to AGU
+            db_en : out std_logic;
 
-			-- Output to mux
-			mux_sel : out std_logic;
+            -- Output to WGU
+            w_addr_incr : out std_logic;
 
-			-- Output to DMA
-			tready : out std_logic;
+            -- Output to mux
+            mux_sel : out std_logic;
 
-			-- Output to ALU
-			alu_en : out std_logic
-		);
-	end component;
+            -- Output to DMA
+            tready : out std_logic;
 
-	component wgu is
+            -- Output to ALU
+            alu_en : out std_logic
+        );
+    end component;
+
+	component weight_buffer is
 		generic(
 			------------------------------------
 			-- Network Information Bitwidth 
@@ -243,6 +205,7 @@ architecture arch_imp of ConvAccelerator is
 			KERNEL_SIZE_BIT_WIDTH : natural;
 			KERNEL_DEPTH_BIT_WIDTH : natural;
 			MAX_KERNEL_DEPTH : natural; 
+            MAX_KERNEL_SIZE : natural;
 
             -- Info. abt. input 
             DATA_WIDTH : natural;			-- Number of bit for input data (default = 32)
@@ -256,20 +219,20 @@ architecture arch_imp of ConvAccelerator is
 			kernel_size : in unsigned(KERNEL_SIZE_BIT_WIDTH-1 downto 0); 
 			kernel_depth : in unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);
             hw_acc_en : in std_logic;
-            setzero : in std_logic;
 
+            setzero : in std_logic;
 			clk : in std_logic;
 			arstn : in std_logic;
 			d_in : in std_logic_vector(DATA_WIDTH-1 downto 0);
 			w_valid : in std_logic;
 			w_addr_incr : in std_logic;
-			wgu_out0 : out std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);
-			wgu_out1 : out std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);
+			weight_out0 : out std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);
+			weight_out1 : out std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);
 			w_addr_c : out std_logic_vector(ADDR_WIDTH-1 downto 0)
 		);
 	end component;
 
-    component AGU is
+    component data_buffer is
         generic(
             ------------------------------------
             -- Maximum Comdition
@@ -295,10 +258,10 @@ architecture arch_imp of ConvAccelerator is
             
             clk : in std_logic;
             arstn : in std_logic;
-            agu_in : in std_logic_vector(DATA_WIDTH-1 downto 0);
-            agu_en : in std_logic;
+            db_in : in std_logic_vector(DATA_WIDTH-1 downto 0);
+            db_en : in std_logic;
             -- Output
-            agu_out : out std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0)
+            db_out : out std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0)
         );
     end component;
 
@@ -311,6 +274,7 @@ architecture arch_imp of ConvAccelerator is
             -- DEBUGGING PURPOSE
 
             clk : in std_logic;
+            arstn : in std_logic;
             x_in : in std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);                -- 127 downto 0
             w_in : in std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);				 -- 16.16 fixed point
             compute_en : in std_logic;
@@ -349,12 +313,19 @@ architecture arch_imp of ConvAccelerator is
             kernel_depth : in unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);
             stride : in unsigned(STRIDE_BIT_WIDTH-1 downto 0);
             hw_acc_en : in std_logic;
-            setzero : in std_logic;
+            setzero : out std_logic;
+            af_en : in std_logic;
 
             clk, arstn : in std_logic;
             din0, din1 : in std_logic_vector(DATA_WIDTH - 1 downto 0);
             valid0, valid1 : in std_logic;
-            accu_ready : out std_logic
+
+            -- AXIS Master Interface
+            M_AXIS_TVALID	: out std_logic;
+            M_AXIS_TDATA	: out std_logic_vector(DATA_WIDTH-1 downto 0);
+            M_AXIS_TSTRB	: out std_logic_vector((DATA_WIDTH/8)-1 downto 0);
+            M_AXIS_TLAST	: out std_logic;
+            M_AXIS_TREADY	: in std_logic
         );
     end component;
 
@@ -364,25 +335,26 @@ architecture arch_imp of ConvAccelerator is
 	-- Main MUX variables
 	signal mux_sel : std_logic;
 	
-	-- WGU Signal
-	signal wgu_out0 : std_logic_vector((MAX_COMPUTE_BYTE*C_S00_AXIS_TDATA_WIDTH)-1 downto 0);
-	signal wgu_out1 : std_logic_vector((MAX_COMPUTE_BYTE*C_S00_AXIS_TDATA_WIDTH)-1 downto 0);
-	signal wgu_tvalid : std_logic;
-	signal wgu_tdata : std_logic_vector(C_S00_AXIS_TDATA_WIDTH-1 downto 0);
+	-- Weight Buffer Signal
+	signal weight_out0, weight_out1 : std_logic_vector((MAX_COMPUTE_BYTE*C_S00_AXIS_TDATA_WIDTH)-1 downto 0);
+	signal weight_valid : std_logic;
+	signal weight_in : std_logic_vector(C_S00_AXIS_TDATA_WIDTH-1 downto 0);
+    signal w_addr_c : std_logic_vector(ADDR_WIDTH-1 downto 0);
+	signal w_addr_incr : std_logic;
 
 	-- FSM Signal
-	signal agu_ready, compute_done, main_en, input_mux , alu_en, w_addr_incr : std_logic;
+	signal agu_ready, compute_done, main_en, input_mux : std_logic;
 
-	-- AGU Signal
-	signal agu_out : std_logic_vector((MAX_COMPUTE_BYTE*C_S00_AXIS_TDATA_WIDTH)-1 downto 0);
-	signal w_addr_c : std_logic_vector(ADDR_WIDTH-1 downto 0);
-	signal agu_en : std_logic;
-	signal agu_tdata : std_logic_vector(C_S00_AXIS_TDATA_WIDTH-1 downto 0); 
-	signal agu_tvalid : std_logic;
+	-- Data Buffer Signal
+    signal db_en : std_logic;
+	signal db_tdata : std_logic_vector(C_S00_AXIS_TDATA_WIDTH-1 downto 0); 
+	signal db_tvalid : std_logic;
+    signal db_out : std_logic_vector((MAX_COMPUTE_BYTE*C_S00_AXIS_TDATA_WIDTH)-1 downto 0);
 
 	-- ALU signal
 	signal alu0_out, alu1_out : std_logic_vector(C_S00_AXIS_TDATA_WIDTH-1 downto 0);
 	signal alu0_valid, alu1_valid  : std_logic;
+    signal alu_en  : std_logic;
 
 	-- ACCU signal
 	signal accu_ready : std_logic;
@@ -395,6 +367,7 @@ architecture arch_imp of ConvAccelerator is
     signal stride_s 			: unsigned(STRIDE_BIT_WIDTH-1 downto 0);
 	signal hw_acc_en_s : std_logic;
     signal setzero_s : std_logic;
+    signal af_en_s : std_logic;
 
 
 	-- M01_AXIS
@@ -428,7 +401,8 @@ begin
 			kernel_depth => kernel_depth_s,
 			stride => stride_s,
 			hw_acc_en => hw_acc_en_s,
-			done => done_s,
+            setzero => setzero_s,
+            af_en => af_en_s,
 
 			S_AXI_ACLK		=> s01_axi_aclk,
 			S_AXI_ARESETN	=> s01_axi_aresetn,
@@ -452,20 +426,6 @@ begin
 			S_AXI_RVALID	=> s01_axi_rvalid,
 			S_AXI_RREADY	=> s01_axi_rready
 		);
-
-	MyAccelerator_v2_0_M01_AXIS_inst : MyAccelerator_v2_0_M01_AXIS
-		generic map (
-			C_M_AXIS_TDATA_WIDTH	  => C_M00_AXIS_TDATA_WIDTH	,	
-			C_M_START_COUNT	          => 20							-- Amount of CLK that FSM will wait before start.
-		)port map (                 
-			M_AXIS_ACLK	              => m00_axis_aclk,	
-			M_AXIS_ARESETN	          => m00_axis_aresetn,
-			M_AXIS_TVALID             => m00_axis_tvalid,
-			M_AXIS_TDATA	          => m00_axis_tdata,
-			M_AXIS_TSTRB	          => m00_axis_tstrb,
-			M_AXIS_TLAST	          => m00_axis_tlast,
-			M_AXIS_TREADY	          => m00_axis_tready
-		);                        
 
 	main_fsm_dut : main_fsm
 		generic map(
@@ -494,7 +454,7 @@ begin
 			w_addr_c 	 => w_addr_c,
 
 			-- Output
-			agu_en 	 	 => agu_en, 	
+			db_en => db_en, 	
 			w_addr_incr  => w_addr_incr, 	
 			mux_sel 	 => mux_sel, 	
 			tready 		 => s00_axis_tready, 
@@ -505,11 +465,12 @@ begin
 			--done 		 => done_test
 		);
 			
-	wgu_dut : wgu
+	weight_buffer_dut : weight_buffer
 		generic map(
 			KERNEL_SIZE_BIT_WIDTH 		=>		KERNEL_SIZE_BIT_WIDTH, 			
 			KERNEL_DEPTH_BIT_WIDTH 		=>      KERNEL_DEPTH_BIT_WIDTH, 	
 			MAX_KERNEL_DEPTH 			=>      MAX_KERNEL_DEPTH,	
+            MAX_KERNEL_SIZE => MAX_KERNEL_SIZE,
 
             DATA_WIDTH          =>  C_S00_AXIS_TDATA_WIDTH,	 
             MAX_COMPUTE_BYTE    =>  MAX_COMPUTE_BYTE,
@@ -518,19 +479,19 @@ begin
 			kernel_size 	=>		kernel_size_s,
 			kernel_depth 	=>		kernel_depth_s,
             hw_acc_en       =>      hw_acc_en_s,
-            setzero         =>      setzero_s,
 
+            setzero         =>      setzero_s,
 			clk 			=> 		s00_axis_aclk,
 			arstn       	=> 		s00_axis_aresetn,
-			d_in        	=> 		wgu_tdata,
-			w_valid     	=> 		wgu_tvalid,
+			d_in        	=> 		weight_in,
+			w_valid     	=> 		weight_valid,
 			w_addr_incr 	=> 		w_addr_incr,
-			wgu_out0    	=> 		wgu_out0,
-			wgu_out1    	=> 		wgu_out1,
+			weight_out0    	=> 		weight_out0,
+			weight_out1    	=> 		weight_out1,
 			w_addr_c 		=> 		w_addr_c
 		);
 
-    agu_dut : AGU
+    data_buffer_dut : data_buffer
         generic map(
             MAX_INPUT_SIZE => MAX_INPUT_SIZE,
             MAX_KERNEL_SIZE => MAX_KERNEL_SIZE,
@@ -551,10 +512,10 @@ begin
             
             clk => s00_axis_aclk,	
             arstn => s00_axis_aresetn,	
-            agu_in => agu_tdata, 
-            agu_en => agu_en,
+            db_in => db_tdata, 
+            db_en => db_en,
             -- Output
-            agu_out => agu_out
+            db_out => db_out
         );
 
 
@@ -564,8 +525,9 @@ begin
             MAX_COMPUTE_BYTE => MAX_COMPUTE_BYTE
         )port map(
             clk => s00_axis_aclk,
-            x_in => agu_out,
-            w_in =>wgu_out0,
+            arstn => s00_axis_aresetn,
+            x_in => db_out,
+            w_in => weight_out0,
             compute_en => alu_en,
             alu_out => alu0_out,
             alu_valid => alu0_valid
@@ -577,8 +539,9 @@ begin
             MAX_COMPUTE_BYTE => MAX_COMPUTE_BYTE
         )port map(
             clk => s00_axis_aclk,
-            x_in => agu_out,
-            w_in =>wgu_out1,
+            arstn => s00_axis_aresetn,
+            x_in => db_out,
+            w_in => weight_out1,
             compute_en => alu_en,
             alu_out => alu1_out,
             alu_valid => alu1_valid
@@ -606,6 +569,7 @@ begin
             stride          => stride_s, 
             hw_acc_en       => hw_acc_en_s, 
             setzero         => setzero_s, 
+            af_en           => af_en_s,
 
             clk             => s00_axis_aclk, 
             arstn           => s00_axis_aresetn,
@@ -613,7 +577,11 @@ begin
             din1            => alu1_out,
             valid0          => alu0_valid,
             valid1          => alu1_valid,
-            accu_ready      => accu_ready
+            M_AXIS_TVALID   => m00_axis_tvalid,
+            M_AXIS_TDATA    => m00_axis_tdata,
+            M_AXIS_TSTRB    => m00_axis_tstrb,
+            M_AXIS_TLAST    => m00_axis_tlast,
+            M_AXIS_TREADY   => m00_axis_tready
        );
 
     --------------------------------------------------------------------
@@ -623,15 +591,15 @@ begin
 		process(s00_axis_aclk, s00_axis_tvalid, mux_sel)
 		begin
 			if mux_sel = '0' then
-				agu_tdata <= (others => '0');
-				agu_tvalid <= '0';
-				wgu_tdata  <= s00_axis_tdata;	
-				wgu_tvalid <= s00_axis_tvalid;
+				db_tdata <= (others => '0');
+				db_tvalid <= '0';
+				weight_in  <= s00_axis_tdata;	
+				weight_valid <= s00_axis_tvalid;
 			else 
-				agu_tdata <= s00_axis_tdata;
-				agu_tvalid <= s00_axis_tvalid;
-				wgu_tdata  <= (others => '0');
-				wgu_tvalid <= '0';
+				db_tdata <= s00_axis_tdata;
+				db_tvalid <= s00_axis_tvalid;
+				weight_in  <= (others => '0');
+				weight_valid <= '0';
 			end if;
 		end process;
 

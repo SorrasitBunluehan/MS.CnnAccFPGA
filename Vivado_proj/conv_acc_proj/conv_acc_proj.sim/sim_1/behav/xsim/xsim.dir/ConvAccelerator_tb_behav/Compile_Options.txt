@@ -1,0 +1,1 @@
+-wto "ee608dedb3624df6b2c2b6532aca0897" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "ConvAccelerator_tb_behav" "xil_defaultlib.ConvAccelerator_tb" -log "elaborate.log" 
