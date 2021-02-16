@@ -18,9 +18,9 @@ Compiling architecture behavioral of entity xil_defaultlib.DIS_RAM_SP [\DIS_RAM_
 Compiling architecture behav of entity xil_defaultlib.weight_buffer [\weight_buffer(kernel_size_bit_w...]
 Compiling architecture str of entity xil_defaultlib.dff [\dff(data_width=32)\]
 Compiling architecture behav of entity xil_defaultlib.data_buffer [\data_buffer(max_input_size=32,m...]
-Compiling architecture behavioral of entity xil_defaultlib.ALU [\ALU(data_width=32,max_compute_b...]
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
 Compiling architecture behavioral of entity xil_defaultlib.BRAM_SP [\BRAM_SP(data_width=64,mem_depth...]
-Compiling architecture behav of entity xil_defaultlib.ACCU [accu_default]
-Compiling architecture arch_imp of entity xil_defaultlib.ConvAccelerator [\ConvAccelerator(input_size_bit_...]
+Compiling architecture behav of entity xil_defaultlib.ACCU [\ACCU(input_size_bit_width=16,in...]
+Compiling architecture arch_imp of entity xil_defaultlib.ConvAccelerator [convaccelerator_default]
 Compiling architecture tb_arch of entity xil_defaultlib.convaccelerator_tb
 Built simulation snapshot ConvAccelerator_tb_behav

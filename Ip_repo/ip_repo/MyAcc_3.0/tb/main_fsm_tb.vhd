@@ -50,8 +50,9 @@ architecture behav of main_fms_tb is
 			tready : out std_logic;
 
 			-- Output to ALU
-			alu_en : out std_logic
-		
+			alu_en : out std_logic;
+            alu_valid0, alu_valid1 : in std_logic
+
 			--TODO : For debugged purpose (Need to delete)
 			--fsm_state_test : out std_logic_vector(2 downto 0);
 			--done : out std_logic
@@ -170,9 +171,11 @@ architecture behav of main_fms_tb is
             ------------------------------------
             -- New Parameters
             ------------------------------------
-            MAX_ADDR_RAM_2D : natural := 15;
+            MAX_ADDR_RAM_2D_ADDR_WIDTH : natural := 15;
             ROW_BIT_WIDTH : natural := 5;
-            COL_BIT_WIDTH : natural := 10
+            COL_BIT_WIDTH : natural := 10;
+            RAM_DEPTH : natural := 16384
+
         ); 
         port(
             -- Network Config Signal
@@ -317,7 +320,9 @@ begin
 		tready => XAXIS_TREADY, 
 
 		-- Output to ALU
-		alu_en => alu_en
+		alu_en => alu_en,
+        alu_valid0 => alu_valid0,
+        alu_valid1 => alu_valid1
 	);
 
 	wgu_dut : weight_buffer

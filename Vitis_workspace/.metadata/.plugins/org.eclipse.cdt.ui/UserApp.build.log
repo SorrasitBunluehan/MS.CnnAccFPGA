@@ -1,4 +1,4 @@
-10:41:29 **** Incremental Build of configuration Debug for project UserApp ****
+12:17:35 **** Incremental Build of configuration Debug for project UserApp ****
 make all 
 D:/Vivado/Vitis/2020.1/gnuwin/bin/make --no-print-directory pre-build
 a9-linaro-pre-build-step
@@ -17,9 +17,9 @@ arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=non
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size UserApp.elf  |tee "UserApp.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  33116	   2248	  24504	  59868	   e9dc	UserApp.elf
+  34124	   2248	  24504	  60876	   edcc	UserApp.elf
 'Finished building: UserApp.elf.size'
 ' '
 
-10:41:30 Build Finished (took 608ms)
+12:17:35 Build Finished (took 649ms)
 

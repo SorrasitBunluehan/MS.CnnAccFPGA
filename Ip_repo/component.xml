@@ -434,7 +434,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>02fec2b7</spirit:value>
+            <spirit:value>41b7ec32</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -450,7 +450,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>02fec2b7</spirit:value>
+            <spirit:value>41b7ec32</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -465,7 +465,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>1f5930e5</spirit:value>
+            <spirit:value>103dbe75</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -485,6 +485,130 @@
       </spirit:view>
     </spirit:views>
     <spirit:ports>
+      <spirit:port>
+        <spirit:name>input_size_test</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.INPUT_SIZE_BIT_WIDTH&apos;)) - 1)">15</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>unsigned</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>input_depth_test</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.INPUT_DEPTH_BIT_WIDTH&apos;)) - 1)">12</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>unsigned</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>kernel_size_test</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.KERNEL_SIZE_BIT_WIDTH&apos;)) - 1)">7</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>unsigned</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>kernel_depth_test</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.KERNEL_DEPTH_BIT_WIDTH&apos;)) - 1)">12</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>unsigned</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>stride_test</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.STRIDE_BIT_WIDTH&apos;)) - 1)">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>unsigned</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>hw_acc_en_test</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>set_zero_test</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>af_en_test</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
       <spirit:port>
         <spirit:name>s00_axis_aclk</spirit:name>
         <spirit:wire>
@@ -1113,14 +1237,14 @@
   </spirit:model>
   <spirit:choices>
     <spirit:choice>
+      <spirit:name>choice_list_99ba8646</spirit:name>
+      <spirit:enumeration>32</spirit:enumeration>
+      <spirit:enumeration>64</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
       <spirit:name>choice_list_9d8b0d81</spirit:name>
       <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
       <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
-    </spirit:choice>
-    <spirit:choice>
-      <spirit:name>choice_list_a3c0ae87</spirit:name>
-      <spirit:enumeration>32</spirit:enumeration>
-      <spirit:enumeration>64</spirit:enumeration>
     </spirit:choice>
   </spirit:choices>
   <spirit:fileSets>
@@ -1169,7 +1293,7 @@
       <spirit:file>
         <spirit:name>ip_repo/MyAcc_3.0/hdl/ConvAccelerator.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_5a76dc44</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_61b4a52b</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -1222,16 +1346,23 @@
     <spirit:fileSet>
       <spirit:name>xilinx_testbench_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>ip_repo/MyAcc_3.0/tb/ConvAccelerator_tb.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
-        <spirit:userFileType>USED_IN_synthesis</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>src/ConvAccelerator_tb_behav.wcfg</spirit:name>
         <spirit:fileType>unknown</spirit:fileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_testbench</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ip_repo/MyAcc_3.0/tb/ConvAccelerator_tb.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_testbench</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../Vivado_proj/conv_acc_proj/ConvAccelerator_tb_behav.wcfg</spirit:name>
+        <spirit:fileType>unknown</spirit:fileType>
+        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_testbench</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -1299,12 +1430,12 @@
     <spirit:parameter>
       <spirit:name>C_S00_AXIS_TDATA_WIDTH</spirit:name>
       <spirit:displayName>C S00 Axis Tdata Width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXIS_TDATA_WIDTH" spirit:choiceRef="choice_list_a3c0ae87">32</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXIS_TDATA_WIDTH" spirit:choiceRef="choice_list_99ba8646">32</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_S01_AXI_DATA_WIDTH</spirit:name>
       <spirit:displayName>C S01 Axi Data Width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S01_AXI_DATA_WIDTH" spirit:choiceRef="choice_list_a3c0ae87">32</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S01_AXI_DATA_WIDTH" spirit:choiceRef="choice_list_99ba8646">32</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_S01_AXI_ADDR_WIDTH</spirit:name>
@@ -1314,7 +1445,7 @@
     <spirit:parameter>
       <spirit:name>C_M00_AXIS_TDATA_WIDTH</spirit:name>
       <spirit:displayName>C M00 Axis Tdata Width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M00_AXIS_TDATA_WIDTH" spirit:choiceRef="choice_list_a3c0ae87">32</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M00_AXIS_TDATA_WIDTH" spirit:choiceRef="choice_list_99ba8646">32</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
@@ -1350,8 +1481,8 @@
       </xilinx:taxonomies>
       <xilinx:displayName>ConvAccelerator_v1_0</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
-      <xilinx:coreRevision>2</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2021-01-29T14:29:25Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>5</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2021-02-01T16:17:27Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@2a75cacf_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@276c4445_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
@@ -1378,16 +1509,85 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@26e7922d_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@6cee4629_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@3f2b293b_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7fb947ad_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c124b76_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e1e3234_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@955f3ab_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@201d6ff6_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58f8be8d_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ab3058c_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b3b4c90_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13e20c39_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54582963_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d837eee_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a8a1238_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@632ef14c_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6434762f_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@490443_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53619ad7_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6393cb38_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48c9cf63_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b3a1fa0_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6eca25ae_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6dced179_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e8c03ba_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@355892d_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@520d8667_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@686f819_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75b5525d_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68b7965_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52a8e908_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63ec6ec0_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d37ba9_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63a5a5db_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6886ce2e_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28e61c84_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@cb767e3_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a177237_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4300fba3_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1eaf2691_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1326d4b3_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ee63c33_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e85e6bd_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@769f8068_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7aae5031_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@672fb38e_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f834d7e_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b1dcc27_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4dc8716e_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c58b676_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66aafd7c_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@153b9508_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@554f02e2_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4cd5f69a_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40413_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f27dbd3_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56bd677c_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36283630_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a1b3055_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b7787c4_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d79eba1_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4450de60_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17e1e97f_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d7d14e0_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28984aff_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b3eb654_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44f2567e_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1dce03c4_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a4bd4ca_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21aa865c_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ef322b_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a2fe403_ARCHIVE_LOCATION">d:/Vivado_Project/MS.CnnAccFPGA/Ip_repo</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2020.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="89d3a10a"/>
-      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="b0db21e9"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="261aeac5"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="ae4b1de4"/>
+      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="6b681430"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="325c80ad"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="449a6208"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="82626bba"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="9d574cd7"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="835557c1"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

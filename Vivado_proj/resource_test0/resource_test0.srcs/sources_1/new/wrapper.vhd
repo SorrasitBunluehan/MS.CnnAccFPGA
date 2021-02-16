@@ -25,7 +25,7 @@ entity wrapper is
         input_depth : in unsigned(INPUT_DEPTH_BIT_WIDTH-1 downto 0);  
         stride : in unsigned(STRIDE_BIT_WIDTH-1 downto 0);
         hw_acc_en : in std_logic;
-        setzero : in std_logic;
+        af_en : in std_logic;
 
         db_in : in std_logic_vector(DATA_WIDTH-1 downto 0);
         --db_en : in std_logic;
@@ -35,14 +35,21 @@ entity wrapper is
         --w_addr_incr : in std_logic;
         --w_addr_c : out std_logic_vector(ADDR_WIDTH-1 downto 0)
         mux_sel : out std_logic;
-        alu0_out, alu1_out : out std_logic_vector(DATA_WIDTH - 1 downto 0);
-        alu0_valid, alu1_valid : out std_logic;
 
 
         -- AXIS_Slave inferface
         s00_axis_tvalid : in std_logic;
         s00_axis_tlast : in std_logic;
-        s00_axis_tready : out std_logic
+        s00_axis_tready : out std_logic;
+
+        -- AXIS_M interface
+        m00_axis_aclk	: in std_logic;
+		m00_axis_aresetn	: in std_logic;
+		m00_axis_tvalid	: out std_logic;
+		m00_axis_tdata	: out std_logic_vector(DATA_WIDTH-1 downto 0);
+		m00_axis_tstrb	: out std_logic_vector((DATA_WIDTH/8)-1 downto 0);
+		m00_axis_tlast	: out std_logic;
+		m00_axis_tready	: in std_logic
     );
 end wrapper;
 
@@ -163,7 +170,8 @@ architecture Behavioral of wrapper is
             tready : out std_logic;
 
             -- Output to ALU
-            alu_en : out std_logic
+            alu_en : out std_logic;
+            alu_valid0, alu_valid1 : in std_logic   
         
         );
     end component;
@@ -178,11 +186,63 @@ architecture Behavioral of wrapper is
             arstn : in std_logic;
             x_in : in std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);                -- 127 downto 0
             w_in : in std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);				 -- 16.16 fixed point
-            compute_en : in std_logic;
+            alu_en : in std_logic;
             alu_out : out std_logic_vector(DATA_WIDTH - 1 downto 0);
             alu_valid : out std_logic          -- Indication for output to Accumulation Unit
 
         );
+    end component;
+
+    component ACCU is
+        generic(
+		------------------------------------
+		-- Network Information Bitwidth 
+		------------------------------------
+		INPUT_SIZE_BIT_WIDTH : natural; 
+		INPUT_DEPTH_BIT_WIDTH : natural;
+		STRIDE_BIT_WIDTH : natural;
+		KERNEL_DEPTH_BIT_WIDTH : natural;
+		KERNEL_SIZE_BIT_WIDTH : natural;
+
+		------------------------------------
+		-- Maximum Comdition
+		------------------------------------
+		MAX_INPUT_SIZE : natural;
+		MAX_KERNEL_SIZE : natural;
+		MAX_COMPUTE_BYTE : natural;
+		MAX_KERNEL_DEPTH : natural;
+		DATA_WIDTH : natural;
+
+		------------------------------------
+		-- New Parameters
+		------------------------------------
+        MAX_ADDR_RAM_2D_ADDR_WIDTH : natural := 15;
+        ROW_BIT_WIDTH : natural := 5;
+        COL_BIT_WIDTH : natural := 10;
+        RAM_DEPTH : natural := 16384
+	); 
+	port(
+		-- Network Config Signal
+		input_size : in unsigned(INPUT_SIZE_BIT_WIDTH -1 downto 0);
+		input_depth : in unsigned(INPUT_DEPTH_BIT_WIDTH-1 downto 0);
+		kernel_size : in unsigned(KERNEL_SIZE_BIT_WIDTH-1 downto 0);
+		kernel_depth : in unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);
+		stride : in unsigned(STRIDE_BIT_WIDTH-1 downto 0);
+		hw_acc_en : in std_logic;
+		setzero : out std_logic;
+        af_en : in std_logic;
+
+		clk, arstn : in std_logic;
+		din0, din1 : in std_logic_vector(DATA_WIDTH - 1 downto 0);
+		valid0, valid1 : in std_logic;
+
+        -- AXIS Master Interface
+		M_AXIS_TVALID	: out std_logic;
+		M_AXIS_TDATA	: out std_logic_vector(DATA_WIDTH-1 downto 0);
+		M_AXIS_TSTRB	: out std_logic_vector((DATA_WIDTH/8)-1 downto 0);
+		M_AXIS_TLAST	: out std_logic;
+		M_AXIS_TREADY	: in std_logic
+	);
     end component;
 
     --signal input_size : unsigned(INPUT_SIZE_BIT_WIDTH -1 downto 0);
@@ -196,6 +256,12 @@ architecture Behavioral of wrapper is
     signal dbo_db_out : std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);
     signal wbo_weight_out0 : std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0); 
     signal wbo_weight_out1 : std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0); 
+
+    signal aluo_alu_out0, aluo_alu_out1 : std_logic_vector(DATA_WIDTH - 1 downto 0);
+    signal aluo_alu0_valid, aluo_alu1_valid : std_logic;
+    
+    signal accuo_setzero : std_logic;
+
     --signal db_out : std_logic_vector((MAX_COMPUTE_BYTE*DATA_WIDTH)-1 downto 0);
     --signal kernel_depth : unsigned(KERNEL_DEPTH_BIT_WIDTH-1 downto 0);
     --signal hw_acc_en : std_logic;
@@ -210,7 +276,7 @@ architecture Behavioral of wrapper is
 
 begin
 
-    data_buffer_uut : data_buffer
+    data_buffer_dut : data_buffer
         generic map(
             MAX_INPUT_SIZE          => MAX_INPUT_SIZE,
             MAX_KERNEL_SIZE         => MAX_KERNEL_SIZE,      
@@ -246,7 +312,7 @@ begin
             d_in                => d_in,        
             w_valid             => w_valid,     
             w_addr_incr         => mfo_w_addr_incr, 
-            setzero             => setzero,     
+            setzero             => accuo_setzero,     
             weight_out0         => wbo_weight_out0, 
             weight_out1         => wbo_weight_out1, 
             w_addr_c            => mfo_w_addr_c    
@@ -269,7 +335,7 @@ begin
             kernel_depth	=>      kernel_depth,
             stride  		=>      stride,  	
             hw_acc_en  		=>      hw_acc_en,  	
-            setzero         =>      setzero,
+            setzero         =>      accuo_setzero,
 
             clk 		 => clk , 		
             arstn 		 => arstn , 		
@@ -282,7 +348,10 @@ begin
             w_addr_incr  => mfo_w_addr_incr, 	
             mux_sel 	 => mux_sel, 	
             tready 		 => s00_axis_tready, 
-            alu_en 	 	 => mfo_alu_en
+            alu_en 	 	 => mfo_alu_en,
+            alu_valid0  => aluo_alu0_valid,
+            alu_valid1  => aluo_alu1_valid
+
         );
 
     alu0_dut : ALU
@@ -294,9 +363,9 @@ begin
             arstn => arstn,
             x_in => dbo_db_out,
             w_in => wbo_weight_out0,
-            compute_en => mfo_alu_en,
-            alu_out => alu0_out,
-            alu_valid => alu0_valid
+            alu_en => mfo_alu_en,
+            alu_out => aluo_alu_out0,
+            alu_valid => aluo_alu0_valid
         );
 	
 	alu1_dut : ALU
@@ -308,10 +377,48 @@ begin
             arstn => arstn,
             x_in => dbo_db_out,
             w_in => wbo_weight_out1,
-            compute_en => mfo_alu_en,
-            alu_out => alu1_out,
-            alu_valid => alu1_valid
+            alu_en => mfo_alu_en,
+            alu_out => aluo_alu_out1,
+            alu_valid => aluo_alu1_valid
         );
+
+    accum_dut : ACCU
+        generic map(
+            INPUT_SIZE_BIT_WIDTH => INPUT_SIZE_BIT_WIDTH, 
+            INPUT_DEPTH_BIT_WIDTH => INPUT_DEPTH_BIT_WIDTH,
+            STRIDE_BIT_WIDTH => STRIDE_BIT_WIDTH,
+            KERNEL_DEPTH_BIT_WIDTH  => KERNEL_DEPTH_BIT_WIDTH,
+            KERNEL_SIZE_BIT_WIDTH => KERNEL_SIZE_BIT_WIDTH,
+                            
+            MAX_INPUT_SIZE => MAX_INPUT_SIZE, 
+            MAX_KERNEL_SIZE => MAX_KERNEL_SIZE,
+            MAX_COMPUTE_BYTE => MAX_COMPUTE_BYTE,
+            MAX_KERNEL_DEPTH => MAX_KERNEL_DEPTH,
+            DATA_WIDTH => DATA_WIDTH
+        )port map(
+            input_size => input_size, 
+            input_depth => input_depth, 
+            kernel_size => kernel_size, 
+            kernel_depth => kernel_depth,
+            stride => stride, 
+            hw_acc_en => hw_acc_en, 
+            setzero => accuo_setzero, 
+            af_en => af_en,
+                        
+            clk => m00_axis_aclk, 
+            arstn => m00_axis_aresetn, 
+            din0 => aluo_alu_out0,
+            din1 => aluo_alu_out1, 
+            valid0 => aluo_alu0_valid,
+            valid1 => aluo_alu1_valid,
+
+            M_AXIS_TVALID => m00_axis_tvalid,  
+            M_AXIS_TDATA => m00_axis_tdata,  
+            M_AXIS_TSTRB => m00_axis_tstrb,  
+            M_AXIS_TLAST => m00_axis_tlast,  
+            M_AXIS_TREADY => m00_axis_tready
+        );
+
 
 
 end Behavioral;

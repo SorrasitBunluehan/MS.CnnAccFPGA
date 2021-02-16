@@ -311,3 +311,528 @@ con
 
 10:41:46 INFO  : Launch script is exported to file 'D:\Vivado_Project\MS.CnnAccFPGA\Vitis_workspace\.sdk\launch_scripts\single_application_debug\debugger_userapp-default.tcl'
 12:52:24 INFO  : Disconnected from the channel tcfchan#5.
+18:11:00 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\Vivado_Project\MS.CnnAccFPGA\Vitis_workspace\temp_xsdb_launch_script.tcl
+18:11:02 INFO  : XSCT server has started successfully.
+18:11:02 INFO  : plnx-install-location is set to ''
+18:11:02 INFO  : Successfully done setting XSCT server connection channel  
+18:11:02 INFO  : Successfully done setting workspace for the tool. 
+18:11:05 INFO  : Platform repository initialization has completed.
+18:11:05 INFO  : Registering command handlers for Vitis TCF services
+18:11:07 INFO  : Successfully done query RDI_DATADIR 
+18:43:35 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+18:51:51 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+18:51:55 ERROR : (XSDB Server)ERROR: [Hsi 55-1571] The design file D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj/export/HwProj/hw/design_1_wrapper.xsa is already opened
+
+18:52:24 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+18:52:36 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+18:56:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:56:20 INFO  : Jtag cable 'Digilent Zybo 210279655497A' is selected.
+18:56:20 INFO  : 'jtag frequency' command is executed.
+18:56:20 INFO  : Context for 'APU' is selected.
+18:56:20 INFO  : System reset is completed.
+18:56:23 INFO  : 'after 3000' command is executed.
+18:56:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279655497A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279655497A-13722093-0"}' command is executed.
+18:56:25 INFO  : FPGA configured successfully with bitstream "D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/bitstream/design_1_wrapper.bit"
+18:56:26 INFO  : Context for 'APU' is selected.
+18:56:26 INFO  : Hardware design and registers information is loaded from 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj/export/HwProj/hw/design_1_wrapper.xsa'.
+18:56:26 INFO  : 'configparams force-mem-access 1' command is executed.
+18:56:26 INFO  : Context for 'APU' is selected.
+18:56:27 INFO  : Sourcing of 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/psinit/ps7_init.tcl' is done.
+18:56:27 INFO  : 'ps7_init' command is executed.
+18:56:27 INFO  : 'ps7_post_config' command is executed.
+18:56:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:56:28 INFO  : The application 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/Debug/UserApp.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:56:28 INFO  : 'configparams force-mem-access 0' command is executed.
+18:56:28 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279655497A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279655497A-13722093-0"}
+fpga -file D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj/export/HwProj/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/Debug/UserApp.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:56:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:56:28 INFO  : 'con' command is executed.
+18:56:28 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+18:56:28 INFO  : Launch script is exported to file 'D:\Vivado_Project\MS.CnnAccFPGA\Vitis_workspace\.sdk\launch_scripts\single_application_debug\debugger_userapp-default.tcl'
+18:59:52 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+19:00:30 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+19:00:32 ERROR : (XSDB Server)ERROR: [Hsi 55-1571] The design file D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj/export/HwProj/hw/design_1_wrapper.xsa is already opened
+
+19:00:49 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+19:01:05 INFO  : Disconnected from the channel tcfchan#2.
+19:01:06 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:01:07 INFO  : Jtag cable 'Digilent Zybo 210279655497A' is selected.
+19:01:07 INFO  : 'jtag frequency' command is executed.
+19:01:07 INFO  : Context for 'APU' is selected.
+19:01:07 INFO  : System reset is completed.
+19:01:10 INFO  : 'after 3000' command is executed.
+19:01:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279655497A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279655497A-13722093-0"}' command is executed.
+19:01:11 INFO  : FPGA configured successfully with bitstream "D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/bitstream/design_1_wrapper.bit"
+19:01:11 INFO  : Context for 'APU' is selected.
+19:01:19 INFO  : Hardware design and registers information is loaded from 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj/export/HwProj/hw/design_1_wrapper.xsa'.
+19:01:19 INFO  : 'configparams force-mem-access 1' command is executed.
+19:01:19 INFO  : Context for 'APU' is selected.
+19:01:19 INFO  : Sourcing of 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/psinit/ps7_init.tcl' is done.
+19:01:19 INFO  : 'ps7_init' command is executed.
+19:01:19 INFO  : 'ps7_post_config' command is executed.
+19:01:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:01:19 INFO  : The application 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/Debug/UserApp.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:01:19 INFO  : 'configparams force-mem-access 0' command is executed.
+19:01:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279655497A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279655497A-13722093-0"}
+fpga -file D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj/export/HwProj/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/Debug/UserApp.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:01:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:01:19 INFO  : 'con' command is executed.
+19:01:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:01:19 INFO  : Launch script is exported to file 'D:\Vivado_Project\MS.CnnAccFPGA\Vitis_workspace\.sdk\launch_scripts\single_application_debug\debugger_userapp-default.tcl'
+19:07:43 INFO  : Hardware specification for platform project 'HwProj' is updated.
+19:08:03 INFO  : Result from executing command 'getProjects': HwProj
+19:08:03 INFO  : Result from executing command 'getPlatforms': HwProj|D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj/export/HwProj/HwProj.xpfm
+19:13:27 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+19:13:30 INFO  : Updating application flags with new BSP settings...
+19:13:30 INFO  : Successfully updated application flags for project UserApp.
+19:13:31 INFO  : The hardware specfication used by project 'UserApp' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+19:13:31 INFO  : The file 'D:\Vivado_Project\MS.CnnAccFPGA\Vitis_workspace\UserApp\_ide\bitstream\design_1_wrapper.bit' stored in project is removed.
+19:13:31 INFO  : The updated bitstream files are copied from platform to folder 'D:\Vivado_Project\MS.CnnAccFPGA\Vitis_workspace\UserApp\_ide\bitstream' in project 'UserApp'.
+19:13:31 INFO  : The file 'D:\Vivado_Project\MS.CnnAccFPGA\Vitis_workspace\UserApp\_ide\psinit\ps7_init.tcl' stored in project is removed.
+19:13:36 INFO  : The updated ps init files are copied from platform to folder 'D:\Vivado_Project\MS.CnnAccFPGA\Vitis_workspace\UserApp\_ide\psinit' in project 'UserApp'.
+19:13:54 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+19:14:28 INFO  : Disconnected from the channel tcfchan#4.
+19:14:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:14:29 INFO  : Jtag cable 'Digilent Zybo 210279655497A' is selected.
+19:14:29 INFO  : 'jtag frequency' command is executed.
+19:14:29 INFO  : Context for 'APU' is selected.
+19:14:29 INFO  : System reset is completed.
+19:14:32 INFO  : 'after 3000' command is executed.
+19:14:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279655497A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279655497A-13722093-0"}' command is executed.
+19:14:34 INFO  : FPGA configured successfully with bitstream "D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/bitstream/design_1_wrapper.bit"
+19:14:34 INFO  : Context for 'APU' is selected.
+19:14:34 INFO  : Hardware design and registers information is loaded from 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj/export/HwProj/hw/design_1_wrapper.xsa'.
+19:14:34 INFO  : 'configparams force-mem-access 1' command is executed.
+19:14:34 INFO  : Context for 'APU' is selected.
+19:14:34 INFO  : Sourcing of 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/psinit/ps7_init.tcl' is done.
+19:14:34 INFO  : 'ps7_init' command is executed.
+19:14:34 INFO  : 'ps7_post_config' command is executed.
+19:14:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:14:34 INFO  : The application 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/Debug/UserApp.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:14:34 INFO  : 'configparams force-mem-access 0' command is executed.
+19:14:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279655497A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279655497A-13722093-0"}
+fpga -file D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj/export/HwProj/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/Debug/UserApp.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:14:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:14:34 INFO  : 'con' command is executed.
+19:14:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:14:34 INFO  : Launch script is exported to file 'D:\Vivado_Project\MS.CnnAccFPGA\Vitis_workspace\.sdk\launch_scripts\single_application_debug\debugger_userapp-default.tcl'
+19:18:46 INFO  : Disconnected from the channel tcfchan#8.
+19:18:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:18:47 INFO  : Jtag cable 'Digilent Zybo 210279655497A' is selected.
+19:18:47 INFO  : 'jtag frequency' command is executed.
+19:18:47 INFO  : Context for 'APU' is selected.
+19:18:47 INFO  : System reset is completed.
+19:18:50 INFO  : 'after 3000' command is executed.
+19:18:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279655497A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279655497A-13722093-0"}' command is executed.
+19:18:52 INFO  : FPGA configured successfully with bitstream "D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/bitstream/design_1_wrapper.bit"
+19:18:52 INFO  : Context for 'APU' is selected.
+19:18:52 INFO  : Hardware design and registers information is loaded from 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj/export/HwProj/hw/design_1_wrapper.xsa'.
+19:18:52 INFO  : 'configparams force-mem-access 1' command is executed.
+19:18:52 INFO  : Context for 'APU' is selected.
+19:18:52 INFO  : Sourcing of 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/psinit/ps7_init.tcl' is done.
+19:18:52 INFO  : 'ps7_init' command is executed.
+19:18:52 INFO  : 'ps7_post_config' command is executed.
+19:18:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:18:52 INFO  : The application 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/Debug/UserApp.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:18:52 INFO  : 'configparams force-mem-access 0' command is executed.
+19:18:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279655497A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279655497A-13722093-0"}
+fpga -file D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj/export/HwProj/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/Debug/UserApp.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:18:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:18:52 INFO  : 'con' command is executed.
+19:18:52 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:18:52 INFO  : Launch script is exported to file 'D:\Vivado_Project\MS.CnnAccFPGA\Vitis_workspace\.sdk\launch_scripts\single_application_debug\debugger_userapp-default.tcl'
+19:30:23 INFO  : Disconnected from the channel tcfchan#9.
+19:38:58 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+19:39:04 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+19:39:33 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+19:41:26 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+19:41:55 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+19:42:47 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+19:43:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:43:10 INFO  : Jtag cable 'Digilent Zybo 210279655497A' is selected.
+19:43:10 INFO  : 'jtag frequency' command is executed.
+19:43:11 INFO  : Context for 'APU' is selected.
+19:43:11 INFO  : System reset is completed.
+19:43:14 INFO  : 'after 3000' command is executed.
+19:43:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279655497A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279655497A-13722093-0"}' command is executed.
+19:43:15 INFO  : FPGA configured successfully with bitstream "D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/bitstream/design_1_wrapper.bit"
+19:43:15 INFO  : Context for 'APU' is selected.
+19:43:15 INFO  : Hardware design and registers information is loaded from 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj/export/HwProj/hw/design_1_wrapper.xsa'.
+19:43:15 INFO  : 'configparams force-mem-access 1' command is executed.
+19:43:15 INFO  : Context for 'APU' is selected.
+19:43:15 INFO  : Sourcing of 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/psinit/ps7_init.tcl' is done.
+19:43:15 INFO  : 'ps7_init' command is executed.
+19:43:15 INFO  : 'ps7_post_config' command is executed.
+19:43:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:43:15 INFO  : The application 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/Debug/UserApp.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:43:15 INFO  : 'configparams force-mem-access 0' command is executed.
+19:43:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279655497A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279655497A-13722093-0"}
+fpga -file D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj/export/HwProj/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/Debug/UserApp.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:43:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:43:15 INFO  : 'con' command is executed.
+19:43:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:43:15 INFO  : Launch script is exported to file 'D:\Vivado_Project\MS.CnnAccFPGA\Vitis_workspace\.sdk\launch_scripts\single_application_debug\debugger_userapp-default.tcl'
+19:43:55 INFO  : Disconnected from the channel tcfchan#10.
+19:46:04 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+19:46:14 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+19:47:01 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+19:47:21 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+19:49:05 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+19:49:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:49:17 INFO  : Jtag cable 'Digilent Zybo 210279655497A' is selected.
+19:49:17 INFO  : 'jtag frequency' command is executed.
+19:49:17 INFO  : Context for 'APU' is selected.
+19:49:17 INFO  : System reset is completed.
+19:49:20 INFO  : 'after 3000' command is executed.
+19:49:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279655497A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279655497A-13722093-0"}' command is executed.
+19:49:21 INFO  : FPGA configured successfully with bitstream "D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/bitstream/design_1_wrapper.bit"
+19:49:21 INFO  : Context for 'APU' is selected.
+19:49:21 INFO  : Hardware design and registers information is loaded from 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj/export/HwProj/hw/design_1_wrapper.xsa'.
+19:49:21 INFO  : 'configparams force-mem-access 1' command is executed.
+19:49:21 INFO  : Context for 'APU' is selected.
+19:49:21 INFO  : Sourcing of 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/psinit/ps7_init.tcl' is done.
+19:49:21 INFO  : 'ps7_init' command is executed.
+19:49:21 INFO  : 'ps7_post_config' command is executed.
+19:49:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:49:22 INFO  : The application 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/Debug/UserApp.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:49:22 INFO  : 'configparams force-mem-access 0' command is executed.
+19:49:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279655497A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279655497A-13722093-0"}
+fpga -file D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj/export/HwProj/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/Debug/UserApp.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:49:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:49:22 INFO  : 'con' command is executed.
+19:49:22 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:49:22 INFO  : Launch script is exported to file 'D:\Vivado_Project\MS.CnnAccFPGA\Vitis_workspace\.sdk\launch_scripts\single_application_debug\debugger_userapp-default.tcl'
+19:49:24 INFO  : Disconnected from the channel tcfchan#15.
+19:49:27 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+19:49:50 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+19:49:57 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+19:50:18 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+19:50:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:50:28 INFO  : Jtag cable 'Digilent Zybo 210279655497A' is selected.
+19:50:28 INFO  : 'jtag frequency' command is executed.
+19:50:28 INFO  : Context for 'APU' is selected.
+19:50:28 INFO  : System reset is completed.
+19:50:31 INFO  : 'after 3000' command is executed.
+19:50:31 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279655497A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279655497A-13722093-0"}' command is executed.
+19:50:32 INFO  : FPGA configured successfully with bitstream "D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/bitstream/design_1_wrapper.bit"
+19:50:32 INFO  : Context for 'APU' is selected.
+19:50:32 INFO  : Hardware design and registers information is loaded from 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj/export/HwProj/hw/design_1_wrapper.xsa'.
+19:50:32 INFO  : 'configparams force-mem-access 1' command is executed.
+19:50:32 INFO  : Context for 'APU' is selected.
+19:50:32 INFO  : Sourcing of 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/psinit/ps7_init.tcl' is done.
+19:50:32 INFO  : 'ps7_init' command is executed.
+19:50:32 INFO  : 'ps7_post_config' command is executed.
+19:50:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:50:32 INFO  : The application 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/Debug/UserApp.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:50:32 INFO  : 'configparams force-mem-access 0' command is executed.
+19:50:32 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279655497A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279655497A-13722093-0"}
+fpga -file D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj/export/HwProj/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/Debug/UserApp.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:50:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:50:32 INFO  : 'con' command is executed.
+19:50:32 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:50:32 INFO  : Launch script is exported to file 'D:\Vivado_Project\MS.CnnAccFPGA\Vitis_workspace\.sdk\launch_scripts\single_application_debug\debugger_userapp-default.tcl'
+20:16:14 INFO  : Disconnected from the channel tcfchan#19.
+11:11:37 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\Vivado_Project\MS.CnnAccFPGA\Vitis_workspace\temp_xsdb_launch_script.tcl
+11:11:40 INFO  : XSCT server has started successfully.
+11:11:40 INFO  : Successfully done setting XSCT server connection channel  
+11:11:40 INFO  : plnx-install-location is set to ''
+11:11:40 INFO  : Successfully done setting workspace for the tool. 
+11:11:44 INFO  : Platform repository initialization has completed.
+11:11:44 INFO  : Registering command handlers for Vitis TCF services
+11:11:47 INFO  : Successfully done query RDI_DATADIR 
+12:02:00 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+12:03:19 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+12:04:31 INFO  : Result from executing command 'getProjects': HwProj
+12:04:31 INFO  : Result from executing command 'getPlatforms': HwProj|D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj/export/HwProj/HwProj.xpfm
+12:04:46 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+12:05:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:05:03 INFO  : Jtag cable 'Digilent Zybo 210279655497A' is selected.
+12:05:03 INFO  : 'jtag frequency' command is executed.
+12:05:04 INFO  : Context for 'APU' is selected.
+12:05:04 INFO  : System reset is completed.
+12:05:07 INFO  : 'after 3000' command is executed.
+12:05:07 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279655497A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279655497A-13722093-0"}' command is executed.
+12:05:09 INFO  : FPGA configured successfully with bitstream "D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/bitstream/design_1_wrapper.bit"
+12:05:09 INFO  : Context for 'APU' is selected.
+12:05:09 INFO  : Hardware design and registers information is loaded from 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj/export/HwProj/hw/design_1_wrapper.xsa'.
+12:05:09 INFO  : 'configparams force-mem-access 1' command is executed.
+12:05:09 INFO  : Context for 'APU' is selected.
+12:05:10 INFO  : Sourcing of 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/psinit/ps7_init.tcl' is done.
+12:05:10 INFO  : 'ps7_init' command is executed.
+12:05:10 INFO  : 'ps7_post_config' command is executed.
+12:05:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:05:11 INFO  : The application 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/Debug/UserApp.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:05:11 INFO  : 'configparams force-mem-access 0' command is executed.
+12:05:11 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279655497A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279655497A-13722093-0"}
+fpga -file D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj/export/HwProj/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/Debug/UserApp.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:05:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:05:11 INFO  : 'con' command is executed.
+12:05:11 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:05:11 INFO  : Launch script is exported to file 'D:\Vivado_Project\MS.CnnAccFPGA\Vitis_workspace\.sdk\launch_scripts\single_application_debug\debugger_userapp-default.tcl'
+12:17:27 INFO  : Disconnected from the channel tcfchan#4.
+12:17:32 INFO  : Checking for BSP changes to sync application flags for project 'UserApp'...
+12:17:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:17:44 INFO  : Jtag cable 'Digilent Zybo 210279655497A' is selected.
+12:17:44 INFO  : 'jtag frequency' command is executed.
+12:17:44 INFO  : Context for 'APU' is selected.
+12:17:44 INFO  : System reset is completed.
+12:17:47 INFO  : 'after 3000' command is executed.
+12:17:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279655497A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279655497A-13722093-0"}' command is executed.
+12:17:48 INFO  : FPGA configured successfully with bitstream "D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/bitstream/design_1_wrapper.bit"
+12:17:48 INFO  : Context for 'APU' is selected.
+12:17:49 INFO  : Hardware design and registers information is loaded from 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj/export/HwProj/hw/design_1_wrapper.xsa'.
+12:17:49 INFO  : 'configparams force-mem-access 1' command is executed.
+12:17:49 INFO  : Context for 'APU' is selected.
+12:17:49 INFO  : Sourcing of 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/psinit/ps7_init.tcl' is done.
+12:17:49 INFO  : 'ps7_init' command is executed.
+12:17:49 INFO  : 'ps7_post_config' command is executed.
+12:17:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:17:49 INFO  : The application 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/Debug/UserApp.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:17:49 INFO  : 'configparams force-mem-access 0' command is executed.
+12:17:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279655497A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279655497A-13722093-0"}
+fpga -file D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj/export/HwProj/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/UserApp/Debug/UserApp.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:17:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:17:49 INFO  : 'con' command is executed.
+12:17:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:17:49 INFO  : Launch script is exported to file 'D:\Vivado_Project\MS.CnnAccFPGA\Vitis_workspace\.sdk\launch_scripts\single_application_debug\debugger_userapp-default.tcl'
+12:21:55 INFO  : Result from executing command 'getProjects': HwProj;HwProj1
+12:21:55 INFO  : Result from executing command 'getPlatforms': HwProj|D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj/export/HwProj/HwProj.xpfm
+12:24:15 INFO  : Result from executing command 'getProjects': HwProj;HwProj1
+12:24:15 INFO  : Result from executing command 'getPlatforms': HwProj1|D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj1/export/HwProj1/HwProj1.xpfm;HwProj|D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj/export/HwProj/HwProj.xpfm
+12:25:22 INFO  : Checking for BSP changes to sync application flags for project 'App0'...
+12:27:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:27:54 INFO  : Jtag cable 'Digilent Zybo 210279655497A' is selected.
+12:27:54 INFO  : 'jtag frequency' command is executed.
+12:27:54 INFO  : Context for 'APU' is selected.
+12:27:55 INFO  : System reset is completed.
+12:27:58 INFO  : 'after 3000' command is executed.
+12:27:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279655497A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279655497A-13722093-0"}' command is executed.
+12:27:59 INFO  : FPGA configured successfully with bitstream "D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/App0/_ide/bitstream/design_1_wrapper.bit"
+12:27:59 INFO  : Context for 'APU' is selected.
+12:27:59 INFO  : Hardware design and registers information is loaded from 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj1/export/HwProj1/hw/design_1_wrapper.xsa'.
+12:27:59 INFO  : 'configparams force-mem-access 1' command is executed.
+12:27:59 INFO  : Context for 'APU' is selected.
+12:27:59 INFO  : Sourcing of 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/App0/_ide/psinit/ps7_init.tcl' is done.
+12:27:59 INFO  : 'ps7_init' command is executed.
+12:27:59 INFO  : 'ps7_post_config' command is executed.
+12:27:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:28:00 INFO  : The application 'D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/App0/Debug/App0.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:28:00 INFO  : 'configparams force-mem-access 0' command is executed.
+12:28:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279655497A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279655497A-13722093-0"}
+fpga -file D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/App0/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/HwProj1/export/HwProj1/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/App0/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/Vivado_Project/MS.CnnAccFPGA/Vitis_workspace/App0/Debug/App0.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:28:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:28:00 INFO  : 'con' command is executed.
+12:28:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:28:00 INFO  : Launch script is exported to file 'D:\Vivado_Project\MS.CnnAccFPGA\Vitis_workspace\.sdk\launch_scripts\single_application_debug\debugger_app0-default.tcl'
+16:36:32 INFO  : Disconnected from the channel tcfchan#6.
+16:36:43 WARN  : channel "tcfchan#6" closed

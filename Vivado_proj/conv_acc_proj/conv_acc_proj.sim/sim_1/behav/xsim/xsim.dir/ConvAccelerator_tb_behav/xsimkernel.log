@@ -1,7 +1,7 @@
-Running: xsim.dir/ConvAccelerator_tb_behav/xsimk.exe -simmode gui -wdb ConvAccelerator_tb_behav.wdb -simrunnum 0 -socket 51983
+Running: xsim.dir/ConvAccelerator_tb_behav/xsimk.exe -simmode gui -wdb ConvAccelerator_tb_behav.wdb -simrunnum 0 -socket 51735
 Design successfully loaded
-Design Loading Memory Usage: 9928 KB (Peak: 9928 KB)
-Design Loading CPU Usage: 61 ms
+Design Loading Memory Usage: 9912 KB (Peak: 9912 KB)
+Design Loading CPU Usage: 15 ms
 Simulation completed
-Simulation Memory Usage: 12172 KB (Peak: 12172 KB)
-Simulation CPU Usage: 233 ms
+Simulation Memory Usage: 14920 KB (Peak: 14920 KB)
+Simulation CPU Usage: 171 ms

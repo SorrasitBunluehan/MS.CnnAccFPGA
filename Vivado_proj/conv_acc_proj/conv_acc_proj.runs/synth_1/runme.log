@@ -11,19 +11,21 @@
 
 source ConvAccelerator.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Vivado_Project/MS.CnnAccFPGA/Ip_repo'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/vivado_project/ms.cnnaccfpga'.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'd:/Vivado_Project/MS.CnnAccFPGA/Ip_repo'. The path is contained within another repository.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/Vivado/2020.1/data/ip'.
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:ConvAccelerator:1.0'. The one found in IP location 'd:/vivado_project/ms.cnnaccfpga/Ip_repo' will take precedence over the same IP in location d:/vivado_project/ms.cnnaccfpga
 Command: synth_design -top ConvAccelerator -part xc7z010clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 14964
+INFO: [Synth 8-7075] Helper process launched with PID 19212
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1070.426 ; gain = 0.000
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1069.734 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'ConvAccelerator' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/ConvAccelerator.vhd:98]
+INFO: [Synth 8-638] synthesizing module 'ConvAccelerator' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/ConvAccelerator.vhd:100]
 	Parameter INPUT_SIZE_BIT_WIDTH bound to: 16 - type: integer 
 	Parameter INPUT_DEPTH_BIT_WIDTH bound to: 13 - type: integer 
 	Parameter STRIDE_BIT_WIDTH bound to: 3 - type: integer 
@@ -45,7 +47,7 @@ INFO: [Synth 8-638] synthesizing module 'ConvAccelerator' [D:/Vivado_Project/MS.
 	Parameter KERNEL_SIZE_BIT_WIDTH bound to: 8 - type: integer 
 	Parameter DATA_WIDTH bound to: 32 - type: integer 
 	Parameter ADDR_WIDTH bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'MyAccelerator_v2_0_S00_AXI' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/MyAccelerator_v2_0_S00_AXI.vhd:5' bound to instance 'MyAccelerator_v2_0_S00_AXI_inst' of component 'MyAccelerator_v2_0_S00_AXI' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/ConvAccelerator.vhd:383]
+INFO: [Synth 8-3491] module 'MyAccelerator_v2_0_S00_AXI' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/MyAccelerator_v2_0_S00_AXI.vhd:5' bound to instance 'MyAccelerator_v2_0_S00_AXI_inst' of component 'MyAccelerator_v2_0_S00_AXI' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/ConvAccelerator.vhd:395]
 INFO: [Synth 8-638] synthesizing module 'MyAccelerator_v2_0_S00_AXI' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/MyAccelerator_v2_0_S00_AXI.vhd:106]
 	Parameter INPUT_SIZE_BIT_WIDTH bound to: 16 - type: integer 
 	Parameter INPUT_DEPTH_BIT_WIDTH bound to: 13 - type: integer 
@@ -62,8 +64,8 @@ INFO: [Synth 8-256] done synthesizing module 'MyAccelerator_v2_0_S00_AXI' (1#1) 
 	Parameter KERNEL_SIZE_BIT_WIDTH bound to: 8 - type: integer 
 	Parameter DATA_WIDTH bound to: 32 - type: integer 
 	Parameter ADDR_WIDTH bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'main_fsm' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/main_fsm.vhd:5' bound to instance 'main_fsm_dut' of component 'main_fsm' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/ConvAccelerator.vhd:430]
-INFO: [Synth 8-638] synthesizing module 'main_fsm' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/main_fsm.vhd:55]
+INFO: [Synth 8-3491] module 'main_fsm' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/main_fsm.vhd:5' bound to instance 'main_fsm_dut' of component 'main_fsm' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/ConvAccelerator.vhd:442]
+INFO: [Synth 8-638] synthesizing module 'main_fsm' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/main_fsm.vhd:56]
 	Parameter INPUT_SIZE_BIT_WIDTH bound to: 16 - type: integer 
 	Parameter INPUT_DEPTH_BIT_WIDTH bound to: 13 - type: integer 
 	Parameter STRIDE_BIT_WIDTH bound to: 3 - type: integer 
@@ -71,14 +73,7 @@ INFO: [Synth 8-638] synthesizing module 'main_fsm' [D:/Vivado_Project/MS.CnnAccF
 	Parameter KERNEL_SIZE_BIT_WIDTH bound to: 8 - type: integer 
 	Parameter DATA_WIDTH bound to: 32 - type: integer 
 	Parameter ADDR_WIDTH bound to: 8 - type: integer 
-WARNING: [Synth 8-614] signal 'stride' is read in the process but is not in the sensitivity list [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/main_fsm.vhd:136]
-WARNING: [Synth 8-614] signal 'output_size' is read in the process but is not in the sensitivity list [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/main_fsm.vhd:136]
-WARNING: [Synth 8-614] signal 'input_size' is read in the process but is not in the sensitivity list [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/main_fsm.vhd:136]
-WARNING: [Synth 8-614] signal 'input_size' is read in the process but is not in the sensitivity list [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/main_fsm.vhd:374]
-WARNING: [Synth 8-614] signal 'input_size' is read in the process but is not in the sensitivity list [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/main_fsm.vhd:384]
-WARNING: [Synth 8-614] signal 'input_size' is read in the process but is not in the sensitivity list [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/main_fsm.vhd:416]
-WARNING: [Synth 8-614] signal 'kernel_size' is read in the process but is not in the sensitivity list [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/main_fsm.vhd:416]
-INFO: [Synth 8-256] done synthesizing module 'main_fsm' (2#1) [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/main_fsm.vhd:55]
+INFO: [Synth 8-256] done synthesizing module 'main_fsm' (2#1) [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/main_fsm.vhd:56]
 	Parameter KERNEL_SIZE_BIT_WIDTH bound to: 8 - type: integer 
 	Parameter KERNEL_DEPTH_BIT_WIDTH bound to: 13 - type: integer 
 	Parameter MAX_KERNEL_DEPTH bound to: 32 - type: integer 
@@ -86,7 +81,7 @@ INFO: [Synth 8-256] done synthesizing module 'main_fsm' (2#1) [D:/Vivado_Project
 	Parameter DATA_WIDTH bound to: 32 - type: integer 
 	Parameter MAX_COMPUTE_BYTE bound to: 25 - type: integer 
 	Parameter ADDR_WIDTH bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'weight_buffer' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/weight_buffer.vhd:7' bound to instance 'weight_buffer_dut' of component 'weight_buffer' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/ConvAccelerator.vhd:468]
+INFO: [Synth 8-3491] module 'weight_buffer' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/weight_buffer.vhd:7' bound to instance 'weight_buffer_dut' of component 'weight_buffer' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/ConvAccelerator.vhd:483]
 INFO: [Synth 8-638] synthesizing module 'weight_buffer' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/weight_buffer.vhd:45]
 	Parameter KERNEL_SIZE_BIT_WIDTH bound to: 8 - type: integer 
 	Parameter KERNEL_DEPTH_BIT_WIDTH bound to: 13 - type: integer 
@@ -125,7 +120,7 @@ INFO: [Synth 8-256] done synthesizing module 'weight_buffer' (5#1) [D:/Vivado_Pr
 	Parameter INPUT_SIZE_BIT_WIDTH bound to: 16 - type: integer 
 	Parameter KERNEL_SIZE_BIT_WIDTH bound to: 8 - type: integer 
 	Parameter DATA_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'data_buffer' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:10' bound to instance 'data_buffer_dut' of component 'data_buffer' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/ConvAccelerator.vhd:494]
+INFO: [Synth 8-3491] module 'data_buffer' declared at 'D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:10' bound to instance 'data_buffer_dut' of component 'data_buffer' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/ConvAccelerator.vhd:509]
 INFO: [Synth 8-638] synthesizing module 'data_buffer' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:44]
 	Parameter MAX_INPUT_SIZE bound to: 32 - type: integer 
 	Parameter MAX_KERNEL_SIZE bound to: 5 - type: integer 
@@ -393,10 +388,10 @@ INFO: [Common 17-14] Message 'Synth 8-3491' appears 100 times and further instan
 INFO: [Synth 8-256] done synthesizing module 'data_buffer' (7#1) [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/data_buffer.vhd:44]
 	Parameter DATA_WIDTH bound to: 32 - type: integer 
 	Parameter MAX_COMPUTE_BYTE bound to: 25 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'ALU' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/ALU.vhd:35]
+INFO: [Synth 8-638] synthesizing module 'ALU' [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/ALU.vhd:34]
 	Parameter DATA_WIDTH bound to: 32 - type: integer 
 	Parameter MAX_COMPUTE_BYTE bound to: 25 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'ALU' (8#1) [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/ALU.vhd:35]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (8#1) [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/ALU.vhd:34]
 	Parameter DATA_WIDTH bound to: 32 - type: integer 
 	Parameter MAX_COMPUTE_BYTE bound to: 25 - type: integer 
 	Parameter INPUT_SIZE_BIT_WIDTH bound to: 16 - type: integer 
@@ -420,7 +415,7 @@ INFO: [Synth 8-638] synthesizing module 'ACCU' [D:/Vivado_Project/MS.CnnAccFPGA/
 	Parameter MAX_COMPUTE_BYTE bound to: 25 - type: integer 
 	Parameter MAX_KERNEL_DEPTH bound to: 32 - type: integer 
 	Parameter DATA_WIDTH bound to: 32 - type: integer 
-	Parameter MAX_ADDR_RAM_2D bound to: 15 - type: integer 
+	Parameter MAX_ADDR_RAM_2D_ADDR_WIDTH bound to: 15 - type: integer 
 	Parameter ROW_BIT_WIDTH bound to: 5 - type: integer 
 	Parameter COL_BIT_WIDTH bound to: 10 - type: integer 
 	Parameter RAM_DEPTH bound to: 16384 - type: integer 
@@ -432,26 +427,24 @@ INFO: [Synth 8-638] synthesizing module 'BRAM_SP' [D:/Vivado_Project/MS.CnnAccFP
 	Parameter MEM_DEPTH bound to: 16384 - type: integer 
 	Parameter ADDR_WIDTH bound to: 15 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'BRAM_SP' (9#1) [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/BRAM_SP.vhd:23]
-WARNING: [Synth 8-614] signal 'hw_acc_en' is read in the process but is not in the sensitivity list [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/ACCU.vhd:165]
 INFO: [Synth 8-256] done synthesizing module 'ACCU' (10#1) [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/ACCU.vhd:69]
-WARNING: [Synth 8-614] signal 's00_axis_tdata' is read in the process but is not in the sensitivity list [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/ConvAccelerator.vhd:590]
-INFO: [Synth 8-256] done synthesizing module 'ConvAccelerator' (11#1) [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/ConvAccelerator.vhd:98]
+INFO: [Synth 8-256] done synthesizing module 'ConvAccelerator' (11#1) [D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/ConvAccelerator.vhd:100]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1070.426 ; gain = 0.000
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1069.734 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1070.426 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1069.734 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1070.426 ; gain = 0.000
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1069.734 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:14 . Memory (MB): peak = 1070.426 ; gain = 0.000
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 1069.734 ; gain = 0.000
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
@@ -459,7 +452,7 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	  25 Input   89 Bit       Adders := 2     
+	   2 Input   64 Bit       Adders := 8     
 	   2 Input   32 Bit       Adders := 3     
 	   2 Input   17 Bit       Adders := 1     
 	   3 Input   16 Bit       Adders := 2     
@@ -471,18 +464,18 @@ Detailed RTL Component Info :
 	   2 Input    6 Bit       Adders := 1     
 	   2 Input    5 Bit       Adders := 1     
 +---Registers : 
-	               64 Bit    Registers := 1     
-	               32 Bit    Registers := 193   
+	               64 Bit    Registers := 23    
+	               32 Bit    Registers := 291   
 	               10 Bit    Registers := 1     
 	                9 Bit    Registers := 2     
 	                8 Bit    Registers := 9     
 	                6 Bit    Registers := 1     
 	                5 Bit    Registers := 1     
-	                3 Bit    Registers := 1     
+	                4 Bit    Registers := 5     
 	                2 Bit    Registers := 3     
-	                1 Bit    Registers := 14    
+	                1 Bit    Registers := 16    
 +---Multipliers : 
-	              32x32  Multipliers := 50    
+	              32x32  Multipliers := 10    
 +---RAMs : 
 	            1024K Bit	(16384 X 64 bit)          RAMs := 1     
 +---Muxes : 
@@ -492,11 +485,13 @@ Detailed RTL Component Info :
 	   6 Input   32 Bit        Muxes := 5     
 	   2 Input   22 Bit        Muxes := 1     
 	   2 Input    9 Bit        Muxes := 4     
-	   2 Input    3 Bit        Muxes := 6     
+	   5 Input    5 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 3     
+	   2 Input    3 Bit        Muxes := 3     
 	   2 Input    2 Bit        Muxes := 1     
 	   5 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 43    
-	   8 Input    1 Bit        Muxes := 6     
+	   2 Input    1 Bit        Muxes := 45    
+	  10 Input    1 Bit        Muxes := 6     
 	   4 Input    1 Bit        Muxes := 3     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -517,852 +512,126 @@ Start Cross Boundary and Area Optimization
 DSP Report: Generating DSP minusOp, operation Mode is: (C:0xffffffffffff)+A*B.
 DSP Report: operator minusOp is absorbed into DSP minusOp.
 DSP Report: operator L is absorbed into DSP minusOp.
-DSP Report: Generating DSP alu_out24, operation Mode is: A*B.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: Generating DSP alu_out24, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: Generating DSP alu_out24, operation Mode is: A*B.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: Generating DSP alu_out24, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: Generating DSP alu_out23, operation Mode is: A*B.
-DSP Report: operator alu_out23 is absorbed into DSP alu_out23.
-DSP Report: operator alu_out23 is absorbed into DSP alu_out23.
-DSP Report: Generating DSP alu_out23, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out23 is absorbed into DSP alu_out23.
-DSP Report: operator alu_out23 is absorbed into DSP alu_out23.
-DSP Report: Generating DSP alu_out23, operation Mode is: A*B.
-DSP Report: operator alu_out23 is absorbed into DSP alu_out23.
-DSP Report: operator alu_out23 is absorbed into DSP alu_out23.
-DSP Report: Generating DSP alu_out23, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out23 is absorbed into DSP alu_out23.
-DSP Report: operator alu_out23 is absorbed into DSP alu_out23.
-DSP Report: Generating DSP alu_out22, operation Mode is: A*B.
-DSP Report: operator alu_out22 is absorbed into DSP alu_out22.
-DSP Report: operator alu_out22 is absorbed into DSP alu_out22.
-DSP Report: Generating DSP alu_out22, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out22 is absorbed into DSP alu_out22.
-DSP Report: operator alu_out22 is absorbed into DSP alu_out22.
-DSP Report: Generating DSP alu_out22, operation Mode is: A*B.
-DSP Report: operator alu_out22 is absorbed into DSP alu_out22.
-DSP Report: operator alu_out22 is absorbed into DSP alu_out22.
-DSP Report: Generating DSP alu_out22, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out22 is absorbed into DSP alu_out22.
-DSP Report: operator alu_out22 is absorbed into DSP alu_out22.
-DSP Report: Generating DSP alu_out21, operation Mode is: A*B.
-DSP Report: operator alu_out21 is absorbed into DSP alu_out21.
-DSP Report: operator alu_out21 is absorbed into DSP alu_out21.
-DSP Report: Generating DSP alu_out21, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out21 is absorbed into DSP alu_out21.
-DSP Report: operator alu_out21 is absorbed into DSP alu_out21.
-DSP Report: Generating DSP alu_out21, operation Mode is: A*B.
-DSP Report: operator alu_out21 is absorbed into DSP alu_out21.
-DSP Report: operator alu_out21 is absorbed into DSP alu_out21.
-DSP Report: Generating DSP alu_out21, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out21 is absorbed into DSP alu_out21.
-DSP Report: operator alu_out21 is absorbed into DSP alu_out21.
-DSP Report: Generating DSP alu_out20, operation Mode is: A*B.
-DSP Report: operator alu_out20 is absorbed into DSP alu_out20.
-DSP Report: operator alu_out20 is absorbed into DSP alu_out20.
-DSP Report: Generating DSP alu_out20, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out20 is absorbed into DSP alu_out20.
-DSP Report: operator alu_out20 is absorbed into DSP alu_out20.
-DSP Report: Generating DSP alu_out20, operation Mode is: A*B.
-DSP Report: operator alu_out20 is absorbed into DSP alu_out20.
-DSP Report: operator alu_out20 is absorbed into DSP alu_out20.
-DSP Report: Generating DSP alu_out20, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out20 is absorbed into DSP alu_out20.
-DSP Report: operator alu_out20 is absorbed into DSP alu_out20.
-DSP Report: Generating DSP alu_out19, operation Mode is: A*B.
-DSP Report: operator alu_out19 is absorbed into DSP alu_out19.
-DSP Report: operator alu_out19 is absorbed into DSP alu_out19.
-DSP Report: Generating DSP alu_out19, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out19 is absorbed into DSP alu_out19.
-DSP Report: operator alu_out19 is absorbed into DSP alu_out19.
-DSP Report: Generating DSP alu_out19, operation Mode is: A*B.
-DSP Report: operator alu_out19 is absorbed into DSP alu_out19.
-DSP Report: operator alu_out19 is absorbed into DSP alu_out19.
-DSP Report: Generating DSP alu_out19, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out19 is absorbed into DSP alu_out19.
-DSP Report: operator alu_out19 is absorbed into DSP alu_out19.
-DSP Report: Generating DSP alu_out18, operation Mode is: A*B.
-DSP Report: operator alu_out18 is absorbed into DSP alu_out18.
-DSP Report: operator alu_out18 is absorbed into DSP alu_out18.
-DSP Report: Generating DSP alu_out18, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out18 is absorbed into DSP alu_out18.
-DSP Report: operator alu_out18 is absorbed into DSP alu_out18.
-DSP Report: Generating DSP alu_out18, operation Mode is: A*B.
-DSP Report: operator alu_out18 is absorbed into DSP alu_out18.
-DSP Report: operator alu_out18 is absorbed into DSP alu_out18.
-DSP Report: Generating DSP alu_out18, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out18 is absorbed into DSP alu_out18.
-DSP Report: operator alu_out18 is absorbed into DSP alu_out18.
-DSP Report: Generating DSP alu_out17, operation Mode is: A*B.
-DSP Report: operator alu_out17 is absorbed into DSP alu_out17.
-DSP Report: operator alu_out17 is absorbed into DSP alu_out17.
-DSP Report: Generating DSP alu_out17, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out17 is absorbed into DSP alu_out17.
-DSP Report: operator alu_out17 is absorbed into DSP alu_out17.
-DSP Report: Generating DSP alu_out17, operation Mode is: A*B.
-DSP Report: operator alu_out17 is absorbed into DSP alu_out17.
-DSP Report: operator alu_out17 is absorbed into DSP alu_out17.
-DSP Report: Generating DSP alu_out17, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out17 is absorbed into DSP alu_out17.
-DSP Report: operator alu_out17 is absorbed into DSP alu_out17.
-DSP Report: Generating DSP alu_out16, operation Mode is: A*B.
-DSP Report: operator alu_out16 is absorbed into DSP alu_out16.
-DSP Report: operator alu_out16 is absorbed into DSP alu_out16.
-DSP Report: Generating DSP alu_out16, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out16 is absorbed into DSP alu_out16.
-DSP Report: operator alu_out16 is absorbed into DSP alu_out16.
-DSP Report: Generating DSP alu_out16, operation Mode is: A*B.
-DSP Report: operator alu_out16 is absorbed into DSP alu_out16.
-DSP Report: operator alu_out16 is absorbed into DSP alu_out16.
-DSP Report: Generating DSP alu_out16, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out16 is absorbed into DSP alu_out16.
-DSP Report: operator alu_out16 is absorbed into DSP alu_out16.
-DSP Report: Generating DSP alu_out15, operation Mode is: A*B.
-DSP Report: operator alu_out15 is absorbed into DSP alu_out15.
-DSP Report: operator alu_out15 is absorbed into DSP alu_out15.
-DSP Report: Generating DSP alu_out15, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out15 is absorbed into DSP alu_out15.
-DSP Report: operator alu_out15 is absorbed into DSP alu_out15.
-DSP Report: Generating DSP alu_out15, operation Mode is: A*B.
-DSP Report: operator alu_out15 is absorbed into DSP alu_out15.
-DSP Report: operator alu_out15 is absorbed into DSP alu_out15.
-DSP Report: Generating DSP alu_out15, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out15 is absorbed into DSP alu_out15.
-DSP Report: operator alu_out15 is absorbed into DSP alu_out15.
-DSP Report: Generating DSP alu_out14, operation Mode is: A*B.
-DSP Report: operator alu_out14 is absorbed into DSP alu_out14.
-DSP Report: operator alu_out14 is absorbed into DSP alu_out14.
-DSP Report: Generating DSP alu_out14, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out14 is absorbed into DSP alu_out14.
-DSP Report: operator alu_out14 is absorbed into DSP alu_out14.
-DSP Report: Generating DSP alu_out14, operation Mode is: A*B.
-DSP Report: operator alu_out14 is absorbed into DSP alu_out14.
-DSP Report: operator alu_out14 is absorbed into DSP alu_out14.
-DSP Report: Generating DSP alu_out14, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out14 is absorbed into DSP alu_out14.
-DSP Report: operator alu_out14 is absorbed into DSP alu_out14.
-DSP Report: Generating DSP alu_out13, operation Mode is: A*B.
-DSP Report: operator alu_out13 is absorbed into DSP alu_out13.
-DSP Report: operator alu_out13 is absorbed into DSP alu_out13.
-DSP Report: Generating DSP alu_out13, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out13 is absorbed into DSP alu_out13.
-DSP Report: operator alu_out13 is absorbed into DSP alu_out13.
-DSP Report: Generating DSP alu_out13, operation Mode is: A*B.
-DSP Report: operator alu_out13 is absorbed into DSP alu_out13.
-DSP Report: operator alu_out13 is absorbed into DSP alu_out13.
-DSP Report: Generating DSP alu_out13, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out13 is absorbed into DSP alu_out13.
-DSP Report: operator alu_out13 is absorbed into DSP alu_out13.
-DSP Report: Generating DSP alu_out12, operation Mode is: A*B.
-DSP Report: operator alu_out12 is absorbed into DSP alu_out12.
-DSP Report: operator alu_out12 is absorbed into DSP alu_out12.
-DSP Report: Generating DSP alu_out12, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out12 is absorbed into DSP alu_out12.
-DSP Report: operator alu_out12 is absorbed into DSP alu_out12.
-DSP Report: Generating DSP alu_out12, operation Mode is: A*B.
-DSP Report: operator alu_out12 is absorbed into DSP alu_out12.
-DSP Report: operator alu_out12 is absorbed into DSP alu_out12.
-DSP Report: Generating DSP alu_out12, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out12 is absorbed into DSP alu_out12.
-DSP Report: operator alu_out12 is absorbed into DSP alu_out12.
-DSP Report: Generating DSP alu_out11, operation Mode is: A*B.
-DSP Report: operator alu_out11 is absorbed into DSP alu_out11.
-DSP Report: operator alu_out11 is absorbed into DSP alu_out11.
-DSP Report: Generating DSP alu_out11, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out11 is absorbed into DSP alu_out11.
-DSP Report: operator alu_out11 is absorbed into DSP alu_out11.
-DSP Report: Generating DSP alu_out11, operation Mode is: A*B.
-DSP Report: operator alu_out11 is absorbed into DSP alu_out11.
-DSP Report: operator alu_out11 is absorbed into DSP alu_out11.
-DSP Report: Generating DSP alu_out11, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out11 is absorbed into DSP alu_out11.
-DSP Report: operator alu_out11 is absorbed into DSP alu_out11.
-DSP Report: Generating DSP alu_out10, operation Mode is: A*B.
-DSP Report: operator alu_out10 is absorbed into DSP alu_out10.
-DSP Report: operator alu_out10 is absorbed into DSP alu_out10.
-DSP Report: Generating DSP alu_out10, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out10 is absorbed into DSP alu_out10.
-DSP Report: operator alu_out10 is absorbed into DSP alu_out10.
-DSP Report: Generating DSP alu_out10, operation Mode is: A*B.
-DSP Report: operator alu_out10 is absorbed into DSP alu_out10.
-DSP Report: operator alu_out10 is absorbed into DSP alu_out10.
-DSP Report: Generating DSP alu_out10, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out10 is absorbed into DSP alu_out10.
-DSP Report: operator alu_out10 is absorbed into DSP alu_out10.
-DSP Report: Generating DSP alu_out9, operation Mode is: A*B.
-DSP Report: operator alu_out9 is absorbed into DSP alu_out9.
-DSP Report: operator alu_out9 is absorbed into DSP alu_out9.
-DSP Report: Generating DSP alu_out9, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out9 is absorbed into DSP alu_out9.
-DSP Report: operator alu_out9 is absorbed into DSP alu_out9.
-DSP Report: Generating DSP alu_out9, operation Mode is: A*B.
-DSP Report: operator alu_out9 is absorbed into DSP alu_out9.
-DSP Report: operator alu_out9 is absorbed into DSP alu_out9.
-DSP Report: Generating DSP alu_out9, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out9 is absorbed into DSP alu_out9.
-DSP Report: operator alu_out9 is absorbed into DSP alu_out9.
-DSP Report: Generating DSP alu_out8, operation Mode is: A*B.
-DSP Report: operator alu_out8 is absorbed into DSP alu_out8.
-DSP Report: operator alu_out8 is absorbed into DSP alu_out8.
-DSP Report: Generating DSP alu_out8, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out8 is absorbed into DSP alu_out8.
-DSP Report: operator alu_out8 is absorbed into DSP alu_out8.
-DSP Report: Generating DSP alu_out8, operation Mode is: A*B.
-DSP Report: operator alu_out8 is absorbed into DSP alu_out8.
-DSP Report: operator alu_out8 is absorbed into DSP alu_out8.
-DSP Report: Generating DSP alu_out8, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out8 is absorbed into DSP alu_out8.
-DSP Report: operator alu_out8 is absorbed into DSP alu_out8.
-DSP Report: Generating DSP alu_out7, operation Mode is: A*B.
-DSP Report: operator alu_out7 is absorbed into DSP alu_out7.
-DSP Report: operator alu_out7 is absorbed into DSP alu_out7.
-DSP Report: Generating DSP alu_out7, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out7 is absorbed into DSP alu_out7.
-DSP Report: operator alu_out7 is absorbed into DSP alu_out7.
-DSP Report: Generating DSP alu_out7, operation Mode is: A*B.
-DSP Report: operator alu_out7 is absorbed into DSP alu_out7.
-DSP Report: operator alu_out7 is absorbed into DSP alu_out7.
-DSP Report: Generating DSP alu_out7, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out7 is absorbed into DSP alu_out7.
-DSP Report: operator alu_out7 is absorbed into DSP alu_out7.
-DSP Report: Generating DSP alu_out6, operation Mode is: A*B.
-DSP Report: operator alu_out6 is absorbed into DSP alu_out6.
-DSP Report: operator alu_out6 is absorbed into DSP alu_out6.
-DSP Report: Generating DSP alu_out6, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out6 is absorbed into DSP alu_out6.
-DSP Report: operator alu_out6 is absorbed into DSP alu_out6.
-DSP Report: Generating DSP alu_out6, operation Mode is: A*B.
-DSP Report: operator alu_out6 is absorbed into DSP alu_out6.
-DSP Report: operator alu_out6 is absorbed into DSP alu_out6.
-DSP Report: Generating DSP alu_out6, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out6 is absorbed into DSP alu_out6.
-DSP Report: operator alu_out6 is absorbed into DSP alu_out6.
-DSP Report: Generating DSP alu_out5, operation Mode is: A*B.
-DSP Report: operator alu_out5 is absorbed into DSP alu_out5.
-DSP Report: operator alu_out5 is absorbed into DSP alu_out5.
-DSP Report: Generating DSP alu_out5, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out5 is absorbed into DSP alu_out5.
-DSP Report: operator alu_out5 is absorbed into DSP alu_out5.
-DSP Report: Generating DSP alu_out5, operation Mode is: A*B.
-DSP Report: operator alu_out5 is absorbed into DSP alu_out5.
-DSP Report: operator alu_out5 is absorbed into DSP alu_out5.
-DSP Report: Generating DSP alu_out5, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out5 is absorbed into DSP alu_out5.
-DSP Report: operator alu_out5 is absorbed into DSP alu_out5.
-DSP Report: Generating DSP alu_out4, operation Mode is: A*B.
-DSP Report: operator alu_out4 is absorbed into DSP alu_out4.
-DSP Report: operator alu_out4 is absorbed into DSP alu_out4.
-DSP Report: Generating DSP alu_out4, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out4 is absorbed into DSP alu_out4.
-DSP Report: operator alu_out4 is absorbed into DSP alu_out4.
-DSP Report: Generating DSP alu_out4, operation Mode is: A*B.
-DSP Report: operator alu_out4 is absorbed into DSP alu_out4.
-DSP Report: operator alu_out4 is absorbed into DSP alu_out4.
-DSP Report: Generating DSP alu_out4, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out4 is absorbed into DSP alu_out4.
-DSP Report: operator alu_out4 is absorbed into DSP alu_out4.
-DSP Report: Generating DSP alu_out3, operation Mode is: A*B.
-DSP Report: operator alu_out3 is absorbed into DSP alu_out3.
-DSP Report: operator alu_out3 is absorbed into DSP alu_out3.
-DSP Report: Generating DSP alu_out3, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out3 is absorbed into DSP alu_out3.
-DSP Report: operator alu_out3 is absorbed into DSP alu_out3.
-DSP Report: Generating DSP alu_out3, operation Mode is: A*B.
-DSP Report: operator alu_out3 is absorbed into DSP alu_out3.
-DSP Report: operator alu_out3 is absorbed into DSP alu_out3.
-DSP Report: Generating DSP alu_out3, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out3 is absorbed into DSP alu_out3.
-DSP Report: operator alu_out3 is absorbed into DSP alu_out3.
-DSP Report: Generating DSP alu_out2, operation Mode is: A*B.
-DSP Report: operator alu_out2 is absorbed into DSP alu_out2.
-DSP Report: operator alu_out2 is absorbed into DSP alu_out2.
-DSP Report: Generating DSP alu_out2, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out2 is absorbed into DSP alu_out2.
-DSP Report: operator alu_out2 is absorbed into DSP alu_out2.
-DSP Report: Generating DSP alu_out2, operation Mode is: A*B.
-DSP Report: operator alu_out2 is absorbed into DSP alu_out2.
-DSP Report: operator alu_out2 is absorbed into DSP alu_out2.
-DSP Report: Generating DSP alu_out2, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out2 is absorbed into DSP alu_out2.
-DSP Report: operator alu_out2 is absorbed into DSP alu_out2.
-DSP Report: Generating DSP alu_out1, operation Mode is: A*B.
-DSP Report: operator alu_out1 is absorbed into DSP alu_out1.
-DSP Report: operator alu_out1 is absorbed into DSP alu_out1.
-DSP Report: Generating DSP alu_out1, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out1 is absorbed into DSP alu_out1.
-DSP Report: operator alu_out1 is absorbed into DSP alu_out1.
-DSP Report: Generating DSP alu_out1, operation Mode is: A*B.
-DSP Report: operator alu_out1 is absorbed into DSP alu_out1.
-DSP Report: operator alu_out1 is absorbed into DSP alu_out1.
-DSP Report: Generating DSP alu_out1, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out1 is absorbed into DSP alu_out1.
-DSP Report: operator alu_out1 is absorbed into DSP alu_out1.
-DSP Report: Generating DSP alu_out24, operation Mode is: A*B.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: Generating DSP alu_out24, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: Generating DSP alu_out24, operation Mode is: A*B.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: Generating DSP alu_out24, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: Generating DSP alu_out24, operation Mode is: A*B.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: Generating DSP alu_out24, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: Generating DSP alu_out24, operation Mode is: A*B.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: Generating DSP alu_out24, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: Generating DSP alu_out23, operation Mode is: A*B.
-DSP Report: operator alu_out23 is absorbed into DSP alu_out23.
-DSP Report: operator alu_out23 is absorbed into DSP alu_out23.
-DSP Report: Generating DSP alu_out23, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out23 is absorbed into DSP alu_out23.
-DSP Report: operator alu_out23 is absorbed into DSP alu_out23.
-DSP Report: Generating DSP alu_out23, operation Mode is: A*B.
-DSP Report: operator alu_out23 is absorbed into DSP alu_out23.
-DSP Report: operator alu_out23 is absorbed into DSP alu_out23.
-DSP Report: Generating DSP alu_out23, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out23 is absorbed into DSP alu_out23.
-DSP Report: operator alu_out23 is absorbed into DSP alu_out23.
-DSP Report: Generating DSP alu_out22, operation Mode is: A*B.
-DSP Report: operator alu_out22 is absorbed into DSP alu_out22.
-DSP Report: operator alu_out22 is absorbed into DSP alu_out22.
-DSP Report: Generating DSP alu_out22, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out22 is absorbed into DSP alu_out22.
-DSP Report: operator alu_out22 is absorbed into DSP alu_out22.
-DSP Report: Generating DSP alu_out22, operation Mode is: A*B.
-DSP Report: operator alu_out22 is absorbed into DSP alu_out22.
-DSP Report: operator alu_out22 is absorbed into DSP alu_out22.
-DSP Report: Generating DSP alu_out22, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out22 is absorbed into DSP alu_out22.
-DSP Report: operator alu_out22 is absorbed into DSP alu_out22.
-DSP Report: Generating DSP alu_out21, operation Mode is: A*B.
-DSP Report: operator alu_out21 is absorbed into DSP alu_out21.
-DSP Report: operator alu_out21 is absorbed into DSP alu_out21.
-DSP Report: Generating DSP alu_out21, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out21 is absorbed into DSP alu_out21.
-DSP Report: operator alu_out21 is absorbed into DSP alu_out21.
-DSP Report: Generating DSP alu_out21, operation Mode is: A*B.
-DSP Report: operator alu_out21 is absorbed into DSP alu_out21.
-DSP Report: operator alu_out21 is absorbed into DSP alu_out21.
-DSP Report: Generating DSP alu_out21, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out21 is absorbed into DSP alu_out21.
-DSP Report: operator alu_out21 is absorbed into DSP alu_out21.
-DSP Report: Generating DSP alu_out20, operation Mode is: A*B.
-DSP Report: operator alu_out20 is absorbed into DSP alu_out20.
-DSP Report: operator alu_out20 is absorbed into DSP alu_out20.
-DSP Report: Generating DSP alu_out20, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out20 is absorbed into DSP alu_out20.
-DSP Report: operator alu_out20 is absorbed into DSP alu_out20.
-DSP Report: Generating DSP alu_out20, operation Mode is: A*B.
-DSP Report: operator alu_out20 is absorbed into DSP alu_out20.
-DSP Report: operator alu_out20 is absorbed into DSP alu_out20.
-DSP Report: Generating DSP alu_out20, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out20 is absorbed into DSP alu_out20.
-DSP Report: operator alu_out20 is absorbed into DSP alu_out20.
-DSP Report: Generating DSP alu_out19, operation Mode is: A*B.
-DSP Report: operator alu_out19 is absorbed into DSP alu_out19.
-DSP Report: operator alu_out19 is absorbed into DSP alu_out19.
-DSP Report: Generating DSP alu_out19, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out19 is absorbed into DSP alu_out19.
-DSP Report: operator alu_out19 is absorbed into DSP alu_out19.
-DSP Report: Generating DSP alu_out19, operation Mode is: A*B.
-DSP Report: operator alu_out19 is absorbed into DSP alu_out19.
-DSP Report: operator alu_out19 is absorbed into DSP alu_out19.
-DSP Report: Generating DSP alu_out19, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out19 is absorbed into DSP alu_out19.
-DSP Report: operator alu_out19 is absorbed into DSP alu_out19.
-DSP Report: Generating DSP alu_out18, operation Mode is: A*B.
-DSP Report: operator alu_out18 is absorbed into DSP alu_out18.
-DSP Report: operator alu_out18 is absorbed into DSP alu_out18.
-DSP Report: Generating DSP alu_out18, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out18 is absorbed into DSP alu_out18.
-DSP Report: operator alu_out18 is absorbed into DSP alu_out18.
-DSP Report: Generating DSP alu_out18, operation Mode is: A*B.
-DSP Report: operator alu_out18 is absorbed into DSP alu_out18.
-DSP Report: operator alu_out18 is absorbed into DSP alu_out18.
-DSP Report: Generating DSP alu_out18, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out18 is absorbed into DSP alu_out18.
-DSP Report: operator alu_out18 is absorbed into DSP alu_out18.
-DSP Report: Generating DSP alu_out17, operation Mode is: A*B.
-DSP Report: operator alu_out17 is absorbed into DSP alu_out17.
-DSP Report: operator alu_out17 is absorbed into DSP alu_out17.
-DSP Report: Generating DSP alu_out17, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out17 is absorbed into DSP alu_out17.
-DSP Report: operator alu_out17 is absorbed into DSP alu_out17.
-DSP Report: Generating DSP alu_out17, operation Mode is: A*B.
-DSP Report: operator alu_out17 is absorbed into DSP alu_out17.
-DSP Report: operator alu_out17 is absorbed into DSP alu_out17.
-DSP Report: Generating DSP alu_out17, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out17 is absorbed into DSP alu_out17.
-DSP Report: operator alu_out17 is absorbed into DSP alu_out17.
-DSP Report: Generating DSP alu_out16, operation Mode is: A*B.
-DSP Report: operator alu_out16 is absorbed into DSP alu_out16.
-DSP Report: operator alu_out16 is absorbed into DSP alu_out16.
-DSP Report: Generating DSP alu_out16, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out16 is absorbed into DSP alu_out16.
-DSP Report: operator alu_out16 is absorbed into DSP alu_out16.
-DSP Report: Generating DSP alu_out16, operation Mode is: A*B.
-DSP Report: operator alu_out16 is absorbed into DSP alu_out16.
-DSP Report: operator alu_out16 is absorbed into DSP alu_out16.
-DSP Report: Generating DSP alu_out16, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out16 is absorbed into DSP alu_out16.
-DSP Report: operator alu_out16 is absorbed into DSP alu_out16.
-DSP Report: Generating DSP alu_out15, operation Mode is: A*B.
-DSP Report: operator alu_out15 is absorbed into DSP alu_out15.
-DSP Report: operator alu_out15 is absorbed into DSP alu_out15.
-DSP Report: Generating DSP alu_out15, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out15 is absorbed into DSP alu_out15.
-DSP Report: operator alu_out15 is absorbed into DSP alu_out15.
-DSP Report: Generating DSP alu_out15, operation Mode is: A*B.
-DSP Report: operator alu_out15 is absorbed into DSP alu_out15.
-DSP Report: operator alu_out15 is absorbed into DSP alu_out15.
-DSP Report: Generating DSP alu_out15, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out15 is absorbed into DSP alu_out15.
-DSP Report: operator alu_out15 is absorbed into DSP alu_out15.
-DSP Report: Generating DSP alu_out14, operation Mode is: A*B.
-DSP Report: operator alu_out14 is absorbed into DSP alu_out14.
-DSP Report: operator alu_out14 is absorbed into DSP alu_out14.
-DSP Report: Generating DSP alu_out14, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out14 is absorbed into DSP alu_out14.
-DSP Report: operator alu_out14 is absorbed into DSP alu_out14.
-DSP Report: Generating DSP alu_out14, operation Mode is: A*B.
-DSP Report: operator alu_out14 is absorbed into DSP alu_out14.
-DSP Report: operator alu_out14 is absorbed into DSP alu_out14.
-DSP Report: Generating DSP alu_out14, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out14 is absorbed into DSP alu_out14.
-DSP Report: operator alu_out14 is absorbed into DSP alu_out14.
-DSP Report: Generating DSP alu_out13, operation Mode is: A*B.
-DSP Report: operator alu_out13 is absorbed into DSP alu_out13.
-DSP Report: operator alu_out13 is absorbed into DSP alu_out13.
-DSP Report: Generating DSP alu_out13, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out13 is absorbed into DSP alu_out13.
-DSP Report: operator alu_out13 is absorbed into DSP alu_out13.
-DSP Report: Generating DSP alu_out13, operation Mode is: A*B.
-DSP Report: operator alu_out13 is absorbed into DSP alu_out13.
-DSP Report: operator alu_out13 is absorbed into DSP alu_out13.
-DSP Report: Generating DSP alu_out13, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out13 is absorbed into DSP alu_out13.
-DSP Report: operator alu_out13 is absorbed into DSP alu_out13.
-DSP Report: Generating DSP alu_out12, operation Mode is: A*B.
-DSP Report: operator alu_out12 is absorbed into DSP alu_out12.
-DSP Report: operator alu_out12 is absorbed into DSP alu_out12.
-DSP Report: Generating DSP alu_out12, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out12 is absorbed into DSP alu_out12.
-DSP Report: operator alu_out12 is absorbed into DSP alu_out12.
-DSP Report: Generating DSP alu_out12, operation Mode is: A*B.
-DSP Report: operator alu_out12 is absorbed into DSP alu_out12.
-DSP Report: operator alu_out12 is absorbed into DSP alu_out12.
-DSP Report: Generating DSP alu_out12, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out12 is absorbed into DSP alu_out12.
-DSP Report: operator alu_out12 is absorbed into DSP alu_out12.
-DSP Report: Generating DSP alu_out11, operation Mode is: A*B.
-DSP Report: operator alu_out11 is absorbed into DSP alu_out11.
-DSP Report: operator alu_out11 is absorbed into DSP alu_out11.
-DSP Report: Generating DSP alu_out11, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out11 is absorbed into DSP alu_out11.
-DSP Report: operator alu_out11 is absorbed into DSP alu_out11.
-DSP Report: Generating DSP alu_out11, operation Mode is: A*B.
-DSP Report: operator alu_out11 is absorbed into DSP alu_out11.
-DSP Report: operator alu_out11 is absorbed into DSP alu_out11.
-DSP Report: Generating DSP alu_out11, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out11 is absorbed into DSP alu_out11.
-DSP Report: operator alu_out11 is absorbed into DSP alu_out11.
-DSP Report: Generating DSP alu_out10, operation Mode is: A*B.
-DSP Report: operator alu_out10 is absorbed into DSP alu_out10.
-DSP Report: operator alu_out10 is absorbed into DSP alu_out10.
-DSP Report: Generating DSP alu_out10, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out10 is absorbed into DSP alu_out10.
-DSP Report: operator alu_out10 is absorbed into DSP alu_out10.
-DSP Report: Generating DSP alu_out10, operation Mode is: A*B.
-DSP Report: operator alu_out10 is absorbed into DSP alu_out10.
-DSP Report: operator alu_out10 is absorbed into DSP alu_out10.
-DSP Report: Generating DSP alu_out10, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out10 is absorbed into DSP alu_out10.
-DSP Report: operator alu_out10 is absorbed into DSP alu_out10.
-DSP Report: Generating DSP alu_out9, operation Mode is: A*B.
-DSP Report: operator alu_out9 is absorbed into DSP alu_out9.
-DSP Report: operator alu_out9 is absorbed into DSP alu_out9.
-DSP Report: Generating DSP alu_out9, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out9 is absorbed into DSP alu_out9.
-DSP Report: operator alu_out9 is absorbed into DSP alu_out9.
-DSP Report: Generating DSP alu_out9, operation Mode is: A*B.
-DSP Report: operator alu_out9 is absorbed into DSP alu_out9.
-DSP Report: operator alu_out9 is absorbed into DSP alu_out9.
-DSP Report: Generating DSP alu_out9, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out9 is absorbed into DSP alu_out9.
-DSP Report: operator alu_out9 is absorbed into DSP alu_out9.
-DSP Report: Generating DSP alu_out8, operation Mode is: A*B.
-DSP Report: operator alu_out8 is absorbed into DSP alu_out8.
-DSP Report: operator alu_out8 is absorbed into DSP alu_out8.
-DSP Report: Generating DSP alu_out8, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out8 is absorbed into DSP alu_out8.
-DSP Report: operator alu_out8 is absorbed into DSP alu_out8.
-DSP Report: Generating DSP alu_out8, operation Mode is: A*B.
-DSP Report: operator alu_out8 is absorbed into DSP alu_out8.
-DSP Report: operator alu_out8 is absorbed into DSP alu_out8.
-DSP Report: Generating DSP alu_out8, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out8 is absorbed into DSP alu_out8.
-DSP Report: operator alu_out8 is absorbed into DSP alu_out8.
-DSP Report: Generating DSP alu_out7, operation Mode is: A*B.
-DSP Report: operator alu_out7 is absorbed into DSP alu_out7.
-DSP Report: operator alu_out7 is absorbed into DSP alu_out7.
-DSP Report: Generating DSP alu_out7, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out7 is absorbed into DSP alu_out7.
-DSP Report: operator alu_out7 is absorbed into DSP alu_out7.
-DSP Report: Generating DSP alu_out7, operation Mode is: A*B.
-DSP Report: operator alu_out7 is absorbed into DSP alu_out7.
-DSP Report: operator alu_out7 is absorbed into DSP alu_out7.
-DSP Report: Generating DSP alu_out7, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out7 is absorbed into DSP alu_out7.
-DSP Report: operator alu_out7 is absorbed into DSP alu_out7.
-DSP Report: Generating DSP alu_out6, operation Mode is: A*B.
-DSP Report: operator alu_out6 is absorbed into DSP alu_out6.
-DSP Report: operator alu_out6 is absorbed into DSP alu_out6.
-DSP Report: Generating DSP alu_out6, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out6 is absorbed into DSP alu_out6.
-DSP Report: operator alu_out6 is absorbed into DSP alu_out6.
-DSP Report: Generating DSP alu_out6, operation Mode is: A*B.
-DSP Report: operator alu_out6 is absorbed into DSP alu_out6.
-DSP Report: operator alu_out6 is absorbed into DSP alu_out6.
-DSP Report: Generating DSP alu_out6, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out6 is absorbed into DSP alu_out6.
-DSP Report: operator alu_out6 is absorbed into DSP alu_out6.
-DSP Report: Generating DSP alu_out5, operation Mode is: A*B.
-DSP Report: operator alu_out5 is absorbed into DSP alu_out5.
-DSP Report: operator alu_out5 is absorbed into DSP alu_out5.
-DSP Report: Generating DSP alu_out5, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out5 is absorbed into DSP alu_out5.
-DSP Report: operator alu_out5 is absorbed into DSP alu_out5.
-DSP Report: Generating DSP alu_out5, operation Mode is: A*B.
-DSP Report: operator alu_out5 is absorbed into DSP alu_out5.
-DSP Report: operator alu_out5 is absorbed into DSP alu_out5.
-DSP Report: Generating DSP alu_out5, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out5 is absorbed into DSP alu_out5.
-DSP Report: operator alu_out5 is absorbed into DSP alu_out5.
-DSP Report: Generating DSP alu_out4, operation Mode is: A*B.
-DSP Report: operator alu_out4 is absorbed into DSP alu_out4.
-DSP Report: operator alu_out4 is absorbed into DSP alu_out4.
-DSP Report: Generating DSP alu_out4, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out4 is absorbed into DSP alu_out4.
-DSP Report: operator alu_out4 is absorbed into DSP alu_out4.
-DSP Report: Generating DSP alu_out4, operation Mode is: A*B.
-DSP Report: operator alu_out4 is absorbed into DSP alu_out4.
-DSP Report: operator alu_out4 is absorbed into DSP alu_out4.
-DSP Report: Generating DSP alu_out4, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out4 is absorbed into DSP alu_out4.
-DSP Report: operator alu_out4 is absorbed into DSP alu_out4.
-DSP Report: Generating DSP alu_out3, operation Mode is: A*B.
-DSP Report: operator alu_out3 is absorbed into DSP alu_out3.
-DSP Report: operator alu_out3 is absorbed into DSP alu_out3.
-DSP Report: Generating DSP alu_out3, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out3 is absorbed into DSP alu_out3.
-DSP Report: operator alu_out3 is absorbed into DSP alu_out3.
-DSP Report: Generating DSP alu_out3, operation Mode is: A*B.
-DSP Report: operator alu_out3 is absorbed into DSP alu_out3.
-DSP Report: operator alu_out3 is absorbed into DSP alu_out3.
-DSP Report: Generating DSP alu_out3, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out3 is absorbed into DSP alu_out3.
-DSP Report: operator alu_out3 is absorbed into DSP alu_out3.
-DSP Report: Generating DSP alu_out2, operation Mode is: A*B.
-DSP Report: operator alu_out2 is absorbed into DSP alu_out2.
-DSP Report: operator alu_out2 is absorbed into DSP alu_out2.
-DSP Report: Generating DSP alu_out2, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out2 is absorbed into DSP alu_out2.
-DSP Report: operator alu_out2 is absorbed into DSP alu_out2.
-DSP Report: Generating DSP alu_out2, operation Mode is: A*B.
-DSP Report: operator alu_out2 is absorbed into DSP alu_out2.
-DSP Report: operator alu_out2 is absorbed into DSP alu_out2.
-DSP Report: Generating DSP alu_out2, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out2 is absorbed into DSP alu_out2.
-DSP Report: operator alu_out2 is absorbed into DSP alu_out2.
-DSP Report: Generating DSP alu_out1, operation Mode is: A*B.
-DSP Report: operator alu_out1 is absorbed into DSP alu_out1.
-DSP Report: operator alu_out1 is absorbed into DSP alu_out1.
-DSP Report: Generating DSP alu_out1, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out1 is absorbed into DSP alu_out1.
-DSP Report: operator alu_out1 is absorbed into DSP alu_out1.
-DSP Report: Generating DSP alu_out1, operation Mode is: A*B.
-DSP Report: operator alu_out1 is absorbed into DSP alu_out1.
-DSP Report: operator alu_out1 is absorbed into DSP alu_out1.
-DSP Report: Generating DSP alu_out1, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out1 is absorbed into DSP alu_out1.
-DSP Report: operator alu_out1 is absorbed into DSP alu_out1.
-DSP Report: Generating DSP alu_out24, operation Mode is: A*B.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: Generating DSP alu_out24, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: Generating DSP alu_out24, operation Mode is: A*B.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: Generating DSP alu_out24, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
+DSP Report: Generating DSP m4, operation Mode is: A*B.
+DSP Report: operator m4 is absorbed into DSP m4.
+DSP Report: operator m4 is absorbed into DSP m4.
+DSP Report: Generating DSP m4, operation Mode is: A*B.
+DSP Report: operator m4 is absorbed into DSP m4.
+DSP Report: Generating DSP m4, operation Mode is: A*B.
+DSP Report: operator m4 is absorbed into DSP m4.
+DSP Report: Generating DSP m4, operation Mode is: A*B.
+DSP Report: operator m4 is absorbed into DSP m4.
+DSP Report: Generating DSP m3, operation Mode is: A*B.
+DSP Report: operator m3 is absorbed into DSP m3.
+DSP Report: operator m3 is absorbed into DSP m3.
+DSP Report: Generating DSP m3, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator m3 is absorbed into DSP m3.
+DSP Report: operator m3 is absorbed into DSP m3.
+DSP Report: Generating DSP m3, operation Mode is: A*B.
+DSP Report: operator m3 is absorbed into DSP m3.
+DSP Report: operator m3 is absorbed into DSP m3.
+DSP Report: Generating DSP m3, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator m3 is absorbed into DSP m3.
+DSP Report: operator m3 is absorbed into DSP m3.
+DSP Report: Generating DSP m2, operation Mode is: A*B.
+DSP Report: operator m2 is absorbed into DSP m2.
+DSP Report: operator m2 is absorbed into DSP m2.
+DSP Report: Generating DSP m2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator m2 is absorbed into DSP m2.
+DSP Report: operator m2 is absorbed into DSP m2.
+DSP Report: Generating DSP m2, operation Mode is: A*B.
+DSP Report: operator m2 is absorbed into DSP m2.
+DSP Report: operator m2 is absorbed into DSP m2.
+DSP Report: Generating DSP m2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator m2 is absorbed into DSP m2.
+DSP Report: operator m2 is absorbed into DSP m2.
+DSP Report: Generating DSP m1, operation Mode is: A*B.
+DSP Report: operator m1 is absorbed into DSP m1.
+DSP Report: operator m1 is absorbed into DSP m1.
+DSP Report: Generating DSP m1, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator m1 is absorbed into DSP m1.
+DSP Report: operator m1 is absorbed into DSP m1.
+DSP Report: Generating DSP m1, operation Mode is: A*B.
+DSP Report: operator m1 is absorbed into DSP m1.
+DSP Report: operator m1 is absorbed into DSP m1.
+DSP Report: Generating DSP m1, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator m1 is absorbed into DSP m1.
+DSP Report: operator m1 is absorbed into DSP m1.
+DSP Report: Generating DSP m0, operation Mode is: A*B.
+DSP Report: operator m0 is absorbed into DSP m0.
+DSP Report: operator m0 is absorbed into DSP m0.
+DSP Report: Generating DSP m0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator m0 is absorbed into DSP m0.
+DSP Report: operator m0 is absorbed into DSP m0.
+DSP Report: Generating DSP m0, operation Mode is: A*B.
+DSP Report: operator m0 is absorbed into DSP m0.
+DSP Report: operator m0 is absorbed into DSP m0.
+DSP Report: Generating DSP m0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator m0 is absorbed into DSP m0.
+DSP Report: operator m0 is absorbed into DSP m0.
+DSP Report: Generating DSP m4, operation Mode is: A*B.
+DSP Report: operator m4 is absorbed into DSP m4.
+DSP Report: operator m4 is absorbed into DSP m4.
+DSP Report: Generating DSP m4, operation Mode is: A*B.
+DSP Report: operator m4 is absorbed into DSP m4.
+DSP Report: Generating DSP m4, operation Mode is: A*B.
+DSP Report: operator m4 is absorbed into DSP m4.
+DSP Report: Generating DSP m4, operation Mode is: A*B.
+DSP Report: operator m4 is absorbed into DSP m4.
+DSP Report: Generating DSP m3, operation Mode is: A*B.
+DSP Report: operator m3 is absorbed into DSP m3.
+DSP Report: operator m3 is absorbed into DSP m3.
+DSP Report: Generating DSP m3, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator m3 is absorbed into DSP m3.
+DSP Report: operator m3 is absorbed into DSP m3.
+DSP Report: Generating DSP m3, operation Mode is: A*B.
+DSP Report: operator m3 is absorbed into DSP m3.
+DSP Report: operator m3 is absorbed into DSP m3.
+DSP Report: Generating DSP m3, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator m3 is absorbed into DSP m3.
+DSP Report: operator m3 is absorbed into DSP m3.
+DSP Report: Generating DSP m2, operation Mode is: A*B.
+DSP Report: operator m2 is absorbed into DSP m2.
+DSP Report: operator m2 is absorbed into DSP m2.
+DSP Report: Generating DSP m2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator m2 is absorbed into DSP m2.
+DSP Report: operator m2 is absorbed into DSP m2.
+DSP Report: Generating DSP m2, operation Mode is: A*B.
+DSP Report: operator m2 is absorbed into DSP m2.
+DSP Report: operator m2 is absorbed into DSP m2.
+DSP Report: Generating DSP m2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator m2 is absorbed into DSP m2.
+DSP Report: operator m2 is absorbed into DSP m2.
+DSP Report: Generating DSP m1, operation Mode is: A*B.
+DSP Report: operator m1 is absorbed into DSP m1.
+DSP Report: operator m1 is absorbed into DSP m1.
+DSP Report: Generating DSP m1, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator m1 is absorbed into DSP m1.
+DSP Report: operator m1 is absorbed into DSP m1.
+DSP Report: Generating DSP m1, operation Mode is: A*B.
+DSP Report: operator m1 is absorbed into DSP m1.
+DSP Report: operator m1 is absorbed into DSP m1.
+DSP Report: Generating DSP m1, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator m1 is absorbed into DSP m1.
+DSP Report: operator m1 is absorbed into DSP m1.
+DSP Report: Generating DSP m0, operation Mode is: A*B.
+DSP Report: operator m0 is absorbed into DSP m0.
+DSP Report: operator m0 is absorbed into DSP m0.
+DSP Report: Generating DSP m0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator m0 is absorbed into DSP m0.
+DSP Report: operator m0 is absorbed into DSP m0.
+DSP Report: Generating DSP m0, operation Mode is: A*B.
+DSP Report: operator m0 is absorbed into DSP m0.
+DSP Report: operator m0 is absorbed into DSP m0.
+DSP Report: Generating DSP m0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator m0 is absorbed into DSP m0.
+DSP Report: operator m0 is absorbed into DSP m0.
 DSP Report: Generating DSP n_state3, operation Mode is: (C:0xffffffffffff)+A*B.
 DSP Report: operator n_state3 is absorbed into DSP n_state3.
 DSP Report: operator n_state4 is absorbed into DSP n_state3.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:57 ; elapsed = 00:00:57 . Memory (MB): peak = 1308.980 ; gain = 238.555
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:57 ; elapsed = 00:00:56 . Memory (MB): peak = 1278.379 ; gain = 208.645
 ---------------------------------------------------------------------------------
-DSP Report: Generating DSP alu_out24, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: Generating DSP alu_out24, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: Generating DSP alu_out23, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out23 is absorbed into DSP alu_out23.
-DSP Report: operator alu_out23 is absorbed into DSP alu_out23.
-DSP Report: Generating DSP alu_out23, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out23 is absorbed into DSP alu_out23.
-DSP Report: operator alu_out23 is absorbed into DSP alu_out23.
-DSP Report: Generating DSP alu_out22, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out22 is absorbed into DSP alu_out22.
-DSP Report: operator alu_out22 is absorbed into DSP alu_out22.
-DSP Report: Generating DSP alu_out22, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out22 is absorbed into DSP alu_out22.
-DSP Report: operator alu_out22 is absorbed into DSP alu_out22.
-DSP Report: Generating DSP alu_out21, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out21 is absorbed into DSP alu_out21.
-DSP Report: operator alu_out21 is absorbed into DSP alu_out21.
-DSP Report: Generating DSP alu_out21, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out21 is absorbed into DSP alu_out21.
-DSP Report: operator alu_out21 is absorbed into DSP alu_out21.
-DSP Report: Generating DSP alu_out20, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out20 is absorbed into DSP alu_out20.
-DSP Report: operator alu_out20 is absorbed into DSP alu_out20.
-DSP Report: Generating DSP alu_out20, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out20 is absorbed into DSP alu_out20.
-DSP Report: operator alu_out20 is absorbed into DSP alu_out20.
-DSP Report: Generating DSP alu_out19, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out19 is absorbed into DSP alu_out19.
-DSP Report: operator alu_out19 is absorbed into DSP alu_out19.
-DSP Report: Generating DSP alu_out19, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out19 is absorbed into DSP alu_out19.
-DSP Report: operator alu_out19 is absorbed into DSP alu_out19.
-DSP Report: Generating DSP alu_out18, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out18 is absorbed into DSP alu_out18.
-DSP Report: operator alu_out18 is absorbed into DSP alu_out18.
-DSP Report: Generating DSP alu_out18, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out18 is absorbed into DSP alu_out18.
-DSP Report: operator alu_out18 is absorbed into DSP alu_out18.
-DSP Report: Generating DSP alu_out17, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out17 is absorbed into DSP alu_out17.
-DSP Report: operator alu_out17 is absorbed into DSP alu_out17.
-DSP Report: Generating DSP alu_out17, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out17 is absorbed into DSP alu_out17.
-DSP Report: operator alu_out17 is absorbed into DSP alu_out17.
-DSP Report: Generating DSP alu_out16, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out16 is absorbed into DSP alu_out16.
-DSP Report: operator alu_out16 is absorbed into DSP alu_out16.
-DSP Report: Generating DSP alu_out16, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out16 is absorbed into DSP alu_out16.
-DSP Report: operator alu_out16 is absorbed into DSP alu_out16.
-DSP Report: Generating DSP alu_out15, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out15 is absorbed into DSP alu_out15.
-DSP Report: operator alu_out15 is absorbed into DSP alu_out15.
-DSP Report: Generating DSP alu_out15, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out15 is absorbed into DSP alu_out15.
-DSP Report: operator alu_out15 is absorbed into DSP alu_out15.
-DSP Report: Generating DSP alu_out14, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out14 is absorbed into DSP alu_out14.
-DSP Report: operator alu_out14 is absorbed into DSP alu_out14.
-DSP Report: Generating DSP alu_out14, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out14 is absorbed into DSP alu_out14.
-DSP Report: operator alu_out14 is absorbed into DSP alu_out14.
-DSP Report: Generating DSP alu_out13, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out13 is absorbed into DSP alu_out13.
-DSP Report: operator alu_out13 is absorbed into DSP alu_out13.
-DSP Report: Generating DSP alu_out13, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out13 is absorbed into DSP alu_out13.
-DSP Report: operator alu_out13 is absorbed into DSP alu_out13.
-DSP Report: Generating DSP alu_out12, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out12 is absorbed into DSP alu_out12.
-DSP Report: operator alu_out12 is absorbed into DSP alu_out12.
-DSP Report: Generating DSP alu_out12, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out12 is absorbed into DSP alu_out12.
-DSP Report: operator alu_out12 is absorbed into DSP alu_out12.
-DSP Report: Generating DSP alu_out11, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out11 is absorbed into DSP alu_out11.
-DSP Report: operator alu_out11 is absorbed into DSP alu_out11.
-DSP Report: Generating DSP alu_out11, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out11 is absorbed into DSP alu_out11.
-DSP Report: operator alu_out11 is absorbed into DSP alu_out11.
-DSP Report: Generating DSP alu_out10, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out10 is absorbed into DSP alu_out10.
-DSP Report: operator alu_out10 is absorbed into DSP alu_out10.
-DSP Report: Generating DSP alu_out10, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out10 is absorbed into DSP alu_out10.
-DSP Report: operator alu_out10 is absorbed into DSP alu_out10.
-DSP Report: Generating DSP alu_out4, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out4 is absorbed into DSP alu_out4.
-DSP Report: operator alu_out4 is absorbed into DSP alu_out4.
-DSP Report: Generating DSP alu_out4, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out4 is absorbed into DSP alu_out4.
-DSP Report: operator alu_out4 is absorbed into DSP alu_out4.
-DSP Report: Generating DSP alu_out3, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out3 is absorbed into DSP alu_out3.
-DSP Report: operator alu_out3 is absorbed into DSP alu_out3.
-DSP Report: Generating DSP alu_out3, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out3 is absorbed into DSP alu_out3.
-DSP Report: operator alu_out3 is absorbed into DSP alu_out3.
-DSP Report: Generating DSP alu_out2, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out2 is absorbed into DSP alu_out2.
-DSP Report: operator alu_out2 is absorbed into DSP alu_out2.
-DSP Report: Generating DSP alu_out2, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out2 is absorbed into DSP alu_out2.
-DSP Report: operator alu_out2 is absorbed into DSP alu_out2.
-DSP Report: Generating DSP alu_out1, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out1 is absorbed into DSP alu_out1.
-DSP Report: operator alu_out1 is absorbed into DSP alu_out1.
-DSP Report: Generating DSP alu_out1, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out1 is absorbed into DSP alu_out1.
-DSP Report: operator alu_out1 is absorbed into DSP alu_out1.
-DSP Report: Generating DSP alu_out24, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: Generating DSP alu_out24, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: Generating DSP alu_out24, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: Generating DSP alu_out24, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: Generating DSP alu_out23, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out23 is absorbed into DSP alu_out23.
-DSP Report: operator alu_out23 is absorbed into DSP alu_out23.
-DSP Report: Generating DSP alu_out23, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out23 is absorbed into DSP alu_out23.
-DSP Report: operator alu_out23 is absorbed into DSP alu_out23.
-DSP Report: Generating DSP alu_out22, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out22 is absorbed into DSP alu_out22.
-DSP Report: operator alu_out22 is absorbed into DSP alu_out22.
-DSP Report: Generating DSP alu_out22, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out22 is absorbed into DSP alu_out22.
-DSP Report: operator alu_out22 is absorbed into DSP alu_out22.
-DSP Report: Generating DSP alu_out21, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out21 is absorbed into DSP alu_out21.
-DSP Report: operator alu_out21 is absorbed into DSP alu_out21.
-DSP Report: Generating DSP alu_out21, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out21 is absorbed into DSP alu_out21.
-DSP Report: operator alu_out21 is absorbed into DSP alu_out21.
-DSP Report: Generating DSP alu_out20, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out20 is absorbed into DSP alu_out20.
-DSP Report: operator alu_out20 is absorbed into DSP alu_out20.
-DSP Report: Generating DSP alu_out20, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out20 is absorbed into DSP alu_out20.
-DSP Report: operator alu_out20 is absorbed into DSP alu_out20.
-DSP Report: Generating DSP alu_out19, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out19 is absorbed into DSP alu_out19.
-DSP Report: operator alu_out19 is absorbed into DSP alu_out19.
-DSP Report: Generating DSP alu_out19, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out19 is absorbed into DSP alu_out19.
-DSP Report: operator alu_out19 is absorbed into DSP alu_out19.
-DSP Report: Generating DSP alu_out18, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out18 is absorbed into DSP alu_out18.
-DSP Report: operator alu_out18 is absorbed into DSP alu_out18.
-DSP Report: Generating DSP alu_out18, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out18 is absorbed into DSP alu_out18.
-DSP Report: operator alu_out18 is absorbed into DSP alu_out18.
-DSP Report: Generating DSP alu_out17, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out17 is absorbed into DSP alu_out17.
-DSP Report: operator alu_out17 is absorbed into DSP alu_out17.
-DSP Report: Generating DSP alu_out17, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out17 is absorbed into DSP alu_out17.
-DSP Report: operator alu_out17 is absorbed into DSP alu_out17.
-DSP Report: Generating DSP alu_out16, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out16 is absorbed into DSP alu_out16.
-DSP Report: operator alu_out16 is absorbed into DSP alu_out16.
-DSP Report: Generating DSP alu_out16, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out16 is absorbed into DSP alu_out16.
-DSP Report: operator alu_out16 is absorbed into DSP alu_out16.
-DSP Report: Generating DSP alu_out15, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out15 is absorbed into DSP alu_out15.
-DSP Report: operator alu_out15 is absorbed into DSP alu_out15.
-DSP Report: Generating DSP alu_out15, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out15 is absorbed into DSP alu_out15.
-DSP Report: operator alu_out15 is absorbed into DSP alu_out15.
-DSP Report: Generating DSP alu_out14, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out14 is absorbed into DSP alu_out14.
-DSP Report: operator alu_out14 is absorbed into DSP alu_out14.
-DSP Report: Generating DSP alu_out14, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out14 is absorbed into DSP alu_out14.
-DSP Report: operator alu_out14 is absorbed into DSP alu_out14.
-DSP Report: Generating DSP alu_out13, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out13 is absorbed into DSP alu_out13.
-DSP Report: operator alu_out13 is absorbed into DSP alu_out13.
-DSP Report: Generating DSP alu_out13, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out13 is absorbed into DSP alu_out13.
-DSP Report: operator alu_out13 is absorbed into DSP alu_out13.
-DSP Report: Generating DSP alu_out12, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out12 is absorbed into DSP alu_out12.
-DSP Report: operator alu_out12 is absorbed into DSP alu_out12.
-DSP Report: Generating DSP alu_out12, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out12 is absorbed into DSP alu_out12.
-DSP Report: operator alu_out12 is absorbed into DSP alu_out12.
-DSP Report: Generating DSP alu_out11, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out11 is absorbed into DSP alu_out11.
-DSP Report: operator alu_out11 is absorbed into DSP alu_out11.
-DSP Report: Generating DSP alu_out11, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out11 is absorbed into DSP alu_out11.
-DSP Report: operator alu_out11 is absorbed into DSP alu_out11.
-DSP Report: Generating DSP alu_out10, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out10 is absorbed into DSP alu_out10.
-DSP Report: operator alu_out10 is absorbed into DSP alu_out10.
-DSP Report: Generating DSP alu_out10, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out10 is absorbed into DSP alu_out10.
-DSP Report: operator alu_out10 is absorbed into DSP alu_out10.
-DSP Report: Generating DSP alu_out4, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out4 is absorbed into DSP alu_out4.
-DSP Report: operator alu_out4 is absorbed into DSP alu_out4.
-DSP Report: Generating DSP alu_out4, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out4 is absorbed into DSP alu_out4.
-DSP Report: operator alu_out4 is absorbed into DSP alu_out4.
-DSP Report: Generating DSP alu_out3, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out3 is absorbed into DSP alu_out3.
-DSP Report: operator alu_out3 is absorbed into DSP alu_out3.
-DSP Report: Generating DSP alu_out3, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out3 is absorbed into DSP alu_out3.
-DSP Report: operator alu_out3 is absorbed into DSP alu_out3.
-DSP Report: Generating DSP alu_out2, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out2 is absorbed into DSP alu_out2.
-DSP Report: operator alu_out2 is absorbed into DSP alu_out2.
-DSP Report: Generating DSP alu_out2, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out2 is absorbed into DSP alu_out2.
-DSP Report: operator alu_out2 is absorbed into DSP alu_out2.
-DSP Report: Generating DSP alu_out1, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out1 is absorbed into DSP alu_out1.
-DSP Report: operator alu_out1 is absorbed into DSP alu_out1.
-DSP Report: Generating DSP alu_out1, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out1 is absorbed into DSP alu_out1.
-DSP Report: operator alu_out1 is absorbed into DSP alu_out1.
-DSP Report: Generating DSP alu_out24, operation Mode is (post resource management): A*B.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: Generating DSP alu_out24, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
-DSP Report: operator alu_out24 is absorbed into DSP alu_out24.
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
@@ -1391,6 +660,10 @@ DSP: Preliminary Mapping	Report (see note below)
 |Module Name | DSP Mapping            | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
 +------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 |main_fsm    | (C:0xffffffffffff)+A*B | 16     | 8      | 24     | -      | 24     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | A*B                    | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
@@ -1407,174 +680,10 @@ DSP: Preliminary Mapping	Report (see note below)
 |ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ALU         | (PCIN>>17)+A*B         | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | A*B                    | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |ALU         | A*B                    | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |ALU         | (PCIN>>17)+A*B         | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |ALU         | A*B                    | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
@@ -1603,7 +712,7 @@ No constraint files found.
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:07 ; elapsed = 00:01:06 . Memory (MB): peak = 1308.980 ; gain = 238.555
+Finished Timing Optimization : Time (s): cpu = 00:00:57 ; elapsed = 00:00:57 . Memory (MB): peak = 1278.379 ; gain = 208.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1664,7 +773,7 @@ INFO: [Synth 8-7052] The timing for the instance accu_dut/BRAM0/RAM_reg_29 (impl
 INFO: [Synth 8-7052] The timing for the instance accu_dut/BRAM0/RAM_reg_30 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance accu_dut/BRAM0/RAM_reg_31 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:25 ; elapsed = 00:01:25 . Memory (MB): peak = 1555.648 ; gain = 485.223
+Finished Technology Mapping : Time (s): cpu = 00:01:01 ; elapsed = 00:01:00 . Memory (MB): peak = 1278.379 ; gain = 208.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -1682,37 +791,52 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:33 ; elapsed = 00:01:33 . Memory (MB): peak = 1555.648 ; gain = 485.223
+Finished IO Insertion : Time (s): cpu = 00:01:05 ; elapsed = 00:01:05 . Memory (MB): peak = 1278.379 ; gain = 208.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:33 ; elapsed = 00:01:33 . Memory (MB): peak = 1555.648 ; gain = 485.223
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:05 ; elapsed = 00:01:05 . Memory (MB): peak = 1278.379 ; gain = 208.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:39 ; elapsed = 00:01:39 . Memory (MB): peak = 1555.648 ; gain = 485.223
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:06 ; elapsed = 00:01:06 . Memory (MB): peak = 1278.379 ; gain = 208.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:41 ; elapsed = 00:01:41 . Memory (MB): peak = 1555.648 ; gain = 485.223
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:06 ; elapsed = 00:01:06 . Memory (MB): peak = 1278.379 ; gain = 208.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:42 ; elapsed = 00:01:42 . Memory (MB): peak = 1555.648 ; gain = 485.223
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:06 ; elapsed = 00:01:06 . Memory (MB): peak = 1278.379 ; gain = 208.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:42 ; elapsed = 00:01:42 . Memory (MB): peak = 1555.648 ; gain = 485.223
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:06 ; elapsed = 00:01:06 . Memory (MB): peak = 1278.379 ; gain = 208.645
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++----------------+--------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name     | RTL Name                       | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++----------------+--------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|ConvAccelerator | alu0_dut/alu_valid_reg_out_reg | 5      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|ConvAccelerator | alu1_dut/alu_valid_reg_out_reg | 5      | 1     | NO           | NO                 | YES               | 1      | 0       | 
++----------------+--------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1729,38 +853,39 @@ Report Cell Usage:
 |      |Cell     |Count |
 +------+---------+------+
 |1     |BUFG     |     2|
-|2     |CARRY4   |  7828|
-|3     |DSP48E1  |    80|
-|4     |LUT1     |   968|
-|5     |LUT2     | 18888|
-|6     |LUT3     |  7934|
-|7     |LUT4     |  6510|
-|8     |LUT5     |  3933|
-|9     |LUT6     | 21121|
-|10    |MUXF7    |    21|
+|2     |CARRY4   |   443|
+|3     |DSP48E1  |    42|
+|4     |LUT1     |   172|
+|5     |LUT2     |  2479|
+|6     |LUT3     |  4259|
+|7     |LUT4     |  1229|
+|8     |LUT5     |  1425|
+|9     |LUT6     |  1712|
+|10    |MUXF7    |    25|
 |11    |MUXF8    |     6|
 |12    |RAM16X1S |  1600|
 |13    |RAMB36E1 |    32|
-|14    |FDCE     |  5124|
-|15    |FDPE     |    18|
-|16    |FDRE     |  1238|
-|17    |FDSE     |     5|
-|18    |IBUF     |    86|
-|19    |OBUF     |    80|
+|14    |SRL16E   |     2|
+|15    |FDCE     |  6411|
+|16    |FDPE     |    18|
+|17    |FDRE     |  3571|
+|18    |FDSE     |     5|
+|19    |IBUF     |    86|
+|20    |OBUF     |   136|
 +------+---------+------+
 
 Report Instance Areas: 
 +------+----------------------------------+---------------------------+------+
 |      |Instance                          |Module                     |Cells |
 +------+----------------------------------+---------------------------+------+
-|1     |top                               |                           | 75474|
-|2     |  MyAccelerator_v2_0_S00_AXI_inst |MyAccelerator_v2_0_S00_AXI |  9579|
-|3     |  accu_dut                        |ACCU                       |   892|
+|1     |top                               |                           | 23655|
+|2     |  MyAccelerator_v2_0_S00_AXI_inst |MyAccelerator_v2_0_S00_AXI |  3420|
+|3     |  accu_dut                        |ACCU                       |   450|
 |4     |    BRAM0                         |BRAM_SP                    |   284|
-|5     |  alu0_dut                        |ALU                        |  1857|
-|6     |  alu1_dut                        |ALU_0                      |  1858|
-|7     |  data_buffer_dut                 |data_buffer                | 18861|
-|8     |    \FF_GEN[0].FFX.ddfx           |dff                        |   611|
+|5     |  alu0_dut                        |ALU                        |  2835|
+|6     |  alu1_dut                        |ALU_0                      |  4274|
+|7     |  data_buffer_dut                 |data_buffer                |  8293|
+|8     |    \FF_GEN[0].FFX.ddfx           |dff                        |    33|
 |9     |    \FF_GEN[100].FFX.ddfx         |dff_2                      |    32|
 |10    |    \FF_GEN[101].FFX.ddfx         |dff_3                      |    32|
 |11    |    \FF_GEN[102].FFX.ddfx         |dff_4                      |    32|
@@ -1831,7 +956,7 @@ Report Instance Areas:
 |76    |    \FF_GEN[17].FFX.ddfx          |dff_69                     |    32|
 |77    |    \FF_GEN[18].FFX.ddfx          |dff_70                     |    32|
 |78    |    \FF_GEN[19].FFX.ddfx          |dff_71                     |    32|
-|79    |    \FF_GEN[1].FFX.ddfx           |dff_72                     |   610|
+|79    |    \FF_GEN[1].FFX.ddfx           |dff_72                     |    32|
 |80    |    \FF_GEN[20].FFX.ddfx          |dff_73                     |    32|
 |81    |    \FF_GEN[21].FFX.ddfx          |dff_74                     |    32|
 |82    |    \FF_GEN[22].FFX.ddfx          |dff_75                     |    32|
@@ -1842,18 +967,18 @@ Report Instance Areas:
 |87    |    \FF_GEN[27].FFX.ddfx          |dff_80                     |    32|
 |88    |    \FF_GEN[28].FFX.ddfx          |dff_81                     |    32|
 |89    |    \FF_GEN[29].FFX.ddfx          |dff_82                     |    32|
-|90    |    \FF_GEN[2].FFX.ddfx           |dff_83                     |   610|
+|90    |    \FF_GEN[2].FFX.ddfx           |dff_83                     |    32|
 |91    |    \FF_GEN[30].FFX.ddfx          |dff_84                     |    32|
 |92    |    \FF_GEN[31].FFX.ddfx          |dff_85                     |    32|
-|93    |    \FF_GEN[32].FFX.ddfx          |dff_86                     |  1442|
-|94    |    \FF_GEN[33].FFX.ddfx          |dff_87                     |   610|
-|95    |    \FF_GEN[34].FFX.ddfx          |dff_88                     |   610|
-|96    |    \FF_GEN[35].FFX.ddfx          |dff_89                     |   674|
+|93    |    \FF_GEN[32].FFX.ddfx          |dff_86                     |   864|
+|94    |    \FF_GEN[33].FFX.ddfx          |dff_87                     |    32|
+|95    |    \FF_GEN[34].FFX.ddfx          |dff_88                     |    32|
+|96    |    \FF_GEN[35].FFX.ddfx          |dff_89                     |    96|
 |97    |    \FF_GEN[36].FFX.ddfx          |dff_90                     |    64|
 |98    |    \FF_GEN[37].FFX.ddfx          |dff_91                     |    32|
 |99    |    \FF_GEN[38].FFX.ddfx          |dff_92                     |    64|
 |100   |    \FF_GEN[39].FFX.ddfx          |dff_93                     |    32|
-|101   |    \FF_GEN[3].FFX.ddfx           |dff_94                     |   674|
+|101   |    \FF_GEN[3].FFX.ddfx           |dff_94                     |    96|
 |102   |    \FF_GEN[40].FFX.ddfx          |dff_95                     |    64|
 |103   |    \FF_GEN[41].FFX.ddfx          |dff_96                     |    32|
 |104   |    \FF_GEN[42].FFX.ddfx          |dff_97                     |    32|
@@ -1880,10 +1005,10 @@ Report Instance Areas:
 |125   |    \FF_GEN[61].FFX.ddfx          |dff_118                    |    32|
 |126   |    \FF_GEN[62].FFX.ddfx          |dff_119                    |    64|
 |127   |    \FF_GEN[63].FFX.ddfx          |dff_120                    |    64|
-|128   |    \FF_GEN[64].FFX.ddfx          |dff_121                    |  1218|
-|129   |    \FF_GEN[65].FFX.ddfx          |dff_122                    |   610|
-|130   |    \FF_GEN[66].FFX.ddfx          |dff_123                    |   610|
-|131   |    \FF_GEN[67].FFX.ddfx          |dff_124                    |   642|
+|128   |    \FF_GEN[64].FFX.ddfx          |dff_121                    |   640|
+|129   |    \FF_GEN[65].FFX.ddfx          |dff_122                    |    32|
+|130   |    \FF_GEN[66].FFX.ddfx          |dff_123                    |    32|
+|131   |    \FF_GEN[67].FFX.ddfx          |dff_124                    |    64|
 |132   |    \FF_GEN[68].FFX.ddfx          |dff_125                    |    32|
 |133   |    \FF_GEN[69].FFX.ddfx          |dff_126                    |    32|
 |134   |    \FF_GEN[6].FFX.ddfx           |dff_127                    |    32|
@@ -1915,39 +1040,38 @@ Report Instance Areas:
 |160   |    \FF_GEN[93].FFX.ddfx          |dff_153                    |    32|
 |161   |    \FF_GEN[94].FFX.ddfx          |dff_154                    |    32|
 |162   |    \FF_GEN[95].FFX.ddfx          |dff_155                    |    32|
-|163   |    \FF_GEN[96].FFX.ddfx          |dff_156                    |   642|
-|164   |    \FF_GEN[97].FFX.ddfx          |dff_157                    |  1082|
-|165   |    \FF_GEN[98].FFX.ddfx          |dff_158                    |  1082|
-|166   |    \FF_GEN[99].FFX.ddfx          |dff_159                    |  1082|
+|163   |    \FF_GEN[96].FFX.ddfx          |dff_156                    |    64|
+|164   |    \FF_GEN[97].FFX.ddfx          |dff_157                    |    64|
+|165   |    \FF_GEN[98].FFX.ddfx          |dff_158                    |    64|
+|166   |    \FF_GEN[99].FFX.ddfx          |dff_159                    |    64|
 |167   |    \FF_GEN[9].FFX.ddfx           |dff_160                    |    32|
-|168   |  main_fsm_dut                    |main_fsm                   |   751|
-|169   |  weight_buffer_dut               |weight_buffer              | 21793|
-|170   |    ram0                          |DIS_RAM_SP                 |  9955|
-|171   |    ram1                          |DIS_RAM_SP_1               |  9955|
-|172   |    stick                         |w_sticker                  |  1705|
+|168   |  main_fsm_dut                    |main_fsm                   |   590|
+|169   |  weight_buffer_dut               |weight_buffer              |  3455|
+|170   |    ram0                          |DIS_RAM_SP                 |   800|
+|171   |    ram1                          |DIS_RAM_SP_1               |   800|
+|172   |    stick                         |w_sticker                  |  1707|
 +------+----------------------------------+---------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:42 ; elapsed = 00:01:42 . Memory (MB): peak = 1555.648 ; gain = 485.223
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:06 ; elapsed = 00:01:06 . Memory (MB): peak = 1278.379 ; gain = 208.645
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 9 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:42 ; elapsed = 00:01:42 . Memory (MB): peak = 1555.648 ; gain = 485.223
-Synthesis Optimization Complete : Time (s): cpu = 00:01:42 ; elapsed = 00:01:42 . Memory (MB): peak = 1555.648 ; gain = 485.223
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:06 ; elapsed = 00:01:06 . Memory (MB): peak = 1278.379 ; gain = 208.645
+Synthesis Optimization Complete : Time (s): cpu = 00:01:06 ; elapsed = 00:01:06 . Memory (MB): peak = 1278.379 ; gain = 208.645
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1555.648 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 9567 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.331 . Memory (MB): peak = 1278.379 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2148 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1555.648 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1278.379 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1600 instances were transformed.
   RAM16X1S => RAM32X1S (RAMS32): 1600 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-171 Infos, 9 Warnings, 0 Critical Warnings and 0 Errors encountered.
+171 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:06 ; elapsed = 00:02:06 . Memory (MB): peak = 1555.648 ; gain = 485.223
+synth_design: Time (s): cpu = 00:01:15 ; elapsed = 00:01:16 . Memory (MB): peak = 1278.379 ; gain = 208.645
 INFO: [Common 17-1381] The checkpoint 'D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/conv_acc_proj/conv_acc_proj.runs/synth_1/ConvAccelerator.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 1555.648 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_utilization -file ConvAccelerator_utilization_synth.rpt -pb ConvAccelerator_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Jan 29 18:03:53 2021...
+INFO: [Common 17-206] Exiting Vivado at Tue Feb  2 13:06:27 2021...

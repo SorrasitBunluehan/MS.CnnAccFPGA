@@ -1,2 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/tb/ConvAccelerator_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'ConvAccelerator_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/ConvAccelerator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ConvAccelerator'
