@@ -1,7 +1,0 @@
-Running: xsim.dir/axi_vip_0_exdes_adv_mst_active__pt_passive__slv_comb_behav/xsimk.exe -simmode gui -wdb axi_vip_0_exdes_adv_mst_active__pt_passive__slv_comb_behav.wdb -simrunnum 0 -socket 50171
-Design successfully loaded
-Design Loading Memory Usage: 10720 KB (Peak: 10720 KB)
-Design Loading CPU Usage: 46 ms
-Simulation completed
-Simulation Memory Usage: 29332 KB (Peak: 29332 KB)
-Simulation CPU Usage: 202 ms

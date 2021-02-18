@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="ConvAccelerator_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="ConvAccelerator_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="35264000fs"></ZoomStartTime>
+      <ZoomEndTime time="35523201fs"></ZoomEndTime>
+      <Cursor1Time time="35480000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="171"></NameColumnWidth>
+      <ValueColumnWidth column_width="134"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="46" />
+   <wvobject fp_name="/ConvAccelerator_tb/s00_axis_tready" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/s00_axis_tdata" type="array">
+      <obj_property name="ElementShortName">s00_axis_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/dut/main_fsm_dut/c_state" type="other">
+      <obj_property name="ElementShortName">c_state</obj_property>
+      <obj_property name="ObjectShortName">c_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/s00_axis_tstrb" type="array">
+      <obj_property name="ElementShortName">s00_axis_tstrb[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tstrb[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/s00_axis_tlast" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/s00_axis_tvalid" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/s01_axi_awaddr" type="array">
+      <obj_property name="ElementShortName">s01_axi_awaddr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s01_axi_awaddr[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/s01_axi_awprot" type="array">
+      <obj_property name="ElementShortName">s01_axi_awprot[2:0]</obj_property>
+      <obj_property name="ObjectShortName">s01_axi_awprot[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/s01_axi_awvalid" type="logic">
+      <obj_property name="ElementShortName">s01_axi_awvalid</obj_property>
+      <obj_property name="ObjectShortName">s01_axi_awvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/s01_axi_awready" type="logic">
+      <obj_property name="ElementShortName">s01_axi_awready</obj_property>
+      <obj_property name="ObjectShortName">s01_axi_awready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/s01_axi_wdata" type="array">
+      <obj_property name="ElementShortName">s01_axi_wdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s01_axi_wdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/s01_axi_wstrb" type="array">
+      <obj_property name="ElementShortName">s01_axi_wstrb[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s01_axi_wstrb[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/s01_axi_wvalid" type="logic">
+      <obj_property name="ElementShortName">s01_axi_wvalid</obj_property>
+      <obj_property name="ObjectShortName">s01_axi_wvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/s01_axi_wready" type="logic">
+      <obj_property name="ElementShortName">s01_axi_wready</obj_property>
+      <obj_property name="ObjectShortName">s01_axi_wready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/s01_axi_bresp" type="array">
+      <obj_property name="ElementShortName">s01_axi_bresp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">s01_axi_bresp[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/s01_axi_bvalid" type="logic">
+      <obj_property name="ElementShortName">s01_axi_bvalid</obj_property>
+      <obj_property name="ObjectShortName">s01_axi_bvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/s01_axi_bready" type="logic">
+      <obj_property name="ElementShortName">s01_axi_bready</obj_property>
+      <obj_property name="ObjectShortName">s01_axi_bready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/s01_axi_araddr" type="array">
+      <obj_property name="ElementShortName">s01_axi_araddr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s01_axi_araddr[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/s01_axi_arprot" type="array">
+      <obj_property name="ElementShortName">s01_axi_arprot[2:0]</obj_property>
+      <obj_property name="ObjectShortName">s01_axi_arprot[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/s01_axi_arvalid" type="logic">
+      <obj_property name="ElementShortName">s01_axi_arvalid</obj_property>
+      <obj_property name="ObjectShortName">s01_axi_arvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/s01_axi_arready" type="logic">
+      <obj_property name="ElementShortName">s01_axi_arready</obj_property>
+      <obj_property name="ObjectShortName">s01_axi_arready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/s01_axi_rdata" type="array">
+      <obj_property name="ElementShortName">s01_axi_rdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s01_axi_rdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/s01_axi_rresp" type="array">
+      <obj_property name="ElementShortName">s01_axi_rresp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">s01_axi_rresp[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/s01_axi_rvalid" type="logic">
+      <obj_property name="ElementShortName">s01_axi_rvalid</obj_property>
+      <obj_property name="ObjectShortName">s01_axi_rvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/s01_axi_rready" type="logic">
+      <obj_property name="ElementShortName">s01_axi_rready</obj_property>
+      <obj_property name="ObjectShortName">s01_axi_rready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/m00_axis_tvalid" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/m00_axis_tdata" type="array">
+      <obj_property name="ElementShortName">m00_axis_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tdata[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">16</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/m00_axis_tstrb" type="array">
+      <obj_property name="ElementShortName">m00_axis_tstrb[3:0]</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tstrb[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/m00_axis_tlast" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/m00_axis_tready" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/INPUT_SIZE_BIT_WIDTH" type="other">
+      <obj_property name="ElementShortName">INPUT_SIZE_BIT_WIDTH</obj_property>
+      <obj_property name="ObjectShortName">INPUT_SIZE_BIT_WIDTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/INPUT_DEPTH_BIT_WIDTH" type="other">
+      <obj_property name="ElementShortName">INPUT_DEPTH_BIT_WIDTH</obj_property>
+      <obj_property name="ObjectShortName">INPUT_DEPTH_BIT_WIDTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/STRIDE_BIT_WIDTH" type="other">
+      <obj_property name="ElementShortName">STRIDE_BIT_WIDTH</obj_property>
+      <obj_property name="ObjectShortName">STRIDE_BIT_WIDTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/KERNEL_DEPTH_BIT_WIDTH" type="other">
+      <obj_property name="ElementShortName">KERNEL_DEPTH_BIT_WIDTH</obj_property>
+      <obj_property name="ObjectShortName">KERNEL_DEPTH_BIT_WIDTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/KERNEL_SIZE_BIT_WIDTH" type="other">
+      <obj_property name="ElementShortName">KERNEL_SIZE_BIT_WIDTH</obj_property>
+      <obj_property name="ObjectShortName">KERNEL_SIZE_BIT_WIDTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/MAX_KERNEL_DEPTH" type="other">
+      <obj_property name="ElementShortName">MAX_KERNEL_DEPTH</obj_property>
+      <obj_property name="ObjectShortName">MAX_KERNEL_DEPTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/MAX_COMPUTE_BYTE" type="other">
+      <obj_property name="ElementShortName">MAX_COMPUTE_BYTE</obj_property>
+      <obj_property name="ObjectShortName">MAX_COMPUTE_BYTE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/MAX_INPUT_SIZE" type="other">
+      <obj_property name="ElementShortName">MAX_INPUT_SIZE</obj_property>
+      <obj_property name="ObjectShortName">MAX_INPUT_SIZE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/MAX_KERNEL_SIZE" type="other">
+      <obj_property name="ElementShortName">MAX_KERNEL_SIZE</obj_property>
+      <obj_property name="ObjectShortName">MAX_KERNEL_SIZE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/ADDR_WIDTH" type="other">
+      <obj_property name="ElementShortName">ADDR_WIDTH</obj_property>
+      <obj_property name="ObjectShortName">ADDR_WIDTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/C_S00_AXIS_TDATA_WIDTH" type="other">
+      <obj_property name="ElementShortName">C_S00_AXIS_TDATA_WIDTH</obj_property>
+      <obj_property name="ObjectShortName">C_S00_AXIS_TDATA_WIDTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/C_S01_AXI_DATA_WIDTH" type="other">
+      <obj_property name="ElementShortName">C_S01_AXI_DATA_WIDTH</obj_property>
+      <obj_property name="ObjectShortName">C_S01_AXI_DATA_WIDTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/C_S01_AXI_ADDR_WIDTH" type="other">
+      <obj_property name="ElementShortName">C_S01_AXI_ADDR_WIDTH</obj_property>
+      <obj_property name="ObjectShortName">C_S01_AXI_ADDR_WIDTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/C_M00_AXIS_TDATA_WIDTH" type="other">
+      <obj_property name="ElementShortName">C_M00_AXIS_TDATA_WIDTH</obj_property>
+      <obj_property name="ObjectShortName">C_M00_AXIS_TDATA_WIDTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/C_M00_AXIS_START_COUNT" type="other">
+      <obj_property name="ElementShortName">C_M00_AXIS_START_COUNT</obj_property>
+      <obj_property name="ObjectShortName">C_M00_AXIS_START_COUNT</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ConvAccelerator_tb/CLK_PERIOD" type="other">
+      <obj_property name="ElementShortName">CLK_PERIOD</obj_property>
+      <obj_property name="ObjectShortName">CLK_PERIOD</obj_property>
+   </wvobject>
+</wave_config>

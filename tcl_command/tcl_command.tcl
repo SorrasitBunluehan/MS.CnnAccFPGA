@@ -25,7 +25,7 @@ write_hw_platform -fixed -include_bit -force -file D:/Vivado_Project/MS.CnnAccFP
 
 
 #Create Project TCL Script
-create_project nbitadder D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/nbitadder -part xc7z010clg400-1;
+create_project IpProj D:/Master_Thesis/Vivado/IpProj -part xc7z010clg400-1;
 set_property board_part digilentinc.com:zybo:part0:2.0 [current_project];
 set_property target_language VHDL [current_project];
 set_property simulator_language VHDL [current_project];
@@ -64,10 +64,10 @@ close_sim
 ###################################
 # Create BD Project
 ###################################
-create_project System_Project1 D:/Vivado_Project/MS.CnnAccFPGA/Vivado_proj/System_Project1 -part xc7z010clg400-1;
+create_project IpProj D:/Master_Thesis/Vivado/IpProj -part xc7z010clg400-1;
 set_property board_part digilentinc.com:zybo:part0:2.0 [current_project];
 set_property target_language VHDL [current_project];
-set_property  ip_repo_paths  D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo [current_project];
+set_property  ip_repo_paths  D:/Master_Thesis/ip_repo [current_project];
 
 #Create BD>
 create_bd_design "design_1";
@@ -75,36 +75,28 @@ create_bd_design "design_1";
 #Add Zynq Processor
 create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0;
 create_bd_cell -type ip -vlnv xilinx.com:ip:axi_dma:7.1 axi_dma_0;
-create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0;
+#create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0;
 create_bd_cell -type ip -vlnv xilinx.com:user:ConvAccelerator:1.0 ConvAccelerator_0;
+
+#Config PS7
+apply_bd_automation -rule xilinx.com:bd_rule:processing_system7 -config {make_external "FIXED_IO, DDR" apply_board_preset "1" Master "Disable" Slave "Disable" }  [get_bd_cells processing_system7_0];
+set_property -dict [list CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {25} CONFIG.PCW_USE_S_AXI_HP0 {1} CONFIG.PCW_QSPI_PERIPHERAL_ENABLE {0} CONFIG.PCW_QSPI_GRP_SINGLE_SS_ENABLE {1} CONFIG.PCW_ENET0_PERIPHERAL_ENABLE {0} CONFIG.PCW_SD0_PERIPHERAL_ENABLE {0} CONFIG.PCW_USB0_PERIPHERAL_ENABLE {0}] [get_bd_cells processing_system7_0];
+set_property -dict [list CONFIG.PCW_S_AXI_HP0_DATA_WIDTH {32}] [get_bd_cells processing_system7_0];
+
+#Setup DMA
+set_property -dict [list CONFIG.c_include_sg {0} CONFIG.c_sg_include_stscntrl_strm {0} CONFIG.c_include_mm2s_dre {1} CONFIG.c_include_s2mm_dre {1}] [get_bd_cells axi_dma_0];
 
 
 #Run Automation Connection
 apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_dma_0/S_AXI_LITE} ddr_seg {Auto} intc_ip {New AXI Interconnect} master_apm {0}}  [get_bd_intf_pins axi_dma_0/S_AXI_LITE];
-
 apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/ConvAccelerator_0/s01_axi} ddr_seg {Auto} intc_ip {New AXI Interconnect} master_apm {0}}  [get_bd_intf_pins ConvAccelerator_0/s01_axi];
-
-#Run Block Automation
-apply_bd_automation -rule xilinx.com:bd_rule:processing_system7 -config {make_external "FIXED_IO, DDR" apply_board_preset "1" Master "Disable" Slave "Disable" }  [get_bd_cells processing_system7_0];
-
-#Setup Zynq 
-set_property -dict [list CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {20} CONFIG.PCW_USE_S_AXI_HP0 {1} CONFIG.PCW_USE_FABRIC_INTERRUPT {1} CONFIG.PCW_IRQ_F2P_INTR {1} CONFIG.PCW_QSPI_GRP_SINGLE_SS_ENABLE {1} CONFIG.PCW_ENET0_PERIPHERAL_ENABLE {0} CONFIG.PCW_SD0_PERIPHERAL_ENABLE {0} CONFIG.PCW_USB0_PERIPHERAL_ENABLE {0} CONFIG.PCW_GPIO_MIO_GPIO_ENABLE {0}] [get_bd_cells processing_system7_0];
-
-#Run Connection Automation
-apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/axi_dma_0/M_AXI_SG} Slave {/processing_system7_0/S_AXI_HP0} ddr_seg {Auto} intc_ip {New AXI Interconnect} master_apm {0}}  [get_bd_intf_pins processing_system7_0/S_AXI_HP0];
-
-apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {/processing_system7_0/FCLK_CLK0 (20 MHz)} Clk_xbar {/processing_system7_0/FCLK_CLK0 (20 MHz)} Master {/axi_dma_0/M_AXI_MM2S} Slave {/processing_system7_0/S_AXI_HP0} ddr_seg {Auto} intc_ip {/axi_mem_intercon} master_apm {0}}  [get_bd_intf_pins axi_dma_0/M_AXI_MM2S];
-
-apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {/processing_system7_0/FCLK_CLK0 (20 MHz)} Clk_xbar {/processing_system7_0/FCLK_CLK0 (20 MHz)} Master {/axi_dma_0/M_AXI_S2MM} Slave {/processing_system7_0/S_AXI_HP0} ddr_seg {Auto} intc_ip {/axi_mem_intercon} master_apm {0}}  [get_bd_intf_pins axi_dma_0/M_AXI_S2MM];
-
-#Setup DMA
-set_property -dict [list CONFIG.c_include_sg {0} CONFIG.c_sg_include_stscntrl_strm {0} CONFIG.c_include_mm2s_dre {1} CONFIG.c_include_s2mm_dre {1}] [get_bd_cells axi_dma_0];
-delete_bd_objs [get_bd_intf_nets axi_dma_0_M_AXI_SG]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/axi_dma_0/M_AXI_MM2S} Slave {/processing_system7_0/S_AXI_HP0} ddr_seg {Auto} intc_ip {New AXI Interconnect} master_apm {0}}  [get_bd_intf_pins processing_system7_0/S_AXI_HP0];
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {/processing_system7_0/FCLK_CLK0 (25 MHz)} Clk_xbar {/processing_system7_0/FCLK_CLK0 (25 MHz)} Master {/axi_dma_0/M_AXI_S2MM} Slave {/processing_system7_0/S_AXI_HP0} ddr_seg {Auto} intc_ip {/axi_mem_intercon} master_apm {0}}  [get_bd_intf_pins axi_dma_0/M_AXI_S2MM];
 
 #Set Concat Block for Intrerrupt
-connect_bd_net [get_bd_pins xlconcat_1/dout] [get_bd_pins processing_system7_0/IRQ_F2P];
-connect_bd_net [get_bd_pins xlconcat_1/In0] [get_bd_pins axi_dma_0/s2mm_introut];
-connect_bd_net [get_bd_pins xlconcat_1/In1] [get_bd_pins axi_dma_0/mm2s_introut];
+#connect_bd_net [get_bd_pins xlconcat_1/dout] [get_bd_pins processing_system7_0/IRQ_F2P];
+#connect_bd_net [get_bd_pins xlconcat_1/In0] [get_bd_pins axi_dma_0/s2mm_introut];
+#connect_bd_net [get_bd_pins xlconcat_1/In1] [get_bd_pins axi_dma_0/mm2s_introut];
 
 #Setup Connection Conv BlOCK
 connect_bd_intf_net [get_bd_intf_pins ConvAccelerator_0/s00_axis] [get_bd_intf_pins axi_dma_0/M_AXIS_MM2S];

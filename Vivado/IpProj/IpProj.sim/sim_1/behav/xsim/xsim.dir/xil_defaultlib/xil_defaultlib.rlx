@@ -1,0 +1,16 @@
+0.7
+2020.1
+May 27 2020
+20:09:33
+D:/Master_Thesis/Vivado/IpProj/IpProj.sim/ConvAccelerator_tb.vhd,1612800897,vhdl,,,,convaccelerator_tb,,,,,,,,
+D:/Master_Thesis/Vivado/IpProj/IpProj.srcs/sources_1/imports/hdl/ACCU.vhd,1612622055,vhdl,,,,accu,,,,,,,,
+D:/Master_Thesis/Vivado/IpProj/IpProj.srcs/sources_1/imports/hdl/ALU.vhd,1612272313,vhdl,,,,alu,,,,,,,,
+D:/Master_Thesis/Vivado/IpProj/IpProj.srcs/sources_1/imports/hdl/BRAM_SP.vhd,1611394866,vhdl,,,,bram_sp,,,,,,,,
+D:/Master_Thesis/Vivado/IpProj/IpProj.srcs/sources_1/imports/hdl/ConvAccelerator.vhd,1612800575,vhdl,,,,convaccelerator,,,,,,,,
+D:/Master_Thesis/Vivado/IpProj/IpProj.srcs/sources_1/imports/hdl/DIS_RAM_SP.vhd,1610977681,vhdl,,,,dis_ram_sp,,,,,,,,
+D:/Master_Thesis/Vivado/IpProj/IpProj.srcs/sources_1/imports/hdl/MyAccelerator_v2_0_S00_AXI.vhd,1612619516,vhdl,,,,myaccelerator_v2_0_s00_axi,,,,,,,,
+D:/Master_Thesis/Vivado/IpProj/IpProj.srcs/sources_1/imports/hdl/data_buffer.vhd,1612114845,vhdl,,,,data_buffer,,,,,,,,
+D:/Master_Thesis/Vivado/IpProj/IpProj.srcs/sources_1/imports/hdl/dff.vhd,1610544311,vhdl,,,,dff,,,,,,,,
+D:/Master_Thesis/Vivado/IpProj/IpProj.srcs/sources_1/imports/hdl/main_fsm.vhd,1612713032,vhdl,,,,main_fsm,,,,,,,,
+D:/Master_Thesis/Vivado/IpProj/IpProj.srcs/sources_1/imports/hdl/w_sticker.vhd,1611054004,vhdl,,,,w_sticker,,,,,,,,
+D:/Master_Thesis/Vivado/IpProj/IpProj.srcs/sources_1/imports/hdl/weight_buffer.vhd,1612114894,vhdl,,,,weight_buffer,,,,,,,,

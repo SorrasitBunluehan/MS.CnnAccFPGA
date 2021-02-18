@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Wed Feb 17 15:17:13 2021
+# Process ID: 13564
+# Current directory: D:/Master_Thesis/Vivado/IpProj/IpProj.runs/synth_1
+# Command line: vivado.exe -log ConvAccelerator.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ConvAccelerator.tcl
+# Log file: D:/Master_Thesis/Vivado/IpProj/IpProj.runs/synth_1/ConvAccelerator.vds
+# Journal file: D:/Master_Thesis/Vivado/IpProj/IpProj.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source ConvAccelerator.tcl -notrace

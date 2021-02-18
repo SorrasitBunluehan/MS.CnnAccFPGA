@@ -1,0 +1,18 @@
+vhdl xil_defaultlib  \
+"../../../bd/design_1/ip/design_1_axi_dma_0_0/sim/design_1_axi_dma_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_rst_ps7_0_25M_0/sim/design_1_rst_ps7_0_25M_0.vhd" \
+"../../../bd/design_1/sim/design_1.vhd" \
+"../../../bd/design_1/ipshared/03f2/hdl/ACCU.vhd" \
+"../../../bd/design_1/ipshared/03f2/hdl/ALU.vhd" \
+"../../../bd/design_1/ipshared/03f2/hdl/BRAM_SP.vhd" \
+"../../../bd/design_1/ipshared/03f2/hdl/DIS_RAM_SP.vhd" \
+"../../../bd/design_1/ipshared/03f2/hdl/MyAccelerator_v2_0_S00_AXI.vhd" \
+"../../../bd/design_1/ipshared/03f2/hdl/data_buffer.vhd" \
+"../../../bd/design_1/ipshared/03f2/hdl/dff.vhd" \
+"../../../bd/design_1/ipshared/03f2/hdl/main_fsm.vhd" \
+"../../../bd/design_1/ipshared/03f2/hdl/w_sticker.vhd" \
+"../../../bd/design_1/ipshared/03f2/hdl/weight_buffer.vhd" \
+"../../../bd/design_1/ipshared/03f2/hdl/ConvAccelerator.vhd" \
+"../../../bd/design_1/ip/design_1_ConvAccelerator_0_9/sim/design_1_ConvAccelerator_0_9.vhd" \
+
+nosort

@@ -1,8 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/SPM.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'SPM'
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/w_sticker.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'w_sticker'
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/hdl/weight_buffer.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'weight_buffer'
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/Vivado_Project/MS.CnnAccFPGA/Ip_repo/ip_repo/MyAcc_3.0/tb/weight_buffer_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'weight_buffer_tb'

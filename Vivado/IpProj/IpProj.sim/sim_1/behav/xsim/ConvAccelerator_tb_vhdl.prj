@@ -1,0 +1,17 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../IpProj.srcs/sources_1/imports/hdl/ACCU.vhd" \
+"../../../../IpProj.srcs/sources_1/imports/hdl/ALU.vhd" \
+"../../../../IpProj.srcs/sources_1/imports/hdl/BRAM_SP.vhd" \
+"../../../../IpProj.srcs/sources_1/imports/hdl/ConvAccelerator.vhd" \
+"../../../../IpProj.srcs/sources_1/imports/hdl/DIS_RAM_SP.vhd" \
+"../../../../IpProj.srcs/sources_1/imports/hdl/MyAccelerator_v2_0_S00_AXI.vhd" \
+"../../../../IpProj.srcs/sources_1/imports/hdl/data_buffer.vhd" \
+"../../../../IpProj.srcs/sources_1/imports/hdl/dff.vhd" \
+"../../../../IpProj.srcs/sources_1/imports/hdl/main_fsm.vhd" \
+"../../../../IpProj.srcs/sources_1/imports/hdl/w_sticker.vhd" \
+"../../../../IpProj.srcs/sources_1/imports/hdl/weight_buffer.vhd" \
+"../../../ConvAccelerator_tb.vhd" \
+
+# Do not sort compile order
+nosort

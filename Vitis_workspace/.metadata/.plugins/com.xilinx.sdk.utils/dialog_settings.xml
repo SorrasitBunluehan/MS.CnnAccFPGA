@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="D:\Vivado_Project\MS.CnnAccFPGA\Vivado_proj\System_Project1" key="scw_hwspec_file_selection"/>
-	<item value="D:\Vivado_Project\MS.CnnAccFPGA\Vivado_proj\System_Project1" key="scw_hwspec"/>
+	<item value="D:\Master_Thesis\Vivado\HwProj" key="sdx_program_fpga_view_bit_bmm_browse_key"/>
+	<item value="D:\Master_Thesis\Vivado\HwProj" key="scw_hwspec_file_selection"/>
+	<item value="D:\Master_Thesis\Vivado\HwProj\HwProj.runs\impl_1" key="debug_files_selection"/>
+	<item value="D:\Master_Thesis\Vivado\HwProj" key="scw_hwspec"/>
 </section>

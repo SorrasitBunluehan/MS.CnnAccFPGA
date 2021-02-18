@@ -1,7 +1,0 @@
-Running: xsim.dir/axi_vip_0_exdes_tb_behav/xsimk.exe -simmode gui -wdb axi_vip_0_exdes_tb_behav.wdb -simrunnum 0 -socket 52519
-Design successfully loaded
-Design Loading Memory Usage: 11308 KB (Peak: 11308 KB)
-Design Loading CPU Usage: 15 ms
-Simulation completed
-Simulation Memory Usage: 30516 KB (Peak: 30516 KB)
-Simulation CPU Usage: 202 ms

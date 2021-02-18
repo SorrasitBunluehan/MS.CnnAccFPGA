@@ -1,1 +1,0 @@
--wto "dedb55de10424f0dba183b8439eccabb" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "weight_buffer_tb_behav" "xil_defaultlib.weight_buffer_tb" -log "elaborate.log" 

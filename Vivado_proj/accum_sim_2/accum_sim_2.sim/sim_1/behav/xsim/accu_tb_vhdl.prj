@@ -1,8 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/ACCU.vhd" \
-"../../../../../../Ip_repo/ip_repo/MyAcc_3.0/hdl/BRAM_SP.vhd" \
-"../../../../../../Ip_repo/ip_repo/MyAcc_3.0/tb/accu_tb.vhd" \
-
-# Do not sort compile order
-nosort

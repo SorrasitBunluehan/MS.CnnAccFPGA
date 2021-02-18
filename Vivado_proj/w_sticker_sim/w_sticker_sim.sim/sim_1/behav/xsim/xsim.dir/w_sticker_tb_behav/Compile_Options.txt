@@ -1,1 +1,0 @@
--wto "e5718f60109243dcb8c0274d89ad7b90" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "w_sticker_tb_behav" "xil_defaultlib.w_sticker_tb" -log "elaborate.log" 

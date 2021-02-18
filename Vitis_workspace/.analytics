@@ -1,93 +1,61 @@
-timestamp=[2020-12-28 18:42:41], mode=WORKBENCH_START, duration=0:00:04.302, duration_ms=4302, data={}
-timestamp=[2020-12-28 18:42:41], mode=WORKBENCH_UI_INIT, duration=0:00:00.378, duration_ms=378, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
-timestamp=[2020-12-28 18:42:44], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:02.239, duration_ms=2239, data={}
-timestamp=[2020-12-28 18:43:44], mode=PLATFORM_CREATION, duration=0:00:16.918, duration_ms=16918, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
-timestamp=[2020-12-28 18:47:33], mode=PLATFORM_GENERATION, duration=0:00:30.823, duration_ms=30823, data={name=HwProj}
-timestamp=[2020-12-29 11:56:55], mode=WORKBENCH_START, duration=0:00:05.334, duration_ms=5334, data={}
-timestamp=[2020-12-29 11:56:56], mode=WORKBENCH_UI_INIT, duration=0:00:00.780, duration_ms=780, data={editors_count=1, platform_editors_count=1, projects_count=2, platform_projects_count=1, active_platform_editor=true, projects=HwProj,RemoteSystemsTempFiles}
-timestamp=[2020-12-29 11:57:00], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:03.517, duration_ms=3517, data={}
-timestamp=[2020-12-29 11:57:08], mode=PLATFORM_GENERATION, duration=0:00:02.091, duration_ms=2091, data={name=HwProj}
-timestamp=[2020-12-29 11:59:32], mode=APP_CREATION, duration=0:00:06.333, duration_ms=6333, data={name=UserApp, project_type=sdk, os=standalone, processor=cortex-a9, runtime=C/C++, platform=HwProj, application_type=application}
-timestamp=[2020-12-29 11:59:40], mode=BUILD, duration=0:00:01.248, duration_ms=1248, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2020-12-29 12:01:24], mode=BUILD, duration=0:00:00.205, duration_ms=205, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2020-12-29 12:01:29], mode=BUILD, duration=0:00:04.782, duration_ms=4782, data={name=UserApp_system, configuration=Debug, clean_build=false}
-timestamp=[2020-12-29 12:16:58], mode=BUILD, duration=0:00:00.567, duration_ms=567, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2020-12-29 12:17:03], mode=BUILD, duration=0:00:04.631, duration_ms=4631, data={name=UserApp_system, configuration=Debug, clean_build=false}
-timestamp=[2020-12-30 18:31:54], mode=WORKBENCH_START, duration=0:00:08.746, duration_ms=8746, data={}
-timestamp=[2020-12-30 18:31:55], mode=WORKBENCH_UI_INIT, duration=0:00:00.781, duration_ms=781, data={editors_count=4, platform_editors_count=1, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=HwProj,RemoteSystemsTempFiles,UserApp,UserApp_system}
-timestamp=[2020-12-30 18:31:55], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.035, duration_ms=35, data={}
-timestamp=[2020-12-30 18:44:15], mode=PLATFORM_GENERATION, duration=0:00:17.692, duration_ms=17692, data={name=HwProj}
-timestamp=[2020-12-30 18:44:24], mode=BUILD, duration=0:00:00.760, duration_ms=760, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2020-12-30 18:44:28], mode=BUILD, duration=0:00:00.464, duration_ms=464, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2020-12-30 18:44:36], mode=BUILD, duration=0:00:02.409, duration_ms=2409, data={name=UserApp_system, configuration=Debug, clean_build=false}
-timestamp=[2020-12-30 18:44:50], mode=BUILD, duration=0:00:00.465, duration_ms=465, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2020-12-30 18:44:59], mode=BUILD, duration=0:00:00.464, duration_ms=464, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2020-12-30 18:45:01], mode=BUILD, duration=0:00:02.286, duration_ms=2286, data={name=UserApp_system, configuration=Debug, clean_build=false}
-timestamp=[2020-12-30 18:45:46], mode=BUILD, duration=0:00:00.774, duration_ms=774, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2020-12-30 18:45:48], mode=BUILD, duration=0:00:00.209, duration_ms=209, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2020-12-30 18:45:53], mode=BUILD, duration=0:00:04.879, duration_ms=4879, data={name=UserApp_system, configuration=Debug, clean_build=false}
-timestamp=[2020-12-31 10:21:49], mode=WORKBENCH_START, duration=0:00:07.887, duration_ms=7887, data={}
-timestamp=[2020-12-31 10:21:49], mode=WORKBENCH_UI_INIT, duration=0:00:00.625, duration_ms=625, data={editors_count=5, platform_editors_count=2, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=HwProj,RemoteSystemsTempFiles,UserApp,UserApp_system}
-timestamp=[2020-12-31 10:21:50], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.036, duration_ms=36, data={}
-timestamp=[2020-12-31 10:37:15], mode=BUILD, duration=0:00:00.765, duration_ms=765, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2020-12-31 10:37:30], mode=BUILD, duration=0:00:00.629, duration_ms=629, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2020-12-31 10:37:37], mode=BUILD, duration=0:00:06.818, duration_ms=6818, data={name=UserApp_system, configuration=Debug, clean_build=false}
-timestamp=[2020-12-31 10:37:54], mode=BUILD, duration=0:00:00.214, duration_ms=214, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2020-12-31 10:37:59], mode=BUILD, duration=0:00:04.642, duration_ms=4642, data={name=UserApp_system, configuration=Debug, clean_build=false}
-timestamp=[2020-12-31 10:41:30], mode=BUILD, duration=0:00:00.621, duration_ms=621, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2020-12-31 10:41:35], mode=BUILD, duration=0:00:04.996, duration_ms=4996, data={name=UserApp_system, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 18:11:04], mode=WORKBENCH_START, duration=0:00:08.400, duration_ms=8400, data={}
-timestamp=[2021-02-01 18:11:05], mode=WORKBENCH_UI_INIT, duration=0:00:00.606, duration_ms=606, data={editors_count=5, platform_editors_count=2, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=HwProj,RemoteSystemsTempFiles,UserApp,UserApp_system}
-timestamp=[2021-02-01 18:11:05], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.064, duration_ms=64, data={}
-timestamp=[2021-02-01 18:43:44], mode=BUILD, duration=0:00:01.083, duration_ms=1083, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 18:51:51], mode=BUILD, duration=0:00:00.366, duration_ms=366, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 18:51:58], mode=BUILD, duration=0:00:07.084, duration_ms=7084, data={name=UserApp_system, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 18:52:25], mode=BUILD, duration=0:00:00.923, duration_ms=923, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 18:52:36], mode=BUILD, duration=0:00:00.615, duration_ms=615, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 18:59:53], mode=BUILD, duration=0:00:00.314, duration_ms=314, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:00:31], mode=BUILD, duration=0:00:00.562, duration_ms=562, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:00:35], mode=BUILD, duration=0:00:04.545, duration_ms=4545, data={name=UserApp_system, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:00:49], mode=BUILD, duration=0:00:00.210, duration_ms=210, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:08:03], mode=PLATFORM_GENERATION, duration=0:00:14.865, duration_ms=14865, data={name=HwProj}
-timestamp=[2021-02-01 19:13:31], mode=BUILD, duration=0:00:00.712, duration_ms=712, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:13:41], mode=BUILD, duration=0:00:04.601, duration_ms=4601, data={name=UserApp_system, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:13:54], mode=BUILD, duration=0:00:00.210, duration_ms=210, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:13:59], mode=BUILD, duration=0:00:04.548, duration_ms=4548, data={name=UserApp_system, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:38:58], mode=BUILD, duration=0:00:00.314, duration_ms=314, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:39:04], mode=BUILD, duration=0:00:00.365, duration_ms=365, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:39:33], mode=BUILD, duration=0:00:00.312, duration_ms=312, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:41:27], mode=BUILD, duration=0:00:00.308, duration_ms=308, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:41:55], mode=BUILD, duration=0:00:00.612, duration_ms=612, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:42:47], mode=BUILD, duration=0:00:00.610, duration_ms=610, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:46:04], mode=BUILD, duration=0:00:00.315, duration_ms=315, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:46:15], mode=BUILD, duration=0:00:00.312, duration_ms=312, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:46:19], mode=BUILD, duration=0:00:04.655, duration_ms=4655, data={name=UserApp_system, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:47:01], mode=BUILD, duration=0:00:00.310, duration_ms=310, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:47:06], mode=BUILD, duration=0:00:04.598, duration_ms=4598, data={name=UserApp_system, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:47:21], mode=BUILD, duration=0:00:00.310, duration_ms=310, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:47:26], mode=BUILD, duration=0:00:04.647, duration_ms=4647, data={name=UserApp_system, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:49:05], mode=BUILD, duration=0:00:00.309, duration_ms=309, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:49:10], mode=BUILD, duration=0:00:04.549, duration_ms=4549, data={name=UserApp_system, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:49:27], mode=BUILD, duration=0:00:00.316, duration_ms=316, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:49:32], mode=BUILD, duration=0:00:04.546, duration_ms=4546, data={name=UserApp_system, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:49:50], mode=BUILD, duration=0:00:00.312, duration_ms=312, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:49:55], mode=BUILD, duration=0:00:04.591, duration_ms=4591, data={name=UserApp_system, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:49:57], mode=BUILD, duration=0:00:00.308, duration_ms=308, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:50:19], mode=BUILD, duration=0:00:00.560, duration_ms=560, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-01 19:50:24], mode=BUILD, duration=0:00:04.645, duration_ms=4645, data={name=UserApp_system, configuration=Debug, clean_build=false}
-timestamp=[2021-02-02 11:11:43], mode=WORKBENCH_START, duration=0:00:10.213, duration_ms=10213, data={}
-timestamp=[2021-02-02 11:11:43], mode=WORKBENCH_UI_INIT, duration=0:00:00.643, duration_ms=643, data={editors_count=6, platform_editors_count=3, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=HwProj,RemoteSystemsTempFiles,UserApp,UserApp_system}
-timestamp=[2021-02-02 11:11:44], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.080, duration_ms=80, data={}
-timestamp=[2021-02-02 12:02:04], mode=BUILD, duration=0:00:01.046, duration_ms=1046, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-02 12:03:20], mode=BUILD, duration=0:00:01.120, duration_ms=1120, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-02 12:03:51], mode=PLATFORM_GENERATION, duration=0:00:07.583, duration_ms=7583, data={name=HwProj}
-timestamp=[2021-02-02 12:04:31], mode=PLATFORM_GENERATION, duration=0:00:37.377, duration_ms=37377, data={name=HwProj}
-timestamp=[2021-02-02 12:04:47], mode=BUILD, duration=0:00:00.968, duration_ms=968, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-02 12:04:52], mode=BUILD, duration=0:00:04.922, duration_ms=4922, data={name=UserApp_system, configuration=Debug, clean_build=false}
-timestamp=[2021-02-02 12:17:36], mode=BUILD, duration=0:00:00.661, duration_ms=661, data={name=UserApp, configuration=Debug, clean_build=false}
-timestamp=[2021-02-02 12:17:40], mode=BUILD, duration=0:00:04.652, duration_ms=4652, data={name=UserApp_system, configuration=Debug, clean_build=false}
-timestamp=[2021-02-02 12:21:56], mode=PLATFORM_CREATION, duration=0:00:14.196, duration_ms=14196, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
-timestamp=[2021-02-02 12:22:44], mode=APP_CREATION, duration=0:00:06.217, duration_ms=6217, data={name=App0, project_type=sdk, os=standalone, processor=cortex-a9, runtime=C/C++, platform=HwProj1, application_type=application}
-timestamp=[2021-02-02 12:24:15], mode=PLATFORM_GENERATION, duration=0:00:29.217, duration_ms=29217, data={name=HwProj1}
-timestamp=[2021-02-02 12:25:23], mode=BUILD, duration=0:00:00.965, duration_ms=965, data={name=App0, configuration=Debug, clean_build=false}
-timestamp=[2021-02-02 12:25:28], mode=BUILD, duration=0:00:04.759, duration_ms=4759, data={name=App0_system, configuration=Debug, clean_build=false}
+timestamp=[2021-02-02 16:00:40], mode=WORKBENCH_START, duration=0:00:06.136, duration_ms=6136, data={}
+timestamp=[2021-02-02 16:00:41], mode=WORKBENCH_UI_INIT, duration=0:00:00.570, duration_ms=570, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2021-02-02 16:00:45], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:03.720, duration_ms=3720, data={}
+timestamp=[2021-02-02 16:11:49], mode=PLATFORM_CREATION, duration=0:00:17.614, duration_ms=17614, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2021-02-02 16:12:29], mode=APP_CREATION, duration=0:00:05.900, duration_ms=5900, data={name=App01, project_type=sdk, os=standalone, processor=cortex-a9, runtime=C/C++, platform=HW01, application_type=application}
+timestamp=[2021-02-02 16:13:06], mode=PLATFORM_GENERATION, duration=0:00:31.887, duration_ms=31887, data={name=HW01}
+timestamp=[2021-02-02 16:13:07], mode=BUILD, duration=0:00:00.906, duration_ms=906, data={name=App01, configuration=Debug, clean_build=false}
+timestamp=[2021-02-02 16:13:12], mode=BUILD, duration=0:00:04.917, duration_ms=4917, data={name=App01_system, configuration=Debug, clean_build=false}
+timestamp=[2021-02-02 16:35:00], mode=BUILD, duration=0:00:00.666, duration_ms=666, data={name=App01, configuration=Debug, clean_build=false}
+timestamp=[2021-02-02 16:37:25], mode=WORKBENCH_START, duration=0:00:07.817, duration_ms=7817, data={}
+timestamp=[2021-02-02 16:37:26], mode=WORKBENCH_UI_INIT, duration=0:00:00.423, duration_ms=423, data={editors_count=6, platform_editors_count=2, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=App01,App01_system,HW01,RemoteSystemsTempFiles}
+timestamp=[2021-02-02 16:37:26], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.022, duration_ms=22, data={}
+timestamp=[2021-02-02 16:39:11], mode=BUILD, duration=0:00:00.343, duration_ms=343, data={name=App01, configuration=Debug, clean_build=false}
+timestamp=[2021-02-02 16:39:18], mode=BUILD, duration=0:00:06.485, duration_ms=6485, data={name=App01_system, configuration=Debug, clean_build=false}
+timestamp=[2021-02-02 16:55:43], mode=PLATFORM_GENERATION, duration=0:00:02.171, duration_ms=2171, data={name=HW01}
+timestamp=[2021-02-02 16:56:19], mode=BUILD, duration=0:00:00.261, duration_ms=261, data={name=App01, configuration=Debug, clean_build=false}
+timestamp=[2021-02-02 16:56:33], mode=BUILD, duration=0:00:00.785, duration_ms=785, data={name=App01, configuration=Debug, clean_build=false}
+timestamp=[2021-02-02 16:59:22], mode=PLATFORM_CREATION, duration=0:00:15.521, duration_ms=15521, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2021-02-02 17:00:00], mode=PLATFORM_GENERATION, duration=0:00:30.519, duration_ms=30519, data={name=Hw01}
+timestamp=[2021-02-02 17:03:30], mode=WORKBENCH_START, duration=0:00:07.069, duration_ms=7069, data={}
+timestamp=[2021-02-02 17:03:31], mode=WORKBENCH_UI_INIT, duration=0:00:00.705, duration_ms=705, data={editors_count=6, platform_editors_count=1, projects_count=4, platform_projects_count=1, active_platform_editor=true, projects=App01,App01_system,Hw01,RemoteSystemsTempFiles}
+timestamp=[2021-02-02 17:03:31], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.025, duration_ms=25, data={}
+timestamp=[2021-02-02 17:04:00], mode=APP_CREATION, duration=0:00:06.185, duration_ms=6185, data={name=app02, project_type=sdk, os=standalone, processor=cortex-a9, runtime=C/C++, platform=Hw01, application_type=application}
+timestamp=[2021-02-02 17:04:28], mode=PLATFORM_GENERATION, duration=0:00:02.080, duration_ms=2080, data={name=Hw01}
+timestamp=[2021-02-02 17:04:29], mode=BUILD, duration=0:00:00.903, duration_ms=903, data={name=app02, configuration=Debug, clean_build=false}
+timestamp=[2021-02-02 17:04:34], mode=BUILD, duration=0:00:04.622, duration_ms=4622, data={name=app02_system, configuration=Debug, clean_build=false}
+timestamp=[2021-02-02 17:08:41], mode=PLATFORM_GENERATION, duration=0:00:02.030, duration_ms=2030, data={name=Hw01}
+timestamp=[2021-02-02 17:08:51], mode=BUILD, duration=0:00:00.272, duration_ms=272, data={name=app02, configuration=Debug, clean_build=false}
+timestamp=[2021-02-02 17:09:01], mode=BUILD, duration=0:00:04.714, duration_ms=4714, data={name=app02_system, configuration=Debug, clean_build=false}
+timestamp=[2021-02-02 17:09:02], mode=BUILD, duration=0:00:00.160, duration_ms=160, data={name=App01, configuration=Debug, clean_build=true}
+timestamp=[2021-02-02 17:09:02], mode=BUILD, duration=0:00:00.106, duration_ms=106, data={name=App01_system, configuration=Debug, clean_build=true}
+timestamp=[2021-02-02 17:09:04], mode=BUILD, duration=0:00:00.212, duration_ms=212, data={name=app02, configuration=Debug, clean_build=false}
+timestamp=[2021-02-02 17:09:09], mode=BUILD, duration=0:00:04.606, duration_ms=4606, data={name=app02_system, configuration=Debug, clean_build=false}
+timestamp=[2021-02-02 17:12:27], mode=WORKBENCH_START, duration=0:00:09.596, duration_ms=9596, data={}
+timestamp=[2021-02-02 17:12:28], mode=WORKBENCH_UI_INIT, duration=0:00:00.583, duration_ms=583, data={editors_count=2, platform_editors_count=0, projects_count=6, platform_projects_count=1, active_platform_editor=false, projects=App01,App01_system,Hw01,RemoteSystemsTempFiles,app02,app02_system}
+timestamp=[2021-02-02 17:12:28], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.063, duration_ms=63, data={}
+timestamp=[2021-02-03 17:37:19], mode=WORKBENCH_START, duration=0:00:09.141, duration_ms=9141, data={}
+timestamp=[2021-02-03 17:37:20], mode=WORKBENCH_UI_INIT, duration=0:00:00.655, duration_ms=655, data={editors_count=2, platform_editors_count=0, projects_count=6, platform_projects_count=1, active_platform_editor=false, projects=App01,App01_system,Hw01,RemoteSystemsTempFiles,app02,app02_system}
+timestamp=[2021-02-03 17:37:20], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.062, duration_ms=62, data={}
+timestamp=[2021-02-03 17:38:19], mode=PLATFORM_GENERATION, duration=0:00:18.621, duration_ms=18621, data={name=Hw01}
+timestamp=[2021-02-03 17:38:33], mode=BUILD, duration=0:00:00.918, duration_ms=918, data={name=app02, configuration=Debug, clean_build=false}
+timestamp=[2021-02-03 17:38:43], mode=BUILD, duration=0:00:04.980, duration_ms=4980, data={name=app02_system, configuration=Debug, clean_build=false}
+timestamp=[2021-02-03 18:48:31], mode=PLATFORM_GENERATION, duration=0:00:01.989, duration_ms=1989, data={name=Hw01}
+timestamp=[2021-02-03 18:48:43], mode=PLATFORM_GENERATION, duration=0:00:02.482, duration_ms=2482, data={name=Hw01}
+timestamp=[2021-02-03 18:49:33], mode=PLATFORM_GENERATION, duration=0:00:29.836, duration_ms=29836, data={name=Hw01}
+timestamp=[2021-02-03 18:51:42], mode=BUILD, duration=0:00:01.022, duration_ms=1022, data={name=app02, configuration=Debug, clean_build=false}
+timestamp=[2021-02-03 18:51:47], mode=BUILD, duration=0:00:04.762, duration_ms=4762, data={name=app02_system, configuration=Debug, clean_build=false}
+timestamp=[2021-02-04 12:35:23], mode=WORKBENCH_START, duration=0:00:10.184, duration_ms=10184, data={}
+timestamp=[2021-02-04 12:35:24], mode=WORKBENCH_UI_INIT, duration=0:00:00.770, duration_ms=770, data={editors_count=3, platform_editors_count=1, projects_count=6, platform_projects_count=1, active_platform_editor=true, projects=App01,App01_system,Hw01,RemoteSystemsTempFiles,app02,app02_system}
+timestamp=[2021-02-04 12:35:24], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.077, duration_ms=77, data={}
+timestamp=[2021-02-04 12:42:11], mode=BUILD, duration=0:00:01.601, duration_ms=1601, data={name=app02, configuration=Debug, clean_build=false}
+timestamp=[2021-02-04 13:31:13], mode=BUILD, duration=0:00:00.670, duration_ms=670, data={name=app02, configuration=Debug, clean_build=false}
+timestamp=[2021-02-04 13:31:20], mode=BUILD, duration=0:00:06.795, duration_ms=6795, data={name=app02_system, configuration=Debug, clean_build=false}
+timestamp=[2021-02-08 18:08:07], mode=WORKBENCH_START, duration=0:00:13.268, duration_ms=13268, data={}
+timestamp=[2021-02-08 18:08:07], mode=WORKBENCH_UI_INIT, duration=0:00:00.684, duration_ms=684, data={editors_count=5, platform_editors_count=3, projects_count=6, platform_projects_count=1, active_platform_editor=false, projects=App01,App01_system,Hw01,RemoteSystemsTempFiles,app02,app02_system}
+timestamp=[2021-02-08 18:08:08], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.052, duration_ms=52, data={}
+timestamp=[2021-02-08 18:10:10], mode=PLATFORM_GENERATION, duration=0:00:02.552, duration_ms=2552, data={name=Hw01}
+timestamp=[2021-02-08 18:11:40], mode=BUILD, duration=0:00:00.443, duration_ms=443, data={name=app02, configuration=Debug, clean_build=true}
+timestamp=[2021-02-08 18:11:42], mode=BUILD, duration=0:00:01.556, duration_ms=1556, data={name=app02, configuration=Debug, clean_build=false}
+timestamp=[2021-02-08 18:11:45], mode=BUILD, duration=0:00:00.261, duration_ms=261, data={name=app02, configuration=Debug, clean_build=false}
+timestamp=[2021-02-08 18:11:54], mode=BUILD, duration=0:00:05.000, duration_ms=5000, data={name=app02_system, configuration=Debug, clean_build=false}

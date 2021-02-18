@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../../ip_repo/MyAcc_3.0/hdl/w_sticker.vhd" \
-"../../../../../ip_repo/MyAcc_3.0/tb/w_sticker_tb.vhd" \
-
-# Do not sort compile order
-nosort

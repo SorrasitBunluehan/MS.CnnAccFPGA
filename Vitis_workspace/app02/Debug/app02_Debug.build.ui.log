@@ -1,0 +1,10 @@
+2021-02-08T18:11:44.960244900255-18:11:44 **** Incremental Build of configuration Debug for project app02 ****
+000-make all 
+000-D:/Vivado/Vitis/2020.1/gnuwin/bin/make --no-print-directory pre-build
+000-a9-linaro-pre-build-step
+000-' '
+000-D:/Vivado/Vitis/2020.1/gnuwin/bin/make --no-print-directory main-build
+000-make[1]: Nothing to be done for 'main-build'.
+00255-
+18:11:45 Build Finished (took 245ms)
+

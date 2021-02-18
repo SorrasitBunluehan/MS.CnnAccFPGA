@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1613571430">
+  <File Type="PA-TCL" Name="ConvAccelerator.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="ConvAccelerator_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="ConvAccelerator_reports.tcl"/>
+  <File Type="RDS-RDS" Name="ConvAccelerator.vds"/>
+  <File Type="RDS-UTIL" Name="ConvAccelerator_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="ConvAccelerator_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="ConvAccelerator.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="ConvAccelerator_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="ConvAccelerator_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/hdl/ACCU.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../ip_repo/MyAcc_3.0/hdl/ACCU.vhd"/>
+        <Attr Name="ImportTime" Val="1612121039"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/hdl/ALU.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../ip_repo/MyAcc_3.0/hdl/ALU.vhd"/>
+        <Attr Name="ImportTime" Val="1612187977"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/hdl/BRAM_SP.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../ip_repo/MyAcc_3.0/hdl/BRAM_SP.vhd"/>
+        <Attr Name="ImportTime" Val="1611394866"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/hdl/DIS_RAM_SP.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../ip_repo/MyAcc_3.0/hdl/DIS_RAM_SP.vhd"/>
+        <Attr Name="ImportTime" Val="1610977681"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/hdl/MyAccelerator_v2_0_S00_AXI.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../ip_repo/MyAcc_3.0/hdl/MyAccelerator_v2_0_S00_AXI.vhd"/>
+        <Attr Name="ImportTime" Val="1611861064"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/hdl/data_buffer.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../ip_repo/MyAcc_3.0/hdl/data_buffer.vhd"/>
+        <Attr Name="ImportTime" Val="1612114845"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/hdl/dff.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../ip_repo/MyAcc_3.0/hdl/dff.vhd"/>
+        <Attr Name="ImportTime" Val="1610544311"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/hdl/main_fsm.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../ip_repo/MyAcc_3.0/hdl/main_fsm.vhd"/>
+        <Attr Name="ImportTime" Val="1612188891"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/hdl/w_sticker.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../ip_repo/MyAcc_3.0/hdl/w_sticker.vhd"/>
+        <Attr Name="ImportTime" Val="1611054004"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/hdl/weight_buffer.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../ip_repo/MyAcc_3.0/hdl/weight_buffer.vhd"/>
+        <Attr Name="ImportTime" Val="1612114894"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/hdl/ConvAccelerator.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../ip_repo/MyAcc_3.0/hdl/ConvAccelerator.vhd"/>
+        <Attr Name="ImportTime" Val="1612196101"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/component.xml">
+      <FileInfo SFType="IPXACT"/>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="ConvAccelerator"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/my_constrain.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

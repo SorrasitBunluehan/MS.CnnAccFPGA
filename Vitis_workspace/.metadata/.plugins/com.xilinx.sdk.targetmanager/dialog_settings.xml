@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item value="D:\Master_Thesis\Vivado\HwProj\hw.bit" key="app02-bitFile"/>
+	<item value="app02" key="programfpga.sdxproject"/>
+	<item value="D:\Master_Thesis\Vivado\HwProj\HwProj.runs\impl_1\design_1_wrapper.bit" key="App01-bitFile"/>
+	<item value="false" key="App01-partial_bit"/>
+	<item value="false" key="app02-partial_bit"/>
+	<item value="false" key="app02-skip_rev_check"/>
+	<item value="" key="App01-bmmFile"/>
+	<item value="Auto Detect" key="app02-device"/>
 	<item value="{&quot;cables&quot;:[{&quot;name&quot;:&quot;Digilent Zybo 210279655497A&quot;,&quot;indexContextMap&quot;:{&quot;2&quot;:&quot;jsn-Zybo-210279655497A-4ba00477-0&quot;,&quot;3&quot;:&quot;jsn-Zybo-210279655497A-13722093-0&quot;}}]}" key="devices_info_Local"/>
+	<item value="Local" key="App01-target"/>
+	<item value="false" key="App01-skip_rev_check"/>
+	<item value="" key="app02-bmmFile"/>
+	<item value="Auto Detect" key="App01-device"/>
+	<item value="Local" key="app02-target"/>
 </section>
